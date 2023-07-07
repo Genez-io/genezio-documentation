@@ -2,7 +2,7 @@
 
 To check information about all of your deployed projects, you can open a browser and navigate to the [genezio dashboard](https://app.genez.io/dashboard)[.](https://app.genez.io/dashboard)
 
-<figure><img src="../.gitbook/assets/image (26).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
 
 On the dashboard, you can interact with your project as follows:
 

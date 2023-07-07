@@ -12,7 +12,7 @@ You should see a green label indicating that your connection to the local server
 Make sure to refresh the Test Interface after you make changes in your code that make your local server reload to avoid unpredictable behavior
 {% endhint %}
 
-<figure><img src="../.gitbook/assets/image (18).png" alt="Local Testing"><figcaption><p>Genezio Test Interface Local</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (21).png" alt="Local Testing"><figcaption><p>Genezio Test Interface Local</p></figcaption></figure>
 
 Sometimes, you may see a red error message at the top instead of the green Success label. Most likely that means your local server is running on a different port.&#x20;
 
@@ -20,4 +20,4 @@ Sometimes, you may see a red error message at the top instead of the green Succe
 
 To establish the connection, verify on which port your server is running and fill that port in the provided input, the click `Connect` (or press Enter).
 
-<figure><img src="../.gitbook/assets/image (14).png" alt="Different port"><figcaption><p>Connect to a different port</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (10).png" alt="Different port"><figcaption><p>Connect to a different port</p></figcaption></figure>

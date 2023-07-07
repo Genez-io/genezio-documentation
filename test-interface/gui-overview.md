@@ -2,7 +2,7 @@
 
 The Genezio Test Interface is visually divided into 3 sections.
 
-<figure><img src="../.gitbook/assets/image (7).png" alt="Genezio Test Interface"><figcaption><p>Genezio Test Interface</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (23).png" alt="Genezio Test Interface"><figcaption><p>Genezio Test Interface</p></figcaption></figure>
 
 ### Project Menu
 
@@ -28,5 +28,5 @@ You can see the response in a `RAW` format or a `PRETTY` format available only f
 
 The upper-right part of the section will display the time it took for the request to be made and the status of the response.
 
-<figure><img src="../.gitbook/assets/image (15).png" alt="Pretty Response"><figcaption><p>Genezio Test Interface Pretty Response</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (20).png" alt="Pretty Response"><figcaption><p>Genezio Test Interface Pretty Response</p></figcaption></figure>
 

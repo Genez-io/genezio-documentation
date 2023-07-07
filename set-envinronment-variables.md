@@ -10,11 +10,11 @@ To set environment variables for a project, head to the [Dashboard](https://dev.
 
 On the `Backend` tab, click on the `Environment Variables` button:
 
-<figure><img src=".gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (25).png" alt=""><figcaption></figcaption></figure>
 
 Add the environment variables like a \<key, value> pair, After adding all the environment variables hit the `Save` button:
 
-<figure><img src=".gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (31).png" alt=""><figcaption></figcaption></figure>
 
 Note: You can also import environment variables from a file using `Import from .env` button.
 
