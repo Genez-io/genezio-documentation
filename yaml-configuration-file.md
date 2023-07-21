@@ -73,3 +73,9 @@ A list of classes that will be handled by the genezio CLI.
   * **name** (optional): The name of the method. It should be the same name as in the code.
   * **type** (optional): The method type. This can be either: `http`, `jsonrpc` or `cron`. If not specified, the value of this field will be set as the class' `type` property.
   * **cronString:** Only required if the method is of `type: cron`. This specifies how frequently the method should be called. For complete documentation of the cronstring's format check [https://crontab.guru/](https://crontab.guru/)
+
+### Options
+
+Specify other specific properties for the programming language that you use:
+
+* **nodeRuntime:** The node runtime version that will be used by your NodeJS application. Possible values: "nodejs12.x", "nodejs14.x", "nodejs16.x", "nodejs18.x".
