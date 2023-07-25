@@ -2,6 +2,17 @@
 
 All of the configuration details about a project are set inside `genezio.yaml`.&#x20;
 
+<pre><code>.
+├── server/
+│   ├── <a data-footnote-ref href="#user-content-fn-1">genezio.yaml</a>
+│   ├── .genezioignore
+│   └── index.js
+└── client/
+    ├── src/
+    ├── build/
+    └── sdk/
+</code></pre>
+
 A minimalist `genezio.yaml` file can be created using `genezio init` and completing the wizard.
 
 Check out an example of a `genezio.yaml` configuration file:
@@ -79,3 +90,5 @@ A list of classes that will be handled by the genezio CLI.
 Specify other specific properties for the programming language that you use:
 
 * **nodeRuntime:** The node runtime version that will be used by your NodeJS application. Possible values: "nodejs12.x", "nodejs14.x", "nodejs16.x", "nodejs18.x".
+
+[^1]: 
