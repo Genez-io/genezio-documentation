@@ -2,8 +2,8 @@
 
 * [Genezio User Documentation](README.md)
 * [Getting Started](getting-started/README.md)
-  * [Let's get you started!](getting-started/lets-get-you-started.md)
   * [Create a genezio account](getting-started/create-a-genezio-account.md)
+  * [Let's get you started!](getting-started/lets-get-you-started.md)
   * [Install the genezio CLI](getting-started/install-the-genezio-cli.md)
   * [Create your first project](getting-started/create-your-first-project.md)
   * [Test your project locally](getting-started/test-your-project-locally.md)
@@ -13,7 +13,7 @@
 * [Project Structure](project-structure/README.md)
   * [.genezioignore](project-structure/.genezioignore.md)
 * [YAML Configuration File](yaml-configuration-file.md)
-* [Set envinronment variables](set-envinronment-variables.md)
+* [Backend envinronment variables](backend-envinronment-variables.md)
 * [Programming Languages](programming-languages/README.md)
   * [Javascript](programming-languages/javascript.md)
   * [Typescript](programming-languages/typescript.md)

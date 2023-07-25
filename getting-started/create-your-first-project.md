@@ -41,11 +41,11 @@ For this example, open the newly created file and write the following class:
 {% code title="hello.ts" overflow="wrap" %}
 ```typescript
 export class HelloWorldClass {
-  helloWorld(): string {
+  helloFoo(): string {
     return "Hello world!";
   }
 
-  hello(name: string, location: string): string {
+  helloBar(name: string, location: string): string {
     return `Hello, ${name}! Greetings from ${location}!`;
   }
 }
@@ -59,11 +59,11 @@ For this example, open the newly created file and write the following class:
 {% code title="hello.js" overflow="wrap" %}
 ```javascript
 export class HelloWorldClass {
-  helloWorld() {
+  helloFoo() {
     return "Hello world!";
   }
 
-  hello(name, location) {
+  helloBar(name, location) {
     return `Hello, ${name}! Greetings from ${location}!`;
   }
 }
@@ -77,11 +77,11 @@ For this example, open the newly created file and write the following class:
 {% code title="hello.dart" %}
 ```dart
 class HelloWorldClass {
-  String helloWorld() {
+  String helloFoo() {
     return "Hello world!";
   }
 
-  String hello(String name, String location) {
+  String helloBar(String name, String location) {
     return "Hello, $name! Greetings from $location!";
   }
 }

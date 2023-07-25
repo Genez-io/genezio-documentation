@@ -67,15 +67,20 @@ If you receive errors related to denied permissions, use the command below:
 **Clone our examples repository.** Copy this command in your terminal to clone the repository:
 
 {% tabs %}
-{% tab title="Unix/MacOS" %}
+{% tab title="Javascript" %}
 ```
-git clone https://github.com/Genez-io/genezio-examples.git
+git clone https://github.com/Genez-io/genezio-getting-started-javascript
 ```
 {% endtab %}
 
-{% tab title="Windows" %}
+{% tab title="Typescript" %}
+<pre><code><strong>git clone https://github.com/Genez-io/genezio-getting-started-typescript
+</strong></code></pre>
+{% endtab %}
+
+{% tab title="Dart" %}
 ```
-git clone https://github.com/Genez-io/genezio-examples.git
+git clone https://github.com/Genez-io/genezio-getting-started-dart
 ```
 {% endtab %}
 {% endtabs %}
@@ -85,15 +90,21 @@ git clone https://github.com/Genez-io/genezio-examples.git
 **Navigate to the project directory.** Copy the following command in your terminal to go to our getting started project folder:
 
 {% tabs %}
-{% tab title="Unix/MacOS" %}
+{% tab title="Javascript" %}
 ```
-cd ./genezio-examples/javascript/getting-started/server
+cd ./genezio-getting-started-javascript/server
 ```
 {% endtab %}
 
-{% tab title="Windows" %}
+{% tab title="Typescript" %}
 ```
-cd ./genezio-examples/javascript/getting-started/server
+cd ./genezio-getting-started-typescript/server
+```
+{% endtab %}
+
+{% tab title="Dart" %}
+```
+cd ./genezio-getting-started-dart/server
 ```
 {% endtab %}
 {% endtabs %}
@@ -102,19 +113,9 @@ cd ./genezio-examples/javascript/getting-started/server
 
 **Deploy your code.** Use the command below to deploy both the backend and frontend code using genezio:
 
-{% tabs %}
-{% tab title="Unix/MacOS" %}
 ```
 genezio deploy
 ```
-{% endtab %}
-
-{% tab title="Windows" %}
-```
-genezio deploy
-```
-{% endtab %}
-{% endtabs %}
 
 ### Step 6
 
