@@ -40,6 +40,7 @@
     * [Account](cli-tool/cli-commands/account.md)
     * [Logout](cli-tool/cli-commands/logout.md)
     * [Update](cli-tool/cli-commands/update.md)
+  * [Analytics](cli-tool/analytics.md)
 * [Test Interface](test-interface/README.md)
   * [GUI Overview](test-interface/gui-overview.md)
   * [Remote Testing](test-interface/remote-testing.md)
