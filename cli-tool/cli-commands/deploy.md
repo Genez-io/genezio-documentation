@@ -2,7 +2,7 @@
 
 ### Usage
 
-`genezio deploy [--backend] [--frontend] [--logLevel <logLevel>] [--installDeps]`
+`genezio deploy [--backend] [--frontend] [--stage <stage_name>] [--logLevel <logLevel>] [--installDeps]`
 
 ### Description
 

@@ -2,7 +2,7 @@
 
 ### Usage
 
-`genezio generateSdk --path <sdkPath> --language <js/ts/swift> [--logLevel <logLevel>]`
+`genezio generateSdk --stage <stage_name>] --path <sdkPath> --language <js/ts/swift> [--logLevel <logLevel>]`
 
 ### Description
 
