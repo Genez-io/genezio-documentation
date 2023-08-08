@@ -14,6 +14,7 @@
   * [.genezioignore](project-structure/.genezioignore.md)
 * [YAML Configuration File](yaml-configuration-file.md)
 * [Backend envinronment variables](backend-envinronment-variables.md)
+* [Deployment Environments](deployment-environments.md)
 * [Programming Languages](programming-languages/README.md)
   * [Javascript](programming-languages/javascript.md)
   * [Typescript](programming-languages/typescript.md)
