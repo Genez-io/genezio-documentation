@@ -1,6 +1,6 @@
 # Deployment Environments
 
-This guide will walk you through using the genezio CLI to deploy your applications to different environments using the `genezio deploy` command with the `--stage` option.
+Using the genezio CLI, this guide explains how to deploy your applications to different environments using `--stage` .
 
 ```bash
 genezio deploy --stage <name>
