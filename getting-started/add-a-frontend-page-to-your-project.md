@@ -47,7 +47,7 @@ function App() {
 
   useEffect(() => {
     async function fetchData() {
-      const result = await HelloWorld.hello("George", "Tenerife", Season.Summer);
+      const result = await HelloWorld.helloFoo();
       setHelloWorldString(result);
     }
 
