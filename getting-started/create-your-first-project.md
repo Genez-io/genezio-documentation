@@ -22,7 +22,7 @@ $ genezio init
 What is the name of the project: getting-started
 What region do you want to deploy your project to? [default value: us-east-1]: us-east-1
 In what programming language do you want your SDK? (js, ts, swift, python, dart) [default value: ts]: ts
-Where do you want to save your SDK? [default value: ./sdk/]: ../client/sdk
+Where do you want to save your SDK? [default value: ./sdk/]: ../src/client/sdk
 ```
 {% endcode %}
 
