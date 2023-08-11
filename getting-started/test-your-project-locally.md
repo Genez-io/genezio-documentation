@@ -19,7 +19,7 @@ This command will spawn a local server on a random port that can be used for tes
 
 Head over to the output link `https://app.genez.io/test-interface/local?port=8083` to test your project in the Genezio Test Interface:
 
-<figure><img src="../.gitbook/assets/image (22).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2023-08-11 at 19.28.34.png" alt=""><figcaption></figcaption></figure>
 
 You can use the _Genezio Test Interface_ to test your projects locally, as well as remotely. Find more details about it at [test-interface](../test-interface/ "mention")
 
