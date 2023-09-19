@@ -5,7 +5,7 @@ description: A guide to instrument genezio projects using the Sentry integration
 # Sentry
 
 {% hint style="warning" %}
-In order to activate this integration for a project, that particular project should be deployed with genezio **`v0.4.8`** or higher. For older projects, make sure you have the latest version of genezio npm package installed by running **`npm install -g genezio`**, than redeploy the project for which you want to activate the integration
+In order to activate this integration for a project, that particular project should be deployed with genezio **`v0.5.0`** or higher. For older projects, make sure you have the latest version of genezio npm package installed by running **`npm install -g genezio`**, than redeploy the project for which you want to activate the integration
 {% endhint %}
 
 ### Introduction to Sentry
