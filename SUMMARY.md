@@ -13,7 +13,7 @@
 * [Project Structure](project-structure/README.md)
   * [.genezioignore](project-structure/.genezioignore.md)
 * [YAML Configuration File](yaml-configuration-file.md)
-* [Backend envinronment variables](backend-envinronment-variables.md)
+* [Backend Environment Variables](backend-environment-variables.md)
 * [Deployment Environments](deployment-environments.md)
 * [Programming Languages](programming-languages/README.md)
   * [Javascript](programming-languages/javascript.md)
