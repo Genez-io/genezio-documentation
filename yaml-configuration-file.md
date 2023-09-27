@@ -23,6 +23,8 @@ region: us-east-1
 sdk:
   language: js
   path: ../client/src/sdk/
+options:
+  nodeRuntime: nodejs18.x
 frontend:
   path: ../client/build
   subdomain: test-domain # not mandatory, we will provide a random one for you
@@ -89,6 +91,11 @@ A list of classes that will be handled by the genezio CLI.
 
 Specify other specific properties for the programming language that you use:
 
-* **nodeRuntime:** The node runtime version that will be used by your NodeJS application. Possible values: "nodejs12.x", "nodejs14.x", "nodejs16.x", "nodejs18.x".
+* **nodeRuntime:** The node runtime version that will be used by your NodeJS application. The supported values are`nodejs16.x`, `nodejs18.x`. Currently, the default value is `nodejs16.x`.
+
+```
+options:
+  nodeRuntime: nodejs18.x
+```
 
 [^1]: 
