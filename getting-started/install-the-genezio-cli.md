@@ -27,11 +27,15 @@ yarn install genezio -g
 {% endtabs %}
 
 {% hint style="info" %}
+**For MacOS / Linux users:**
+
 If you are experiencing a `permission denied` error on ``genezio install, please prefix your command with `sudo`.`` \
 `` E.g. `sudo npm install genezio -g` ``
 {% endhint %}
 
 {% hint style="info" %}
+**For Windows users:**
+
 If you are experiencing `permission denied` errors on Windows, run the command below in Powershell:
 
 `Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser`

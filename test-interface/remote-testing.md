@@ -2,7 +2,7 @@
 
 You can use the Genezio Test Interface for testing your backend code in a friendly and easy-to-use graphic environment before actually integrating the functions in your client application.\
 \
-To test an already-deployed project, log into your account for the [Genezio Web App](https://app.genez.io) (if you don't have one, check out this section [create-a-genezio-account.md](../getting-started/create-a-genezio-account.md "mention")). Select the project that you want to test (if you have no deployed projects, check out [create-your-first-project.md](../getting-started/create-your-first-project.md "mention") and/or [deploy-your-first-project.md](../getting-started/deploy-your-first-project.md "mention"))
+To test an already-deployed project, log into your account for the [Genezio Web App](https://app.genez.io). Select the project that you want to test (if you have no deployed projects, check out [create-your-first-project.md](../getting-started/create-your-first-project.md "mention") and/or [deploy-your-first-project.md](../getting-started/deploy-your-first-project.md "mention"))
 
 On the selected project's page, you will see a list of its classes and two action buttons for deleting the project and testing. The `Test Project` button will redirect you to the Genezio Test Interface, already prepared for testing the selected project.
 

@@ -1,6 +1,6 @@
 # Deploy your first project
 
-Run `genezio deploy` to deploy both your backend and frontend code:
+Run the command below to deploy both your code:
 
 ```bash
 genezio deploy

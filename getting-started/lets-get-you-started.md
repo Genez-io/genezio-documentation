@@ -1,4 +1,4 @@
-# Let's get you started!
+# Quick start
 
 {% hint style="warning" %}
 To install the genezio CLI you must have Node.JS (a version greater than Node 14) and npm installed on your working machine.
@@ -19,48 +19,48 @@ If you are experiencing `permission denied` errors on Windows, run the command b
 **Install genezio.** Use the command below to install genezio:
 
 {% tabs %}
-{% tab title="Unix/MacOS" %}
+{% tab title="npm" %}
 ```
 npm install genezio -g
 ```
 {% endtab %}
 
-{% tab title="Windows" %}
+{% tab title="pnpm" %}
 ```
-npm install genezio -g
+pnpm install genezio -g
 ```
+{% endtab %}
+
+{% tab title="yarn" %}
+```
+yarn install genezio -g
+```
+{% endtab %}
+{% endtabs %}
 
 {% hint style="warning" %}
+**For Windows users:**
+
 If you receive errors related to denied permissions, use the command below:
 
 `Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser`
 {% endhint %}
-{% endtab %}
-{% endtabs %}
 
 ### Step 2
 
 **Log in to genez.io.** Run the following command to log in to your account:
 
-{% tabs %}
-{% tab title="Unix/MacOS" %}
-```
-genezio login
-```
-{% endtab %}
-
-{% tab title="Windows" %}
 ```
 genezio login
 ```
 
 {% hint style="warning" %}
+**For Windows users:**
+
 If you receive errors related to denied permissions, use the command below:
 
 `Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser`
 {% endhint %}
-{% endtab %}
-{% endtabs %}
 
 ### Step 3
 
@@ -87,7 +87,7 @@ git clone https://github.com/Genez-io/genezio-getting-started-dart
 
 ### Step 4
 
-**Navigate to the project directory.** Copy the following command in your terminal to go to our getting started project folder:
+**Navigate to the project directory.** Copy the following command in your terminal to go to our Getting Started project folder:
 
 {% tabs %}
 {% tab title="Javascript" %}
