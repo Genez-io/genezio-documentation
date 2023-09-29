@@ -1,18 +1,10 @@
+---
+description: >-
+  Wecome to genezio! This guide will help you to have an up & running simple to
+  do list app in 10 minutes.
+---
+
 # Quick start
-
-{% hint style="warning" %}
-To install the genezio CLI you must have Node.JS (a version greater than Node 14) and npm installed on your working machine.
-{% endhint %}
-
-{% hint style="info" %}
-If you are experiencing a `permission denied` error on `` `npm install`, please prefix your command with `sudo`. E.g. `sudo npm install genezio -g` ``
-{% endhint %}
-
-{% hint style="info" %}
-If you are experiencing `permission denied` errors on Windows, run the command below in Powershell:
-
-`Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser`
-{% endhint %}
 
 ### Step 1
 
@@ -37,6 +29,16 @@ yarn install genezio -g
 ```
 {% endtab %}
 {% endtabs %}
+
+{% hint style="warning" %}
+To install the genezio CLI you must have Node.JS (a version greater than Node 14) and npm installed on your working machine.
+{% endhint %}
+
+{% hint style="warning" %}
+**For MacOS / Linux users:**
+
+If you are experiencing a `permission denied` error on `` `npm install`, please prefix your command with `sudo`. E.g. `sudo npm install genezio -g` ``
+{% endhint %}
 
 {% hint style="warning" %}
 **For Windows users:**

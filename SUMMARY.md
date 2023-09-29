@@ -1,8 +1,8 @@
 # Table of contents
 
 * [Genezio User Documentation](README.md)
-* [Getting Started](getting-started/README.md)
-  * [Quick start](getting-started/lets-get-you-started.md)
+* [Quick start](lets-get-you-started.md)
+* [Hands-on with genezio](getting-started/README.md)
   * [Install the genezio CLI](getting-started/install-the-genezio-cli.md)
   * [Create your first project](getting-started/create-your-first-project.md)
   * [Test your project locally](getting-started/test-your-project-locally.md)
