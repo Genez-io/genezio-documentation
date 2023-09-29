@@ -1,6 +1,6 @@
 ---
 description: >-
-  Wecome to genezio! This guide will help you to have an up & running simple to
+  Welcome to genezio! This guide will help you to have an up & running simple to
   do list app in 10 minutes.
 ---
 
