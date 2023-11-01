@@ -8,7 +8,7 @@ On the selected project's page, you will see a list of its classes and two actio
 
 &#x20;
 
-<figure><img src="../.gitbook/assets/image (3).png" alt="Project Page"><figcaption><p>Genezio Web App Project Page</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2).png" alt="Project Page"><figcaption><p>Genezio Web App Project Page</p></figcaption></figure>
 
 <figure><img src="../.gitbook/assets/image (13).png" alt="Genezio Test Interface"><figcaption><p>Genezio Test Interface</p></figcaption></figure>
 
