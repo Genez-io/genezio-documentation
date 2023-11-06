@@ -23,6 +23,7 @@ You will be prompted to answer some questions to create the initial configuratio
 $ genezio init
 What is the name of the project: hello_world_project
 What region do you want to deploy your project to? [default value: us-east-1]: 
+What language do you want to use for your project? [default value: ts]:
 
 Your genezio project was successfully initialized!
 

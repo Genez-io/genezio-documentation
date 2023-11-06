@@ -6,7 +6,15 @@ Run the command below to deploy both your code:
 genezio deploy
 ```
 
-Once you deploy your code, `genezio` will generate the SDK files for you to import them in the client code.
+Once you deploy your code, `genezio` will generate an SDK in the form of a node library, which you can import into the `node_modules` folder of your client application. Don't worry! We upload your SDK in our private registry, where only you can install it based on your authentification token.
+
+\
+To import your SDK in your client you have to run the following command:
+
+```
+# stage will be 'prod' unless specified otherwise using the --stage flag
+npm install @genezio-sdk/{your-project-name}_{your-project-region}@1.0.0-{stage}
+```
 
 The output of the command should look like this:
 

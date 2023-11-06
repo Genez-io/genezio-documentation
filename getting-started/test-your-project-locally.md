@@ -15,9 +15,15 @@ Your code was deployed and the SDK was successfully generated!
 Test your code at https://app.genez.io/test-interface/local?port=8083
 ```
 
-This command will spawn a local server on a random port that can be used for testing and will also generate an SDK to be able to call the backend methods from the frontend code.&#x20;
+This command will spawn a local server on a random port that can be used for testing and will also generate an SDK to be able to call the backend methods from the frontend code.\
+\
+The SDK is built as a local npm library. To use it, while the local server is running, run this command in you client project:
 
-Head over to the output link [`https://app.genez.io/test-interface/local?port=8083`](https://app.genez.io/test-interface/local?port=8083) to test your project in the Genezio Test Interface:
+```
+npm link @genezio-sdk/{your-project-name}_{your-project-region}
+```
+
+If you just want to test your genezio code without having to write any code in your client, head over to the output link [`https://app.genez.io/test-interface/local?port=8083`](https://app.genez.io/test-interface/local?port=8083) to test your project in the Genezio Test Interface:
 
 <figure><img src="../.gitbook/assets/Screenshot 2023-08-11 at 19.28.34.png" alt=""><figcaption></figcaption></figure>
 
