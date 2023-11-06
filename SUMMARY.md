@@ -11,6 +11,7 @@
   * [Genezio dashboard](getting-started/check-genezio-dashboard.md)
 * [Project Structure](project-structure/README.md)
   * [.genezioignore](project-structure/.genezioignore.md)
+  * [genezio decorators](project-structure/genezio-decorators.md)
 * [YAML Configuration File](yaml-configuration-file.md)
 * [Backend Environment Variables](backend-envinronment-variables.md)
 * [Deployment Environments](deployment-environments.md)
