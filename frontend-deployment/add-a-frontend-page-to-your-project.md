@@ -71,7 +71,7 @@ To test the UI locally, you can run the command below in the `client` directory:
 npm start
 ```
 
-if you want to test your project locally end-to-end, open two terminals:
+If you want to test your project locally end-to-end, open two terminals:
 
 {% code title="Server terminal" %}
 ```
