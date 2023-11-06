@@ -75,6 +75,7 @@
   * [GitHub Action](integrations/github-action.md)
   * [Sentry](integrations/sentry.md)
   * [Upstash Redis](integrations/upstash-redis.md)
+  * [Neon Postgres](integrations/neon-postgres.md)
 * [Troubleshooting](troubleshooting.md)
 * [Hall of Fame](hall-of-fame.md)
 * [How Billing Works](how-billing-works.md)
