@@ -10,20 +10,6 @@ genezio
 
 You'll be redirected to sign up with genezio. Choose your preferred sign-up method.
 
-{% code overflow="wrap" %}
-```
-$ genezio init
-What is the name of the project: hello_world_project
-What region do you want to deploy your project to? [default value: us-east-1]: 
-
-Your genezio project was successfully initialized!
-
-The genezio.yaml configuration file was generated.
-You can now add the classes that you want to deploy using the
-'genezio addClass <className> <classType>' command.
-```
-{% endcode %}
-
 Your terminal should look like this:
 
 ```
