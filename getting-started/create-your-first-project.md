@@ -1,124 +1,88 @@
-# Create your first project
+# Start a new project
 
-Go through the following steps to configure a `hello-world` project in no time using `genezio`.
+Go through the following tutorial to configure a `hello-world` project in no time using `genezio`.
 
-### Login using the genezio cli tool
-
-Open a terminal and run:
+Open a terminal and run `genezio`. This command will take you through a wizard to create a template for your project.
 
 ```
-genezio login
+genezio
 ```
 
-### Initial Configuration
+You'll be redirected to sign up with genezio. Choose your preferred sign-up method.
+
+Your terminal should look like this:
 
 ```
-genezio init
+$ genezio
+Redirecting to browser to complete authentication...
+Loading... ✅
 ```
 
-You will be prompted to answer some questions to create the initial configuration of your project. The configuration will be saved into a new folder with an auto-generated file named `genezio.yaml`.
-
-{% code overflow="wrap" %}
-```
-$ genezio init
-What is the name of the project: hello_world_project
-What region do you want to deploy your project to? [default value: us-east-1]: 
-
-Your genezio project was successfully initialized!
-
-The genezio.yaml configuration file was generated.
-You can now add the classes that you want to deploy using the
-'genezio addClass <className> <classType>' command.
-```
-{% endcode %}
-
-### Navigate to the project folder
+You can choose a starting template based on your needs:
 
 ```
-cd ./hello_world_project
+? Choose a template for your genezio project (Use arrow keys)
+❯ Fullstack 
+  Backend-Only
 ```
 
-### Add a New Class
+Choose a name for your project:
 
-{% tabs %}
-{% tab title="TypeScript" %}
-Run the command below:
-
-<pre><code><strong>genezio addClass hello.ts
-</strong></code></pre>
-
-A new file `hello.ts` will be created where you will write the logic of your application.
-
-For this example, open the newly created file and write the following class:
-
-{% code title="hello.ts" overflow="wrap" %}
-```typescript
-export class HelloWorldClass {
-  helloFoo(): string {
-    return "Hello world!";
-  }
-
-  helloBar(name: string, location: string): string {
-    return `Hello, ${name}! Greetings from ${location}!`;
-  }
-}
 ```
-{% endcode %}
-{% endtab %}
-
-{% tab title="JavaScript" %}
-Run the command below:
-
-<pre><code><strong>genezio addClass hello.js
-</strong></code></pre>
-
-A new file `hello.js` will be created where you will write the logic of your application.
-
-For this example, open the newly created file and write the following class:
-
-{% code title="hello.js" overflow="wrap" %}
-```javascript
-export class HelloWorldClass {
-  helloFoo() {
-    return "Hello world!";
-  }
-
-  helloBar(name, location) {
-    return `Hello, ${name}! Greetings from ${location}!`;
-  }
-}
+? Please enter a name for your project: (genezio-getting-started)
 ```
-{% endcode %}
-{% endtab %}
 
-{% tab title="Dart" %}
-Run the command below:
+Choose a convenient region to deploy your project:
 
-<pre><code><strong>genezio addClass hello.dart
-</strong></code></pre>
-
-A new file `hello.dart` will be created where you will write the logic of your application.
-
-For this example, open the newly created file and write the following class:
-
-{% code title="hello.dart" %}
-```dart
-class HelloWorldClass {
-  String helloFoo() {
-    return "Hello world!";
-  }
-
-  String helloBar(String name, String location) {
-    return "Hello, $name! Greetings from $location!";
-  }
-}
 ```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
+? Choose a region for your project (Use arrow keys)
+❯ US East (N. Virginia) 
+  US East (Ohio) 
+  US West (N. California) 
+  US West (Oregon) 
+  Asia Pacific (Mumbai) 
+  Asia Pacific (Osaka) 
+  Asia Pacific (Seoul) 
+  Asia Pacific (Singapore) 
+  Asia Pacific (Sydney) 
+  Asia Pacific (Tokyo) 
+  Canada (Central) 
+  Europe (Frankfurt) 
+  Europe (Ireland) 
+  Europe (London) 
+  Europe (Paris) 
+  Europe (Stockholm) 
+  South America (São Paulo) 
+```
 
-Now your project is ready to be tested and deployed:
+If you are not in an empty directory, genezio will create an empty one for you. Choose a name for the project's directory:
 
-* [Test your project locally](test-your-project-locally.md)&#x20;
-* &#x20;[Deploy your project](deploy-your-first-project.md)
+```
+? Please enter a name for your directory: genezio-getting-started
+We are creating the project in ./genezio-getting-started.
+```
+
+Your project will be deployed in a few minutes. All the information you need is going to be displayed on the terminal.
+
+After the deployment is successful, you'll be provided two links of interest:
+
+A link to your backend insights. For example:
+
+```
+Your backend project has been deployed and is available at https://app.genez.io/project/0bfd9dcb-92ec-47df-8cf6-6197eebff3fc
+```
+
+A link to your frontend application (if you chose to have one). For example:
+
+```
+Frontend successfully deployed at https://purple-cute-capybara.app.genez.io.
+```
+
+### More details
+
+Next, you can check out the following sections to get more in-depth details on the core features of genezio:
+
+* See how you can easily [test your project locally](test-your-project-locally.md).
+* See [Project Structure](../project-structure/) section for details on how to tailor genezio for your needs.
+* See other examples deployed with genezio in our [repository](https://github.com/genez-io/genezio-examples).
 

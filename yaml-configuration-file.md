@@ -1,29 +1,15 @@
 # YAML Configuration File
 
-All of the configuration details about a project are set inside `genezio.yaml`.&#x20;
+The `genezio.yaml` file contains all the settings for deploying your project.
 
-<pre><code>.
-├── server/
-│   ├── <a data-footnote-ref href="#user-content-fn-1">genezio.yaml</a>
-│   ├── .genezioignore
-│   └── index.js
-└── client/
-    ├── src/
-    ├── build/
-    └── sdk/
-</code></pre>
-
-A minimalist `genezio.yaml` file can be created using `genezio init` and completing the wizard.
-
-Check out an example of a `genezio.yaml` configuration file:
+Check out an example of a complete `genezio.yaml` configuration file:
 
 ```yaml
 name: getting-started
 region: us-east-1
 cloudProvider: genezio
-sdk:
-  language: js
-  path: ../client/src/sdk/
+language: ts
+packageManager: npm
 options:
   nodeRuntime: nodejs18.x
 frontend:
@@ -34,18 +20,9 @@ scripts:
   postBackendDeploy: "echo 'postBackendDeploy'"
   preFrontendDeploy: "echo 'preFrontendDeploy'"
   postFrontendDeploy: "echo 'postFrontendDeploy'"
-classes:
-  - path: "./index.js"
-    type: jsonrpc
-    methods:
-      - name: "sayHiEveryMinute"
-        type: cron
-        cronString: "* * * * *"
-      - name: "helloWorldOverHttp"
-        type: http
-      - name: "helloWorldOverJsonrpc"
-        type: jsonrpc
-      - name: "helloWorldOverJsonrpcByDefault"
+workspace:
+  backend: ./server
+  frontend: ./client
 ```
 
 ### Name
@@ -61,12 +38,35 @@ The region field can be used to configure where you want your project to be depl
 ```
 
 ### Cloud Provider
-This is used to choose the deployment environment. Check the [Cloud Providers](cloud-providers/README.md) section for more details.
 
-The supported values are: 
+This is used to choose the deployment environment. Check the [Cloud Providers](cloud-providers/) section for more details.
+
+The supported values are:
 
 ```
 "genezio", "selfHostedAws" 
+```
+
+### Language
+
+The language is used to indicate the programming language used to implement the project:
+
+The supported values are:
+
+```
+js, ts
+```
+
+Note:  You can also use `dart`, but the features for dart are currently experimental and prone to changes.
+
+### Package Manager
+
+The package manager is used to indicate which Node package manager is installed in the project:
+
+The supported values are:
+
+```
+npm, pnpm, yarn
 ```
 
 ### Scripts
@@ -75,27 +75,6 @@ The supported values are:
 * **postBackendDeploy**: this script runs only after deploying the backend
 * **preFrontendDeploy**: this script runs only before deploying the frontend
 * **preBackendDeploy**: this script runs only after deploying the frontend
-
-### SDK
-
-* **language:** The programming language that will be used for the SDK.
-* **path:** The path where the SDK will be saved. If a file already exists on that path, it will be overwritten.
-
-### Frontend
-
-* **path:** The path to your frontend build.
-* **subdomain:** The subdomain of genezio you would like your application to run on. It's not a mandatory field. If you leave it out, genezio will provide a random subdomain for you.
-
-### Classes
-
-A list of classes that will be handled by the genezio CLI.
-
-* **path:** The path at which the class can be located.
-* **type** (optional): If a method of this class does not specify any `type` property, the trigger for that method will be this value. If not specified, `jsonrpc` is assumed as the default value.
-* **methods** (optional): A list of methods that this class contains. This property is mandatory only if you need to configure one or multiple methods (e.g.: adding a cron string). Each method has the following parameters:
-  * **name** (optional): The name of the method. It should be the same name as in the code.
-  * **type** (optional): The method type. This can be either: `http`, `jsonrpc` or `cron`. If not specified, the value of this field will be set as the class' `type` property.
-  * **cronString:** Only required if the method is of `type: cron`. This specifies how frequently the method should be called. For complete documentation of the cronstring's format check [https://crontab.guru/](https://crontab.guru/)
 
 ### Options
 
@@ -106,6 +85,23 @@ Specify other specific properties for the programming language that you use:
 ```
 options:
   nodeRuntime: nodejs18.x
+  
 ```
 
-[^1]: 
+### Frontend
+
+* **path:** The path to your frontend build.
+* **subdomain:** The subdomain of genezio you would like your application to run on. It's not a mandatory field. If you leave it out, genezio will provide a random subdomain for you.
+
+### Classes
+
+Although the `classes` field can be used, it is better and easier to use decorators instead. Check out [genezio-decorators.md](project-structure/genezio-decorators.md "mention") section for more information
+
+A list of classes that will be handled by the genezio CLI.
+
+* **path:** The path at which the class can be located.
+* **type** (optional): If a method of this class does not specify any `type` property, the trigger for that method will be this value. If not specified, `jsonrpc` is assumed as the default value.
+* **methods** (optional): A list of methods that this class contains. This property is mandatory only if you need to configure one or multiple methods (e.g.: adding a cron string). Each method has the following parameters:
+  * **name** (optional): The name of the method. It should be the same name as in the code.
+  * **type** (optional): The method type. This can be either: `http`, `jsonrpc` or `cron`. If not specified, the value of this field will be set as the class' `type` property.
+  * **cronString:** Only required if the method is of `type: cron`. This specifies how frequently the method should be called. For complete documentation of the cronstring's format check [https://crontab.guru/](https://crontab.guru/)
