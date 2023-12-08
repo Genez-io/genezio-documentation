@@ -6,9 +6,8 @@ This enables you to create development, staging environments where you can test 
 
 You can deploy your application on different environments by setting the flag `--stage <stage-name>` .&#x20;
 
-```bash
-genezio deploy --stage <stage-name>
-```
+<pre class="language-bash"><code class="lang-bash"><strong>genezio deploy --stage &#x3C;stage-name>
+</strong></code></pre>
 
 If the stage name passed doesn't exists, it will automatically be created during the first deployment. Otherwise, the environment will be updated with the new source code.
 

@@ -113,6 +113,14 @@ In the client repository
 ```
 {% endcode %}
 
+To install the genezio generated SDK in your to call your deployed methods, run:
+
+```
+npm install @genezio-sdk/<project-name>_<region>@1.0.0-<environment>
+```
+
+This command will fetch the SDK from a private registry hosted on the genezio platform for you. For more information, check the [generated-sdk.md](../features/generated-sdk.md "mention") section.
+
 To connect to your backend while testing locally, you need to install the genezio generated SDK in the client repository. `genezio local` is able to install it automatically if you link your client repository path to a deployed project.
 
 To link your client repository to a deployed backend server, run:

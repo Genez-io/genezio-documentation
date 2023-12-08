@@ -20,7 +20,7 @@ For example, for a project named `my-project` deployed in region `us-east-1`, to
 import { HelloWorldService } from "@genezio-sdk/my-project_us-east-1"
 ```
 
-## Link your generated SDK locally
+## Link your generated SDK for local testing
 
 {% hint style="info" %}
 This is not necessary for fullstack single repositories.
@@ -35,6 +35,12 @@ genezio link --projectName <name> --region <region>
 ```
 
 This command will save a map between the name and region of your project and the path of your client directory. This map is saved in your home directory, at `~/.genezio/geneziolinks`.
+
+To start a local backend server on your machine, run:
+
+```
+genezio local
+```
 
 When executing genezio local, genezio will generate an SDK by statically analyse your deployed backend code. The SDK will be installed as an npm package in the `node_modules/@genezio-sdk` directory.
 
@@ -60,6 +66,12 @@ To generate the SDK for clients implemented in the following languages you have 
 ```yaml
 sdk:
   language: dart
-    path: ../client/lib/sdk
+  path: ../client/lib/sdk
 ```
 {% endcode %}
+
+## Genezio private npm registry
+
+To store generated sdks for your projects, genezio pushes them to a private npm registry dedicated for your projects. You can interact with this npm registry by using common npm commands such as `npm install`.
+
+The token to authenticate with the private npm registry is saved in your package manager global config file (e.g. `~/.npmrc`).
