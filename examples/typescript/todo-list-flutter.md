@@ -1,10 +1,14 @@
-# todo-list-flutter
+# Todo List Flutter
 
-### You can check a [demo getting-started app here](https://getting-started-flutter.dev.app.genez.io/).
+{% hint style="info" %}
+The source code for this example is public on the following [GitHub repository](https://github.com/Genez-io/genezio-examples/tree/master/typescript/todo-list-flutter).
+{% endhint %}
+
+## Getting started with Flutter and genezio
 
 This is an example of a todo application that uses Flutter for the frontend application and genezio for developing and deploying the backend.
 
-Note: `genezio deploy` deploys both backend and frontend. If you want to test this example out of the box by running 1 command, head to the `server` directory and run `genezio deploy`.
+Note: `genezio deploy` deploys both backend and frontend. If you want to test this example out-of-the-box by running 1 command, head to the `server` directory and run `genezio deploy`.
 
 If you want to deploy your application step-by-step, follow the guidelines below.
 
@@ -16,12 +20,12 @@ If you want to deploy your application step-by-step, follow the guidelines below
 ### Initialization
 
 1. Run `npm install` in the `server/` folder to install the dependencies.
-2. Run `flutter pub get` in the `client/todo_list` folder to install the dependencies.
+2. Run `flutter pub get` in the `client/` folder to install the dependencies.
 
 ### Run the example locally
 
 1. Run `genezio local` in the `server/` folder to start the local server.
-2. Start the Flutter app by going to the `client/todo_list` folder and run `flutter run -d chrome`.
+2. Start the Flutter app by going to the `client/` folder and run `flutter run -d chrome`.
 
 ### Deploy the example in the genezio infrastructure
 
@@ -32,5 +36,3 @@ If you want to deploy your application step-by-step, follow the guidelines below
 
 1. Run `flutter clean && flutter pub get && flutter build web` in the `client/todo_list` folder to build the Flutter app.
 2. Run `genezio deploy --frontend` in the `server` folder to deploy the frontend in the genezio infrastructure.
-
-Github files are available [**here**](https://github.com/Genez-io/genezio-examples/tree/master/typescript/todo-list-flutter).

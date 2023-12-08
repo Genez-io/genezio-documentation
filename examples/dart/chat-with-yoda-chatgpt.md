@@ -1,6 +1,8 @@
-# chat-with-yoda-chatgpt
+# Chat Application with OpenAi
 
-### You can check [a beta chat application integrated with Chat GPT here](https://chat-with-chatgpt.dev.app.genez.io/).
+{% hint style="info" %}
+The source code for this example is public on the following [GitHub repository](https://github.com/Genez-io/genezio-examples/tree/master/dart/chat-with-yoda-chatgpt).
+{% endhint %}
 
 Welcome to our demo chat app integrated with Chat GPT, written in Flutter (frontend), Dart(backend), MongoDB as a database, and deployed [genezio](https://genez.io/).
 

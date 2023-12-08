@@ -1,30 +1,16 @@
 # Genezio User Documentation
 
 {% hint style="info" %}
-Join our [Discord](https://discord.gg/uc9H5YKjXv) community&#x20;
+Join our [Discord](https://discord.gg/uc9H5YKjXv) community.
 {% endhint %}
 
 ### Getting Started
 
-<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><a href="getting-started/"><strong>Getting Started</strong></a></td><td>This is a short onboarding that gets you started with genezio.</td><td></td><td></td></tr><tr><td><a href="getting-started/install-the-genezio-cli.md"><strong>Install genezio</strong></a></td><td>This is a short tutorial on how to install genezio on your machine</td><td></td><td></td></tr><tr><td><a href="getting-started/create-your-first-project.md"><strong>Start a new project</strong></a></td><td>Deploy the first project you created on the genezio infrastructure.</td><td></td><td></td></tr><tr><td><a href="getting-started/test-your-project-locally.md"><strong>Test Your Project Locally</strong></a></td><td>This is a guide on how to test your project locally.</td><td></td><td></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><a href="getting-started.md"><strong>Getting Started</strong></a></td><td>Start from here with genezio</td><td></td><td></td></tr><tr><td><a href="tutorials/create-your-first-project.md"><strong>Start a new project</strong></a></td><td>Start your project from a template</td><td></td><td></td></tr></tbody></table>
 
-### Project Structure
+### Features
 
-<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th></th></tr></thead><tbody><tr><td><a href="method-types/json-rpc-methods.md"><strong>JSON-RPC Methods</strong></a></td><td>Complete documentation on JSON-RPC methods.</td><td></td></tr><tr><td><a href="method-types/http-methods-webhooks.md"><strong>HTTP Methods</strong></a></td><td>Complete documentation on HTTP methods.</td><td></td></tr><tr><td><a href="method-types/cron-methods.md"><strong>CRON Methods</strong></a></td><td>Complete documentation on CRON methods.</td><td></td></tr><tr><td><a href="yaml-configuration-file.md"><strong>YAML Configuration File</strong></a></td><td>Complete documentation with examples of how you can configure your project.</td><td></td></tr></tbody></table>
-
-
-
-### CLI Tool
-
-<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th></th></tr></thead><tbody><tr><td><a href="cli-tool/getting-started-with-the-cli.md"><strong>Getting Started with the CLI</strong></a></td><td>Get to know the genezio CLI tool.</td><td></td></tr><tr><td><a href="cli-tool/cli-commands/"><strong>CLI Commands</strong></a></td><td>Complete documentation about all genezio CLI commands.</td><td></td></tr></tbody></table>
-
-### Frontend Deployment
-
-<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th></th></tr></thead><tbody><tr><td><a href="frontend-deployment/quickstart.md"><strong>Quickstart</strong></a></td><td>Genezio's frontend deployment offers a simple and cost-effective way to host and serve static websites.</td><td></td></tr><tr><td><a href="frontend-deployment/custom-domain-configuration.md"><strong>Custom domain config</strong></a></td><td>With genezio, you can use custom domains, allowing you to customize the root of your website's URL.</td><td></td></tr></tbody></table>
-
-### Test Interface
-
-<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th></th></tr></thead><tbody><tr><td><a href="test-interface/remote-testing.md"><strong>Remote Testing</strong></a></td><td>You can use the Genezio Test Interface for testing your backend code in a friendly and easy-to-use graphic environment.</td><td></td></tr><tr><td><a href="test-interface/local-testing.md"><strong>Local Testing</strong></a></td><td>You can quickly test your project using the Genezio Test Interface without deploying it to the cloud.</td><td></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th></th></tr></thead><tbody><tr><td><a href="features/backend-deployment.md"><strong>Backend Deployment</strong></a></td><td>Deploy your backend in a serverless infrastructure</td><td></td></tr><tr><td><a href="./#frontend-deployment"><strong>Frontend Deployment</strong></a></td><td>Deploy your frontend</td><td></td></tr><tr><td><a href="features/http-methods-webhooks.md"><strong>Webhooks</strong></a></td><td>Complete documentation on webhooks methods.</td><td></td></tr><tr><td><a href="features/cron-methods.md"><strong>Scheduled Methods</strong></a></td><td>Deploy scheduled methods</td><td></td></tr><tr><td><a href="features/custom-domain-configuration.md"><strong>Custom domain</strong></a></td><td>Set your own custom domain </td><td></td></tr><tr><td><a href="features/generated-sdk.md"><strong>Auto-generated SDK</strong></a></td><td>Find out how to use the genezio-generated SDK</td><td></td></tr></tbody></table>
 
 ### Examples
 

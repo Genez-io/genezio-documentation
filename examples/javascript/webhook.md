@@ -1,20 +1,98 @@
-# webhook
+# Webhook Example
 
-Sometimes we might need to communicate directly over HTTP instead of JSON-RPC. In this example, the `helloWorldOverHttp` implemented in the `HelloWorldCronExample` class will be triggered by an HTTP request.
+{% hint style="info" %}
+The source code for this example is public on the following [GitHub repository](https://github.com/Genez-io/genezio-examples/tree/master/javascript/webhook).
+{% endhint %}
 
-### Clone the example
+## Webhooks
 
-1. Run `git clone https://github.com/Genez-io/genezio-examples`
-2. Navigate to the folder `cd ./genezio-examples/javascript/webhook`
+Sometimes we might need to communicate directly over HTTP instead of JSONRPC. In this example, the `helloWorldOverHttp` implemented in `HelloWorldHttpExample` class will be triggered by an HTTP request.
 
-### Run the example locally
+### Prerequisites
 
-Run `genezio local` in the `server/` folder. This will start a local web server. The URL will be printed and it can be used to send requests to the method.
+* ✅ [NodeJs](https://nodejs.org) >= 16.0.0
+* ✅ [npm](https://www.npmjs.com/)
+* ✅ [genezio](https://genez.io/)
 
-### Deploy the example to the genezio infrastructure
+### Run the project
 
-Run `genezio deploy` in the `/server` folder.
+#### Clone this example
 
+Clone the repository:
 
+```
+git clone https://github.com/Genez-io/genezio-examples
+```
 
-Github files are available [**here**](https://github.com/Genez-io/genezio-examples/tree/master/javascript/webhook).
+Navigate to the following directory:
+
+```
+cd ./genezio-examples/javascript/webhook
+```
+
+Install dependencies in both client and server:
+
+```
+(cd server && npm install) && (cd client && npm install)
+```
+
+#### Test your project locally
+
+Test the project locally:
+
+```
+genezio local
+```
+
+Open a new terminal, navigate to the following directory, and run npm start to launch the React application:
+
+```
+cd ./client
+npm run install-local-sdk
+npm start
+```
+
+#### Deploy your project with genezio
+
+If you wish to deploy your project to the Genezio infrastructure, follow these steps:
+
+Log in to Genezio using the command genezio login:
+
+```
+genezio login
+```
+
+Deploy your project using the genezio deploy command from the `./genezio-examples/javascript/webhooks` directory.
+
+```
+genezio deploy
+```
+
+### Commands
+
+All commands are run from the root of the project, from a terminal:
+
+| Command                  | Action                       |
+| ------------------------ | ---------------------------- |
+| `npm install -g genezio` | Installs genezio globally    |
+| `genezio login`          | Logs in to genezio           |
+| `genezio local`          | Starts a local server        |
+| `genezio deploy`         | Deploys a production project |
+| `genezio --help`         | Get help using genezio       |
+
+### Want to learn more?
+
+Check out:
+
+* [Official genezio documentation](https://genez.io/docs)
+* [Web development tutorials](https://genez.io/blog)
+* [Discord channel](https://discord.gg/uc9H5YKjXv)
+
+### Contact
+
+If you need support or you have any questions, please join us in our Discord channel. We'd love to chat!
+
+### Built With
+
+* [Genezio](https://genez.io/)
+* [Node.JS](https://nodejs.org/en/)

@@ -1,6 +1,8 @@
-# getting-started
+# Getting Started
 
-### You can check a [demo getting-started app here](https://getting-started-dart.dev.app.genez.io/).
+{% hint style="info" %}
+The source code for this example is public on the following [GitHub repository](https://github.com/Genez-io/genezio-examples/tree/master/dart/getting-started).
+{% endhint %}
 
 This is an example of a todo application that uses:
 

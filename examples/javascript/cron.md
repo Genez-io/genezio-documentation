@@ -1,20 +1,97 @@
-# cron
+# Cron Example
 
-In this example, we have implemented a very simple class that has a method that will be called every minute.
+{% hint style="info" %}
+The source code for this example is public on the following [GitHub repository](https://github.com/Genez-io/genezio-examples/tree/master/javascript/cron).
+{% endhint %}
 
-### Clone the example
+## Genezio cron application
 
-1. Run `git clone https://github.com/Genez-io/genezio-examples`
-2. Navigate to the folder `cd ./genezio-examples/javascript/cron`
+This is a simple project with a server that schedules some code to execute every minute
 
-### Run the example locally
+### Prerequisites
 
-Run `genezio local`. This will start a local web server.
+* ✅ [NodeJs](https://nodejs.org) >= 16.0.0
+* ✅ [npm](https://www.npmjs.com/)
+* ✅ [genezio](https://genez.io/)
 
-### Deploy the example to the genezio infrastructure
+### Project Structure
 
-Run `genezio deploy`.
+Inside the project folder, you will find the following files and folders:
 
+```
+├── genezio.yaml
+├── README.md
+├── index.js
+└── package.json
+```
 
+Genezio looks for `genezio.yaml` to read the settings for deploying the project or for spinning a local dev server for testing.
 
-Github files are available [**here**](https://github.com/Genez-io/genezio-examples/tree/master/javascript/cron).
+### Run the project
+
+#### Clone this example
+
+Clone the repository:
+
+```
+git clone https://github.com/Genez-io/genezio-examples
+```
+
+Navigate to the following directory:
+
+```
+cd ./genezio-examples/javascript/cron
+```
+
+#### Test your project locally
+
+Test the project locally:
+
+```
+genezio local
+```
+
+#### Deploy your project with genezio
+
+If you wish to deploy your project to the Genezio infrastructure, follow these steps:
+
+Log in to Genezio using the command genezio login:
+
+```
+genezio login
+```
+
+Deploy your project using the genezio deploy command from the `./genezio-examples/javascript/cron` directory.
+
+```
+genezio deploy
+```
+
+### Commands
+
+All commands are run from the root of the project, from a terminal:
+
+| Command                  | Action                       |
+| ------------------------ | ---------------------------- |
+| `npm install -g genezio` | Installs genezio globally    |
+| `genezio login`          | Logs in to genezio           |
+| `genezio local`          | Starts a local server        |
+| `genezio deploy`         | Deploys a production project |
+| `genezio --help`         | Get help using genezio       |
+
+### Want to learn more?
+
+Check out:
+
+* [Official genezio documentation](https://genez.io/docs)
+* [Web development tutorials](https://genez.io/blog)
+* [Discord channel](https://discord.gg/uc9H5YKjXv)
+
+### Contact
+
+If you need support or you have any questions, please join us in our Discord channel. We'd love to chat!
+
+### Built With
+
+* [Genezio](https://genez.io/)
+* [Node.JS](https://nodejs.org/en/)
