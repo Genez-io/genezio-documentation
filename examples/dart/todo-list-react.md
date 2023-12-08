@@ -1,4 +1,8 @@
-# todo-list-react
+# Todo List
+
+{% hint style="info" %}
+The source code for this example is public on the following [GitHub repository](https://github.com/Genez-io/genezio-examples/tree/master/dart/todo-list-react-typescript).
+{% endhint %}
 
 This is an example of a todo application that uses:
 

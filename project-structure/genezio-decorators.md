@@ -1,12 +1,28 @@
-# genezio decorators
+# Genezio Decorators
 
-genezio decorators is a feature that lets you configure settings directly from your code.
+Genezio Decorators is a feature that lets you configure settings directly from your code.
 
-To use genezio decorators, you have to install and import `@genezio/types` in your project:
+To use genezio decorators, you have to install and import `@genezio/types` in your projectp:
 
-```bash
+{% tabs %}
+{% tab title="npm" %}
+```
 npm install @genezio/types
 ```
+{% endtab %}
+
+{% tab title="yarn" %}
+```
+yarn add @genezio/types
+```
+{% endtab %}
+
+{% tab title="pnpm" %}
+```
+pnpm install @genezio/types
+```
+{% endtab %}
+{% endtabs %}
 
 Below, you can see an example on how to use genezio decorators.
 
@@ -50,7 +66,7 @@ export class HttpHandle {
 ```
 {% endcode %}
 
-The supported values for type are `http, jsonrpc, cron`.&#x20;
+The supported values for type are `http, jsonrpc, cron`.
 
 ```typescript
 {type: "jsonrpc" | "http" | "cron" }
@@ -60,7 +76,7 @@ The supported values for type are `http, jsonrpc, cron`.&#x20;
 
 This decorator is used to configure settings on each method from a class.
 
-This is especially useful for setting scheduled methods using cron format.&#x20;
+This is especially useful for setting scheduled methods using cron format.
 
 The decorator accepts a JSON parameter to configure even more settings on the deployed class. See an example below. Check out the example below:
 
@@ -80,9 +96,4 @@ export class HelloWorld {
 
 ### More details
 
-In genezio, a backend is composed of one or multiple classes. A class contains a set of methods. The methods can be called either directly or by using the SDK that is automatically generated on deployment and when using the local environment. There are three types of methods:
-
-* [JSON-RPC Methods](../method-types/json-rpc-methods.md)
-* [HTTP Methods](../method-types/http-methods-webhooks.md)
-* [CRON Methods](../method-types/cron-methods.md)
-
+With genezio decorators you can also deploy [http-methods-webhooks.md](../features/http-methods-webhooks.md "mention")or [cron-methods.md](../features/cron-methods.md "mention").

@@ -1,34 +1,120 @@
-# todo-list-angular
+# Todo List Angular
 
-This is an example of a todo application with users, auth and tasks that uses Angular for the frontend application and Genezio for deploying and developing the backend.
+{% hint style="info" %}
+The source code for this example is public on the following [GitHub repository](https://github.com/Genez-io/genezio-examples/tree/master/typescript/todo-list-angular).
+{% endhint %}
 
-Note: `genezio deploy` deploys both backend and frontend. If you want to test this example out-of-the-box by running 1 command, head to the `server` directory and run `genezio deploy`.
+## Simple genezio todo list with Angular example
 
-If you want to deploy your application step-by-step, follow the guidelines below.
+This is a simple project with a server and a client for a quiz app. The server is built with [Node.js](https://nodejs.org/en/) and MongoDB. The client is built with [Angular](https://angular.io/).
 
-### Clone the example
+### Prerequisites
 
-1. Run `git clone https://github.com/Genez-io/genezio-examples`
-2. Navigate to the folder `cd ./genezio-examples/typescript/todo-list-angular`
+* ✅ [NodeJs](https://nodejs.org) >= 16.0.0
+* ✅ [npm](https://www.npmjs.com/)
+* ✅ [genezio](https://genez.io/)
 
-### Initialization
+### Project Structure
 
-1. Run `npm install` in the `server/` folder to install the dependencies.
-2. Run `npm install` in the `client/` folder to install the dependencies.
+Inside the project folder, you will find the following files and folders:
 
-### Run the example locally
+```
+├── server/
+│   ├── models/
+│   ├── helper.ts
+│   ├── task.ts
+│   ├── user.ts
+│   ├── package.json
+│   └── tsconfig.json
+├── client/
+│   ├── src/
+│   ├── package.json
+|   └── tsconfig.json
+├── genezio.yaml
+├── README.md
+├── .genezioignore
+```
 
-1. Run `genezio local` in the `server/` folder to start the local server.
-2. Start the Angular frontend app by going to the `client/` folder and run `ng serve`.
+Genezio looks for `genezio.yaml` to read the settings for deploying the project or for spinning a local dev server for testing.
 
-### Deploy the example in the Genezio infrastructure
+The `backend` directory contains the implementation of the server side of the project.
 
-1. Run `genezio deploy --backend` in the `server/` folder that contains also the `genezio.yaml` file. This will deploy your code in the Genezio infrastructure and it will also create an SDK that can be used to call the methods remotely.
-2. Start the Angular frontend app by going to the `client/` folder and run `ng serve`.
+The `frontend` directory contains a simple React application that talks with the genezio server.
 
-### Deploy the frontend in Genezio Infrastructure
+### Run the project
 
-1. Run `ng build` in the `client` folder to build the Angular app.
-2. Run `genezio deploy --frontend` in the `server` folder to deploy the frontend in the Genezio infrastructure.
+#### Clone this example
 
-Github files are available [**here**](https://github.com/Genez-io/genezio-examples/tree/master/typescript/todo-list-angular).
+Clone the repository:
+
+```
+git clone https://github.com/Genez-io/genezio-examples
+```
+
+Navigate to the following directory:
+
+```
+cd ./genezio-examples/typescript/todo-list-angular
+```
+
+#### Test your project locally
+
+Test the project locally:
+
+```
+genezio local
+```
+
+Open a new terminal, navigate to the following directory, and run npm start to launch the application:
+
+```
+cd ./client
+npm run install-local-sdk
+npm start
+```
+
+#### Deploy your project with genezio
+
+If you wish to deploy your project to the Genezio infrastructure, follow these steps:
+
+Log in to Genezio using the command genezio login:
+
+```
+genezio login
+```
+
+Deploy your project using the genezio deploy command from the `./genezio-examples/typescript/todo-list-angular` directory.
+
+```
+genezio deploy
+```
+
+### Commands
+
+All commands are run from the root of the project, from a terminal:
+
+| Command                  | Action                       |
+| ------------------------ | ---------------------------- |
+| `npm install -g genezio` | Installs genezio globally    |
+| `genezio login`          | Logs in to genezio           |
+| `genezio local`          | Starts a local server        |
+| `genezio deploy`         | Deploys a production project |
+| `genezio --help`         | Get help using genezio       |
+
+### Want to learn more?
+
+Check out:
+
+* [Official genezio documentation](https://genez.io/docs)
+* [Web development tutorials](https://genez.io/blog)
+* [Discord channel](https://discord.gg/uc9H5YKjXv)
+
+### Contact
+
+If you need support or you have any questions, please join us in our Discord channel. We'd love to chat!
+
+### Built With
+
+* [Genezio](https://genez.io/)
+* [Node.JS](https://nodejs.org/en/)
+* [Angular](https://angular.io/)

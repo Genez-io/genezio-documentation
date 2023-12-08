@@ -1,7 +1,5 @@
-# CLI Tool
+# Genezio CLI
 
-The genezio CLI brings the functionality of genezio into your workflow. You can run the CLI locally or in your CI/CD pipeline in the near future.
+The `genezio`CLI can be used to run commands to manage and deploy your projects. You can run `genezio` on your machine or in your [CI/CD pipeline.](../integrations/github-action.md)
 
-It is an Open Source CLI app that you can use for complete interaction, deployment, and testing of your genezio projects.
-
-`genezio` also has a [Web Application.](getting-started-with-the-cli.md)
+The CLI is open-source and you can use it for a full interaction with the genezio cloud or with your own [infrastructure](../advanced/aws.md) from your cloud-provider.

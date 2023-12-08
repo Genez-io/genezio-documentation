@@ -1,19 +1,21 @@
-# Local
+# genezio local
 
 ### Usage
 
-`genezio local [-p, --port <port>] [--logLevel <logLevel>] [--env <envFile>]`
+`genezio local [-p, --port <port>] [--env <envFile>] [--install-deps] [--logLevel <logLevel>] [-h | --help]`
 
 ### Description
 
-{% hint style="info" %}
-You must be authenticated to use this command.
-{% endhint %}
+This command opens a local server for testing  and debugging. The local server simulates the behaviour of a deployed project on a local machine. Requests to test the functionality locally can be sent using the Postman-like testing interface from the dashboard.
 
-This command emulates locally the behaviour of a deployed project and generates the SDK for calling the classes locally.
+### Options
 
-It opens a local server for faster and easier development and debugging.
+`-p, --port <port>`: Select a custom port for the local server. By default, the server is opened on port `8083`.
 
-`-p, --port <port>`: Select a custom port for the local server. By default, the server is opened on port 8083. If that port is already occupied or if you want to use another one.
+`--env <envFile>`:  Let's you select a custom environment variables file to be used in your locally run project. If the argument is not specified, the file named `.env` will be used by default.
 
-`--env <envFile>`:  Let's you select a custom environment variables file to be used in your locally run project. If not present, the `.env` file will be used by default.
+`--install-deps`: Automatically install missing dependencies. By default this behaviour is turned off.
+
+`--logLevel <logLevel>`: Set the verbosity of the output. The supported values are: `trace/debug/info/warn/error`. If you don't specify this argument, the default value used is `info`.
+
+`-h | --help`: Display a help message for more information on each argument and how to use it.

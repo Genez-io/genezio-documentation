@@ -1,12 +1,5 @@
 # TypeScript
 
-In each project, you can check the **installation details**.
+The list of available TypeScript projects can be found below:
 
-The list of available TypeScript projects can be found below.
-
-* [hello-world](hello-world.md)
-* [getting-started](getting-started.md)
-* [todo-list](todo-list.md)
-* [todo-list-flutter](todo-list-flutter.md)
-* [todo-list-angular](todo-list-angular.md)
-* [multiversx-integration](multiversx-integration.md)
+<table><thead><tr><th width="427">Example</th><th width="321">Short Description</th></tr></thead><tbody><tr><td><a href="getting-started.md">Getting Started</a></td><td>A getting started template</td></tr><tr><td><a href="hello-world.md">Hello World</a></td><td>Just a hello world application</td></tr><tr><td><a href="todo-list.md">Todo List React</a></td><td>A todo list with auth in NodeJs, React and Mongo</td></tr><tr><td><a href="todo-list-angular.md">Todo List Angular</a></td><td>A todo list with auth in NodeJs, Angular and Mongo</td></tr><tr><td><a href="todo-list-flutter.md">Todo List Flutter</a></td><td>A todo list with auth in NodeJs, Flutter and Mongo</td></tr><tr><td><a href="webhook-example.md">Webhook Example</a></td><td>An example on how to use webhooks</td></tr><tr><td><a href="crud-application.md">CRUD App</a></td><td>A user management CRUD app built with NodeJs, React and Postgres</td></tr><tr><td><a href="trivia-application.md">Trivia App</a></td><td>A trivia app built with NodeJs, React and Prisma</td></tr><tr><td><a href="multiversx-integration.md">Multiversx App</a></td><td>An app that checks the balance of a wallet</td></tr><tr><td><a href="shopping-cart.md">Shopping Cart App</a></td><td>A shopping cart feature built with NodeJs, React and Redis</td></tr></tbody></table>

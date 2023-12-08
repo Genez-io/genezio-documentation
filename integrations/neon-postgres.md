@@ -12,11 +12,11 @@ description: A guide to integrate Neon resources in genezio projects
 
 Navigate to the project integration page in the dashboard and select to `Install` a Neon Postgres database to your project:
 
-<figure><img src="../.gitbook/assets/image (46).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (46) (1).png" alt=""><figcaption></figcaption></figure>
 
 Connect with an Neon account using the preferred login method:
 
-<figure><img src="../.gitbook/assets/image (47).png" alt="" width="350"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (47) (1).png" alt="" width="350"><figcaption></figcaption></figure>
 
 Create a Neon project or select an already existing project:
 
