@@ -13,7 +13,7 @@
   * [Webhooks](features/http-methods-webhooks.md)
   * [Scheduled methods](features/cron-methods.md)
   * [Custom domain](features/custom-domain-configuration.md)
-  * [Team Collaboration](features/team-collaboration.md)
+  * [Project Collaboration](features/project-collaboration.md)
   * [Genezio dashboard](features/check-genezio-dashboard.md)
 * [Project Structure](project-structure/README.md)
   * [.genezioignore](project-structure/.genezioignore.md)
