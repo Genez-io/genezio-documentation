@@ -40,6 +40,7 @@
   * [Sentry](integrations/sentry.md)
   * [Upstash Redis](integrations/upstash-redis.md)
   * [Neon Postgres](integrations/neon-postgres.md)
+  * [Upstash Qstash](integrations/upstash-qstash.md)
 * [Examples](examples/README.md)
   * [TypeScript](examples/typescript/README.md)
     * [Getting Started](examples/typescript/getting-started.md)
