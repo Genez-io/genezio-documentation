@@ -6,7 +6,7 @@ description: A guide to integrate Upstash resources in genezio projects
 
 ### Introduction to Upstash
 
-[Upstash](https://upstash.com/) is a cutting-edge platform for modern developers seeking seamless data management in serverless and cloud-native applications. Offering Redis-compatible, in-memory database services, Upstash simplifies data storage and access, making it a natural fit for serverless functions, web apps, and cloud-native architectures.
+[Upstash](https://upstash.com/?utm\_source=genezio+\&utm\_medium=documentation\&utm\_campaign=post) is a cutting-edge platform for modern developers seeking seamless data management in serverless and cloud-native applications. Offering Redis-compatible, in-memory database services, Upstash simplifies data storage and access, making it a natural fit for serverless functions, web apps, and cloud-native architectures.
 
 ### Set Up a Upstash Redis Database
 
@@ -22,7 +22,7 @@ Create a Redis database or select an already existing database:
 
 ![](<../.gitbook/assets/image (42) (1).png>)
 
-Hit `Save` to save the database credentials as backend environment variables
+Hit `Save` to save the database credentials as backend environment variables:
 
 ![](<../.gitbook/assets/image (44) (1).png>)
 
