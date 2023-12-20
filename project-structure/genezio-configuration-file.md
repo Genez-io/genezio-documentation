@@ -23,10 +23,6 @@ scripts:
   preStartLocal: "echo 'preStartLocal'"
   postStartLocal: "echo 'postStartLocal'"
   preReloadLocal: "echo 'preReloadLocal'"
-publicSdk:
-  name: my-public-sdk
-  version: 1.0.0
-  public: true
 workspace:
   backend: ./server
   frontend: ./client
@@ -101,12 +97,6 @@ options:
 
 * **path:** The path to your frontend build.
 * **subdomain:** The subdomain of genezio you would like your application to run on. It's not a mandatory field. If you leave it out, genezio will provide a random subdomain for you.
-
-### PublicSdk
-
-* **name:** The name of the public SDK you want to be published
-* **version**: The version of your public SDK, that is not auto-incremented
-* **public**: A boolean that says if the SDK will be public or not
 
 ### Workspace
 
