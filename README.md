@@ -6,7 +6,7 @@ Join our [Discord](https://discord.gg/uc9H5YKjXv) community.
 
 ### Getting Started
 
-<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><a href="getting-started.md"><strong>Getting Started</strong></a></td><td>Start from here with genezio</td><td></td><td></td></tr><tr><td><a href="tutorials/create-your-first-project.md"><strong>Start a new project</strong></a></td><td>Start your project from a template</td><td></td><td></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><a href="getting-started.md"><strong>Getting Started</strong></a></td><td>Start from here with genezio</td><td></td><td></td></tr></tbody></table>
 
 ### Features
 
