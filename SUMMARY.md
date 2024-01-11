@@ -10,6 +10,7 @@
   * [Testing](features/testing.md)
   * [Generated SDK](features/generated-sdk.md)
   * [Environments](features/deployment-environments.md)
+  * [Email Service](features/email-service.md)
   * [Webhooks](features/http-methods-webhooks.md)
   * [Scheduled methods](features/cron-methods.md)
   * [Custom domain](features/custom-domain-configuration.md)
