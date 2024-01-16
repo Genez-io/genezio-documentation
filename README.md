@@ -1,5 +1,7 @@
 # Genezio User Documentation
 
+Genezio is a developer platform for full-stack developers or teams who need to build, run and maintain web, mobile or enterprise apps with a typesafe backend that scales automatically.
+
 {% hint style="info" %}
 Join our [Discord](https://discord.gg/uc9H5YKjXv) community.
 {% endhint %}
