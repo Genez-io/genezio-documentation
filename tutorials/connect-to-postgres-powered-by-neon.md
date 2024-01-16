@@ -1,0 +1,118 @@
+# Connect to Postgres (Powered by Neon)
+
+In this tutorial, you will learn how to integrate a Postgres database using Neon in a genezio project.
+
+### Prerequisites
+
+If you don't already have them, you'll need to install the following tools:
+
+* [Node.js](https://nodejs.org/en/download/current)
+* [Npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
+* [Genezio](connect-to-postgres-powered-by-neon.md#getting-started)
+
+You need to have a genezio project. Use an existing one, or [create a new one.](../getting-started.md)
+
+## 1. Initialize a Neon Postgres database
+
+Now integrate this project with the Postgres database provided by Neon. To do that, open your genezio dashboard at [dashboard](https://app.genez.io/dashboard) and pick the project you created earlier. In the _**Integrations**_ tab you can select to install the Neon Postgres integration:
+
+![alt\_text](https://genez.io/posts/neon1.png)
+
+Connect with your Neon account:
+
+![alt\_text](https://genez.io/posts/neon2.png)
+
+Create a new Neon Project called getting-started-neon or select an existing one:
+
+![alt\_text](https://genez.io/posts/neon3.png)
+
+Next, choose the project details:
+
+![alt\_text](https://genez.io/posts/neon4.png)
+
+Finally, save the environment variable to your project so that you may use it when you want to connect to your database:
+
+![alt\_text](https://genez.io/posts/neon5.png)
+
+With all that done, your project is fully integrated with a free-tier Neon Postgres database.
+
+## 2. Connect your backend to the Postgres database
+
+Next, you will implement a simple Postgres service that will allow you to use your newly integrated database.
+
+Install the following packages. They will allow you to connect to your database from the backend.
+
+```fallback
+npm install pg @types/pg
+```
+
+Create a new `postgres.ts` file in the root of your project. This file will contain a class that will have a constructor which will connect to your database using the `NEON_POSTGRES_URL` environment variable. This variable has already been set in your production environment so you don’t need a `.env` file when testing your deployed project from the genezio dashboard.
+
+Add the following code snippet:
+
+{% code title="postgres.ts" lineNumbers="true" %}
+```typescript
+import { GenezioDeploy } from "@genezio/types";
+import pg from "pg";
+const { Pool } = pg;
+
+@GenezioDeploy()
+export class PostgresService {
+  pool = new Pool({
+    connectionString: process.env.NEON_POSTGRES_URL,
+    ssl: true,
+  });
+
+  async insertUser(name: string): Promise<string> {
+    await this.pool.query(
+      "CREATE TABLE IF NOT EXISTS users (id serial PRIMARY KEY,name VARCHAR(255))"
+    );
+
+    await this.pool.query("INSERT INTO users (name) VALUES ($1)", [name]);
+    const result = await this.pool.query("select * from users");
+
+    return JSON.stringify(result.rows);
+  }
+}
+```
+{% endcode %}
+
+With all that done, you now have a method for inserting a user into a table and then retrieving all the users.
+
+## 3. Test your Postgres service
+
+To locally test your Postgres service, you have to copy the environment variable `NEON_POSTGRES_URL` in a `.env` file in the root directory of your project. You can find this variable in the `Integrations` tab of your project page in the [genezio dashboard](https://app.genez.io/):
+
+![alt\_text](https://genez.io/posts/neon6.png)
+
+The `.env` file should look similar to the following snippet:
+
+{% code title=".env" %}
+```fallback
+NEON_POSTGRES_URL="postgres://virgil:<your-password>@ep-fragrant-band-27497881.us-east-1.aws.neon.tech/neondb"
+```
+{% endcode %}
+
+Start your local environment by running the following command:
+
+```fallback
+genezio local
+```
+
+Test your newly created service at [test interface](https://app.genez.io/test-interface/local?port=8083) .
+
+Here you can send requests to your local backend server and receive responses to check if your service is working properly.
+
+## 4. Deploy your application
+
+After you tested your application, you can deploy it by running the following command in your terminal:
+
+```bash
+genezio deploy
+```
+
+## Next steps
+
+<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th data-hidden></th></tr></thead><tbody><tr><td><a href="broken-reference"><strong>Schedule a Cron / Automation</strong></a></td><td>Automated Task Management Simplified</td><td></td></tr><tr><td><a href="../features/http-methods-webhooks.md"><strong>HTTP Calls / Webhooks</strong></a></td><td>Connect your project with other services</td><td></td></tr><tr><td><a href="../features/email-service.md"><strong>Email Service</strong></a></td><td>Streamlining Your Digital Communication</td><td></td></tr><tr><td><a href="../features/frontend-deployment.md"><strong>Frontend Deployment</strong></a></td><td>Launching Your Web Interface to the World</td><td></td></tr></tbody></table>
+
+\
