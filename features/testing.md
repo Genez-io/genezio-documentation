@@ -46,15 +46,15 @@ Test your backend server in a friendly and easy-to-use graphic environment befor
 
 To access the testing dashboard, go to the genezio platform, select a deployed backend and click on the `Test project` button.
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
 You will be redirected to the testing dashboard where you can craft and send requests to the deployed backend.&#x20;
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 You can see the response received from the application in the response section:
 
-<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 You can also check the logs from the backend in the logs section:
 

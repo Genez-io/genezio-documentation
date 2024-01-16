@@ -25,7 +25,7 @@ yarn add global genezio
 {% endtabs %}
 
 {% hint style="warning" %}
-To install genezio you must have **Node version >= 16**.
+To install genezio you must have **Node version >= 18**.
 {% endhint %}
 
 ## 2. **Login to the genezio cloud**

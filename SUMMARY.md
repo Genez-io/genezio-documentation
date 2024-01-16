@@ -9,7 +9,7 @@
   * [Create your first Web3 App](https://genez.io/blog/create-your-first-web3-app/)
   * [Create your first Chat GPT App](https://genez.io/blog/create-your-first-app-using-chatgpt/)
   * [Implement a Shopping Cart](https://genez.io/blog/implement-a-shopping-cart-using-typescript-redis-and-react/)
-  * [Start from a template](tutorials/create-your-first-project.md)
+  * [Create your app starting from a template](tutorials/create-your-first-project.md)
 * [Features](features/README.md)
   * [Backend deployment](features/backend-deployment.md)
   * [Frontend Deployment](features/frontend-deployment.md)
