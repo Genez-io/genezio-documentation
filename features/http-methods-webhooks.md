@@ -1,4 +1,4 @@
-# Webhooks
+# HTTP Calls / Webhooks
 
 Genezio provides an easy way to interact with third-party services or APIs using webhooks/HTTP methods.
 
@@ -21,11 +21,13 @@ export class HttpServer {
     console.log(`Request received with a simple text ${request.body}!`)
     // insert your code here
 
-    return response: GenezioHttpResponse = {
+    const response: GenezioHttpResponse = {
       body: request.body,
       headers: { "content-type": "text/html" },
       statusCode: "200",
     };
+    
+    return response;
   }
 }
 ```
@@ -33,7 +35,7 @@ export class HttpServer {
 
 For more information on genezio decorators, check out [genezio-decorators.md](../project-structure/genezio-decorators.md "mention")
 
-Usually, you need to provide the webhook URLs to the third party APIs or services you want to connect to.&#x20;
+Usually, you need to provide the webhook URLs to the third-party APIs or services you want to connect to.&#x20;
 
 There are 2 places where you can find the webhook URLs for your deployed methods - in your terminal after deploying your project and in the [dashboard](https://app.genez.io) on the class page.
 

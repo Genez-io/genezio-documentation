@@ -76,7 +76,7 @@ A link to your backend insights. For example:
 Your backend project has been deployed and is available at https://app.genez.io/project/0bfd9dcb-92ec-47df-8cf6-6197eebff3fc
 ```
 
-A link to your frontend application (if you chose to have one). For example:
+A link to your frontend application (if you choose to have one). For example:
 
 ```
 Frontend successfully deployed at https://purple-cute-capybara.app.genez.io.

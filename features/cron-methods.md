@@ -1,12 +1,12 @@
-# Scheduled methods
+# Cron Jobs
 
-A scheduled method or a cron is a method that will run periodically. By using a specific cron syntax, you can define the frequency and timing for each method.
+A scheduled method or a cron job is a method that will run periodically. By using a specific cron syntax, you can define the frequency and timing for each method.
 
 With genezio decorators, you can set the method type to `cron` and the `cronString` accordingly to the desired frequency.
 
 ## Use scheduled methods in your project
 
-In the example below, method `sayHiEveryMinute()` will be called every minute:
+In the example below, the method `sayHiEveryMinute()` will be called every minute:
 
 {% code title="index.ts" %}
 ```javascript

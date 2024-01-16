@@ -34,7 +34,7 @@ After the deployment succeeds, you can go to the [genezio's dashboard](https://a
 
 Once your deployment is successful, you can conveniently access comprehensive information about your frontend deployment through the [genezio dashboard.](https://app.genez.io) Within your project page, you will find a dedicated "Frontend" tab, providing you with valuable insights and details regarding your deployed frontend application.
 
-## More details
+## Next Steps
 
 Check out how you can set up a [custom-domain-configuration.md](custom-domain-configuration.md "mention").
 

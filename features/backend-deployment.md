@@ -4,7 +4,7 @@
 Genezio offers a seamless and efficient solution for deploying backend logic. The platform leverages a function-as-a-service infrastructure, allowing users to deploy their backend classes easily with a simple command: `genezio deploy`.&#x20;
 
 {% hint style="success" %}
-You can deploy classes written in TypeScript, JavaScript and Dart (experimental).
+You can deploy classes written in TypeScript, JavaScript, and Dart (experimental).
 {% endhint %}
 
 ## Code structure
