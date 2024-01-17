@@ -140,3 +140,27 @@ After you tested your application, you can deploy it by running the following co
 ```bash
 genezio deploy
 ```
+
+## Next Steps
+
+Other things that do not depend on connecting to a database are scheduling the execution of a function as a cron job, or implementing HTTP Webhooks:
+
+* [Cron Jobs](../features/cron-methods.md)
+* [HTTP Webhooks](../features/http-methods-webhooks.md)
+
+Also, you can find more details on deploying the backend and frontend here:
+
+* [Backend Deployment](../features/backend-deployment.md)
+* [Frontend Deployment](../features/frontend-deployment.md)
+
+Now you are ready for some more advanced use cases:
+
+* [Web3 Application](https://genez.io/blog/create-your-first-web3-app/)
+* [ChatGPT App](https://genez.io/blog/create-your-first-app-using-chatgpt/)
+* [Shopping Cart Implementation](https://genez.io/blog/implement-a-shopping-cart-using-typescript-redis-and-react/)
+
+### Support <a href="#support" id="support"></a>
+
+We invite you to join our community on [Discord](https://discord.gg/uc9H5YKjXv) for further information and help.
+
+**Happy Learning!**

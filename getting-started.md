@@ -25,7 +25,7 @@ yarn add global genezio
 {% endtabs %}
 
 {% hint style="warning" %}
-To install genezio you must have **Node version >= 18**.
+To install genezio you must have **Node version >= 16**.
 {% endhint %}
 
 ## 2. **Login to the genezio cloud**
@@ -147,9 +147,13 @@ async function sayHello() {
 
 ## 8. Test your app
 
-Point the browser to [http://localhost:5173](http://localhost:5173) to test your app. Let us know if you have any questions on [Discord](https://discord.com/invite/uc9H5YKjXv).
+Point the browser to [http://localhost:5173](http://localhost:5173) to test your app locally.
+
+Now let's take it live for everybody to use it.
 
 ## 9. Deploy your full-stack app to the genezio cloud
+
+When you run `genezio deploy` you will be redirected to the browser to create a free genezio account. This account allows you to host your app for free and comes with a lot of features that we will explore in a moment.
 
 Harness the full power of genezio by deploying the backend with `genezio deploy`. A free hosting account will be created for you. The free account comes packed with features like a dashboard, user authentication, database provisioning, and more.
 
@@ -157,17 +161,55 @@ Harness the full power of genezio by deploying the backend with `genezio deploy`
 genezio deploy
 ```
 
-Now you have a fully functional app deployed on the genezio infrastructure to be used publicly. A unique URL is created for your app. Point your browser to it and start using it right away.
+This is a typical part of the output that you should expect:
 
-### Next Steps <a href="#next-steps" id="next-steps"></a>
+```
+Deploying your backend project to genezio infrastructure...
 
-Congratulations! You've completed the Getting Started tutorial. 🌟
+Bundling your code and uploading it...✅
+Checking your credentials...✅
+Doing the final touch-ups...✅
 
-Now that you have the basics down, it's time to take the next step in your journey.
+Your code was deployed and the SDK was successfully generated!
 
-Here's what you can do next:
+Your backend project has been deployed and is available at https://app.genez.io/project/<project-id>
 
-<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th data-hidden></th></tr></thead><tbody><tr><td><a href="tutorials/connect-to-mongodb-atlas.md"><strong>Connect to MongoDB</strong></a></td><td>Powered by Atlas</td><td></td></tr><tr><td><a href="tutorials/connect-to-postgres-powered-by-neon.md"><strong>Connect to Postgres SQL</strong></a></td><td>Powered by Neon</td><td></td></tr><tr><td><a href="broken-reference"><strong>Schedule a Cron / Automation</strong></a></td><td>Automated Task Management Simplified</td><td></td></tr><tr><td><a href="features/http-methods-webhooks.md"><strong>HTTP Calls / Webhooks</strong></a></td><td>Connect your project with other services</td><td></td></tr></tbody></table>
+Deploying your frontend to genezio infrastructure...
+
+No subdomain is specified in the genezio.yaml configuration file. We will provide a random one for you.
+
+Frontend successfully deployed at https://<subdomain>.app.genez.io
+```
+
+## 10. All set
+
+Now you have a fully functional app deployed on the genezio infrastructure to be used publicly. A unique URL is created for your app.  Point your browser to the link provided by the genezio deploy command :`https://<subdomain>.app.genez.io` . Enjoy!
+
+## Next Steps <a href="#next-steps" id="next-steps"></a>
+
+Now that you have figured out how to write a backend class, export its methods, call them from the frontend code, and then deploy both the frontend and the backend locally for testing and pushing live to a staging environment, you are ready to take the next steps.
+
+Let’s talk about connecting to a database. We support PostgreSQL, MongoDB, and Redis. If you do not have a database, you will learn how to provision one using a dedicated database hosting provider, with whom we partnered up:
+
+* [**Connect to Postgres SQL**](tutorials/connect-to-postgres-powered-by-neon.md)
+* [**Connect to MongoDB**](tutorials/connect-to-mongodb-atlas.md)&#x20;
+* [**Connect to Redis**](integrations/upstash-redis.md)
+
+Other things that do not depend on connecting to a database are scheduling the execution of a function as a cron job, or implementing HTTP Webhooks:
+
+* [Cron Jobs](features/cron-methods.md)
+* [HTTP Webhooks](features/http-methods-webhooks.md)
+
+Also, you can find more details on deploying the backend and frontend here:
+
+* [Backend Deployment](features/backend-deployment.md)
+* [Frontend Deployment](features/frontend-deployment.md)
+
+Now you are ready for some more advanced use cases:
+
+* [Web3 Application](https://genez.io/blog/create-your-first-web3-app/)
+* [ChatGPT App](https://genez.io/blog/create-your-first-app-using-chatgpt/)
+* [Shopping Cart Implementation](https://genez.io/blog/implement-a-shopping-cart-using-typescript-redis-and-react/)
 
 ### Support <a href="#support" id="support"></a>
 

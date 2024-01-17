@@ -111,8 +111,28 @@ After you tested your application, you can deploy it by running the following co
 genezio deploy
 ```
 
-## Next steps
+## Next Steps
 
-<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th data-hidden></th></tr></thead><tbody><tr><td><a href="broken-reference"><strong>Schedule a Cron / Automation</strong></a></td><td>Automated Task Management Simplified</td><td></td></tr><tr><td><a href="../features/http-methods-webhooks.md"><strong>HTTP Calls / Webhooks</strong></a></td><td>Connect your project with other services</td><td></td></tr><tr><td><a href="../features/email-service.md"><strong>Email Service</strong></a></td><td>Streamlining Your Digital Communication</td><td></td></tr><tr><td><a href="../features/frontend-deployment.md"><strong>Frontend Deployment</strong></a></td><td>Launching Your Web Interface to the World</td><td></td></tr></tbody></table>
+Other things that do not depend on connecting to a database are scheduling the execution of a function as a cron job, or implementing HTTP Webhooks:
+
+* [Cron Jobs](../features/cron-methods.md)
+* [HTTP Webhooks](../features/http-methods-webhooks.md)
+
+Also, you can find more details on deploying the backend and frontend here:
+
+* [Backend Deployment](../features/backend-deployment.md)
+* [Frontend Deployment](../features/frontend-deployment.md)
+
+Now you are ready for some more advanced use cases:
+
+* [Web3 Application](https://genez.io/blog/create-your-first-web3-app/)
+* [ChatGPT App](https://genez.io/blog/create-your-first-app-using-chatgpt/)
+* [Shopping Cart Implementation](https://genez.io/blog/implement-a-shopping-cart-using-typescript-redis-and-react/)
+
+### Support <a href="#support" id="support"></a>
+
+We invite you to join our community on [Discord](https://discord.gg/uc9H5YKjXv) for further information and help.
+
+**Happy Learning!**
 
 \
