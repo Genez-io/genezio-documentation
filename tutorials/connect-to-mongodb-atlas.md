@@ -94,9 +94,9 @@ Also, you can find more details on deploying the backend and frontend here:
 
 Now you are ready for some more advanced use cases:
 
-* [Web3 Application](https://genez.io/blog/create-your-first-web3-app/)
-* [ChatGPT App](https://genez.io/blog/create-your-first-app-using-chatgpt/)
-* [Shopping Cart Implementation](https://genez.io/blog/implement-a-shopping-cart-using-typescript-redis-and-react/)
+* [Web3 Application](https://genezio.com/blog/create-your-first-web3-app/)
+* [ChatGPT App](https://genezio.com/blog/create-your-first-app-using-chatgpt/)
+* [Shopping Cart Implementation](https://genezio.com/blog/implement-a-shopping-cart-using-typescript-redis-and-react/)
 
 ### Support <a href="#support" id="support"></a>
 

@@ -16,23 +16,23 @@ You need to have a genezio project. Use an existing one, or [create a new one.](
 
 Now integrate this project with the Postgres database provided by Neon. To do that, open your genezio dashboard at [dashboard](https://app.genez.io/dashboard) and pick the project you created earlier. In the _**Integrations**_ tab you can select to install the Neon Postgres integration:
 
-![alt\_text](https://genez.io/posts/neon1.png)
+![alt\_text](https://genezio.com/posts/neon1.png)
 
 Connect with your Neon account:
 
-![alt\_text](https://genez.io/posts/neon2.png)
+![alt\_text](https://genezio.com/posts/neon2.png)
 
 Create a new Neon Project called getting-started-neon or select an existing one:
 
-![alt\_text](https://genez.io/posts/neon3.png)
+![alt\_text](https://genezio.com/posts/neon3.png)
 
 Next, choose the project details:
 
-![alt\_text](https://genez.io/posts/neon4.png)
+![alt\_text](https://genezio.com/posts/neon4.png)
 
 Finally, save the environment variable to your project so that you may use it when you want to connect to your database:
 
-![alt\_text](https://genez.io/posts/neon5.png)
+![alt\_text](https://genezio.com/posts/neon5.png)
 
 With all that done, your project is fully integrated with a free-tier Neon Postgres database.
 
@@ -83,7 +83,7 @@ With all that done, you now have a method for inserting a user into a table and 
 
 To locally test your Postgres service, you have to copy the environment variable `NEON_POSTGRES_URL` in a `.env` file in the root directory of your project. You can find this variable in the `Integrations` tab of your project page in the [genezio dashboard](https://app.genez.io/):
 
-![alt\_text](https://genez.io/posts/neon6.png)
+![alt\_text](https://genezio.com/posts/neon6.png)
 
 The `.env` file should look similar to the following snippet:
 
@@ -125,9 +125,9 @@ Also, you can find more details on deploying the backend and frontend here:
 
 Now you are ready for some more advanced use cases:
 
-* [Web3 Application](https://genez.io/blog/create-your-first-web3-app/)
-* [ChatGPT App](https://genez.io/blog/create-your-first-app-using-chatgpt/)
-* [Shopping Cart Implementation](https://genez.io/blog/implement-a-shopping-cart-using-typescript-redis-and-react/)
+* [Web3 Application](https://genezio.com/blog/create-your-first-web3-app/)
+* [ChatGPT App](https://genezio.com/blog/create-your-first-app-using-chatgpt/)
+* [Shopping Cart Implementation](https://genezio.com/blog/implement-a-shopping-cart-using-typescript-redis-and-react/)
 
 ### Support <a href="#support" id="support"></a>
 
