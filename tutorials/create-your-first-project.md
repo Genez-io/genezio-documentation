@@ -7,7 +7,7 @@ description: 9 minutes read
 ### Prerequisites:
 
 * A genezio account
-* [Node.js](https://nodejs.org/en/download/current) >= 18
+* [Node.js](https://nodejs.org/en/download/current) >= 16
 * [Npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
 * [Genezio CLI](create-your-first-project.md#getting-started) >= 0.7.3
 * Any browser

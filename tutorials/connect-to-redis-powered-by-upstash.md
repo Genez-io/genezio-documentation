@@ -41,19 +41,19 @@ If you don't already have them, you'll need to install the following tools:
 \
 Go to the `Integrations` tab and select to install the Upstash Redis integration:
 
-![Alt text](https://genez.io/images/blog/getting\_started\_upstash\_images/image-3.png)
+![Alt text](https://genezio.com/images/blog/getting\_started\_upstash\_images/image-3.png)
 
 Connect with an Upstash account using the preferred login method:
 
-![Alt text](https://genez.io/images/blog/getting\_started\_upstash\_images/image.png)
+![Alt text](https://genezio.com/images/blog/getting\_started\_upstash\_images/image.png)
 
 Create a Redis database or select an already existing database:
 
-![Alt text](https://genez.io/images/blog/getting\_started\_upstash\_images/image-1.png)
+![Alt text](https://genezio.com/images/blog/getting\_started\_upstash\_images/image-1.png)
 
 Hit the `Save` button to set the database credentials as environment variables in your genezio project:
 
-![Alt text](https://genez.io/images/blog/getting\_started\_upstash\_images/image-2.png)
+![Alt text](https://genezio.com/images/blog/getting\_started\_upstash\_images/image-2.png)
 
 ## 3. Connect your backend to the Redis database
 
@@ -140,3 +140,27 @@ After you tested your application, you can deploy it by running the following co
 ```bash
 genezio deploy
 ```
+
+## Next Steps
+
+Other things that do not depend on connecting to a database are scheduling the execution of a function as a cron job, or implementing HTTP Webhooks:
+
+* [Cron Jobs](../features/cron-methods.md)
+* [HTTP Webhooks](../features/http-methods-webhooks.md)
+
+Also, you can find more details on deploying the backend and frontend here:
+
+* [Backend Deployment](../features/backend-deployment.md)
+* [Frontend Deployment](../features/frontend-deployment.md)
+
+Now you are ready for some more advanced use cases:
+
+* [Web3 Application](https://genezio.com/blog/create-your-first-web3-app/)
+* [ChatGPT App](https://genezio.com/blog/create-your-first-app-using-chatgpt/)
+* [Shopping Cart Implementation](https://genezio.com/blog/implement-a-shopping-cart-using-typescript-redis-and-react/)
+
+### Support <a href="#support" id="support"></a>
+
+We invite you to join our community on [Discord](https://discord.gg/uc9H5YKjXv) for further information and help.
+
+**Happy Learning!**

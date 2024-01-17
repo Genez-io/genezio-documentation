@@ -11,8 +11,8 @@ In this project, we are creating an application that uses the ChatGPT API. It's 
 ### Prerequisites
 
 * ✅ [NodeJs](https://nodejs.org/) >= 16.0.0
-* ✅ [npm](https://genez.io/)
-* ✅ [genezio](https://genez.io/)
+* ✅ [npm](https://genezio.com/)
+* ✅ [genezio](https://genezio.com/)
 
 Note: We recommend using nvm to install Node.js and npm.
 
@@ -105,8 +105,8 @@ All commands are run from the root of the project, from a terminal:
 
 Check out:
 
-* [Official genezio documentation](https://genez.io/docs)
-* [Web development tutorials](https://genez.io/blog)
+* [Official genezio documentation](https://genezio.com/docs)
+* [Web development tutorials](https://genezio.com/blog)
 * [Discord channel](https://discord.gg/uc9H5YKjXv)
 
 ### Contact
@@ -116,5 +116,5 @@ If you need support or you have any questions, please join us in our Discord cha
 ### Built With
 
 * [ChatGPT](https://openai.com/blog/openai-api)
-* [Genezio](https://genez.io/)
+* [Genezio](https://genezio.com/)
 * [React.js](https://github.com/facebook/react)

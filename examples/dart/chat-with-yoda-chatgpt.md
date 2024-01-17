@@ -4,7 +4,7 @@
 The source code for this example is public on the following [GitHub repository](https://github.com/Genez-io/genezio-examples/tree/master/dart/chat-with-yoda-chatgpt).
 {% endhint %}
 
-Welcome to our demo chat app integrated with Chat GPT, written in Flutter (frontend), Dart(backend), MongoDB as a database, and deployed [genezio](https://genez.io/).
+Welcome to our demo chat app integrated with Chat GPT, written in Flutter (frontend), Dart(backend), MongoDB as a database, and deployed [genezio](https://genezio.com/).
 
 This app allows users to engage in conversations with a chatbot powered by Chat GPT. This app is meant to be a demo for a technical talk on the topic of building full-stack apps with Dart and genezio.
 
@@ -33,7 +33,7 @@ If you want to deploy this demo and play around with it, follow these steps:
 
 For more details on how to use genezio, check the links below:
 
-* [https://genez.io/docs](https://genez.io/docs)
+* [https://genezio.com/docs](https://genezio.com/docs)
 * [https://github.com/genez-io/genezio-examples](https://github.com/genez-io/genezio-examples)
 
 For more details on each dart package, you can check out [pub.dev](https://pub.dev/)

@@ -59,11 +59,11 @@ For the frontend deployment, the genezio-generated SDK should be uploaded as an 
 
 ### Documentation
 
-To find more details on how to use `genezio`, check out the official [documentation](https://genez.io/docs):
+To find more details on how to use `genezio`, check out the official [documentation](https://genezio.com/docs):
 
-* [Getting started](https://docs.genez.io/genezio-documentation/getting-started)
-* [Integrations](https://docs.genez.io/genezio-documentation/integrations)
-* [Environment variables](https://docs.genez.io/genezio-documentation/set-envinronment-variables)
+* [Getting started](https://docs.genezio.com/genezio-documentation/getting-started)
+* [Integrations](https://docs.genezio.com/genezio-documentation/integrations)
+* [Environment variables](https://docs.genezio.com/genezio-documentation/set-envinronment-variables)
 
 If you cannot find what you are looking for in the docs, don't hesitate to drop us a [GitHub issue](https://github.com/Genez-io/genezio/issues) or [start a discussion on Discord](https://discord.gg/uc9H5YKjXv).
 

@@ -12,7 +12,7 @@ This is a simple project with a server that returns a balance of a wallet addres
 
 * ✅ [NodeJs](https://nodejs.org) >= 16.0.0
 * ✅ [npm](https://www.npmjs.com/)
-* ✅ [genezio](https://genez.io/)
+* ✅ [genezio](https://genezio.com/)
 
 ### Project Structure
 
@@ -102,8 +102,8 @@ All commands are run from the root of the project, from a terminal:
 
 Check out:
 
-* [Official genezio documentation](https://genez.io/docs)
-* [Web development tutorials](https://genez.io/blog)
+* [Official genezio documentation](https://genezio.com/docs)
+* [Web development tutorials](https://genezio.com/blog)
 * [Discord channel](https://discord.gg/uc9H5YKjXv)
 
 ### Contact
@@ -112,7 +112,7 @@ If you need support or you have any questions, please join us in our Discord cha
 
 ### Built With
 
-* [Genezio](https://genez.io/)
+* [Genezio](https://genezio.com/)
 * [Node.JS](https://nodejs.org/en/)
 * [React](https://reactjs.org/)
 * [MultiversX](https://multiversx.com/)

@@ -16,23 +16,23 @@ You need to have a genezio project. Use an existing one, or [create a new one.](
 
 Now integrate this project with the Postgres database provided by Neon. To do that, open your genezio dashboard at [dashboard](https://app.genez.io/dashboard) and pick the project you created earlier. In the _**Integrations**_ tab you can select to install the Neon Postgres integration:
 
-![alt\_text](https://genez.io/posts/neon1.png)
+![alt\_text](https://genezio.com/posts/neon1.png)
 
 Connect with your Neon account:
 
-![alt\_text](https://genez.io/posts/neon2.png)
+![alt\_text](https://genezio.com/posts/neon2.png)
 
 Create a new Neon Project called getting-started-neon or select an existing one:
 
-![alt\_text](https://genez.io/posts/neon3.png)
+![alt\_text](https://genezio.com/posts/neon3.png)
 
 Next, choose the project details:
 
-![alt\_text](https://genez.io/posts/neon4.png)
+![alt\_text](https://genezio.com/posts/neon4.png)
 
 Finally, save the environment variable to your project so that you may use it when you want to connect to your database:
 
-![alt\_text](https://genez.io/posts/neon5.png)
+![alt\_text](https://genezio.com/posts/neon5.png)
 
 With all that done, your project is fully integrated with a free-tier Neon Postgres database.
 
@@ -83,7 +83,7 @@ With all that done, you now have a method for inserting a user into a table and 
 
 To locally test your Postgres service, you have to copy the environment variable `NEON_POSTGRES_URL` in a `.env` file in the root directory of your project. You can find this variable in the `Integrations` tab of your project page in the [genezio dashboard](https://app.genez.io/):
 
-![alt\_text](https://genez.io/posts/neon6.png)
+![alt\_text](https://genezio.com/posts/neon6.png)
 
 The `.env` file should look similar to the following snippet:
 
@@ -111,8 +111,28 @@ After you tested your application, you can deploy it by running the following co
 genezio deploy
 ```
 
-## Next steps
+## Next Steps
 
-<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th data-hidden></th></tr></thead><tbody><tr><td><a href="broken-reference"><strong>Schedule a Cron / Automation</strong></a></td><td>Automated Task Management Simplified</td><td></td></tr><tr><td><a href="../features/http-methods-webhooks.md"><strong>HTTP Calls / Webhooks</strong></a></td><td>Connect your project with other services</td><td></td></tr><tr><td><a href="../features/email-service.md"><strong>Email Service</strong></a></td><td>Streamlining Your Digital Communication</td><td></td></tr><tr><td><a href="../features/frontend-deployment.md"><strong>Frontend Deployment</strong></a></td><td>Launching Your Web Interface to the World</td><td></td></tr></tbody></table>
+Other things that do not depend on connecting to a database are scheduling the execution of a function as a cron job, or implementing HTTP Webhooks:
+
+* [Cron Jobs](../features/cron-methods.md)
+* [HTTP Webhooks](../features/http-methods-webhooks.md)
+
+Also, you can find more details on deploying the backend and frontend here:
+
+* [Backend Deployment](../features/backend-deployment.md)
+* [Frontend Deployment](../features/frontend-deployment.md)
+
+Now you are ready for some more advanced use cases:
+
+* [Web3 Application](https://genezio.com/blog/create-your-first-web3-app/)
+* [ChatGPT App](https://genezio.com/blog/create-your-first-app-using-chatgpt/)
+* [Shopping Cart Implementation](https://genezio.com/blog/implement-a-shopping-cart-using-typescript-redis-and-react/)
+
+### Support <a href="#support" id="support"></a>
+
+We invite you to join our community on [Discord](https://discord.gg/uc9H5YKjXv) for further information and help.
+
+**Happy Learning!**
 
 \

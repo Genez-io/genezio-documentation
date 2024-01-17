@@ -24,7 +24,7 @@ If you don't already have them, you'll need to install the following tools:
 
 * [Node.js](https://nodejs.org/en/download/current) (version >= 16.0.0)
 * [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
-* [Genezio](https://genez.io)
+* [Genezio](https://genezio.com)
 
 Note: I recommend you to use [nvm](https://github.com/nvm-sh/nvm#installing-and-updating) to manage NodeJs and npm versions. After installing `nvm`, you can easily get the any version of `node` by running `nvm install <node_version>`. `nvm` will automatically install the corresponding `npm` version.
 
@@ -127,8 +127,8 @@ All commands are run from the root of the project, from a terminal:
 
 Check out:
 
-* [Official genezio documentation](https://genez.io/docs)
-* [Web development tutorials](https://genez.io/blog)
+* [Official genezio documentation](https://genezio.com/docs)
+* [Web development tutorials](https://genezio.com/blog)
 * [Discord channel](https://discord.gg/uc9H5YKjXv)
 
 ### Contact
@@ -137,7 +137,7 @@ If you need support or you have any questions, please join us in our [Discord ch
 
 ### Built With
 
-* [Genezio](https://genez.io/)
+* [Genezio](https://genezio.com/)
 * [Node.JS](https://nodejs.org/en/)
 * [React](https://reactjs.org/)
 * [Upstash](https://upstash.com/)
