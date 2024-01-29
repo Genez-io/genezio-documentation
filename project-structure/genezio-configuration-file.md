@@ -42,7 +42,7 @@ The region field can be used to configure where you want your project to be depl
 
 ### Cloud Provider
 
-This is used to choose the deployment environment. Check the [Cloud Providers](broken-reference) section for more details.
+This is used to choose the deployment environment. Check the [advanced](../advanced/ "mention") section for more details.
 
 The supported values are:
 
