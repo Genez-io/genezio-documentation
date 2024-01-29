@@ -51,7 +51,10 @@ genezio-project/
  ├── client/
  │  └── (basic-react-app)
  ├── server/
- │  └── package.json
+ │  ├── package.json
+ │  ├── package-lock.json
+ │  ├── tsconfig.json
+ │  └── .eslintrc.js
  └── genezio.yaml
 ```
 
@@ -110,9 +113,7 @@ You are now done setting up the backend in the local environment.
 
 You can use any frontend framework locally to test the backend. For this quick start guide, let’s use our placeholder frontend written in React using [Vite](https://vitejs.dev/).
 
-{% hint style="info" %}
-Open a new terminal
-{% endhint %}
+Run these commands in a **new terminal:**
 
 ```bash
 cd ./client
@@ -161,6 +162,8 @@ Now let's take it live for everybody to use it.
 When you run `genezio deploy` you will be redirected to the browser to create a free genezio account. This account allows you to host your app for free and comes with a lot of features that we will explore in a moment.
 
 Harness the full power of genezio by deploying the backend with `genezio deploy`. A free hosting account will be created for you. The free account comes packed with features like a dashboard, user authentication, database provisioning, and more.
+
+Run this command in your **root project folder**:
 
 ```
 genezio deploy
