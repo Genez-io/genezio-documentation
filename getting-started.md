@@ -30,7 +30,7 @@ To install genezio you must have **Node version >= 16**.
 
 ## 2. **Login to the genezio cloud**
 
-If you want to test it locally, you can skip this step.&#x20;
+If you want to test it locally, you can skip this step.
 
 ```
 genezio login
@@ -40,8 +40,9 @@ genezio login
 
 Copy this command in your terminal to start from a blank template:
 
-<pre class="language-bash"><code class="lang-bash"><strong>genezio create fullstack ts-blank-api ts-blank-react --name=genezio-project
-</strong></code></pre>
+```
+genezio create fullstack --frontend=onboarding-react --backend=ts --name=genezio-project --region=us-east-1
+```
 
 This will create the following folder structure:
 
@@ -97,7 +98,7 @@ To call the backend services from the frontend, genezio generates a Node module 
 genezio local
 ```
 
-The generated SDK supports both Typescript and Javascript using either ESM or CJS standards and uses JSON-RPC for communication.&#x20;
+The generated SDK supports both Typescript and Javascript using either ESM or CJS standards and uses JSON-RPC for communication.
 
 For the curious, the generated code can be found in `client/node_modules/@genezio-sdk/genezio-project_us-east-1`
 
@@ -109,15 +110,19 @@ You are now done setting up the backend in the local environment.
 
 You can use any frontend framework locally to test the backend. For this quick start guide, let’s use our placeholder frontend written in React using [Vite](https://vitejs.dev/).
 
+{% hint style="info" %}
+Open a new terminal
+{% endhint %}
+
 ```bash
 cd ./client
 npm install
 npm run dev
 ```
 
-**Note 1:** your frontend can now be accessed at [http://localhost:5173](http://localhost:5173).  At this point, it is not connected to the genezio backend.
+**Note 1:** your frontend can now be accessed at [http://localhost:5173](http://localhost:5173). At this point, it is not connected to the genezio backend.
 
-**Note 2:** To benefit from the genezio SDK auto regeneration we added the following code to  `client/vite.config.ts`
+**Note 2:** To benefit from the genezio SDK auto regeneration we added the following code to `client/vite.config.ts`
 
 <pre class="language-typescript" data-title="client/vite.config.ts" data-line-numbers><code class="lang-typescript">import genezioLocalSDKReload from '@genezio/vite-plugin-genezio'
 
@@ -183,7 +188,7 @@ Frontend successfully deployed at https://<subdomain>.app.genez.io
 
 ## 10. All set
 
-Now you have a fully functional app deployed on the genezio infrastructure to be used publicly. A unique URL is created for your app.  Point your browser to the link provided by the genezio deploy command :`https://<subdomain>.app.genez.io` . Enjoy!
+Now you have a fully functional app deployed on the genezio infrastructure to be used publicly. A unique URL is created for your app. Point your browser to the link provided by the genezio deploy command :`https://<subdomain>.app.genez.io` . Enjoy!
 
 ## Next Steps <a href="#next-steps" id="next-steps"></a>
 
@@ -192,7 +197,7 @@ Now that you have figured out how to write a backend class, export its methods, 
 Let’s talk about connecting to a database. We support PostgreSQL, MongoDB, and Redis. If you do not have a database, you will learn how to provision one using a dedicated database hosting provider, with whom we partnered up:
 
 * [**Connect to Postgres SQL**](tutorials/connect-to-postgres-powered-by-neon.md)
-* [**Connect to MongoDB**](tutorials/connect-to-mongodb-atlas.md)&#x20;
+* [**Connect to MongoDB**](tutorials/connect-to-mongodb-atlas.md)
 * [**Connect to Redis**](integrations/upstash-redis.md)
 
 Other things that do not depend on connecting to a database are scheduling the execution of a function as a cron job, or implementing HTTP Webhooks:
@@ -216,4 +221,3 @@ Now you are ready for some more advanced use cases:
 We invite you to join our community on [Discord](https://discord.gg/uc9H5YKjXv) for further information and help.
 
 **Happy Learning!**
-

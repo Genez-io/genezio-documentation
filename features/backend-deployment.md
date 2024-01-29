@@ -1,4 +1,4 @@
-# Backend deployment
+# Backend Deployment
 
 \
 Genezio offers a seamless and efficient solution for deploying backend logic. The platform leverages a function-as-a-service infrastructure, allowing users to deploy their backend classes easily with a simple command: `genezio deploy`.&#x20;
@@ -68,4 +68,17 @@ Executing `genezio deploy` will deploy the `HelloWorldService`class implemented 
 You can make requests to the remote server either by using the[ testing functionality from the genezio dashboard](testing.md), or by using a client application - such as a React app.
 
 To call the methods implemented in the `HelloWorldService`, you can make use of the genezio generated SDK for your project. Check [generated-sdk.md](generated-sdk.md "mention") section to find out how to install it in your project.
+
+## Next Steps <a href="#next-steps" id="next-steps"></a>
+
+Now let's see how to schedule the execution of a function as a cron job, or implementing HTTP Webhooks:
+
+* [Cron Jobs](cron-methods.md)
+* [HTTP Webhooks](http-methods-webhooks.md)
+
+Now you are ready for some more advanced use cases:
+
+* [Web3 Application](https://genezio.com/blog/create-your-first-web3-app/)
+* [ChatGPT App](https://genezio.com/blog/create-your-first-app-using-chatgpt/)
+* [Shopping Cart Implementation](https://genezio.com/blog/implement-a-shopping-cart-using-typescript-redis-and-react/)
 
