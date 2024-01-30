@@ -91,11 +91,13 @@ export class HelloWorldClass {
 ```
 {% endcode %}
 
-## 5. Start the genezio local environment
+## &#x20;5. Start the genezio local environment
 
 Run `genezio local` to start the genezio backend locally.
 
-To call the backend services from the frontend, genezio generates a Node module in the `client` folder. This Node module will need to be imported in your frontend code, and for now, will expose the hello method from the HelloWorldClass.
+To call the backend services from the frontend, genezio generates a Node module in the `client` folder. This Node module will need to be imported in your frontend code, and for now, will expose the `hello` method from the `HelloWorldClass`.
+
+Run this command in your **root project folder**:
 
 ```
 genezio local
@@ -165,7 +167,7 @@ Now let's take it live for everybody to use it.
 
 ## 9. Deploy your full-stack app to the genezio cloud
 
-Harness the full power of genezio by deploying the backend with `genezio deploy`. A free hosting account will be created for you. The free account comes packed with features like a dashboard, user authentication, database provisioning, and more.
+Harness the full power of genezio by deploying both the **backend** and the **frontend** with `genezio deploy`.  Also when you run this command, a production SDK will be generated before deploying your frontend.
 
 Run this command in your **root project folder**:
 
@@ -192,6 +194,8 @@ No subdomain is specified in the genezio.yaml configuration file. We will provid
 
 Frontend successfully deployed at https://<subdomain>.app.genez.io
 ```
+
+After the deployment succeeds, you can access the [Dashboard](https://app.genez.io), check the logs of the project, and use the [Test Interface](features/testing.md) to call your backend functions manually.
 
 ## 10. All set
 
