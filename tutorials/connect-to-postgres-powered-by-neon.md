@@ -99,7 +99,7 @@ Start your local environment by running the following command:
 genezio local
 ```
 
-Test your newly created service at [test interface](https://app.genez.io/test-interface/local?port=8083) .
+Test your newly created service at [test interface](https://app.genez.io/test-interface/local?port=8083).
 
 Here you can send requests to your local backend server and receive responses to check if your service is working properly.
 
@@ -134,5 +134,3 @@ Now you are ready for some more advanced use cases:
 We invite you to join our community on [Discord](https://discord.gg/uc9H5YKjXv) for further information and help.
 
 **Happy Learning!**
-
-\
