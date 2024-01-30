@@ -165,8 +165,6 @@ Now let's take it live for everybody to use it.
 
 ## 9. Deploy your full-stack app to the genezio cloud
 
-When you run `genezio deploy` you will be redirected to the browser to create a free genezio account. This account allows you to host your app for free and comes with a lot of features that we will explore in a moment.
-
 Harness the full power of genezio by deploying the backend with `genezio deploy`. A free hosting account will be created for you. The free account comes packed with features like a dashboard, user authentication, database provisioning, and more.
 
 Run this command in your **root project folder**:
