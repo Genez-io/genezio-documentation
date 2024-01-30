@@ -125,12 +125,18 @@ npm run dev
 
 **Note 2:** To benefit from the genezio SDK auto regeneration we added the following code to `client/vite.config.ts`
 
-<pre class="language-typescript" data-title="client/vite.config.ts" data-line-numbers><code class="lang-typescript">import genezioLocalSDKReload from '@genezio/vite-plugin-genezio'
+{% code title="client/vite.config.ts" lineNumbers="true" %}
+```typescript
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+import genezioLocalSDKReload from "@genezio/vite-plugin-genezio";
 
-<strong>export default defineConfig({
-</strong>  plugins: [react(), genezioLocalSDKReload()],
-})
-</code></pre>
+// https://vitejs.dev/config/
+export default defineConfig({
+  plugins: [react(), genezioLocalSDKReload()]
+});
+```
+{% endcode %}
 
 ## 7. Call the backend method from the frontend code
 
