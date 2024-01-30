@@ -41,7 +41,7 @@ genezio login
 Copy this command in your terminal to start from a blank template:
 
 ```
-genezio create fullstack --frontend=onboarding-react --backend=ts --name=genezio-project --region=us-east-1
+genezio create fullstack --frontend=onboarding-react --backend=onboarding-ts --name=genezio-project --region=us-east-1
 ```
 
 This will create the following folder structure:
