@@ -2,59 +2,35 @@
 
 ### Usage
 
+#### Interactive
+
+`genezio create [--path <project-path>] [--logLevel <log-level>] [-h | --help]`&#x20;
+
 #### Fullstack
 
-`genezio create fullstack <backend-template> <frontend-template> [--name <project-name>] [--region <project-region>] [--structure <structure>] [--logLevel <log-level>] [-h | --help]`
+`genezio create fullstack [--name <project-name>] [--region <project-region>] [--backend <backend-template>] [--frontend <frontend-template>] [--multirepo] [--path <project-path>] [--logLevel <log-level>] [-h | --help]`
 
 #### Backend
 
-`genezio create backend <template> [--name <project-name>] [--region <project-region>] [--logLevel <log-level>] [-h | --help]`
-
-#### Frontend
-
-`genezio create frontend <template> [--name <projectName>] [--region <projectRegion>] [--logLevel <log-level>] [-h | --help]`
-
-#### List templates
-
-`genezio create templates [filter] [--logLevel <log-level>] [-h | --help]`
+`genezio create backend [--name <project-name>] [--region <project-region>] [--backend <backend-template>] [--path <project-path>] [--logLevel <log-level>] [-h | --help]`
 
 ### Description
 
-Bootstrap a new project starting from a template designed by our team for your necessities. The command presents four subcommands: `fullstack`, `backend`, `frontend` and `templates`.
+Bootstrap a new project with starter code for different supported languages/frameworks.
 
-With the `fullstack` subcommand, effortlessly craft a project housing both backend and frontend components. Tailor the project's name, region, and structure to your liking. Opt for `monorepo` to consolidate both frontend and backend within the same Git repository, or choose `multirepo` for separate repositories dedicated to each.
+If no subcommand (`fullstack` or `backend`) is supplied to `genezio create`, an interactive, user-friendly interface will start and ask project related preferences.
 
-The `backend` and `frontend` subcommands offer a more focused approach, allowing you to create projects for either the backend or frontend exclusively.
+If a subcommand is provided, the preferences become available to be specified as command line arguments. In case some required preferences are not provided, the interactive, user-friendly interface will start to ask only for the remaining not provided ones.
 
-The `templates` subcommand lists the available templates that can be used with the previous subcommands. If the `filter` argument is supplied, only templates that contain the filter string will be shown.
-
-### Options
-
-`--name <project-name>`: Name of the project
+### Global Options
 
 {% hint style="info" %}
-This option is available only when used with the `fullstack`, `backend` or `frontend` subcommand.
+These options work with any `genezio create` subcommand
 {% endhint %}
 
-* Default: `genezio-project`
+`--path <project-path>`: The path where the new project will be created
 
-`--region <project-region>`: Region of the project
-
-{% hint style="info" %}
-This option is available only when used with the `fullstack`, `backend` or `frontend` subcommand.
-{% endhint %}
-
-* Default: `us-east-1`
-* Choices: `us-east-1`, `us-east-2`, `us-west-1`, `us-west-2`, `ap-south-1`, `ap-northeast-3`, `ap-northeast-2`, `ap-southeast-1`, `ap-southeast-2`, `ap-northeast-1`, `ca-central-1`, `eu-central-1`, `eu-west-1`, `eu-west-2`, `eu-west-3`, `eu-north-1`, `sa-east-1`
-
-`--structure <strucuture>`: The layout of the fullstack project
-
-{% hint style="info" %}
-This option is available only when used with the `fullstack` subcommand.
-{% endhint %}
-
-* Default: `monorepo`
-* Choices: `monorepo`, `multirepo`
+* Default: `current-directory + project-name`
 
 `--logLevel <log-level>`: Set the verbosity of the output.
 
@@ -62,3 +38,52 @@ This option is available only when used with the `fullstack` subcommand.
 * Choices: `trace`, `debug`, `info`, `warn`, `error`
 
 `-h | --help`: Display a help message for more information on each argument and how to use it.
+
+### Fullstack Subcommand Options
+
+{% hint style="info" %}
+These options work only when combined with `genezio create frontend` subcommand.
+{% endhint %}
+
+`--name <project-name>`: Name of the project
+
+* Required, asked interactively if not provided
+
+`--region <project-region>`: Region of the project
+
+* Required, asked interactively if not provided
+* Choices: `us-east-1`, `us-east-2`, `us-west-1`, `us-west-2`, `ap-south-1`, `ap-northeast-3`, `ap-northeast-2`, `ap-southeast-1`, `ap-southeast-2`, `ap-northeast-1`, `ca-central-1`, `eu-central-1`, `eu-west-1`, `eu-west-2`, `eu-west-3`, `eu-north-1`, `sa-east-1`
+
+`--backend <backend-template>`: Starter template for backend
+
+* Required, asked interactively if not provided
+* Choices: `ts`, `js`
+
+`--frontend <frontend-template>`: Starter template for frontend
+
+* Required, asked interactively if not provided
+* Choices: `react-ts`, `react-js`, `vue-ts`, `vue-js`, `vanilla-js`, `none`
+* If `none` is selected, no client folder will be created, but the project will still have a fullstack-like strucure.
+
+`--multirepo`: If present, the project will create separate repositories for backend and frontend
+
+* Default: `false`
+
+### Backend Subcommand Options
+
+{% hint style="info" %}
+These options work only when combined with `genezio create backend` subcommand.
+{% endhint %}
+
+`--name <project-name>`: Name of the project
+
+* Required, asked interactively if not provided
+
+`--region <project-region>`: Region of the project
+
+* Required, asked interactively if not provided
+* Choices: `us-east-1`, `us-east-2`, `us-west-1`, `us-west-2`, `ap-south-1`, `ap-northeast-3`, `ap-northeast-2`, `ap-southeast-1`, `ap-southeast-2`, `ap-northeast-1`, `ca-central-1`, `eu-central-1`, `eu-west-1`, `eu-west-2`, `eu-west-3`, `eu-north-1`, `sa-east-1`
+
+`--backend <backend-template>`: Starter template for backend
+
+* Choices: `ts`, `js`
