@@ -8,7 +8,7 @@ Genezio is a powerful cloud platform designed for full-stack developers, offerin
 
 Genezio supports various programming languages, including Typescript, Go, and more. You can write your backend code in your preferred language, making it accessible and versatile for developers of all backgrounds.
 
-### Make Type-Safe Calls from any Frontend Frameworks
+### Make Type-Safe Calls from Any Frontend Frameworks
 
 Genezio offers the flexibility to connect to frontends across various platforms, both web and mobile. You can create powerful applications while maintaining a type-safe interface to ensure robust and reliable interactions.
 
