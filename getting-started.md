@@ -1,5 +1,7 @@
 # Getting Started
 
+Welcome to the "Getting Started" guide! In this tutorial, you will learn how to write a backend class, export its methods, call them from the frontend code, and then deploy both the frontend and the backend locally for testing and pushing live to a staging environment.
+
 ## 1. Install genezio
 
 Use your prefered package manager to install genezio:
@@ -30,7 +32,7 @@ To install genezio you must have **Node version >= 16**.
 
 ## 2. **Login to the genezio cloud**
 
-If you want to test it locally, you can skip this step.&#x20;
+If you want to test it locally, you can skip this step.
 
 ```
 genezio login
@@ -40,8 +42,9 @@ genezio login
 
 Copy this command in your terminal to start from a blank template:
 
-<pre class="language-bash"><code class="lang-bash"><strong>genezio create fullstack ts-blank-api ts-blank-react --name=genezio-project
-</strong></code></pre>
+```
+genezio create fullstack --frontend=onboarding-react --backend=onboarding-ts --name=genezio-project --region=us-east-1
+```
 
 This will create the following folder structure:
 
@@ -50,7 +53,10 @@ genezio-project/
  ├── client/
  │  └── (basic-react-app)
  ├── server/
- │  └── package.json
+ │  ├── package.json
+ │  ├── package-lock.json
+ │  ├── tsconfig.json
+ │  └── .eslintrc.js
  └── genezio.yaml
 ```
 
@@ -87,19 +93,21 @@ export class HelloWorldClass {
 ```
 {% endcode %}
 
-## 5. Start the genezio local environment
+## &#x20;5. Start the genezio local environment
 
 Run `genezio local` to start the genezio backend locally.
 
-To call the backend services from the frontend, genezio generates a Node module in the `client` folder. This Node module will need to be imported in your frontend code, and for now, will expose the hello method from the HelloWorldClass.
+To call the backend services from the frontend, genezio generates a Node module in the `client` folder. This Node module will need to be imported in your frontend code, and for now, will expose the `hello` method from the `HelloWorldClass`.
+
+Run this command in your **root project folder**:
 
 ```
 genezio local
 ```
 
-The generated SDK supports both Typescript and Javascript using either ESM or CJS standards and uses JSON-RPC for communication.&#x20;
+The generated SDK supports both Typescript and Javascript using either ESM or CJS standards and uses JSON-RPC for communication.
 
-For the curious, the generated code can be found in `client/node_modules/@genezio-sdk/genezio-project_us-east-1`
+For those who are curious, the generated code can be found in `client/node_modules/@genezio-sdk/genezio-project_us-east-1`
 
 You are now done setting up the backend in the local environment.
 
@@ -109,22 +117,30 @@ You are now done setting up the backend in the local environment.
 
 You can use any frontend framework locally to test the backend. For this quick start guide, let’s use our placeholder frontend written in React using [Vite](https://vitejs.dev/).
 
+Run these commands in a **new terminal:**
+
 ```bash
 cd ./client
 npm install
 npm run dev
 ```
 
-**Note 1:** your frontend can now be accessed at [http://localhost:5173](http://localhost:5173).  At this point, it is not connected to the genezio backend.
+**Note 1:** your frontend can now be accessed at [http://localhost:5173](http://localhost:5173). At this point, it is not connected to the genezio backend.
 
-**Note 2:** To benefit from the genezio SDK auto regeneration we added the following code to  `client/vite.config.ts`
+**Note 2:** To benefit from the genezio SDK auto regeneration we added the following code to `client/vite.config.ts`
 
-<pre class="language-typescript" data-title="client/vite.config.ts" data-line-numbers><code class="lang-typescript">import genezioLocalSDKReload from '@genezio/vite-plugin-genezio'
+{% code title="client/vite.config.ts" lineNumbers="true" %}
+```typescript
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+import genezioLocalSDKReload from "@genezio/vite-plugin-genezio";
 
-<strong>export default defineConfig({
-</strong>  plugins: [react(), genezioLocalSDKReload()],
-})
-</code></pre>
+// https://vitejs.dev/config/
+export default defineConfig({
+  plugins: [react(), genezioLocalSDKReload()]
+});
+```
+{% endcode %}
 
 ## 7. Call the backend method from the frontend code
 
@@ -153,9 +169,9 @@ Now let's take it live for everybody to use it.
 
 ## 9. Deploy your full-stack app to the genezio cloud
 
-When you run `genezio deploy` you will be redirected to the browser to create a free genezio account. This account allows you to host your app for free and comes with a lot of features that we will explore in a moment.
+Harness the full power of genezio by deploying both the **backend** and the **frontend** with `genezio deploy`.  Also when you run this command, a production SDK will be generated before deploying your frontend.
 
-Harness the full power of genezio by deploying the backend with `genezio deploy`. A free hosting account will be created for you. The free account comes packed with features like a dashboard, user authentication, database provisioning, and more.
+Run this command in your **root project folder**:
 
 ```
 genezio deploy
@@ -181,9 +197,11 @@ No subdomain is specified in the genezio.yaml configuration file. We will provid
 Frontend successfully deployed at https://<subdomain>.app.genez.io
 ```
 
+After the deployment succeeds, you can access the [Dashboard](https://app.genez.io), check the logs of the project, and use the [Test Interface](features/testing.md) to call your backend functions manually.
+
 ## 10. All set
 
-Now you have a fully functional app deployed on the genezio infrastructure to be used publicly. A unique URL is created for your app.  Point your browser to the link provided by the genezio deploy command :`https://<subdomain>.app.genez.io` . Enjoy!
+Now you have a fully functional app deployed on the genezio infrastructure to be used publicly. A unique URL is created for your app. Point your browser to the link provided by the genezio deploy command :`https://<subdomain>.app.genez.io` . Enjoy!
 
 ## Next Steps <a href="#next-steps" id="next-steps"></a>
 
@@ -192,7 +210,7 @@ Now that you have figured out how to write a backend class, export its methods, 
 Let’s talk about connecting to a database. We support PostgreSQL, MongoDB, and Redis. If you do not have a database, you will learn how to provision one using a dedicated database hosting provider, with whom we partnered up:
 
 * [**Connect to Postgres SQL**](tutorials/connect-to-postgres-powered-by-neon.md)
-* [**Connect to MongoDB**](tutorials/connect-to-mongodb-atlas.md)&#x20;
+* [**Connect to MongoDB**](tutorials/connect-to-mongodb-atlas.md)
 * [**Connect to Redis**](integrations/upstash-redis.md)
 
 Other things that do not depend on connecting to a database are scheduling the execution of a function as a cron job, or implementing HTTP Webhooks:
@@ -216,4 +234,3 @@ Now you are ready for some more advanced use cases:
 We invite you to join our community on [Discord](https://discord.gg/uc9H5YKjXv) for further information and help.
 
 **Happy Learning!**
-

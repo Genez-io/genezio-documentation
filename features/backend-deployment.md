@@ -1,4 +1,4 @@
-# Backend deployment
+# Backend Deployment
 
 \
 Genezio offers a seamless and efficient solution for deploying backend logic. The platform leverages a function-as-a-service infrastructure, allowing users to deploy their backend classes easily with a simple command: `genezio deploy`.&#x20;
@@ -7,7 +7,7 @@ Genezio offers a seamless and efficient solution for deploying backend logic. Th
 You can deploy classes written in TypeScript, JavaScript, and Dart (experimental).
 {% endhint %}
 
-## Code structure
+## Code Structure
 
 To deploy with genezio, your code has to be structured in classes. Mark your classes for deployment with the `GenezioDeploy` decorator. This decorator also enables you to set the default type of the methods implemented in the specific class to `jsonrpc`, `http` or `cron`.
 
@@ -20,12 +20,12 @@ Check out this tutorial to learn how to [create-your-first-project.md](../tutori
 A snippet of a class that can be deployed with genezio is below:
 
 {% code title="index.ts" %}
-```javascript
+```typescript
 import { GenezioDeploy } from "@genezio/types";
 
 @GenezioDeploy()
 export class HelloWorldService {
-  hello(name string, sender string): string {
+  hello(name: string, sender: string): string {
     console.log(`Hello world request received with name ${name} from ${sender}!`)
     return `Hello, ${name}, from ${sender}!`
   }
@@ -35,7 +35,7 @@ export class HelloWorldService {
 
 ## Configuration file
 
-To deploy your code, your project needs a minimum configuration file that sets various configuration for the project such as name, region to deploy to and so on. A minimum `genezio.yaml` to deploy a project should look like this:
+To deploy your code, your project needs a minimum configuration file that sets various configurations for the project such as name, region to deploy to, and so on. A minimum `genezio.yaml` to deploy a project should look like this:
 
 {% code title="genezio.yaml" %}
 ```yaml
@@ -53,9 +53,9 @@ For more details on the `genezio.yaml` file, check the [genezio-configuration-fi
 For Dart backend code, a classes list should also be set in the `genezio.yaml`. Check the classes section from[#configuration-file](backend-deployment.md#configuration-file "mention")for more information.
 {% endhint %}
 
-Deploy project
+## Deploy your project
 
-The command to actually deploy has to be executed at the same path where `genezio.yaml`is saved:
+The command to deploy has to be executed at the same path where `genezio.yaml`is saved:
 
 ```
 genezio deploy
@@ -68,4 +68,17 @@ Executing `genezio deploy` will deploy the `HelloWorldService`class implemented 
 You can make requests to the remote server either by using the[ testing functionality from the genezio dashboard](testing.md), or by using a client application - such as a React app.
 
 To call the methods implemented in the `HelloWorldService`, you can make use of the genezio generated SDK for your project. Check [generated-sdk.md](generated-sdk.md "mention") section to find out how to install it in your project.
+
+## Next Steps <a href="#next-steps" id="next-steps"></a>
+
+Now let's see how to schedule the execution of a function as a cron job, or implement HTTP Webhooks:
+
+* [Cron Jobs](cron-methods.md)
+* [HTTP Webhooks](http-methods-webhooks.md)
+
+Now you are ready for some more advanced use cases:
+
+* [Web3 Application](https://genezio.com/blog/create-your-first-web3-app/)
+* [ChatGPT App](https://genezio.com/blog/create-your-first-app-using-chatgpt/)
+* [Shopping Cart Implementation](https://genezio.com/blog/implement-a-shopping-cart-using-typescript-redis-and-react/)
 

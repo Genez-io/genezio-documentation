@@ -20,7 +20,7 @@ If you already have a MongoDB, skip to [step 2](connect-to-mongodb-atlas.md#id-2
 
 ## 2. **Integrate your newly created cluster into the project**
 
-Create a `.env` file and add a line with the `MONGO_DB_URI=<your_connection_string>` value.&#x20;
+Create a `.env` file and add a line with the `MONGO_DB_URI=<your_connection_string>` value.
 
 A step-by-step guide on how to get `MONGO_DB_URI` can be found [here](https://www.mongodb.com/basics/mongodb-connection-string).
 
@@ -38,9 +38,11 @@ npm install mongoose
 
 Now create a file `mongoDbService.ts`
 
-<pre class="language-typescript" data-title="mongoDbService.ts" data-line-numbers><code class="lang-typescript">import { GenezioDeploy } from "@genezio/types";
-<strong>import mongoose from "mongoose";
-</strong>
+{% code title="mongoDbService.ts" lineNumbers="true" %}
+```typescript
+import { GenezioDeploy } from "@genezio/types";
+import mongoose from "mongoose";
+
 @GenezioDeploy()
 export class TutorialClass {
   constructor() {
@@ -51,12 +53,26 @@ export class TutorialClass {
    * Private method used to connect to the DB.
    */
   #connect() {
-    mongoose.connect(process.env.MONGO_DB_URI).catch((error) => {
+    mongoose.connect(process.env.MONGO_DB_URI || "").catch((error) => {
       console.log("Error connecting to the DB", error);
     });
   }
+  
+  async addUser(name: string) {
+    const dbConnection = mongoose.connection;
+    // Access the collection directly
+    const collection = dbConnection.collection("users");
+
+    // Create the collection if it doesn't exist
+    await collection.createIndex({ name: 1 });
+
+    // Insert an object into the collection
+    const response = await collection.insertOne({ name: name });
+    return response;
+  }
 }
-</code></pre>
+```
+{% endcode %}
 
 Into the class’s constructor, you need to establish the connection with the database.
 
@@ -103,4 +119,3 @@ Now you are ready for some more advanced use cases:
 We invite you to join our community on [Discord](https://discord.gg/uc9H5YKjXv) for further information and help.
 
 **Happy Learning!**
-

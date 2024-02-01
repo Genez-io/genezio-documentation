@@ -8,7 +8,7 @@ With genezio decorators, you can set one or more of your methods to handle HTTP 
 
 In the example below, the genezio decorator `@GenezioMethod({type:"http"})` sets the type of the method `handleSimplePlainRequest` to `http`. Now this method can be deployed and used as a webhook that handles simple HTTP requests.
 
-{% code title="index.ts" %}
+{% code title="HttpServer.ts" %}
 ```typescript
 import { GenezioDeploy, GenezioMethod } from "@genezio/types";
 import { GenezioHttpResponse, GenezioHttpRequest } from "@genezio/types";
@@ -33,13 +33,19 @@ export class HttpServer {
 ```
 {% endcode %}
 
-For more information on genezio decorators, check out [genezio-decorators.md](../project-structure/genezio-decorators.md "mention")
+## Deploy your service
 
-Usually, you need to provide the webhook URLs to the third-party APIs or services you want to connect to.&#x20;
+To deploy your newly created class to the genezio infrastructure, use the following command:
+
+```
+genezio deploy
+```
+
+Usually after the deployment, you need to provide the webhook URLs to the third-party APIs or services you want to connect to.&#x20;
 
 There are 2 places where you can find the webhook URLs for your deployed methods - in your terminal after deploying your project and in the [dashboard](https://app.genez.io) on the class page.
 
-1. In the [genezio dashboard](https://app.genez.io) in the corresponding class page:
+1. In the [genezio dashboard](https://app.genez.io) on the corresponding class page:
 
 <figure><img src="../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
 
@@ -64,32 +70,6 @@ HTTP Methods Deployed:
 {% hint style="info" %}
 For more details, check out the webhooks examples for [JavaScript](https://github.com/Genez-io/genezio-examples/tree/master/javascript/webhook) and [TypeScript](https://github.com/Genez-io/genezio-examples/tree/master/typescript/webhook).
 {% endhint %}
-
-## Genezio HTTP types
-
-Genezio provides convenient types - `GenezioHttpResponse`, `GenezioHttpRequest` -  to manipulate the HTTP requests/responses.
-
-To install `@genezio/types`and use these types in your code,  you can execute the
-
-{% tabs %}
-{% tab title="npm" %}
-```
-npm install @genezio/types
-```
-{% endtab %}
-
-{% tab title="yarn" %}
-```
-yarn add @genezio/types
-```
-{% endtab %}
-
-{% tab title="pnpm" %}
-```
-pnpm install @genezio/types
-```
-{% endtab %}
-{% endtabs %}
 
 ### GenezioHttpRequest
 
@@ -119,3 +99,16 @@ pnpm install @genezio/types
 ## More details
 
 For more information on genezio decorators, check out [genezio-decorators.md](../project-structure/genezio-decorators.md "mention").
+
+## Next Steps
+
+Also, you can find more details on deploying the backend and frontend here:
+
+* [Backend Deployment](backend-deployment.md)
+* [Frontend Deployment](frontend-deployment.md)
+
+Now you are ready for some more advanced use cases:
+
+* [Web3 Application](https://genezio.com/blog/create-your-first-web3-app/)
+* [ChatGPT App](https://genezio.com/blog/create-your-first-app-using-chatgpt/)
+* [Shopping Cart Implementation](https://genezio.com/blog/implement-a-shopping-cart-using-typescript-redis-and-react/)
