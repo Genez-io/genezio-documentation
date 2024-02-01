@@ -4,15 +4,13 @@ Welcome to the Genezio documentation.
 
 Genezio is a powerful cloud platform designed for full-stack developers, offering auto-scalable backends and seamlessly connected frontends through a type-safe interface. Whether you're a seasoned developer or just getting started, Genezio has you covered.
 
-### Getting Started
-
-#### 1. Choose Your Preferred Language
+### Start with Your Preferred Language
 
 Genezio supports various programming languages, including Typescript, Go, and more. You can write your backend code in your preferred language, making it accessible and versatile for developers of all backgrounds.
 
-#### 2. Connect to Any Front-End
+### Make Type-Safe Calls from any Frontend Frameworks
 
-Genezio offers the flexibility to connect to front-ends across various platforms, be it web, mobile, or desktop applications. You can create powerful applications while maintaining a type-safe interface to ensure robust and reliable interactions.
+Genezio offers the flexibility to connect to frontends across various platforms, both web and mobile. You can create powerful applications while maintaining a type-safe interface to ensure robust and reliable interactions.
 
 ### Boost Productivity with Out-of-the-Box Services
 
@@ -22,9 +20,9 @@ Genezio simplifies the development process and enhances productivity with a rang
 
 Genezio empowers you to bring your ideas to life. Here are some of the exciting possibilities:
 
-* **Websites:** Create stunning and responsive websites with Genezio's scalable backend infrastructure.
+* **Websites:** Create responsive websites with Genezio's scalable infrastructure.
 * **Web Applications:** Develop feature-rich web applications with ease, leveraging Genezio's powerful backend services.
-* **Applications with Multiple Front-Ends:** Build applications that serve multiple front-ends, including APIs, web, and mobile interfaces, all while maintaining a type-safe interface for seamless interactions.
+* **Applications with Multiple Frontends:** Build applications that serve multiple front-ends, including APIs, web, and mobile interfaces, all while maintaining a type-safe interface for seamless interactions.
 * **Web3 Applications:** Dive into the world of Web3 and build decentralized applications on Genezio's secure and scalable platform.
 * **Backends for Mobile Apps:** Power your mobile applications with robust and scalable backends, ensuring a smooth user experience.
 * **Full-Code Enterprise Process Automation:** Streamline your enterprise processes with Genezio's automation capabilities, offering full control and customization.
