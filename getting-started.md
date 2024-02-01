@@ -1,5 +1,7 @@
 # Getting Started
 
+Welcome to the "Getting Started" guide! In this tutorial, you will learn how to write a backend class, export its methods, call them from the frontend code, and then deploy both the frontend and the backend locally for testing and pushing live to a staging environment.
+
 ## 1. Install genezio
 
 Use your prefered package manager to install genezio:
