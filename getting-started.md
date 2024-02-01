@@ -107,7 +107,7 @@ genezio local
 
 The generated SDK supports both Typescript and Javascript using either ESM or CJS standards and uses JSON-RPC for communication.
 
-For the curious, the generated code can be found in `client/node_modules/@genezio-sdk/genezio-project_us-east-1`
+For those who are curious, the generated code can be found in `client/node_modules/@genezio-sdk/genezio-project_us-east-1`
 
 You are now done setting up the backend in the local environment.
 
