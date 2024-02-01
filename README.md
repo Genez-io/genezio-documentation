@@ -1,6 +1,8 @@
 # Genezio User Documentation
 
-Welcome to the Genezio documentation, deploying and scaling applications with ease. Genezio is a powerful cloud platform designed for full-stack developers, offering auto-scalable backends and seamlessly connected frontends through a type-safe interface. Whether you're a seasoned developer or just getting started, Genezio has you covered.
+Welcome to the Genezio documentation.
+
+Genezio is a powerful cloud platform designed for full-stack developers, offering auto-scalable backends and seamlessly connected frontends through a type-safe interface. Whether you're a seasoned developer or just getting started, Genezio has you covered.
 
 ### Getting Started
 
