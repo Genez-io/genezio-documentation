@@ -113,10 +113,11 @@ For TypeScript and JavaScript projects, `sdk` is being deprecated. Read more in 
 
 Below is a code snippet to generate an SDK for a Flutter client. The SDK will be generated in Dart and saved at the path `../client/src/sdk`:
 
-<pre class="language-yaml"><code class="lang-yaml">sdk:
+```yaml
+sdk:
   language: dart
-  path: ../client/<a data-footnote-ref href="#user-content-fn-1">src</a>/sdk
-</code></pre>
+  path: ../client/src/sdk
+```
 
 * **language**: The programming language of the client/frontend. Supported values for now are: ts, js, dart (experimental), python(experimental), swift(experimental).
 * **path**: The path to generate the SDK to.
@@ -157,5 +158,3 @@ classes:
   * **name** (optional): The name of the method. It should be the same name as in the code.
   * **type** (optional): The method type. This can be either: `http`, `jsonrpc` or `cron`. If not specified, the value of this field will be set as the class' `type` property.
   * **cronString:** Only required if the method is of `type: cron`. This specifies how frequently the method should be called. For complete documentation of the cronstring's format check [https://crontab.guru/](https://crontab.guru/)
-
-[^1]: 
