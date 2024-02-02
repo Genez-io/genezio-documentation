@@ -70,6 +70,7 @@ Add the `hello` method to the newly created class. This will be the method that 
 ```typescript
 export class HelloWorldClass {
   hello(name: string): string {
+    console.log("DEBUG: Call hello method")
     return "Hello " + name;
   }
 }
@@ -87,6 +88,7 @@ import { GenezioDeploy } from "@genezio/types"
 @GenezioDeploy()
 export class HelloWorldClass {
   hello(name: string): string {
+    console.log("DEBUG: Call hello method")
     return "Hello " + name;
   }
 }
