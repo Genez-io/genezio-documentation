@@ -2,16 +2,6 @@
 
 In this tutorial, you will learn how to integrate a Redis database using Upstash in a genezio project.
 
-### Prerequisites
-
-If you don't already have them, you'll need to install the following tools:
-
-* [Node.js](https://nodejs.org/en/download/current)
-* [Npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
-* [Genezio](connect-to-redis-powered-by-upstash.md#getting-started)
-
-You need to have a genezio project. Use an existing one, or [create a new one.](../getting-started.md)
-
 ## Common use cases of Redis
 
 ### Out-of-the-box caching system <a href="#out-of-the-box-caching-system" id="out-of-the-box-caching-system"></a>
@@ -30,32 +20,32 @@ Redis can be used to implement rate-limiting mechanisms. By tracking and control
 
 If you don't already have them, you'll need to install the following tools:
 
-* [Node.js](https://nodejs.org/en/download/current)
-* [Npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
-* [Genezio](connect-to-redis-powered-by-upstash.md#getting-started)
+- [Node.js](https://nodejs.org/en/download/current)
+- [Npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
+- [Genezio](../getting-started)
 
-## [1. Create a new genezio project](../getting-started.md)
+You need to have a genezio project. Use an existing one, or [create a new one.](../getting-started)
 
-## 2. Initialize an Upstash Redis database
+## 1. Initialize an Upstash Redis database
 
 \
 Go to the `Integrations` tab and select to install the Upstash Redis integration:
 
-![Alt text](https://genezio.com/images/blog/getting\_started\_upstash\_images/image-3.png)
+![Alt text](https://genezio.com/posts/image-3.png)
 
 Connect with an Upstash account using the preferred login method:
 
-![Alt text](https://genezio.com/images/blog/getting\_started\_upstash\_images/image.png)
+![Alt text](https://genezio.com/posts/image.png)
 
 Create a Redis database or select an already existing database:
 
-![Alt text](https://genezio.com/images/blog/getting\_started\_upstash\_images/image-1.png)
+![Alt text](https://genezio.com/posts/image-1.png)
 
 Hit the `Save` button to set the database credentials as environment variables in your genezio project:
 
-![Alt text](https://genezio.com/images/blog/getting\_started\_upstash\_images/image-2.png)
+![Alt text](https://genezio.com/posts/image-2.png)
 
-## 3. Connect your backend to the Redis database
+## 2. Connect your backend to the Redis database
 
 We will use `ioredis` to connect our code to the Redis Database:
 
@@ -67,29 +57,32 @@ To connect to the Redis database from your NodeJs backend, create a new file cal
 
 The following code snippet creates a new class that will be a minimal Redis service. In the constructor, we initialize the Redis client using the `UPSTASH_REDIS_URL` environment variable. This variable is already set remotely in your project by the Upstash Redis integration.
 
-{% code title="redis.ts" lineNumbers="true" %}
+<!-- {% code title="redis.ts" lineNumbers="true" %} -->
+
 ```ts
 import { GenezioDeploy } from "@genezio/types";
-import Redis from "ioredis"
+import Redis from "ioredis";
 
 @GenezioDeploy()
 export class ShoppingCartService {
   client: Redis;
   constructor() {
     if (!process.env.UPSTASH_REDIS_URL) {
-      throw new Error("UPSTASH_REDIS_URL is not set in the `.env` file.")
+      throw new Error("UPSTASH_REDIS_URL is not set in the `.env` file.");
     }
     this.client = new Redis(process.env.UPSTASH_REDIS_URL);
   }
 }
 ```
-{% endcode %}
 
-## 4. Store and retrieve data from Redis
+<!-- {% endcode %} -->
+
+## 3. Store and retrieve data from Redis
 
 Implement two methods to store and retrieve \<key, value> pairs in the Redis database:
 
-{% code lineNumbers="true" %}
+<!-- {% code lineNumbers="true" %} -->
+
 ```typescript
 addItemToCart(cartId: string, productId: string, quantity: number): Promise<boolean> {
     const cartKey = `cart:${cartId}`;
@@ -105,9 +98,10 @@ addItemToCart(cartId: string, productId: string, quantity: number): Promise<bool
     // the rest of the implementation goes here
   }
 ```
-{% endcode %}
 
-## 5. Test your Redis service
+<!-- {% endcode %} -->
+
+## 4. Test your Redis service
 
 To locally test your Redis service, you have to use the copy button to add the environment variables to your clipboard. Using the copy button will disclose the sensitive information from the environment variables. Paste them in a `.env` file in the root folder of your project.
 
@@ -115,13 +109,15 @@ You can find the environment variables in the `Integrations` tab of your project
 
 The `.env` file should look similar to the following snippet:
 
-{% code title=".env" lineNumbers="true" %}
+<!-- {% code title=".env" lineNumbers="true" %} -->
+
 ```fallback
 UPSTASH_REDIS_URL="redis://default:sensitivepassword@cute-capybara-33897.upstash.io:33897"
 UPSTASH_REDIS_REST_URL="https://cute-capybara-33897.upstash.io"
 UPSTASH_REDIS_REST_TOKEN="sensitivetoken"
 ```
-{% endcode %}
+
+<!-- {% endcode %} -->
 
 After setting the environment variables, you can test your Redis service by running the following command in your terminal:
 
@@ -133,7 +129,7 @@ Open the testing page in your browser by navigating to [`https://app.genez.io/te
 
 Here you can create and send a request to your backend to test if it works as expected.
 
-## 6. Deploy your application
+## 5. Deploy your application
 
 After you tested your application, you can deploy it by running the following command in your terminal:
 
@@ -145,19 +141,19 @@ genezio deploy
 
 Other things that do not depend on connecting to a database are scheduling the execution of a function as a cron job, or implementing HTTP Webhooks:
 
-* [Cron Jobs](../features/cron-methods.md)
-* [HTTP Webhooks](../features/http-methods-webhooks.md)
+- [Cron Jobs](../features/cron-methods)
+- [HTTP Webhooks](../features/http-methods-webhooks)
 
 Also, you can find more details on deploying the backend and frontend here:
 
-* [Backend Deployment](../features/backend-deployment.md)
-* [Frontend Deployment](../features/frontend-deployment.md)
+- [Backend Deployment](../features/backend-deployment)
+- [Frontend Deployment](../features/frontend-deployment)
 
 Now you are ready for some more advanced use cases:
 
-* [Web3 Application](https://genezio.com/blog/create-your-first-web3-app/)
-* [ChatGPT App](https://genezio.com/blog/create-your-first-app-using-chatgpt/)
-* [Shopping Cart Implementation](https://genezio.com/blog/implement-a-shopping-cart-using-typescript-redis-and-react/)
+- [Web3 Application](https://genezio.com/blog/create-your-first-web3-app/)
+- [ChatGPT App](https://genezio.com/blog/create-your-first-app-using-chatgpt/)
+- [Shopping Cart Implementation](https://genezio.com/blog/implement-a-shopping-cart-using-typescript-redis-and-react/)
 
 ### Support <a href="#support" id="support"></a>
 

@@ -1,8 +1,12 @@
 # Custom domain
 
-{% hint style="info" %}
-This feature is available only for users holding a subscription. Update your plan [here](https://app.genez.io/billing?plans\_modal=true).
-{% endhint %}
+<!-- {% hint style="info" %} -->
+
+:::info
+This feature is available only for users holding a subscription. Update your plan [here](https://app.genez.io/billing?plans_modal=true).
+::::
+
+<!-- {% endhint %} -->
 
 ## Introduction
 
@@ -16,9 +20,9 @@ genezio works with both apex domains and subdomains.
 
 Example of supported types:
 
-* Apex domain - `test.com`
-* Custom domain  - `custom.test.com`&#x20;
-* `www` domain/subdomain - `www.test.com`
+- Apex domain - `test.com`
+- Custom domain - `custom.test.com`&#x20;
+- `www` domain/subdomain - `www.test.com`
 
 After you add a custom domain, we automatically configure the certificate also on all subdomains, including `www`, but you have to add in the DNS configuration the CNAME to use `www`.
 
@@ -26,7 +30,7 @@ After you add a custom domain, we automatically configure the certificate also o
 
 In the genezio dashboard, you can go to a project that has frontend deployed, and on the frontend tab, you can set up your custom domain.
 
-<figure><img src="../.gitbook/assets/Screenshot 2023-05-12 at 11.34.17 (1).png" alt=""><figcaption><p>Project page - Frontend Tab</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2023-05-12 at 11.34.17 (1).png" alt=""/><figcaption><p>Project page - Frontend Tab</p></figcaption></figure>
 
 On this page, you add your custom domain and click on the "Save" button.
 
@@ -36,11 +40,11 @@ For some cases, after you add the CNAMEs, another CAA validation might be needed
 
 Here is a list with tutorials on how to add a CNAME for some of the most common DNS providers:
 
-* [Cloudflare](https://community.cloudflare.com/t/how-do-i-add-a-cname-record/59)
-* [cPanel](https://docs.cpanel.net/cpanel/domains/zone-editor/)
-* [Google](https://support.google.com/a/answer/47283?hl=en)
-* [Amazon](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resource-record-sets-creating.html)
-* [NameCheap](https://www.namecheap.com/support/knowledgebase/article.aspx/9646/2237/how-to-create-a-cname-record-for-your-domain/)
+- [Cloudflare](https://community.cloudflare.com/t/how-do-i-add-a-cname-record/59)
+- [cPanel](https://docs.cpanel.net/cpanel/domains/zone-editor/)
+- [Google](https://support.google.com/a/answer/47283?hl=en)
+- [Amazon](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resource-record-sets-creating.html)
+- [NameCheap](https://www.namecheap.com/support/knowledgebase/article.aspx/9646/2237/how-to-create-a-cname-record-for-your-domain/)
 
 This is just a short list of some providers that we used.
 
@@ -50,12 +54,12 @@ You don't need to do any extra steps. You only add the 2 given CNAMEs and we wil
 
 ## Known limitations
 
-There are some known limitations on setting custom domains depending on the domain's provider.  &#x20;
+There are some known limitations on setting custom domains depending on the domain's provider. &#x20;
 
 Adding an apex domain such as `test.com` hosted on GoDaddy may encounter limitations during the DNS configuration. To address this, we recommend transferring the domain’s DNS settings to another DNS provider such as Cloudflare. For assistance, please contact our technical support team by sending an email to `contact@genez.io`.
 
 ## Troubleshooting custom domains <a href="#title-h1" id="title-h1"></a>
 
-In case you encounter issues setting your custom domain, check the [troubleshooting.md](../troubleshooting.md "mention") section.
+In case you encounter issues setting your custom domain, check the [troubleshooting](../troubleshooting "mention") section.
 
 If you cannot find a solution there, ask us on [Discord](https://discord.com/invite/uc9H5YKjXv) in the `#support` channel. We are always happy to help!

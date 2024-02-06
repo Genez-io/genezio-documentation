@@ -6,17 +6,17 @@ In this tutorial, you will learn how to integrate a MongoDB Atlas database in a 
 
 If you don't already have them, you'll need to install the following tools:
 
-* [Node.js](https://nodejs.org/en/download/current)
-* [Npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
-* [Genezio](connect-to-mongodb-atlas.md#getting-started)
+- [Node.js](https://nodejs.org/en/download/current)
+- [Npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
+- [Genezio](../getting-started)
 
-You need to have a genezio project. Use an existing one, or [create a new one.](../getting-started.md)
+You need to have a genezio project. Use an existing one, or [create a new one.](../getting-started)
 
 ## 1. Initialize a MongoDB Atlas database
 
 For detailed explanations about this step, click [here](https://www.mongodb.com/basics/clusters/mongodb-cluster-setup).
 
-If you already have a MongoDB, skip to [step 2](connect-to-mongodb-atlas.md#id-2.-integrate-your-newly-created-cluster-into-the-project).
+If you already have a MongoDB, skip to [step 2](#2-integrate-your-newly-created-cluster-into-the-project).
 
 ## 2. **Integrate your newly created cluster into the project**
 
@@ -38,7 +38,8 @@ npm install mongoose
 
 Now create a file `mongoDbService.ts`
 
-{% code title="mongoDbService.ts" lineNumbers="true" %}
+<!-- {% code title="mongoDbService.ts" lineNumbers="true" %} -->
+
 ```typescript
 import { GenezioDeploy } from "@genezio/types";
 import mongoose from "mongoose";
@@ -57,7 +58,7 @@ export class TutorialClass {
       console.log("Error connecting to the DB", error);
     });
   }
-  
+
   async addUser(name: string) {
     const dbConnection = mongoose.connection;
     // Access the collection directly
@@ -72,7 +73,8 @@ export class TutorialClass {
   }
 }
 ```
-{% endcode %}
+
+<!-- {% endcode %} -->
 
 Into the class’s constructor, you need to establish the connection with the database.
 
@@ -100,19 +102,19 @@ This is the most conventional method of establishing a connection to a database,
 
 Other things that do not depend on connecting to a database are scheduling the execution of a function as a cron job, or implementing HTTP Webhooks:
 
-* [Cron Jobs](../features/cron-methods.md)
-* [HTTP Webhooks](../features/http-methods-webhooks.md)
+- [Cron Jobs](../features/cron-methods)
+- [HTTP Webhooks](../features/http-methods-webhooks)
 
 Also, you can find more details on deploying the backend and frontend here:
 
-* [Backend Deployment](../features/backend-deployment.md)
-* [Frontend Deployment](../features/frontend-deployment.md)
+- [Backend Deployment](../features/backend-deployment)
+- [Frontend Deployment](../features/frontend-deployment)
 
 Now you are ready for some more advanced use cases:
 
-* [Web3 Application](https://genezio.com/blog/create-your-first-web3-app/)
-* [ChatGPT App](https://genezio.com/blog/create-your-first-app-using-chatgpt/)
-* [Shopping Cart Implementation](https://genezio.com/blog/implement-a-shopping-cart-using-typescript-redis-and-react/)
+- [Web3 Application](https://genezio.com/blog/create-your-first-web3-app/)
+- [ChatGPT App](https://genezio.com/blog/create-your-first-app-using-chatgpt/)
+- [Shopping Cart Implementation](https://genezio.com/blog/implement-a-shopping-cart-using-typescript-redis-and-react/)
 
 ### Support <a href="#support" id="support"></a>
 

@@ -6,15 +6,19 @@ description: 9 minutes read
 
 ### Prerequisites:
 
-* A genezio account
-* [Node.js](https://nodejs.org/en/download/current) >= 16
-* [Npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
-* [Genezio CLI](create-your-first-project.md#getting-started) >= 0.7.3
-* Any browser
+- A genezio account
+- [Node.js](https://nodejs.org/en/download/current) >= 16
+- [Npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
+- [Genezio CLI](../getting-started) >= 0.7.3
+- Any browser
 
-{% hint style="info" %}
-The`genezio`command is available for versions >= 0.7.3.&#x20;
-{% endhint %}
+<!-- {% hint style="info" %} -->
+
+:::info
+The `genezio` command is available for versions >= 0.7.3.&#x20;
+:::
+
+<!-- {% endhint %} -->
 
 Go through the following tutorial to learn how you can use the `genezio` command to create your new Genezio Project interactively, starting from a template designed by our team.
 
@@ -81,10 +85,13 @@ $ genezio
 
 6. The following step applies only if you choose to create a `Fullstack` app and it requires you to choose the folder structure for your git repositories. Choose `Monorepo` if you are unsure what option is best for you.
 
-<pre><code><strong>? What project structure would you like to use? (Use arrow keys)
-</strong>❯ Monorepo (Frontend and backend in the same git repository - choose this if unsure)
+<pre>
+<code> 
+  ? What project structure would you like to use? (Use arrow keys)
+  ❯ Monorepo (Frontend and backend in the same git repository - choose this if unsure)
   Multirepo (Frontend and backend in separate git repositories)
-</code></pre>
+</code>
+</pre>
 
 7. You are now prompted to choose your backend language and then a template depending on what language you chose. Choose `TypeScript` - `Basic Weather App`
 
@@ -111,8 +118,8 @@ These were the last questions, and now, in less than 3 minutes your project was 
 
 As the shown prompt says, now you have 2 options:
 
-* Deploy your code to the Genezio Cloud
-* Test it locally before deploying
+- Deploy your code to the Genezio Cloud
+- Test it locally before deploying
 
 ```
 Project initialized in (your path)/weather-app.
@@ -147,11 +154,11 @@ Frontend successfully deployed at https://(your app id).app.genez.io
 
 10. Take the frontend link `https://(your app id).app.genez.io` from your terminal and open it in your favorite browser. You should see your application live, deployed in less than 5 minutes, looking like this:
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption><p>Genezio Starting Page</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image.png" alt=""/><figcaption><p>Genezio Starting Page</p></figcaption></figure>
 
 This web application lets the users check the weather in a custom location by using the search bar up top. Also, it provides a bookmark feature for the user's favorite cities located left side.
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption><p>Genezio Weather App</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1).png" alt=""/><figcaption><p>Genezio Weather App</p></figcaption></figure>
 
 Congratulations! You have created and deployed a functional weather app in less than 5 minutes using Genezio.
 
@@ -165,6 +172,6 @@ Happy coding!
 
 Next, you can check out the following sections to get more in-depth details on the core features of genezio:
 
-* See how you can easily [test your project locally](../features/testing.md).
-* See [Project Structure](../project-structure/) section for details on how to tailor genezio to your needs.
-* See other examples deployed with genezio in our [repository](https://github.com/genez-io/genezio-examples).
+- See how you can easily [test your project locally](../features/testing).
+- See [Project Structure](../project-structure/) section for details on how to tailor genezio to your needs.
+- See other examples deployed with genezio in our [repository](https://github.com/genez-io/genezio-examples).

@@ -22,9 +22,13 @@ import { HelloWorldService } from "@genezio-sdk/my-project_us-east-1"
 
 ## Link your generated SDK for local testing
 
-{% hint style="info" %}
+<!-- {% hint style="info" %} -->
+
+:::info
 This is not necessary for fullstack single repositories.
-{% endhint %}
+:::
+
+<!-- {% endhint %} -->
 
 To connect to your backend while testing locally, you need to install the genezio generated SDK in the client repository. `genezio local` is able to install it automatically if you link your client repository path to a deployed project.
 
@@ -54,21 +58,27 @@ import { HelloWorldService } from "@genezio-sdk/my-project_us-east-1"
 
 ## Generate an SDK for Flutter, Kotlin, Python or Swift
 
-{% hint style="warning" %}
+<!-- {% hint style="warning" %} -->
+
+:::warning
 Flutter, Kotlin, Python and Swift support is still experimental
-{% endhint %}
+:::
+
+<!-- {% endhint %} -->
 
 Support for seamlessly installing for their respective packaging managers is not yet implemented.
 
 To generate the SDK for clients implemented in the following languages you have to set the following fields in the configuration file:
 
-{% code title="genezio.yaml" %}
+<!-- {% code title="genezio.yaml" %} -->
+
 ```yaml
 sdk:
   language: dart
   path: ../client/lib/sdk
 ```
-{% endcode %}
+
+<!-- {% endcode %} -->
 
 ## Genezio private npm registry
 

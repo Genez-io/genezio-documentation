@@ -6,7 +6,7 @@ Genezio provides a way to send emails with a managed email service.
 
 On your project page, go to the integrations tab and activate the email service.
 
-<figure><img src="../.gitbook/assets/Screenshot 2024-01-11 at 12.58.27.png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2024-01-11 at 12.58.27.png" alt="" width="563"/><figcaption></figcaption></figure>
 
 ### Use it in your project
 
@@ -14,11 +14,13 @@ To test your project locally, you have to create a file named `.env` and store t
 
 Use the genezio [dashboard](https://app.genez.io) under `Integrations/Email Service` card to copy the token in your `.env` file.
 
-{% code title=".env" %}
+<!-- {% code title=".env" %} -->
+
 ```
 EMAIL_SERVICE_TOKEN="***********************"
 ```
-{% endcode %}
+
+<!-- {% endcode %} -->
 
 Add the following code to your project to call the email service:
 
@@ -34,7 +36,7 @@ export class EmailService {
       from: email,
       to: email,
       subject: subject,
-      text: message
+      text: message,
     });
 
     if (!response.success) {
@@ -44,7 +46,6 @@ export class EmailService {
     return "success";
   }
 }
-
 ```
 
 **Note:** Install `@genezio/email-service` using npm, if you don't have this dependency already in your project:

@@ -16,15 +16,23 @@ Welcome to the "Getting Started" guide! In this tutorial, you will learn how to 
 
 Use your prefered package manager to install genezio:
 
-:::info[]
-
 <Tabs>
-  <TabItem className="tab-item" value="npm" label="npm">```npm install genezio -g```</TabItem>
-  <TabItem className="tab-item" value="pnpm" label="pnpm">```pnpm add -g genezio```</TabItem>
-  <TabItem  className="tab-item" value="yarn" label="yarn">```yarn add global genezio```</TabItem>
+  <TabItem className="tab-item" value="npm" label="npm">
+  ```
+  npm install genezio -g
+  ```
+  </TabItem>
+  <TabItem className="tab-item" value="pnpm" label="pnpm">
+  ```
+  pnpm add -g genezio
+  ```
+  </TabItem>
+  <TabItem  className="tab-item" value="yarn" label="yarn">
+  ```
+  yarn add global genezio
+  ```
+  </TabItem>
 </Tabs>
-
-:::
 
 <!--
 {% tabs %}
@@ -57,7 +65,7 @@ yarn add global genezio
 To install genezio you must have **Node version >= 16**.
 {% endhint %} -->
 
-## 2. **Login to the genezio cloud**
+## 2. Login to the genezio cloud
 
 If you want to test it locally, you can skip this step.
 
@@ -65,7 +73,7 @@ If you want to test it locally, you can skip this step.
 genezio login
 ```
 
-## 3. **Create a blank project**
+## 3. Create a blank project
 
 Copy this command in your terminal to start from a blank template:
 
@@ -234,7 +242,7 @@ No subdomain is specified in the genezio.yaml configuration file. We will provid
 Frontend successfully deployed at https://<subdomain>.app.genez.io
 ```
 
-After the deployment succeeds, you can access the [Dashboard](https://app.genez.io), check the logs of the project, and use the [Test Interface](features/testing.md) to call your backend functions manually.
+After the deployment succeeds, you can access the [Dashboard](https://app.genez.io), check the logs of the project, and use the [Test Interface](features/testing) to call your backend functions manually.
 
 ## 10. All set
 
@@ -246,19 +254,19 @@ Now that you have figured out how to write a backend class, export its methods, 
 
 Let’s talk about connecting to a database. We support PostgreSQL, MongoDB, and Redis. If you do not have a database, you will learn how to provision one using a dedicated database hosting provider, with whom we partnered up:
 
-- [**Connect to Postgres SQL**](tutorials/connect-to-postgres-powered-by-neon.md)
-- [**Connect to MongoDB**](tutorials/connect-to-mongodb-atlas.md)
-- [**Connect to Redis**](integrations/upstash-redis.md)
+- [**Connect to Postgres SQL**](tutorials/connect-to-postgres-powered-by-neon)
+- [**Connect to MongoDB**](tutorials/connect-to-mongodb-atlas)
+- [**Connect to Redis**](integrations/upstash-redis)
 
 Other things that do not depend on connecting to a database are scheduling the execution of a function as a cron job, or implementing HTTP Webhooks:
 
-- [Cron Jobs](features/cron-methods.md)
-- [HTTP Webhooks](features/http-methods-webhooks.md)
+- [Cron Jobs](features/cron-methods)
+- [HTTP Webhooks](features/http-methods-webhooks)
 
 Also, you can find more details on deploying the backend and frontend here:
 
-- [Backend Deployment](features/backend-deployment.md)
-- [Frontend Deployment](features/frontend-deployment.md)
+- [Backend Deployment](features/backend-deployment)
+- [Frontend Deployment](features/frontend-deployment)
 
 Now you are ready for some more advanced use cases:
 
