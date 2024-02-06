@@ -12,39 +12,41 @@ description: A guide to integrate Neon resources in genezio projects
 
 Navigate to the project integration page in the dashboard and select to `Install` a Neon Postgres database to your project:
 
-<figure><img src="../.gitbook/assets/image (46) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/img/image (46) (1).png" alt=""><figcaption></figcaption></figure>
 
 Connect with an Neon account using the preferred login method:
 
-<figure><img src="../.gitbook/assets/image (47) (1).png" alt="" width="350"><figcaption></figcaption></figure>
+<figure><img src="/img/image (47) (1).png" alt="" width="350"><figcaption></figcaption></figure>
 
 Create a Neon project or select an already existing project:
 
-<figure><img src="../.gitbook/assets/image (48).png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="/img/image (48).png" alt="" width="375"><figcaption></figcaption></figure>
 
 Select the branch, database and role for the Neon project:
 
-<figure><img src="../.gitbook/assets/image (49).png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="/img/image (49).png" alt="" width="375"><figcaption></figcaption></figure>
 
 Hit `Save` to save the database credentials as backend environment variables
 
-<figure><img src="../.gitbook/assets/image (50).png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="/img/image (50).png" alt="" width="375"><figcaption></figcaption></figure>
 
 Use the environment variables in your genezio project to connect to the Postgres database.
 
 {% code title="index.ts" %}
+
 ```typescript
-import { Pool } from 'pg';
+import { Pool } from "pg";
 
 const pool = new Pool({
-  connectionString: process.env.NEON_DATABASE_URL
+  connectionString: process.env.NEON_DATABASE_URL,
 });
 
-pool.query('SELECT * FROM your_table_name', (error, results) => {
-    console.log('Query Result:', results.rows);
+pool.query("SELECT * FROM your_table_name", (error, results) => {
+  console.log("Query Result:", results.rows);
   pool.end();
 });
 ```
+
 {% endcode %}
 
 Note: Install `pg` using npm, if you don't have this dependency already in your project:
@@ -60,9 +62,11 @@ To test your project locally, you have to create a file named `.env` and store t
 Use the genezio [dashboard](https://app.genez.io) under `Integrations/Neon Postgres` card to copy the Postgres credentials in your `.env` file.
 
 {% code title=".env" %}
+
 ```
 NEON_POSTGRES_URL=postgres://<username>:<password>@<hostname>/<database>
 ```
+
 {% endcode %}
 
 Now you can use `genezio local` to start a server locally that will also load up the necessary environment variables to connect to the Postgres database.

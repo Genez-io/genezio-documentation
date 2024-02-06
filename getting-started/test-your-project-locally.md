@@ -28,7 +28,7 @@ npm link @genezio-sdk/{your-project-name}_{your-project-region}
 
 If you just want to test your genezio code without having to write any code in your client, head over to the output link [`https://app.genez.io/test-interface/local?port=8083`](https://app.genez.io/test-interface/local?port=8083) to test your project in the Genezio Test Interface:
 
-<figure><img src="../.gitbook/assets/Screenshot 2023-08-11 at 19.28.34.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/img/Screenshot 2023-08-11 at 19.28.34.png" alt=""><figcaption></figcaption></figure>
 
 You can use the _Genezio Test Interface_ to test your projects locally, as well as remotely. Find more details about it at [test-interface](../test-interface/ "mention").
 
@@ -37,22 +37,28 @@ You can use the _Genezio Test Interface_ to test your projects locally, as well 
 To test the only the frontend locally, you can run the command below in the `client` directory:
 
 {% code title="./project-root/client" %}
+
 ```
 npm start
 ```
+
 {% endcode %}
 
 If you want to test your project locally end-to-end, open two terminals,&#x20;
 
 {% code title="./project-root" %}
+
 ```
 genezio local
 ```
+
 {% endcode %}
 
 {% code title="./project-root/client" %}
+
 ```
 npm run install-dev-sdk
 npm start
 ```
+
 {% endcode %}

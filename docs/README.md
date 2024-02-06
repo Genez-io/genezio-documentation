@@ -2,6 +2,8 @@
 sidebar_position: 1
 ---
 
+import DocCard from '@theme/DocCardList';
+
 # Genezio User Documentation
 
 Welcome to the Genezio documentation.

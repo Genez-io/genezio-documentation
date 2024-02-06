@@ -1,3 +1,7 @@
+---
+sidebar_position: 2
+---
+
 # Connect to Redis (Powered by Upstash)
 
 In this tutorial, you will learn how to integrate a Redis database using Upstash in a genezio project.
@@ -59,7 +63,7 @@ The following code snippet creates a new class that will be a minimal Redis serv
 
 <!-- {% code title="redis.ts" lineNumbers="true" %} -->
 
-```ts
+```typescript title="redis.ts" showLineNumbers
 import { GenezioDeploy } from "@genezio/types";
 import Redis from "ioredis";
 
@@ -83,7 +87,7 @@ Implement two methods to store and retrieve \<key, value> pairs in the Redis dat
 
 <!-- {% code lineNumbers="true" %} -->
 
-```typescript
+```typescript showLineNumbers
 addItemToCart(cartId: string, productId: string, quantity: number): Promise<boolean> {
     const cartKey = `cart:${cartId}`;
     await this.client.set(`${cartKey}:${productId}`, quantity);
@@ -111,7 +115,7 @@ The `.env` file should look similar to the following snippet:
 
 <!-- {% code title=".env" lineNumbers="true" %} -->
 
-```fallback
+```fallback code title=".env" showLineNumbers
 UPSTASH_REDIS_URL="redis://default:sensitivepassword@cute-capybara-33897.upstash.io:33897"
 UPSTASH_REDIS_REST_URL="https://cute-capybara-33897.upstash.io"
 UPSTASH_REDIS_REST_TOKEN="sensitivetoken"

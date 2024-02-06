@@ -1,5 +1,5 @@
 ---
-sidebar_position: 1
+sidebar_position: 2
 ---
 
 import Tabs from '@theme/Tabs';
@@ -103,7 +103,7 @@ Add the `hello` method to the newly created class. This will be the method that 
 
 <!-- {% code title="server/helloWorld.ts" lineNumbers="true" %} -->
 
-```typescript
+```typescript title="server/helloWorld.ts" showLineNumbers
 export class HelloWorldClass {
   hello(name: string): string {
     console.log("DEBUG: Call hello method");
@@ -120,7 +120,7 @@ Now, import `GenezioDeploy` from `@genezio/types` and use it as a decorator for 
 
 <!-- {% code title="server/helloWorld.ts" lineNumbers="true" %} -->
 
-```typescript
+```typescript title="server/helloWorld.ts" showLineNumbers
 import { GenezioDeploy } from "@genezio/types";
 
 @GenezioDeploy()
@@ -172,7 +172,7 @@ npm run dev
 
 <!-- {% code title="client/vite.config.ts" lineNumbers="true" %} -->
 
-```typescript
+```typescript title="client/vite.config.ts" showLineNumbers
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import genezioLocalSDKReload from "@genezio/vite-plugin-genezio";
@@ -197,7 +197,7 @@ Next, change the `sayHello` function to call the server-side code. Notice how yo
 
 <!-- {% code title="client/src/App.tsx" lineNumbers="true" %} -->
 
-```typescript
+```typescript title="client/src/App.tsx" showLineNumbers
 async function sayHello() {
   const res = await HelloWorldClass.hello(name);
   setResponse(res);

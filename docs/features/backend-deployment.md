@@ -1,6 +1,9 @@
+---
+sidebar_position: 1
+---
+
 # Backend Deployment
 
-\
 Genezio offers a seamless and efficient solution for deploying backend logic. The platform leverages a function-as-a-service infrastructure, allowing users to deploy their backend classes easily with a simple command: `genezio deploy`.&#x20;
 
 <!-- {% hint style="success" %} -->
@@ -29,7 +32,7 @@ A snippet of a class that can be deployed with genezio is below:
 
 <!-- {% code title="index.ts" %} -->
 
-```typescript
+```typescript title="index.ts" showLineNumbers
 import { GenezioDeploy } from "@genezio/types";
 
 @GenezioDeploy()
@@ -51,7 +54,7 @@ To deploy your code, your project needs a minimum configuration file that sets v
 
 <!-- {% code title="genezio.yaml" %} -->
 
-```yaml
+```yaml title="genezio.yaml" showLineNumbers
 name: my-project-backend
 region: us-east-1
 language: ts

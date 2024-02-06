@@ -1,3 +1,7 @@
+---
+sidebar_position: 6
+---
+
 # HTTP Calls / Webhooks
 
 Genezio provides an easy way to interact with third-party services or APIs using webhooks/HTTP methods.
@@ -10,7 +14,7 @@ In the example below, the genezio decorator `@GenezioMethod({type:"http"})` sets
 
 <!-- {% code title="HttpServer.ts" %} -->
 
-```typescript
+```typescript title="HttpServer.ts" showLineNumbers
 import { GenezioDeploy, GenezioMethod } from "@genezio/types";
 import { GenezioHttpResponse, GenezioHttpRequest } from "@genezio/types";
 
@@ -48,7 +52,7 @@ There are 2 places where you can find the webhook URLs for your deployed methods
 
 1. In the [genezio dashboard](https://app.genez.io) on the corresponding class page:
 
-<figure><img src="../.gitbook/assets/image (8).png" alt=""/><figcaption></figcaption></figure>
+<figure><img src="/img/image (8).png" alt=""/><figcaption></figcaption></figure>
 
 2. The HTTP endpoints will be shown in your terminal after executing `genezio deploy`:
 

@@ -1,3 +1,7 @@
+---
+sidebar_position: 8
+---
+
 # Email Service
 
 Genezio provides a way to send emails with a managed email service.
@@ -6,7 +10,7 @@ Genezio provides a way to send emails with a managed email service.
 
 On your project page, go to the integrations tab and activate the email service.
 
-<figure><img src="../.gitbook/assets/Screenshot 2024-01-11 at 12.58.27.png" alt="" width="563"/><figcaption></figcaption></figure>
+<figure><img src="/img/Screenshot 2024-01-11 at 12.58.27.png" alt="" width="563"/><figcaption></figcaption></figure>
 
 ### Use it in your project
 
@@ -16,7 +20,7 @@ Use the genezio [dashboard](https://app.genez.io) under `Integrations/Email Serv
 
 <!-- {% code title=".env" %} -->
 
-```
+```fallback title=".env"
 EMAIL_SERVICE_TOKEN="***********************"
 ```
 
@@ -24,7 +28,7 @@ EMAIL_SERVICE_TOKEN="***********************"
 
 Add the following code to your project to call the email service:
 
-```typescript
+```typescript title="emailService.ts" showLineNumbers
 import { GenezioDeploy } from "@genezio/types";
 import { MailService } from "@genezio/email-service";
 

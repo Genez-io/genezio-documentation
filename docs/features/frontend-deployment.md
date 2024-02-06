@@ -1,3 +1,7 @@
+---
+sidebar_position: 2
+---
+
 # Frontend Deployment
 
 Genezio's frontend deployment offers a simple and cost-effective way to host and serve static websites. It leverages Amazon S3 in combination with CloudFront CDN (Content Delivery Network) to ensure fast and reliable content delivery to users across the globe. In this documentation, we will explore the key features, benefits, and steps involved in deploying your frontend applications using genezio.
@@ -16,7 +20,7 @@ First, you have to add the following fields in the `genezio.yaml`:
 
 <!-- {% code title="genezio.yaml" %} -->
 
-```yaml
+```yaml title="genezio.yaml" showLineNumbers
 name: my-project
 region: us-east-1
 frontend:

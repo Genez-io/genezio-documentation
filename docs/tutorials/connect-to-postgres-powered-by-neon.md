@@ -1,3 +1,7 @@
+---
+sidebar_position: 1
+---
+
 # Connect to Postgres (Powered by Neon)
 
 In this tutorial, you will learn how to integrate a Postgres database using Neon in a genezio project.
@@ -52,7 +56,7 @@ Add the following code snippet:
 
 <!-- {% code title="postgres.ts" lineNumbers="true" %} -->
 
-```typescript
+```typescript title="postgres.ts" showLineNumbers
 import { GenezioDeploy } from "@genezio/types";
 import pg from "pg";
 const { Pool } = pg;
@@ -91,7 +95,7 @@ The `.env` file should look similar to the following snippet:
 
 <!-- {% code title=".env" %} -->
 
-```fallback
+```fallback title=".env"
 NEON_POSTGRES_URL="postgres://virgil:<your-password>@ep-fragrant-band-27497881.us-east-1.aws.neon.tech/neondb"
 ```
 

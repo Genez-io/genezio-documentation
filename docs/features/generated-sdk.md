@@ -1,3 +1,7 @@
+---
+sidebar_position: 5
+---
+
 # Generated SDK
 
 Genezio generates an SDK to enable your clients to easily call the methods implemented in the deployed classes.
@@ -72,7 +76,7 @@ To generate the SDK for clients implemented in the following languages you have 
 
 <!-- {% code title="genezio.yaml" %} -->
 
-```yaml
+```yaml title="genezio.yaml"
 sdk:
   language: dart
   path: ../client/lib/sdk

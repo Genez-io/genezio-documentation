@@ -1,3 +1,7 @@
+---
+sidebar_position: 4
+---
+
 # Environments
 
 Genezio provides a way to organise your projects into different, isolated environments.
@@ -6,11 +10,9 @@ This enables you to create development, staging environments where you can test 
 
 You can deploy your application on different environments by setting the flag `--stage <stage-name>` .
 
-<pre class="language-bash">
-<code class="lang-bash">
-genezio deploy --stage &#x3C;stage-name>
-</code>
-</pre>
+```bash
+genezio deploy --stage <stage-name>
+```
 
 If the stage name passed doesn't exists, it will automatically be created during the first deployment. Otherwise, the environment will be updated with the new source code.
 

@@ -10,11 +10,11 @@ To set environment variables in the backend classes, head to the [Dashboard](htt
 
 On the `Backend` tab, click on the `Environment Variables` button:
 
-<figure><img src="../.gitbook/assets/image (34).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/img/image (34).png" alt=""><figcaption></figcaption></figure>
 
 Add the environment variables like a `<key, value>` pair. After adding all the environment variables hit the `Save` button:
 
-<figure><img src="../.gitbook/assets/image (40).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/img/image (40).png" alt=""><figcaption></figcaption></figure>
 
 Note: You can also import environment variables from a file using `Import from .env` button.
 
@@ -67,16 +67,19 @@ To access an environment variable use `process.env.MY_VARIABLE`
 <pre class="language-typescript" data-title="main.ts"><code class="lang-typescript">const myVariable = process.env.MY_VARIABLE;
 <strong>console.log('Print environment variable', myVariable);
 </strong></code></pre>
+
 {% endtab %}
 
 {% tab title="JavaScript" %}
 To access an environment variable use `process.env.MY_VARIABLE`
 
 {% code title="main.js" %}
+
 ```javascript
 const myVariable = process.env.MY_VARIABLE;
-console.log('Print environment variable', myVariable);
+console.log("Print environment variable", myVariable);
 ```
+
 {% endcode %}
 {% endtab %}
 
@@ -84,6 +87,7 @@ console.log('Print environment variable', myVariable);
 To access an environment variable use `Platform.environment['MY_VARIABLE']`
 
 {% code title="main.dart" overflow="wrap" lineNumbers="true" %}
+
 ```dart
 import 'dart:io';
 
@@ -92,6 +96,7 @@ void main() {
     print(my_variable);
 }
 ```
+
 {% endcode %}
 {% endtab %}
 {% endtabs %}
@@ -99,4 +104,3 @@ void main() {
 {% hint style="info" %}
 Note: There is no need to import specific libraries for loading environment variables (such as dotenv).`genezio` will implicitly load the `.env` file while testing locally.
 {% endhint %}
-

@@ -2,7 +2,7 @@
 
 The Genezio Test Interface is visually divided into 3 sections.
 
-<figure><img src="../.gitbook/assets/image (23).png" alt="Genezio Test Interface"><figcaption><p>Genezio Test Interface</p></figcaption></figure>
+<figure><img src="/img/image (23).png" alt="Genezio Test Interface"><figcaption><p>Genezio Test Interface</p></figcaption></figure>
 
 ### Project Menu
 
@@ -16,7 +16,7 @@ The upper side of the right card is dedicated to passing arguments to your funct
 
 At the top of the section, you will see a green-bordered label, indicating that the connection was established successfully (or a red-bordered error when failing to connect to the local environment), and a `SEND` button for calling your function.
 
-The lower part of the section will be automatically filled with fields for each of your function's parameters. You can pass any value as well as select the type of each parameter, choosing from `Primitive` (any string, number, or boolean),  `Object` and `Array` (those 2 have to be valid JSONs).
+The lower part of the section will be automatically filled with fields for each of your function's parameters. You can pass any value as well as select the type of each parameter, choosing from `Primitive` (any string, number, or boolean), `Object` and `Array` (those 2 have to be valid JSONs).
 
 Your most recent functions are organized in tabs that you can select, close, and drag around. The active tab will always be underlined with a purple line.&#x20;
 
@@ -28,5 +28,4 @@ You can see the response in a `RAW` format or a `PRETTY` format available only f
 
 The upper-right part of the section will display the time it took for the request to be made and the status of the response.
 
-<figure><img src="../.gitbook/assets/image (20).png" alt="Pretty Response"><figcaption><p>Genezio Test Interface Pretty Response</p></figcaption></figure>
-
+<figure><img src="/img/image (20).png" alt="Pretty Response"><figcaption><p>Genezio Test Interface Pretty Response</p></figcaption></figure>

@@ -1,3 +1,7 @@
+---
+sidebar_position: 3
+---
+
 # Connect to MongoDB (Atlas)
 
 In this tutorial, you will learn how to integrate a MongoDB Atlas database in a genezio project.
@@ -40,7 +44,7 @@ Now create a file `mongoDbService.ts`
 
 <!-- {% code title="mongoDbService.ts" lineNumbers="true" %} -->
 
-```typescript
+```typescript title="mongoDbService.ts" showLineNumbers
 import { GenezioDeploy } from "@genezio/types";
 import mongoose from "mongoose";
 
