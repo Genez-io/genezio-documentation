@@ -64,6 +64,7 @@ const config = {
         logo: {
           alt: "Genezio Logo",
           src: "img/favicon.ico",
+          srcDark: "img/genezio.svg",
         },
       },
       // footer: {
