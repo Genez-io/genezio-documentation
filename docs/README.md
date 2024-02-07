@@ -2,9 +2,9 @@
 sidebar_position: 1
 ---
 
-import DocCard from '@theme/DocCardList';
-
 # Genezio User Documentation
+
+<!-- import DocCard from "@theme/DocCard"; -->
 
 Welcome to the Genezio documentation.
 
@@ -44,12 +44,79 @@ Join our [Discord](https://discord.gg/uc9H5YKjXv) community.
 
 ### Getting Started
 
-<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><a href="getting-started">Getting Started</a></td><td>Start from here with genezio</td><td></td><td></td></tr><tr><td><a href="tutorials/">Tutorials</a></td><td>Explore our Tuorials</td><td></td><td></td></tr></tbody></table>
+<!-- export const MediumCard = ({type,label,href,description}) => (
+
+<div style={{display:"flex",gap:"20px"}}>
+<DocCard item={{type:type,label: label, href: href,description: description}}></DocCard>
+<DocCard item={{type:type,label: label, href: href,description: description}}></DocCard>
+</div>
+
+);
+
+<MediumCard type="link" label="Getting started" href="./getting-started" description="Start from here with genezio"></MediumCard> -->
+
+<table data-card-size="large" data-view="cards">
+  <tbody>
+    <tr>
+      <td>
+        <a href="getting-started">Getting Started</a>
+      </td>
+      <td>Start from here with genezio</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="tutorials/">Tutorials</a>
+      </td>
+      <td>Explore our Tuorials</td>
+    </tr>
+  </tbody>
+</table>
 
 ### Features
 
-<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th></th></tr></thead><tbody><tr><td><a href="features/backend-deployment">Backend Deployment</a></td><td>Deploy your backend in a serverless infrastructure</td><td></td></tr><tr><td><a href="features/frontend-deployment">Frontend Deployment</a></td><td>Deploy your frontend</td><td></td></tr><tr><td><a href="features/http-methods-webhooks">Webhooks</a></td><td>Complete documentation on webhooks methods.</td><td></td></tr><tr><td><a href="features/cron-methods">Scheduled Methods</a></td><td>Deploy scheduled methods</td><td></td></tr><tr><td><a href="features/custom-domain-configuration">Custom domain</a></td><td>Set your own custom domain</td><td></td></tr><tr><td><a href="features/generated-sdk">Auto-generated SDK</a></td><td>Find out how to use the genezio-generated SDK</td><td></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards">
+  <tbody>
+    <tr>
+      <td>
+        <a href="features/backend-deployment">Backend Deployment</a>
+      </td>
+      <td>Deploy your backend in a serverless infrastructure</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="features/frontend-deployment">Frontend Deployment</a>
+      </td>
+      <td>Deploy your frontend</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="features/http-methods-webhooks">Webhooks</a>
+      </td>
+      <td>Complete documentation on webhooks methods.</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="features/cron-methods">Scheduled Methods</a>
+      </td>
+      <td>Deploy scheduled methods</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="features/custom-domain-configuration">Custom domain</a>
+      </td>
+      <td>Set your own custom domain</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="features/generated-sdk">Auto-generated SDK</a>
+      </td>
+      <td>Find out how to use the genezio-generated SDK</td>
+    </tr>
+  </tbody>
+</table>
 
 ### Examples
 
-<table data-view="cards"><thead><tr><th></th><th></th><th></th></tr></thead><tbody><tr><td><a href="examples/typescript/">TypeScript</a></td><td></td><td></td></tr><tr><td><a href="examples/dart/">Dart</a></td><td></td><td></td></tr><tr><td><a href="examples/javascript/">JavaScript</a></td><td></td><td></td></tr></tbody></table>
+- [**TypeScript**](examples/typescript/)
+- [**Dart**](examples/dart/)
+- [**JavaScript**](examples/javascript/)
