@@ -72,13 +72,13 @@ HTTP Methods Deployed:
 
 ## Examples using webhooks
 
-<!-- {% hint style="info" %} -->
+<!-- :::info -->
 
 :::info
 For more details, check out the webhooks examples for [JavaScript](https://github.com/Genez-io/genezio-examples/tree/master/javascript/webhook) and [TypeScript](https://github.com/Genez-io/genezio-examples/tree/master/typescript/webhook).
 :::
 
-<!-- {% endhint %} -->
+<!-- ::: -->
 
 ### GenezioHttpRequest
 

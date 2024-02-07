@@ -64,13 +64,13 @@ You can also check the logs from the backend in the logs section:
 
 <figure><img src="/img/image (3).png" alt=""/><figcaption></figcaption></figure>
 
-<!-- {% hint style="info" %} -->
+<!-- :::info -->
 
 :::info
 Make sure to refresh the testing dashboard page after you make changes in your code to avoid unpredictable behaviour.
 :::
 
-<!-- {% endhint %} -->
+<!-- ::: -->
 
 ## Testing in a CLI environment
 
@@ -143,7 +143,7 @@ npm start
 Local testing from the testing dashboard is **NOT** supported on Safari
 :::
 
-<!-- {% endhint %} -->
+<!-- ::: -->
 
 You can easily test your project using the dashboard without deploying it to the cloud.&#x20;
 

@@ -12,7 +12,7 @@ Genezio's frontend deployment offers a simple and cost-effective way to host and
 You can deploy all kinds of frontend apps, including React, Angular, Vue.js, Flutter Web, Pure HTML, Jekyll, Hugo, Svelte, Foundation, etc
 :::
 
-<!-- {% endhint %} -->
+<!-- ::: -->
 
 ## Deploy the frontend project <a href="#introduction" id="introduction"></a>
 

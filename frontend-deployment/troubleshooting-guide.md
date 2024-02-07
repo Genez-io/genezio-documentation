@@ -1,8 +1,8 @@
 # Troubleshooting Guide
 
-{% hint style="info" %}
+:::info
 Please note that it might take up to 12 hours to validate your domain.
-{% endhint %}
+:::
 
 ### Can't Save the custom domain <a href="#dns-misconfiguration" id="dns-misconfiguration"></a>
 
@@ -29,9 +29,9 @@ We were unable to issue a certificate for your domain. Please check your DNS rec
 
 The CAA record for your domain is preventing us from issuing a certificate. Please add a CAA record with the value `amazon.com` for your domain. This will let us validate your certificate.
 
-{% hint style="info" %}
+:::info
 It can take up to 12 hours to validate your certificate
-{% endhint %}
+:::
 
 ### Browser cache <a href="#browser-cache" id="browser-cache"></a>
 
@@ -42,8 +42,5 @@ To clear your browser's cache, please refer to the documentation specific to you
 If you encounter any further problems or require additional assistance, feel free to reach out to the genezio support team for further guidance.
 
 \
-
-
-
 
 \

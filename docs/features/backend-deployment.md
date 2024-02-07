@@ -12,13 +12,13 @@ Genezio offers a seamless and efficient solution for deploying backend logic. Th
 You can deploy classes written in TypeScript, JavaScript, and Dart (experimental).
 :::
 
-<!-- {% endhint %} -->
+<!-- ::: -->
 
 ## Code Structure
 
 To deploy with genezio, your code has to be structured in classes. Mark your classes for deployment with the `GenezioDeploy` decorator. This decorator also enables you to set the default type of the methods implemented in the specific class to `jsonrpc`, `http` or `cron`.
 
-<!-- {% hint style="info" %} -->
+<!-- :::info -->
 
 :::info
 Our recommendation is to use the official genezio templates and examples to be provided with fully written configuration files without having to write one from scratch.
@@ -26,7 +26,7 @@ Our recommendation is to use the official genezio templates and examples to be p
 Check out this tutorial to learn how to [create-your-first-project](../getting-started "mention") with genezio.
 :::
 
-<!-- {% endhint %} -->
+<!-- ::: -->
 
 A snippet of a class that can be deployed with genezio is below:
 
@@ -66,14 +66,14 @@ packageManager: npm
 
 For more details on the `genezio.yaml` file, check the [genezio-configuration-file](../project-structure/genezio-configuration-file "mention") section.
 
-<!-- {% hint style="info" %} -->
+<!-- :::info -->
 
 :::info
 For Dart backend code, a classes list should also be set in the `genezio.yaml`. Check the classes section from [#configuration-file](../project-structure/genezio-configuration-file "mention")
 for more information.
 :::
 
-<!-- {% endhint %} -->
+<!-- ::: -->
 
 ## Deploy your project
 

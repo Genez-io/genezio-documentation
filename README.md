@@ -20,21 +20,21 @@ Genezio simplifies the development process and enhances productivity with a rang
 
 Genezio empowers you to bring your ideas to life. Here are some of the exciting possibilities:
 
-* **Websites:** Create responsive websites with Genezio's scalable infrastructure.
-* **Web Applications:** Develop feature-rich web applications with ease, leveraging Genezio's powerful backend services.
-* **Applications with Multiple Frontends:** Build applications that serve multiple front-ends, including APIs, web, and mobile interfaces, all while maintaining a type-safe interface for seamless interactions.
-* **Web3 Applications:** Dive into the world of Web3 and build decentralized applications on Genezio's secure and scalable platform.
-* **Backends for Mobile Apps:** Power your mobile applications with robust and scalable backends, ensuring a smooth user experience.
-* **Full-Code Enterprise Process Automation:** Streamline your enterprise processes with Genezio's automation capabilities, offering full control and customization.
-* **LLM-Backed Apps:** Create applications backed by the latest technology and best practices, making your projects future-proof.
+- **Websites:** Create responsive websites with Genezio's scalable infrastructure.
+- **Web Applications:** Develop feature-rich web applications with ease, leveraging Genezio's powerful backend services.
+- **Applications with Multiple Frontends:** Build applications that serve multiple front-ends, including APIs, web, and mobile interfaces, all while maintaining a type-safe interface for seamless interactions.
+- **Web3 Applications:** Dive into the world of Web3 and build decentralized applications on Genezio's secure and scalable platform.
+- **Backends for Mobile Apps:** Power your mobile applications with robust and scalable backends, ensuring a smooth user experience.
+- **Full-Code Enterprise Process Automation:** Streamline your enterprise processes with Genezio's automation capabilities, offering full control and customization.
+- **LLM-Backed Apps:** Create applications backed by the latest technology and best practices, making your projects future-proof.
 
 Start your journey with Genezio today and unlock the potential to build, deploy, and scale your applications like never before. Whether you're a solo developer or part of a team, Genezio is your trusted partner for turning your ideas into reality.
 
 Explore the sections below for detailed instructions, tutorials, and API references to make the most of Genezio's powerful features.
 
-{% hint style="info" %}
+:::info
 Join our [Discord](https://discord.gg/uc9H5YKjXv) community.
-{% endhint %}
+:::
 
 ### Getting Started
 

@@ -38,13 +38,13 @@ You can, also, [use crontab.guru](https://crontab.guru/) to build specific cron 
 
 ## Examples using scheduled methods
 
-<!-- {% hint style="info" %} -->
+<!-- :::info -->
 
 :::info
 For more details, check out an example using [scheduled methods](https://github.com/Genez-io/genezio-examples/tree/master/javascript/cron).
 :::
 
-<!-- {% endhint %} -->
+<!-- ::: -->
 
 ## More details
 

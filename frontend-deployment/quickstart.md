@@ -6,13 +6,14 @@ Genezio's frontend deployment offers a simple and cost-effective way to host and
 
 {% hint style="success" %}
 You can deploy all kinds of frontend apps, including React, Angular, Vue.js, Flutter Web, Pure HTML, Jekyll, Hugo, Svelte, Foundation, etc
-{% endhint %}
+:::
 
 ### Deploy the frontend project <a href="#introduction" id="introduction"></a>
 
 First, you have to add the following fields in the `genezio.yaml`:
 
 {% code title="genezio.yaml" %}
+
 ```yaml
 name: my-project
 sdk:
@@ -25,8 +26,8 @@ classes:
   - path: ./hello.ts
     type: jsonrpc
     methods: []
-
 ```
+
 {% endcode %}
 
 Now you have to deploy a frontend project using this command in a folder with `genezio.yaml`:

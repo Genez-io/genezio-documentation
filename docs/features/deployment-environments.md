@@ -16,13 +16,13 @@ genezio deploy --stage <stage-name>
 
 If the stage name passed doesn't exists, it will automatically be created during the first deployment. Otherwise, the environment will be updated with the new source code.
 
-<!-- {% hint style="info" %} -->
+<!-- :::info -->
 
 :::info
 If the argument `--stage <stage-name>` is not specified, the default value used will be `prod`.
 :::
 
-<!-- {% endhint %} -->
+<!-- ::: -->
 
 ## Create a new environment
 

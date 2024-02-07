@@ -4,13 +4,13 @@ sidebar_position: 9
 
 # Custom domain
 
-<!-- {% hint style="info" %} -->
+<!-- :::info -->
 
 :::info
 This feature is available only for users holding a subscription. Update your plan [here](https://app.genez.io/billing?plans_modal=true).
 ::::
 
-<!-- {% endhint %} -->
+<!-- ::: -->
 
 ## Introduction
 

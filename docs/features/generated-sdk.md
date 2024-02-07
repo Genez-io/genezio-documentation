@@ -26,13 +26,13 @@ import { HelloWorldService } from "@genezio-sdk/my-project_us-east-1"
 
 ## Link your generated SDK for local testing
 
-<!-- {% hint style="info" %} -->
+<!-- :::info -->
 
 :::info
 This is not necessary for fullstack single repositories.
 :::
 
-<!-- {% endhint %} -->
+<!-- ::: -->
 
 To connect to your backend while testing locally, you need to install the genezio generated SDK in the client repository. `genezio local` is able to install it automatically if you link your client repository path to a deployed project.
 
@@ -68,7 +68,7 @@ import { HelloWorldService } from "@genezio-sdk/my-project_us-east-1"
 Flutter, Kotlin, Python and Swift support is still experimental
 :::
 
-<!-- {% endhint %} -->
+<!-- ::: -->
 
 Support for seamlessly installing for their respective packaging managers is not yet implemented.
 

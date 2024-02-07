@@ -6,8 +6,6 @@ import Tabs from '@theme/Tabs';
 
 import TabItem from '@theme/TabItem';
 
-import './styles.css'
-
 # Getting Started
 
 Welcome to the "Getting Started" guide! In this tutorial, you will learn how to write a backend class, export its methods, call them from the frontend code, and then deploy both the frontend and the backend locally for testing and pushing live to a staging environment.
@@ -63,7 +61,7 @@ yarn add global genezio
 
 {% hint style="warning" %}
 To install genezio you must have **Node version >= 16**.
-{% endhint %} -->
+::: -->
 
 ## 2. Login to the genezio cloud
 
