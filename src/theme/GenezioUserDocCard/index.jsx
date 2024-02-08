@@ -6,6 +6,7 @@ import {
   ItemsGettingStarted,
 } from "../Constants";
 
+
 export default function GenezioUserDocCard(props) {
   let items;
   switch (props.type) {
@@ -24,11 +25,7 @@ export default function GenezioUserDocCard(props) {
   }
   return (
     <div
-      style={{
-        display: "grid",
-        gridTemplateColumns: "repeat(auto-fit, minmax(calc(50% - 10px), 1fr)",
-        gap: "20px",
-      }}
+    className="doc-card-wrapper"
     >
       {items.map((item, index) => {
         return (
