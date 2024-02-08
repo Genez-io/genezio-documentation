@@ -17,22 +17,22 @@ A guide to integrate Upstash resources in genezio projects
 Navigate to the project integration page in the dashboard and select to `Install` Upstash Redis to your project:
 
 <!-- ![](</img/image (39) (1).png>) -->
-<figure style={{textAlign:"center", marginLeft:"0"}}><img src="/img/image (39) (1).png" alt=""/><figcaption></figcaption></figure>
+<figure style={{textAlign:"center", marginLeft:"0"}}><img style={{cursor:"pointer"}} src="/img/image (39) (1).png" alt=""/><figcaption></figcaption></figure>
 
 Connect with an Upstash account using the preferred login method:
 
 <!-- ![](</img/image (43) (1).png>) -->
-<figure style={{textAlign:"center", marginLeft:"0"}}><img src="/img/image (43) (1).png" alt=""/><figcaption></figcaption></figure>
+<figure style={{textAlign:"center", marginLeft:"0"}}><img style={{cursor:"pointer"}} src="/img/image (43) (1).png" alt=""/><figcaption></figcaption></figure>
 
 Create a Redis database or select an already existing database:
 
 <!-- ![](</img/image (42) (1).png>) -->
-<figure style={{textAlign:"center", marginLeft:"0"}}><img src="/img/image (42) (1).png" alt=""/><figcaption></figcaption></figure>
+<figure style={{textAlign:"center", marginLeft:"0"}}><img style={{cursor:"pointer"}} src="/img/image (42) (1).png" alt=""/><figcaption></figcaption></figure>
 
 Hit `Save` to save the database credentials as backend environment variables:
 
 <!-- ![](</img/image (44) (1).png>) -->
-<figure style={{textAlign:"center", marginLeft:"0"}}><img src="/img/image (44) (1).png" alt=""/><figcaption></figcaption></figure>
+<figure style={{textAlign:"center", marginLeft:"0"}}><img style={{cursor:"pointer"}} src="/img/image (44) (1).png" alt=""/><figcaption></figcaption></figure>
 
 Use the environment variables in your genezio project to connect to the Redis database.
 

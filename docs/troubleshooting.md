@@ -29,7 +29,7 @@ export const Model =
 
 Sometimes, you may see a red error message at the top instead of the green `Success` label. Most likely that means your local server has encountered an error or is running on a different port.
 
-<figure style={{textAlign:"center", marginLeft:"0"}}><img src="img/image (39).png" alt="Connection Failed"/><figcaption><p>Genezio Test Interface connection Failed</p></figcaption></figure>
+<figure style={{textAlign:"center", marginLeft:"0"}}><img style={{cursor:"pointer"}} src="img/image (39).png" alt="Connection Failed"/><figcaption><p>Genezio Test Interface connection Failed</p></figcaption></figure>
 
 To establish the connection, verify on which port your server is running and fill that port in the provided input, the click `Connect` (or press Enter). &#x20;
 

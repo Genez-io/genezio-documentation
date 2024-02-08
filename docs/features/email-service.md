@@ -10,7 +10,7 @@ Genezio provides a way to send emails with a managed email service.
 
 On your project page, go to the integrations tab and activate the email service.
 
-<figure style={{textAlign:"center", marginLeft:"0"}}><img src="/img/Screenshot 2024-01-11 at 12.58.27.png" alt="" width="563"/><figcaption></figcaption></figure>
+<figure style={{textAlign:"center", marginLeft:"0"}}><img style={{cursor:"pointer"}} src="/img/Screenshot 2024-01-11 at 12.58.27.png" alt="" width="563"/><figcaption></figcaption></figure>
 
 ### Use it in your project
 
