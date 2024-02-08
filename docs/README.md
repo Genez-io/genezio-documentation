@@ -4,8 +4,6 @@ sidebar_position: 1
 
 # Genezio User Documentation
 
-<!-- import DocCard from "@theme/DocCard"; -->
-
 Welcome to the Genezio documentation.
 
 Genezio is a powerful cloud platform designed for full-stack developers, offering auto-scalable backends and seamlessly connected frontends through a type-safe interface. Whether you're a seasoned developer or just getting started, Genezio has you covered.
@@ -44,18 +42,11 @@ Join our [Discord](https://discord.gg/uc9H5YKjXv) community.
 
 ### Getting Started
 
-<!-- export const MediumCard = ({type,label,href,description}) => (
+import GenezioUserDocCard from "../src/theme/GenezioUserDocCard";
 
-<div style={{display:"flex",gap:"20px"}}>
-<DocCard item={{type:type,label: label, href: href,description: description}}></DocCard>
-<DocCard item={{type:type,label: label, href: href,description: description}}></DocCard>
-</div>
+<GenezioUserDocCard type="getting-started"></GenezioUserDocCard>
 
-);
-
-<MediumCard type="link" label="Getting started" href="./getting-started" description="Start from here with genezio"></MediumCard> -->
-
-<table data-card-size="large" data-view="cards">
+<!-- <table data-card-size="large" data-view="cards">
   <tbody>
     <tr>
       <td>
@@ -70,11 +61,13 @@ Join our [Discord](https://discord.gg/uc9H5YKjXv) community.
       <td>Explore our Tuorials</td>
     </tr>
   </tbody>
-</table>
+</table> -->
 
 ### Features
 
-<table data-card-size="large" data-view="cards">
+<GenezioUserDocCard type="features"></GenezioUserDocCard>
+
+<!-- <table data-card-size="large" data-view="cards">
   <tbody>
     <tr>
       <td>
@@ -113,10 +106,13 @@ Join our [Discord](https://discord.gg/uc9H5YKjXv) community.
       <td>Find out how to use the genezio-generated SDK</td>
     </tr>
   </tbody>
-</table>
+</table> -->
 
 ### Examples
 
+<GenezioUserDocCard type="examples"></GenezioUserDocCard>
+
+<!--
 - [**TypeScript**](examples/typescript/)
 - [**Dart**](examples/dart/)
-- [**JavaScript**](examples/javascript/)
+- [**JavaScript**](examples/javascript/) -->

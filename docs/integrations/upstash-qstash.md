@@ -12,15 +12,15 @@ sidebar_position: 5
 
 Navigate to the project integration page in the dashboard and select to `Install` Upstash QStash to your project:
 
-<figure><img src="/img/image (51).png" alt=""/><figcaption></figcaption></figure>
+<figure style={{textAlign:"center", marginLeft:"0"}}><img src="/img/image (51).png" alt=""/><figcaption></figcaption></figure>
 
 Connect with an Upstash account using the preferred login method:
 
-<figure><img src="/img/image (52).png" alt=""/><figcaption></figcaption></figure>
+<figure style={{textAlign:"center", marginLeft:"0"}}><img src="/img/image (52).png" alt=""/><figcaption></figcaption></figure>
 
 Hit `Save` to save the queue credentials as backend environment variables:
 
-<figure><img src="/img/image (53).png" alt=""/><figcaption></figcaption></figure>
+<figure style={{textAlign:"center", marginLeft:"0"}}><img src="/img/image (53).png" alt=""/><figcaption></figcaption></figure>
 
 Use the environment variables in your genezio project to publish to the Qstash queue.
 
@@ -113,7 +113,7 @@ HTTP Methods Deployed:
 
 And paste it into the environments variable page to set `QUEUE_WEBHOOK_URL` environment variable. Hit `Save` to set the webhook url:
 
-<figure><img src="/img/image (54).png" alt=""/><figcaption></figcaption></figure>
+<figure style={{textAlign:"center", marginLeft:"0"}}><img src="/img/image (54).png" alt=""/><figcaption></figcaption></figure>
 
 To check more on how to manipulate environment variable, go to [backend-envinronment-variables](../project-structure/backend-envinronment-variables "mention").
 

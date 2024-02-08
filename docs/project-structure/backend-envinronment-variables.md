@@ -18,11 +18,11 @@ To set environment variables in the backend classes, head to the [Dashboard](htt
 
 On the `Backend` tab, click on the `Environment Variables` button:
 
-<figure><img src="/img/image (34).png" alt=""/><figcaption></figcaption></figure>
+<figure style={{textAlign:"center", marginLeft:"0"}}><img src="/img/image (34).png" alt=""/><figcaption></figcaption></figure>
 
 Add the environment variables like a `<key, value>` pair. After adding all the environment variables hit the `Save` button:
 
-<figure><img src="/img/image (40).png" alt=""/><figcaption></figcaption></figure>
+<figure style={{textAlign:"center", marginLeft:"0"}}><img src="/img/image (40).png" alt=""/><figcaption></figcaption></figure>
 
 Note: You can also import environment variables from a file using `Import from .env` button.
 

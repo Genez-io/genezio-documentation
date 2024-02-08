@@ -29,7 +29,7 @@ The frontend application is hosted on S3, utilizing its static website features,
 
 Both frontend and backend code deployment employs the AWS CloudFormation service, creating separate stacks for each.
 
-<figure><img src="/img/image (12).png" alt="" width="372"/><figcaption><p>Each class is deployed on a separate AWS Lambda. API Gateway is forwarding the request to the function that should handle that request.</p></figcaption></figure>
+<figure style={{textAlign:"center", marginLeft:"0"}}><img src="/img/image (12).png" alt="" width="372"/><figcaption><p>Each class is deployed on a separate AWS Lambda. API Gateway is forwarding the request to the function that should handle that request.</p></figcaption></figure>
 
 :::info
 If your development involves a Dart application, note that you will need a genezio account for Dart code compilation in the Genezio Cloud. We're currently working on integrating with widely used build systems.&#x20;

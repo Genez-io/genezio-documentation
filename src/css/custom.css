@@ -22,13 +22,13 @@
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: #5b25c1;
-  --ifm-color-primary-dark: #5321b0;
-  --ifm-color-primary-darker: #4d1fa3;
-  --ifm-color-primary-darkest: #411a89;
-  --ifm-color-primary-light: #6529d6;
-  --ifm-color-primary-lighter: #6c31d8;
-  --ifm-color-primary-lightest: #814fde;
+  --ifm-color-primary: #a98eda;
+  --ifm-color-primary-dark: #9473d1;
+  --ifm-color-primary-darker: #8a65cd;
+  --ifm-color-primary-darkest: #6c3ebe;
+  --ifm-color-primary-light: #bea9e3;
+  --ifm-color-primary-lighter: #c8b7e7;
+  --ifm-color-primary-lightest: #e7dff5;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
