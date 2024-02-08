@@ -1,0 +1,9 @@
+name: genezio-docs
+region: us-east-1
+cloudProvider: genezio
+scripts:
+  preFrontendDeploy: npm install && npm run build
+frontend:
+  path: ./build
+  subdomain: genezio-docs
+packageManager: npm
