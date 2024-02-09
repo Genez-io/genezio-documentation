@@ -64,6 +64,7 @@ jobs:
         run: |
           cd genezio-landing-page
           git checkout dev
+          npm ci
           hugo \
             --minify \
             --baseURL "${{ steps.pages.outputs.base_url }}/"
