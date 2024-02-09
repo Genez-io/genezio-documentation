@@ -11,7 +11,6 @@ const config = {
   title: "Genezio Documentation",
   tagline: "Genezio Documentation",
   favicon: "img/favicon.ico",
-
   // Set the production url of your site here
   url: "https://genezio.com",
   // Set the /<baseUrl>/ pathname under which your site is served
@@ -33,7 +32,6 @@ const config = {
     defaultLocale: "en",
     locales: ["en"],
   },
-
   plugins: ["plugin-image-zoom"],
   presets: [
     [
@@ -61,6 +59,15 @@ const config = {
   /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
   themeConfig: {
     // Replace with your project's social card
+    algolia: {
+      // The application ID provided by Algolia
+      appId: "3H42D060PD",
+
+      // Public API key: it is safe to commit it
+      apiKey: "9c8026978d03255b35cb6875a9a757e0",
+
+      indexName: "genezio-genez",
+    },
     image: "img/genezio.svg",
     navbar: {
       title: "Genezio Documentation",
