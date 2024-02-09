@@ -31,7 +31,7 @@ const config = {
   // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: "en",
-    locales: ["en"]
+    locales: ["en"],
   },
 
   plugins: ["plugin-image-zoom"],
@@ -40,19 +40,22 @@ const config = {
       "classic",
       /** @type {import('@docusaurus/preset-classic').Options} */
       {
+        gtag: {
+          trackingID: "G-6Y0FQSRR3N",
+        },
         docs: {
           sidebarPath: "./sidebars.js",
           routeBasePath: "/",
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.,
-          include: ["**/*.md", "**/.*.md"] // Include dot files
+          include: ["**/*.md", "**/.*.md"], // Include dot files
         },
         blog: false,
         theme: {
-          customCss: "./src/css/custom.css"
-        }
-      }
-    ]
+          customCss: "./src/css/custom.css",
+        },
+      },
+    ],
   ],
 
   /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
@@ -64,8 +67,8 @@ const config = {
       logo: {
         alt: "Genezio Logo",
         src: "img/favicon.ico",
-        srcDark: "img/genezio.svg"
-      }
+        srcDark: "img/genezio.svg",
+      },
     },
     // footer: {
     //   style: "dark",
@@ -114,9 +117,9 @@ const config = {
     // },
     prism: {
       theme: prismThemes.oneLight,
-      darkTheme: prismThemes.dracula
-    }
-  }
+      darkTheme: prismThemes.dracula,
+    },
+  },
 };
 
 export default config;
