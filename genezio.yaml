@@ -1,0 +1,5 @@
+name: genezio-landing-page
+region: us-east-1
+frontend:
+  path: ./public
+  subdomain: genezio-landing-page

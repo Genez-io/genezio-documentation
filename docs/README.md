@@ -1,3 +1,7 @@
+---
+sidebar_position: 1
+---
+
 # Genezio User Documentation
 
 Welcome to the Genezio documentation.
@@ -32,18 +36,83 @@ Start your journey with Genezio today and unlock the potential to build, deploy,
 
 Explore the sections below for detailed instructions, tutorials, and API references to make the most of Genezio's powerful features.
 
-:::info
+:::info[]
 Join our [Discord](https://discord.gg/uc9H5YKjXv) community.
 :::
 
 ### Getting Started
 
-<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><a href="getting-started.md"><strong>Getting Started</strong></a></td><td>Start from here with genezio</td><td></td><td></td></tr><tr><td><a href="tutorials/"><strong>Tutorials</strong></a></td><td>Explore our Tuorials</td><td></td><td></td></tr></tbody></table>
+import GenezioUserDocCard from "../src/theme/GenezioUserDocCard";
+
+<GenezioUserDocCard type="getting-started"></GenezioUserDocCard>
+
+<!-- <table data-card-size="large" data-view="cards">
+  <tbody>
+    <tr>
+      <td>
+        <a href="getting-started">Getting Started</a>
+      </td>
+      <td>Start from here with genezio</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="tutorials/">Tutorials</a>
+      </td>
+      <td>Explore our Tuorials</td>
+    </tr>
+  </tbody>
+</table> -->
 
 ### Features
 
-<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th></th></tr></thead><tbody><tr><td><a href="features/backend-deployment.md"><strong>Backend Deployment</strong></a></td><td>Deploy your backend in a serverless infrastructure</td><td></td></tr><tr><td><a href="./#frontend-deployment"><strong>Frontend Deployment</strong></a></td><td>Deploy your frontend</td><td></td></tr><tr><td><a href="features/http-methods-webhooks.md"><strong>Webhooks</strong></a></td><td>Complete documentation on webhooks methods.</td><td></td></tr><tr><td><a href="features/cron-methods.md"><strong>Scheduled Methods</strong></a></td><td>Deploy scheduled methods</td><td></td></tr><tr><td><a href="features/custom-domain-configuration.md"><strong>Custom domain</strong></a></td><td>Set your own custom domain</td><td></td></tr><tr><td><a href="features/generated-sdk.md"><strong>Auto-generated SDK</strong></a></td><td>Find out how to use the genezio-generated SDK</td><td></td></tr></tbody></table>
+<GenezioUserDocCard type="features"></GenezioUserDocCard>
+
+<!-- <table data-card-size="large" data-view="cards">
+  <tbody>
+    <tr>
+      <td>
+        <a href="features/backend-deployment">Backend Deployment</a>
+      </td>
+      <td>Deploy your backend in a serverless infrastructure</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="features/frontend-deployment">Frontend Deployment</a>
+      </td>
+      <td>Deploy your frontend</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="features/http-methods-webhooks">Webhooks</a>
+      </td>
+      <td>Complete documentation on webhooks methods.</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="features/cron-methods">Scheduled Methods</a>
+      </td>
+      <td>Deploy scheduled methods</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="features/custom-domain-configuration">Custom domain</a>
+      </td>
+      <td>Set your own custom domain</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="features/generated-sdk">Auto-generated SDK</a>
+      </td>
+      <td>Find out how to use the genezio-generated SDK</td>
+    </tr>
+  </tbody>
+</table> -->
 
 ### Examples
 
-<table data-view="cards"><thead><tr><th></th><th></th><th></th></tr></thead><tbody><tr><td><a href="examples/typescript/"><strong>TypeScript</strong></a></td><td></td><td></td></tr><tr><td><a href="examples/dart/"><strong>Dart</strong></a></td><td></td><td></td></tr><tr><td><a href="examples/javascript/"><strong>JavaScript</strong></a></td><td></td><td></td></tr></tbody></table>
+<GenezioUserDocCard type="examples"></GenezioUserDocCard>
+
+<!--
+- [**TypeScript**](examples/typescript/)
+- [**Dart**](examples/dart/)
+- [**JavaScript**](examples/javascript/) -->
