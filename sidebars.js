@@ -58,6 +58,7 @@ const sidebars = {
       items: [
         "features/backend-deployment",
         "features/frontend-deployment",
+        "features/databases",
         "features/testing",
         "features/deployment-environments",
         "features/generated-sdk",
