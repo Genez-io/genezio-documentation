@@ -1,12 +1,12 @@
 # Authentication
 
-Genezio offers an easy and out of the box Authentication solution. It supports multiple authentication providers. You can use it using Postgres or Mongo databases already connected to a project or it works also with a "bring your own database" system.
+Genezio offers an easy and out of the box Authentication solution. It supports multiple authentication providers. You can use it using Postgres or Mongo databases already connected to a project. It also works with databases that are hosted somewhere else, you just have to write the URL of the database.  
 
 ## How does it work?
 
 When you enable Genezio Authentication from the Dashboard, a new class `AuthService` is deployed next to your other backend classes. You can activate each authentication provider (such as Google) from the dashboard. 
 
-Once the authentication was enabled and the class was deployed, you can start using and testing it. It will be available in the test interface and you can call methods on it. The methods from the `AuthService` class can also be called via the `@genezio/auth` library. 
+Once the authentication was enabled and the class was deployed, you can start using and testing it. It will be available in the test interface and you can call its methods. The methods from the `AuthService` class can also be called via the `@genezio/auth` library. 
 
 ## Supported authentication providers
 
@@ -42,6 +42,41 @@ You can import the `@GnzAuth` decorator and the `GnzContext` type from `@genezio
 If the first parameter of the method is `@GnzContext`, the client SDK of that method will include the token with the request. On the backend side, the `@GnzAuth` decorator will check if the token exists and if there is a user attached to it. If that's true, the `user` object which contains information about the authenticated user will be attached on the `context` argument. If not, an error will be thrown.
 
 ## Error handling
+
+During the authentication flows, different errors can occur, such as "email already exists" and "password is too weak." These errors should be handled and should display friendly messages to the end user. The AuthService methods throw errors of the following types:
+
+```typescript
+{
+    "message": string,
+    "code": number,
+}
+```
+
+The error codes are the following:
+
+| Error Code                                        | Code |
+|---------------------------------------------------|------|
+| CONNECTION_DATABASE_ERROR                         | 0    |
+| MISSING_EMAIL_PARAMETER                           | 1    |
+| INCORRECT_EMAIL_OR_PASSWORD                       | 2    |
+| EMAIL_ALREADY_EXISTS                              | 3    |
+| EMAIL_NOT_FOUND                                   | 4    |
+| INVALID_TOKEN                                     | 5    |
+| MISSING_PASSWORD_PARAMETER                        | 6    |
+| PASSWORD_TOO_SHORT                                | 7    |
+| PASSWORD_CONTAINS_ONLY_NUMBER                     | 8    |
+| PASSWORD_MUST_HAVE_AT_LEAST_ONE_SPECIAL_CHARACTER | 9    |
+| INTERNAL_PASSWORD_NOT_HASHED_ERROR                | 10   |
+| INTERNAL_CREATE_USER_ERROR                        | 11   |
+| INTERNAL_CREATE_SESSION_ERROR                     | 12   |
+| INTERNAL_UPDATE_USER_ERROR                        | 13   |
+| INTERNAL_UPDATE_SESSION_ERROR                     | 14   |
+| INTERNAL_DELETE_SESSION_ERROR                     | 15   |
+| INTERNAL_DELETE_USER_ERROR                        | 16   |
+| INTERNAL_FIND_USER_ERROR                          | 17   |
+| INTERNAL_FIND_SESSION_ERROR                       | 18   |
+| INTERNAL_INCORRECT_CONFIGURATION                  | 19   |
+| MAIL_NOT_SENT                                     | 20   |
 
 ## Security
 
