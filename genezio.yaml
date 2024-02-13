@@ -1,5 +1,5 @@
 name: genezio-landing-page
 region: us-east-1
 frontend:
-  path: ./build
+  path: ./public
   subdomain: genezio-landing-page
