@@ -28,6 +28,7 @@ const sidebars = {
         "tutorials/connect-to-postgres-powered-by-neon",
         "tutorials/connect-to-redis-powered-by-upstash",
         "tutorials/connect-to-mongodb-atlas",
+        "tutorials/create-react-app-genezio-auth",
         {
           type: "link",
           label: "Create your first Web3 App", // The link label
@@ -59,6 +60,7 @@ const sidebars = {
         "features/backend-deployment",
         "features/frontend-deployment",
         "features/databases",
+        "features/authentication",
         "features/testing",
         "features/deployment-environments",
         "features/generated-sdk",
