@@ -61,12 +61,12 @@ const config = {
     // Replace with your project's social card
     algolia: {
       // The application ID provided by Algolia
-      appId: "3H42D060PD",
+      appId: "01Z71RJVIP",
 
       // Public API key: it is safe to commit it
-      apiKey: "9c8026978d03255b35cb6875a9a757e0",
+      apiKey: "c944d276cc8f6ad49686ad0eacc6da01",
 
-      indexName: "genezio-genez",
+      indexName: "genezio",
     },
     image: "img/genezio.svg",
     navbar: {

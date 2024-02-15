@@ -2,6 +2,8 @@
 sidebar_position: 3
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 # Neon Postgres
 
 :::info
@@ -16,23 +18,23 @@ A guide to integrate Neon resources in genezio projects
 
 Navigate to the project integration page in the dashboard and select to `Install` a Neon Postgres database to your project:
 
-<figure style={{textAlign:"center", marginLeft:"0"}}><img style={{cursor:"pointer"}} src="/img/image (46) (1).png" alt=""/><figcaption></figcaption></figure>
+<figure style={{textAlign:"center", marginLeft:"0"}}><img style={{cursor:"pointer"}} src={useBaseUrl("/img/image (46) (1).png")} alt=""/><figcaption></figcaption></figure>
 
 Connect with an Neon account using the preferred login method:
 
-<figure style={{textAlign:"center", marginLeft:"0"}}><img style={{cursor:"pointer"}} src="/img/image (47) (1).png" alt="" width="350"/><figcaption></figcaption></figure>
+<figure style={{textAlign:"center", marginLeft:"0"}}><img style={{cursor:"pointer"}} src={useBaseUrl("/img/image (47) (1).png")} alt="" width="350"/><figcaption></figcaption></figure>
 
 Create a Neon project or select an already existing project:
 
-<figure style={{textAlign:"center", marginLeft:"0"}}><img style={{cursor:"pointer"}} src="/img/image (48).png" alt="" width="375"/><figcaption></figcaption></figure>
+<figure style={{textAlign:"center", marginLeft:"0"}}><img style={{cursor:"pointer"}} src={useBaseUrl("/img/image (48).png")} alt="" width="375"/><figcaption></figcaption></figure>
 
 Select the branch, database and role for the Neon project:
 
-<figure style={{textAlign:"center", marginLeft:"0"}}><img style={{cursor:"pointer"}} src="/img/image (49).png" alt="" width="375"/><figcaption></figcaption></figure>
+<figure style={{textAlign:"center", marginLeft:"0"}}><img style={{cursor:"pointer"}} src={useBaseUrl("/img/image (49).png")} alt="" width="375"/><figcaption></figcaption></figure>
 
 Hit `Save` to save the database credentials as backend environment variables
 
-<figure style={{textAlign:"center", marginLeft:"0"}}><img style={{cursor:"pointer"}} src="/img/image (50).png" alt="" width="375"/><figcaption></figcaption></figure>
+<figure style={{textAlign:"center", marginLeft:"0"}}><img style={{cursor:"pointer"}} src={useBaseUrl("/img/image (50).png")} alt="" width="375"/><figcaption></figcaption></figure>
 
 Use the environment variables in your genezio project to connect to the Postgres database.
 
