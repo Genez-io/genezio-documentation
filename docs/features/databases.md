@@ -42,6 +42,9 @@ Once the database is created, you have two options to use it:
 
     :::info
     The name of the environment variable for your linked database has the following format: `${DATABASE_NAME}_DATABASE_URL`.
+
+    For example, if you linked a database named `purple-capybara` to your project, the environment variable name will be
+    `PURPLE_CAPYBARA_DATABASE_URL` and it's value will be set to the database connection URL.
     :::
 
     <p align="center">
