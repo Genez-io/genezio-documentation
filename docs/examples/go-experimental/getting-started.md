@@ -106,6 +106,7 @@ Notice you can import types from other packages. They also have to satisfy the s
 - primitive types (int, float64, bool, string), are serializable
 - structs are serializable
 - arrays are serializable
+- maps are serializable as long as the key is `string` and the value type is serializable
 - if an argument is a pointer, that means it is an optional argument (can be null)
 - if a struct property is a pointer, it means it is an optional property (can be null)
 - interfaces are NOT serializable
@@ -113,5 +114,5 @@ Notice you can import types from other packages. They also have to satisfy the s
 ### Current limitations
 
 - json tags on struct properties currently not supported
-- no support for maps and enums
+- no support for enums
 - http methods currently not supported, only jsonrpc and crons methods are available
