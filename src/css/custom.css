@@ -45,14 +45,16 @@
 
 .theme-doc-sidebar-container{
   /* padding-left: 20px; */
+  /* margin-right: 5px;  */
 }
 
 .theme-doc-sidebar-menu{
   padding-left: 20px;
+  /* padding-right: 0px; */
   /* padding-right: 10px; */
 }
 
 .col{
-  padding: 8px 5vw 8px 16px !important;
+  padding: 8px 2.5vw 8px 0px !important;
 }
 
