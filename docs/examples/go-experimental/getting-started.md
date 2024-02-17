@@ -4,11 +4,11 @@ sidebar_position: 1
 
 # Getting Started
 
-This page will explain how to structure your genezio project when using GO for the backend language.
+This page will explain how to structure your genezio project when using Go for the backend language.
 
 ### Project Structure
 
-Because go declarations belong to packages instead of files, genezio allows one deployable genezio class per package. This means that for a project with 2 genezio classes, a valid project structure should look like this:
+Because Go declarations belong to packages instead of files, genezio allows one deployable genezio class per package. This means that for a project with 2 genezio classes, a valid project structure should look like this:
 
 ```
 .
@@ -20,11 +20,11 @@ Because go declarations belong to packages instead of files, genezio allows one 
     └── tasks.go
 ```
 
-Each class has its dedicated folder (package). The package can contain multiple files and even have functions or types distributed in many files of the same package, as go sees them in the same scope.
+Each class has its dedicated folder (package). The package can contain multiple files and even have functions or types distributed in many files of the same package, as Go sees them in the same scope.
 
 ### The YAML
 
-Go doesn’t support decorators, so indicating which classes should be deployed is done using the `genezio.yaml` configuration file (see [Configuration File - Classes](../../project-structure/genezio-configuration-file#classes)). An yaml configuration for the project structure mentioned above would look like this:
+Go doesn’t support decorators, so indicating which classes should be deployed is done using the `genezio.yaml` configuration file (see [Configuration File - Classes](../../project-structure/genezio-configuration-file#classes)). An YAML configuration for the project structure mentioned above would look like this:
 
 ```yaml
 name: test-go
@@ -38,7 +38,7 @@ classes:
 
 ### “Classes”
 
-GO doesn’t have the notion of “classes”. We have, thankfully, an alternative. Structs with attached methods. For the rest of this page, we will refer to them as `genezio classes`, or simply `classes`. Our parser will choose and analyze the first struct it finds (not necessarily the first declared) that has the following properties:
+Go doesn’t have the notion of “classes”. We have, thankfully, an alternative. Structs with attached methods. For the rest of this page, we will refer to them as `genezio classes`, or simply `classes`. Our parser will choose and analyze the first struct it finds (not necessarily the first declared) that has the following properties:
 
 - is exported (starts with a capital letter)
 - has at least one method attached
@@ -59,7 +59,7 @@ func (u *UserService) GetAge(user *User) int // NOT VALID, shlould return (int, 
 
 Notice that we can attach methods to the value of a struct as well as to a pointer of that struct. You can use and mix those kinds of declarations as you wish. It makes no difference for the SDK generation or the way your code runs on the genezio infrastructure.
 
-Example of a valid “genezio class” in GO:
+Example of a valid “genezio class” in Go:
 
 ```go
 package users

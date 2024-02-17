@@ -181,7 +181,7 @@ const sidebars = {
         },
         {
           type: "category",
-          label: "GO (Experimental)",
+          label: "Go (Experimental)",
           link: { type: "doc", id: "examples/go-experimental/README" },
           items: ["examples/go-experimental/getting-started"],
         },
