@@ -67,6 +67,8 @@ const config = {
       apiKey: "00bf2437c8279d80ed7c991744fdb457",
 
       indexName: "genezio",
+
+      contextualSearch: false,
     },
     image: "img/genezio.svg",
     navbar: {
