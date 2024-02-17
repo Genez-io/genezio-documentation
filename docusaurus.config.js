@@ -66,7 +66,7 @@ const config = {
       // Public API key: it is safe to commit it
       apiKey: "00bf2437c8279d80ed7c991744fdb457",
 
-      indexName: "genezio",
+      indexName: "genezio3",
 
       contextualSearch: true,
     },
