@@ -68,7 +68,7 @@ const config = {
 
       indexName: "genezio",
 
-      contextualSearch: false,
+      contextualSearch: true,
     },
     image: "img/genezio.svg",
     navbar: {
