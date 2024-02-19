@@ -61,6 +61,7 @@ The decorator accepts a JSON parameter to configure even more settings on the de
 import {GenezioHttpResponse,GenezioHttpRequest} from "@genezio/types";
 import { GenezioDeploy } from "@genezio/types";
 
+    // highlight-next-line
 @GenezioDeploy({ type: "http" })
 export class HttpHandle {
   handleHttRequest(request: GenezioHttpRequest): GenezioHttpResponse {

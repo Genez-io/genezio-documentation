@@ -71,6 +71,10 @@ If you want to test it locally, you can skip this step.
 genezio login
 ```
 
+:::info
+If you are using Windows, then you need `node` version 18 or higher to be able to run this command properly.
+:::
+
 ## 3. Create a blank project
 
 Copy this command in your terminal to start from a blank template:
@@ -78,6 +82,10 @@ Copy this command in your terminal to start from a blank template:
 ```
 genezio create fullstack --frontend=onboarding-react --backend=onboarding-ts --name=genezio-project --region=us-east-1
 ```
+
+:::info
+The `genezio create` command can be run independently with the project name, project type, deployment region and the frontend and backend languages
+:::
 
 This will create the following folder structure:
 
@@ -119,8 +127,10 @@ Now, import `GenezioDeploy` from `@genezio/types` and use it as a decorator for 
 <!-- {% code title="server/helloWorld.ts" lineNumbers="true" %} -->
 
 ```typescript title="server/helloWorld.ts" showLineNumbers
+// highlight-next-line
 import { GenezioDeploy } from "@genezio/types";
 
+// highlight-next-line
 @GenezioDeploy()
 export class HelloWorldClass {
   hello(name: string): string {
