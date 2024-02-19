@@ -44,7 +44,7 @@ Use the environment variables in your genezio project to connect to the Redis da
 import { Redis } from '@upstash/redis'
 import { GenezioDeploy } from "@genezio/types";
 
-    @GenezioDeploy()
+@GenezioDeploy()
 export class UpstashRedisExample {
   connect() {
     // Connect to Redis

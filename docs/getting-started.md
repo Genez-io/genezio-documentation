@@ -72,7 +72,16 @@ genezio login
 ```
 
 :::info
-If you are using Windows, then you need `node` version 18 or higher to be able to run this command properly.
+To install the genezio CLI you must have Node.JS >= 18.2
+:::
+
+:::info
+If you are experiencing permission-denied errors on Windows, run the command below in Powershell:
+
+```
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+```
+
 :::
 
 ## 3. Create a blank project
@@ -84,7 +93,7 @@ genezio create fullstack --frontend=onboarding-react --backend=onboarding-ts --n
 ```
 
 :::info
-The `genezio create` command can be run independently with the project name, project type, deployment region and the frontend and backend languages
+The `genezio create` command can be run using the syntax above or it can be run as a standalone command which will offer a wizard through which you can configure your project.
 :::
 
 This will create the following folder structure:
