@@ -212,7 +212,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
   <GoogleOAuthProvider clientId="<YOUR_GOOGLE_ID>">
   <RouterProvider router={router} />
   </GoogleOAuthProvider>
-  </React.StrictMode>,
+  </React.StrictMode>
 )
 ```
 
@@ -306,7 +306,9 @@ You can also bring your own database. You just have to provide the connection UR
 ### Email and password
 
 Users can register using an email and a password.
-Once the user has registered, a confirmation email will be sent. By default the subject and message of the email is already set for you with some default values. By default, the redirect url that the user has to click to validate the email is set to your function's URL. You can change the subject, message and redirect URL by going to the Authentication configuration panel from the Genezio Dashboard.
+Once the user has registered, a confirmation email will be sent.
+The email subject and message is already set for you with some default values. The redirect URL that the user has to click to verify the account is set to your function's URL.
+You can change the subject, message and redirect URL by going to the Authentication configuration panel from the Genezio Dashboard.
 
 Another email that is sent automatically is during the reset password flow. No default value is set for the reset password flow. If you want to use this flow, you have to add a redirect URL to your frontend which will make a request to the `AuthService` once the user confirmed the new password.
 
@@ -348,7 +350,10 @@ Once you finished editing the templates, click on the `Save` button.
 Whenever a new login is performed a JWT token is generated. By default, the token is saved in the browser's local storage.
 
 The `@genezio/auth` library allows you to configure where to store the token by exposing the `setStorage()` method.
-You can opt to store it in memory if you are building a more secure web application. In this case, the user will have to log in every time the page is refreshed.
+For example, you can opt to store it in memory if you are building a more secure web application.
+In this case, the user will have to log in every time the page is refreshed.
+If you run a mobile native application, you will have to change the `Storage` since `localStorage` does not exist.
+You might want to save in the Keychain or Keystore depending on the platform.
 
 The storage manager has to be set both on the frontend and the backend side.
 Each backend call will use this storage manager to retrieve the token and attach it to the request.
