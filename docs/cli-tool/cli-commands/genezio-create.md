@@ -74,7 +74,7 @@ These options work only when combined with `genezio create frontend` subcommand.
 `--frontend <frontend-template>`: Starter template for frontend
 
 - Required, asked interactively if not provided
-- Choices: `react-ts`, `react-js`, `vue-ts`, `vue-js`, `vanilla-js`, `none`
+- Choices: `react-ts`, `react-js`, `vue-ts`, `vue-js`, `svelte-ts`, `svelte-js`, `vanilla-js`, `none`
 - If `none` is selected, no client folder will be created, but the project will still have a fullstack-like strucure.
 
 `--multirepo`: If present, the project will create separate repositories for backend and frontend
