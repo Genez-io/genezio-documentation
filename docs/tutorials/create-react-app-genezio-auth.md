@@ -63,8 +63,6 @@ import { AuthService } from "@genezio/auth";
 // Replace <token> and <region> with your own values
 AuthService.getInstance().setTokenAndRegion("<token>", "<region>");
 ```
-Great! Now the Genezio Authentication library knows what your backend is.
-
 Navigate to `src/routes/signup.tsx` import the `AuthService` and replace the existing `handleSubmit` function with the implementation provided below. This change will trigger the `AuthService`'s register method whenever someone clicks the 'Sign Up' button.
 
 ```typescript title="client/src/routes/signup.tsx" showLineNumbers
@@ -116,7 +114,7 @@ const handleLoginSubmit = async (event: React.FormEvent) => {
 }
 ```
 
-In the secret screen, we have two more tasks to tackle. First, we'll capture and set the name and email information of the authenticated user. This can be accomplished by invoking the `userInfo` method on the `AuthService` to retrieve details about the authenticated user.
+In the secret screen, we have two additional tasks to address. First, we need to obtain and record the name and email information of the user who has logged in. This can be achieved by calling the `userInfo` method on the `AuthService`, which will fetch the details of the user currently authenticated.
 
 ```typescript title="client/src/routes/secret.tsx" showLineNumbers
 useEffect(() => {
