@@ -71,6 +71,19 @@ If you want to test it locally, you can skip this step.
 genezio login
 ```
 
+:::info
+To install the genezio CLI you must have Node.JS >= 18.2
+:::
+
+:::info
+If you are experiencing permission-denied errors on Windows, run the command below in Powershell:
+
+```
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+```
+
+:::
+
 ## 3. Create a blank project
 
 Copy this command in your terminal to start from a blank template:
@@ -78,6 +91,10 @@ Copy this command in your terminal to start from a blank template:
 ```
 genezio create fullstack --frontend=onboarding-react --backend=onboarding-ts --name=genezio-project --region=us-east-1
 ```
+
+:::info
+The `genezio create` command can be run using the syntax above or it can be run as a standalone command which will offer a wizard through which you can configure your project.
+:::
 
 This will create the following folder structure:
 
@@ -119,8 +136,10 @@ Now, import `GenezioDeploy` from `@genezio/types` and use it as a decorator for 
 <!-- {% code title="server/helloWorld.ts" lineNumbers="true" %} -->
 
 ```typescript title="server/helloWorld.ts" showLineNumbers
+// highlight-next-line
 import { GenezioDeploy } from "@genezio/types";
 
+// highlight-next-line
 @GenezioDeploy()
 export class HelloWorldClass {
   hello(name: string): string {

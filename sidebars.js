@@ -28,6 +28,8 @@ const sidebars = {
         "tutorials/connect-to-postgres-powered-by-neon",
         "tutorials/connect-to-redis-powered-by-upstash",
         "tutorials/connect-to-mongodb-atlas",
+        "tutorials/create-react-app-genezio-auth",
+        "tutorials/create-react-app-genezio-google-oauth",
         {
           type: "link",
           label: "Create your first Web3 App", // The link label
@@ -58,6 +60,8 @@ const sidebars = {
       items: [
         "features/backend-deployment",
         "features/frontend-deployment",
+        "features/databases",
+        "features/authentication",
         "features/testing",
         "features/deployment-environments",
         "features/generated-sdk",
@@ -176,6 +180,12 @@ const sidebars = {
           label: "Kotlin (Experimental)",
           link: { type: "doc", id: "examples/kotlin-experimental/README" },
           items: ["examples/kotlin-experimental/getting-started"],
+        },
+        {
+          type: "category",
+          label: "Go (Experimental)",
+          link: { type: "doc", id: "examples/go-experimental/README" },
+          items: ["examples/go-experimental/getting-started"],
         },
       ],
     },
