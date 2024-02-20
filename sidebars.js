@@ -181,6 +181,12 @@ const sidebars = {
           link: { type: "doc", id: "examples/kotlin-experimental/README" },
           items: ["examples/kotlin-experimental/getting-started"],
         },
+        {
+          type: "category",
+          label: "Go (Experimental)",
+          link: { type: "doc", id: "examples/go-experimental/README" },
+          items: ["examples/go-experimental/getting-started"],
+        },
       ],
     },
     {
