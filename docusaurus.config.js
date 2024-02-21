@@ -76,7 +76,7 @@ const config = {
       contextualSearch: true,
     },
     hotjar: {
-      applicationId: "3875041",
+      applicationId: "3329235",
     },
     image: "img/genezio.svg",
     navbar: {
