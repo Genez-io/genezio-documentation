@@ -32,7 +32,7 @@ const config = {
     defaultLocale: "en",
     locales: ["en"],
   },
-  plugins: ["plugin-image-zoom"],
+  plugins: ["plugin-image-zoom", "docusaurus-plugin-hotjar"],
   presets: [
     [
       "classic",
