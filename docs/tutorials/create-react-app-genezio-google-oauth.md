@@ -37,11 +37,11 @@ Bypass the login process, by navigating directly to `/`. Press the "Reveal secre
 First, we have to create a new project in Google Cloud. Navigate [here](https://console.cloud.google.com/welcome) and create a new project if you don't have one already. Enter a name and click on "Create". 
 <figure style={{textAlign:"center", marginLeft:"0"}}><img style={{cursor:"pointer"}} src={useBaseUrl("/img/google-step-1.gif")} alt=""/><figcaption></figcaption></figure>
 
-Once the project was created, you need to configure an OAuth Consent screen. Select "External" since the application that we build is available to all users that have a Google account. Enter the details of your application and when you are done, select "Save and Continue".
+Once the project is created, you need to configure an OAuth Consent screen. Select "External" since the application that we build is available to all users that have a Google account. Enter the details of your application and when you are done, select "Save and Continue".
 
 <figure style={{textAlign:"center", marginLeft:"0"}}><img style={{cursor:"pointer"}} src={useBaseUrl("/img/google-step-2.gif")} alt=""/><figcaption></figcaption></figure>
 
-Next, we can move on to the part where we generate a pair of Google Client ID and Google Client Secret that you will need further on to enable the Google auth provider in Genezio. Click on "Credentials" and the "OAuth client ID" to create a new pair of Client ID and Client Secret. Select "Web Application" since we are building a React web app. Also, add the URL of the web app both the local version and the deployed one in the "Authorized Javascript Origin" field. This is a very important step, otherwise you will receive an error the Google Login button won't be displayed. 
+Next, we can move on to the part where we generate a pair of Google Client ID and Google Client Secret that you will need further on to enable the Google auth provider in Genezio. Click on "Credentials" and the "OAuth client ID" to create a new pair of Client ID and Client Secret. Select "Web Application" since we are building a React web app. Also, add the URL of the web app both the local version and the deployed one in the "Authorized Javascript Origin" field. This is a very important step, otherwise the Google Login button won't be displayed because you didn't configure your domain as a trusted one.
 
 <figure style={{textAlign:"center", marginLeft:"0"}}><img style={{cursor:"pointer"}} src={useBaseUrl("/img/google-step-3.gif")} alt=""/><figcaption></figcaption></figure>
 
@@ -68,7 +68,7 @@ To display the Google Login button and to handle the entire Google OAuth flow, w
 npm install @react-oauth/google
 ```
 
-Next add the following code. Import the `GoogleOAuthProvider` that you can use to wrap around the router of the application. We then need to configure the authentication token and region by replacing `<token>` and `<region>` with your own values that you can find the Authentication screen in the dasboard. 
+Next add the following code. Import the `GoogleOAuthProvider` that you can use to wrap around the router of the application. We then need to configure the authentication token and region by replacing `<token>` and `<region>` with your own values that you can find the Authentication screen in the dashboard. 
    
 <figure style={{textalign:"center", marginleft:"0"}}><img style={{cursor:"pointer"}} src={useBaseUrl("/img/token-and-region.png")} alt=""/><figcaption></figcaption></figure>
 
