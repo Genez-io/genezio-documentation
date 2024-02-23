@@ -32,7 +32,7 @@ const config = {
     defaultLocale: "en",
     locales: ["en"],
   },
-  plugins: ["plugin-image-zoom"],
+  plugins: ["plugin-image-zoom", "docusaurus-plugin-hotjar"],
   presets: [
     [
       "classic",
@@ -69,9 +69,14 @@ const config = {
       appId: "01Z71RJVIP",
 
       // Public API key: it is safe to commit it
-      apiKey: "c944d276cc8f6ad49686ad0eacc6da01",
+      apiKey: "00bf2437c8279d80ed7c991744fdb457",
 
-      indexName: "genezio",
+      indexName: "genezio3",
+
+      contextualSearch: true,
+    },
+    hotjar: {
+      applicationId: "3329235",
     },
     image: "img/genezio.svg",
     navbar: {

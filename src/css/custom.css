@@ -15,7 +15,7 @@
   --ifm-color-primary-lightest: #643dae;
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
-  margin-top: 10px;
+  --ifm-navbar-height: 4.4rem;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -35,13 +35,15 @@
   
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(calc(50% - 10px), 1fr));
-    gap: 20px;
+    gap: 18px;
   
 }
 
 .navbar{
-  padding-left: 36px
+  padding-left: 36px;
+  padding-top: 20px;
 }
+
 
 .theme-doc-sidebar-container{
   /* padding-left: 20px; */
@@ -54,7 +56,8 @@
   /* padding-right: 10px; */
 }
 
-.col{
-  padding: 8px 2.5vw 8px 0px !important;
+.theme-doc-markdown{
+  padding-left: 40px;
+  padding-right: 30px;
 }
 
