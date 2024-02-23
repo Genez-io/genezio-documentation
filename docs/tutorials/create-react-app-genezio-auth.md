@@ -86,7 +86,7 @@ const handleSubmit = async (event: React.FormEvent) => {
 };
 ```
 
-You can now test it! Run `npm run dev` in the `client/` folder to test locally the web app. Navigate to http://localhost:5173/signup and enter your information. You must use a real email account because a confirmation email will be sent to verify the email's authenticity. This step is necessary to activate the account; otherwise, it won't work. Also, ensure you set a password that includes at least 8 characters, one capital letter, and one special character. We haven't implemented comprehensive error handling yet, so you might encounter a general error message if one of the input is incorrect.
+You can now test it! Run `npm run dev` in the `client/` folder to test locally the web app. Navigate to http://localhost:5173/signup and enter your information. You must use a real email account because a confirmation email will be sent to verify the email's authenticity. This step is necessary to activate the account; otherwise, it won't work. Also, ensure you set a password that includes at least 8 characters, one capital letter, and one special character. We haven't implemented comprehensive error handling yet, so you might encounter a general error message if one of the inputs is incorrect.
 
 Check your email inbox for the confirmation message. Click the link inside to verify your account. Great job!
 
