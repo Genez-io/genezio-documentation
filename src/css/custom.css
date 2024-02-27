@@ -29,6 +29,7 @@
   --ifm-color-primary-lighter: #c8b7e7;
   --ifm-color-primary-lightest: #e7dff5;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  --ifm-navbar-height: 4.4rem;
 }
 
 .doc-card-wrapper{
@@ -37,8 +38,8 @@
     grid-template-columns: repeat(auto-fit, minmax(calc(50% - 10px), 1fr));
     gap: 18px;
   
-}
-
+} 
+ 
 .navbar{
   padding-left: 36px;
   padding-top: 20px;
