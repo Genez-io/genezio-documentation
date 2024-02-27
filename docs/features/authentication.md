@@ -1,9 +1,9 @@
-import SetYourOwnDb from '/img/features/authentication/set_your_own_db.png';
-import EnableAuth from '/img/features/authentication/enable_auth.png';
-import SelectAuthDb from '/img/features/authentication/select_auth_db.png';
-import EditEmailTemplates from '/img/features/authentication/edit_email_templates.png';
-import EnableEmailAndPassword from '/img/features/authentication/enable_email_and_password.png';
-import EnableGoogleProvider from '/img/features/authentication/enable_google_provider.png';
+import SetYourOwnDb from '/img/features/authentication/set_your_own_db.webp';
+import EnableAuth from '/img/features/authentication/enable_auth.webp';
+import SelectAuthDb from '/img/features/authentication/select_auth_db.webp';
+import EditEmailTemplates from '/img/features/authentication/edit_email_templates.webp';
+import EnableEmailAndPassword from '/img/features/authentication/enable_email_and_password.webp';
+import EnableGoogleProvider from '/img/features/authentication/enable_google_provider.webp';
 
 # Authentication
 
@@ -23,6 +23,7 @@ To enable the authentication feature, you need to have a project with a backend 
 If you want to implement a backend method that is only accessible by authenticated users, you can import and use the `@GenezioAuth` decorator.
 
 Make sure you install the `@genezio/types` package by running:
+
 ```bash
 npm install @genezio/types
 ```
@@ -34,12 +35,13 @@ import { GenezioDeploy, GenezioAuth, GnzContext } from "@genezio/types";
 
 @GenezioDeploy()
 export class BackendService {
-  readonly message = "This message contains sensitive information. Only authenticated users can read it.";
+  readonly message =
+    "This message contains sensitive information. Only authenticated users can read it.";
 
   @GenezioAuth()
   async getSensitiveInformation(context: GnzContext) {
-      console.log("User: ", context.user, "accessed the sensitive message");
-      return this.message;
+    console.log("User: ", context.user, "accessed the sensitive message");
+    return this.message;
   }
 }
 ```
@@ -49,15 +51,17 @@ To get the authenticated user's data, you can use the `context` object.
 
 ```typescript
 export type GnzContext = {
-    token: string | undefined;
-    user: {
+  token: string | undefined;
+  user:
+    | {
         email: string;
         userId: string;
         authProvider: string;
         createdAt: Date;
         verified: boolean;
         name?: string;
-    } | undefined;
+      }
+    | undefined;
 };
 ```
 
@@ -116,6 +120,7 @@ Once you got the Google OAuth credentials you can enable the Google authenticati
 ## Set up email and password authentication
 
 In your `client` directory, install the `@genezio/auth` package by running:
+
 ```bash
 npm install @genezio/auth
 ```
@@ -131,7 +136,6 @@ AuthService.getInstance().setTokenAndRegion("<YOUR_GENEZIO_TOKEN>", "<YOUR_PROJE
 ### Create a sign-up form for new users
 
 Create a form that allows the user to sign up using an email and a password.
-
 
 ```typescript title="client/src/SignUpForm.tsx" showLineNumbers
 import React, { useState } from "react";
@@ -194,6 +198,7 @@ export const LoginForm = () => {
 ## Set up Google OAuth 2.0 authentication
 
 In your `client` directory, install the following packages by running:
+
 ```bash
 npm install @genezio/auth @react-oauth/google
 ```
@@ -334,16 +339,18 @@ From here you can configure the subject and the message of the email that is sen
 You can also dynamically add the user's name using the placeholder `{{name}}` and the link to verify the email `{{redirectUrl}}`.
 
 For example the following template:
+
 ```
 Message: Hi {{name}}, please verify your email by clicking on the following link: {{redirectUrl}}.
 ```
+
 will be sent to the a specific user as:
+
 ```
 Message: Hi John, please verify your email by clicking on the following link: https://function-url/AuthService/emailConfirmationHttp?token=user-token.
 ```
 
 Once you finished editing the templates, click on the `Save` button.
-
 
 ## Token Storage Configuration
 
@@ -361,31 +368,31 @@ Each backend call will use this storage manager to retrieve the token and attach
 Here is an example of how to set the storage manager:
 
 ```typescript title=client/src/main.tsx showLineNumbers
-import { AuthService } from '@genezio/auth';
+import { AuthService } from "@genezio/auth";
 import { StorageManager } from "@genezio-sdk/my-project_us-east-1";
 
 AuthService.getInstance().setTokenAndRegion("<YOUR_GENEZIO_TOKEN>", "<YOUR_PROJECT_REGION>");
 
 // Define a class that will implement the Storage interface
 class InMemoryStorageWrapper {
-    db: { [key: string]: string } = {}
-    setItem(key: string, value: string): void {
-        this.db[key] = value
-    }
-    getItem(key: string): string | null {
-        return this.db[key]
-    }
-    removeItem(key: string): void {
-        delete this.db[key]
-    }
-    clear(): void {
-        this.db = {}
-    }
+  db: { [key: string]: string } = {};
+  setItem(key: string, value: string): void {
+    this.db[key] = value;
+  }
+  getItem(key: string): string | null {
+    return this.db[key];
+  }
+  removeItem(key: string): void {
+    delete this.db[key];
+  }
+  clear(): void {
+    this.db = {};
+  }
 }
-const inMemory = new InMemoryStorageWrapper()
-AuthService.getInstance().setStorage(inMemory)
+const inMemory = new InMemoryStorageWrapper();
+AuthService.getInstance().setStorage(inMemory);
 
-StorageManager.setStorage(inMemory)
+StorageManager.setStorage(inMemory);
 ```
 
 ## Disable authentication
@@ -400,6 +407,7 @@ During the authentication flow, different errors can occur such as `Email alread
 These errors should be handled and should display friendly messages to the end user.
 
 The methods in `AuthService` generate errors with the following structure in TypeScript:
+
 ```typescript
 {
     "message": string,
@@ -408,26 +416,27 @@ The methods in `AuthService` generate errors with the following structure in Typ
 ```
 
 The errors can be easily handled by checking the `code` property of the error object.
+
 ```typescript showLineNumbers
-import { ErrorCode } from '@genezio/auth';
+import { ErrorCode } from "@genezio/auth";
 
 switch (error.code) {
-    case ErrorCode.EMAIL_ALREADY_EXISTS:
-        alert('This email is already in use');
-        break;
-    case ErrorCode.PASSWORD_TOO_SHORT:
-        alert('The password is too short');
-        break;
-    default:
-        alert('An error occurred');
-        break;
+  case ErrorCode.EMAIL_ALREADY_EXISTS:
+    alert("This email is already in use");
+    break;
+  case ErrorCode.PASSWORD_TOO_SHORT:
+    alert("The password is too short");
+    break;
+  default:
+    alert("An error occurred");
+    break;
 }
 ```
 
 A complete list of error codes is the following:
 
 | Error Code                                        | Code |
-|---------------------------------------------------|------|
+| ------------------------------------------------- | ---- |
 | CONNECTION_DATABASE_ERROR                         | 0    |
 | MISSING_EMAIL_PARAMETER                           | 1    |
 | INCORRECT_EMAIL_OR_PASSWORD                       | 2    |
@@ -455,11 +464,13 @@ A complete list of error codes is the following:
 ### AuthService class was not initialized
 
 If you are getting the following error:
+
 ```bash
 The AuthService class was not initialized. Call AuthService.getInstance().setTokenAndRegion(token, region) with the values provided in genezio dashboard.
 ```
 
 Check the following things:
+
 1. The authentication feature is enabled in the genezio dashboard.
 2. At least one authentication provider is enabled (either email and password or Google OAuth 2.0).
 3. The `AuthService.getInstance().setTokenAndRegion(token, region)` method is called in the client's code with the correct token and region available in the dashboard.

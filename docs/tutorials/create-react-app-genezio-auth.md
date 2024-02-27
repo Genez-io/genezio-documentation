@@ -11,6 +11,7 @@ In this tutorial, we'll walk through the process of adding authentication using 
 ## Preparing the setup, the project and enabling Genezio Authentication
 
 First of all, you have to install genezio if you haven't installed it already.
+
 ```
 npm install genezio -g
 ```
@@ -45,17 +46,15 @@ Users will be able to register and login using email and password. To allow this
 
 ## Implementing user registration using email and password
 
-
 Navigate to the `client/` folder and install the Genezio authentication library.
 
 ```
 npm install @genezio/auth
 ```
 
-
 We then need to configure the authentication token and region of your Genezio application. These can be found in the Authentication Configuration screen on the Genezio Dashboard. Go to `src/main.tsx` and write the following code right after the last import and before the router creation.
 
-<figure style={{textAlign:"center"}}><img style={{cursor:"pointer"}} src={useBaseUrl("/img/token-and-region-email.png")} alt=""/><figcaption></figcaption></figure>
+<figure style={{textAlign:"center"}}><img style={{cursor:"pointer"}} src={useBaseUrl("/img/token-and-region-email.webp")} alt=""/><figcaption></figcaption></figure>
 
 ```typescript title="client/src/main.tsx" showLineNumbers
 import { AuthService } from "@genezio/auth";
@@ -63,6 +62,7 @@ import { AuthService } from "@genezio/auth";
 // Replace <token> and <region> with your own values
 AuthService.getInstance().setTokenAndRegion("<token>", "<region>");
 ```
+
 Navigate to `src/routes/signup.tsx` import the `AuthService` and replace the existing `handleSubmit` function with the implementation provided below. This change will trigger the `AuthService`'s register method whenever someone clicks the 'Sign Up' button.
 
 ```typescript title="client/src/routes/signup.tsx" showLineNumbers
@@ -74,13 +74,13 @@ const handleSubmit = async (event: React.FormEvent) => {
   event.preventDefault();
   setLoading(true);
   try {
-      const response = await AuthService.getInstance().register(email, password, name);
-      console.log('Register Success', response);
+    const response = await AuthService.getInstance().register(email, password, name);
+    console.log("Register Success", response);
 
-      navigate('/login');
+    navigate("/login");
   } catch (error: any) {
-      console.log(error);
-      alert("An error has occured")
+    console.log(error);
+    alert("An error has occured");
   }
   setLoading(false);
 };
@@ -100,34 +100,34 @@ import { AuthService } from "@genezio/auth";
 
 ```typescript title="client/src/routes/login.tsx" showLineNumbers
 const handleLoginSubmit = async (event: React.FormEvent) => {
-    event.preventDefault();
-    setLoginLoading(true);
+  event.preventDefault();
+  setLoginLoading(true);
 
-    try {
-        await AuthService.getInstance().login(email, password)
-        navigate("/");
-    } catch (error: any) {
-        console.log('Login Failed', error);
-        alert('Login Failed');
-    }
-    setLoginLoading(false);
-}
+  try {
+    await AuthService.getInstance().login(email, password);
+    navigate("/");
+  } catch (error: any) {
+    console.log("Login Failed", error);
+    alert("Login Failed");
+  }
+  setLoginLoading(false);
+};
 ```
 
 In the secret screen, we have two additional tasks to address. First, we need to obtain and record the name and email information of the user who has logged in. This can be achieved by calling the `userInfo` method on the `AuthService`, which will fetch the details of the user currently authenticated.
 
 ```typescript title="client/src/routes/secret.tsx" showLineNumbers
 useEffect(() => {
-    if (name && email) {
-        return;
-    }
+  if (name && email) {
+    return;
+  }
 
-    AuthService.getInstance().userInfo().then((user) => {
+  AuthService.getInstance().userInfo().then((user) => {
         setName(user.name!);
         setEmail(user.email);
     }).catch((error) => {
         console.error(error);
-    })
+    });
 }, []);
 ```
 
@@ -136,18 +136,18 @@ Second, we need to implement the logout function that gets triggered when the lo
 ```typescript title="client/src/routes/secret.tsx" showLineNumbers
 const logout = async () => {
   try {
-      await AuthService.getInstance().logout();
-      navigate('/login');
+    await AuthService.getInstance().logout();
+    navigate("/login");
   } catch (error) {
-      console.error(error);
+    console.error(error);
   }
-}
+};
 ```
-  
+
 Time to test the app. First, please navigate to http://localhost:5173/login and sign in using your email and password. You'll be directed to a secret screen that displays your information. After reviewing your info, click the "Logout" button. Sadly, if you head back to http://localhost:5173/, the secret information can still be retrieved, even though you're not logged in. This happens because our backend isn't distinguishing between authenticated and unauthenticated requests as it should.
 
 Now, let's fix this. We need to adjust our backend code to ensure the `getSecret` functionality is securely accessible only to authenticated users. Please go to the `./server/` directory and open the `backend.ts` file, which houses our backend service. This file includes a method that reveals the secret. To secure this method, add a `@GenezioAuth()` decorator and include a `context: GnzContext` parameter. Adding a `console.log` can be helpful for debugging purposes to know which user is making the request. Don't forget to import `GenezioAuth` and `GnzContext` from `@genezio/types`.
-  
+
 ```typescript title="server/backend.ts" showLineNumbers
 import { GenezioDeploy, GenezioMethod, GenezioAuth, GnzContext } from "@genezio/types";
 
@@ -156,7 +156,7 @@ export class BackendService {
   readonly secret = "Capybaras are AWESOME! Shhh... don't tell the cats!";
 
   @GenezioMethod()
-  @GenezioAuth() 
+  @GenezioAuth()
   async getSecret(context: GnzContext) {
     console.log(context.user);
     return this.secret;
@@ -166,16 +166,15 @@ export class BackendService {
 
 The `@GenezioAuth` decorator works by first checking if a token exists. If so, it retrieves the user associated with that token and inserts the user's information into the context parameter. To protect your method with `@GenezioAuth`, you must have `context: GnzContext` as the first parameter. This allows you to access the information of the user who made the request simply by using `context.user`. In this example, we print the user's details and then return the secret. If the request lacks a token, or if the token is not found in the database, the decorator will throw an error, which will be conveyed to the caller. This completes the backend requirements. To deploy your application, run `genezio deploy` from the root of your project.
 
-```bash 
+```bash
 $ ls
 client/ server/ genezio.yaml
 
 $ genezio deploy
 ```
 
-Our secret is now protected. Only authenticated users can see it! Try to navigate to the `/` path and try to retrieve the secret. You will be redirected to the login page. 
+Our secret is now protected. Only authenticated users can see it! Try to navigate to the `/` path and try to retrieve the secret. You will be redirected to the login page.
 
 <figure style={{textAlign:"center"}}><img style={{cursor:"pointer"}} src={useBaseUrl("/img/final-email.gif")} alt=""/><figcaption></figcaption></figure>
 
 Congratulations you have integrated Authentication in your React application. You can check out the final implementation [here](https://github.com/Genez-io/genezio-react-auth/tree/final).
-
