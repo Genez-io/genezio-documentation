@@ -122,14 +122,11 @@ useEffect(() => {
     return;
   }
 
-  AuthService.getInstance()
-    .userInfo()
-    .then((user) => {
-      setName(user.name!);
-      setEmail(user.email);
-    })
-    .catch((error) => {
-      console.error(error);
+  AuthService.getInstance().userInfo().then((user) => {
+        setName(user.name!);
+        setEmail(user.email);
+    }).catch((error) => {
+        console.error(error);
     });
 }, []);
 ```
