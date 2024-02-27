@@ -18,20 +18,19 @@ SyntaxError: Cannot use import statement outside a module
 
 The solution is to add the line `"type": "module"` in `package.json`.
 
-### I am receiving `` OverwriteModelError: Cannot overwrite `Model` model once compiled ``
+### I am receiving ``OverwriteModelError: Cannot overwrite `Model` model once compiled``
 
 This is a known Mongoose error. The fix is to add this line when you are exporting your model:
 
 ```javascript
-export const Model =
-  mongoose.models.Model || mongoose.model("Model", modelSchema);
+export const Model = mongoose.models.Model || mongoose.model("Model", modelSchema);
 ```
 
 ### In Test Interface `Couldn't connect to port 8083`
 
 Sometimes, you may see a red error message at the top instead of the green `Success` label. Most likely that means your local server has encountered an error or is running on a different port.
 
-<figure style={{textAlign:"center", marginLeft:"0"}}><img style={{cursor:"pointer"}} src={useBaseUrl("img/image (39).png")} alt="Connection Failed"/><figcaption><p>Genezio Test Interface connection Failed</p></figcaption></figure>
+<figure style={{textAlign:"center", marginLeft:"0"}}><img style={{cursor:"pointer"}} src={useBaseUrl("img/image (39).webp")} alt="Connection Failed"/><figcaption><p>Genezio Test Interface connection Failed</p></figcaption></figure>
 
 To establish the connection, verify on which port your server is running and fill that port in the provided input, the click `Connect` (or press Enter). &#x20;
 

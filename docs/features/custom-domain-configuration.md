@@ -36,7 +36,7 @@ After you add a custom domain, we automatically configure the certificate also o
 
 In the genezio dashboard, you can go to a project that has frontend deployed, and on the frontend tab, you can set up your custom domain.
 
-<figure style={{textAlign:"center", marginLeft:"0"}}><img style={{cursor:"pointer"}} src={useBaseUrl("/img/Screenshot 2023-05-12 at 11.34.17 (1).png")} alt=""/><figcaption><p>Project page - Frontend Tab</p></figcaption></figure>
+<figure style={{textAlign:"center", marginLeft:"0"}}><img style={{cursor:"pointer"}} src={useBaseUrl("/img/Screenshot 2023-05-12 at 11.34.17 (1).webp")} alt=""/><figcaption><p>Project page - Frontend Tab</p></figcaption></figure>
 
 On this page, you add your custom domain and click on the "Save" button.
 
