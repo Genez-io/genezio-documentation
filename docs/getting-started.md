@@ -67,9 +67,11 @@ To install genezio you must have **Node version >= 16**.
 
 If you want to test it locally, you can skip this step.
 
+<div id="step2-login">
 ```
 genezio login
 ```
+</div>
 
 :::info
 To install the genezio CLI you must have Node.JS >= 18.2
@@ -78,9 +80,11 @@ To install the genezio CLI you must have Node.JS >= 18.2
 :::info
 If you are experiencing permission-denied errors on Windows, run the command below in Powershell:
 
+<div id="step2-error">
 ```
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 ```
+</div>
 
 :::
 
@@ -88,9 +92,11 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 
 Copy this command in your terminal to start from a blank template:
 
+<div id="step3-genezio-create">
 ```
 genezio create fullstack --frontend=onboarding-react --backend=onboarding-ts --name=genezio-project --region=us-east-1
 ```
+</div>
 
 :::info
 The `genezio create` command can be run using the syntax above or it can be run as a standalone command which will offer a wizard through which you can configure your project.
@@ -117,6 +123,7 @@ Start by creating the `HelloWorldClass`. It is a good practice to use separate f
 Add the `hello` method to the newly created class. This will be the method that will be exported as a typesafe API.
 
 <!-- {% code title="server/helloWorld.ts" lineNumbers="true" %} -->
+<div id="step4-server-hello">
 
 ```typescript title="server/helloWorld.ts" showLineNumbers
 export class HelloWorldClass {
@@ -127,12 +134,15 @@ export class HelloWorldClass {
 }
 ```
 
+</div>
+
 <!-- {% endcode %} -->
 
 Now, import `GenezioDeploy` from `@genezio/types` and use it as a decorator for the `HelloWorldClass`class. This will ensure that all the public class methods will be exported as APIs.
 
 **Note:** Classes that do not use this decorator remain fully private, to be called only from the backend code.
 
+<div id="step4-server-import">
 <!-- {% code title="server/helloWorld.ts" lineNumbers="true" %} -->
 
 ```typescript title="server/helloWorld.ts" showLineNumbers
@@ -150,6 +160,7 @@ export class HelloWorldClass {
 ```
 
 <!-- {% endcode %} -->
+</div>
 
 ## &#x20;5. Start the genezio local environment
 
@@ -159,9 +170,11 @@ To call the backend services from the frontend, genezio generates a Node module 
 
 Run this command in your **root project folder**:
 
+<div id="step5-local">
 ```
 genezio local
 ```
+</div>
 
 The generated SDK supports both Typescript and Javascript using either ESM or CJS standards and uses JSON-RPC for communication.
 
@@ -177,16 +190,19 @@ You can use any frontend framework locally to test the backend. For this quick s
 
 Run these commands in a **new terminal:**
 
+<div id="step6-run-dev">
 ```bash
 cd ./client
 npm install
 npm run dev
 ```
+</div>
 
 **Note 1:** your frontend can now be accessed at [http://localhost:5173](http://localhost:5173). At this point, it is not connected to the genezio backend.
 
 **Note 2:** To benefit from the genezio SDK auto regeneration we added the following code to `client/vite.config.ts`
 
+<div id="step6-vite-config">
 <!-- {% code title="client/vite.config.ts" lineNumbers="true" %} -->
 
 ```typescript title="client/vite.config.ts" showLineNumbers
@@ -201,17 +217,20 @@ export default defineConfig({
 ```
 
 <!-- {% endcode %} -->
-
+</div>
 ## 7. Call the backend method from the frontend code
 
 Go to `client/src/App.tsx` and import the generated SDK:
 
+<div id="step7-import">
 ```typescript
 import { HelloWorldClass } from "@genezio-sdk/genezio-project_us-east-1";
 ```
+</div>
 
 Next, change the `sayHello` function to call the server-side code. Notice how your preferred editor auto-completes the class and function call:
 
+<div id="step7-call">
 <!-- {% code title="client/src/App.tsx" lineNumbers="true" %} -->
 
 ```typescript title="client/src/App.tsx" showLineNumbers
@@ -222,6 +241,7 @@ async function sayHello() {
 ```
 
 <!-- {% endcode %} -->
+</div>
 
 ## 8. Test your app
 
@@ -235,9 +255,11 @@ Harness the full power of genezio by deploying both the **backend** and the **fr
 
 Run this command in your **root project folder**:
 
+<div id="step9-deploy">
 ```
 genezio deploy
 ```
+</div>
 
 This is a typical part of the output that you should expect:
 
