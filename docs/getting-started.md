@@ -16,19 +16,25 @@ Use your prefered package manager to install genezio:
 
 <Tabs>
   <TabItem className="tab-item" value="npm" label="npm">
+<div id="step1-install-npm">
   ```
   npm install genezio -g
   ```
+  </div>
   </TabItem>
   <TabItem className="tab-item" value="pnpm" label="pnpm">
+  <div id="step1-install-pnpm">
   ```
   pnpm add -g genezio
   ```
+  </div>
   </TabItem>
   <TabItem  className="tab-item" value="yarn" label="yarn">
+  <div id="step1-install-yarn">
   ```
   yarn add global genezio
   ```
+  </div>
   </TabItem>
 </Tabs>
 
