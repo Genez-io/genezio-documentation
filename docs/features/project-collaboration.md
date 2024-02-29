@@ -38,6 +38,6 @@ Full access to the project. The owner can't be changed to another user.
 
 To manage the collaborators, you should go to the project and then click on the **Collaboration** button.
 
-<figure style={{textAlign:"center", marginLeft:"0"}}><img style={{cursor:"pointer"}} src={useBaseUrl("/img/Screenshot 2023-12-13 at 13.05.38.png")} alt=""/><figcaption></figcaption></figure>
+<figure style={{textAlign:"center", marginLeft:"0"}}><img style={{cursor:"pointer"}} src={useBaseUrl("/img/Screenshot 2023-12-13 at 13.05.38.webp")} alt=""/><figcaption></figcaption></figure>
 
 After you add a new collaborator/admin, they will receive an email with the invitation.
