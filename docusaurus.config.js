@@ -41,6 +41,9 @@ const config = {
         gtag: {
           trackingID: "G-VR905VXGKC",
         },
+        googleTagManager: {
+          containerId: "GTM-PP95P9BW"
+        },
         docs: {
           sidebarPath: "./sidebars.js",
           routeBasePath: "/",
