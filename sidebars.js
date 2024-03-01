@@ -71,6 +71,7 @@ const sidebars = {
         "features/custom-domain-configuration",
         "features/project-collaboration",
         "features/check-genezio-dashboard",
+        "features/type-safety",
       ],
     },
     {
