@@ -36,6 +36,19 @@ There are 2 very simple rules for defining type-safe RPC calls in genezio.
 
 In this section we will take a look at serializable types supported by genezio and their implementation in different languages.
 
+Here is a summary of serializable genezio types:
+
+|                                | TS  | Go  | Dart | Kotlin |
+| ------------------------------ | --- | --- | ---- | ------ |
+| [Primitives](#primitive-types) | ✅  | ✅  | ✅   | ✅     |
+| [Objects](#objects)            | ✅  | ✅  | ✅   | ✅     |
+| [Arrays](#arrays)              | ✅  | ✅  | ✅   | ✅     |
+| [Maps](#paps)                  | ✅  | ✅  | ❌   | ✅     |
+| [Enums](#enums)                | ✅  | ❌  | ❌   | ✅     |
+| [Unions](#unions)              | ✅  | ❌  | ❌   | ❌     |
+| [Any](#any-values)             | ✅  | ✅  | ✅   | ✅     |
+| Interfaces                     | ❌  | ❌  | ❌   | ❌     |
+
 ### Primitive types
 
 <Tabs>
