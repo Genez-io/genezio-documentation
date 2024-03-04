@@ -58,6 +58,7 @@ const sidebars = {
       label: "Features",
       link: { type: "doc", id: "features/README" },
       items: [
+        "features/type-safety",
         "features/backend-deployment",
         "features/frontend-deployment",
         "features/databases",
@@ -71,7 +72,6 @@ const sidebars = {
         "features/custom-domain-configuration",
         "features/project-collaboration",
         "features/check-genezio-dashboard",
-        "features/type-safety",
       ],
     },
     {
