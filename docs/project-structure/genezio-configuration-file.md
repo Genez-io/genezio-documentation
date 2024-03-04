@@ -11,7 +11,7 @@ cloudProvider: genezio
 language: ts
 packageManager: npm
 options:
-  nodeRuntime: nodejs18.x
+  nodeRuntime: nodejs20.x
 frontend:
   path: ../client/build
   subdomain: test-domain # not mandatory, we will provide a random one for you
@@ -86,11 +86,11 @@ npm, pnpm, yarn
 
 Specify other specific properties for the programming language that you use:
 
-- **nodeRuntime:** The node runtime version that will be used by your NodeJS application. The supported values are`nodejs16.x`, `nodejs18.x`. Currently, the default value is `nodejs16.x`.
+- **nodeRuntime:** The node runtime version that will be used by your NodeJS application. The supported values are`nodejs16.x`, `nodejs18.x`, `nodejs20.x`. Currently, the default value is `nodejs20.x`.
 
 ```
 options:
-  nodeRuntime: nodejs18.x
+  nodeRuntime: nodejs20.x
 ```
 
 ### Frontend
