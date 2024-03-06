@@ -9,6 +9,10 @@ on:
     pull_request:
         types: [opened, synchronize]
 
+concurrency:
+    group: ${{ github.workflow }}-${{ github.ref }}
+    cancel-in-progress: true
+
 jobs:
     deploy_preview:
         name: Deploy Preview
@@ -51,7 +55,9 @@ jobs:
                   mkdir -p public/docs/
                   cp -r build/* public/docs/
             - name: Compute stage
-              run: echo "STAGE=$(echo -n ${GITHUB_REF##*/} | shasum | head -c 8)" >> $GITHUB_ENV
+              run: |
+                  echo "STAGE=$(echo -n ${{ github.ref_name }} | shasum | head -c 8)" >> $GITHUB_ENV
+                  echo "$STAGE - ${{ github.ref_name }}"
             - name: Deploy
               run: genezio deploy --frontend --stage $STAGE
             - uses: actions/github-script@v7
