@@ -30,6 +30,7 @@ const sidebars = {
         "tutorials/connect-to-mongodb-atlas",
         "tutorials/create-react-app-genezio-auth",
         "tutorials/create-react-app-genezio-google-oauth",
+        "tutorials/migration-to-v1",
         {
           type: "link",
           label: "Create your first Web3 App", // The link label
