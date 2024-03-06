@@ -8,22 +8,48 @@ defaults:
 on:
     pull_request:
         types: [opened, synchronize]
-        branches:
-            - main
-            - dev
 
 jobs:
     deploy_preview:
         name: Deploy Preview
         runs-on: ubuntu-latest
+        env:
+            HUGO_VERSION: 0.120.4
         steps:
             - uses: actions/checkout@v3
             - uses: actions/setup-node@v3
             - uses: Genez-io/genezio-github-action@main
               with:
                   token: ${{ secrets.GENEZIO_TOKEN }}
+            - name: Install Hugo CLI
+              run: |
+                  wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb \
+                  && sudo dpkg -i ${{ runner.temp }}/hugo.deb
+            - name: Install Dart Sass
+              run: sudo snap install dart-sass
+            - name: Install Docs Node.js dependencies
+              run: npm ci
             - name: Build Docs
-              run: npx docusaurus build --out-dir public
+              run: npm run build
+            - name: Clone Repo https://github.com/Genez-io/genezio-landing-page/
+              run: git clone https://github.com/Genez-io/genezio-landing-page/
+            - name: Build with Hugo
+              env:
+                  # For maximum backward compatibility with Hugo modules
+                  HUGO_ENVIRONMENT: production
+                  HUGO_ENV: production
+              run: |
+                  cd genezio-landing-page
+                  npm ci
+                  hugo \
+                    --minify \
+                    --baseURL "https://genezio-landing-page-$STAGE.app.genez.io"
+            - name: Copy public folder
+              run: cp -r genezio-landing-page/public/ public/
+            - name: Copy build files to /public/docs
+              run: |
+                  mkdir -p public/docs/
+                  cp -r build/* public/docs/
             - name: Compute stage
               run: echo "STAGE=$(echo -n ${GITHUB_REF##*/} | shasum | head -c 8)" >> $GITHUB_ENV
             - name: Deploy
@@ -35,5 +61,5 @@ jobs:
                         issue_number: context.issue.number,
                         owner: context.repo.owner,
                         repo: context.repo.repo,
-                        body: `👋 Your preview is ready! ${process.env["STAGE"]}`
+                        body: `👋 Your preview is ready! https://genezio-landing-page-${process.env["STAGE"]}.app.genez.io/docs/`
                       })
