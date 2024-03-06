@@ -297,11 +297,16 @@ Now you have a fully functional app deployed on the genezio infrastructure to be
 
 Now that you have figured out how to write a backend class, export its methods, call them from the frontend code, and then deploy both the frontend and the backend locally for testing and pushing live to a staging environment, you are ready to take the next steps.
 
-Let’s talk about connecting to a database. We support PostgreSQL, MongoDB, and Redis. If you do not have a database, you will learn how to provision one using a dedicated database hosting provider, with whom we partnered up:
+Let’s talk about connecting to a database. We support `PostgreSQL`, `MongoDB`, and `Redis`. If you do not have a database, you will learn how to provision one using a dedicated database hosting provider, with whom we partnered up:
 
-- [**Connect to Postgres SQL**](tutorials/connect-to-postgres-powered-by-neon)
-- [**Connect to MongoDB**](tutorials/connect-to-mongodb-atlas)
-- [**Connect to Redis**](integrations/upstash-redis)
+- [**Connect to `Postgres SQL`**](tutorials/connect-to-postgres-powered-by-neon)
+- [**Connect to `MongoDB`**](tutorials/connect-to-mongodb-atlas)
+- [**Connect to `Redis`**](integrations/upstash-redis)
+
+Every application needs to handle user authentication and authorization. If you do not have an authentication provider, you can learn how to use the genezio authentication service:
+- [Create a React application with `genezio authentication`](tutorials/create-react-app-genezio-auth)
+- [Create a React application with `genezio` and `Google OAuth 2.0`](tutorials/create-react-app-genezio-google-oauth)
+
 
 Other things that do not depend on connecting to a database are scheduling the execution of a function as a cron job, or implementing HTTP Webhooks:
 
@@ -318,6 +323,7 @@ Now you are ready for some more advanced use cases:
 - [Web3 Application](https://genezio.com/blog/create-your-first-web3-app/)
 - [ChatGPT App](https://genezio.com/blog/create-your-first-app-using-chatgpt/)
 - [Shopping Cart Implementation](https://genezio.com/blog/implement-a-shopping-cart-using-typescript-redis-and-react/)
+- [Integrate Stripe Payments](https://genezio.com/blog/integrate-stripe-payments/)
 
 ### Support <a href="#support" id="support"></a>
 

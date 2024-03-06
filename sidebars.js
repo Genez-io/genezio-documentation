@@ -51,6 +51,13 @@ const sidebars = {
           description:
             "In this tutorial, you will learn how to use Redis, NodeJs, and React to easily implement a shopping cart for your online store.",
         },
+        {
+          type: "link",
+          label: "Integrate Stripe Payments", // The link label
+          href: "https://genezio.com/blog/integrate-stripe-payments/", // The external URL
+          description:
+            "This guide will walk you through integrating Stripe payments using a genezio backend and a React frontend.",
+        },
       ],
     },
     {

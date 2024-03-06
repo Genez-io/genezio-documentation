@@ -119,6 +119,8 @@ Now you are ready for some more advanced use cases:
 - [Web3 Application](https://genezio.com/blog/create-your-first-web3-app/)
 - [ChatGPT App](https://genezio.com/blog/create-your-first-app-using-chatgpt/)
 - [Shopping Cart Implementation](https://genezio.com/blog/implement-a-shopping-cart-using-typescript-redis-and-react/)
+- [Integrate Stripe Payments](https://genezio.com/blog/integrate-stripe-payments/)
+
 
 ### Support <a href="#support" id="support"></a>
 
