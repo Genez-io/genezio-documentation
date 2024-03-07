@@ -14,7 +14,7 @@ This is an example of a simple checkout with Stripe that uses React for the fron
 
 ### Prerequisites
 
-- ✅ [NodeJs](https://nodejs.org) >= 16.0.0
+- ✅ [NodeJs](https://nodejs.org) >= 18.0.0
 - ✅ [npm](https://www.npmjs.com/)
 - ✅ [genezio](https://genezio.com/)
 
