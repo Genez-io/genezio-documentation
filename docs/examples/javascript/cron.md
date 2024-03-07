@@ -14,7 +14,7 @@ This is a simple project with a server that schedules some code to execute every
 
 ### Prerequisites
 
-- ✅ [NodeJs](https://nodejs.org) >= 16.0.0
+- ✅ [NodeJs](https://nodejs.org) >= 18.0.0
 - ✅ [npm](https://www.npmjs.com/)
 - ✅ [genezio](https://genezio.com/)
 
