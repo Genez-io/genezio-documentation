@@ -4,17 +4,15 @@
 
 ## Remove region from SDK
 
-In the genezio CLI v1.0.0 release, we updated the generated SDK npm package name by removing "region" for a more intuitive naming convention. 
+In the Genezio CLI v1.0.0 release, we updated the generated SDK NPM package name by removing `region` for a more intuitive naming convention. 
 
-Let's say you have a project named `my-project` in region `us-east-1`.
-
-When using genezio CLI version v0.8.0, the SDK will be named `@genezio-sdk/my-project_us-east-1`. Updating to genezio CLI v1.0.0 will change the SDK package name to `@genezio-sdk/my-project`.
+For instance, if you have a project called `my-project` in the `us-east-1` region, creating the SDK before Genezio CLI v1.0 will result in an NPM package called `@genezio-sdk/my-project_us-east-1`. From Genezio CLI v1.0 onward, the package will be named `@genezio-sdk/my-project`, maintaining the same functionality while being more intuitiv
 
 We advise adopting the updated SDK naming convention. To migrate you have to do the following steps:
 
 1. Make sure you don't have any reference in `scripts` in `package.json` to `@genezio-sdk/<project_name>_<project_region>`.
 
-```json
+```json title="package.json"
 {
   "name": "todo-list-ts",
   "scripts": {
@@ -25,16 +23,16 @@ We advise adopting the updated SDK naming convention. To migrate you have to do 
   },
   "dependencies": {
     // diff-remove
-    "@genezio-sdk/todo-list-ts_us-east-1": "npm:@genezio-sdk/todo-list-ts@^1.0.0-prod",
+    "@genezio-sdk/todo-list-ts_us-east-1": "^1.0.0-prod",
     ...
   }
 }
 ```
 
-2. After updating the genezio CLI and deploying for the first time, run `npm install @genezio-sdk/<project_name>`.
-3. Replace all genezio SDK imports in your frontend project.
+2. After updating the Genezio CLI and deploying for the first time, run `npm install @genezio-sdk/<project_name>`.
+3. Replace all Genezio SDK imports in your frontend project.
 
-```tsx
+```tsx title="App.tsx"
 import { useState, useEffect } from "react";
 import {
   TaskService,
@@ -50,9 +48,9 @@ import { useNavigate } from "react-router-dom";
 
 4. Make sure that there are no more references to `@genezio-sdk/<project_name>_<project_region>`.
 
-It is not completely mandatory to switch right away. If you continue using the old name SDK package name, npm will create an alias in your `package.json`. In that case, your `package.json` will look like this:
+It is not completely mandatory to switch right away. If you continue using the old name SDK package name, NPM will create an alias in your `package.json`. In that case, your `package.json` will look like this:
 
-```
+```json title="package.json"
 "dependencies": {
     "@genezio-sdk/<project_name>_<project_region>": "npm:@genezio-sdk/<project_name>",
 }
