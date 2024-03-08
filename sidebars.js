@@ -25,12 +25,12 @@ const sidebars = {
       label: "Tutorials",
       link: { type: "doc", id: "tutorials/README" },
       items: [
-        "tutorials/connect-to-postgres-powered-by-neon/",
-        "tutorials/connect-to-redis-powered-by-upstash/",
-        "tutorials/connect-to-mongodb-atlas/",
-        "tutorials/create-react-app-genezio-auth/",
-        "tutorials/create-react-app-genezio-google-oauth/",
-        "tutorials/migration-to-v1/",
+        "tutorials/connect-to-postgres-powered-by-neon",
+        "tutorials/connect-to-redis-powered-by-upstash",
+        "tutorials/connect-to-mongodb-atlas",
+        "tutorials/create-react-app-genezio-auth",
+        "tutorials/create-react-app-genezio-google-oauth",
+        "tutorials/migration-to-v1",
         {
           type: "link",
           label: "Create your first Web3 App", // The link label

@@ -33,6 +33,7 @@ We advise adopting the updated SDK naming convention. To migrate you have to do 
 
 2. After updating the genezio CLI and deploying for the first time, run `npm install @genezio-sdk/<project_name>`.
 3. Replace all genezio SDK imports in your frontend project.
+4. Make sure that there are no more references to `@genezio-sdk/<project_name>_<project_region>`.
 
 ```tsx
 import { useState, useEffect } from "react";
