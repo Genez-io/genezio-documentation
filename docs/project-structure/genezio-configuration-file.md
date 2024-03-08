@@ -97,7 +97,7 @@ The cloud provider used to deploy the project. The default value is `genezio`.
 
 #### `scripts`: `Object` **Optional**
 
-The scripts that run before special backend events occur.
+The scripts that run before special backend events occur. If a list is provided to any of the fields, the scripts will be executed sequentially and in case one fails, the execution will be stopped.
 
 -   `deploy`: `string` | `string[]` **Optional**
 
@@ -139,7 +139,7 @@ If not specified, a random subdomain will be generated.
 
 #### `scripts`: `Object` **Optional**
 
-The scripts that run before special frontend events occur.
+The scripts that run before special frontend events occur. If a list is provided to any of the fields, the scripts will be executed sequentially and in case one fails, the execution will be stopped.
 
 -   `deploy`: `string` | `string[]` **Optional**
 

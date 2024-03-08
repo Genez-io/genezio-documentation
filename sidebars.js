@@ -86,9 +86,9 @@ const sidebars = {
       label: "Project Structure",
       link: { type: "doc", id: "project-structure/README" },
       items: [
+        "project-structure/genezio-configuration-file",
         "project-structure/.genezioignore",
         "project-structure/genezio-decorators",
-        "project-structure/genezio-configuration-file",
         "project-structure/backend-envinronment-variables",
       ],
     },
