@@ -138,6 +138,16 @@ const config = {
     prism: {
       theme: prismThemes.oneLight,
       darkTheme: prismThemes.oneDark,
+       magicComments: [
+      {
+        className: 'code-block-diff-add-line',
+        line: 'diff-add'
+      },
+      {
+        className: 'code-block-diff-remove-line',
+        line: 'diff-remove'
+      }
+      ]
     },
   },
 };
