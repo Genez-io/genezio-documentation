@@ -1,168 +1,154 @@
 # Genezio Configuration File
 
-The `genezio.yaml` file contains all the settings for deploying your project.
+The `genezio.yaml` file is a configuration file that contains all the settings for deploying your project. It is a YAML file that should be located at the root of your project.
 
-Check out an example of a complete `genezio.yaml` configuration file:
+## Reference
 
-```yaml
-name: getting-started
-region: us-east-1
-cloudProvider: genezio
-language: ts
-packageManager: npm
-options:
-  nodeRuntime: nodejs20.x
-frontend:
-  path: ../client/build
-  subdomain: test-domain # not mandatory, we will provide a random one for you
-scripts:
-  preBackendDeploy: "echo 'preBackendDeploy'"
-  postBackendDeploy: "echo 'postBackendDeploy'"
-  preFrontendDeploy: "echo 'preFrontendDeploy'"
-  postFrontendDeploy: "echo 'postFrontendDeploy'"
-  preStartLocal: "echo 'preStartLocal'"
-  postStartLocal: "echo 'postStartLocal'"
-  preReloadLocal: "echo 'preReloadLocal'"
-workspace:
-  backend: ./server
-  frontend: ./client
-```
+### `name`: `string` **Required**
 
-### Name
+The name of the project. It is used to identify the project after deployment.
 
-This will be the name of the project when the project is deployed. A user can't have two projects with the same name.
+Restrictions:
 
-### Region
+-   Unique per account
+-   Must start with a letter and can only contain letters, numbers, and hyphens.
 
-The region field can be used to configure where you want your project to be deployed. It would be best to choose the closest location to your users. The supported regions are:
+### `region`: `string` **Optional**
 
-```
-"us-east-1", "us-east-2", "us-west-1", "us-west-2", "ap-south-1", "ap-northeast-3", "ap-northeast-2", "ap-southeast-1", "ap-southeast-2", "ap-northeast-1", "ca-central-1", "eu-central-1", "eu-west-1", "eu-west-2", "eu-west-3", "eu-north-1", "sa-east-1"
-```
+The region where the project will be deployed. If not specified, the default region is `us-east-1`.
 
-### Cloud Provider
+The supported regions are:
 
-This is used to choose the deployment environment. Check the [advanced](../advanced/ "mention") section for more details.
+| Region           | Description              | Region           | Description       |
+| ---------------- | ------------------------ | ---------------- | ----------------- |
+| `us-east-1`      | US, North Virginia       | `us-east-2`      | US, Ohio          |
+| `us-west-1`      | US, North California     | `us-west-2`      | US, Oregon        |
+| `ap-south-1`     | Asia, Mumbai             | `ap-northeast-3` | Asia, Osaka       |
+| `ap-northeast-2` | Asia, Seoul              | `ap-southeast-1` | Asia, Singapore   |
+| `ap-southeast-2` | Asia, Sydney             | `ap-northeast-1` | Asia, Tokyo       |
+| `ca-central-1`   | Canada                   | `eu-central-1`   | Europe, Frankfurt |
+| `eu-west-1`      | Europe, Ireland          | `eu-west-2`      | Europe, London    |
+| `eu-west-3`      | Europe, Paris            | `eu-north-1`     | Europe, Stockholm |
+| `sa-east-1`      | South America, São Paulo |
 
-The supported values are:
+### `backend`: `Object` **Optional**
 
-```
-"genezio", "selfHostedAws"
-```
+The backend configuration. This field can be omitted if the project does not have a backend.
 
-### Language
+#### `path`: `string` **Required**
 
-The language is used to indicate the programming language used to implement the project:
+The path where the backend code is located. It is relative to the `genezio.yaml` file.
 
-The supported values are:
+If the `classes` field is not specified, the backend path is also used to recursively locate the classes.
 
-```
-js, ts
-```
+If scripts are declared in the `scripts` field, they will be executed from this path.
 
-Note: You can also use `dart`, or `kotlin` but the features for dart are currently experimental and prone to changes.
+#### `language`: `Object` **Required**
 
-### Package Manager
+-   `name`: `ts` | `js` | `go` | `dart` | `kotlin` **Required**
 
-The package manager is used to indicate which Node package manager is installed in the project:
+    The programming language used to implement the backend.
 
-The supported values are:
+-   `runtime`: `nodejs16.x` | `nodejs18.x` | `nodejs20.x` **Optional**
 
-```
-npm, pnpm, yarn
-```
+    The node runtime version that will be used by your NodeJS application. The default value is `nodejs20.x`.
 
-### Scripts
+    Applicable only when `language.name` is `ts` or `js`.
 
-- **preBackendDeploy:** this script runs only before deploying the backend
-- **postBackendDeploy**: this script runs only after deploying the backend
-- **preFrontendDeploy**: this script runs only before deploying the frontend
-- **preBackendDeploy**: this script runs only after deploying the frontend
-- **preStartLocal**: this script runs before starting the local server
-- **postStartLocal**: this script runs immediately after starting the local server
-- **preReloadLocal**: this script runs before every reload of the local server. A reload is triggered when a change occurs in the project (usually on creating new files or on saving changes on a file)
+-   `packageManager`: `npm` | `pnpm` | `yarn` **Optional**
 
-### Options
+    The package manager used to install the project's dependencies. The default value is `npm`.
 
-Specify other specific properties for the programming language that you use:
+    Applicable only when `language.name` is `ts` or `js`.
 
-- **nodeRuntime:** The node runtime version that will be used by your NodeJS application. The supported values are`nodejs16.x`, `nodejs18.x`, `nodejs20.x`. Currently, the default value is `nodejs20.x`.
+#### `cloudProvider`: `genezio` | `selfHostedAws` **Optional**
 
-```
-options:
-  nodeRuntime: nodejs20.x
-```
+The cloud provider used to deploy the project. The default value is `genezio`.
 
-### Frontend
+#### `classes`: `Array` **Optional**
 
-- **path:** The path to your frontend build.
-- **subdomain:** The subdomain of genezio you would like your application to run on. It's not a mandatory field. If you leave it out, genezio will provide a random subdomain for you.
+-   `path`: `string` **Required**
 
-### Workspace
+    The source file path at which the class can be located. Relative to the `path` field.
 
-- **backend:** The path to the backend directory.
-- **frontend:** The path to the server directory.
+-   `name`: `string` **Optional**
 
-### SDK
+    Indicate the name of the class to be deployed.
 
-Use this field to set the path and language for the genezio generated SDK.
+    Used only for backend classes written in Dart because there is no mechanism to export only a specific class from a Dart file.
 
-<!-- :::info -->
+-   `type`: `jsonrpc` | `http` | `cron` **Optional**
 
-:::info
-For TypeScript and JavaScript projects, `sdk` is being deprecated. Read more in [generated-sdk](../features/generated-sdk "mention").
-:::
+    If not specified, `jsonrpc` is assumed as the default value.
 
-<!-- ::: -->
+-   `methods`: `Array` **Optional**
 
-Below is a code snippet to generate an SDK for a Flutter client. The SDK will be generated in Dart and saved at the path `../client/src/sdk`:
+    -   `name`: `string` **Required**
 
-```yaml
-sdk:
-  language: dart
-  path: ../client/src/sdk
-```
+        The name of the method. It should be the same name as in the code.
 
-- **language**: The programming language of the client/frontend. Supported values for now are: ts, js, dart (experimental), python(experimental), swift(experimental).
-- **path**: The path to generate the SDK to.
+    -   `type`: `jsonrpc` | `http` | `cron` **Optional**
 
-### Classes
+        If not specified, the value of this field will be set as the class's `type` property.
 
-This field can be used to indicate which classes and methods to deploy with genezio.
+    -   `cronString`: `string` **Required** only when `type` is `cron`.
 
-<!-- :::info -->
+        The cron string that specifies how frequently the method should be called. Check the cron string format on https://crontab.guru/.
 
-:::info
-For TypeScript and JavaScript projects, `classes` is being deprecated in favor of [genezio-decorators](genezio-decorators "mention").
-:::
+#### `scripts`: `Object` **Optional**
 
-<!-- ::: -->
+The scripts that run before special backend events occur.
 
-This field is now especially useful for deploying projects implemented in Dart.
+-   `deploy`: `string` | `string[]` **Optional**
 
-Below is a code snippet to deploy a class named `TaskService` with the following methods:
+    A general purpose script that runs before the backend is deployed.
 
-- `handletHttp` as an http method.
-- `sayHelloEveryMinute` as a scheduled method.
-- other methods implemented in `TaskService` are called using JSON rpc.
+-   `local`: `string` | `string[]` **Optional**
 
-```yaml
-classes:
-  - path: ./task.js
-    type: jsonrpc
-    name: TaskService
-    methods:
-      - name: handletHttp
-        type: http
-      - name: sayHelloEveryMinute
-        type: cron
-        cronString: * * * * *
-```
+    A general purpose script that runs before starting the local testing environment.
 
-- **path:** The path at which the class can be located.
-- **type** (optional): If a method of this class does not specify any `type` property, the trigger for that method will be this value. If not specified, `jsonrpc` is assumed as the default value.
-- **name(optional):** Indicate the name of the class to be deployed. Used only for backend classes written in Dart.
-- **methods** (optional): A list of methods that this class contains. This property is mandatory only if you need to configure one or multiple methods (e.g.: adding a cron string). Each method has the following parameters:
-  - **name** (optional): The name of the method. It should be the same name as in the code.
-  - **type** (optional): The method type. This can be either: `http`, `jsonrpc` or `cron`. If not specified, the value of this field will be set as the class' `type` property.
-  - **cronString:** Only required if the method is of `type: cron`. This specifies how frequently the method should be called. For complete documentation of the cronstring's format check [https://crontab.guru/](https://crontab.guru/)
+### `frontend`: `Object` | `Array` **Optional**
+
+The frontend configuration. This field can be omitted if the project does not have a frontend.
+
+Can be an object or an array of objects if the project has multiple frontends.
+
+#### `path`: `string` **Required**
+
+The path where the frontend code is located. It is relative to the `genezio.yaml` file.
+
+If scripts are declared in the `scripts` field, they will be executed from this path.
+
+#### `language`: `ts` | `js` | `go` | `dart` | `kotlin` | `swift` | `python` **Optional**
+
+Decides the language in which the Genezio SDK is generated.
+
+If not specified, no SDK will be generated for your frontend.
+
+#### `publish`: `string` **Optional**
+
+The path to the frontend build. It is relative to the `path` field.
+
+If not specified, the frontend will not be deployed to the CDN.
+
+#### `subdomain`: `string` **Optional**
+
+The subdomain where the frontend will be deployed.
+
+If not specified, a random subdomain will be generated.
+
+#### `scripts`: `Object` **Optional**
+
+The scripts that run before special frontend events occur.
+
+-   `deploy`: `string` | `string[]` **Optional**
+
+    A general purpose script that runs before the frontend is deployed.
+
+-   `build`: `string` | `string[]` **Optional**
+
+    A script that builds the frontend and populates the `publish` directory. It runs before the frontend is deployed.
+
+-   `start`: `string` | `string[]` **Optional**
+
+    A script that starts the frontend dev server. It runs only during local development.
