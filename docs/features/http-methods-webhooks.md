@@ -18,7 +18,7 @@ A webhook/HTTP method is declared in the same way as any other genezio method, b
 -   The method must return a [`GenezioHttpResponse`](#geneziohttpresponse) object.
 
 :::info
-Decorators are only supported in TypeScript and JavaScript. If you are using any other supported language, you need to specify the method as an HTTP method in the `genezio.yaml` file.
+Decorators are only supported in TypeScript and JavaScript. If you are using any other supported language, you need to specify the method as a HTTP method in the `genezio.yaml` file.
 :::
 
 <Tabs groupId="languages">
@@ -111,7 +111,7 @@ HTTP Methods Deployed:
 #### Properties
 
 -   **headers - required:** A dictionary that contains the headers.
--   **http - required:** An Object that has the following properties:
+-   **http - required:** An object that has the following properties:
     -   **method:** The HTTP method.
     -   **path:** The path of the request.
     -   **protocol:** The HTTP version used.
