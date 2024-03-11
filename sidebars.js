@@ -170,9 +170,9 @@ const sidebars = {
           label: "Dart (Experimental)",
           link: { type: "doc", id: "examples/dart/README" },
           items: [
-            "examples/dart/getting-started",
+            "examples/dart/todo-list",
             "examples/dart/todo-list-react",
-            "examples/dart/chat-with-yoda-chatgpt",
+            "examples/dart/chatbot-openai",
           ],
         },
         {
