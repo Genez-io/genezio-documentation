@@ -1,4 +1,3 @@
-import React from "react";
 import DocCard from "@theme-original/DocCard";
 import {
   ItemsExamples,
