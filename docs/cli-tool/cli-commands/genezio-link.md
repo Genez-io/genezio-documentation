@@ -6,7 +6,7 @@ sidebar_position: 6
 
 ### Usage
 
-`genezio link --projectName <name> --region <region> [--logLevel <logLevel>] [-h | --help]`
+`genezio link --projectName <name> [--logLevel <logLevel>] [-h | --help]`
 
 ### Description
 
@@ -19,8 +19,6 @@ The links are saved in global file create in your home directory `~/.genezio/gen
 To remove the links, use `genezio unlink` command. More details [here](genezio-unlink).
 
 `--projectName <name>` - Set the name of the project that you want to link with. If `--all` is used, this option is ignored.
-
-`--region <region>` - Set the region of the project that you want to communicate with. If --all is used, this option is ignored.
 
 `--logLevel <logLevel>`: Set the verbosity of the output. The supported values are: `trace/debug/info/warn/error`. If you don't specify this argument, the default value used is `info`.
 

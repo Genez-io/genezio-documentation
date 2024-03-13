@@ -6,7 +6,7 @@ sidebar_position: 7
 
 ### Usage
 
-`genezio unlink [--all] --projectName <name> --region <region> [--logLevel <logLevel>] [-h | --help]`
+`genezio unlink [--all] --projectName <name> [--logLevel <logLevel>] [-h | --help]`
 
 ### Description
 
@@ -19,8 +19,6 @@ Clear the previously set path for your frontend app, which is useful when managi
 `--all` - Remove all links (default: false).
 
 `--projectName <name>` - Set the name of the project that you want to unlink from. If `--all` is used, this option is ignored.
-
-`--region <region>` - Set the region of the project that you want to unlink from. If --all is used, this option is ignored.
 
 `--logLevel <logLevel>`: Set the verbosity of the output. The supported values are: `trace/debug/info/warn/error`. If you don't specify this argument, the default value used is `info`.
 
