@@ -119,7 +119,19 @@ The path where the frontend code is located. It is relative to the `genezio.yaml
 
 If scripts are declared in the `scripts` field, they will be executed from this path.
 
-#### `language`: `ts` | `js` | `go` | `dart` | `kotlin` | `swift` | `python` **Optional**
+#### `sdk`: `Object` **Optional**
+
+The Genezio SDK configuration. If not specified, no SDK will be generated for your frontend.
+
+-   `language`: `ts` | `js` | `go` | `dart` | `kotlin` | `swift` | `python` **Required**
+
+    Decides the language in which the Genezio SDK is generated.
+
+-   `path`: `string` **Optional**
+
+    The path where the Genezio SDK is generated. It is relative to the `path` field.
+
+    If not specified, the SDK will be generated in `${path}/sdk`.
 
 Decides the language in which the Genezio SDK is generated.
 

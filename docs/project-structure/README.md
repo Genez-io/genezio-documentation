@@ -43,13 +43,15 @@ A possible `genezio.yaml` configuration file for a fullstack single repository c
 ```yaml title="genezio.yaml"
 name: getting-started
 region: us-east-1
+yamlVersion: 2
 backend:
     path: server
     language:
         name: ts
 frontend:
     path: client
-    language: ts
+    sdk:
+        language: ts
     publish: dist
 ```
 
@@ -118,7 +120,8 @@ The minimum configuration file for the frontend code to be deployed is:
 name: my-project
 frontend:
     path: .
-    language: ts
+    sdk:
+        language: ts
 ```
 
 <Admonition type="tip">
@@ -165,7 +168,8 @@ name: my-project
 region: us-east-1
 frontend:
     path: .
-    language: ts
+    sdk:
+        language: ts
     publish: dist
 ```
 

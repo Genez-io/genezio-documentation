@@ -8,6 +8,7 @@ Here's an example of how to set it up:
 
 ```yaml
 name: project-name
+yamlVersion: 2
 backend:
     path: .
     language:
