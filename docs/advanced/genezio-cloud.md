@@ -6,6 +6,7 @@ Here's an example of how to set it up:
 
 ```yaml
 name: getting-started
+yamlVersion: 2
 backend:
     path: .
     language:
