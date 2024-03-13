@@ -1,5 +1,7 @@
 name: genezio-landing-page
 region: us-east-1
+yamlVersion: 2
 frontend:
-  path: ./public
+  path: .
   subdomain: genezio-landing-page
+  publish: ./public

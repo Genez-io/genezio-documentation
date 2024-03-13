@@ -1,112 +1,109 @@
----
-sidebar_position: 2
----
-
 import Tabs from '@theme/Tabs';
-
 import TabItem from '@theme/TabItem';
 
 # Genezio Decorators
 
-Genezio Decorators is a feature that lets you configure settings directly from your code.
+Genezio Decorators is a feature that lets you configure settings that were previously set in the `genezio.yaml` configuration file, directly from your code.
+
+:::info
+Decorators are only supported in TypeScript and JavaScript. If you are using any other supported language, you need to use the `genezio.yaml` file to declare the settings.
+
+More details about the `genezio.yaml` file can be found in the [Genezio Configuration File](../project-structure/genezio-configuration-file) section.
+:::
 
 To use genezio decorators, you have to install and import `@genezio/types` in your projectp:
 
 <Tabs>
   <TabItem className="tab-item" value="npm" label="npm">
-  ```
-npm install @genezio/types
-```
+    ```
+    npm add @genezio/types
+    ```
   </TabItem>
   <TabItem className="tab-item" value="pnpm" label="pnpm">
-```
-pnpm install @genezio/types
-```
+    ```
+    pnpm add @genezio/types
+    ```
   </TabItem>
   <TabItem  className="tab-item" value="yarn" label="yarn">
-```
-yarn add @genezio/types
-```
+    ```
+    yarn add @genezio/types
+    ```
   </TabItem>
 </Tabs>
-
-Below, you can see an example on how to use genezio decorators.
-
-```typescript title="index.ts"
-import { GenezioDeploy } from "@genezio/types";
-
-@GenezioDeploy()
-export class HelloWorld {
-  /**
-   * Method that returns a personalized "Hello world" message.
-   */
-  hello(name: string, from: string, value: Season): string {
-    const message = `Hello, ${name}, from ${from} during this ${value}`;
-    return message;
-  }
-}
-```
-
-The class `HelloWorld` will be deployed by executing `genezio deploy`.
 
 ### GenezioDeploy
 
 This decorator is used to indicate which classes to be deployed when executing `genezio deploy`.
 
-The decorator accepts a JSON parameter to configure even more settings on the deployed class. See an example below:
+It replaces the need of declaring the classes source file paths in the `genezio.yaml` file.
 
-<!-- {% code title="index.ts" %} -->
+It accepts a JSON parameter with the folowing type:
 
-```typescript title="index.ts"
-import {GenezioHttpResponse,GenezioHttpRequest} from "@genezio/types";
+```ts
+{
+    type: "jsonrpc" | "http" | "cron";
+}
+```
+
+If specified, the `type` parameter will be used to determine the type of every method in the class.
+
+```ts title="index.ts"
+import { GenezioHttpResponse, GenezioHttpRequest } from "@genezio/types";
 import { GenezioDeploy } from "@genezio/types";
 
+// Every method in this class will be deployed as a http method, if not specified otherwise
 @GenezioDeploy({ type: "http" })
 export class HttpHandle {
-  handleHttRequest(request: GenezioHttpRequest): GenezioHttpResponse {
+  handleHttpRequest(request: GenezioHttpRequest): GenezioHttpResponse {
     const response: GenezioHttpResponse = {
       body: request.body,
       headers: { "content-type": "text/html" },
       statusCode: "200",
     };
+
     return response
   }
-```
-
-<!-- {% endcode %} -->
-
-The supported values for type are `http, jsonrpc, cron`.
-
-```typescript
-{
-  type: "jsonrpc" | "http" | "cron";
-}
 ```
 
 ### GenezioMethod
 
 This decorator is used to configure settings on each method from a class.
 
-This is especially useful for setting scheduled methods using cron format.
+It replaces the need of declaring the methods in the `genezio.yaml` file.
 
-The decorator accepts a JSON parameter to configure even more settings on the deployed class. See an example below. Check out the example below:
+It accepts a JSON parameter with the folowing type:
 
-<!-- {% code title="index.ts" %} -->
-
-```typescript title="index.ts"
-import { GenezioDeploy, GenezioMethod } from "@genezio/types";
-
-@GenezioDeploy()
-export class HelloWorld {
-  @GenezioMethod({ type: "cron", cronString: "* * * * *" })
-  sayHiEveryMinute() {
-    console.log("Hi!");
-  }
+```ts
+{
+    type: "jsonrpc" | "http";
+} | {
+    type: "cron";
+    cronString: string;
 }
 ```
 
-<!-- {% endcode %} -->
+If specified, the `type` parameter will be used to determine the type of the method and will override the `type` parameter from the `GenezioDeploy` decorator.
+
+```ts title="index.ts"
+import { GenezioDeploy, GenezioMethod } from "@genezio/types";
+
+// If not specified, the type of every method in this class will be `jsonrpc`
+@GenezioDeploy()
+export class HelloWorld {
+    // This method will be deployed as a `cron` method
+    @GenezioMethod({ type: "cron", cronString: "* * * * *" })
+    sayHiEveryMinute() {
+        console.log("Hi!");
+    }
+
+    // This method will be deployed as a `jsonrpc` method, because it inherits
+    // the type from the GenezioDeploy decorator
+    sayHello() {
+        console.log("Hello!");
+    }
+}
+```
 
 ### More details
 
-With genezio decorators you can also deploy [http-methods-webhooks](../features/http-methods-webhooks "mention") or [cron-methods](../features/cron-methods "mention").
+With Genezio Decorators you can also deploy [HTTP Methods / Webhooks](../features/http-methods-webhooks) or [Cron Methods](../features/cron-methods).

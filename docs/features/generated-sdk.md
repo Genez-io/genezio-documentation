@@ -1,91 +1,109 @@
----
-sidebar_position: 5
----
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import Admonition from '@theme/Admonition';
 
 # Generated SDK
 
-Genezio generates an SDK to enable your clients to easily call the methods implemented in the deployed classes.
+Genezio generates a SDK to enable your clients to easily call the methods implemented in the deployed classes.
 
 ## Use the generated SDK in your client
 
-Genezio generates an SDK by statically analysing the backend code and creating an Abstract Syntax Tree with the deployed classes, methods, return types and parameters types.
+Genezio generates a SDK by statically analysing the backend code and creating an Abstract Syntax Tree describing the deployed classes, methods, return types and parameters types.
 
-The SDK can be installed in your client as an npm package by running:
+The SDK can be installed in your client as a NPM package by running:
 
-```
-npm add @genezio-sdk/<project-name>_<region>@1.0.0-<environment>
-```
+<Tabs groupId="languages">
+  <TabItem value="ts/js" label="TypeScript / JavaScript">
+    ```sh title="Terminal"
+    npm add @genezio-sdk/<project-name>@1.0.0-<environment>
+    ```
+  </TabItem>
+  <TabItem value="go" label="Go">
+    Go currently does not support installing the SDK as a package. Instead, a `sdk` directory is generated in your frontend `path` directory.
+    From there, you can import the generated SDK as a local package. 
+  </TabItem>
+</Tabs>
 
 After installing the SDK, you can import it as any other dependency:
 
-For example, for a project named `my-project` deployed in region `us-east-1`, to import add the following import to your client code:
+<Tabs groupId="languages">
+  <TabItem value="ts/js" label="TypeScript / JavaScript">
+    ```ts
+    import { HelloWorldService } from "@genezio-sdk/<project-name>"
 
-```
-import { HelloWorldService } from "@genezio-sdk/my-project_us-east-1"
-```
+    HelloWorldService.Hello("John")
+    ```
 
-## Link your generated SDK for local testing
+  </TabItem>
+  <TabItem value="go" label="Go">
+    ```go
+    import genezioSdk "<go-module-name>/sdk"
 
-<!-- :::info -->
+    func main() {
+      service := genezioSdk.NewHelloWorldService()
+      service.Hello("John")
+    }
+    ```
+
+  </TabItem>
+</Tabs>
+
+## Link your client repository to a project
 
 :::info
-This is not necessary for fullstack single repositories.
+This step is only necessary when your frontend is not specified in the `genezio.yaml` file.
 :::
 
-<!-- ::: -->
+While testing locally, if genezio does not know about your client repository, it will not be able to install the generated SDK automatically.
+That's why for external clients, you need to link your client repository to a genezio project.
 
-To connect to your backend while testing locally, you need to install the genezio generated SDK in the client repository. `genezio local` is able to install it automatically if you link your client repository path to a deployed project.
+You can link your client repository to a genezio project navigating to the root of your client repository and running:
 
-To link your client repository to a deployed backend server, run:
-
-```
+```sh title="Terminal"
 genezio link --projectName <name> --region <region>
 ```
 
-This command will save a map between the name and region of your project and the path of your client directory. This map is saved in your home directory, at `~/.genezio/geneziolinks`.
+This command will save a map between your genezio project and the path to your client directory. This map is saved in your home directory, at `~/.genezio/geneziolinks`.
 
 To start a local backend server on your machine, run:
 
-```
+```sh title="Terminal"
 genezio local
 ```
 
-When executing genezio local, genezio will generate an SDK by statically analyse your deployed backend code. The SDK will be installed as an npm package in the `node_modules/@genezio-sdk` directory.
+After executing `genezio local`, genezio will generate a SDK by statically analysing your deployed backend code.
 
-After installing the SDK, you can import it as any other dependency:
+<Tabs groupId="languages">
+  <TabItem value="ts/js" label="TypeScript / JavaScript">
+    The SDK will be installed as a NPM package in the `node_modules/@genezio-sdk` directory.
 
-For example, for a project named `my-project` deployed in region `us-east-1`, to import add the following import to your client code:
+    Because it lives in the `node_modules` folder, you can import it as any other dependency:
 
-```
-import { HelloWorldService } from "@genezio-sdk/my-project_us-east-1"
-```
+    ```ts
+    import { HelloWorldService } from "@genezio-sdk/<project-name>"
+    ```
 
-## Generate an SDK for Flutter, Kotlin, Python or Swift
+  </TabItem>
+  <TabItem value="go" label="Go">
+     ```go
+     import genezioSdk "<go-module-name>/sdk"
+     ```
+  </TabItem>
+</Tabs>
 
-<!-- {% hint style="warning" %} -->
+## Genezio private registry
 
-:::warning
-Flutter, Kotlin, Python and Swift support is still experimental
+:::info
+The Genezio private registry is only available for the JavaScript/TypeScript SDK.
 :::
 
-<!-- ::: -->
+To store generated SDKs for your projects, genezio pushes them to a private registry dedicated for your projects.
 
-Support for seamlessly installing for their respective packaging managers is not yet implemented.
+<Tabs groupId="languages">
+  <TabItem value="ts/js" label="TypeScript / JavaScript">
+    You can interact with the npm registry by using common npm commands such as `npm install`.
 
-To generate the SDK for clients implemented in the following languages you have to set the following fields in the configuration file:
+    The token to authenticate with the private npm registry is saved in your package manager global config file (e.g. `~/.npmrc`).
 
-<!-- {% code title="genezio.yaml" %} -->
-
-```yaml title="genezio.yaml"
-sdk:
-  language: dart
-  path: ../client/lib/sdk
-```
-
-<!-- {% endcode %} -->
-
-## Genezio private npm registry
-
-To store generated sdks for your projects, genezio pushes them to a private npm registry dedicated for your projects. You can interact with this npm registry by using common npm commands such as `npm install`.
-
-The token to authenticate with the private npm registry is saved in your package manager global config file (e.g. `~/.npmrc`).
+  </TabItem>
+</Tabs>

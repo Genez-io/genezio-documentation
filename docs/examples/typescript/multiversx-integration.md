@@ -18,7 +18,7 @@ This is a simple project with a server that returns a balance of a wallet addres
 
 ### Prerequisites
 
-- ✅ [NodeJs](https://nodejs.org) >= 16.0.0
+- ✅ [NodeJs](https://nodejs.org) >= 18.0.0
 - ✅ [npm](https://www.npmjs.com/)
 - ✅ [genezio](https://genezio.com/)
 
