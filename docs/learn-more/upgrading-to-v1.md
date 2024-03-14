@@ -119,3 +119,18 @@ It is not completely mandatory to switch right away. If you continue using the o
 ```
 
 However, you might still have problems if you are using `genezio local`. It's better to do the change as soon as possible to avoid any unpleasant errors further on.
+
+## Update Github Actions
+
+If you previously used the [`genezio-github-action`](/docs/integrations/github-action.md) to install genezio in a CI/CD environment,
+you have to modify your Github Actions to use the tag `@v1` instead of `@main`.
+
+Example: In a CI/CD environment, install genezio version `v1.x.x`:
+```yaml title=".github/workflows/deploy.yml"
+        # diff-remove
+      - uses: Genez-io/genezio-github-action@main
+        # diff-add
+      - uses: Genez-io/genezio-github-action@v1
+        with:
+          token: ${{ secrets.GENEZIO_TOKEN }}
+```
