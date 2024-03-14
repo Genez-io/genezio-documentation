@@ -18,7 +18,7 @@ This is a simple hello world project with a server that returns a greeting messa
 
 ### Prerequisites
 
-- ✅ [NodeJs](https://nodejs.org) >= 16.0.0
+- ✅ [NodeJs](https://nodejs.org) >= 18.0.0
 - ✅ [npm](https://www.npmjs.com/)
 - ✅ [genezio](https://genezio.com/)
 

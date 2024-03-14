@@ -14,7 +14,7 @@ In this project, we are creating an application that uses the ChatGPT API. It's 
 
 ### Prerequisites
 
-- ✅ [NodeJs](https://nodejs.org/) >= 16.0.0
+- ✅ [NodeJs](https://nodejs.org/) >= 18.0.0
 - ✅ [npm](https://genezio.com/)
 - ✅ [genezio](https://genezio.com/)
 

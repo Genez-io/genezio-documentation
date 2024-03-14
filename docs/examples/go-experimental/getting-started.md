@@ -115,4 +115,3 @@ Notice you can import types from other packages. They also have to satisfy the s
 
 - json tags on struct properties currently not supported
 - no support for enums
-- http methods currently not supported, only jsonrpc and crons methods are available

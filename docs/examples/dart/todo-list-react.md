@@ -2,7 +2,11 @@
 sidebar_position: 2
 ---
 
-# Todo List
+# Todo List with React
+
+:::warning
+Running `dart` on the backend side is still experimental work. If you encounter any issues, please let us know by creating a new [GitHub issue](https://github.com/Genez-io/genezio/issues).
+:::
 
 :::info
 The source code for this example is public on the following [GitHub repository](https://github.com/Genez-io/genezio-examples/tree/master/dart/todo-list-react-typescript).
@@ -15,9 +19,22 @@ This is an example of a todo application that uses:
 - `MongoDB`
 - `genezio` for developing and deploying the project
 
-Note: `genezio deploy` deploys both backend and frontend. If you want to test this example out-of-the-box by running 1 command, head to the `server` directory and run `genezio deploy`.
+Note: `genezio deploy` deploys both backend and frontend.
+If you want to test this example out-of-the-box by running 1 command, head to the `server` directory and run `genezio deploy`.
 
 If you want to deploy your application step-by-step, follow the guidelines below.
+
+## Prerequisites
+- ✅ [NodeJs](https://nodejs.org) >= 16.0.0
+- ✅ [npm](https://www.npmjs.com/)
+- ✅ [genezio](https://genezio.com/)
+- ✅ [Flutter](https://docs.flutter.dev/get-started/install)
+
+1. Host a Mongo Database. Follow this [tutorial](https://genezio.com/docs/tutorials/connect-to-mongodb-atlas) to get a free tier database.
+2. Create a `server/.env` file and add the following environment variables:
+```env
+MONGO_DB_URI=<your-mongo-uri>
+```
 
 ### Clone the example
 
@@ -45,7 +62,3 @@ If you want to deploy your application step-by-step, follow the guidelines below
 2. Run `genezio deploy --frontend` in the `server` folder to deploy the frontend in the genezio infrastructure.
 
 Github files are available [**here**](https://github.com/Genez-io/genezio-examples/tree/master/dart/todo-list-react-typescript).
-
-###
-
-\

@@ -67,7 +67,7 @@ jobs:
           npm ci
           hugo \
             --minify \
-            --baseURL "${{ steps.pages.outputs.base_url }}/"
+            --baseURL "https://genezio-landing-page-dev.app.genez.io"
       - name: Copy public folder
         run: cp -r genezio-landing-page/public/ public/
       - name: Copy build files to /public/docs
