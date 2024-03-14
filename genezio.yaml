@@ -5,4 +5,3 @@ frontend:
   path: .
   subdomain: genezio-landing-page
   publish: ./public
-  scripts: {}
