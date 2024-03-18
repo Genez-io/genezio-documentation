@@ -16,7 +16,7 @@ const config = {
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: "/docs/",
-
+  trailingSlash: true,
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: "genezio", // Usually your GitHub org/user name.
@@ -138,15 +138,15 @@ const config = {
     prism: {
       theme: prismThemes.oneLight,
       darkTheme: prismThemes.oneDark,
-       magicComments: [
-      {
-        className: 'code-block-diff-add-line',
-        line: 'diff-add'
-      },
-      {
-        className: 'code-block-diff-remove-line',
-        line: 'diff-remove'
-      }
+      magicComments: [
+        {
+          className: 'code-block-diff-add-line',
+          line: 'diff-add'
+        },
+        {
+          className: 'code-block-diff-remove-line',
+          line: 'diff-remove'
+        }
       ]
     },
   },
