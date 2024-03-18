@@ -106,6 +106,8 @@ Your backend code was deployed and the SDK was successfully generated!
 
 HTTP Methods Deployed:
   - QstashService.ping: https://<lambdaUrl>/QstashService/ping
+
+App Dashboard URL: https://app.genez.io/project/<projectId>/<projectEnvId>
 ```
 
 And paste it into the environments variable page to set `QUEUE_WEBHOOK_URL` environment variable. Hit `Save` to set the webhook url:
