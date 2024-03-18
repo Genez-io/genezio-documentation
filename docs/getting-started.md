@@ -188,7 +188,7 @@ For those who are curious, the generated code can be found in `client/node_modul
 
 You are now done setting up the backend in the local environment.
 
-**Note:** You can test your API using the [Testing Interface](https://app.genez.io/test-interface/local?port=8083) provided in the genezio dashboard.
+**Note:** You can test your API using the [Testing Interface](http://localhost:8083/explore) provided in the genezio dashboard.
 
 ## 6. Use your newly created backend in the frontend of your choice
 
@@ -304,9 +304,9 @@ Let’s talk about connecting to a database. We support `PostgreSQL`, `MongoDB`,
 - [**Connect to `Redis`**](integrations/upstash-redis)
 
 Every application needs to handle user authentication and authorization. If you do not have an authentication provider, you can learn how to use the genezio authentication service:
+
 - [Create a React application with `genezio authentication`](tutorials/create-react-app-genezio-auth)
 - [Create a React application with `genezio` and `Google OAuth 2.0`](tutorials/create-react-app-genezio-google-oauth)
-
 
 Other things that do not depend on connecting to a database are scheduling the execution of a function as a cron job, or implementing HTTP Webhooks:
 

@@ -89,9 +89,17 @@ The output of the command should look like this:
 ```bash
 $ genezio local
 Server listening on port 8083
-Your code was deployed and the SDK was successfully generated!
+Your local server is running and the SDK was successfully generated!
 
-Test your code at https://app.genez.io/test-interface/local?port=8083
+
+   ╭────────────────────────────────────────────────────────────────────╮
+   │                                                                    │
+   │   Import your classes like this:                                   │
+   │   import { HelloWorldClass } from "@genezio-sdk/genezio-project"   │
+   │                                                                    │
+   ╰────────────────────────────────────────────────────────────────────╯
+
+Test your code at http://localhost:8083/explore
 ```
 
 This command will spawn a local server on a random port that can be used for testing and will also generate an SDK to be able to call the backend methods from the frontend code.\
@@ -102,7 +110,7 @@ The SDK is built as a local npm library. To use it, while the local server is ru
 npm install @genezio-sdk/{your-project-name}_{your-project-region}
 ```
 
-If you just want to test your genezio code without having to write any code in your client, head over to the output link [`https://app.genez.io/test-interface/local?port=8083`](https://app.genez.io/test-interface/local?port=8083) to test your project in the Genezio Test Interface:
+If you just want to test your genezio code without having to write any code in your client, head over to the output link [`http://localhost:8083/explore`](http://localhost:8083/explore) to test your project in the Genezio Test Interface:
 
 <figure style={{textAlign:"center", marginLeft:"0"}}><img style={{cursor:"pointer"}} src={useBaseUrl("/img/Screenshot 2023-08-11 at 19.28.34.webp")} alt=""/><figcaption></figcaption></figure>
 
@@ -115,7 +123,7 @@ To test only the frontend locally, you can run the command below in the `client`
 <!-- {% code title="./project-root/client" %} -->
 
 ```bash title="./project-root/client"
-npm start
+npm run dev
 ```
 
 <!-- {% endcode %} -->
@@ -134,7 +142,7 @@ genezio local
 
 ```bash title="./project-root/client"
 npm install @genezio-sdk/{your-project-name}_{your-project-region}
-npm start
+npm run dev
 ```
 
 <!-- {% endcode %} -->
@@ -149,7 +157,7 @@ Local testing from the testing dashboard is **NOT** supported on Safari
 
 You can easily test your project using the dashboard without deploying it to the cloud.&#x20;
 
-After you run the `genezio local` command (learn more about it from [local](../cli-tool/cli-commands/local "mention")), follow the link provided to you in your prompt or manually go to[ https://app.genez.io/test-interface/local](https://app.genez.io/test-interface/local)
+After you run the `genezio local` command (learn more about it from [local](../cli-tool/cli-commands/local "mention")), follow the link provided to you in your prompt or manually go to[ http://localhost:8083/explore](http://localhost:8083/explore)
 
 You should see a green label indicating that your connection to the local server was successful. After that, you can test your functions as you would for a remote environment.
 
