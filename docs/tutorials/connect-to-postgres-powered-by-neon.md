@@ -107,7 +107,7 @@ Start your local environment by running the following command:
 genezio local
 ```
 
-Test your newly created service at [test interface](https://app.genez.io/test-interface/local?port=8083).
+Test your newly created service at [test interface](http://localhost:8083/explore).
 
 Here you can send requests to your local backend server and receive responses to check if your service is working properly.
 
@@ -137,7 +137,6 @@ Now you are ready for some more advanced use cases:
 - [ChatGPT App](https://genezio.com/blog/create-your-first-app-using-chatgpt/)
 - [Shopping Cart Implementation](https://genezio.com/blog/implement-a-shopping-cart-using-typescript-redis-and-react/)
 - [Integrate Stripe Payments](https://genezio.com/blog/integrate-stripe-payments/)
-
 
 ### Support <a href="#support" id="support"></a>
 
