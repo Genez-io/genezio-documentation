@@ -36,7 +36,7 @@ To establish the connection, verify on which port your server is running and fil
 
 ### When executing `genezio local` reloads infinitely
 
-`genezio local` watch for files changes inside your backend directory. If `genezio local` goes into an infinite reloading loop, you might need to use [**`.genezioignore`**](./project-structure/.genezioignore) to ignore the files that keep changing.
+`genezio local` watch for files changes inside your backend directory. If `genezio local` goes into an infinite reloading loop, you might need to use [**`.genezioignore`**](/docs/project-structure/.genezioignore) to ignore the files that keep changing.
 
 ### Module not found `Error: Can't resolve 'https' or 'http'`
 

@@ -292,7 +292,7 @@ App Dashboard URL: https://app.genez.io/project/<projectId>/<projectEnvId>
 Frontend URL: https://<subdomain>.dev.app.genez.io
 ```
 
-After the deployment succeeds, you can access the [Dashboard](https://app.genez.io), check the logs of the project, and use the [Test Interface](features/testing) to call your backend functions manually.
+After the deployment succeeds, you can access the [Dashboard](https://app.genez.io), check the logs of the project, and use the [Test Interface](/docs/features/testing) to call your backend functions manually.
 
 ## 10. All set
 

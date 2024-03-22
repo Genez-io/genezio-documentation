@@ -153,9 +153,9 @@ genezio deploy
 
 After deploying, you can make requests to the remote server by:
 
-- using the [testing functionality](testing) from the genezio dashboard
+- using the [testing functionality](/docs/features/testing) from the genezio dashboard
 - building a client application that uses the generated type safe SDK - such as a React app or a CLI
-  - Check the [Generated Sdk](generated-sdk "mention") section to find out how to use the Genezio SDK in your project.
+  - Check the [Generated Sdk](/docs/features/generated-sdk "mention") section to find out how to use the Genezio SDK in your project.
 
 ## Next Steps
 

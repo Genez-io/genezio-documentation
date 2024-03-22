@@ -114,7 +114,7 @@ If you just want to test your genezio code without having to write any code in y
 
 <figure style={{textAlign:"center", marginLeft:"0"}}><img style={{cursor:"pointer"}} src={useBaseUrl("/img/Screenshot 2023-08-11 at 19.28.34.webp")} alt=""/><figcaption></figcaption></figure>
 
-You can use the _Genezio Test Interface_ to test your projects locally, as well as remotely. Find more details about it at [testing](testing "mention").
+You can use the _Genezio Test Interface_ to test your projects locally, as well as remotely. Find more details about it at [testing](/docs/features/testing).
 
 ### Test the client
 
