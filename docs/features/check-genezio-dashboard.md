@@ -12,9 +12,9 @@ To check information about all of your deployed projects, you can open a browser
 
 On the dashboard, you can interact with your projects as follows:
 
-- Test your project within the testing dashboard. Learn more [here](testing).
-- Add integrations on your project such as monitoring, databases, queues. Learn more [here](../integrations/).
-- Configure a custom domain for your frontend. Learn more [here](custom-domain-configuration).
+- Test your project within the testing dashboard. Learn more [here](/docs/features/testing).
+- Add integrations on your project such as monitoring, databases, queues. Learn more [here](/docs/integrations/).
+- Configure a custom domain for your frontend. Learn more [here](/docs/features/custom-domain-configuration).
 - Monitor your project and check logs for each deployed class.
-- Configure environment variables. Learn more [here](../project-structure/backend-envinronment-variables).
+- Configure environment variables. Learn more [here](/docs/project-structure/backend-envinronment-variables).
 - Delete your project when you no longer need it.

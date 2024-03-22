@@ -139,7 +139,7 @@ The `genezio.yaml` configuration file is the file that genezio uses to understan
   </TabItem>
 </Tabs>
 
-For more details on the `genezio.yaml` configuration file features, check the [Genezio Configuration File](../project-structure/genezio-configuration-file "mention") section.
+For more details on the `genezio.yaml` configuration file features, check the [Genezio Configuration File](/docs/project-structure/genezio-configuration-file "mention") section.
 
 ## Deploy your project
 
@@ -153,19 +153,19 @@ genezio deploy
 
 After deploying, you can make requests to the remote server by:
 
--   using the [testing functionality](testing) from the genezio dashboard
--   building a client application that uses the generated type safe SDK - such as a React app or a CLI
-    -   Check the [Generated Sdk](generated-sdk "mention") section to find out how to use the Genezio SDK in your project.
+- using the [testing functionality](testing) from the genezio dashboard
+- building a client application that uses the generated type safe SDK - such as a React app or a CLI
+  - Check the [Generated Sdk](generated-sdk "mention") section to find out how to use the Genezio SDK in your project.
 
 ## Next Steps
 
 Now let's see how to schedule the execution of a function as a cron job, or implement HTTP Webhooks:
 
--   [Cron Jobs](cron-methods)
--   [HTTP Webhooks](http-methods-webhooks)
+- [Cron Jobs](/docs/features/cron-methods)
+- [HTTP Webhooks](/docs/features/http-methods-webhooks)
 
 Now you are ready for some more advanced use cases:
 
--   [Web3 Application](https://genezio.com/blog/create-your-first-web3-app/)
--   [ChatGPT App](https://genezio.com/blog/create-your-first-app-using-chatgpt/)
--   [Shopping Cart Implementation](https://genezio.com/blog/implement-a-shopping-cart-using-typescript-redis-and-react/)
+- [Web3 Application](https://genezio.com/blog/create-your-first-web3-app/)
+- [ChatGPT App](https://genezio.com/blog/create-your-first-app-using-chatgpt/)
+- [Shopping Cart Implementation](https://genezio.com/blog/implement-a-shopping-cart-using-typescript-redis-and-react/)

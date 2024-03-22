@@ -41,7 +41,7 @@ It accepts a JSON parameter with the folowing type:
 
 ```ts
 {
-    type: "jsonrpc" | "http" | "cron";
+  type: "jsonrpc" | "http" | "cron";
 }
 ```
 
@@ -90,20 +90,20 @@ import { GenezioDeploy, GenezioMethod } from "@genezio/types";
 // If not specified, the type of every method in this class will be `jsonrpc`
 @GenezioDeploy()
 export class HelloWorld {
-    // This method will be deployed as a `cron` method
-    @GenezioMethod({ type: "cron", cronString: "* * * * *" })
-    sayHiEveryMinute() {
-        console.log("Hi!");
-    }
+  // This method will be deployed as a `cron` method
+  @GenezioMethod({ type: "cron", cronString: "* * * * *" })
+  sayHiEveryMinute() {
+    console.log("Hi!");
+  }
 
-    // This method will be deployed as a `jsonrpc` method, because it inherits
-    // the type from the GenezioDeploy decorator
-    sayHello() {
-        console.log("Hello!");
-    }
+  // This method will be deployed as a `jsonrpc` method, because it inherits
+  // the type from the GenezioDeploy decorator
+  sayHello() {
+    console.log("Hello!");
+  }
 }
 ```
 
 ### More details
 
-With Genezio Decorators you can also deploy [HTTP Methods / Webhooks](../features/http-methods-webhooks) or [Cron Methods](../features/cron-methods).
+With Genezio Decorators you can also deploy [HTTP Methods / Webhooks](/docs/features/http-methods-webhooks) or [Cron Methods](/docs/features/cron-methods).

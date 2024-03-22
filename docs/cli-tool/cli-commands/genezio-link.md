@@ -16,7 +16,7 @@ Linking a client with a deployed project will enable `genezio local` to figure o
 
 The links are saved in global file create in your home directory `~/.genezio/geneziolinks`.
 
-To remove the links, use `genezio unlink` command. More details [here](genezio-unlink).
+To remove the links, use `genezio unlink` command. More details [here](/docs/cli-tool/cli-commands/genezio-unlink).
 
 `--projectName <name>` - Set the name of the project that you want to link with. If `--all` is used, this option is ignored.
 

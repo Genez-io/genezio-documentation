@@ -11,6 +11,7 @@ const config = {
   title: "Genezio Documentation",
   tagline: "Genezio Documentation",
   favicon: "img/favicon.ico",
+  trailingSlash: true,
   // Set the production url of your site here
   url: "https://genezio.com",
   // Set the /<baseUrl>/ pathname under which your site is served

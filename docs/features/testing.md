@@ -157,7 +157,7 @@ Local testing from the testing dashboard is **NOT** supported on Safari
 
 You can easily test your project using the dashboard without deploying it to the cloud.&#x20;
 
-After you run the `genezio local` command (learn more about it from [local](../cli-tool/cli-commands/local "mention")), follow the link provided to you in your prompt or manually go to[ http://localhost:8083/explore](http://localhost:8083/explore)
+After you run the `genezio local` command (learn more about it from [local](/docs/cli-tool/cli-commands/local "mention")), follow the link provided to you in your prompt or manually go to[ http://localhost:8083/explore](http://localhost:8083/explore)
 
 You should see a green label indicating that your connection to the local server was successful. After that, you can test your functions as you would for a remote environment.
 

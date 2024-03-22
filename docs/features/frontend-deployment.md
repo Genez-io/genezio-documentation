@@ -18,22 +18,22 @@ First, you have to add the `frontend` field in your `genezio.yaml`:
 name: my-project
 region: us-east-1
 frontend:
-    # Specifies the path of your code.
-    path: .
-    # Specifies the folder where the build is located.
-    # This is the folder that will be deployed.
-    publish: build
-    # The frontend will be deployed to `cool-capybara.app.genez.io`
-    # If not provided, a random one is assigned.
-    subdomain: cool-capybara
-    # Scripts will run in the specified `path` folder.
-    scripts:
-        # The command to build your frontend project. This is custom to your project.
-        # It must to populate the specified `publish` folder with a `index.html` file.
-        build: npm run build
+  # Specifies the path of your code.
+  path: .
+  # Specifies the folder where the build is located.
+  # This is the folder that will be deployed.
+  publish: build
+  # The frontend will be deployed to `cool-capybara.app.genez.io`
+  # If not provided, a random one is assigned.
+  subdomain: cool-capybara
+  # Scripts will run in the specified `path` folder.
+  scripts:
+    # The command to build your frontend project. This is custom to your project.
+    # It must to populate the specified `publish` folder with a `index.html` file.
+    build: npm run build
 ```
 
-Learn more about the `genezio.yaml` file in the [Yaml Configuration File](../project-structure/genezio-configuration-file) page.
+Learn more about the `genezio.yaml` file in the [Yaml Configuration File](/docs/project-structure/genezio-configuration-file) page.
 
 Run the following command in the same directory as your `genezio.yaml` file to deploy your frontend project:
 
@@ -47,4 +47,4 @@ Once your deployment is successful, you can conveniently access comprehensive in
 
 ## Next Steps
 
-Check out how you can set up a [Custom Domain](custom-domain-configuration "mention") configuration for your frontend deployment.
+Check out how you can set up a [Custom Domain](/docs/features/custom-domain-configuration "mention") configuration for your frontend deployment.

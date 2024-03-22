@@ -8,10 +8,10 @@ Here's an example of how to set it up:
 name: getting-started
 yamlVersion: 2
 backend:
-    path: .
-    language:
-        name: ts
-    cloudProvider: genezio
+  path: .
+  language:
+    name: ts
+  cloudProvider: genezio
 ```
 
-For more information on how to use `genezio.yaml`, check [Genezio Configuration File](../project-structure/genezio-configuration-file) section.
+For more information on how to use `genezio.yaml`, check [Genezio Configuration File](/docs/project-structure/genezio-configuration-file) section.
