@@ -24,7 +24,7 @@ Each class has its dedicated folder (package). The package can contain multiple 
 
 ### The YAML
 
-Go doesn’t support decorators, so indicating which classes should be deployed is done using the `genezio.yaml` configuration file (see [Configuration File - Classes](../../project-structure/genezio-configuration-file#classes)). A YAML configuration for the project structure mentioned above would look like this:
+Go doesn’t support decorators, so indicating which classes should be deployed is done using the `genezio.yaml` configuration file (see [Configuration File - Classes](/project-structure/genezio-configuration-file#classes)). A YAML configuration for the project structure mentioned above would look like this:
 
 ```yaml
 name: test-go

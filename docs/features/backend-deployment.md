@@ -13,7 +13,7 @@ You can deploy classes written in TypeScript, JavaScript, Go (experimental) and 
 :::warning
 We do not recommend you to manually create your projects. You should instead use the `genezio create` command to create a new project. This command will generate a project with the correct structure and configuration files.
 
-Check out this tutorial to learn how to [create-your-first-project](../getting-started "mention") with genezio.
+Check out this tutorial to learn how to [create-your-first-project](/docs/getting-started "mention") with genezio.
 :::
 
 ## Code Structure
@@ -96,7 +96,7 @@ The `genezio.yaml` configuration file is the file that genezio uses to understan
     ```
 
     <Admonition type="tip">
-    The `classes` field can be omitted if the classes are decorated with `@GenezioDeploy()`. Learn more about decorators in the [Decorators](../project-structure/genezio-decorators "mention") section.
+    The `classes` field can be omitted if the classes are decorated with `@GenezioDeploy()`. Learn more about decorators in the [Decorators](/docs/project-structure/genezio-decorators "mention") section.
 
     If a class is neither decorated or specified in the `genezio.yaml` file, it will not be deployed.
     </Admonition>

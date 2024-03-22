@@ -8,7 +8,7 @@ Genezio Decorators is a feature that lets you configure settings that were previ
 :::info
 Decorators are only supported in TypeScript and JavaScript. If you are using any other supported language, you need to use the `genezio.yaml` file to declare the settings.
 
-More details about the `genezio.yaml` file can be found in the [Genezio Configuration File](../project-structure/genezio-configuration-file) section.
+More details about the `genezio.yaml` file can be found in the [Genezio Configuration File](/docs/project-structure/genezio-configuration-file) section.
 :::
 
 To use genezio decorators, you have to install and import `@genezio/types` in your projectp:
