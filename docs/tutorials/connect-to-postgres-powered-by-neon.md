@@ -12,9 +12,9 @@ If you don't already have them, you'll need to install the following tools:
 
 - [Node.js](https://nodejs.org/en/download/current)
 - [Npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
-- [Genezio](../getting-started)
+- [Genezio](/docs/getting-started)
 
-You need to have a genezio project. Use an existing one, or [create a new one.](../getting-started)
+You need to have a genezio project. Use an existing one, or [create a new one.](/docs/getting-started)
 
 ## 1. Initialize a Neon Postgres database
 
@@ -121,15 +121,15 @@ genezio deploy
 
 ## Next Steps
 
-Other things that do not depend on connecting to a database are scheduling the execution of a function as a cron job, or implementing HTTP Webhooks:
+Other things that do not depend on connecting to a database are scheduling the execution of a function as a cron job, or implementing HTTP Webhooks:w
 
-- [Cron Jobs](../features/cron-methods)
-- [HTTP Webhooks](../features/http-methods-webhooks)
+- [Cron Jobs](/docs/features/cron-methods)
+- [HTTP Webhooks](/docs/features/http-methods-webhooks)
 
 Also, you can find more details on deploying the backend and frontend here:
 
-- [Backend Deployment](../features/backend-deployment)
-- [Frontend Deployment](../features/frontend-deployment)
+- [Backend Deployment](/docs/features/backend-deployment)
+- [Frontend Deployment](/docs/features/frontend-deployment)
 
 Now you are ready for some more advanced use cases:
 

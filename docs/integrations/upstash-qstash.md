@@ -114,7 +114,7 @@ And paste it into the environments variable page to set `QUEUE_WEBHOOK_URL` envi
 
 <figure style={{textAlign:"center", marginLeft:"0"}}><img style={{cursor:"pointer"}} src={useBaseUrl("/img/image (54).webp")} alt=""/><figcaption></figcaption></figure>
 
-To check more on how to manipulate environment variable, go to [backend-envinronment-variables](../project-structure/backend-envinronment-variables "mention").
+To check more on how to manipulate environment variable, go to [backend-envinronment-variables](/docs/project-structure/backend-envinronment-variables "mention").
 
 ### Test locally with a Qstash queue
 

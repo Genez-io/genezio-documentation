@@ -292,7 +292,7 @@ App Dashboard URL: https://app.genez.io/project/<projectId>/<projectEnvId>
 Frontend URL: https://<subdomain>.dev.app.genez.io
 ```
 
-After the deployment succeeds, you can access the [Dashboard](https://app.genez.io), check the logs of the project, and use the [Test Interface](features/testing) to call your backend functions manually.
+After the deployment succeeds, you can access the [Dashboard](https://app.genez.io), check the logs of the project, and use the [Test Interface](/docs/features/testing) to call your backend functions manually.
 
 ## 10. All set
 
@@ -304,24 +304,24 @@ Now that you have figured out how to write a backend class, export its methods, 
 
 Let’s talk about connecting to a database. We support `PostgreSQL`, `MongoDB`, and `Redis`. If you do not have a database, you will learn how to provision one using a dedicated database hosting provider, with whom we partnered up:
 
-- [**Connect to `Postgres SQL`**](tutorials/connect-to-postgres-powered-by-neon)
-- [**Connect to `MongoDB`**](tutorials/connect-to-mongodb-atlas)
-- [**Connect to `Redis`**](integrations/upstash-redis)
+- [**Connect to `Postgres SQL`**](/docs/tutorials/connect-to-postgres-powered-by-neon)
+- [**Connect to `MongoDB`**](/docs/tutorials/connect-to-mongodb-atlas)
+- [**Connect to `Redis`**](/docs/integrations/upstash-redis)
 
 Every application needs to handle user authentication and authorization. If you do not have an authentication provider, you can learn how to use the genezio authentication service:
 
-- [Create a React application with `genezio authentication`](tutorials/create-react-app-genezio-auth)
-- [Create a React application with `genezio` and `Google OAuth 2.0`](tutorials/create-react-app-genezio-google-oauth)
+- [Create a React application with `genezio authentication`](/docs/tutorials/create-react-app-genezio-auth)
+- [Create a React application with `genezio` and `Google OAuth 2.0`](/docs/tutorials/create-react-app-genezio-google-oauth)
 
 Other things that do not depend on connecting to a database are scheduling the execution of a function as a cron job, or implementing HTTP Webhooks:
 
-- [Cron Jobs](features/cron-methods)
-- [HTTP Webhooks](features/http-methods-webhooks)
+- [Cron Jobs](/docs/features/cron-methods)
+- [HTTP Webhooks](/docs/features/http-methods-webhooks)
 
 Also, you can find more details on deploying the backend and frontend here:
 
-- [Backend Deployment](features/backend-deployment)
-- [Frontend Deployment](features/frontend-deployment)
+- [Backend Deployment](/docs/features/backend-deployment)
+- [Frontend Deployment](/docs/features/frontend-deployment)
 
 Now you are ready for some more advanced use cases:
 

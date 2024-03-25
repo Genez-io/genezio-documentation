@@ -114,7 +114,7 @@ If you just want to test your genezio code without having to write any code in y
 
 <figure style={{textAlign:"center", marginLeft:"0"}}><img style={{cursor:"pointer"}} src={useBaseUrl("/img/Screenshot 2023-08-11 at 19.28.34.webp")} alt=""/><figcaption></figcaption></figure>
 
-You can use the _Genezio Test Interface_ to test your projects locally, as well as remotely. Find more details about it at [testing](testing "mention").
+You can use the _Genezio Test Interface_ to test your projects locally, as well as remotely. Find more details about it at [testing](/docs/features/testing).
 
 ### Test the client
 
@@ -157,7 +157,7 @@ Local testing from the testing dashboard is **NOT** supported on Safari
 
 You can easily test your project using the dashboard without deploying it to the cloud.&#x20;
 
-After you run the `genezio local` command (learn more about it from [local](../cli-tool/cli-commands/local "mention")), follow the link provided to you in your prompt or manually go to[ http://localhost:8083/explore](http://localhost:8083/explore)
+After you run the `genezio local` command (learn more about it from [local](/docs/cli-tool/cli-commands/local "mention")), follow the link provided to you in your prompt or manually go to[ http://localhost:8083/explore](http://localhost:8083/explore)
 
 You should see a green label indicating that your connection to the local server was successful. After that, you can test your functions as you would for a remote environment.
 

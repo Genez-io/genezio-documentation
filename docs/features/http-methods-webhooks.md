@@ -13,7 +13,7 @@ With genezio decorators, you can set one or more of your methods to handle HTTP 
 
 A webhook/HTTP method is declared in the same way as any other genezio method, but it needs to fulfill the following requirements to be considered a webhook/HTTP method:
 
-- The method must be marked as `http` either using [decorators](../project-structure/genezio-decorators) or the [`genezio.yaml` configuration](../project-structure/genezio-configuration-file.md) file.
+- The method must be marked as `http` either using [decorators](/docs/project-structure/genezio-decorators) or the [`genezio.yaml` configuration](/docs/project-structure/genezio-configuration-file.md) file.
 - The method must have only one parameter of type [`GenezioHttpRequest`](#geneziohttprequest).
 - The method must return a [`GenezioHttpResponse`](#geneziohttpresponse) object.
 
@@ -138,8 +138,8 @@ For more details, check out the webhooks examples for [JavaScript](https://githu
 
 Also, you can find more details on deploying the backend and frontend here:
 
-- [Backend Deployment](backend-deployment)
-- [Frontend Deployment](frontend-deployment)
+- [Backend Deployment](/docs/features/backend-deployment)
+- [Frontend Deployment](/docs/features/frontend-deployment)
 
 Now you are ready for some more advanced use cases:
 
