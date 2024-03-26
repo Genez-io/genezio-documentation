@@ -100,24 +100,21 @@ genezio deploy
 Running preBackendDeploy script...
 npm install
 
-Bundling your code ✅
+Deploying your backend project to the genezio infrastructure
 
-Deploying your backend project to the genezio infrastructure ✅
-
-Checking your credentials ✅
-Doing the final touch-ups ✅
-
-Your code was deployed and the SDK was successfully generated!
+Your backend code was deployed and the SDK was successfully generated!
 
 HTTP Methods Deployed:
-  - QstashService.ping: https://sp2s7mw6diy4oz4iwxhcargf5a0hajem.lambda-url.us-east-1.on.aws/QstashService/ping
+  - QstashService.ping: https://<lambdaUrl>/QstashService/ping
+
+App Dashboard URL: https://app.genez.io/project/<projectId>/<projectEnvId>
 ```
 
 And paste it into the environments variable page to set `QUEUE_WEBHOOK_URL` environment variable. Hit `Save` to set the webhook url:
 
 <figure style={{textAlign:"center", marginLeft:"0"}}><img style={{cursor:"pointer"}} src={useBaseUrl("/img/image (54).webp")} alt=""/><figcaption></figcaption></figure>
 
-To check more on how to manipulate environment variable, go to [backend-envinronment-variables](../project-structure/backend-envinronment-variables "mention").
+To check more on how to manipulate environment variable, go to [backend-envinronment-variables](/docs/project-structure/backend-envinronment-variables "mention").
 
 ### Test locally with a Qstash queue
 

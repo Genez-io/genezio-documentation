@@ -66,6 +66,6 @@ Adding an apex domain such as `test.com` hosted on GoDaddy may encounter limitat
 
 ## Troubleshooting custom domains <a href="#title-h1" id="title-h1"></a>
 
-In case you encounter issues setting your custom domain, check the [troubleshooting](../troubleshooting "mention") section.
+In case you encounter issues setting your custom domain, check the [troubleshooting](/docs/troubleshooting "mention") section.
 
 If you cannot find a solution there, ask us on [Discord](https://discord.com/invite/uc9H5YKjXv) in the `#support` channel. We are always happy to help!

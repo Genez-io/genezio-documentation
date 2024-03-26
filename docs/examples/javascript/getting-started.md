@@ -127,5 +127,5 @@ If you need support or you have any questions, please join us in our Discord cha
 
 ### Built With
 
-- Genezio
-- React.js
+- [Genezio](https://genezio.com/)
+- [React.js](https://react.dev/)

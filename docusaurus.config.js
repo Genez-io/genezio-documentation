@@ -6,17 +6,18 @@
 
 import { themes as prismThemes } from "prism-react-renderer";
 
+
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: "Genezio Documentation",
   tagline: "Genezio Documentation",
   favicon: "img/favicon.ico",
+  trailingSlash: true,
   // Set the production url of your site here
   url: "https://genezio.com",
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: "/docs/",
-
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: "genezio", // Usually your GitHub org/user name.
@@ -138,15 +139,15 @@ const config = {
     prism: {
       theme: prismThemes.oneLight,
       darkTheme: prismThemes.oneDark,
-       magicComments: [
-      {
-        className: 'code-block-diff-add-line',
-        line: 'diff-add'
-      },
-      {
-        className: 'code-block-diff-remove-line',
-        line: 'diff-remove'
-      }
+      magicComments: [
+        {
+          className: 'code-block-diff-add-line',
+          line: 'diff-add'
+        },
+        {
+          className: 'code-block-diff-remove-line',
+          line: 'diff-remove'
+        }
       ]
     },
   },
