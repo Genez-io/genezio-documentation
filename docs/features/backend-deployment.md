@@ -83,14 +83,23 @@ The `genezio.yaml` configuration file is the file that genezio uses to understan
 <Tabs groupId="languages">
   <TabItem value="ts" label="TypeScript">
     ```yaml title="genezio.yaml" showLineNumbers
+    # Learn more about Genezio YAML at https://genezio.com/docs/project-structure/genezio-configuration-file/
+    # The name of the project.
     name: my-backend
+    # The region where the project is deployed.
     region: us-east-1
+    # The version of the Genezio YAML configuration to parse.
     yamlVersion: 2
     backend:
+        # The root directory of the backend.
         path: .
+        # Information about the backend's programming language.
         language:
+            # The name of the programming language.
             name: ts
+            # The node runtime version. (specific to js/ts)
             runtime: nodejs20.x
+        # The classes to be deployed.
         classes:
           - path: service.ts
     ```
@@ -104,14 +113,23 @@ The `genezio.yaml` configuration file is the file that genezio uses to understan
   </TabItem>
   <TabItem value="js" label="JavaScript">
     ```yaml title="genezio.yaml" showLineNumbers
+    # Learn more about Genezio YAML at https://genezio.com/docs/project-structure/genezio-configuration-file/
+    # The name of the project.
     name: my-backend
+    # The region where the project is deployed.
     region: us-east-1
+    # The version of the Genezio YAML configuration to parse.
     yamlVersion: 2
     backend:
+        # The root directory of the backend.
         path: .
+        # Information about the backend's programming language.
         language:
+            # The name of the programming language.
             name: js
+            # The node runtime version. (specific to js/ts)
             runtime: nodejs20.x
+        # The classes to be deployed.
         classes:
           - path: service.js
     ```
@@ -125,13 +143,21 @@ The `genezio.yaml` configuration file is the file that genezio uses to understan
   </TabItem>
   <TabItem value="go" label="Go">
     ```yaml title="genezio.yaml" showLineNumbers
+    # Learn more about Genezio YAML at https://genezio.com/docs/project-structure/genezio-configuration-file/
+    # The name of the project.
     name: my-backend
+    # The region where the project is deployed.
     region: us-east-1
+    # The version of the Genezio YAML configuration to parse.
     yamlVersion: 2
     backend:
+        # The root directory of the backend.
         path: .
+        # Information about the backend's programming language.
         language:
+            # The name of the programming language.
             name: go
+        # The classes to be deployed.
         classes:
           - path: service.go
     ```
@@ -153,19 +179,19 @@ genezio deploy
 
 After deploying, you can make requests to the remote server by:
 
-- using the [testing functionality](/docs/features/testing) from the genezio dashboard
-- building a client application that uses the generated type safe SDK - such as a React app or a CLI
-  - Check the [Generated Sdk](/docs/features/generated-sdk "mention") section to find out how to use the Genezio SDK in your project.
+-   using the [testing functionality](/docs/features/testing) from the genezio dashboard
+-   building a client application that uses the generated type safe SDK - such as a React app or a CLI
+    -   Check the [Generated Sdk](/docs/features/generated-sdk "mention") section to find out how to use the Genezio SDK in your project.
 
 ## Next Steps
 
 Now let's see how to schedule the execution of a function as a cron job, or implement HTTP Webhooks:
 
-- [Cron Jobs](/docs/features/cron-methods)
-- [HTTP Webhooks](/docs/features/http-methods-webhooks)
+-   [Cron Jobs](/docs/features/cron-methods)
+-   [HTTP Webhooks](/docs/features/http-methods-webhooks)
 
 Now you are ready for some more advanced use cases:
 
-- [Web3 Application](https://genezio.com/blog/create-your-first-web3-app/)
-- [ChatGPT App](https://genezio.com/blog/create-your-first-app-using-chatgpt/)
-- [Shopping Cart Implementation](https://genezio.com/blog/implement-a-shopping-cart-using-typescript-redis-and-react/)
+-   [Web3 Application](https://genezio.com/blog/create-your-first-web3-app/)
+-   [ChatGPT App](https://genezio.com/blog/create-your-first-app-using-chatgpt/)
+-   [Shopping Cart Implementation](https://genezio.com/blog/implement-a-shopping-cart-using-typescript-redis-and-react/)

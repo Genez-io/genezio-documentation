@@ -13,8 +13,8 @@ The time specified in the cron strings is in UTC. You can use this [converter](h
 
 There are two ways to declare a scheduled method:
 
-- Using decorators (only available for TypeScript and JavaScript projects)
-- Using the `genezio.yaml` configuration file (available for all supported languages, including TypeScript and JavaScript)
+-   Using decorators (only available for TypeScript and JavaScript projects)
+-   Using the `genezio.yaml` configuration file (available for all supported languages, including TypeScript and JavaScript)
 
 <Tabs>
   <TabItem value="decorators" label="Decorators (TS/JS)">
@@ -31,7 +31,7 @@ There are two ways to declare a scheduled method:
     ```
 
   </TabItem>
-  <TabItem value="yaml" label="genezio.yaml">
+  <TabItem value="yaml" label="Configuration File (All supported languages)">
     ```yaml title="genezio.yaml" showLineNumbers
     name: cron-example
     yamlVersion: 2
@@ -40,10 +40,14 @@ There are two ways to declare a scheduled method:
       language:
         name: go
       classes:
+        # You need to identify the class by the source file
         - path: cron.go
           methods:
+            # You need to identify the method by the name
             - name: sayHiEveryMinute
+              # Specify the `cron` method type
               type: cron
+              # Specify the cron string that defines the frequency and timing
               cronString: * * * * *
     ```
   </TabItem>
@@ -76,12 +80,12 @@ For more information on genezio decorators, check out [Genezio Decorators](/docs
 
 Also, you can find more details on deploying the backend and frontend here:
 
-- [Backend Deployment](/docs/features/backend-deployment)
-- [Frontend Deployment](/docs/features/frontend-deployment)
+-   [Backend Deployment](/docs/features/backend-deployment)
+-   [Frontend Deployment](/docs/features/frontend-deployment)
 
 Now you are ready for some more advanced use cases:
 
-- [Web3 Application](https://genezio.com/blog/create-your-first-web3-app/)
-- [ChatGPT App](https://genezio.com/blog/create-your-first-app-using-chatgpt/)
-- [Shopping Cart Implementation](https://genezio.com/blog/implement-a-shopping-cart-using-typescript-redis-and-react/)
-- [Integrate Stripe Payments](https://genezio.com/blog/integrate-stripe-payments/)
+-   [Web3 Application](https://genezio.com/blog/create-your-first-web3-app/)
+-   [ChatGPT App](https://genezio.com/blog/create-your-first-app-using-chatgpt/)
+-   [Shopping Cart Implementation](https://genezio.com/blog/implement-a-shopping-cart-using-typescript-redis-and-react/)
+-   [Integrate Stripe Payments](https://genezio.com/blog/integrate-stripe-payments/)
