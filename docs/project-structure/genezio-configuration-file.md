@@ -31,6 +31,12 @@ The supported regions are:
 | `eu-west-3`      | Europe, Paris            | `eu-north-1`     | Europe, Stockholm |
 | `sa-east-1`      | South America, São Paulo |
 
+### `yamlVersion`: `number` **Required**
+
+The version of the genezio YAML file format. The latest version is `2`.
+
+Old format versions may not be supported by latest releases of the Genezio CLI.
+
 ### `backend`: `Object` **Optional**
 
 The backend configuration. This field can be omitted if the project does not have a backend.
@@ -164,3 +170,39 @@ The scripts that run before special frontend events occur. If a list is provided
 -   `start`: `string` | `string[]` **Optional**
 
     A script that starts the frontend dev server. It runs only during local development.
+
+## Usage
+
+### How to set the node runtime version for TypeScript and JavaScript projects
+
+To set the node runtime version for TypeScript and JavaScript projects, you need to add the `backend.language.runtime` field to the `genezio.yaml` file.
+
+For example, to set the node runtime version to `Node 20`, you can use the following configuration:
+
+```yaml
+name: my-project
+yamlVersion: 2
+backend:
+    path: .
+    language:
+        name: ts
+        # Set the node runtime version to Node 20
+        runtime: nodejs20.x
+```
+
+### How to set the package manager for TypeScript and JavaScript projects
+
+To set the package manager for TypeScript and JavaScript projects, you need to add the `backend.language.packageManager` field to the `genezio.yaml` file.
+
+For example, to set the package manager to `pnpm`, you can use the following configuration:
+
+```yaml
+name: my-project
+yamlVersion: 2
+backend:
+    path: .
+    language:
+        name: ts
+        # Set the package manager to pnpm
+        packageManager: pnpm
+```

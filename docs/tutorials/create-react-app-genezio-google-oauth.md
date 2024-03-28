@@ -40,11 +40,23 @@ First, we have to create a new project in Google Cloud. Navigate [here](https://
 
 Once the project is created, you need to configure an OAuth Consent screen. Select "External" since the application that we build is available to all users that have a Google account. Enter the details of your application and when you are done, select "Save and Continue".
 
-<figure style={{textAlign:"center", marginLeft:"0"}}><img style={{cursor:"pointer"}} src={useBaseUrl("/img/google-step-2.gif")} alt=""/><figcaption></figcaption></figure>
+<figure style={{textAlign:"center", marginLeft:"0"}}>
+  <video autoPlay muted loop preload="auto" style={{cursor:"pointer", maxWidth: "100%"}}>
+    <source src={useBaseUrl("/img/google-step-2.webm")} type="video/webm" />
+    Your browser does not support the video tag.
+  </video>
+  <figcaption></figcaption>
+</figure>
 
 Next, we can move on to the part where we generate a pair of Google Client ID and Google Client Secret that you will need further on to enable the Google auth provider in Genezio. Click on "Credentials" and the "OAuth client ID" to create a new pair of Client ID and Client Secret. Select "Web Application" since we are building a React web app. Also, add the URL of the web app both the local version and the deployed one in the "Authorized Javascript Origin" field. This is a very important step, otherwise the Google Login button won't be displayed because you didn't configure your domain as a trusted one.
 
-<figure style={{textAlign:"center", marginLeft:"0"}}><img style={{cursor:"pointer"}} src={useBaseUrl("/img/google-step-3.gif")} alt=""/><figcaption></figcaption></figure>
+<figure style={{textAlign:"center", marginLeft:"0"}}>
+  <video autoPlay muted loop preload="auto" style={{cursor:"pointer", maxWidth: "100%"}}>
+    <source src={useBaseUrl("/img/google-step-3.webm")} type="video/webm" />
+    Your browser does not support the video tag.
+  </video>
+  <figcaption></figcaption>
+</figure>
 
 You are now ready! Save the Google ID and Google Secret that we will use in the next step.
 

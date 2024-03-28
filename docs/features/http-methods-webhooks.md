@@ -21,8 +21,8 @@ A webhook/HTTP method is declared in the same way as any other genezio method, b
 Decorators are only supported in TypeScript, JavaScript and Go. If you are using any other supported language, you need to specify the method as a HTTP method in the `genezio.yaml` file.
 :::
 
-<Tabs groupId="languages">
-  <TabItem value="ts/js" label="TypeScript / JavaScript">
+<Tabs>
+  <TabItem value="decorators" label="Decorators (TS/JS)">
     ```ts title="http.ts" showLineNumbers
     import { GenezioDeploy, GenezioMethod } from "@genezio/types";
     import { GenezioHttpResponse, GenezioHttpRequest } from "@genezio/types";
@@ -90,7 +90,7 @@ Decorators are only supported in TypeScript, JavaScript and Go. If you are using
     </Admonition>
 
   </TabItem>
-  <TabItem value="other" label="Other supported language">
+  <TabItem value="yaml" label="Configuration File (All supported languages)">
     ```yaml title="genezio.yaml" showLineNumbers
     name: http-example
     yamlVersion: 2
@@ -98,11 +98,11 @@ Decorators are only supported in TypeScript, JavaScript and Go. If you are using
       path: .
       language:
         name: go
-      # You need to identify the class by the source file
       classes:
+        # You need to identify the class by the source file
         - path: http.go
-          # You need to identify the method by the name
           methods:
+            # You need to identify the method by the name
             - name: HandleSimplePlainRequest
               # Specify the `http` method type
               type: http

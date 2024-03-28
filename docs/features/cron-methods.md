@@ -51,7 +51,7 @@ There are two ways to declare a scheduled method:
     ```
 
   </TabItem>
-  <TabItem value="yaml" label="genezio.yaml">
+  <TabItem value="yaml" label="Configuration File (All supported languages)">
     ```yaml title="genezio.yaml" showLineNumbers
     name: cron-example
     yamlVersion: 2
@@ -60,10 +60,14 @@ There are two ways to declare a scheduled method:
       language:
         name: go
       classes:
+        # You need to identify the class by the source file
         - path: cron.go
           methods:
+            # You need to identify the method by the name
             - name: sayHiEveryMinute
+              # Specify the `cron` method type
               type: cron
+              # Specify the cron string that defines the frequency and timing
               cronString: * * * * *
     ```
   </TabItem>
