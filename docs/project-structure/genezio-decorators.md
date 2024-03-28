@@ -82,7 +82,7 @@ export class HttpHandle {
     ```go title="httpHendle.go" showLineNumbers
     package httpHandle
 
-    import "github.com/genezio/genezio_types"
+    import "github.com/Genez-io/genezio_types"
 
     // Every method in this class will be deployed as a http method, if not specified otherwise
     // genezio: deploy http
