@@ -55,6 +55,7 @@ The following snippet of code shows a simple `HelloWorldService` class:
   </TabItem>
   <TabItem value="go" label="Go">
     ```go title="service.go" showLineNumbers
+    // genezio: deploy
     type HelloWorldService struct {}
 
     // Required. Will run when the HelloWorldService "class" is constructed.
@@ -135,6 +136,12 @@ The `genezio.yaml` configuration file is the file that genezio uses to understan
         classes:
           - path: service.go
     ```
+
+    <Admonition type="tip">
+    The `classes` field can be omitted if the classes are decorated with `genezio: deploy`. Learn more about decorators in the [Decorators](/docs/project-structure/genezio-decorators "mention") section.
+
+    If a class is neither decorated or specified in the `genezio.yaml` file, it will not be deployed.
+    </Admonition>
 
   </TabItem>
 </Tabs>

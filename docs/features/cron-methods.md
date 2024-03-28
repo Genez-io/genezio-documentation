@@ -13,8 +13,8 @@ The time specified in the cron strings is in UTC. You can use this [converter](h
 
 There are two ways to declare a scheduled method:
 
-- Using decorators (only available for TypeScript and JavaScript projects)
-- Using the `genezio.yaml` configuration file (available for all supported languages, including TypeScript and JavaScript)
+- Using decorators (only available for TypeScript, JavaScript and Go projects)
+- Using the `genezio.yaml` configuration file (available for all supported languages, including TypeScript, JavaScript, Go)
 
 <Tabs>
   <TabItem value="decorators" label="Decorators (TS/JS)">
@@ -27,6 +27,26 @@ There are two ways to declare a scheduled method:
         sayHiEveryMinute() {
             console.log("I will run every minute!");
         }
+    }
+    ```
+
+  </TabItem>
+  <TabItem value="comment decorators" label="Decorators (Go)">
+    ```go title="cron.go" showLineNumbers
+    package cron
+
+    import "fmt"
+
+    // geenzio: deploy
+    type CronService struct {}
+
+    func New() CronService {
+        return CronService{}
+    }
+
+    // genezio: cron * * * * *
+    func (s CronService) SayHiEveryMinute() {
+        fmt.Println("I will run every minute!")
     }
     ```
 
