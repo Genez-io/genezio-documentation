@@ -84,7 +84,7 @@ Decorators are only supported in TypeScript, JavaScript and Go. If you are using
     }
     ```
     <Admonition type="note">
-      For TypeScript and JavaScript projects, using decorators is the recommended way to declare HTTP methods, but you can also use the `genezio.yaml` file to declare the HTTP methods.
+      For Go projects, using decorators is the recommended way to declare HTTP methods, but you can also use the `genezio.yaml` file to declare the HTTP methods.
 
       The `genezio.yaml` is considered the source of truth for the project. If you declare two different types for the same method in the `genezio.yaml` and in the code, the type declared in the configuration file will be used.
     </Admonition>
