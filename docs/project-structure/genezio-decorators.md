@@ -1,17 +1,18 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import Admonition from '@theme/Admonition';
 
 # Genezio Decorators
 
 Genezio Decorators is a feature that lets you configure settings that were previously set in the `genezio.yaml` configuration file, directly from your code.
 
 :::info
-Decorators are only supported in TypeScript and JavaScript. If you are using any other supported language, you need to use the `genezio.yaml` file to declare the settings.
+Decorators are only supported in TypeScript, JavaScript and Go. If you are using any other supported language, you need to use the `genezio.yaml` file to declare the settings.
 
 More details about the `genezio.yaml` file can be found in the [Genezio Configuration File](/docs/project-structure/genezio-configuration-file) section.
 :::
 
-To use genezio decorators, you have to install and import `@genezio/types` in your projectp:
+To use genezio decorators in **TypeScript** or **JavaScript**, you have to install and import `@genezio/types` in your project. This library provides the decorators using the native TypeScript decorators feature.
 
 <Tabs>
   <TabItem className="tab-item" value="npm" label="npm">
@@ -31,12 +32,19 @@ To use genezio decorators, you have to install and import `@genezio/types` in yo
   </TabItem>
 </Tabs>
 
+:::tip
+Unfortunately, not all programming languages support decorators. To compansate for this, genezio allows users to "annotate" their classes and methods using comments.
+Those special comments are picked up automatically by genezio and have the same effect as a native decorator. This feature is available for the **Go** programming language.
+:::
+
 ### GenezioDeploy
 
 This decorator is used to indicate which classes to be deployed when executing `genezio deploy`.
 
 It replaces the need of declaring the classes source file paths in the `genezio.yaml` file.
 
+<Tabs groupId="languages">
+  <TabItem value="ts" label="TypeScript">
 It accepts a JSON parameter with the folowing type:
 
 ```ts
@@ -45,11 +53,10 @@ It accepts a JSON parameter with the folowing type:
 }
 ```
 
-If specified, the `type` parameter will be used to determine the type of every method in the class.
+If specified, the `type` parameter will be used to determine the type of every method in the class. Default is `jsonrpc`.
 
-```ts title="index.ts"
-import { GenezioHttpResponse, GenezioHttpRequest } from "@genezio/types";
-import { GenezioDeploy } from "@genezio/types";
+```ts title="index.ts" showLineNumbers
+import { GenezioHttpResponse, GenezioHttpRequest, GenezioDeploy } from "@genezio/types";
 
 // Every method in this class will be deployed as a http method, if not specified otherwise
 @GenezioDeploy({ type: "http" })
@@ -65,26 +72,63 @@ export class HttpHandle {
   }
 ```
 
+  </TabItem>
+  <TabItem value="go" label="Go">
+    Usage:
+    ```
+    // genezio: deploy <type>
+    ```
+    `<type>` can be `jsonrpc`, `http` or `cron`. If not specified, the default type is `jsonrpc`.
+    ```go title="httpHendle.go" showLineNumbers
+    package httpHandle
+
+    import "github.com/Genez-io/genezio_types"
+
+    // Every method in this class will be deployed as a http method, if not specified otherwise
+    // genezio: deploy http
+    type HttpHandle struct {}
+
+    func New() HttpHandle {
+      return HttpHandle{}
+    }
+
+    func (h HttpHandle) HandleHttpRequest(request genezio_types.GenezioHttpRequest) *genezio_types.GenezioHttpResponse {
+      response := &genezio_types.GenezioHttpResponse{
+        Body: request.Body,
+        Headers: map[string]string{"content-type": "text/html"},
+        StatusCode: "200",
+      }
+
+      return response
+    }
+    ```
+
+  </TabItem>
+</Tabs>
+
 ### GenezioMethod
 
 This decorator is used to configure settings on each method from a class.
 
 It replaces the need of declaring the methods in the `genezio.yaml` file.
 
-It accepts a JSON parameter with the folowing type:
+<Tabs groupId="languages">
+    <TabItem value="ts" label="TypeScript">
 
-```ts
-{
-    type: "jsonrpc" | "http";
-} | {
-    type: "cron";
-    cronString: string;
-}
-```
+    It accepts a JSON parameter with the folowing type:
+
+    ```ts
+    {
+        type: "jsonrpc" | "http";
+    } | {
+        type: "cron";
+        cronString: string;
+    }
+    ```
 
 If specified, the `type` parameter will be used to determine the type of the method and will override the `type` parameter from the `GenezioDeploy` decorator.
 
-```ts title="index.ts"
+```ts title="index.ts" showLineNumbers
 import { GenezioDeploy, GenezioMethod } from "@genezio/types";
 
 // If not specified, the type of every method in this class will be `jsonrpc`
@@ -103,6 +147,43 @@ export class HelloWorld {
   }
 }
 ```
+
+    </TabItem>
+    <TabItem value="go" label="Go">
+    Usage:
+    ```
+    // genezio: cron <cronString>
+    // genezio: http
+    // genezio: jsonrpc
+    ```
+    ```go title="helloWorld.go" showLineNumbers
+    package helloWorld
+
+    import "fmt"
+
+    // If not specified, the type of every method in this class will be `jsonrpc`
+    // genezio: deploy
+    type HelloWorld struct {}
+
+    func New() HelloWorld {
+        return HelloWorld{}
+    }
+
+    // This method will be deployed as a `cron` method
+    // genezio: cron * * * * *
+    func (h HelloWorld) SayHiEveryMinute() {
+        fmt.Println("Hi!")
+    }
+
+    // This method will be deployed as a `jsonrpc` method, because it inherits
+    // the type from the GenezioDeploy decorator
+    func (h HelloWorld) SayHello() {
+        fmt.Println("Hello!")
+    }
+    ```
+    </TabItem>
+
+</Tabs>
 
 ### More details
 
