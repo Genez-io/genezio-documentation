@@ -14,8 +14,8 @@ With genezio decorators, you can set one or more of your methods to handle HTTP 
 A webhook/HTTP method is declared in the same way as any other genezio method, but it needs to fulfill the following requirements to be considered a webhook/HTTP method:
 
 - The method must be marked as `http` either using [decorators](/docs/project-structure/genezio-decorators) or the [`genezio.yaml` configuration](/docs/project-structure/genezio-configuration-file.md) file.
-- The method must have only one parameter of type [`GenezioHttpRequest`](#geneziohttprequest).
-- The method must return a [`GenezioHttpResponse`](#geneziohttpresponse) object.
+- The method must have only one parameter of type [`Request`](#request).
+- The method must return a [`Response`](#response) object.
 
 :::info
 Decorators are only supported in TypeScript, JavaScript and Go. If you are using any other supported language, you need to specify the method as a HTTP method in the `genezio.yaml` file.
@@ -29,22 +29,39 @@ Decorators are only supported in TypeScript, JavaScript and Go. If you are using
 
     @GenezioDeploy()
     export class HttpServer {
+
         @GenezioMethod({ type: "http" })
-        handleSimplePlainRequest(request: GenezioHttpRequest): GenezioHttpResponse {
-            console.log(`Request received with a simple text ${request.body}!`);
+        handleSimplePlainRequest(request: Request): Response {
+        console.log(`Request received with a simple text ${request.body}!`);
 
-            // insert your code here
+              // insert your code here
 
-            const response: GenezioHttpResponse = {
-                body: request.body,
-                headers: { "content-type": "text/html" },
-                statusCode: "200",
-            };
+              const options = {
+                heeaders: {
+                  "content-type": "text/html",
+                },
+                status: 200,
+              };
 
-            return response;
+              const response: Response = new Response(request.body, options);
+
+              return response;
+
         }
     }
-    ```
+
+````
+
+    <Admonition type="info">
+      For TypeScript projects the expected type for the request and response objects are the standard `Request` and `Response` objects provided by the @types/node library. To use these types in your project, you need to install the `@types/node` package by running the following command:
+
+      ```sh
+      npm install --save-dev @types/node
+      ```
+
+      To find out more about these types, you can check out the Fetch API documentation for the [Request](https://developer.mozilla.org/en-US/docs/Web/API/Request) and [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) objects.
+
+    </Admonition>
     <Admonition type="note">
       For TypeScript and JavaScript projects, using decorators is the recommended way to declare HTTP methods, but you can also use the `genezio.yaml` file to declare the HTTP methods.
 
@@ -106,7 +123,7 @@ Decorators are only supported in TypeScript, JavaScript and Go. If you are using
             - name: HandleSimplePlainRequest
               # Specify the `http` method type
               type: http
-    ``` 
+    ```
   </TabItem>
 </Tabs>
 
@@ -114,9 +131,11 @@ Decorators are only supported in TypeScript, JavaScript and Go. If you are using
 
 To deploy your newly created class to the genezio infrastructure, use the following command:
 
-```
+````
+
 genezio deploy
-```
+
+````
 
 Usually after the deployment, you need to provide the webhook URLs to the third-party APIs or services you want to connect to.&#x20;
 
@@ -139,34 +158,18 @@ HTTP Methods Deployed:
   - HttpServer.handleSimplePlainRequest: https://<lambdaUrl>/HttpServer/handleSimplePlainRequest
 
 App Dashboard URL: https://app.genez.io/project/<projectId>/<projectEnvId>
-```
+````
 
 ## HTTP types
 
-### GenezioHttpRequest
+<Tabs>
+  <TabItem value="decorators" label="TS/JS">
+    If you are using TypeScript or JavaScript, you need to use the standard `Request` and `Response` objects provided by the `@types/node` library.
 
-#### Properties
+    To learn more about these types, you can check out the Fetch API documentation for the [Request](https://developer.mozilla.org/en-US/docs/Web/API/Request) and [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) objects.
 
-- **headers - required:** A dictionary that contains the headers.
-- **http - required:** An object that has the following properties:
-  - **method:** The HTTP method.
-  - **path:** The path of the request.
-  - **protocol:** The HTTP version used.
-  - **userAgent:** The request's user agent.
-  - **sourceIp:** The IP of the source.
-- **queryStringParameters - optional:** A dictionary that contains the query parameters.
-- **timeEpoch - required:** Timestamp when the request was made.
-- **rawBody - required:** A string with the unparsed body
-- **body - required:** An object that represents the request's body. If the value is JSON, the value of this variable is a JSON object. If the value is binary, the value of this variable is a Buffer. If the value is text, the value of this variable is also text.&#x20;
-
-### GenezioHttpResponse
-
-#### Properties
-
-- **body - required:** An object that represents the response's body. The type of this variable can be Object, String, or Buffer.
-- **headers - optional:** A dictionary that contains the headers.
-- **statusCode - required:** The status code of the response.
-- **isBase64Encoded - optional:** This flag can be set to `true` or `false` to indicate if the `body` is base64 encoded. This flag is optional and can be omitted.&#x20;
+  </TabItem>
+</Tabs>
 
 ## Examples using webhooks
 
