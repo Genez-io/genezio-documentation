@@ -22,20 +22,6 @@ Because Go declarations belong to packages instead of files, genezio allows one 
 
 Each class has its dedicated folder (package). The package can contain multiple files and even have functions or types distributed in many files of the same package, as Go sees them in the same scope.
 
-### The YAML
-
-Go doesn’t support decorators, so indicating which classes should be deployed is done using the `genezio.yaml` configuration file (see [Configuration File - Classes](/project-structure/genezio-configuration-file#classes)). A YAML configuration for the project structure mentioned above would look like this:
-
-```yaml
-name: test-go
-region: eu-central-1
-classes:
-  - path: ./users/users.go
-    type: jsonrpc
-  - path: ./tasks/tasks.go
-    type: jsonrpc
-```
-
 ### “Classes”
 
 Go doesn’t have the notion of “classes”. We have, thankfully, an alternative. Structs with attached methods. For the rest of this page, we will refer to them as `genezio classes`, or simply `classes`. Our parser will choose and analyze the first struct it finds (not necessarily the first declared) that has the following properties:
@@ -71,6 +57,7 @@ import (
 )
 
 // the genezio class
+// genezio: deploy
 type UserService struct{}
 
 func New() UserService {

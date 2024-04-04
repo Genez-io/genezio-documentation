@@ -60,7 +60,7 @@ That's why for external clients, you need to link your client repository to a ge
 You can link your client repository to a genezio project navigating to the root of your client repository and running:
 
 ```sh title="Terminal"
-genezio link --projectName <name> --region <region>
+genezio link <project-name>
 ```
 
 This command will save a map between your genezio project and the path to your client directory. This map is saved in your home directory, at `~/.genezio/geneziolinks`.

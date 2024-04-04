@@ -18,11 +18,11 @@ A webhook/HTTP method is declared in the same way as any other genezio method, b
 - The method must return a [`GenezioHttpResponse`](#geneziohttpresponse) object.
 
 :::info
-Decorators are only supported in TypeScript and JavaScript. If you are using any other supported language, you need to specify the method as a HTTP method in the `genezio.yaml` file.
+Decorators are only supported in TypeScript, JavaScript and Go. If you are using any other supported language, you need to specify the method as a HTTP method in the `genezio.yaml` file.
 :::
 
-<Tabs groupId="languages">
-  <TabItem value="ts/js" label="TypeScript / JavaScript">
+<Tabs>
+  <TabItem value="decorators" label="Decorators (TS/JS)">
     ```ts title="http.ts" showLineNumbers
     import { GenezioDeploy, GenezioMethod } from "@genezio/types";
     import { GenezioHttpResponse, GenezioHttpRequest } from "@genezio/types";
@@ -52,7 +52,45 @@ Decorators are only supported in TypeScript and JavaScript. If you are using any
     </Admonition>
 
   </TabItem>
-  <TabItem value="other" label="Other supported language">
+  <TabItem value="go" label="Go">
+    ```go title="http.go" showLineNumbers
+    package httpHandler
+
+    import (
+        "fmt"
+        genezio_types "github.com/Genez-io/genezio_types"
+    )
+
+    // genezio: deploy
+    type HttpServer struct {}
+
+    func New() HttpServer {
+        return HttpServer{}
+    }
+
+    // genezio: http
+    func (s HttpServer) HandleSimplePlainRequest(request genezio_types.GenezioHttpRequest) *genezio_types.GenezioHttpResponse {
+        fmt.Println("Request received with a simple text", request.Body, "!")
+
+        // insert your code here
+
+        response := GenezioHttpResponse{
+            Body:       request.Body,
+            Headers:    map[string]string{"content-type": "text/html"},
+            StatusCode: "200",
+        }
+
+        return response
+    }
+    ```
+    <Admonition type="note">
+      For Go projects, using decorators is the recommended way to declare HTTP methods, but you can also use the `genezio.yaml` file to declare the HTTP methods.
+
+      The `genezio.yaml` is considered the source of truth for the project. If you declare two different types for the same method in the `genezio.yaml` and in the code, the type declared in the configuration file will be used.
+    </Admonition>
+
+  </TabItem>
+  <TabItem value="yaml" label="Configuration File (All supported languages)">
     ```yaml title="genezio.yaml" showLineNumbers
     name: http-example
     yamlVersion: 2
@@ -60,11 +98,11 @@ Decorators are only supported in TypeScript and JavaScript. If you are using any
       path: .
       language:
         name: go
-      # You need to identify the class by the source file
       classes:
+        # You need to identify the class by the source file
         - path: http.go
-          # You need to identify the method by the name
           methods:
+            # You need to identify the method by the name
             - name: HandleSimplePlainRequest
               # Specify the `http` method type
               type: http
