@@ -218,7 +218,7 @@ You can use variables in the scripts by using the `${{variable}}` syntax. The va
 Available variables are:
 
 -   `projectName`: The name of the project.
--   stage: The stage of the deployment. It can be set using the `--stage` flag in the CLI.
+-   `stage`: The stage of the deployment. It can be set using the `--stage` flag in the CLI.
 
 ```yaml
 name: my-project
