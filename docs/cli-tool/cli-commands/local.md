@@ -23,3 +23,5 @@ This command opens a local server for testing and debugging. The local server si
 `--logLevel <logLevel>`: Set the verbosity of the output. The supported values are: `trace/debug/info/warn/error`. If you don't specify this argument, the default value used is `info`.
 
 `-h | --help`: Display a help message for more information on each argument and how to use it.
+
+`-s | --stage <stage>`: Set the stage on which you can test your services on the local server. This option will work as intended only if you are logged in. If you have services active on your deployed project, this option will allow you to test those services locally on the test interface. The default value is `prod`.
