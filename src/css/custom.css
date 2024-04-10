@@ -101,5 +101,8 @@ pre code:has(.code-block-diff-remove-line) {
   padding-left: 40px!important;
 }
 
-
-
+.default-cursor {
+  cursor: default;
+  pointer-events: none;
+  cursor: not-allowed;
+}
