@@ -84,12 +84,30 @@ const config = {
     },
     image: "img/genezio.svg",
     navbar: {
-      title: "Genezio Documentation",
       logo: {
+        href: 'https://genezio.com/',
+        target: '_self',
         alt: "Genezio Logo",
         src: "img/favicon.ico",
         srcDark: "img/genezio.svg",
       },
+
+      items: [
+        {
+          href: '/',
+          html: "<b>/</b>",
+          position: 'left',
+          activeBaseRegex: 'docs/(next|v8)',
+          className: "default-cursor"
+        },
+        {
+          to: '/',
+          target: '_self',
+          html: "<b>Genezio Documentation</b>",
+          position: 'left',
+          activeBaseRegex: 'docs/(next|v8)',
+        },
+      ],
     },
     // footer: {
     //   style: "dark",
