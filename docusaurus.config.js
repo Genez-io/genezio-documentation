@@ -84,7 +84,6 @@ const config = {
     },
     image: "img/genezio.svg",
     navbar: {
-      // title: "Genezio Documentation",
       logo: {
         href: 'https://genezio.com/',
         target: '_self',
