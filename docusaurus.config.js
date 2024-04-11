@@ -103,7 +103,7 @@ const config = {
         {
           to: '/',
           target: '_self',
-          html: "<b>Genezio Documentation</b>",
+          html: "<b>Documentation</b>",
           position: 'left',
           activeBaseRegex: 'docs/(next|v8)',
         },
