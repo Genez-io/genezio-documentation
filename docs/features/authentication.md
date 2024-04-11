@@ -61,6 +61,11 @@ export type GnzContext = {
         createdAt: Date;
         verified: boolean;
         name?: string;
+        address?: string;
+        profilePictureUrl?: string;
+        customInfo?: {
+            [key: string]: string;
+        };
       }
     | undefined;
 };
@@ -119,6 +124,22 @@ Once you got the Google OAuth credentials you can enable the Google authenticati
 <p align="center">
     <img src={EnableGoogleProvider} style={{width: "70%"}} />
 </p>
+
+## Enable Web3 authentication
+
+To enable Web3 authentication for a project, go to the project's page in the [dashboard](https://app.genez.io/) and click on the `Authentication` button.
+
+<p align="center">
+    <img src={EnableAuth} style={{width: "70%"}} />
+</p>
+
+You will be prompted to choose a database type. Follow the wizard to create a new database or add the connection URI of your own database.
+
+<p align="center">
+    <img src={SelectAuthDb} style={{width: "70%"}} />
+</p>
+
+To enable Web3 authentication, click on the `Edit` button and then toggle the switch to `Enabled`.
 
 ## Set up email and password authentication
 
@@ -326,6 +347,52 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
 
 The `GoogleOAuthProvider` component is a wrapper around the `react-oauth` library. It provides the Google OAuth 2.0 authentication flow that the user can use to sign up.
 
+## Set up Web3 Authentication
+
+In your `client` directory, install the following packages by running:
+
+```bash
+npm install @genezio/auth
+```
+
+Configure globally the genezio authentication `token` and `region` and set up the Google OAuth Provider:
+
+```typescript title=client/src/main.tsx showLineNumbers
+import { AuthService } from "@genezio/auth";
+
+AuthService.getInstance().setTokenAndRegion("<YOUR_GENEZIO_TOKEN>", "<YOUR_PROJECT_REGION>");
+```
+
+You will rely on the user installing a Web3 Wallet extension in browser such as Metamask. Then you need to do the following steps:
+
+1. Request the wallet address from the Web3 Wallet extension.
+
+```typescript
+const addresses = await window.ethereum.request({ method: "eth_requestAccounts" })
+```
+
+2. Select one of the addresses and then request a nonce from the `AuthService` class. 
+
+```typescript
+const address = addresses[0]
+const nonce = await AuthService.getInstance().web3GetNonce(address)
+```
+
+3. Ask the user to sign the nonce using his wallet extension.
+
+```typescript
+const signature = await window.ethereum.request({
+    method: 'personal_sign',
+    params: [nonce, address]
+})
+```
+
+4. Send the address and the signature to the `AuthService`. The service will check if the signature is correct and if it is, it will return all the user information and it will save a token in the browser. 
+
+```typescript
+const { user } = await AuthService.getInstance().web3Login(address, signature)
+```
+
 ### Create a login form for existing users
 
 ```typescript title=client/src/LoginForm.tsx showLineNumbers
@@ -422,6 +489,18 @@ Another email that is sent automatically is during the reset password flow. No d
 ### Google OAuth 2.0
 
 Users register using their own Google account. You have to create a new application in Google API Console. Visit [this](https://support.google.com/googleapi/answer/6158849) link for more information.
+
+### Web3 Wallet
+
+A Web3 wallet login system allows users to securely authenticate with your platform using their digital wallets. This process utilizes blockchain technology, offering a decentralized and secure method of verification without sharing personal information.  This method leverages public-key cryptography, eliminating the need for traditional username and password combinations.
+
+How does it work?
+
+1. Connect Wallet: User clicks "Login with Web3 Wallet" and approves the connection in their wallet.
+2. Sign Message: The platform sends a unique message, which the user signs with their private key via their wallet.
+3. Verify Signature: The platform verifies the signature using the user's public key to authenticate identity.
+4. Establish Session: Upon verification, the platform starts a session, granting access to the user.
+
 
 ### More coming soon
 
