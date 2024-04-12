@@ -67,6 +67,12 @@ If scripts are declared in the `scripts` field, they will be executed from this 
 
     Applicable only when `language.name` is `ts` or `js`.
 
+-   `architecture`: `arm64` | `x86_64` **Optional**
+
+    The architecture that will be use by your application on the cloud. The default value is `arm64`.
+
+    Note: This field takes effect only on the `genezio` cloud provider.
+
 #### `cloudProvider`: `genezio` | `selfHostedAws` **Optional**
 
 The cloud provider used to deploy the project. The default value is `genezio`.
@@ -104,6 +110,8 @@ The cloud provider used to deploy the project. The default value is `genezio`.
 #### `scripts`: `Object` **Optional**
 
 The scripts that run before special backend events occur. If a list is provided to any of the fields, the scripts will be executed sequentially and in case one fails, the execution will be stopped.
+
+Variables can be used in the scripts. Check the [Usage](#how-to-use-variables-in-the-scripts-fields) section for more information.
 
 -   `deploy`: `string` | `string[]` **Optional**
 
@@ -159,6 +167,8 @@ If not specified, a random subdomain will be generated.
 
 The scripts that run before special frontend events occur. If a list is provided to any of the fields, the scripts will be executed sequentially and in case one fails, the execution will be stopped.
 
+Variables can be used in the scripts. Check the [Usage](#how-to-use-variables-in-the-scripts-fields) section for more information.
+
 -   `deploy`: `string` | `string[]` **Optional**
 
     A general purpose script that runs before the frontend is deployed.
@@ -205,4 +215,42 @@ backend:
         name: ts
         # Set the package manager to pnpm
         packageManager: pnpm
+```
+
+### How to set the architecture type
+
+To set the architecture type for your deployed project, you need to add the `backend.language.architecture` field to the `genezio.yaml` file.
+
+For example, to set the architecture to `x86_64`, you can use the following configuration:
+
+```yaml
+name: my-project
+yamlVersion: 2
+backend:
+    path: .
+    language:
+        name: ts
+        # Set the node runtime version to Node 20
+        architecture: x86_64
+```
+
+### How to use variables in the scripts fields
+
+You can use variables in the scripts by using the `${{variable}}` syntax. The variables are replaced with their values before the script is executed.
+
+Available variables are:
+
+-   `projectName`: The name of the project.
+-   `stage`: The stage of the deployment. It can be set using the `--stage` flag in the CLI.
+
+```yaml
+name: my-project
+yamlVersion: 2
+backend:
+    path: .
+    language:
+        name: ts
+    scripts:
+        # Will output "Deploying my-project to stage dev" when run with the --stage dev flag
+        deploy: echo "Deploying ${{projectName}} to stage ${{stage}}"
 ```
