@@ -6,7 +6,6 @@
 
 import { themes as prismThemes } from "prism-react-renderer";
 
-
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: "Genezio Documentation",
@@ -43,7 +42,7 @@ const config = {
           trackingID: "G-VR905VXGKC",
         },
         googleTagManager: {
-          containerId: "GTM-PP95P9BW"
+          containerId: "GTM-PP95P9BW",
         },
         docs: {
           sidebarPath: "./sidebars.js",
@@ -76,6 +75,8 @@ const config = {
       apiKey: "00bf2437c8279d80ed7c991744fdb457",
 
       indexName: "genezio3",
+      // Ignore the error this is need due to docusauurs bug
+      insights: true,
 
       contextualSearch: true,
     },
@@ -85,27 +86,27 @@ const config = {
     image: "img/genezio.svg",
     navbar: {
       logo: {
-        href: 'https://genezio.com/',
-        target: '_self',
+        href: "https://genezio.com/",
+        target: "_self",
         alt: "Genezio Logo",
         src: "img/Logo_Genezio_Black.svg",
         srcDark: "img/Logo_Genezio_White.svg",
       },
       items: [
         {
-          to: '/',
-          target: '_self',
+          to: "/",
+          target: "_self",
           html: "<b>Docs</b>",
-          position: 'left',
-          activeBaseRegex: 'docs/(next|v8)',
-          id: 'docs-item'
+          position: "left",
+          activeBaseRegex: "docs/(next|v8)",
+          id: "docs-item",
         },
         {
-          to: 'https://app.genez.io',
-          target: '_blank',
-          label: 'Sign Up',
-          position: 'right',
-          className: 'button'
+          to: "https://app.genez.io",
+          target: "_blank",
+          label: "Sign Up",
+          position: "right",
+          className: "button",
         },
       ],
     },
@@ -115,14 +116,14 @@ const config = {
       darkTheme: prismThemes.oneDark,
       magicComments: [
         {
-          className: 'code-block-diff-add-line',
-          line: 'diff-add'
+          className: "code-block-diff-add-line",
+          line: "diff-add",
         },
         {
-          className: 'code-block-diff-remove-line',
-          line: 'diff-remove'
-        }
-      ]
+          className: "code-block-diff-remove-line",
+          line: "diff-remove",
+        },
+      ],
     },
   },
 };
