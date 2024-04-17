@@ -76,6 +76,7 @@ const config = {
 
       indexName: "genezio3",
       // Ignore the error this is need due to docusauurs bug
+      // @ts-expect-error
       insights: true,
 
       contextualSearch: true,
