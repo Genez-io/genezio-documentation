@@ -1,19 +1,7 @@
-import SetYourOwnDb from '/img/features/authentication/set_your_own_db.webp';
-import EnableAuth from '/img/features/authentication/enable_auth.webp';
-import SelectAuthDb from '/img/features/authentication/select_auth_db.webp';
-import EditEmailTemplates from '/img/features/authentication/edit_email_templates.webp';
-import EnableEmailAndPassword from '/img/features/authentication/enable_email_and_password.webp';
-import EnableGoogleProvider from '/img/features/authentication/enable_google_provider.webp';
-import ResetPassword from '/img/features/authentication/reset_password.webp';
-
 # Rate Limiter
 
-You can use Genezio Rate Limiter Decorator to allow the users to sign in into your application using multiple providers such as email and password or Google.
-Genezio provides an out-of-the-box authentication backend, support for Postgres and Mongo databases and a client SDK to easily integrate the authentication feature into your frontend.
-
-Enabling authentication for your project will create a new backend class `AuthService` that is deployed next to your other backend classes.
-You can use the `AuthService` to register new users, login existing users, reset their password and fetch the user's data.
-Enabling protection for a private backend method is done simply by using the `@GenezioAuth` decorator.
+You can use Genezio Rate Limiter Decorator to limit the ammount of requests per minute that are being called from the same Ip address.
+Genezio provides the `@GenzioRateLimiter` that can be used on any method of a deployed class. This feature is useful to prevent abuse of your backend services.
 
 :::info
 To enable the authentication feature, you need to have a project with a backend deployed. If you don't have a project yet, you can create one by following the [Getting Started](/docs/getting-started) guide.
