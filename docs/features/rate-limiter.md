@@ -5,7 +5,7 @@ Genezio provides the `@GenzioRateLimiter` that can be used on any method of a de
 
 ## Prerequisites
 
-To use the rate limiter, you need to have a Redis database. You integrate your project with an Upstash Redis database from the Genezio dashboard or use your own Redis database.
+To use the rate limiter, you need to have a Redis database. You can integrate your project with an Upstash Redis database from the Genezio dashboard or use your own Redis database.
 For more information on how to integrate your Genezio project with an Upstash Redis database, see the [Upstash Redis integration guide](https://genezio.com/docs/tutorials/connect-to-redis-powered-by-upstash/).
 
 ## How to use the rate limiter
@@ -27,7 +27,7 @@ import { GenezioRateLimiter } from "@genezio/rate-limiter";
 @GenezioDeploy()
 export class BackendService {
   @GenezioRateLimiter({ dbUrl: "<your-redis-db-url>", limit: 20 })
-  async hello(context: GnzContext, name: string) {
+  hello(context: GnzContext, name: string) {
     console.log("Hello " + name);
     return "Hello " + name;
   }
@@ -61,7 +61,3 @@ If you need a Redis GUI client to check the changes in your Redis database, you 
 
 Many more functionalities will come to this decorator soon. We use user feedback to improve this sort of modular products so feel free to reach out to us with your suggestions on
 [GitHub](https://github.com/Genez-io/genezio) or on our [Discord](https://discord.gg/uc9H5YKjXv).
-
-```
-
-```
