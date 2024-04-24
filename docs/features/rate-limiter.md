@@ -1,304 +1,67 @@
 # Rate Limiter
 
-You can use Genezio Rate Limiter Decorator to limit the ammount of requests per minute that are being called from the same Ip address.
+You can use Genezio Rate Limiter Decorator to limit the amount of requests per minute that are being called from the same IP address.
 Genezio provides the `@GenzioRateLimiter` that can be used on any method of a deployed class. This feature is useful to prevent abuse of your backend services.
 
-:::info
-To enable the authentication feature, you need to have a project with a backend deployed. If you don't have a project yet, you can create one by following the [Getting Started](/docs/getting-started) guide.
-:::
+## Prerequisites
 
-## Set up email and password authentication
+To use the rate limiter, you need to have a Redis database. You integrate your project with an Upstash Redis database from the Genezio dashboard or use your own Redis database.
+For more information on how to integrate your Genezio project with an Upstash Redis database, see the [Upstash Redis integration guide](https://genezio.com/docs/tutorials/connect-to-redis-powered-by-upstash/).
 
-In your `client` directory, install the `@genezio/auth` package by running:
+## How to use the rate limiter
+
+### Installation
 
 ```bash
-npm install @genezio/auth
+npm install @genezio/rate-limiter
 ```
 
-Configure globally the genezio authentication `token` and `region`. These values are available in the genezio dashboard.
+### Usage
 
-```typescript title="client/src/main.tsx" showLineNumbers
-import { AuthService } from "@genezio/auth";
+Add the rate limiter decorator to the method you want to limit the access to:
 
-AuthService.getInstance().setTokenAndRegion(
-  "<YOUR_GENEZIO_TOKEN>",
-  "<YOUR_PROJECT_REGION>"
-);
-```
+```typescript backendService.ts showLineNumbers
+import { GenezioDeploy, GnzContext } from "@genezio/types";
+import { GenezioRateLimiter } from "@genezio/rate-limiter";
 
-### Create a sign-up form for new users
-
-Create a form that allows the user to sign up using an email and a password.
-
-```typescript title="client/src/SignUpForm.tsx" showLineNumbers
-import React, { useState } from "react";
-import { AuthService } from "@genezio/auth";
-import { Link, useNavigate } from "react-router-dom";
-import { GenezioError } from "@genezio/types";
-
-export default function SignUpForm() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const navigate = useNavigate();
-
-  const signUp = async () => {
-    try {
-      await AuthService.getInstance().register(email, password);
-      alert("You have successfully signed up. Now let's sign in!");
-      // Redirect the user to the sign in page
-      navigate("/signIn");
-    } catch (error) {
-      alert(
-        "Error code: " +
-          (error as GenezioError).code +
-          ": " +
-          (error as GenezioError).message
-      );
-    }
-  };
-
-  return (
-    <div>
-      <input
-        type="email"
-        placeholder="email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-      />
-      <br />
-      <input
-        type="password"
-        placeholder="password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
-      <br />
-      <button onClick={signUp}>Sign Up</button>
-      <br />
-      <Link to="/signIn">I already have an account</Link>
-    </div>
-  );
+@GenezioDeploy()
+export class BackendService {
+  @GenezioRateLimiter({ dbUrl: "<your-redis-db-url>", limit: 20 })
+  async hello(context: GnzContext, name: string) {
+    console.log("Hello " + name);
+    return "Hello " + name;
+  }
 }
 ```
 
-### Create a login form for existing users
+:::info
+Important: The rate limiter decorator **must** be used on a method that has the first parameter as `GnzContext` and the rest of the parameters are the ones you want to pass to the method. Even if you won't explicitly use the `GnzContext` parameter, it must be there. This is because the context needs to be populated with the IP address of the request. This will be done automatically by the rate limiter decorator. To learn more about the `GnzContext` object, see the [documentation](https://genezio.com/docs/features/backend-deployment/)
+:::
 
-Create a form that allows the user to login using an email and a password.
+The rate limiter decorator takes two parameters:
 
-```typescript title=client/src/SignInForm.tsx showLineNumbers
-import React, { useState } from "react";
-import { AuthService } from "@genezio/auth";
-import { Link, useNavigate } from "react-router-dom";
-import { GenezioError } from "@genezio/types";
+- `dbUrl`: The URL of the Redis database. (default will be `localhost:6379`)
+- `limit`: The number of requests allowed per minute. (Default is 50)
 
-export default function SignInForm() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+### Testing
 
-  const login = async () => {
-    try {
-      await AuthService.getInstance().login(email, password);
-      alert("You have successfully logged in");
-      // Redirect the user to the main page
-      navigate("/");
-    } catch (error) {
-      alert(
-        "Error code: " +
-          (error as GenezioError).code +
-          ": " +
-          (error as GenezioError).message
-      );
-    }
-  };
+Once you have set up the rate limiter, you can run `genezio local` and go to the test interface URL provided by the CLI to test the rate limiter.
+As of now, the rate limiter will work with the test interface only if you add to the context parameter the following field:
 
-  return (
-    <div>
-      <input
-        type="email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-      />
-      <br />
-      <input
-        type="password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
-      <br />
-      <button onClick={login}>Sign In</button>
-      <br />
-      <Link to="/signUp">Create an account</Link>
-    </div>
-  );
+```json context
+{
+  "isGnzContext": true
 }
 ```
 
-### Forgot/Reset password for existing users
+After that is done, you can spam multiple requests and test if the rate limiter is working properly.
+If you need a Redis GUI client to check the changes in your Redis database, you can use [RedisInsight](https://redis.com/redis-enterprise/redis-insight/).
 
-You can create a form to reset the password for the existing users.
-`AuthService.getInstance().resetPassword(email)` will send an email to the corresponding address to prompt the user to reset the password.
+## More coming soon
 
-```typescript title=client/src/ForgotPasswordForm.tsx showLineNumbers
-import React, { useState } from "react";
-import { AuthService } from "@genezio/auth";
-import { Link, useNavigate } from "react-router-dom";
-import { GenezioError } from "@genezio/types";
+Many more functionalities will come to this decorator soon. We use user feedback to improve this sort of modular products so feel free to reach out to us with your suggestions on
+[GitHub](https://github.com/Genez-io/genezio) or on our [Discord](https://discord.gg/uc9H5YKjXv).
 
-export default function ForgotPasswordForm() {
-  const [email, setEmail] = useState("");
-  const navigate = useNavigate();
-
-  const recoverPassword = async () => {
-    try {
-      await AuthService.getInstance().resetPassword(email);
-      alert("Please check your email");
-      // Redirect your users to the sign in form
-      navigate("/signIn");
-    } catch (error) {
-      alert(
-        "Error code: " +
-          (error as GenezioError).code +
-          ": " +
-          (error as GenezioError).message
-      );
-    }
-  };
-
-  return (
-    <div>
-      <input
-        type="email"
-        placeholder="email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-      />
-      <br />
-      <button onClick={recoverPassword}>Recover Password</button>
-      <br />
-      <br />
-      <Link to="/signUp">Sign Up</Link>
-      &nbsp;|&nbsp;
-      <Link to="/signIn">Sign In</Link>
-    </div>
-  );
-}
 ```
 
-You also have to implement a reset password form to let the user to set a new password.
-
-```typescript title=client/src/ResetPasswordForm.tsx showLineNumbers
-import React, { useState } from "react";
-import { AuthService } from "@genezio/auth";
-import { Link, useNavigate } from "react-router-dom";
-import { GenezioError } from "@genezio/types";
-
-export default function ResetPasswordForm() {
-  const [password1, setPassword1] = useState("");
-  const [password2, setPassword2] = useState("");
-  const navigate = useNavigate();
-
-  const queryString = window.location.search;
-  const queryParams = new URLSearchParams(queryString);
-  const token: string = queryParams.get("token") || "not specified";
-
-  const reset = async () => {
-    if (password1 != password2) {
-      alert("Passwords don't match.");
-      return;
-    }
-    try {
-      await AuthService.getInstance().resetPasswordConfirmation(
-        token,
-        password1
-      );
-      alert("Your password was changed. Let's sign in again.");
-      navigate("/signIn");
-    } catch (error) {
-      alert(
-        (error as GenezioError).code + ": " + (error as GenezioError).message
-      );
-    }
-  };
-
-  return (
-    <div>
-      <input
-        type="password"
-        placeholder="password"
-        value={password1}
-        onChange={(e) => setPassword1(e.target.value)}
-      />
-      <br />
-      <input
-        type="password"
-        placeholder="re-enter password"
-        value={password2}
-        onChange={(e) => setPassword2(e.target.value)}
-      />
-      <br />
-      <button onClick={reset}>Reset Password</button>
-      <br />
-      <br />
-      <Link to="/forgotPassword">Forgot Password</Link>
-      &nbsp;|&nbsp;
-      <Link to="/signUp">Sign Up</Link>
-    </div>
-  );
-}
 ```
-
-The redirect URL to this new reset password form must be set in the `Reset Password` email template in the dashboard.
-
-<p align="center">
-    <img src={ResetPassword} style={{width: "70%"}} />
-</p>
-
-## Call protected backend methods from the frontend
-
-You can call the protected backend method from the frontend by using the `@genezio/auth` package.
-
-```typescript title=client/src/FetchSensitiveMessage.tsx showLineNumbers
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { BackendService } from "@genezio-sdk/genezio-auth-tutorial";
-
-export default function FetchSensitiveMessage() {
-  const [message, setMessage] = useState("");
-  const navigate = useNavigate();
-
-  // If the user is not authenticated, the backend method will throw an error
-  const fetchSensitiveInformation = async () => {
-    try {
-      const message = await BackendService.getSensitiveInformation();
-      setMessage(message);
-    } catch (error) {
-      console.error(error);
-      navigate("/login");
-    }
-  };
-
-  return (
-    <div>
-      <button onClick={fetchSensitiveInformation}>"Get message"</button>
-      {message && <p>{message}</p>}
-    </div>
-  );
-}
-```
-
-On the client side you don't need to pass the context for `BackendService.getSensitiveInformation()`, this will be added seamlessly by the `@genezio/auth` library.
-
-## Supported databases
-
-The authentication solution offers the flexibility to choose between Postgres and Mongo databases for storing user data and access tokens.
-
-For seamless integration, Genezio provides provisioned Postgres databases that can be easily configured.
-When enabling authentication through the Genezio dashboard, simply opt for Postgres as the database type and follow the user-friendly wizard to quickly generate a new database that will be used for the authentication feature.
-
-You can also bring your own database. You just have to provide the connection URL of the database in the `General Settings` tab:
-
-## Supported authentication providers
-
-### More coming soon
-
-Many more authentication providers are coming soon. If you have a specific provider in mind that you would like to see supported, let us know.
