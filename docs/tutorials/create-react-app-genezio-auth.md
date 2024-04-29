@@ -36,7 +36,7 @@ The Login and Signup screens can be easily bypassed by accessing directly the `/
 
 <figure style={{textAlign:"center"}}><img style={{cursor:"pointer"}} src={useBaseUrl("/img/demo-email-and-password-initial.gif")} alt=""/><figcaption></figcaption></figure>
 
-Let's start by enabling Genezio Authentication. Go to the dashboard of your project on https://app.genez.io. Click on Actions and then Authentication. Select or create a new PostgreSQL database and press "Enable".
+Let's start by enabling Genezio Authentication. Go to the dashboard of your project on https://app.genez.io. Click on `Authentication` sidebar. Select or create a new PostgreSQL database and press "Enable".
 
 <figure style={{textAlign:"center"}}><img style={{cursor:"pointer"}} src={useBaseUrl("/img/demo-auth-activate-auth.gif")} alt=""/><figcaption></figcaption></figure>
 
