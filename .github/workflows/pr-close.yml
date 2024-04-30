@@ -1,0 +1,27 @@
+name: Cleanup PR preview
+
+# Default to bash
+defaults:
+    run:
+        shell: bash
+
+on:
+    pull_request:
+        types: [closed]
+
+jobs:
+    cleanup_preview:
+        name: Cleanup Preview
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
+            - uses: actions/setup-node@v4
+            - uses: Genez-io/genezio-github-action@v1
+              with:
+                  token: ${{ secrets.GENEZIO_TOKEN }}
+            - name: Compute stage
+              run: echo "STAGE=pr-$(echo -n ${{ github.ref_name }} | shasum | head -c 8)" >> $GITHUB_ENV
+            - name: Cleanup Preview
+              run: genezio delete $PROJECT_ID --stage $STAGE
+              env:
+                  PROJECT_ID: 05d555b1-e5a0-45d0-b4a2-9a4f7b2da92a
