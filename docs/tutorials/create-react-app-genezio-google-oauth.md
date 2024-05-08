@@ -62,7 +62,7 @@ You are now ready! Save the Google ID and Google Secret that we will use in the 
 
 ## Enable Genezio Authentication
 
-Let's start by enabling Genezio Authentication. Go to the dashboard of your project on https://app.genez.io. Click on Actions and then Authentication.
+Let's start by enabling Genezio Authentication. Go to the dashboard of your project on https://app.genez.io. Click on `Authentication` sidebar.
 
 <figure style={{textalign:"center", marginleft:"0"}}><img style={{cursor:"pointer"}} src={useBaseUrl("/img/google-enable-auth-1.gif")} alt=""/><figcaption></figcaption></figure>
 
