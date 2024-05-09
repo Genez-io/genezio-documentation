@@ -27,13 +27,16 @@ import { GenezioRateLimiter } from "@genezio/rate-limiter";
 @GenezioDeploy()
 export class BackendService {
   @GenezioRateLimiter({ dbUrl: "<your-redis-db-url>", limit: 20 })
-  hello(context: GnzContext, name: string) {
+  async hello(context: GnzContext, name: string) {
     console.log("Hello " + name);
     return "Hello " + name;
   }
 }
 ```
 
+:::info
+Note: The rate limiter will work only on asynchronous functions.  
+:::
 :::info
 Important: The rate limiter decorator **must** be used on a method that has the first parameter as `GnzContext` and the rest of the parameters are the ones you want to pass to the method. Even if you won't explicitly use the `GnzContext` parameter, it must be there. This is because the context needs to be populated with the IP address of the request. This will be done automatically by the rate limiter decorator. To learn more about the `GnzContext` object, see the [documentation](https://genezio.com/docs/features/backend-deployment/)
 :::
