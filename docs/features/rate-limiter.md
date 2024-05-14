@@ -1,7 +1,9 @@
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 # Rate Limiter
 
 You can use Genezio Rate Limiter Decorator to limit the amount of requests per minute that are being called from the same IP address.
-Genezio provides the `@GenzioRateLimiter` that can be used on any method of a deployed class. This feature is useful to prevent abuse of your backend services.
+Genezio provides the `@GenezioRateLimiter` that can be used on any method of a deployed class. This feature is useful to prevent abuse of your backend services.
 
 ## Prerequisites
 
@@ -26,7 +28,7 @@ import { GenezioRateLimiter } from "@genezio/rate-limiter";
 
 @GenezioDeploy()
 export class BackendService {
-  @GenezioRateLimiter({ dbUrl: "<your-redis-db-url>", limit: 20 })
+  @GenezioRateLimiter({ dbUrl: process.env.REDIS_URL, limit: 20 })
   async hello(context: GnzContext, name: string) {
     console.log("Hello " + name);
     return "Hello " + name;
@@ -43,8 +45,9 @@ Important: The rate limiter decorator **must** be used on a method that has the 
 
 The rate limiter decorator takes two parameters:
 
-- `dbUrl`: The URL of the Redis database. (default will be `localhost:6379`)
-- `limit`: The number of requests allowed per minute. (Default is 50)
+- `dbUrl`: The URL of the Redis database. (default is `redis://localhost:6379`)
+- `limit`: The number of requests allowed per minute. (default is 50)
+- `refreshRate`: The rate in seconds at which the rate limiter refreshes its entries in the db. Granularity is 1 second (default is 59 seconds)
 
 ### Testing
 
@@ -56,6 +59,12 @@ As of now, the rate limiter will work with the test interface only if you add to
   "isGnzContext": true
 }
 ```
+
+<figure style={{textAlign:"center", marginLeft:"0"}}><img style={{cursor:"pointer"}} src={useBaseUrl("/img/gnz-context-test-interface.webp")} alt=""/><figcaption></figcaption></figure>
+
+:::info
+This is necessary for both the local and the remote test interface instances.
+:::
 
 After that is done, you can spam multiple requests and test if the rate limiter is working properly.
 If you need a Redis GUI client to check the changes in your Redis database, you can use [RedisInsight](https://redis.com/redis-enterprise/redis-insight/).
