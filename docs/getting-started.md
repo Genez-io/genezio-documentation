@@ -37,38 +37,11 @@ Use your prefered package manager to install genezio:
   </div>
   </TabItem>
 </Tabs>
+You can also try Genezio in a ready-to-code environment using Gitpod:
 
-<!--
-{% tabs %}
-{% tab title="npm" %}
-
-```
-npm install genezio -g
-```
-
-{% endtab %}
-
-{% tab title="pnpm" %}
-
-```
-pnpm add -g genezio
-```
-
-{% endtab %}
-
-{% tab title="yarn" %}
-
-```
-yarn add global genezio
-```
-
-{% endtab %}
-{% endtabs %}
-
-{% hint style="warning" %}
-To install genezio you must have **Node version >= 16**.
-::: -->
-
+<div id="try-gitpod">
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/genez-io/genezio-examples)
+</div>
 ## 2. Login to the genezio cloud
 
 If you want to test it locally, you can skip this step.
@@ -218,7 +191,7 @@ import genezioLocalSDKReload from "@genezio/vite-plugin-genezio";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react(), genezioLocalSDKReload()],
+  plugins: [react(), genezioLocalSDKReload()]
 });
 ```
 
