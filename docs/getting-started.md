@@ -10,6 +10,12 @@ import TabItem from '@theme/TabItem';
 
 Welcome to the "Getting Started" guide! In this tutorial, you will learn how to write a backend class, export its methods, call them from the frontend code, and then deploy both the frontend and the backend locally for testing and pushing live to a staging environment.
 
+If you're not ready to start building yet, try Genezio in a ready-to-code environment using Gitpod.
+
+<div id="try-gitpod">
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/genez-io/genezio-examples)
+</div>
+
 ## 1. Install genezio
 
 Use your prefered package manager to install genezio:
@@ -37,11 +43,7 @@ Use your prefered package manager to install genezio:
   </div>
   </TabItem>
 </Tabs>
-You can also try Genezio in a ready-to-code environment using Gitpod:
 
-<div id="try-gitpod">
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/genez-io/genezio-examples)
-</div>
 ## 2. Login to the genezio cloud
 
 If you want to test it locally, you can skip this step.
