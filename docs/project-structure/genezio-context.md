@@ -30,8 +30,103 @@ export type GnzContext = {
 ```
 
 The `token` and the `user` properties as used for the `@GenezioAuth` decorator. The `requestContext` and the `headers` properties are used to store information
-about the incoming request. These two properties can be used to monitor cookies, sourceIp's, browser information etc. The last property is used to tell the genezio platform that this is a `GnzContext` object. This is used to populate the object with the intended information.
+about the incoming request. These two properties can be used to monitor cookies, source IPs, browser information, etc. The last property is used to tell the genezio platform that this is a `GnzContext` object. This is used to populate the object with the intended information.
 
 :::info
 It is important to note that the `GnzContext` object needs to be placed as the first parameter of your function for it to work as intended.
 :::
+
+## How to use the GnzContext object
+
+Let's see an example of how to use the `GnzContext` object in a Genezio project:
+
+You will need a Genezio project to continue. If you don't have one, you can check out the [Getting Started](https://genezio.com/docs/getting-started/) guide.
+
+The best way to use the GnzContext for your middleware is by creating decorators that will perform the necessary operations on the context object. Let's create a simple middleware that logs the context object using decorators.
+In your Genezio project, create a new file called middleware.ts and add the following code:
+
+```typescript
+export function LogGnzContext() {
+  return function (value: Function, context: any) {
+    return function (...args: any[]) {
+      // Check if the first parameter is a GnzContext object
+      if (args.length === 0 || !args[0].isGnzContext) {
+        console.log(
+          "Error: the LogGnzContext decorator must be used with the first parameter being a GnzContext object"
+        );
+        throw new Error("Invalid context");
+      }
+      // If the first parameter is a GnzContext object, log it
+      console.log(args[0]);
+      // @ts-expect-error
+      const func = value.bind(this);
+      const result = func(...args);
+      return result;
+    };
+  };
+}
+```
+
+Now go into a class that will be deployed and attach the middleware to a method. For example, let's create a class called `BackendService` and attach the middleware to the `hello` method:
+
+```typescript
+import { GenezioDeploy, GnzContext } from "@genezio/types";
+import { LogGnzContext } from "./middleware";
+
+@GenezioDeploy()
+export class BackendService {
+  constructor() {}
+
+  @LogGnzContext()
+  async hello(ctx: GnzContext, name: string): Promise<string> {
+    console.log(`Hello from backend service ${name}`);
+
+    return `Hello from backend service ${name}`;
+  }
+}
+```
+
+Notice how the `LogGnzContext` decorator is attached to the `hello` method. This will log the `GnzContext` object to the console every time the `hello` method is called.
+
+Now, you can run `genezio local` and test the `hello` method from the [test interface](/docs/features/testing/). You should see the `GnzContext` object being logged to the console.
+
+This is an example of how a `GnzContext` might look like:
+
+```json
+{
+  "requestContext": {
+    "http": {
+      "method": "POST",
+      "path": "/BackendService",
+      "protocol": "1.1",
+      "sourceIp": "127.0.0.1",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+    }
+  },
+  "headers": {
+    "host": "localhost:8083",
+    "connection": "keep-alive",
+    "content-length": "341",
+    "sec-ch-ua": "\"Chromium\";v=\"124\", \"Google Chrome\";v=\"124\", \"Not-A.Brand\";v=\"99\"",
+    "sec-ch-ua-platform": "\"Windows\"",
+    "sec-ch-ua-mobile": "?0",
+    "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
+    "content-type": "application/json",
+    "accept": "*/*",
+    "origin": "http://localhost:5173",
+    "sec-fetch-site": "same-site",
+    "sec-fetch-mode": "cors",
+    "sec-fetch-dest": "empty",
+    "referer": "http://localhost:5173/",
+    "accept-encoding": "gzip, deflate, br, zstd",
+    "accept-language": "en-US,en;q=0.9"
+  },
+  "isGnzContext": true
+}
+```
+
+Here we can see that the `GnzContext` object was successfully populated with the request context and headers information. Even tough the `user` and `token` properties are not present, they would be populated if the request was authenticated. Using this object and decorators you can create a set of middlewares that can be used to perform operations based on the network information provided by the `GnzContext` object.
+
+## More details
+
+If you want to learn more about how to use the `GnzContext` object, you can check out the [Authentication](/docs/features/authentication) and [Rate Limiter](/docs/features/rate-limiter) features. Both of these features use the `GnzContext` object to perform their operations.

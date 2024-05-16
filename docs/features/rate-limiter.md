@@ -8,7 +8,7 @@ Genezio provides the `@GenezioRateLimiter` that can be used on any method of a d
 ## Prerequisites
 
 To use the rate limiter, you need to have a Redis database. You can integrate your project with an Upstash Redis database from the Genezio dashboard or use your own Redis database.
-For more information on how to integrate your Genezio project with an Upstash Redis database, see the [Upstash Redis integration guide](https://genezio.com/docs/tutorials/connect-to-redis-powered-by-upstash/).
+For more information on how to integrate your Genezio project with an Upstash Redis database, see the [Upstash Redis integration guide](/docs/tutorials/connect-to-redis-powered-by-upstash/).
 
 ## How to use the rate limiter
 
@@ -40,7 +40,7 @@ export class BackendService {
 Note: The rate limiter will work only on asynchronous functions.  
 :::
 :::info
-Important: The rate limiter decorator **must** be used on a method that has the first parameter as `GnzContext` and the rest of the parameters are the ones you want to pass to the method. Even if you won't explicitly use the `GnzContext` parameter, it must be there. This is because the context needs to be populated with the IP address of the request. This will be done automatically by the rate limiter decorator. To learn more about the `GnzContext` object, see the [documentation](https://genezio.com/docs/features/backend-deployment/)
+Important: The rate limiter decorator **must** be used on a method that has the first parameter as `GnzContext` and the rest of the parameters are the ones you want to pass to the method. Even if you won't explicitly use the `GnzContext` parameter, it must be there. This is because the context needs to be populated with the IP address of the request. This will be done automatically by the rate limiter decorator. To learn more about the `GnzContext` object, see the [documentation](/docs/project-structure/genezio-context)
 :::
 
 The rate limiter decorator takes two parameters:
