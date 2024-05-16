@@ -52,21 +52,8 @@ The rate limiter decorator takes two parameters:
 ### Testing
 
 Once you have set up the rate limiter, you can run `genezio local` and go to the test interface URL provided by the CLI to test the rate limiter.
-As of now, the rate limiter will work with the test interface only if you add to the context parameter the following field:
 
-```json context
-{
-  "isGnzContext": true
-}
-```
-
-<figure style={{textAlign:"center", marginLeft:"0"}}><img style={{cursor:"pointer"}} src={useBaseUrl("/img/gnz-context-test-interface.webp")} alt=""/><figcaption></figcaption></figure>
-
-:::info
-This is necessary for both the local and the remote test interface instances.
-:::
-
-After that is done, you can spam multiple requests and test if the rate limiter is working properly.
+In the test interface you can spam multiple requests and test if the rate limiter is working properly.
 If you need a Redis GUI client to check the changes in your Redis database, you can use [RedisInsight](https://redis.com/redis-enterprise/redis-insight/).
 
 ## More coming soon
