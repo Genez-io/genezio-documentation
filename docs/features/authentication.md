@@ -134,7 +134,7 @@ type User struct {
 </TabItem>
 </Tabs>
 
-For an authenticated method you are free to add as many parameters as you want, in any order you see fit.
+For an authenticated method you are free to add as many arguments as you want, in any order you see fit.
 
 :::info
 Once you enabled the authentication feature, you can test your backend locally by running `genezio local`.
