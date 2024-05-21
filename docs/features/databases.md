@@ -18,7 +18,7 @@ We support the following databases:
 
 ## How to create a database
 
-To create a database you can navigate our dashboard, go to the [**Databases**](https://dev.app.genez.io/databases/) page, select your project, choose "Database" from the left menu and click on the **Create Database** button.
+To create a database you can navigate to the [dashboard](https://app.genez.io/) page, select a project, choose "Database" from the left-side menu and click on the **Create Database** button.
 
 <p align="center">
     <img src={CreateDatabase} style={{width: "70%"}} />
