@@ -5,6 +5,8 @@ import EditEmailTemplates from '/img/features/authentication/edit_email_template
 import EnableEmailAndPassword from '/img/features/authentication/enable_email_and_password.webp';
 import EnableGoogleProvider from '/img/features/authentication/enable_google_provider.webp';
 import ResetPassword from '/img/features/authentication/reset_password.webp';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 # Authentication
 
@@ -13,13 +15,16 @@ Genezio provides an out-of-the-box authentication backend, support for Postgres 
 
 Enabling authentication for your project will create a new backend class `AuthService` that is deployed next to your other backend classes.
 You can use the `AuthService` to register new users, login existing users, reset their password and fetch the user's data.
-Enabling protection for a private backend method is done simply by using the `@GenezioAuth` decorator.
+Enabling protection for a private backend method is done simply by using the `@GenezioAuth` decorator (TypeScript) or the `// genezio: auth` comment (GO).
 
 :::info
 To enable the authentication feature, you need to have a project with a backend deployed. If you don't have a project yet, you can create one by following the [Getting Started](/docs/getting-started) guide.
 :::
 
 ## Protect a backend method
+
+<Tabs groupId="languages">
+  <TabItem value="ts" label="TypeScript">
 
 If you want to implement a backend method that is only accessible by authenticated users, you can import and use the `@GenezioAuth` decorator.
 
@@ -64,12 +69,70 @@ export type GnzContext = {
         address?: string;
         profilePictureUrl?: string;
         customInfo?: {
-            [key: string]: string;
+          [key: string]: string;
         };
       }
     | undefined;
 };
 ```
+
+</TabItem>
+<TabItem value="go" label="Go">
+If you want to implement a backend method that is only accessible by authenticated users, you can simply add the `// genezio: auth` comment above that method.
+
+The first argument of the authenticated method must be an object of type `context.Context`.
+
+The following backend method will allow only authenticated users to read the message:
+
+```go title="backendService/backendService.go" showLineNumbers
+package BackendService
+
+import (
+    "context"
+    "fmt"
+    "github.com/Genez-io/auth"
+)
+
+// genezio: deploy
+type BackendService struct {}
+
+func New() BackendService {
+    return BackendService{}
+}
+
+// genezio: auth
+func (b BackendService) GetSensitiveInformation(ctx context.Context) (string, error) {
+    user := ctx.Value("user").(*auth.User)
+    fmt.Println("User: ", user.Name, "accessed the sensitive message")
+    return "This message contains sensitive information. Only authenticated users can read it.", nil
+}
+```
+
+To get the authenticated user's data, you can use the native Go `context` object.
+You can retrieve the user data by calling
+
+```go
+user := context.Value("user").(*auth.User)
+```
+
+The `User` struct is defined in the `github.com/Genez-io/auth` package and has the following structure:
+
+```go
+type User struct {
+	Email             *string                 `json:"email"`
+	UserId            string                  `json:"userId"`
+	AuthProvider      string                  `json:"authProvider"`
+	CreatedAt         time.Time               `json:"createdAt"`
+	Verified          *bool                   `json:"verified"`
+	Name              *string                 `json:"name"`
+	Address           *string                 `json:"address"`
+	ProfilePictureUrl *string                 `json:"profilePictureUrl"`
+	CustomInfo        *map[string]interface{} `json:"customInfo"`
+}
+```
+
+</TabItem>
+</Tabs>
 
 For an authenticated method you are free to add as many parameters as you want, in any order you see fit.
 
@@ -154,7 +217,10 @@ Configure globally the genezio authentication `token` and `region`. These values
 ```typescript title="client/src/main.tsx" showLineNumbers
 import { AuthService } from "@genezio/auth";
 
-AuthService.getInstance().setTokenAndRegion("<YOUR_GENEZIO_TOKEN>", "<YOUR_PROJECT_REGION>");
+AuthService.getInstance().setTokenAndRegion(
+  "<YOUR_GENEZIO_TOKEN>",
+  "<YOUR_PROJECT_REGION>",
+);
 ```
 
 ### Create a sign-up form for new users
@@ -315,6 +381,7 @@ export default function ResetPasswordForm() {
 ```
 
 The redirect URL to this new reset password form must be set in the `Reset Password` email template in the dashboard.
+
 <p align="center">
     <img src={ResetPassword} style={{width: "70%"}} />
 </p>
@@ -360,7 +427,10 @@ Configure globally the genezio authentication `token` and `region` and set up th
 ```typescript title=client/src/main.tsx showLineNumbers
 import { AuthService } from "@genezio/auth";
 
-AuthService.getInstance().setTokenAndRegion("<YOUR_GENEZIO_TOKEN>", "<YOUR_PROJECT_REGION>");
+AuthService.getInstance().setTokenAndRegion(
+  "<YOUR_GENEZIO_TOKEN>",
+  "<YOUR_PROJECT_REGION>",
+);
 ```
 
 You will rely on the user installing a Web3 Wallet extension in browser such as Metamask. Then you need to do the following steps:
@@ -368,29 +438,31 @@ You will rely on the user installing a Web3 Wallet extension in browser such as 
 1. Request the wallet address from the Web3 Wallet extension.
 
 ```typescript
-const addresses = await window.ethereum.request({ method: "eth_requestAccounts" })
+const addresses = await window.ethereum.request({
+  method: "eth_requestAccounts",
+});
 ```
 
-2. Select one of the addresses and then request a nonce from the `AuthService` class. 
+2. Select one of the addresses and then request a nonce from the `AuthService` class.
 
 ```typescript
-const address = addresses[0]
-const nonce = await AuthService.getInstance().web3GetNonce(address)
+const address = addresses[0];
+const nonce = await AuthService.getInstance().web3GetNonce(address);
 ```
 
 3. Ask the user to sign the nonce using his wallet extension.
 
 ```typescript
 const signature = await window.ethereum.request({
-    method: 'personal_sign',
-    params: [nonce, address]
-})
+  method: "personal_sign",
+  params: [nonce, address],
+});
 ```
 
-4. Send the address and the signature to the `AuthService`. The service will check if the signature is correct and if it is, it will return all the user information and it will save a token in the browser. 
+4. Send the address and the signature to the `AuthService`. The service will check if the signature is correct and if it is, it will return all the user information and it will save a token in the browser.
 
 ```typescript
-const { user } = await AuthService.getInstance().web3Login(address, signature)
+const { user } = await AuthService.getInstance().web3Login(address, signature);
 ```
 
 ### Create a login form for existing users
@@ -460,7 +532,7 @@ export default function FetchSensitiveMessage() {
 };
 ```
 
-On the client side you don't need to pass the context for `BackendService.getSensitiveInformation()`, this will be added seamlessly by  the `@genezio/auth` library.
+On the client side you don't need to pass the context for `BackendService.getSensitiveInformation()`, this will be added seamlessly by the `@genezio/auth` library.
 
 ## Supported databases
 
@@ -492,7 +564,7 @@ Users register using their own Google account. You have to create a new applicat
 
 ### Web3 Wallet
 
-A Web3 wallet login system allows users to securely authenticate with your platform using their digital wallets. This process utilizes blockchain technology, offering a decentralized and secure method of verification without sharing personal information.  This method leverages public-key cryptography, eliminating the need for traditional username and password combinations.
+A Web3 wallet login system allows users to securely authenticate with your platform using their digital wallets. This process utilizes blockchain technology, offering a decentralized and secure method of verification without sharing personal information. This method leverages public-key cryptography, eliminating the need for traditional username and password combinations.
 
 How does it work?
 
@@ -500,7 +572,6 @@ How does it work?
 2. Sign Message: The platform sends a unique message, which the user signs with their private key via their wallet.
 3. Verify Signature: The platform verifies the signature using the user's public key to authenticate identity.
 4. Establish Session: Upon verification, the platform starts a session, granting access to the user.
-
 
 ### More coming soon
 
@@ -552,7 +623,10 @@ Here is an example of how to set the storage manager:
 import { AuthService } from "@genezio/auth";
 import { StorageManager } from "@genezio-sdk/my-project";
 
-AuthService.getInstance().setTokenAndRegion("<YOUR_GENEZIO_TOKEN>", "<YOUR_PROJECT_REGION>");
+AuthService.getInstance().setTokenAndRegion(
+  "<YOUR_GENEZIO_TOKEN>",
+  "<YOUR_PROJECT_REGION>",
+);
 
 // Define a class that will implement the Storage interface
 class InMemoryStorageWrapper {
