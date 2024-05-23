@@ -29,7 +29,7 @@ export type GnzContext = {
 };
 ```
 
-The `token` and the `user` properties as used for the `@GenezioAuth` decorator. The `requestContext` and the `headers` properties are used to store information
+The `token` and the `user` properties are used for the `@GenezioAuth` decorator. The `requestContext` and the `headers` properties are used to store information
 about the incoming request. These two properties can be used to monitor cookies, source IPs, browser information, etc. The last property is used to tell the genezio platform that this is a `GnzContext` object. This is used to populate the object with the intended information.
 
 :::info
@@ -43,9 +43,9 @@ Let's see an example of how to use the `GnzContext` object in a Genezio project:
 You will need a Genezio project to continue. If you don't have one, you can check out the [Getting Started](https://genezio.com/docs/getting-started/) guide.
 
 The best way to use the GnzContext for your middleware is by creating decorators that will perform the necessary operations on the context object. Let's create a simple middleware that logs the context object using decorators.
-In your Genezio project, create a new file called middleware.ts and add the following code:
+In your Genezio project, create a new file called `middleware.ts` and add the following code:
 
-```typescript
+```typescript title="middleware.ts" showLineNumbers
 export function LogGnzContext() {
   return function (value: Function, context: any) {
     return function (...args: any[]) {
@@ -69,7 +69,7 @@ export function LogGnzContext() {
 
 Now go into a class that will be deployed and attach the middleware to a method. For example, let's create a class called `BackendService` and attach the middleware to the `hello` method:
 
-```typescript
+```typescript title="backendService.ts" showLineNumbers
 import { GenezioDeploy, GnzContext } from "@genezio/types";
 import { LogGnzContext } from "./middleware";
 
@@ -125,7 +125,7 @@ This is an example of how a `GnzContext` might look like:
 }
 ```
 
-Here we can see that the `GnzContext` object was successfully populated with the request context and headers information. Even tough the `user` and `token` properties are not present, they would be populated if the request was authenticated. Using this object and decorators you can create a set of middlewares that can be used to perform operations based on the network information provided by the `GnzContext` object.
+Here we can see that the `GnzContext` object was successfully populated with the request context and headers information. Even though the `user` and `token` properties are not present, they would be populated if the request was authenticated. Using this object and decorators you can create a set of middlewares that can be used to perform operations based on the network information provided by the `GnzContext` object.
 
 ## More details
 
