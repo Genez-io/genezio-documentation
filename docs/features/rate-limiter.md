@@ -40,14 +40,14 @@ export class BackendService {
 Note: The rate limiter will work only on asynchronous functions.  
 :::
 :::info
-Important: The rate limiter decorator **must** be used on a method that has the first parameter as `GnzContext` and the rest of the parameters are the ones you want to pass to the method. Even if you won't explicitly use the `GnzContext` parameter, it must be there. This is because the context needs to be populated with the IP address of the request. This will be done automatically by the rate limiter decorator. To learn more about the `GnzContext` object, see the [documentation](/docs/project-structure/genezio-context)
+Important: The rate limiter decorator must be applied to a method where the first parameter is a `GnzContext` object, followed by the parameters you wish to pass to the method. Even if you won't explicitly use the `GnzContext` parameter, it must be there. This is because the context needs to be populated with the IP address of the request. This will be done automatically by the rate limiter decorator. To learn more about the `GnzContext` object, see the [documentation](/docs/project-structure/genezio-context)
 :::
 
 The rate limiter decorator takes two parameters:
 
 - `dbUrl`: The URL of the Redis database. (default is `redis://localhost:6379`)
-- `limit`: The number of requests allowed per minute. (default is 50)
-- `refreshRate`: The rate in seconds at which the rate limiter refreshes its entries in the db. Granularity is 1 second (default is 59 seconds)
+- `limit`: The number of requests allowed per minute per IP. (default is 50)
+- `refreshRate`: The rate in seconds at which the rate limiter refreshes its entries in the DB. Granularity is 1 second (default is 59 seconds)
 
 ### Testing
 
