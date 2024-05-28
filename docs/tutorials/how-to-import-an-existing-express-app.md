@@ -92,8 +92,6 @@ backend:
 
 This configuration file specifies the project name, deployment region, and details about the backend, including the scripts to run and the functions to deploy.
 
-For more information about the Genezio YAML configuration, you can check the [official documentation](/docs/project-structure/genezio-configuration-file.md).
-
 ## 4. Deploy your project
 
 Finally, deploy your project using the following command in your terminal:
