@@ -34,6 +34,8 @@ import express from 'express';
 
 const app = express();
 
+// Your middleware and routes go here
+
 export const handler = serverless(app, { provider: "aws" });
 ```
 
@@ -90,7 +92,9 @@ backend:
 
 This configuration file specifies the project name, deployment region, and details about the backend, including the scripts to run and the functions to deploy.
 
-## 4. Deploy with the app.
+For more information about the Genezio YAML configuration, you can check the [official documentation](/docs/project-structure/genezio-configuration-file.md).
+
+## 4. Deploy your project
 
 Finally, deploy your project using the following command in your terminal:
 
@@ -98,11 +102,24 @@ Finally, deploy your project using the following command in your terminal:
 genezio deploy
 ```
 
-This command will use the `genezio.yaml` configuration file to deploy your Express.js app to the specified cloud provider.
+If your application use environment variables, you can deploy them using the following command:
 
-### Next Step
+```bash
+genezio deploy --env <your-env-file-path>
+```
 
-[Custom domain](/docs/features/custom-domain-configuration.md)
+Note: You need to deploy your environment variables single time. After that, you can deploy your project without the `--env` flag.
+
+For more information about environment variables, you can check the [official documentation](/docs/project-structure/backend-envinronment-variables.md).
+
+## Test your app
+After deploying your application, you can test it to ensure it's running correctly. To verify that your Express.js app is working, open a web browser and navigate to the URL provided for your deployed function. 
+
+This URL can be found in the deployment output under the `Functions Deployed` section.
+
+Additionally, you can monitor and manage your app through the Genezio App Dashboard. The dashboard URL, also provided after deployment, allows you to access comprehensive views of your project's status and logs. 
+
+You can find this URL in the deployment output under the `App Dashboard URL` section.
 
 ### Support <a href="#support" id="support"></a>
 
