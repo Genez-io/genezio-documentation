@@ -94,49 +94,47 @@ This is an example of how a `GnzContext` might look like:
 
 ```json
 {
-  requestContext: {
-    http: {
-      method: 'POST',
-      path: '/',
-      protocol: 'HTTP/1.1',
-      userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36',
-      sourceIp: '78.96.207.59'
+  "requestContext": {
+    "http": {
+      "method": "POST",
+      "path": "/",
+      "protocol": "HTTP/1.1",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36",
+      "sourceIp": "78.96.207.59"
     },
-    url: {
-      href: 'http://localhost/',
-      origin: 'http://localhost',
-      protocol: 'http:',
-      username: '',
-      password: '',
-      host: 'localhost',
-      hostname: 'localhost',
-      port: '',
-      pathname: '/',
-      search: '',
-      searchParams: URLSearchParams {},
-      hash: ''
+    "url": {
+      "password": "",
+      "host": "localhost",
+      "hostname": "localhost",
+      "port": "",
+      "pathname": "/",
+      "search": "",
+      "searchParams": {
+        "URLSearchParams": {}
+      },
+      "hash": ""
     }
   },
-  headers: {
-    Host: 'a752d3e0-937e-4939-9734-fda0670168db.dev-fkt.cloud.genez.io',
-    Accept: '*/*',
-    'Accept-Encoding': 'gzip, deflate, br, zstd',
-    'Accept-Language': 'en-US,en;q=0.9',
-    'Content-Length': '336',
-    'Content-Type': 'application/json',
-    Origin: 'https://dev.app.genez.io',
-    Priority: 'u=1, i',
-    Referer: 'https://dev.app.genez.io/',
-    'Sec-Ch-Ua': '"Google Chrome";v="125", "Chromium";v="125", "Not.A/Brand";v="24"',
-    'Sec-Ch-Ua-Mobile': '?0',
-    'Sec-Ch-Ua-Platform': '"Windows"',
-    'Sec-Fetch-Dest': 'empty',
-    'Sec-Fetch-Mode': 'cors',
-    'Sec-Fetch-Site': 'same-site',
-    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36',
-    'X-Forwarded-For': '78.96.207.59'
+  "headers": {
+    "Host": "a752d3e0-937e-4939-9734-fda0670168db.dev-fkt.cloud.genez.io",
+    "Accept": "*/ *",
+    "Accept-Encoding": "gzip, deflate, br, zstd",
+    "Accept-Language": "en-US,en;q=0.9",
+    "Content-Length": "336",
+    "Content-Type": "application/json",
+    "Origin": "https://dev.app.genez.io",
+    "Priority": "u=1, i",
+    "Referer": "https://dev.app.genez.io/",
+    "Sec-Ch-Ua": "\"Google Chrome\";v=\"125\", \"Chromium\";v=\"125\", \"Not.A/Brand\";v=\"24\"",
+    "Sec-Ch-Ua-Mobile": "?0",
+    "Sec-Ch-Ua-Platform": "\"Windows\"",
+    "Sec-Fetch-Dest": "empty",
+    "Sec-Fetch-Mode": "cors",
+    "Sec-Fetch-Site": "same-site",
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36",
+    "X-Forwarded-For": "78.96.207.59"
   },
-  isGnzContext: true
+  "isGnzContext": true
 }
 ```
 
