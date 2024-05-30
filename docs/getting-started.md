@@ -10,10 +10,18 @@ import TabItem from '@theme/TabItem';
 
 Welcome to the "Getting Started" guide! In this tutorial, you will learn how to write a backend class, export its methods, call them from the frontend code, and then deploy both the frontend and the backend locally for testing and pushing live to a staging environment.
 
-If you're not ready to start building yet, try Genezio in a ready-to-code environment using Gitpod.
+If you're not ready to start building yet, try Genezio in a ready-to-code environment:
 
 <div id="try-gitpod">
+
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/genez-io/genezio-examples)
+
+</div>
+
+<div id="try-codespaces">
+
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/genez-io/genezio-examples)
+
 </div>
 
 ## 1. Install genezio
@@ -145,16 +153,20 @@ export class HelloWorldClass {
 
 ## &#x20;5. Start the genezio local environment
 
-Run `genezio local` to start the genezio backend locally.
+Run `genezio local` to start the genezio backend locally together with the frontend.
+
+This command will start the backend server on port 8083 and the frontend server on port 5173.
 
 To call the backend services from the frontend, genezio generates a Node module in the `client` folder. This Node module will need to be imported in your frontend code, and for now, will expose the `hello` method from the `HelloWorldClass`.
 
 Run this command in your **root project folder**:
 
 <div id="step5-local">
+
 ```
 genezio local
 ```
+
 </div>
 
 The generated SDK supports both Typescript and Javascript using either ESM or CJS standards and uses JSON-RPC for communication.
@@ -165,53 +177,21 @@ You are now done setting up the backend in the local environment.
 
 **Note:** You can test your API using the [Testing Interface](http://localhost:8083/explore) provided in the genezio dashboard.
 
-## 6. Use your newly created backend in the frontend of your choice
-
-You can use any frontend framework locally to test the backend. For this quick start guide, let’s use our placeholder frontend written in React using [Vite](https://vitejs.dev/).
-
-Run these commands in a **new terminal:**
-
-<div id="step6-run-dev">
-```bash
-cd ./client
-npm install
-npm run dev
-```
-</div>
-
-**Note 1:** your frontend can now be accessed at [http://localhost:5173](http://localhost:5173). At this point, it is not connected to the genezio backend.
-
-**Note 2:** To benefit from the genezio SDK auto regeneration we added the following code to `client/vite.config.ts`
-
-<div id="step6-vite-config">
-<!-- {% code title="client/vite.config.ts" lineNumbers="true" %} -->
-
-```typescript title="client/vite.config.ts" showLineNumbers
-import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react";
-import genezioLocalSDKReload from "@genezio/vite-plugin-genezio";
-
-// https://vitejs.dev/config/
-export default defineConfig({
-  plugins: [react(), genezioLocalSDKReload()]
-});
-```
-
-<!-- {% endcode %} -->
-</div>
-## 7. Call the backend method from the frontend code
+## 6. Call the backend method from the frontend code
 
 Go to `client/src/App.tsx` and import the generated SDK:
 
-<div id="step7-import">
+<div id="step6-import">
+
 ```typescript
 import { HelloWorldClass } from "@genezio-sdk/genezio-project";
 ```
+
 </div>
 
 Next, change the `sayHello` function to call the server-side code. Notice how your preferred editor auto-completes the class and function call:
 
-<div id="step7-call">
+<div id="step6-call">
 <!-- {% code title="client/src/App.tsx" lineNumbers="true" %} -->
 
 ```typescript title="client/src/App.tsx" showLineNumbers
@@ -224,22 +204,24 @@ async function sayHello() {
 <!-- {% endcode %} -->
 </div>
 
-## 8. Test your app
+## 7. Test your app
 
 Point the browser to [http://localhost:5173](http://localhost:5173) to test your app locally.
 
 Now let's take it live for everybody to use it.
 
-## 9. Deploy your full-stack app to the genezio cloud
+## 8. Deploy your full-stack app to the genezio cloud
 
 Harness the full power of genezio by deploying both the **backend** and the **frontend** with `genezio deploy`. Also when you run this command, a production SDK will be generated before deploying your frontend.
 
 Run this command in your **root project folder**:
 
-<div id="step9-deploy">
+<div id="step8-deploy">
+
 ```
 genezio deploy
 ```
+
 </div>
 
 This is a typical part of the output that you should expect:
@@ -269,9 +251,9 @@ Frontend URL: https://<subdomain>.dev.app.genez.io
 
 After the deployment succeeds, you can access the [Dashboard](https://app.genez.io), check the logs of the project, and use the [Test Interface](/docs/features/testing) to call your backend functions manually.
 
-## 10. All set
+## 9. All set
 
-Now you have a fully functional app deployed on the genezio infrastructure to be used publicly. A unique URL is created for your app. Point your browser to the link provided by the genezio deploy command :`https://<subdomain>.app.genez.io` . Enjoy!
+Now you have a fully functional app deployed on the genezio infrastructure to be used publicly. A unique URL is created for your app. Point your browser to the link provided by the genezio deploy command: `https://<subdomain>.app.genez.io` . Enjoy!
 
 ## Next Steps <a href="#next-steps" id="next-steps"></a>
 

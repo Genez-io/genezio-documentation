@@ -69,18 +69,18 @@ Decorators are only supported in TypeScript, JavaScript and Go. If you are using
     }
 
     // genezio: http
-    func (s HttpServer) HandleSimplePlainRequest(request genezio_types.GenezioHttpRequest) *genezio_types.GenezioHttpResponse {
+    func (s HttpServer) HandleSimplePlainRequest(request genezio_types.GenezioHttpRequest) (*genezio_types.GenezioHttpResponse, error) {
         fmt.Println("Request received with a simple text", request.Body, "!")
 
         // insert your code here
 
-        response := GenezioHttpResponse{
+        response := &genezio_types.GenezioHttpResponse{
             Body:       request.Body,
-            Headers:    map[string]string{"content-type": "text/html"},
+            Headers:    &map[string]string{"content-type": "text/html"},
             StatusCode: "200",
         }
 
-        return response
+        return response, nil
     }
     ```
     <Admonition type="note">
