@@ -15,7 +15,7 @@ npm install genezio -g
 ```
 # Create an Express.js App
 
-## 1. First, create an Express.js app using the following commands:
+## 1. Run the following commands to create the app:
 
 ```bash
 mkdir sample-app && cd sample-app
