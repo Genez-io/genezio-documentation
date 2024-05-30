@@ -60,7 +60,7 @@ npm install serverless-http
 
 This package allows you to wrap your Express.js application and deploy it using a serverless provider like AWS.
 
-## 2. Export the Handler
+## 4. Export the Handler
 
 Next, you need to export the handler function for your Express.js app. In your main application file (app.js), add the following lines:
 
@@ -85,7 +85,7 @@ export const handler = serverless(app, { provider: "aws" });
 
 This code wraps your Express app with the serverless-http package and exports it as a handler for AWS Lambda.
 
-## 3. Create `genezio.yaml`
+## 5. Create `genezio.yaml`
 Now, create a genezio.yaml file in the root directory of your project. This file will contain the configuration needed to deploy your backend using Genezio. Here is an example configuration:
 ```yaml
 # The name of the project.
@@ -136,7 +136,7 @@ backend:
 
 This configuration file specifies the project name, deployment region, and details about the backend, including the scripts to run and the functions to deploy.
 
-## 4. Login to Genezio
+## 6. Login to Genezio
 
 Before deploying your project, you need to log in to Genezio using the following command:
 
@@ -146,7 +146,7 @@ genezio login
 
 This command will open a browser window where you can log in to your Genezio account.
 
-## 5. Deploy your project
+## 7. Deploy your project
 
 Finally, deploy your project using the following command in your terminal:
 
