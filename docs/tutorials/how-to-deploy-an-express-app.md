@@ -2,9 +2,9 @@
 sidebar_position: 1
 ---
 
-# How to Import an Existing Express.js App
+# How to Deploy an Express.js App
 
-In this tutorial, you will learn how to import an Express.js app using Serverless and Genezio.
+In this tutorial, you will learn how to deploy an Express.js app using Serverless and Genezio.
 
 ### Prerequisites
 
@@ -13,8 +13,44 @@ You need to have a genezio CLI installed. If you haven't installed it yet, you c
 ```bash
 npm install genezio -g
 ```
+### Create an Express.js App
 
-## 1. Install `serverless-http`
+## 1. First, create an Express.js app using the following commands:
+
+```bash
+mkdir sample-app && cd sample-app
+npm init -y
+npm install express
+touch app.js
+```
+
+## 2. Add the following code to your app.js file:
+
+```javascript title="app.js"
+import express from 'express';
+
+const port = process.env.PORT || 3000;
+
+const app = express();
+
+app.get('/', (req, res) => {
+    res.send('Hello from my Express app!');
+});
+
+app.listen(port, () => {
+    console.log(`Server listening on port ${port}`);
+});
+```
+Here, we create a simple Express.js app that listens on port 3000 and responds with "Hello from my Express app!" when you navigate to the root URL.
+
+You can run your app using the following command:
+
+```bash
+node app.js
+```
+## 3. Convert the express app to make it ready to deploy
+
+## Install `serverless-http`
 
 First, you need to install the `serverless-http` package. Open your terminal and run the following command:
 
@@ -26,15 +62,23 @@ This package allows you to wrap your Express.js application and deploy it using 
 
 ## 2. Export the Handler
 
-Next, you need to export the handler function for your Express.js app. In your main application file (e.g., index.js), add the following lines:
+Next, you need to export the handler function for your Express.js app. In your main application file (app.js), add the following lines:
 
-```javascript title="index.js"
+```javascript title="app.js"
 import serverless from 'serverless-http';
 import express from 'express';
 
+const port = process.env.PORT || 3000;
+
 const app = express();
 
-// Your middleware and routes go here
+app.get('/', (req, res) => {
+    res.send('Hello from my Express app!');
+});
+
+app.listen(port, () => {
+    console.log(`Server listening on port ${port}`);
+});
 
 export const handler = serverless(app, { provider: "aws" });
 ```
@@ -82,7 +126,7 @@ backend:
       # The name of the handler function.
       handler: handler
       # The name of the entry file.
-      entry: index.js
+      entry: app.js
       # The cloud
       provider: aws
 
@@ -92,7 +136,17 @@ backend:
 
 This configuration file specifies the project name, deployment region, and details about the backend, including the scripts to run and the functions to deploy.
 
-## 4. Deploy your project
+## 4. Login to Genezio
+
+Before deploying your project, you need to log in to Genezio using the following command:
+
+```bash
+genezio login
+```
+
+This command will open a browser window where you can log in to your Genezio account.
+
+## 5. Deploy your project
 
 Finally, deploy your project using the following command in your terminal:
 
