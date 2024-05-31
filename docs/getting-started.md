@@ -1,5 +1,7 @@
 ---
 sidebar_position: 2
+title: "Getting Started with Genezio"
+description: "Begin your Genezio journey with our “Getting Started” guide. Master backend class creation, method exporting, frontend calls, and local deployment for testing."
 ---
 
 import Tabs from '@theme/Tabs';
