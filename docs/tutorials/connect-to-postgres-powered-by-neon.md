@@ -20,7 +20,7 @@ You need to have a genezio project. Use an existing one, or [create a new one.](
 
 Now integrate this project with the Postgres database provided by Neon. To do that, open your genezio dashboard at [dashboard](https://app.genez.io/dashboard) and pick the project you created earlier. In the _**Integrations**_ sidebar you can select to install the Neon Postgres integration:
 
-![alt_text](../../static/img/integrations.webp)
+![alt_text](/img/integrations.webp)
 
 Connect with your Neon account:
 

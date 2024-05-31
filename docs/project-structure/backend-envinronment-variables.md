@@ -18,13 +18,9 @@ These variables can be either secrets such as database keys or 3rd party API key
 
 To set environment variables in the backend classes, head to the [Dashboard](https://dev.app.genez.io/dashboard) page of the project.
 
-On the `Backend` tab, click on the `Environment Variables` button:
-
-<figure style={{textAlign:"center", marginLeft:"0"}}><img style={{cursor:"pointer"}} src={useBaseUrl("/img/image (34).webp")} alt=""/><figcaption></figcaption></figure>
+Click on the `Environment Variables` button on the sidebar:
 
 Add the environment variables like a `<key, value>` pair. After adding all the environment variables hit the `Save` button:
-
-<figure style={{textAlign:"center", marginLeft:"0"}}><img style={{cursor:"pointer"}} src={useBaseUrl("/img/image (40).webp")} alt=""/><figcaption></figcaption></figure>
 
 Note: You can also import environment variables from a file using `Import from .env` button.
 
