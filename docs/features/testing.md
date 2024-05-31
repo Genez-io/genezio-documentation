@@ -50,9 +50,7 @@ The upper-right part of the section will display the time it took for the reques
 
 Test your backend server in a friendly and easy-to-use graphic environment before actually integrating the functions in your frontend application.
 
-To access the testing dashboard, go to the genezio platform, select a deployed backend and click on the `Test project` button.
-
-<figure style={{textAlign:"center", marginLeft:"0"}}><img style={{cursor:"pointer"}} src={useBaseUrl("/img/image (2).webp")} alt=""/><figcaption></figcaption></figure>
+To access the testing dashboard, go to the genezio platform, select a deployed backend and click on the `Test Interface` button on the sidebar.
 
 You will be redirected to the testing dashboard where you can craft and send requests to the deployed backend.&#x20;
 

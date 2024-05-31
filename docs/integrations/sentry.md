@@ -44,9 +44,7 @@ In order to link our genezio project to this Sentry project, we will need to gra
 
 #### Activate the integration in the genezio dashboard
 
-Now that we have the DSN, we can switch our attention to the genezio dashboard. Go to the project for which you want to activate the integration (it must be an already deployed project), open the **Actions** dropdown, and select **Integrations**
-
-<figure style={{textAlign:"center", marginLeft:"0"}}><img style={{cursor:"pointer"}} src={useBaseUrl("/img/image (45).webp")} alt=""/><figcaption></figcaption></figure>
+Now that we have the DSN, we can switch our attention to the genezio dashboard. Go to the project for which you want to activate the integration (it must be an already deployed project), click on the **Integrations** button on the sidebar.
 
 You will see the Sentry integration listed there. Click **Install** and paste the DSN that you copied earlier, then click **Connect**. After a few seconds, you will see that your integration activated successfully. From the same screen, you can also update the integration if you want to change the DSN or disable it.
 

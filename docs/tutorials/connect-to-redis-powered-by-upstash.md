@@ -35,7 +35,7 @@ You need to have a genezio project. Use an existing one, or [create a new one.](
 \
 Go to the `Integrations` sidebar and select to install the Upstash Redis integration:
 
-![Alt text](../../static/img/integrations.webp)
+![Alt text](/img/integrations.webp)
 
 Connect with an Upstash account using the preferred login method:
 
