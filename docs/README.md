@@ -1,8 +1,13 @@
 ---
 sidebar_position: 1
+description: Access Genezio documentation to optimize your development. Find tutorials, guides, and examples to effectively use Genezio’s capabilities
 ---
 
 # Overview
+
+<head>
+  <title>Overview</title>
+</head>
 
 Welcome to the Genezio documentation.
 
