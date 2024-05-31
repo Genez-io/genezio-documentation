@@ -1,8 +1,13 @@
 ---
 sidebar_position: 2
+description: Genezio Analytics is a built-in CLI tool feature that gathers telemetry and analytics data. Learn to track and analyze your project’s performance
 ---
 
 # Analytics
+
+<head>
+  <title>Analytics</title>
+</head>
 
 ### Introduction to Genezio Analytics
 
