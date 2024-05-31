@@ -1,8 +1,13 @@
 ---
 sidebar_position: 11
+description: Explore our Projects Gallery showcasing innovative applications built with Genezio. Get inspired by unique projects and see the potential of Genezio in action.
 ---
 
 # Hall of Fame
+
+<head>
+  <title>Hall of Fame</title>
+</head>
 
 Check out the projects built by the community for inspiration:
 
