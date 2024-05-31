@@ -1,4 +1,12 @@
+---
+description: Deploy your application on Genezio Cloud with ease. Follow our instructions for setting up the genezio.yaml configuration file
+---
+
 # Genezio Cloud
+
+<head>
+  <title>Genezio Cloud</title>
+</head>
 
 Deploying on the genezio cloud is the default mechanism. You only need a genezio account to host your application using genezio. You can either don't set anything special in the `genezio.yaml` configuration file or set `genezio` for the backend's `cloudProvider` key.
 
