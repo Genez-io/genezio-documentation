@@ -144,6 +144,6 @@ $ genezio deploy
 
 - Open your browser and go to the frontend link provided by Genezio to see the application.
 
-## Conclussion
+## Conclusion
 
 This template is a basis for how to structure large Genezio projects. You can use this project and customize it as you see fit to cater to your personal use cases. If you need any help or have any feedback feel free to reach out to us on [Discord](https://discord.com/invite/uc9H5YKjXv) or open a [Github issue](https://github.com/Genez-io/genezio/issues/new/choose) and we will assist you moving forward.
