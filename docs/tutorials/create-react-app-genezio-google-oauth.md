@@ -64,11 +64,7 @@ You are now ready! Save the Google ID and Google Secret that we will use in the 
 
 Let's start by enabling Genezio Authentication. Go to the dashboard of your project on https://app.genez.io. Click on `Authentication` sidebar.
 
-<figure style={{textalign:"center", marginleft:"0"}}><img style={{cursor:"pointer"}} src={useBaseUrl("/img/google-enable-auth-1.gif")} alt=""/><figcaption></figcaption></figure>
-
 Select PostgreSQL as the database type and select or create a new database. Click "Enable". This will take a couple of seconds, Genezio is deploying the `AuthService` class in your project. Once this is finished, click on the "Google" provider and set the values from the previous step.
-
-<figure style={{textAlign:"center", marginLeft:"0"}}><img style={{cursor:"pointer"}} src={useBaseUrl("/img/google-enable-auth-2.gif")} alt=""/><figcaption></figcaption></figure>
 
 That's all the setup that we need for today! We can now get straight to coding.
 
@@ -82,20 +78,17 @@ npm install @react-oauth/google
 
 Next add the following code. Import the `GoogleOAuthProvider` that you can use to wrap around the router of the application. We then need to configure the authentication token and region by replacing `<token>` and `<region>` with your own values that you can find the Authentication screen in the dashboard.
 
-<figure style={{textalign:"center", marginleft:"0"}}><img style={{cursor:"pointer"}} src={useBaseUrl("/img/token-and-region.webp")} alt=""/><figcaption></figcaption></figure>
+<figure style={{textalign:"center", marginleft:"0"}}><img style={{cursor:"pointer"}} src={useBaseUrl("/img/react-google-auth.webp")} alt=""/><figcaption></figcaption></figure>
 
 ```typescript title="client/src/main.tsx" showLineNumbers
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
-import './index.css'
-import SecretView from './routes/secret';
-import Login from './routes/login';
-import { GoogleOAuthProvider } from '@react-oauth/google';
-import { AuthService } from '@genezio/auth';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import "./index.css";
+import SecretView from "./routes/secret";
+import Login from "./routes/login";
+import { GoogleOAuthProvider } from "@react-oauth/google";
+import { AuthService } from "@genezio/auth";
 
 // Change <token> and <region> with your own values!
 AuthService.getInstance().setTokenAndRegion("<token>", "<region>");
@@ -112,14 +105,13 @@ const router = createBrowserRouter([
 ]);
 
 // Change <google_id> with your own value!
-ReactDOM.createRoot(document.getElementById('root')!).render(
+ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-  <GoogleOAuthProvider clientId="<google_id>">
+    <GoogleOAuthProvider clientId="<google_id>">
       <RouterProvider router={router} />
-  </GoogleOAuthProvider>
+    </GoogleOAuthProvider>
   </React.StrictMode>
-)
-
+);
 ```
 
 Let's now modify the Login component to display the Google Login button. First, we import the `GoogleLogin` component from `@react-oauth/google`. We will need a loading state for when the button is pressed. Upon pressing the button, the `handleGoogleLogin` callback will be triggered. Depending on the state, we display either the Google Login button or a 'Loading' text.
@@ -127,45 +119,48 @@ Let's now modify the Login component to display the Google Login button. First, 
 When the callback is called, we make a request to the `AuthService` using the `googleRegistration` method. When a user logs in with Google for the first time, a new user account is added to the database. Afterward, the auth token is saved in the browser's memory, and it's used for all future requests. Everything happens behind the scenes and you don't have to worry about it.
 
 ```typescript title="client/src/routes/login.tsx" showLineNumbers
-import React, { useState } from 'react';
-import { CredentialResponse, GoogleLogin } from '@react-oauth/google';
-import { AuthService } from '@genezio/auth';
+import React, { useState } from "react";
+import { CredentialResponse, GoogleLogin } from "@react-oauth/google";
+import { AuthService } from "@genezio/auth";
 import "./styles.css";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 const Login: React.FC = () => {
   const navigate = useNavigate();
   const [googleLoginLoading, setGoogleLoginLoading] = useState(false);
 
   const handleGoogleLogin = async (credentialResponse: CredentialResponse) => {
-      setGoogleLoginLoading(true);
-      try {
-        await AuthService.getInstance().googleRegistration(credentialResponse.credential!)
+    setGoogleLoginLoading(true);
+    try {
+      await AuthService.getInstance().googleRegistration(
+        credentialResponse.credential!
+      );
 
-        console.log('Login Success');
-        navigate('/');
-      } catch(error: any) {
-        console.log('Login Failed', error);
-        alert('Login Failed');
-      }
+      console.log("Login Success");
+      navigate("/");
+    } catch (error: any) {
+      console.log("Login Failed", error);
+      alert("Login Failed");
+    }
 
-      setGoogleLoginLoading(false);
+    setGoogleLoginLoading(false);
   };
 
   return (
     <div className="form-container">
-      { googleLoginLoading ?
-            <>Loading...</> :
-            <GoogleLogin
-                onSuccess={credentialResponse => {
-                    handleGoogleLogin(credentialResponse);
-                }}
-                onError={() => {
-                    console.log('Login Failed');
-                    alert('Login Failed')
-                }}
-            />
-       }
+      {googleLoginLoading ? (
+        <>Loading...</>
+      ) : (
+        <GoogleLogin
+          onSuccess={(credentialResponse) => {
+            handleGoogleLogin(credentialResponse);
+          }}
+          onError={() => {
+            console.log("Login Failed");
+            alert("Login Failed");
+          }}
+        />
+      )}
     </div>
   );
 };
@@ -180,7 +175,12 @@ Let's now see how we can protect the `getSecret` method so that it is only calla
 By default, all methods in genezio classes are publicly available. If you want to make a route protected and only accessible by authenticated users, you have to use a middleware called `@GenezioAuth` and a `GnzContext` object as a first parameter.
 
 ```typescript title="server/backend.ts" showLineNumbers
-import { GenezioDeploy, GenezioMethod, GenezioAuth, GnzContext } from "@genezio/types";
+import {
+  GenezioDeploy,
+  GenezioMethod,
+  GenezioAuth,
+  GnzContext,
+} from "@genezio/types";
 
 @GenezioDeploy()
 export class BackendService {
