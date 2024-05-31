@@ -5,6 +5,8 @@ import EditEmailTemplates from '/img/features/authentication/edit_email_template
 import EnableEmailAndPassword from '/img/features/authentication/enable_email_and_password.webp';
 import EnableGoogleProvider from '/img/features/authentication/enable_google_provider.webp';
 import ResetPassword from '/img/features/authentication/reset_password.webp';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 # Authentication
 
@@ -13,13 +15,16 @@ Genezio provides an out-of-the-box authentication backend, support for Postgres 
 
 Enabling authentication for your project will create a new backend class `AuthService` that is deployed next to your other backend classes.
 You can use the `AuthService` to register new users, login existing users, reset their password and fetch the user's data.
-Enabling protection for a private backend method is done simply by using the `@GenezioAuth` decorator.
+Enabling protection for a private backend method is done simply by using the `@GenezioAuth` decorator (TypeScript) or the `// genezio: auth` comment (GO).
 
 :::info
 To enable the authentication feature, you need to have a project with a backend deployed. If you don't have a project yet, you can create one by following the [Getting Started](/docs/getting-started) guide.
 :::
 
 ## Protect a backend method
+
+<Tabs groupId="languages">
+  <TabItem value="ts" label="TypeScript">
 
 If you want to implement a backend method that is only accessible by authenticated users, you can import and use the `@GenezioAuth` decorator.
 
@@ -64,14 +69,72 @@ export type GnzContext = {
         address?: string;
         profilePictureUrl?: string;
         customInfo?: {
-            [key: string]: string;
+          [key: string]: string;
         };
       }
     | undefined;
 };
 ```
 
-For an authenticated method you are free to add as many parameters as you want, in any order you see fit.
+</TabItem>
+<TabItem value="go" label="Go">
+If you want to implement a backend method that is only accessible by authenticated users, you can simply add the `// genezio: auth` comment above that method.
+
+The first argument of the authenticated method must be an object of type `context.Context`.
+
+The following backend method will allow only authenticated users to read the message:
+
+```go title="backendService/backendService.go" showLineNumbers
+package BackendService
+
+import (
+    "context"
+    "fmt"
+    "github.com/Genez-io/auth"
+)
+
+// genezio: deploy
+type BackendService struct {}
+
+func New() BackendService {
+    return BackendService{}
+}
+
+// genezio: auth
+func (b BackendService) GetSensitiveInformation(ctx context.Context) (string, error) {
+    user := ctx.Value("user").(*auth.User)
+    fmt.Println("User: ", user.Name, "accessed the sensitive message")
+    return "This message contains sensitive information. Only authenticated users can read it.", nil
+}
+```
+
+To get the authenticated user's data, you can use the native Go `context` object.
+You can retrieve the user data by calling
+
+```go
+user := context.Value("user").(*auth.User)
+```
+
+The `User` struct is defined in the `github.com/Genez-io/auth` package and has the following structure:
+
+```go
+type User struct {
+	Email             *string                 `json:"email"`
+	UserId            string                  `json:"userId"`
+	AuthProvider      string                  `json:"authProvider"`
+	CreatedAt         time.Time               `json:"createdAt"`
+	Verified          *bool                   `json:"verified"`
+	Name              *string                 `json:"name"`
+	Address           *string                 `json:"address"`
+	ProfilePictureUrl *string                 `json:"profilePictureUrl"`
+	CustomInfo        *map[string]interface{} `json:"customInfo"`
+}
+```
+
+</TabItem>
+</Tabs>
+
+For an authenticated method you are free to add as many arguments as you want, in any order you see fit.
 
 :::info
 Once you enabled the authentication feature, you can test your backend locally by running `genezio local`.
@@ -85,11 +148,7 @@ From here you can create a new user, login, retrieve the user's token and call t
 
 ## Enable email and password authentication
 
-To enable email and password authentication for a project, go to the project's page in the [dashboard](https://app.genez.io/) and click on the `Authentication` button.
-
-<p align="center">
-    <img src={EnableAuth} style={{width: "70%"}} />
-</p>
+To enable email and password authentication for a project, go to the project's page in the [dashboard](https://app.genez.io/) and click on the `Authentication` button in the sidebar.
 
 You will be prompted to choose a database type. Follow the wizard to create a new database or add the connection URI of your own database.
 
@@ -105,11 +164,7 @@ To enable email and password authentication, click on the `Edit` button and then
 
 ## Enable Google OAuth 2.0 authentication
 
-To enable Google OAuth 2.0 authentication for a project, go to the project's page in the [dashboard](https://app.genez.io/) and click on the `Authentication` button.
-
-<p align="center">
-    <img src={EnableAuth} style={{width: "70%"}} />
-</p>
+To enable Google OAuth 2.0 authentication for a project, go to the project's page in the [dashboard](https://app.genez.io/) and click on the `Authentication` button in the sidebar.
 
 You will be prompted to choose a database type. Follow the wizard to create a new database or add the connection URI of your own database.
 
@@ -127,11 +182,7 @@ Once you got the Google OAuth credentials you can enable the Google authenticati
 
 ## Enable Web3 authentication
 
-To enable Web3 authentication for a project, go to the project's page in the [dashboard](https://app.genez.io/) and click on the `Authentication` button.
-
-<p align="center">
-    <img src={EnableAuth} style={{width: "70%"}} />
-</p>
+To enable Web3 authentication for a project, go to the project's page in the [dashboard](https://app.genez.io/) and click on the `Authentication` button in the sidebar.
 
 You will be prompted to choose a database type. Follow the wizard to create a new database or add the connection URI of your own database.
 
@@ -154,7 +205,10 @@ Configure globally the genezio authentication `token` and `region`. These values
 ```typescript title="client/src/main.tsx" showLineNumbers
 import { AuthService } from "@genezio/auth";
 
-AuthService.getInstance().setTokenAndRegion("<YOUR_GENEZIO_TOKEN>", "<YOUR_PROJECT_REGION>");
+AuthService.getInstance().setTokenAndRegion(
+  "<YOUR_GENEZIO_TOKEN>",
+  "<YOUR_PROJECT_REGION>"
+);
 ```
 
 ### Create a sign-up form for new users
@@ -164,34 +218,52 @@ Create a form that allows the user to sign up using an email and a password.
 ```typescript title="client/src/SignUpForm.tsx" showLineNumbers
 import React, { useState } from "react";
 import { AuthService } from "@genezio/auth";
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from "react-router-dom";
 import { GenezioError } from "@genezio/types";
 
 export default function SignUpForm() {
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const navigate = useNavigate();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
-    const signUp = async () => {
-        try {
-            await AuthService.getInstance().register(email, password);
-            alert("You have successfully signed up. Now let's sign in!");
-            // Redirect the user to the sign in page
-            navigate('/signIn');
-        } catch (error) {
-            alert("Error code: " + (error as GenezioError).code + ": " + (error as GenezioError).message);
-        }
-    };
+  const signUp = async () => {
+    try {
+      await AuthService.getInstance().register(email, password);
+      alert("You have successfully signed up. Now let's sign in!");
+      // Redirect the user to the sign in page
+      navigate("/signIn");
+    } catch (error) {
+      alert(
+        "Error code: " +
+          (error as GenezioError).code +
+          ": " +
+          (error as GenezioError).message
+      );
+    }
+  };
 
-    return (
-        <div>
-            <input type="email" placeholder="email" value={email} onChange={(e) => setEmail(e.target.value)} /><br />
-            <input type="password" placeholder="password" value={password} onChange={(e) => setPassword(e.target.value)} /><br />
-            <button onClick={signUp}>Sign Up</button><br />
-            <Link to="/signIn">I already have an account</Link>
-        </div>
-    );
-};
+  return (
+    <div>
+      <input
+        type="email"
+        placeholder="email"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+      />
+      <br />
+      <input
+        type="password"
+        placeholder="password"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+      />
+      <br />
+      <button onClick={signUp}>Sign Up</button>
+      <br />
+      <Link to="/signIn">I already have an account</Link>
+    </div>
+  );
+}
 ```
 
 ### Create a login form for existing users
@@ -201,33 +273,49 @@ Create a form that allows the user to login using an email and a password.
 ```typescript title=client/src/SignInForm.tsx showLineNumbers
 import React, { useState } from "react";
 import { AuthService } from "@genezio/auth";
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from "react-router-dom";
 import { GenezioError } from "@genezio/types";
 
 export default function SignInForm() {
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-    const login = async () => {
-        try {
-            await AuthService.getInstance().login(email, password);
-            alert("You have successfully logged in");
-            // Redirect the user to the main page
-            navigate('/');
-        } catch (error) {
-            alert("Error code: " + (error as GenezioError).code + ": " + (error as GenezioError).message);
-        }
-    };
+  const login = async () => {
+    try {
+      await AuthService.getInstance().login(email, password);
+      alert("You have successfully logged in");
+      // Redirect the user to the main page
+      navigate("/");
+    } catch (error) {
+      alert(
+        "Error code: " +
+          (error as GenezioError).code +
+          ": " +
+          (error as GenezioError).message
+      );
+    }
+  };
 
-    return (
-        <div>
-            <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} /><br />
-            <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} /><br />
-            <button onClick={login}>Sign In</button><br />
-            <Link to="/signUp">Create an account</Link>
-        </div>
-    );
-};
+  return (
+    <div>
+      <input
+        type="email"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+      />
+      <br />
+      <input
+        type="password"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+      />
+      <br />
+      <button onClick={login}>Sign In</button>
+      <br />
+      <Link to="/signUp">Create an account</Link>
+    </div>
+  );
+}
 ```
 
 ### Forgot/Reset password for existing users
@@ -238,35 +326,47 @@ You can create a form to reset the password for the existing users.
 ```typescript title=client/src/ForgotPasswordForm.tsx showLineNumbers
 import React, { useState } from "react";
 import { AuthService } from "@genezio/auth";
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from "react-router-dom";
 import { GenezioError } from "@genezio/types";
 
 export default function ForgotPasswordForm() {
-    const [email, setEmail] = useState("");
-    const navigate = useNavigate();
+  const [email, setEmail] = useState("");
+  const navigate = useNavigate();
 
-    const recoverPassword = async () => {
-        try {
-            await AuthService.getInstance().resetPassword(email);
-            alert("Please check your email");
-            // Redirect your users to the sign in form
-            navigate('/signIn');
-        } catch (error) {
-            alert("Error code: " + (error as GenezioError).code + ": " + (error as GenezioError).message);
-        }
-    };
+  const recoverPassword = async () => {
+    try {
+      await AuthService.getInstance().resetPassword(email);
+      alert("Please check your email");
+      // Redirect your users to the sign in form
+      navigate("/signIn");
+    } catch (error) {
+      alert(
+        "Error code: " +
+          (error as GenezioError).code +
+          ": " +
+          (error as GenezioError).message
+      );
+    }
+  };
 
-    return (
-        <div>
-            <input type="email" placeholder="email" value={email} onChange={(e) => setEmail(e.target.value)} /><br />
-            <button onClick={recoverPassword}>Recover Password</button><br />
-            <br />
-            <Link to="/signUp">Sign Up</Link>
-            &nbsp;|&nbsp;
-            <Link to="/signIn">Sign In</Link>
-        </div>
-    );
-};
+  return (
+    <div>
+      <input
+        type="email"
+        placeholder="email"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+      />
+      <br />
+      <button onClick={recoverPassword}>Recover Password</button>
+      <br />
+      <br />
+      <Link to="/signUp">Sign Up</Link>
+      &nbsp;|&nbsp;
+      <Link to="/signIn">Sign In</Link>
+    </div>
+  );
+}
 ```
 
 You also have to implement a reset password form to let the user to set a new password.
@@ -274,47 +374,66 @@ You also have to implement a reset password form to let the user to set a new pa
 ```typescript title=client/src/ResetPasswordForm.tsx showLineNumbers
 import React, { useState } from "react";
 import { AuthService } from "@genezio/auth";
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from "react-router-dom";
 import { GenezioError } from "@genezio/types";
 
 export default function ResetPasswordForm() {
-    const [password1, setPassword1] = useState("");
-    const [password2, setPassword2] = useState("");
-    const navigate = useNavigate();
+  const [password1, setPassword1] = useState("");
+  const [password2, setPassword2] = useState("");
+  const navigate = useNavigate();
 
-    const queryString = window.location.search;
-    const queryParams = new URLSearchParams(queryString);
-    const token:string = queryParams.get('token') || "not specified";
+  const queryString = window.location.search;
+  const queryParams = new URLSearchParams(queryString);
+  const token: string = queryParams.get("token") || "not specified";
 
-    const reset = async () => {
-        if (password1 != password2) {
-            alert("Passwords don't match.");
-            return;
-        }
-        try {
-            await AuthService.getInstance().resetPasswordConfirmation(token, password1);
-            alert("Your password was changed. Let's sign in again.");
-            navigate('/signIn');
-        } catch (error) {
-            alert((error as GenezioError).code + ": " + (error as GenezioError).message);
-        }
-    };
+  const reset = async () => {
+    if (password1 != password2) {
+      alert("Passwords don't match.");
+      return;
+    }
+    try {
+      await AuthService.getInstance().resetPasswordConfirmation(
+        token,
+        password1
+      );
+      alert("Your password was changed. Let's sign in again.");
+      navigate("/signIn");
+    } catch (error) {
+      alert(
+        (error as GenezioError).code + ": " + (error as GenezioError).message
+      );
+    }
+  };
 
-    return (
-        <div>
-            <input type="password" placeholder="password" value={password1} onChange={(e) => setPassword1(e.target.value)} /><br />
-            <input type="password" placeholder="re-enter password" value={password2} onChange={(e) => setPassword2(e.target.value)} /><br />
-            <button onClick={reset}>Reset Password</button><br />
-            <br />
-            <Link to="/forgotPassword">Forgot Password</Link>
-            &nbsp;|&nbsp;
-            <Link to="/signUp">Sign Up</Link>
-        </div>
-    );
-};
+  return (
+    <div>
+      <input
+        type="password"
+        placeholder="password"
+        value={password1}
+        onChange={(e) => setPassword1(e.target.value)}
+      />
+      <br />
+      <input
+        type="password"
+        placeholder="re-enter password"
+        value={password2}
+        onChange={(e) => setPassword2(e.target.value)}
+      />
+      <br />
+      <button onClick={reset}>Reset Password</button>
+      <br />
+      <br />
+      <Link to="/forgotPassword">Forgot Password</Link>
+      &nbsp;|&nbsp;
+      <Link to="/signUp">Sign Up</Link>
+    </div>
+  );
+}
 ```
 
 The redirect URL to this new reset password form must be set in the `Reset Password` email template in the dashboard.
+
 <p align="center">
     <img src={ResetPassword} style={{width: "70%"}} />
 </p>
@@ -330,19 +449,22 @@ npm install @genezio/auth @react-oauth/google
 Configure globally the genezio authentication `token` and `region` and set up the Google OAuth Provider:
 
 ```typescript title=client/src/main.tsx showLineNumbers
-import { GoogleOAuthProvider } from '@react-oauth/google';
+import { GoogleOAuthProvider } from "@react-oauth/google";
 import { AuthService } from "@genezio/auth";
 
-AuthService.getInstance().setTokenAndRegion("<YOUR_GENEZIO_TOKEN>", "<YOUR_PROJECT_REGION>");
+AuthService.getInstance().setTokenAndRegion(
+  "<YOUR_GENEZIO_TOKEN>",
+  "<YOUR_PROJECT_REGION>"
+);
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
+ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-  {/* TODO: Replace this with your own Google ID */}
-  <GoogleOAuthProvider clientId="<YOUR_GOOGLE_ID>">
-  <RouterProvider router={router} />
-  </GoogleOAuthProvider>
+    {/* TODO: Replace this with your own Google ID */}
+    <GoogleOAuthProvider clientId="<YOUR_GOOGLE_ID>">
+      <RouterProvider router={router} />
+    </GoogleOAuthProvider>
   </React.StrictMode>
-)
+);
 ```
 
 The `GoogleOAuthProvider` component is a wrapper around the `react-oauth` library. It provides the Google OAuth 2.0 authentication flow that the user can use to sign up.
@@ -360,7 +482,10 @@ Configure globally the genezio authentication `token` and `region` and set up th
 ```typescript title=client/src/main.tsx showLineNumbers
 import { AuthService } from "@genezio/auth";
 
-AuthService.getInstance().setTokenAndRegion("<YOUR_GENEZIO_TOKEN>", "<YOUR_PROJECT_REGION>");
+AuthService.getInstance().setTokenAndRegion(
+  "<YOUR_GENEZIO_TOKEN>",
+  "<YOUR_PROJECT_REGION>"
+);
 ```
 
 You will rely on the user installing a Web3 Wallet extension in browser such as Metamask. Then you need to do the following steps:
@@ -368,63 +493,72 @@ You will rely on the user installing a Web3 Wallet extension in browser such as 
 1. Request the wallet address from the Web3 Wallet extension.
 
 ```typescript
-const addresses = await window.ethereum.request({ method: "eth_requestAccounts" })
+const addresses = await window.ethereum.request({
+  method: "eth_requestAccounts",
+});
 ```
 
-2. Select one of the addresses and then request a nonce from the `AuthService` class. 
+2. Select one of the addresses and then request a nonce from the `AuthService` class.
 
 ```typescript
-const address = addresses[0]
-const nonce = await AuthService.getInstance().web3GetNonce(address)
+const address = addresses[0];
+const nonce = await AuthService.getInstance().web3GetNonce(address);
 ```
 
 3. Ask the user to sign the nonce using his wallet extension.
 
 ```typescript
 const signature = await window.ethereum.request({
-    method: 'personal_sign',
-    params: [nonce, address]
-})
+  method: "personal_sign",
+  params: [nonce, address],
+});
 ```
 
-4. Send the address and the signature to the `AuthService`. The service will check if the signature is correct and if it is, it will return all the user information and it will save a token in the browser. 
+4. Send the address and the signature to the `AuthService`. The service will check if the signature is correct and if it is, it will return all the user information and it will save a token in the browser.
 
 ```typescript
-const { user } = await AuthService.getInstance().web3Login(address, signature)
+const { user } = await AuthService.getInstance().web3Login(address, signature);
 ```
 
 ### Create a login form for existing users
 
 ```typescript title=client/src/LoginForm.tsx showLineNumbers
 import React from "react";
-import { CredentialResponse, GoogleLogin } from '@react-oauth/google';
+import { CredentialResponse, GoogleLogin } from "@react-oauth/google";
 import { AuthService } from "@genezio/auth";
 import { GenezioError } from "@genezio/types";
 import { useNavigate } from "react-router-dom";
 
 export default function Login() {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
-    const handleGoogleLogin = async (credentialResponse: CredentialResponse) => {
-        try {
-            await AuthService.getInstance().googleRegistration(credentialResponse.credential!)
-            console.log('Login Success');
-            navigate('/');
-        } catch(error: any) {
-            alert("Error code: " + (error as GenezioError).code + ": " + (error as GenezioError).message);
-        }
-    };
+  const handleGoogleLogin = async (credentialResponse: CredentialResponse) => {
+    try {
+      await AuthService.getInstance().googleRegistration(
+        credentialResponse.credential!
+      );
+      console.log("Login Success");
+      navigate("/");
+    } catch (error: any) {
+      alert(
+        "Error code: " +
+          (error as GenezioError).code +
+          ": " +
+          (error as GenezioError).message
+      );
+    }
+  };
 
-    return (
-        <div>
-            <GoogleLogin
-                onSuccess={credentialResponse => {
-                    handleGoogleLogin(credentialResponse);
-                }}
-            />
-        </div>
-    );
-};
+  return (
+    <div>
+      <GoogleLogin
+        onSuccess={(credentialResponse) => {
+          handleGoogleLogin(credentialResponse);
+        }}
+      />
+    </div>
+  );
+}
 ```
 
 ## Call protected backend methods from the frontend
@@ -433,34 +567,34 @@ You can call the protected backend method from the frontend by using the `@genez
 
 ```typescript title=client/src/FetchSensitiveMessage.tsx showLineNumbers
 import { useState } from "react";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 import { BackendService } from "@genezio-sdk/genezio-auth-tutorial";
 
 export default function FetchSensitiveMessage() {
-    const [message, setMessage] = useState("");
-    const navigate = useNavigate();
+  const [message, setMessage] = useState("");
+  const navigate = useNavigate();
 
   // If the user is not authenticated, the backend method will throw an error
   const fetchSensitiveInformation = async () => {
-      try {
-        const message = await BackendService.getSensitiveInformation();
-        setMessage(message);
-      } catch (error) {
-        console.error(error);
-        navigate('/login');
-      }
+    try {
+      const message = await BackendService.getSensitiveInformation();
+      setMessage(message);
+    } catch (error) {
+      console.error(error);
+      navigate("/login");
+    }
   };
 
-    return (
-        <div>
-            <button onClick={fetchSensitiveInformation}>"Get message"</button>
-             {message && <p>{message}</p>}
-        </div>
-    );
-};
+  return (
+    <div>
+      <button onClick={fetchSensitiveInformation}>"Get message"</button>
+      {message && <p>{message}</p>}
+    </div>
+  );
+}
 ```
 
-On the client side you don't need to pass the context for `BackendService.getSensitiveInformation()`, this will be added seamlessly by  the `@genezio/auth` library.
+On the client side you don't need to pass the context for `BackendService.getSensitiveInformation()`, this will be added seamlessly by the `@genezio/auth` library.
 
 ## Supported databases
 
@@ -492,7 +626,7 @@ Users register using their own Google account. You have to create a new applicat
 
 ### Web3 Wallet
 
-A Web3 wallet login system allows users to securely authenticate with your platform using their digital wallets. This process utilizes blockchain technology, offering a decentralized and secure method of verification without sharing personal information.  This method leverages public-key cryptography, eliminating the need for traditional username and password combinations.
+A Web3 wallet login system allows users to securely authenticate with your platform using their digital wallets. This process utilizes blockchain technology, offering a decentralized and secure method of verification without sharing personal information. This method leverages public-key cryptography, eliminating the need for traditional username and password combinations.
 
 How does it work?
 
@@ -500,7 +634,6 @@ How does it work?
 2. Sign Message: The platform sends a unique message, which the user signs with their private key via their wallet.
 3. Verify Signature: The platform verifies the signature using the user's public key to authenticate identity.
 4. Establish Session: Upon verification, the platform starts a session, granting access to the user.
-
 
 ### More coming soon
 
@@ -552,7 +685,10 @@ Here is an example of how to set the storage manager:
 import { AuthService } from "@genezio/auth";
 import { StorageManager } from "@genezio-sdk/my-project";
 
-AuthService.getInstance().setTokenAndRegion("<YOUR_GENEZIO_TOKEN>", "<YOUR_PROJECT_REGION>");
+AuthService.getInstance().setTokenAndRegion(
+  "<YOUR_GENEZIO_TOKEN>",
+  "<YOUR_PROJECT_REGION>"
+);
 
 // Define a class that will implement the Storage interface
 class InMemoryStorageWrapper {

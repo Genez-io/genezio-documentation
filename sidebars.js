@@ -91,6 +91,8 @@ const sidebars = {
         "project-structure/.genezioignore",
         "project-structure/genezio-decorators",
         "project-structure/backend-envinronment-variables",
+        "project-structure/project-template",
+        "project-structure/genezio-context",
       ],
     },
     {

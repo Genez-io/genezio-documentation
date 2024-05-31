@@ -69,18 +69,18 @@ Decorators are only supported in TypeScript, JavaScript and Go. If you are using
     }
 
     // genezio: http
-    func (s HttpServer) HandleSimplePlainRequest(request genezio_types.GenezioHttpRequest) *genezio_types.GenezioHttpResponse {
+    func (s HttpServer) HandleSimplePlainRequest(request genezio_types.GenezioHttpRequest) (*genezio_types.GenezioHttpResponse, error) {
         fmt.Println("Request received with a simple text", request.Body, "!")
 
         // insert your code here
 
-        response := GenezioHttpResponse{
+        response := &genezio_types.GenezioHttpResponse{
             Body:       request.Body,
-            Headers:    map[string]string{"content-type": "text/html"},
+            Headers:    &map[string]string{"content-type": "text/html"},
             StatusCode: "200",
         }
 
-        return response
+        return response, nil
     }
     ```
     <Admonition type="note">
@@ -122,9 +122,7 @@ Usually after the deployment, you need to provide the webhook URLs to the third-
 
 There are 2 places where you can find the webhook URLs for your deployed methods:
 
-1. In the [genezio dashboard](https://app.genez.io), on the corresponding class page:
-
-<figure style={{textAlign:"center", marginLeft:"0"}}><img style={{cursor:"pointer"}} src={useBaseUrl("/img/image (8).webp")} alt=""/><figcaption></figcaption></figure>
+1. In the [genezio dashboard](https://app.genez.io), on the corresponding project page, click on the `Logs` button on the sidebar. Here you can click on your deployed class and you will see the webhook URLs.
 
 2. The HTTP endpoints will be shown in your terminal after executing `genezio deploy`:
 

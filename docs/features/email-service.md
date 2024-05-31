@@ -10,9 +10,7 @@ Genezio provides a way to send emails with a managed email service.
 
 ### Active the service for your project
 
-On your project page, go to the integrations tab and activate the email service.
-
-<figure style={{textAlign:"center", marginLeft:"0"}}><img style={{cursor:"pointer"}} src={useBaseUrl("/img/Screenshot 2024-01-11 at 12.58.27.webp")} alt="" width="563"/><figcaption></figcaption></figure>
+On your project page, click on the `Email Service` button on the sidebar and install the integration.
 
 ### Use it in your project
 
@@ -61,7 +59,6 @@ npm install @genezio/email-service
 ```
 
 Now you can use `genezio local` to start a server locally that will also load up the necessary environment variables to use the email service.
-
 
 ## Create more complex emails
 

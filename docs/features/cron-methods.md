@@ -45,8 +45,9 @@ There are two ways to declare a scheduled method:
     }
 
     // genezio: cron * * * * *
-    func (s CronService) SayHiEveryMinute() {
+    func (s CronService) SayHiEveryMinute() error {
         fmt.Println("I will run every minute!")
+        return nil
     }
     ```
 

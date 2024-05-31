@@ -18,11 +18,12 @@ We support the following databases:
 
 ## How to create a database
 
-To create a database you can navigate to the [dashboard](https://app.genez.io/) page, select a project, choose "Database" from the left-side menu and click on the **Create Database** button.
 
-<p align="center">
-    <img src={CreateDatabase} style={{width: "70%"}} />
-</p>
+To create a database you can navigate our dashboard, go to the [**Databases**](https://app.genez.io/databases/) page
+and click on the **Create Database** button.
+
+Alternatively, you can select a project, choose "Database" from the left-side menu and click on the **Create Database** button.
+
 
 ## Using the database
 
@@ -35,7 +36,8 @@ Once the database is created, you have two options to use it:
   This is useful when you want to inspect/modify the database using a database client such as psql, DBeaver or TablePlus.
   :::
 
-- **Through a Genezio project**: You can create a project and link the database to it. This way you can use the
+- **Through a Genezio project**: You can create a project and link the database to it. Click on the project you want to add the database to and
+  click on the `Database` button on the sidebar. Here you can link a previously created database to the project or create a new database. This way you can use the
   database in your project without having to worry about the credentials. The connection URL can be accessed by
   your application through an environment variable that has the following format: `${DATABASE_NAME}_DATABASE_URL`.
 
@@ -43,7 +45,3 @@ Once the database is created, you have two options to use it:
   For example, if you linked a database named `purple-capybara` to your project, the environment variable name will be
   `PURPLE_CAPYBARA_DATABASE_URL` and it's value will be set to the database connection URL.
   :::
-
-  <p align="center">
-      <img src={LinkDatabase} style={{width: "70%"}} />
-  </p>

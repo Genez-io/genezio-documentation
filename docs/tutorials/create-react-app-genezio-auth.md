@@ -38,11 +38,7 @@ The Login and Signup screens can be easily bypassed by accessing directly the `/
 
 Let's start by enabling Genezio Authentication. Go to the dashboard of your project on https://app.genez.io. Click on `Authentication` sidebar. Select or create a new PostgreSQL database and press "Enable".
 
-<figure style={{textAlign:"center"}}><img style={{cursor:"pointer"}} src={useBaseUrl("/img/demo-auth-activate-auth.gif")} alt=""/><figcaption></figcaption></figure>
-
-Users will be able to register and login using email and password. To allow this, activate the email provider.
-
-<figure style={{textAlign:"center"}}><img style={{cursor:"pointer"}} src={useBaseUrl("/img/demo-auth-activate-email.gif")} alt=""/><figcaption></figcaption></figure>
+Users will be able to register and login using email and password. To allow this, in the `Authentication` page, activate the email provider.
 
 ## Implementing user registration using email and password
 
@@ -54,7 +50,7 @@ npm install @genezio/auth
 
 We then need to configure the authentication token and region of your Genezio application. These can be found in the Authentication Configuration screen on the Genezio Dashboard. Go to `src/main.tsx` and write the following code right after the last import and before the router creation.
 
-<figure style={{textAlign:"center"}}><img style={{cursor:"pointer"}} src={useBaseUrl("/img/token-and-region-email.webp")} alt=""/><figcaption></figcaption></figure>
+<figure style={{textAlign:"center"}}><img style={{cursor:"pointer",width:"100%"}} src={useBaseUrl("/img/react-application-auth3.webp")} alt=""/><figcaption></figcaption></figure>
 
 ```typescript title="client/src/main.tsx" showLineNumbers
 import { AuthService } from "@genezio/auth";
@@ -74,7 +70,11 @@ const handleSubmit = async (event: React.FormEvent) => {
   event.preventDefault();
   setLoading(true);
   try {
-    const response = await AuthService.getInstance().register(email, password, name);
+    const response = await AuthService.getInstance().register(
+      email,
+      password,
+      name
+    );
     console.log("Register Success", response);
 
     navigate("/login");
@@ -122,11 +122,14 @@ useEffect(() => {
     return;
   }
 
-  AuthService.getInstance().userInfo().then((user) => {
-        setName(user.name!);
-        setEmail(user.email);
-    }).catch((error) => {
-        console.error(error);
+  AuthService.getInstance()
+    .userInfo()
+    .then((user) => {
+      setName(user.name!);
+      setEmail(user.email!);
+    })
+    .catch((error) => {
+      console.error(error);
     });
 }, []);
 ```
@@ -149,7 +152,12 @@ Time to test the app. First, please navigate to http://localhost:5173/login and 
 Now, let's fix this. We need to adjust our backend code to ensure the `getSecret` functionality is securely accessible only to authenticated users. Please go to the `./server/` directory and open the `backend.ts` file, which houses our backend service. This file includes a method that reveals the secret. To secure this method, add a `@GenezioAuth()` decorator and include a `context: GnzContext` parameter. Adding a `console.log` can be helpful for debugging purposes to know which user is making the request. Don't forget to import `GenezioAuth` and `GnzContext` from `@genezio/types`.
 
 ```typescript title="server/backend.ts" showLineNumbers
-import { GenezioDeploy, GenezioMethod, GenezioAuth, GnzContext } from "@genezio/types";
+import {
+  GenezioDeploy,
+  GenezioMethod,
+  GenezioAuth,
+  GnzContext,
+} from "@genezio/types";
 
 @GenezioDeploy()
 export class BackendService {

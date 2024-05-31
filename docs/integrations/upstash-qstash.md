@@ -14,7 +14,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Navigate to the project integration page in the dashboard and select to `Install` Upstash QStash to your project:
 
-<figure style={{textAlign:"center", marginLeft:"0"}}><img style={{cursor:"pointer"}} src={useBaseUrl("/img/image (51).webp")} alt=""/><figcaption></figcaption></figure>
+<figure style={{textAlign:"center", marginLeft:"0"}}><img style={{cursor:"pointer"}} src={useBaseUrl("/img/integrations.webp")} alt=""/><figcaption></figcaption></figure>
 
 Connect with an Upstash account using the preferred login method:
 
