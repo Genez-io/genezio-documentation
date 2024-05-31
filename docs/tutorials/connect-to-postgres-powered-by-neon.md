@@ -2,9 +2,9 @@
 sidebar_position: 1
 ---
 
-# Connect to Postgres (Powered by Neon)
+# Connect to Postgres
 
-In this tutorial, you will learn how to integrate a Postgres database using Neon in a genezio project.
+In this tutorial, you will learn how to integrate a Postgres database in a genezio project.
 
 ### Prerequisites
 
@@ -16,29 +16,11 @@ If you don't already have them, you'll need to install the following tools:
 
 You need to have a genezio project. Use an existing one, or [create a new one.](/docs/getting-started)
 
-## 1. Initialize a Neon Postgres database
+## 1. Create a Postgres database
 
-Now integrate this project with the Postgres database provided by Neon. To do that, open your genezio dashboard at [dashboard](https://app.genez.io/dashboard) and pick the project you created earlier. In the _**Integrations**_ sidebar you can select to install the Neon Postgres integration:
+Open the [genezio dashboard](https://app.genez.io/dashboard), pick the project you created earlier and choose "Database" from the left-side menu.
 
-![alt_text](/img/integrations.webp)
-
-Connect with your Neon account:
-
-![alt_text](https://genezio.com/posts/neon2.png)
-
-Create a new Neon Project called getting-started-neon or select an existing one:
-
-![alt_text](https://genezio.com/posts/neon3.png)
-
-Next, choose the project details:
-
-![alt_text](https://genezio.com/posts/neon4.png)
-
-Finally, save the environment variable to your project so that you may use it when you want to connect to your database:
-
-![alt_text](https://genezio.com/posts/neon5.png)
-
-With all that done, your project is fully integrated with a free-tier Neon Postgres database.
+On the Databases page choose to create a Database. Give it a name - say "demo", and choose a region that is closest to your project's deployed region.
 
 ## 2. Connect your backend to the Postgres database
 
@@ -46,11 +28,11 @@ Next, you will implement a simple Postgres service that will allow you to use yo
 
 Install the following packages. They will allow you to connect to your database from the backend.
 
-```fallback
+```bash
 npm install pg @types/pg
 ```
 
-Create a new `postgres.ts` file in the root of your project. This file will contain a class that will have a constructor which will connect to your database using the `NEON_POSTGRES_URL` environment variable. This variable has already been set in your production environment so you don’t need a `.env` file when testing your deployed project from the genezio dashboard.
+Create a new `postgres.ts` file in the root of your project. This file will contain a class that will have a constructor which will connect to your database using the `DEMO_DATABASE_URL` environment variable.
 
 Add the following code snippet:
 
@@ -64,7 +46,7 @@ const { Pool } = pg;
 @GenezioDeploy()
 export class PostgresService {
   pool = new Pool({
-    connectionString: process.env.NEON_POSTGRES_URL,
+    connectionString: process.env.DEMO_DATABASE_URL,
     ssl: true,
   });
 
@@ -74,7 +56,7 @@ export class PostgresService {
     );
 
     await this.pool.query("INSERT INTO users (name) VALUES ($1)", [name]);
-    const result = await this.pool.query("select * from users");
+    const result = await this.pool.query("SELECT * FROM users");
 
     return JSON.stringify(result.rows);
   }
@@ -85,29 +67,27 @@ export class PostgresService {
 
 With all that done, you now have a method for inserting a user into a table and then retrieving all the users.
 
-## 3. Test your Postgres service
+## 3. Test your Postgres service locally
 
-To locally test your Postgres service, you have to copy the environment variable `NEON_POSTGRES_URL` in a `.env` file in the root directory of your project. You can find this variable in the `Integrations` tab of your project page in the [genezio dashboard](https://app.genez.io/):
-
-![alt_text](https://genezio.com/posts/neon6.png)
+To locally test your Postgres service, you have to copy the environment variable `DEMO_DATABASE_URL` in a `.env` file in the root directory of your project. You can find the value by clicking the "Connect" button in the Database list, under the "Save your databse connection URL" section. Click the eye icon on the right side to be able to copy it.
 
 The `.env` file should look similar to the following snippet:
 
 <!-- {% code title=".env" %} -->
 
 ```fallback title=".env"
-NEON_POSTGRES_URL="postgres://virgil:<your-password>@ep-fragrant-band-27497881.us-east-1.aws.neon.tech/neondb"
+DEMO_DATABASE_URL="postgres://admin:password@subdomain.region.aws.neon.tech/demo?sslmode=require"
 ```
 
 <!-- {% endcode %} -->
 
 Start your local environment by running the following command:
 
-```fallback
+```bash
 genezio local
 ```
 
-Test your newly created service at [test interface](http://localhost:8083/explore).
+Test your newly created service in your local test interface at http://localhost:8083/explore.
 
 Here you can send requests to your local backend server and receive responses to check if your service is working properly.
 
@@ -121,7 +101,7 @@ genezio deploy
 
 ## Next Steps
 
-Other things that do not depend on connecting to a database are scheduling the execution of a function as a cron job, or implementing HTTP Webhooks:w
+Learn about other features like scheduling the execution of a function as a cron job, or implementing HTTP Webhooks:
 
 - [Cron Jobs](/docs/features/cron-methods)
 - [HTTP Webhooks](/docs/features/http-methods-webhooks)
