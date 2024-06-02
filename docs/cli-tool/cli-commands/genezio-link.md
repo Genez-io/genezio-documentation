@@ -1,8 +1,13 @@
 ---
 sidebar_position: 6
+description: Use the “genezio link” CLI command to link the generated SDK in your current directory. Ideal for projects with separate backend and frontend repositories
 ---
 
 # genezio link
+
+<head>
+  <title>genezio link CLI Command</title>
+</head>
 
 ### Usage
 
