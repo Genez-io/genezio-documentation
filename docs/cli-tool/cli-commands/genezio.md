@@ -1,8 +1,13 @@
 ---
 sidebar_position: 1
+description: Use the genezio CLI command to check the installed version and access help options for your projects
 ---
 
 # genezio
+
+<head>
+  <title>genezio CLI command</title>
+</head>
 
 ### Usage
 
