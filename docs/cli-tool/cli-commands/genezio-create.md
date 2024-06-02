@@ -1,8 +1,13 @@
 ---
 sidebar_position: 4
+description: Discover how to create fullstack or backend projects with the genezio create command, using various supported templates
 ---
 
 # genezio create
+
+<head>
+  <title>genezio create CLI Command</title>
+</head>
 
 ### Usage
 
