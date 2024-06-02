@@ -1,8 +1,13 @@
 ---
 sidebar_position: 5
+description: Learn how to use the genezio addClass command to create and configure new class files in your Genezio project
 ---
 
 # genezio addClass
+
+<head>
+  <title>genezio addClass CLI Command</title>
+</head>
 
 ### Usage
 
