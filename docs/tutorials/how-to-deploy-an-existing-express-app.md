@@ -40,42 +40,6 @@ npm install genezio -g
 
 2. You need to have an **Express.js app** ready to deploy.
 
-If you don't have an Express.js app, you can create a simple one by following the steps below.
-
-In your terminal, run the following commands:
-```bash
-mkdir sample-app && cd sample-app
-npm init -y
-npm install express
-touch app.js
-```
-
-In the app.js file, add the following code:
-
-```javascript title="app.js"
-import express from 'express';
-
-const port = process.env.PORT || 3000;
-
-const app = express();
-
-app.get('/', (req, res) => {
-    res.send('Hello from my Express app!');
-});
-
-app.listen(port, () => {
-    console.log(`Server listening on port ${port}`);
-});
-```
-
-Here, you create a simple Express.js app that listens on port 3000 and responds with "Hello from my Express app!" when you navigate to the root URL.
-
-You can run your app using the following command:
-
-```bash
-node app.js
-```
-
 ## Migration Guide
 
 ## 1. Install `serverless-http`
@@ -156,10 +120,11 @@ backend:
 
 This configuration file specifies the project name, deployment region, and details about the backend, including the scripts to run and the functions to deploy.
 
-**Note**: 
+:::info
 1. You need to replace the `entry` field with the name of your main application file.
 2. You need to replace the `path` field with the path relative at **genezio.yaml** file.
 3. This example configuration works if **genezio.yaml** is in the same directory as your main application file.
+:::
 
 ## 4. Login to Genezio
 
@@ -184,9 +149,10 @@ If your application use environment variables, you can deploy them using the fol
 ```bash
 genezio deploy --env <your-env-file-path>
 ```
-
-Note: You need to deploy your environment variables single time. After that, you can deploy your project without the `--env` flag.
-
+:::info
+You need to deploy your environment variables single time.
+After that, you can deploy your project without the `--env` flag.
+:::
 For more information about environment variables, you can check the [official documentation](/docs/project-structure/backend-envinronment-variables.md).
 
 ## Test your app
