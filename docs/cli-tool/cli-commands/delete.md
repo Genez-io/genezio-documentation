@@ -1,8 +1,13 @@
 ---
 sidebar_position: 10
+description: Discover how to delete projects from Genezio cloud with the genezio delete command. Step-by-step instructions and options explained
 ---
 
 # genezio delete
+
+<head>
+  <title>genezio delete CLI Command</title>
+</head>
 
 ### Usage
 
