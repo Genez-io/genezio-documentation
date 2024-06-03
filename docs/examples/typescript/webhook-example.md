@@ -1,8 +1,13 @@
 ---
 sidebar_position: 10
+description: Explore the TypeScript Webhook Example in Genezio Documentation. Learn how to implement webhooks with TypeScript effortlessly.
 ---
 
 # Webhook Example
+
+<head>
+  <title>TypeScript Webhook Example</title>
+</head>
 
 <!-- :::info -->
 
