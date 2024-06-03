@@ -1,8 +1,13 @@
 ---
 sidebar_position: 2
+description: Genezio frontend deployment: Host and serve static websites using Amazon S3 and CloudFront CDN. Step-by-step guide for setup and deployment.
 ---
 
 # Frontend Deployment
+
+<head>
+  <title>Frontend Deployment</title>
+</head>
 
 Genezio's frontend deployment offers a simple and cost-effective way to host and serve static websites. It leverages Amazon S3 in combination with CloudFront CDN (Content Delivery Network) to ensure fast and reliable content delivery to users across the globe. In this documentation, we will explore the key features, benefits, and steps involved in deploying your frontend applications using genezio.
 
