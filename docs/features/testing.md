@@ -1,10 +1,15 @@
 ---
 sidebar_position: 3
+description: Genezio provides a postman-like testing tool to send requests to a deployed backend or to a local server started on your machine.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 # Testing
+
+<head>
+  <title>Local Testing Infrastructure</title>
+</head>
 
 Genezio provides a local testing infrastructure that mimics the production infrastructure on the cloud.
 
