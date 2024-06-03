@@ -1,8 +1,13 @@
 ---
 sidebar_position: 4
+description: Explore the TypeScript & Flutter To-Do List Example with Genezio. Learn to build a dynamic to-do list app using TypeScript and Flutter.
 ---
 
 # Todo List with Flutter
+
+<head>
+  <title>TypeScript & Flutter To-Do List Example</title>
+</head>
 
 :::info
 The source code for this example is public on the following [GitHub repository](https://github.com/Genez-io/genezio-examples/tree/master/typescript/todo-list-flutter).
