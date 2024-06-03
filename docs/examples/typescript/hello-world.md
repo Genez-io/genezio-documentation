@@ -1,8 +1,13 @@
 ---
 sidebar_position: 2
+description: Learn how to create a TypeScript Hello World program with our example. Perfect for beginners, this guide will help you understand the fundamentals.
 ---
 
 # Hello World
+
+<head>
+  <title>TypeScript Hello World Example</title>
+</head>
 
 <!-- :::info -->
 
