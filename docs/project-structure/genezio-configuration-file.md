@@ -1,4 +1,12 @@
+---
+description: Learn how to configure your Genezio project using the genezio.yaml file. Follow our guide for setup and deployment options
+---
+
 # Genezio Configuration File
+
+<head>
+  <title>Genezio Configuration File</title>
+</head>
 
 The `genezio.yaml` file is a configuration file that contains all the settings for deploying your project. It is a YAML file that should be located at the root of your project.
 
