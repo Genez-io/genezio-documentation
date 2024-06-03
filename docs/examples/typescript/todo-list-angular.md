@@ -1,8 +1,13 @@
 ---
 sidebar_position: 5
+description: Explore the TypeScript & Angular To-Do List Example with Genezio. Learn to build a dynamic to-do list app using TypeScript and Angular.
 ---
 
 # Todo List Angular
+
+<head>
+  <title>TypeScript & Angular Todo List Example</title>
+</head>
 
 <!-- :::info -->
 
