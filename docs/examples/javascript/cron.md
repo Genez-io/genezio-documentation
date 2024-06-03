@@ -1,8 +1,13 @@
 ---
 sidebar_position: 7
+description: Learn to create a JavaScript cron application with Genezio. Schedule code execution every minute with our step-by-step guide
 ---
 
 # Cron Example
+
+<head>
+  <title>Cron Example with JavaScript</title>
+</head>
 
 :::info
 The source code for this example is public on the following [GitHub repository](https://github.com/Genez-io/genezio-examples/tree/master/javascript/cron).
