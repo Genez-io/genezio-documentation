@@ -1,8 +1,13 @@
 ---
 sidebar_position: 7
+description: Explore the TypeScript Trivia Application Example with Genezio. Learn how to build an engaging trivia app using TypeScript
 ---
 
 # Trivia Application
+
+<head>
+  <title>TypeScript Trivia Application Example</title>
+</head>
 
 <!-- :::info -->
 
