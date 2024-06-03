@@ -1,8 +1,13 @@
 ---
 sidebar_position: 3
+description: Explore the JavaScript To-Do List Example with Genezio. Learn to build a dynamic to-do list app using JavaScript.
 ---
 
 # Todo List
+
+<head>
+  <title>JavaScript Todo List Example</title>
+</head>
 
 <!-- :::info -->
 
