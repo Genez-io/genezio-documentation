@@ -1,8 +1,16 @@
+---
+description: Genezio generates an SDK to enable clients to easily call methods in deployed classes. Learn how to set up and use the generated SDK
+---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import Admonition from '@theme/Admonition';
 
 # Generated SDK
+
+<head>
+  <title>Generated SDK</title>
+</head>
 
 Genezio generates a SDK to enable your clients to easily call the methods implemented in the deployed classes.
 
