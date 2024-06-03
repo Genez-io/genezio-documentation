@@ -1,8 +1,13 @@
 ---
 sidebar_position: 3
+description: Running dart on the backend side is still experimental work. If you encounter any issues, please let us know by creating a new GitHub issue.
 ---
 
 # Chat Application with OpenAi
+
+<head>
+  <title>Chat Application with OpenAi & Dart</title>
+</head>
 
 :::warning
 Running `dart` on the backend side is still experimental work. If you encounter any issues, please let us know by creating a new [GitHub issue](https://github.com/Genez-io/genezio/issues).
