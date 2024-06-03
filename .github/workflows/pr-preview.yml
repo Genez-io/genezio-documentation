@@ -55,7 +55,7 @@ jobs:
                   mkdir -p public/docs/
                   cp -r build/* public/docs/
             - name: Compute stage
-              run: echo "STAGE=pr-$(echo -n ${{ github.ref_name }} | shasum | head -c 8)" >> $GITHUB_ENV
+              run: echo "STAGE=pr-$(echo -n ${{ github.head_ref }} | shasum | head -c 8)" >> $GITHUB_ENV
             - name: Deploy
               run: genezio deploy --frontend --stage $STAGE
             - uses: actions/github-script@v7

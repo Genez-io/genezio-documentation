@@ -20,7 +20,7 @@ jobs:
               with:
                   token: ${{ secrets.GENEZIO_TOKEN }}
             - name: Compute stage
-              run: echo "STAGE=pr-$(echo -n ${{ github.ref_name }} | shasum | head -c 8)" >> $GITHUB_ENV
+              run: echo "STAGE=pr-$(echo -n ${{ github.head_ref }} | shasum | head -c 8)" >> $GITHUB_ENV
             - name: Cleanup Preview
               run: genezio delete $PROJECT_ID --stage $STAGE --force
               env:
