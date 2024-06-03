@@ -186,9 +186,6 @@ functions:
   entry: app.mjs
   # The cloud
   provider: aws
-
-# The cloud provider where the backend is deployed.
-cloudProvider: genezio-cloud
 ```
 
 This configuration file specifies the project name, deployment region, and details about the backend, including the scripts to run and the functions to deploy.
