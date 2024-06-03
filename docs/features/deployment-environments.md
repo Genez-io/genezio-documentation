@@ -1,8 +1,13 @@
 ---
 sidebar_position: 4
+description: Learn how to manage multiple deployment environments in Genezio. Create, deploy, and update isolated development, staging, and production environments
 ---
 
 # Environments
+
+<head>
+  <title>Environments</title>
+</head>
 
 Genezio provides a way to organise your projects into different, isolated environments.
 
