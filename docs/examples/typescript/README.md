@@ -1,8 +1,13 @@
 ---
 sidebar_position: 1
+description: Discover various TypeScript project examples in Genezio. Learn how to implement TypeScript in different scenarios.
 ---
 
 # TypeScript
+
+<head>
+  <title>TypeScript projects list</title>
+</head>
 
 The list of available TypeScript projects can be found below:
 
