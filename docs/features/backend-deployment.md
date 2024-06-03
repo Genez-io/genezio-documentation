@@ -1,8 +1,16 @@
+---
+description: Genezio offers seamless backend deployment using a function-as-a-service infrastructure. Deploy backend classes easily with ‘genezio deploy’.
+---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import Admonition from '@theme/Admonition';
 
 # Backend Deployment
+
+<head>
+  <title>Backend Deployment</title>
+</head>
 
 Genezio offers a seamless and efficient solution for deploying backend logic. The platform leverages a function-as-a-service infrastructure, allowing users to deploy their backend classes easily with a simple command: `genezio deploy`.&#x20;
 
