@@ -1,8 +1,13 @@
 ---
 sidebar_position: 5
+description: Explore the Vue & Mongo To-Do List Example with Genezio. Learn to build a dynamic to-do list app using Vue and Mongo.
 ---
 
 # Todo List Vue, Mongo
+
+<head>
+  <title>Todo List Vue, Mongo</title>
+</head>
 
 <!-- :::info -->
 
