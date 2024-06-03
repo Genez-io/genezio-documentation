@@ -1,8 +1,13 @@
 ---
 sidebar_position: 2
+description: Explore the DART & React To-Do List Example with Genezio. Learn to build a dynamic to-do list app using DART and React.
 ---
 
 # Todo List with React
+
+<head>
+  <title>Dart & React Todo List Example</title>
+</head>
 
 :::warning
 Running `dart` on the backend side is still experimental work. If you encounter any issues, please let us know by creating a new [GitHub issue](https://github.com/Genez-io/genezio/issues).
