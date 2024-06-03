@@ -16,14 +16,14 @@ In this tutorial, you will learn how to deploy an existing Express.js app using 
 
 1. **Faster Deployment**: Genezio optimizes the deployment process, significantly reducing the time it takes to get your app live.
 2. **Lower Costs**: Pay only for the resources you use, thanks to Genezio’s efficient infrastructure and scalable solutions.
-3. **Easy Migration**: Comprehensive documentation and support make migrating your existing Express app straightforward.
-4. **Reliable and Scalable**: Genezio offers a robust, auto-scalable environment, ensuring your app can handle varying loads effortlessly.
-5. **Enhanced Security**: Built-in security features and automatic updates protect your app against the latest threats without additional effort.
-6. **Reduced Management Overhead**: Focus on developing your app instead of managing servers and routine maintenance tasks.
+3. **Reliable and Scalable**: No longer worry about PM2 and Docker. You write the code, and Genezio seamlessly scales it across multiple cores.
+4. **Enhanced Security**: Built-in security features and automatic updates protect your app against the latest threats without additional effort.
+5. **Reduced Management Overhead**: Focus on developing your app instead of managing servers and routine maintenance tasks.
+6. **Easy Migration**: Obtain all these advantages with minimal code changes. 
 
 ### How Does Genezio Handle High Traffic?
 
-Genezio automatically scales your application based on traffic demands, ensuring your app remains responsive and performs well during traffic spikes.
+Genezio, being a Function as a Service (FaaS) platform, automatically scales your application based on traffic demands. It works by executing functions in response to events and can handle a large number of requests concurrently. This ensures your app remains responsive and performs well during traffic spikes.
 
 <!--
 ### What Kind of Support Does Genezio Offer?
@@ -147,45 +147,33 @@ This file will contain the configuration needed to deploy your backend using Gen
 ```yaml
 # The name of the project.
 name: express-app
-
 # The region where the project is deployed.
 region: us-east-1
-
 # The version of the Genezio YAML configuration to parse.
 yamlVersion: 2
-
 backend:
-# The root directory of the backend.
-path: ./
-
-# Information about the backend's programming language.
-language:
-# The name of the programming language.
-name: js
-# The package manager used by the backend.
-packageManager: npm
-
-# Scripts are running in the specified `path` directory.
-scripts:
-# List of scripts to run before deploying the backend.
-deploy:
-  - npm install
-# List of scripts to run before deploying the backend.
-local:
-  - npm install
-
-# The functions that are part of the backend.
-functions:
-# The name of the function.
-- name: test-fn
-  # The path to the function.
-  path: ./
-  # The name of the handler function.
-  handler: handler
-  # The name of the entry file.
-  entry: app.mjs
-  # The cloud
-  provider: aws
+   # The root directory of the backend.
+   path: server
+   # Information about the backend's programming language.
+   language:
+      # The name of the programming language.
+      name: js
+      # The package manager used by the backend.
+      packageManager: npm
+   # Scripts are running in the specified `path` directory.
+   scripts:
+      # List of scripts to run before deploying the backend.
+      deploy:
+         - npm install
+      # List of scripts to run before deploying the backend.
+      local:
+         - npm install
+   functions:
+      - name: test-fn
+        path: ./
+        handler: handler
+        entry: app.mjs
+        provider: aws
 ```
 
 This configuration file specifies the project name, deployment region, and details about the backend, including the scripts to run and the functions to deploy.
