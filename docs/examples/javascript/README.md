@@ -1,8 +1,13 @@
 ---
 sidebar_position: 2
+description: Explore our collection of JavaScript projects to inspire your next coding adventure. From beginner to advanced, find detailed examples to enhance your skills
 ---
 
 # JavaScript
+
+<head>
+  <title>JavaScript Projects</title>
+</head>
 
 The list of available JavaScript projects can be found below:
 
