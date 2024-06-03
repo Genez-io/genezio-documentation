@@ -1,8 +1,13 @@
 ---
 sidebar_position: 9
+description: Learn to create a Shopping Cart example with TypeScript. Our comprehensive guide provides instructions to help you develop a robust e-commerce app
 ---
 
 # Shopping Cart
+
+<head>
+  <title>Shopping Cart Example with TypeScript</title>
+</head>
 
 <!-- :::info -->
 
