@@ -1,8 +1,13 @@
 ---
 sidebar_position: 2
+description: Learn how to create a JavaScript Hello World program with our example. Perfect for beginners, this guide will help you understand the fundamentals.
 ---
 
 # Hello World
+
+<head>
+  <title>JavaScript Hello World Example</title>
+</head>
 
 <!-- :::info -->
 
