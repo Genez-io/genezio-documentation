@@ -1,8 +1,16 @@
+---
+description: Learn how to organize your development with Genezio’s project structure guide. Discover best practices for efficient and scalable project management
+---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import Admonition from '@theme/Admonition';
 
 # Project Structure
+
+<head>
+  <title>Project Structure</title>
+</head>
 
 There are 2 recommend ways of structuring your project:
 
