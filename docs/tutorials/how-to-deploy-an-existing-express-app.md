@@ -168,12 +168,18 @@ backend:
       # List of scripts to run before deploying the backend.
       local:
          - npm install
+   # Information about the backend's functions.
    functions:
+      # The name of the function.
       - name: test-fn
+        # The path to the function's code.
         path: ./
+        # The handler function for the function.
         handler: handler
+        # The entry point for the function.
         entry: app.mjs
-        provider: aws
+        # The type of the function.
+        type: aws
 ```
 
 This configuration file specifies the project name, deployment region, and details about the backend, including the scripts to run and the functions to deploy.
