@@ -22,6 +22,6 @@ jobs:
             - name: Compute stage
               run: echo "STAGE=pr-$(echo -n ${{ github.ref_name }} | shasum | head -c 8)" >> $GITHUB_ENV
             - name: Cleanup Preview
-              run: genezio delete $PROJECT_ID --stage $STAGE
+              run: genezio delete $PROJECT_ID --stage $STAGE --force
               env:
                   PROJECT_ID: 05d555b1-e5a0-45d0-b4a2-9a4f7b2da92a
