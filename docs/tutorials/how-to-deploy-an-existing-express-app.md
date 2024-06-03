@@ -119,7 +119,7 @@ You need to add `"type": "module"` in your `package.json` file.
 
     // you don't need this part of the code anymore
     // app.listen(3000, () => {
-    // console.log("Server is running on port 3000");
+    //   console.log("Server is running on port 3000");
     // });
 
     module.exports.handler = serverless(app);
@@ -205,7 +205,7 @@ After deploying your application, you can test it to ensure it's running correct
 
 This URL can be found in the deployment output under the `Functions Deployed` section.
 
-Additionally, you can monitor and manage your app through the Genezio App Dashboard. The dashboard URL, also provided after deployment, allows you to access comprehensive views of your project's status and logs.
+Additionally, you can monitor and manage your app through the [Genezio App Dashboard](https://app.genez.io/dashboard). The dashboard URL, also provided after deployment, allows you to access comprehensive views of your project's status and logs.
 
 You can find this URL in the deployment output under the `App Dashboard URL` section.
 
