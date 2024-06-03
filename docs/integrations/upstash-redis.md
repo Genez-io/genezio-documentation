@@ -1,10 +1,15 @@
 ---
 sidebar_position: 3
+description: Learn how to integrate Upstash Redis with your projects using Genezio. Clear and detailed instructions for all developers
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 # Upstash Redis
+
+<head>
+  <title>Upstash Redis Integration</title>
+</head>
 
 :::info
 A guide to integrate Upstash resources in genezio projects
