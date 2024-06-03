@@ -1,4 +1,12 @@
+---
+description: This document provides information on how to upgrade your Genezio project after the release of Genezio CLI v1.0.0.
+---
+
 # Upgrading to v1
+
+<head>
+  <title>Upgrading to v1</title>
+</head>
 
 This document provides information on how to upgrade your Genezio project after the release of Genezio CLI v1.0.0.
 
