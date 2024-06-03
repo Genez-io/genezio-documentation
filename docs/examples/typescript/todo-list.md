@@ -1,8 +1,13 @@
 ---
 sidebar_position: 3
+description: Explore the TypeScript To-Do List Example with Genezio. Learn to build a dynamic to-do list app using TypeScript.
 ---
 
 # Todo List
+
+<head>
+  <title>TypeScript Todo List Example</title>
+</head>
 
 <!-- :::info -->
 
