@@ -1,5 +1,6 @@
 ---
 sidebar_position: 4
+description: Learn to manage backend environment variables in Genezio, including setting, importing, and using them effectively in your projects
 ---
 
 import Tabs from '@theme/Tabs';
@@ -9,6 +10,10 @@ import TabItem from '@theme/TabItem';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 # Backend Environment Variables
+
+<head>
+  <title>Backend Environment Variables</title>
+</head>
 
 This page describes how to set environment variables for your backend classes.
 
