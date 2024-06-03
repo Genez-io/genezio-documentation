@@ -1,8 +1,13 @@
 ---
 sidebar_position: 1
+description: Learn how GitHub Action integration can automate your deployments and enhance your development workflow. Follow our guide for seamless integration
 ---
 
 # GitHub Action
+
+<head>
+  <title>GitHub Action</title>
+</head>
 
 This action sets up a `genezio` environment for using it in actions.
 
