@@ -109,6 +109,36 @@ Variables can be used in the scripts. Check the [Usage](#how-to-use-variables-in
 
     A general purpose script that runs before starting the local testing environment.
 
+#### `functions`: `Array` **Optional**
+
+The functions that will be deployed to the cloud. This field can be omitted if the project does not have any functions.
+
+-   `name`: `string` **Required**
+
+    This is a label to identify your function in the dashboard for monitoring and logging purposes.
+
+-   `path`: `string` **Required**
+
+    The path to the function's code. It is relative to the `path` field.
+
+-   `handler`: `string` **Required**
+
+    The name of the handler function. For example, if the handler function is `myHandler`, the code should look like this:
+
+    ```typescript
+    export const myHandler = async (event, context) => {
+        // Your code here
+    };
+    ```
+
+-   `entry`: `string` **Required**
+
+    The file that contains the function. The extension for this file can be `.js`, `.cjs` or `.mjs`.
+
+-   `type`: `aws` **Required**
+
+    The type of the function. The default value is `aws`.
+
 ### `frontend`: `Object` | `Array` **Optional**
 
 The frontend configuration. This field can be omitted if the project does not have a frontend.
