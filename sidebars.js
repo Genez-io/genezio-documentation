@@ -203,12 +203,6 @@ const sidebars = {
     },
     {
       type: "category",
-      label: "Advanced",
-      link: { type: "doc", id: "advanced/README" },
-      items: ["advanced/aws", "advanced/genezio-cloud"],
-    },
-    {
-      type: "category",
       label: "Learn more",
       link: { type: "doc", id: "learn-more/README" },
       items: ["learn-more/upgrading-to-v1"],

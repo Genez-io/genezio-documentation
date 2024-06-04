@@ -19,17 +19,11 @@ The region where the project will be deployed. If not specified, the default reg
 
 The supported regions are:
 
-| Region           | Description              | Region           | Description       |
-| ---------------- | ------------------------ | ---------------- | ----------------- |
-| `us-east-1`      | US, North Virginia       | `us-east-2`      | US, Ohio          |
-| `us-west-1`      | US, North California     | `us-west-2`      | US, Oregon        |
-| `ap-south-1`     | Asia, Mumbai             | `ap-northeast-3` | Asia, Osaka       |
-| `ap-northeast-2` | Asia, Seoul              | `ap-southeast-1` | Asia, Singapore   |
-| `ap-southeast-2` | Asia, Sydney             | `ap-northeast-1` | Asia, Tokyo       |
-| `ca-central-1`   | Canada                   | `eu-central-1`   | Europe, Frankfurt |
-| `eu-west-1`      | Europe, Ireland          | `eu-west-2`      | Europe, London    |
-| `eu-west-3`      | Europe, Paris            | `eu-north-1`     | Europe, Stockholm |
-| `sa-east-1`      | South America, São Paulo |
+| Region           | Description           |
+| ---------------- | ----------------------|
+| `us-east-1`      | US, North Virginia    |
+| `eu-central-1`   | Europe, Frankfurt     |
+
 
 ### `yamlVersion`: `number` **Required**
 
@@ -55,7 +49,7 @@ If scripts are declared in the `scripts` field, they will be executed from this 
 
     The programming language used to implement the backend.
 
--   `runtime`: `nodejs16.x` | `nodejs18.x` | `nodejs20.x` **Optional**
+-   `runtime`: `nodejs20.x` **Optional**
 
     The node runtime version that will be used by your NodeJS application. The default value is `nodejs20.x`.
 
@@ -67,15 +61,9 @@ If scripts are declared in the `scripts` field, they will be executed from this 
 
     Applicable only when `language.name` is `ts` or `js`.
 
--   `architecture`: `arm64` | `x86_64` **Optional**
+-   `architecture`: `x86_64` **Optional**
 
-    The architecture that will be use by your application on the cloud. The default value is `arm64`.
-
-    Note: This field takes effect only on the `genezio` cloud provider.
-
-#### `cloudProvider`: `genezio` | `selfHostedAws` **Optional**
-
-The cloud provider used to deploy the project. The default value is `genezio`.
+    The architecture that will be use by your application on the cloud. The default value is `x86_64`.
 
 #### `classes`: `Array` **Optional**
 
@@ -120,6 +108,36 @@ Variables can be used in the scripts. Check the [Usage](#how-to-use-variables-in
 -   `local`: `string` | `string[]` **Optional**
 
     A general purpose script that runs before starting the local testing environment.
+
+#### `functions`: `Array` **Optional**
+
+The functions that will be deployed to the cloud. This field can be omitted if the project does not have any functions.
+
+-   `name`: `string` **Required**
+
+    This is a label to identify your function in the dashboard for monitoring and logging purposes.
+
+-   `path`: `string` **Required**
+
+    The path to the function's code. It is relative to the `path` field.
+
+-   `handler`: `string` **Required**
+
+    The name of the handler function. For example, if the handler function is `myHandler`, the code should look like this:
+
+    ```typescript
+    export const myHandler = async (event, context) => {
+        // Your code here
+    };
+    ```
+
+-   `entry`: `string` **Required**
+
+    The file that contains the function. The extension for this file can be `.js`, `.cjs` or `.mjs`.
+
+-   `type`: `aws` **Required**
+
+    The type of the function. The default value is `aws`.
 
 ### `frontend`: `Object` | `Array` **Optional**
 
