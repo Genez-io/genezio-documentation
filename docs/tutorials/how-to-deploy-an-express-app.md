@@ -64,7 +64,7 @@ Use your prefered package manager to install genezio:
   </TabItem>
 </Tabs>
 
-### 2. Have an Express.js App
+### 2. Ensure you have an Express.js App
 If you don't have an Express.js app, you can create one using the following command:
 
 ```bash
