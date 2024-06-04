@@ -8,9 +8,9 @@ import TabItem from '@theme/TabItem';
 
 # How to Deploy an Existing Express.js App
 
-In this tutorial, you will learn how to deploy an existing Express.js app using Genezio, a serverless deployment platform that simplifies app management and reduces costs. We'll cover the benefits, answer common questions, and provide detailed migration steps.
+In this tutorial, you will learn how to deploy an existing Express.js app using Genezio, a serverless deployment platform that simplifies app management and reduces costs. We'll cover the benefits, answer common questions, and provide detailed deployment steps.
 
-## Why Migrate to Genezio?
+## Why Use Genezio?
 
 ### Benefits of Using Genezio
 
@@ -64,7 +64,7 @@ Use your prefered package manager to install genezio:
   </TabItem>
 </Tabs>
 
-## Migration Guide
+## Deployment Guide
 
 ## 1. Install `serverless-http`
 
