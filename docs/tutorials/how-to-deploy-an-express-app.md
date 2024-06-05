@@ -10,7 +10,7 @@ import TabItem from '@theme/TabItem';
 
 In this tutorial, you will learn how to deploy an existing Express.js app using Genezio, a serverless deployment platform that simplifies app management and reduces costs. We'll cover the benefits, answer common questions, and provide detailed deployment steps.
 
-**Note:** Your Express.js App must be stateless to run on Genezio.
+**Do I Need to Modify My Express App Code?** Just make sure that your code is written in a stateless manner. [Read more](https://stackoverflow.com/questions/5329618/stateless-vs-stateful)
 
 ## Why Use Genezio?
 
@@ -277,8 +277,8 @@ This file will contain the configuration needed to deploy your backend using Gen
 
 :::info
 
-1. You need to replace the `entry` field with the name of your main application file.
-2. You need to replace the `path` field with the path relative at **genezio.yaml** file.
+1. You might need to replace the `entry` field with the name of your main application file.
+2. You might need to replace the `path` field with the path relative at **genezio.yaml** file.
 3. This example configuration works if **genezio.yaml** is in the same directory as your main application file.
    :::
 
