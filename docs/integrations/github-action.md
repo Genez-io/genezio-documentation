@@ -32,9 +32,9 @@ jobs:
   deploy-backend:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-      - uses: Genez-io/genezio-github-action@v1
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+      - uses: Genez-io/genezio-github-action@v2
         with:
           token: ${{ secrets.GENEZIO_TOKEN }}
       - name: Deploy backend
@@ -43,21 +43,6 @@ jobs:
 ```
 
 You can test or check logs for the deployed project at https://app.genez.io/projects.
-
-#### Frontend and backend deployment in different jobs
-
-If you want to deploy the frontend and backend of your project in different jobs, you can use `genezio deploy --backend` and `genezio deploy --frontend` commands.
-
-For the frontend deployment, the genezio-generated SDK should be uploaded as an artifact:
-
-```yaml
-# Use this trick to upload the generated SDK as an artifact
-# It will be used to deploy the frontend
-- uses: actions/upload-artifact@v3
-  with:
-    name: genezio-generated-sdk
-    path: ./client/src/sdk
-```
 
 ### Documentation
 

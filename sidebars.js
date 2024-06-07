@@ -25,6 +25,7 @@ const sidebars = {
       label: "Tutorials",
       link: { type: "doc", id: "tutorials/README" },
       items: [
+        "tutorials/how-to-deploy-an-express-app",
         "tutorials/connect-to-postgres-powered-by-neon",
         "tutorials/connect-to-redis-powered-by-upstash",
         "tutorials/connect-to-mongodb-atlas",
@@ -199,12 +200,6 @@ const sidebars = {
           items: ["examples/go-experimental/getting-started"],
         },
       ],
-    },
-    {
-      type: "category",
-      label: "Advanced",
-      link: { type: "doc", id: "advanced/README" },
-      items: ["advanced/aws", "advanced/genezio-cloud"],
     },
     {
       type: "category",

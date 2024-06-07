@@ -30,7 +30,7 @@ const config = {
   // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: "en",
-    locales: ["en"],
+    locales: ["en"]
   },
   plugins: ["docusaurus-plugin-hotjar"],
   presets: [
@@ -39,32 +39,32 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       {
         gtag: {
-          trackingID: "G-VR905VXGKC",
+          trackingID: "G-VR905VXGKC"
         },
         googleTagManager: {
-          containerId: "GTM-PP95P9BW",
+          containerId: "GTM-PP95P9BW"
         },
         docs: {
           sidebarPath: "./sidebars.js",
           routeBasePath: "/",
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.,
-          include: ["**/*.md", "**/.*.md"], // Include dot files
+          include: ["**/*.md", "**/.*.md"] // Include dot files
         },
         blog: false,
         theme: {
-          customCss: "./src/css/custom.css",
-        },
-      },
-    ],
+          customCss: "./src/css/custom.css"
+        }
+      }
+    ]
   ],
 
   /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
   themeConfig: {
     docs: {
       sidebar: {
-        hideable: true,
-      },
+        hideable: true
+      }
     },
     // Replace with your project's social card
     algolia: {
@@ -77,10 +77,10 @@ const config = {
       indexName: "genezio3",
       insights: true,
 
-      contextualSearch: true,
+      contextualSearch: true
     },
     hotjar: {
-      applicationId: "3329235",
+      applicationId: "3329235"
     },
     image: "img/genezio.svg",
     navbar: {
@@ -89,7 +89,7 @@ const config = {
         target: "_self",
         alt: "Genezio Logo",
         src: "img/Logo_Genezio_Black.svg",
-        srcDark: "img/Logo_Genezio_White.svg",
+        srcDark: "img/Logo_Genezio_White.svg"
       },
       items: [
         {
@@ -98,16 +98,16 @@ const config = {
           html: "<b>Docs</b>",
           position: "left",
           activeBaseRegex: "docs/(next|v8)",
-          id: "docs-item",
+          id: "docs-item"
         },
         {
           to: "https://app.genez.io",
           target: "_blank",
           label: "Sign Up",
           position: "right",
-          className: "button",
-        },
-      ],
+          className: "button"
+        }
+      ]
     },
 
     prism: {
@@ -116,15 +116,20 @@ const config = {
       magicComments: [
         {
           className: "code-block-diff-add-line",
-          line: "diff-add",
+          line: "diff-add"
         },
         {
           className: "code-block-diff-remove-line",
-          line: "diff-remove",
+          line: "diff-remove"
         },
-      ],
-    },
-  },
+        {
+          className: "theme-code-block-highlighted-line",
+          line: "highlight-next-line",
+          block: { start: "highlight-start", end: "highlight-end" }
+        }
+      ]
+    }
+  }
 };
 
 export default config;
