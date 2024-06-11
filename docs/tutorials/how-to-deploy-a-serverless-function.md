@@ -87,23 +87,16 @@ npm init -y
 <TabItem className="tab-item" value="esm" label="esm">
 Create a new file named `app.mjs` and add the following code:
 <div>
-  ```javascript title="app.mjs"
+```javascript title="app.mjs"
 export const handler = async (event) => {
-  try {
-    console.log("Hello World from serverless function!");
-  } catch (e) {
-    console.error(e);
-    return {
-      statusCode: 500,
-      body: JSON.stringify(e),
-    };
-  }
+  console.log('Function was called');
+  let name = event.queryStringParameters.name || 'World';
   return {
     statusCode: 200,
-    body: "Hello World from serverless function!",
+    body: `Hello ${name} from serverless function!`,
   };
 };
-    ```
+```
 
   </div>
   </TabItem>
@@ -111,152 +104,25 @@ export const handler = async (event) => {
   Create a new file named `app.js` and add the following code:
   <div>
   ```javascript title="app.js"
-    const express = require("express");
-
-    const app = express();
-
-    app.get("/", (req, res) => {
-      res.send("Hello World from Express!");
-    });
-
-    app.listen(8080, () => {
-      console.log(
-        "Server is running on port 8080. Check the app on http://localhost:8080"
-      );
-    });
+  exports.handler = async (event) => {
+    console.log("Function was called");
+    let name = event.queryStringParameters.name || "World";
+    return {
+      statusCode: 200,
+      body: `Hello ${name} from serverless function!`,
+    };
+  };
     ```
 
   </div>
   </TabItem>
 </Tabs>
-
-### 4. Test the Express.js App
-
-Run the following command to start the Express.js app:
-<Tabs>
-<TabItem className="tab-item" value="esm" label="esm">
-
-<div>
-  ```bash
-  node app.mjs
-  ```
-  </div>
-  </TabItem>
-  <TabItem className="tab-item" value="cjs" label="cjs">
-  <div>
-  ```bash
-  node app.js
-  ```
-  </div>
-  </TabItem>
-</Tabs>
-Open a web browser and navigate to [http://localhost:8080](http://localhost:8080) to see the app running.
 
 </details>
 
 ## Deployment Guide
 
-## 1. Install `serverless-http`
-
-First, you need to install the `serverless-http` package.
-
-Run the following command in the root directory of your Express.js app:
-
-```bash
-npm install serverless-http
-```
-
-This package allows you to wrap your Express.js application and deploy it on serverless environments.
-
-## 2. Export the App as a Handler Function
-
-You need to export your Express app as a handler function that can be used by Genezio.
-
-Add the following code to your main application file (`app.mjs` or `app.js`):
-
-<Tabs>
-<TabItem className="tab-item" value="esm" label="esm">
-<div>
-  ```javascript title="app.mjs"
-    import express from "express";
-    // highlight-next-line
-    import serverless from "serverless-http";
-
-    const app = express();
-
-    app.get("/", (req, res) => {
-      res.send("Hello World from Express!");
-    });
-
-    app.get("/users", (req, res) => {
-      res.json([
-        { id: 1, name: "Alice" },
-        { id: 2, name: "Bob" },
-      ]);
-    });
-
-    // You don't need to listen to the port when using serverless functions in production
-    // highlight-next-line
-    if (process.env.NODE_ENV === "dev") {
-      app.listen(8080, () => {
-        console.log(
-          "Server is running on port 8080. Check the app on http://localhost:8080"
-        );
-      });
-    // highlight-next-line
-    }
-
-    // highlight-next-line
-    export const handler = serverless(app);
-    ```
-
-:::info
-You need to add `"type": "module"` in your `package.json` file.
-:::
-
-  </div>
-  </TabItem>
- <TabItem className="tab-item" value="cjs" label="cjs">
-  <div>
-  ```javascript title="app.js"
-    const express = require("express");
-    // highlight-next-line
-    const serverless = require("serverless-http");
-
-    app.get("/", (req, res) => {
-      res.send("Hello World from Express!");
-    });
-
-    app.get("/users", (req, res) => {
-      res.json([
-        { id: 1, name: "Alice" },
-        { id: 2, name: "Bob" },
-      ]);
-    });
-
-    // You don't need to listen to the port when using serverless functions in production
-    // highlight-next-line
-    if (process.env.NODE_ENV === "dev") {
-      app.listen(8080, () => {
-        console.log(
-          "Server is running on port 8080. Check the app on http://localhost:8080"
-        );
-      });
-    // highlight-next-line
-    }
-
-    // highlight-next-line
-    module.exports.handler = serverless(app);
-    ```
-
-</div>
-</TabItem>
-  
-</Tabs>
-
-This code wraps your Express app with the `serverless-http` package and exports it as a handler for Genezio.
-
-## 3. Create the Genezio Configuration File
+## 1. Create the Genezio Configuration File
 
 Now, create a `genezio.yaml` file in the root directory of your project.
 
@@ -271,7 +137,7 @@ This file will contain the configuration needed to deploy your backend using Gen
 
 ```yaml title="genezio.yaml"
 # The name of the project.
-name: express-app
+name: functions-app
 # The region where the project is deployed. Available regions: us-east-1, eu-central-1
 region: us-east-1
 # The version of the Genezio YAML configuration to parse.
@@ -288,7 +154,7 @@ backend:
   # Information about the backend's functions.
   functions:
     # The name (label) of the function.
-    - name: hello-world-express-app-function
+    - name: hello-world-function
       # The path to the function's code.
       path: ./
       # The name of the function handler
@@ -308,8 +174,10 @@ Before deploying your app, you can test it locally to ensure it's working correc
 Run the following command in your terminal:
 
 ```bash
-NODE_ENV=dev node app.mjs
+genezio local
 ```
+
+In your terminal, you should be able to see all the local URLs of your functions. You can then test them in your browser or using a tool like Postman.
 
 ## 5. Deploy your project
 
@@ -334,7 +202,7 @@ For more information about environment variables, you can check the [official do
 
 ## Test your app
 
-After deploying your application, you can test it to ensure it's running correctly. To verify that your Express.js app is working, open a web browser and navigate to the URL provided for your deployed function.
+After deploying your application, you can test it to ensure it's running correctly. To verify that your functions are working, open a web browser and navigate to the URL provided for your deployed function.
 
 This URL can be found in the deployment output under the `Functions Deployed` section.
 
