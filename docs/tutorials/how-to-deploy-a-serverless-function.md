@@ -90,7 +90,7 @@ Create a new file named `app.mjs` and add the following code:
 ```javascript title="app.mjs"
 export const handler = async (event) => {
   console.log('Function was called');
-  let name = event.queryStringParameters.name || 'World';
+  let name = event.queryStringParameters?.name || 'World';
   return {
     statusCode: 200,
     body: `Hello ${name} from serverless function!`,
@@ -106,7 +106,7 @@ export const handler = async (event) => {
   ```javascript title="app.js"
   exports.handler = async (event) => {
     console.log("Function was called");
-    let name = event.queryStringParameters.name || "World";
+    let name = event.queryStringParameters?.name || "World";
     return {
       statusCode: 200,
       body: `Hello ${name} from serverless function!`,
