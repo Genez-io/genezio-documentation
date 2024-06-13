@@ -59,9 +59,9 @@ Use your preferred package manager to install genezio:
   </TabItem>
 </Tabs>
 
-### 2. Ensure you have a Node.js Function handler
+### 2. Export a function handler
 
-If you don't have a Node.js function handler, you can create one using the following steps:
+You can implement and export a function handler following the next steps:
 
 <details>
   <summary>**Create a Hello World Serverless Function handler**</summary>
