@@ -10,14 +10,14 @@ import TabItem from '@theme/TabItem';
 
 In this tutorial, you will learn how to deploy a function using Genezio, a serverless deployment platform that simplifies app management and reduces costs. We'll cover the benefits, answer common questions, and provide detailed deployment steps.
 
-**Do I Need to Modify My Function's Code?** Just make sure that your code is written according to the AWS Lambda Handler guide. [Read more](https://docs.aws.amazon.com/lambda/latest/dg/nodejs-handler.html)
+**Do I need to modify my source code?** Make sure you export your function as a `handler` that will process events. Check out [this section](#2-ensure-you-have-a-nodejs-function-handler) to see a code snippet.
 
 ## Why Use Genezio?
 
 ### Benefits of Using Genezio
 
 1. **Faster Deployment**: Genezio optimizes the deployment process, significantly reducing the time it takes to get your app live.
-2. **Lower Costs**: Pay only for the resources you use, thanks to Genezio’s efficient infrastructure and scalable solutions.
+2. **Reduced costs**: Thanks to Genezio’s efficient infrastructure the costs are significantly lower. Additionally, Genezio offers a more predictable pricing plan, avoiding the pitfalls of the typical “pay-as-you-go” model that can lead to unexpectedly high bills due to unwanted mistakes.
 3. **Reliable and Scalable**: No longer worry about PM2 and Docker. You write the code, and Genezio seamlessly scales it across multiple cores.
 4. **Enhanced Security**: Built-in security features and automatic updates protect your app against the latest threats without additional effort.
 5. **Reduced Management Overhead**: Focus on developing your app instead of managing servers and routine maintenance tasks.
@@ -26,15 +26,6 @@ In this tutorial, you will learn how to deploy a function using Genezio, a serve
 ### How Does Genezio Handle High Traffic?
 
 Genezio, being a Function as a Service (FaaS) platform, automatically scales your application based on traffic demands. It works by executing functions in response to events and can handle a large number of requests concurrently. This ensures your app remains responsive and performs well during traffic spikes.
-
-<!--
-### What Kind of Support Does Genezio Offer?
-
-Genezio provides 24/7 support for paid plans to assist with any questions or issues. Our dedicated support team ensures your app runs smoothly on our platform. -->
-
-### Do I Need to Modify My Function's Code?
-
-Migrating your functions to Genezio usually requires minimal changes. Our migration guide provides detailed instructions for making necessary compatibility adjustments.
 
 ## Prerequisites
 
@@ -161,8 +152,6 @@ backend:
       handler: handler
       # The entry point for the function.
       entry: app.mjs
-      # The compatibility of the function handler.
-      type: aws
 ```
 
 This configuration file specifies the project name, deployment region, and details about the backend.
