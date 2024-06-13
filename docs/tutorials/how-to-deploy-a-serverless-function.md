@@ -188,7 +188,7 @@ For more information about environment variables, you can check the [official do
 
 ## Test your app
 
-After deploying your application, you can test it to ensure it's running correctly. To verify that your functions are working, open a web browser and navigate to the URL provided for your deployed function.
+After deploying your application, you can visit it by navigating to the the URL provided either in the terminal or in the Genezio dashboard. The URL can be copied from the corresponding project's overview page.
 
 Additionally, you can monitor and manage your app through the [Genezio App Dashboard](https://app.genez.io/dashboard). The dashboard URL, also provided after deployment, allows you to access comprehensive views of your project's status and logs.
 
