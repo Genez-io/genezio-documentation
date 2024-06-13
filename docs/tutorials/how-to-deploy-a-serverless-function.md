@@ -186,7 +186,7 @@ After that, you can deploy your project without the `--env` flag.
 :::
 For more information about environment variables, you can check the [official documentation](/docs/project-structure/backend-envinronment-variables.md).
 
-## Check the deployed app
+## Check the Deployed App
 
 After deploying your application, you can visit it by navigating to the the URL provided either in the terminal or in the Genezio dashboard. The URL can be copied from the corresponding project's overview page.
 
