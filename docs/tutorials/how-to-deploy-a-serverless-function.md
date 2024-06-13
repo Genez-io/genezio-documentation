@@ -79,11 +79,11 @@ Create a new file named `app.mjs` and add the following code:
 <div>
 ```javascript title="app.mjs"
 export const handler = async (event) => {
-  console.log('Function was called');
-  let name = event.queryStringParameters?.name || 'World';
+  console.log('Function was called);
+  const name = event.queryStringParameters?.name || 'George';
   return {
     statusCode: 200,
-    body: `Hello ${name} from serverless function!`,
+    body: `Hello, ${name}! Welcome to Genezio Functions!`,
   };
 };
 ```
