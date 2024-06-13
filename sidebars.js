@@ -26,6 +26,7 @@ const sidebars = {
       link: { type: "doc", id: "tutorials/README" },
       items: [
         "tutorials/how-to-deploy-an-express-app",
+        "tutorials/how-to-deploy-a-serverless-function",
         "tutorials/connect-to-postgres-powered-by-neon",
         "tutorials/connect-to-redis-powered-by-upstash",
         "tutorials/connect-to-mongodb-atlas",
