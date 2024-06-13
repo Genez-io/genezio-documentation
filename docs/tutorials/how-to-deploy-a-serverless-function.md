@@ -63,9 +63,6 @@ Use your preferred package manager to install genezio:
 
 You can implement and export a function handler following the next steps:
 
-<details>
-  <summary>**Create a Hello World Serverless Function handler**</summary>
-
 ### 1. Initialize a New Node.js Project
 
 Run the following command to initialize a new Node.js project in an empty directory:
@@ -110,8 +107,6 @@ export const handler = async (event) => {
   </div>
   </TabItem>
 </Tabs>
-
-</details>
 
 ## Deployment Guide
 
@@ -194,8 +189,6 @@ For more information about environment variables, you can check the [official do
 ## Test your app
 
 After deploying your application, you can test it to ensure it's running correctly. To verify that your functions are working, open a web browser and navigate to the URL provided for your deployed function.
-
-This URL can be found in the deployment output under the `Functions Deployed` section.
 
 Additionally, you can monitor and manage your app through the [Genezio App Dashboard](https://app.genez.io/dashboard). The dashboard URL, also provided after deployment, allows you to access comprehensive views of your project's status and logs.
 
