@@ -40,7 +40,7 @@ Migrating your functions to Genezio usually requires minimal changes. Our migrat
 
 ### 1. Install genezio
 
-Use your prefered package manager to install genezio:
+Use your preferred package manager to install genezio:
 
 <Tabs>
   <TabItem className="tab-item" value="npm" label="npm">
