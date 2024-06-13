@@ -96,10 +96,10 @@ export const handler = async (event) => {
   ```javascript title="app.js"
   exports.handler = async (event) => {
     console.log("Function was called");
-    let name = event.queryStringParameters?.name || "World";
+    const name = event.queryStringParameters?.name || "George";
     return {
       statusCode: 200,
-      body: `Hello ${name} from serverless function!`,
+      body: `Hello, ${name}! Welcome to Genezio Functions!`,
     };
   };
     ```
