@@ -8,7 +8,9 @@ import TabItem from '@theme/TabItem';
 
 # How to Deploy a Serverless Function
 
-In this tutorial, you will learn how to deploy a function using Genezio, a serverless deployment platform that simplifies app management and reduces costs. We'll cover the benefits, answer common questions, and provide detailed deployment steps.
+In this tutorial, you will learn how to deploy functions or serverless workloads on Genezio. We'll cover the benefits, answer common questions, and provide detailed deployment steps.
+
+Genezio is a Function-as-a-Service (FaaS) platform that simplifies cloud deployments and significantly reduces infrastructure costs.
 
 **Do I need to modify my source code?** Make sure you export your function as a `handler` that will process events. Check out [this section](#2-ensure-you-have-a-nodejs-function-handler) to see a code snippet.
 
