@@ -1,6 +1,6 @@
 ---
 sidebar_position: 3
-description: Use the command below to install the latest version of genezio using you preferred package manager: npm, pnpm, or yarn
+description: "Use the command below to install the latest version of genezio using you preferred package manager: npm, pnpm, or yarn"
 ---
 
 import Tabs from '@theme/Tabs';

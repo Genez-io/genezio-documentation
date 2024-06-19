@@ -1,5 +1,5 @@
 ---
-description: Genezio CLI commands documentation: Detailed guides on using commands for project management, deployment, and more.
+description: "Genezio CLI commands documentation: Detailed guides on using commands for project management, deployment, and more."
 ---
 
 # CLI Commands
