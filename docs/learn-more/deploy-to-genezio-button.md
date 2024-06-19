@@ -36,3 +36,15 @@ To use the Deploy to Genezio button, you need to add the following code to your 
 </Tabs>
 
 [![Deploy to Genezio](https://raw.githubusercontent.com/Genez-io/graphics/main/svg/deploy-button.svg)](https://app.genez.io/start/deploy?repository=https://github.com/Genez-io/express-getting-started)
+
+## Clone a subdirectory of a repository
+
+To create a "Deploy to Genezio" button for a specific folder within a repository, use the `base_path` query parameter to designate the subdirectory you want to clone. The format should be `&base_path=your-subdirectory`.
+
+For example, here’s a URL with a creation path of `examples/hello`:
+
+```
+https://app.genez.io/start/deploy?repository=<your_url>&base_path=examples/hello
+```
+
+When you use the `base_path` parameter, Genezio will build and deploy from the specified subdirectory.
