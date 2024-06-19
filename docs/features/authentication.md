@@ -1,5 +1,5 @@
 ---
-description: You can use Genezio Authentication to allow the users to sign in into your application using multiple providers such as email and password or Google.
+description: You can use Genezio Authentication to allow the users to sign in into your application using multiple providers such as email and password, Google or Metamask.
 ---
 
 import SetYourOwnDb from '/img/features/authentication/set_your_own_db.webp';
