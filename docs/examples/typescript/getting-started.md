@@ -1,8 +1,13 @@
 ---
 sidebar_position: 1
+description: Begin your TypeScript journey with our guide. Learn the fundamentals, understand key concepts, and start coding with confidence using TypeScript today.
 ---
 
 # Getting Started
+
+<head>
+  <title>Getting Started with TypeScript</title>
+</head>
 
 <!-- :::info -->
 

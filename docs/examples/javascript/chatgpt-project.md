@@ -1,8 +1,13 @@
 ---
 sidebar_position: 9
+description: Discover how to create an OpenAI Rephrase app using JavaScript. Our step-by-step guide helps you implement rephrasing capabilities with OpenAI’s API
 ---
 
 # OpenAI Rephrase
+
+<head>
+  <title>OpenAI Rephrase Example with JavaScript</title>
+</head>
 
 :::info
 The source code for this example is public on the following [GitHub repository.](https://github.com/Genez-io/genezio-examples/tree/master/javascript/chatgpt-project)

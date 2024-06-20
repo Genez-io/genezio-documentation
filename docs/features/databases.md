@@ -1,7 +1,15 @@
+---
+description: Learn about Genezio’s on-demand databases, including PostgreSQL and MongoDB. Create, manage, and link databases effortlessly with Genezio
+---
+
 import CreateDatabase from '/img/features/databases/create_database.webp';
 import LinkDatabase from '/img/features/databases/link_database.gif';
 
 # Databases
+
+<head>
+  <title>Databases</title>
+</head>
 
 Databases enable you to store and manage data in a structured way. They are a fundamental part of most applications and
 are used to store information such as user data, application data, logs, and more.

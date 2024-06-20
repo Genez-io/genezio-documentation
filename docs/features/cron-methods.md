@@ -1,7 +1,15 @@
+---
+description: A scheduled method or a cron job is a method that will run periodically. By using a specific syntax, you can define the frequency and timing for each method.
+---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 # Cron Jobs
+
+<head>
+  <title>Cron Jobs</title>
+</head>
 
 A scheduled method or a cron job is a method that will run periodically. By using a specific cron syntax, you can define the frequency and timing for each method.
 

@@ -1,8 +1,13 @@
 ---
 sidebar_position: 4
+description: In this tutorial, you will learn how to integrate a Redis database using Upstash in a genezio project.
 ---
 
 # Connect to Redis (Powered by Upstash)
+
+<head>
+  <title>Connect to Redis (Powered by Upstash)</title>
+</head>
 
 In this tutorial, you will learn how to integrate a Redis database using Upstash in a genezio project.
 

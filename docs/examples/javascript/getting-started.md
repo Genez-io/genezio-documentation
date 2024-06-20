@@ -1,8 +1,13 @@
 ---
 sidebar_position: 1
+description: Get started with JavaScript through our detailed guide. From basics to building your first project, find everything you need to kickstart your coding journey
 ---
 
 # Getting Started
+
+<head>
+  <title>Getting Started with JavaScript</title>
+</head>
 
 <!-- :::info -->
 

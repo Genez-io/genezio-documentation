@@ -1,8 +1,13 @@
 ---
 sidebar_position: 8
+description: Learn how to use the “genezio sdk” command to generate SDKs for your projects. Follow our guide to streamline development and enhance project integration.
 ---
 
 # genezio sdk
+
+<head>
+  <title>genezio sdk CLI Command</title>
+</head>
 
 ### Usage
 

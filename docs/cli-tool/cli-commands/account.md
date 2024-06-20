@@ -1,8 +1,13 @@
 ---
 sidebar_position: 12
+description: Learn how to use the genezio account command to view authenticated user information and manage your Genezio account.
 ---
 
 # genezio account
+
+<head>
+  <title>genezio account CLI Command</title>
+</head>
 
 ### Usage
 

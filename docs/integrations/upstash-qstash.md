@@ -1,10 +1,15 @@
 ---
 sidebar_position: 5
+description: Explore how to integrate Upstash Qstash with your applications using Genezio. Perfect for developers seeking advanced messaging solutions
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 # Upstash Qstash
+
+<head>
+  <title>Upstash Qstash Integration</title>
+</head>
 
 ### Introduction to Upstash
 

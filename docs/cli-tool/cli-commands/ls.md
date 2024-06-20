@@ -1,8 +1,13 @@
 ---
 sidebar_position: 9
+description: Master the “genezio ls” command to list all linked projects in your current directory. Get a clear overview of your project’s links using the Genezio CLI
 ---
 
 # genezio list
+
+<head>
+  <title>genezio list CLI Command</title>
+</head>
 
 ### Usage
 

@@ -1,8 +1,13 @@
 ---
 sidebar_position: 1
+description: Discover how to get started with Kotlin through our guide. Follow the instructions to begin your Kotlin programming journey.
 ---
 
 # Getting Started
+
+<head>
+  <title>Getting Started with Kotlin</title>
+</head>
 
 :::info
 The source code for this example is public on the following [GitHub repository](https://github.com/Genez-io/genezio-examples/blob/master/kotlin/getting-started/README.md).

@@ -1,10 +1,15 @@
 ---
 sidebar_position: 10
+description: Enhance your workflow with Genezio’s project collaboration feature. Learn how to collaborate, manage, and streamline your development projects
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 # Project Collaboration
+
+<head>
+  <title>Project Collaboration</title>
+</head>
 
 :::info
 The collaboration feature allows project owners to invite collaborators to

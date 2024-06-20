@@ -1,5 +1,6 @@
 ---
 sidebar_position: 2
+description: Begin your Genezio journey with our “Getting Started” guide. Master backend class creation, method exporting, frontend calls, and local deployment for testing
 ---
 
 import Tabs from '@theme/Tabs';
@@ -7,6 +8,10 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 # Getting Started
+
+<head>
+  <title>Getting Started with Genezio</title>
+</head>
 
 Welcome to the "Getting Started" guide! In this tutorial, you will learn how to write a backend class, export its methods, call them from the frontend code, and then deploy both the frontend and the backend locally for testing and pushing live to a staging environment.
 

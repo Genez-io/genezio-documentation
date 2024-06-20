@@ -1,8 +1,13 @@
 ---
 sidebar_position: 4
+description: Explore the SQL & React To-Do List Example with Genezio. Learn to build a dynamic to-do list app using SQL and React.
 ---
 
 # Todo List React, SQL
+
+<head>
+  <title>Todo List React, SQL</title>
+</head>
 
 <!-- :::info -->
 

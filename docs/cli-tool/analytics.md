@@ -1,8 +1,13 @@
 ---
 sidebar_position: 2
+description: Genezio Analytics is a built-in feature in the genezio CLI tool that gathers telemetry and analytics data. Learn how to enable or disable it to provide crash reports.
 ---
 
 # Analytics
+
+<head>
+  <title>Analytics</title>
+</head>
 
 ### Introduction to Genezio Analytics
 

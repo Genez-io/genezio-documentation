@@ -1,8 +1,13 @@
 ---
 sidebar_position: 11
+description: Learn how to use the “genezio login” command to log into your Genezio account through the CLI. Ensure secure and efficient access to projects with our guide
 ---
 
 # genezio login
+
+<head>
+  <title>genezio login CLI Command</title>
+</head>
 
 ### Usage
 

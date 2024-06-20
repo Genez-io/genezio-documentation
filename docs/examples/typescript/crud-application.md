@@ -1,8 +1,13 @@
 ---
 sidebar_position: 8
+description: Learn to build a TypeScript CRUD application with Genezio. Follow our guide for server and client setup, local testing, and deployment
 ---
 
 # CRUD Application
+
+<head>
+  <title>CRUD Application</title>
+</head>
 
 <!-- :::info -->
 
