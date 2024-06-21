@@ -12,7 +12,7 @@ In this tutorial, you will learn how to deploy functions or serverless workloads
 
 Genezio is a Function-as-a-Service (FaaS) platform that simplifies cloud deployments and significantly reduces infrastructure costs.
 
-**Do I need to modify my source code?** Make sure you export your function as a `handler` that will process events. Check out [this section](#2-ensure-you-have-a-nodejs-function-handler) to see a code snippet.
+**Do I need to modify my source code?** Make sure you export your function as a `handler` that will process events. Check out [this section](#2-create-a-function-handler) to see a code snippet.
 
 ## Why Use Genezio?
 
