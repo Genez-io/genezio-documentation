@@ -1,8 +1,13 @@
 ---
 sidebar_position: 6
+description: Learn how to integrate MultiversX with TypeScript using our guide. Follow step-by-step instructions to enhance your development process.
 ---
 
 # MultiversX
+
+<head>
+  <title>MultiversX integration</title>
+</head>
 
 <!-- :::info -->
 

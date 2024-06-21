@@ -1,8 +1,13 @@
 ---
 sidebar_position: 13
+description: Discover how to use the “genezio logout” command to securely log out of your Genezio account via the CLI. Read our guide for safe and easy account management
 ---
 
 # genezio logout
+
+<head>
+  <title>genezio logout CLI Command</title>
+</head>
 
 ### Usage
 

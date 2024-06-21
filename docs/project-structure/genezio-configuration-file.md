@@ -1,4 +1,12 @@
+---
+description: Learn how to configure your Genezio project using the genezio.yaml file. Follow our guide for setup and deployment options
+---
+
 # Genezio Configuration File
+
+<head>
+  <title>Genezio Configuration File</title>
+</head>
 
 The `genezio.yaml` file is a configuration file that contains all the settings for deploying your project. It is a YAML file that should be located at the root of your project.
 
@@ -19,11 +27,10 @@ The region where the project will be deployed. If not specified, the default reg
 
 The supported regions are:
 
-| Region           | Description           |
-| ---------------- | ----------------------|
-| `us-east-1`      | US, North Virginia    |
-| `eu-central-1`   | Europe, Frankfurt     |
-
+| Region         | Description        |
+| -------------- | ------------------ |
+| `us-east-1`    | US, North Virginia |
+| `eu-central-1` | Europe, Frankfurt  |
 
 ### `yamlVersion`: `number` **Required**
 
@@ -135,7 +142,7 @@ The functions that will be deployed to the cloud. This field can be omitted if t
 
     The file that contains the function. The extension for this file can be `.js`, `.cjs` or `.mjs`.
 
--   `type`: `aws` **Required**
+-   `type`: `string` **Optional**
 
     The type of the function. The default value is `aws`.
 

@@ -1,10 +1,15 @@
 ---
 sidebar_position: 8
+description: Learn how to use Genezio’s managed email service for sending emails. Follow our guide for setup, configuration, and sending HTML emails
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 # Email Service
+
+<head>
+  <title>Email Service</title>
+</head>
 
 Genezio provides a way to send emails with a managed email service.
 

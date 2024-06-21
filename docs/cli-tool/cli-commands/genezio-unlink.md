@@ -1,8 +1,13 @@
 ---
 sidebar_position: 7
+description: Learn how to execute the “genezio unlink” command to manage multi-repository projects by clearing frontend paths and stopping automatic SDK generation
 ---
 
 # genezio unlink
+
+<head>
+  <title>genezio unlink CLI Command</title>
+</head>
 
 ### Usage
 

@@ -1,8 +1,13 @@
 ---
-sidebar_position: 2
+sidebar_position: 3
+description: In this tutorial, you will learn how to integrate a Postgres database using Neon in a genezio project.
 ---
 
 # Connect to Postgres
+
+<head>
+  <title>Connect to Postgres (Powered by Neon)</title>
+</head>
 
 In this tutorial, you will learn how to integrate a Postgres database in a genezio project.
 

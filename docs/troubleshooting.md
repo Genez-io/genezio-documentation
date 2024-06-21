@@ -1,10 +1,15 @@
 ---
 sidebar_position: 10
+description: Collection of frequently asked questions with ideas on how to troubleshoot and solve them.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 # Troubleshooting
+
+<head>
+  <title>Troubleshooting</title>
+</head>
 
 Collection of frequently asked questions with ideas on how to troubleshoot and solve them.
 

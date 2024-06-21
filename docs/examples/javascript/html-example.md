@@ -1,8 +1,13 @@
 ---
 sidebar_position: 11
+description: Learn how to combine JavaScript with HTML using our Vanilla HTML example. Genezio provides clear and concise instructions for all developers
 ---
 
 # Vanila HTML Example
+
+<head>
+  <title>JavaScript Vanila HTML Example</title>
+</head>
 
 :::info
 The source code for this example is public on the following [GitHub repository](https://github.com/Genez-io/genezio-examples/tree/master/javascript/html-example).

@@ -1,10 +1,15 @@
 ---
 sidebar_position: 2
+description: Learn how to set up Sentry integrations with Genezio to monitor and debug your applications. Follow our guide for seamless error tracking.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 # Sentry
+
+<head>
+  <title>Sentry Integration</title>
+</head>
 
 :::info
 A guide to instrument genezio projects using the Sentry integration

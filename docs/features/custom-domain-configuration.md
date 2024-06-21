@@ -1,10 +1,15 @@
 ---
 sidebar_position: 9
+description: Easily set up custom domains with Genezio. Learn about DNS configurations, SSL certificates, and supported domain types
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 # Custom domain
+
+<head>
+  <title>Custom domain</title>
+</head>
 
 <!-- :::info -->
 

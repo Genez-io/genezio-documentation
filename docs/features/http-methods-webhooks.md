@@ -1,9 +1,17 @@
+---
+description: Learn how to implement HTTP calls and webhooks with our guide. Discover techniques to enhance your application’s interactivity and automation
+---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import Admonition from '@theme/Admonition';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 # HTTP Calls / Webhooks
+
+<head>
+  <title>HTTP Calls / Webhooks</title>
+</head>
 
 Genezio provides an easy way to interact with third-party services or APIs using webhooks/HTTP methods.
 

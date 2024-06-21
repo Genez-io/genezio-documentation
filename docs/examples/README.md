@@ -1,8 +1,13 @@
 ---
 sidebar_position: 8
+description: Explore a variety of Genezio examples for JavaScript, TypeScript, Dart, and more. Find templates and detailed guides for building fullstack applications
 ---
 
 # Examples
+
+<head>
+  <title>Projects Examples</title>
+</head>
 
 This section contains a list of examples on how to use `genezio`.
 

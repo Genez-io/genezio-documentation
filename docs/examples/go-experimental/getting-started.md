@@ -1,8 +1,13 @@
 ---
 sidebar_position: 1
+description: This page will explain how to structure your genezio project when using Go for the backend language.
 ---
 
 # Getting Started
+
+<head>
+  <title>Getting Started with Go</title>
+</head>
 
 This page will explain how to structure your genezio project when using Go for the backend language.
 

@@ -1,8 +1,13 @@
 ---
 sidebar_position: 10
+description: Learn how to implement Stripe integration with JavaScript. Follow our guide to seamlessly integrate payment processing into your applications
 ---
 
 # Stripe Example
+
+<head>
+  <title>JavaScript Stripe Integration Example</title>
+</head>
 
 :::info
 The source code for this example is public on the following [GitHub repository](https://github.com/Genez-io/genezio-examples/tree/master/javascript/stripe-js).

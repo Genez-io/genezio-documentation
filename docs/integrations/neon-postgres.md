@@ -1,10 +1,15 @@
 ---
 sidebar_position: 3
+description: Learn how to integrate Neon Postgres with your projects using our guide. Follow step-by-step instructions for seamless database integration.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 # Neon Postgres
+
+<head>
+  <title>Neon Postgres Integration</title>
+</head>
 
 :::info
 A guide to integrate Neon resources in genezio projects

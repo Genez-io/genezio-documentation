@@ -1,10 +1,15 @@
 ---
 sidebar_position: 11
+description: To check information about all of your deployed projects, you can open a browser and navigate to the genezio dashboard.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 # Genezio dashboard
+
+<head>
+  <title>Genezio dashboard</title>
+</head>
 
 To check information about all of your deployed projects, you can open a browser and navigate to the [genezio dashboard](https://app.genez.io/dashboard)[.](https://app.genez.io/dashboard)
 

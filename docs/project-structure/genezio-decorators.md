@@ -1,8 +1,16 @@
+---
+description: Genezio Decorators is a feature that lets you configure settings that were previously set in the genezio.yaml configuration file, directly from your code.
+---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import Admonition from '@theme/Admonition';
 
 # Genezio Decorators
+
+<head>
+  <title>Genezio Decorators</title>
+</head>
 
 Genezio Decorators is a feature that lets you configure settings that were previously set in the `genezio.yaml` configuration file, directly from your code.
 

@@ -1,8 +1,13 @@
 ---
 sidebar_position: 6
+description: Learn how to create webhooks with our JavaScript example. Genezio provides detailed, easy-to-follow instructions for all developers
 ---
 
 # Webhook Example
+
+<head>
+  <title>JavaScript Webhook Example</title>
+</head>
 
 <!-- :::info -->
 

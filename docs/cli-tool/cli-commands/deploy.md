@@ -1,8 +1,13 @@
 ---
 sidebar_position: 3
+description: Learn how to deploy apps effortlessly with Genezio’s CLI tool. Access our easy-to-follow instructions for optimized deployment
 ---
 
 # genezio deploy
+
+<head>
+  <title>genezio deploy CLI Command</title>
+</head>
 
 ### Usage
 

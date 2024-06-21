@@ -1,8 +1,13 @@
 ---
 sidebar_position: 6
+description: The genezio CLI can be used to run commands to manage and deploy your projects. You can run genezio on your machine or in your CI/CD pipeline.
 ---
 
 # Genezio CLI
+
+<head>
+  <title>Genezio CLI</title>
+</head>
 
 The `genezio` cli companion can be used to deploy your projects.
 You can run `genezio` on your machine or in your [CI/CD pipeline.](../integrations/github-action)

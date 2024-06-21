@@ -1,3 +1,7 @@
+---
+description: You can use Genezio Authentication to allow the users to sign in into your application using multiple providers such as email and password, Google or Metamask.
+---
+
 import SetYourOwnDb from '/img/features/authentication/set_your_own_db.webp';
 import EnableAuth from '/img/features/authentication/enable_auth.webp';
 import SelectAuthDb from '/img/features/authentication/select_auth_db.webp';
@@ -9,6 +13,10 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 # Authentication
+
+<head>
+  <title>Authentication</title>
+</head>
 
 You can use Genezio Authentication to allow the users to sign in into your application using multiple providers such as email and password or Google.
 Genezio provides an out-of-the-box authentication backend, support for Postgres and Mongo databases and a client SDK to easily integrate the authentication feature into your frontend.
