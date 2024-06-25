@@ -51,7 +51,7 @@ Here is a summary of serializable genezio types:
 | [Primitives](#primitive-types) | ✅  | ✅  | ✅   | ✅     |
 | [Objects](#objects)            | ✅  | ✅  | ✅   | ✅     |
 | [Arrays](#arrays)              | ✅  | ✅  | ✅   | ✅     |
-| [Maps](#paps)                  | ✅  | ✅  | ❌   | ✅     |
+| [Maps](#maps)                  | ✅  | ✅  | ❌   | ✅     |
 | [Enums](#enums)                | ✅  | ❌  | ❌   | ✅     |
 | [Unions](#unions)              | ✅  | ❌  | ❌   | ❌     |
 | [Any](#any-values)             | ✅  | ✅  | ✅   | ✅     |
