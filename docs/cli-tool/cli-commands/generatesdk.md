@@ -6,9 +6,8 @@ description: Learn how to use the “genezio sdk” command to generate SDKs for
 # genezio sdk
 
 <head>
-  <title>genezio sdk CLI Command</title>
+  <title>genezio sdk CLI Command | Genezio Documentation</title>
 </head>
-
 ### Usage
 
 `genezio sdk <projectName> --stage <stage> --source <source> --language <js/ts/dart> --region <region> --output <output> --type <type> [--logLevel <logLevel>] [-h | --help]`

@@ -6,9 +6,8 @@ description: Learn how to deploy apps effortlessly with Genezio’s CLI tool. Ac
 # genezio deploy
 
 <head>
-  <title>genezio deploy CLI Command</title>
+  <title>genezio deploy CLI Command | Genezio Documentation</title>
 </head>
-
 ### Usage
 
 `genezio deploy [--backend] [--frontend] [--stage <stage_name>] [--env <envFile>] [--subdomain <subdomain>] [--installDeps] [--logLevel <logLevel>] [-h | --help]`

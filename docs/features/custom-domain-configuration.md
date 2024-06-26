@@ -8,9 +8,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 # Custom domain
 
 <head>
-  <title>Custom domain</title>
+  <title>Custom domain | Genezio Documentation</title>
 </head>
-
 <!-- :::info -->
 
 :::info

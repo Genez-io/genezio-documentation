@@ -6,9 +6,8 @@ description: Begin your TypeScript journey with our guide. Learn the fundamental
 # Getting Started
 
 <head>
-  <title>Getting Started with TypeScript</title>
+  <title>Getting Started with TypeScript | Genezio Documentation</title>
 </head>
-
 <!-- :::info -->
 
 :::info

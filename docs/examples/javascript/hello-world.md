@@ -6,9 +6,8 @@ description: Learn how to create a JavaScript Hello World program with our examp
 # Hello World
 
 <head>
-  <title>JavaScript Hello World Example</title>
+  <title>JavaScript Hello World Example | Genezio Documentation</title>
 </head>
-
 <!-- :::info -->
 
 :::info

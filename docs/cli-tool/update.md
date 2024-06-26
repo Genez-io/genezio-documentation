@@ -10,9 +10,8 @@ import TabItem from '@theme/TabItem';
 # Update genezio
 
 <head>
-  <title>Update genezio CLI command</title>
+  <title>Update genezio CLI command | Genezio Documentation</title>
 </head>
-
 Use the command below to install the latest version of genezio using you preferred package manager:
 
 <Tabs>

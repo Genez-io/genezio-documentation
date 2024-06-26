@@ -6,9 +6,8 @@ description: "Genezio frontend deployment: Host and serve static websites using 
 # Frontend Deployment
 
 <head>
-  <title>Frontend Deployment</title>
+  <title>Frontend Deployment | Genezio Documentation</title>
 </head>
-
 Genezio's frontend deployment offers a simple and cost-effective way to host and serve static websites. It leverages Amazon S3 in combination with CloudFront CDN (Content Delivery Network) to ensure fast and reliable content delivery to users across the globe. In this documentation, we will explore the key features, benefits, and steps involved in deploying your frontend applications using genezio.
 
 :::tip

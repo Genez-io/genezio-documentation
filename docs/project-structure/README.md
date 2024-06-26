@@ -9,9 +9,8 @@ import Admonition from '@theme/Admonition';
 # Project Structure
 
 <head>
-  <title>Project Structure</title>
+  <title>Project Structure | Genezio Documentation</title>
 </head>
-
 There are 2 recommend ways of structuring your project:
 
 1. Fullstack single repository - all the files will be placed in a single repository/directory.
@@ -53,14 +52,14 @@ name: getting-started
 region: us-east-1
 yamlVersion: 2
 backend:
-    path: server
-    language:
-        name: ts
+  path: server
+  language:
+    name: ts
 frontend:
-    path: client
-    sdk:
-        language: ts
-    publish: dist
+  path: client
+  sdk:
+    language: ts
+  publish: dist
 ```
 
 For more info on the `genezio.yaml` configuration file, check [genezio-configuration-file](genezio-configuration-file).
@@ -97,11 +96,11 @@ The minimum configuration file for the backend code to be deployed is:
 ```yaml title="genezio.yaml"
 name: my-project
 backend:
-    path: .
-    language:
-        name: ts
-    scripts:
-        deploy: npm install
+  path: .
+  language:
+    name: ts
+  scripts:
+    deploy: npm install
 ```
 
 For more info on `genezio.yaml` check [Genezio Configuration File](genezio-configuration-file).
@@ -127,9 +126,9 @@ The minimum configuration file for the frontend code to be deployed is:
 ```yaml title="genezio.yaml"
 name: my-project
 frontend:
-    path: .
-    sdk:
-        language: ts
+  path: .
+  sdk:
+    language: ts
 ```
 
 <Admonition type="tip">
@@ -175,10 +174,10 @@ Alternatively, if you have a `genezio.yaml` configured in the client directory, 
 name: my-project
 region: us-east-1
 frontend:
-    path: .
-    sdk:
-        language: ts
-    publish: dist
+  path: .
+  sdk:
+    language: ts
+  publish: dist
 ```
 
 For more details on the genezio generated SDK, check out the section [Generated Sdk](../features/generated-sdk).
@@ -197,9 +196,9 @@ If you encounter any errors or difficulties to test locally or deploy, check tha
 
 Depending on the project's structure (single repository or multi-repositories), you may need to update the paths for the:
 
--   deployment scripts in the `genezio.yaml` file
--   the frontend `publish` directory
--   the environment variables file
+- deployment scripts in the `genezio.yaml` file
+- the frontend `publish` directory
+- the environment variables file
 
 For more details and examples on how to correctly set the paths, check out the section [Genezio Configuration File](genezio-configuration-file).
 

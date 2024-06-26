@@ -6,9 +6,8 @@ description: Learn how to use the “genezio login” command to log into your G
 # genezio login
 
 <head>
-  <title>genezio login CLI Command</title>
+  <title>genezio login CLI Command | Genezio Documentation</title>
 </head>
-
 ### Usage
 
 `genezio login <accessToken> [--logLevel <logLevel>] [-h | --help]`

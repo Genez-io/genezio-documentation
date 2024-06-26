@@ -6,9 +6,8 @@ description: Explore the TypeScript & Flutter To-Do List Example with Genezio. L
 # Todo List with Flutter
 
 <head>
-  <title>TypeScript & Flutter To-Do List Example</title>
+  <title>TypeScript & Flutter To-Do List Example | Genezio Documentation</title>
 </head>
-
 :::info
 The source code for this example is public on the following [GitHub repository](https://github.com/Genez-io/genezio-examples/tree/master/typescript/todo-list-flutter).
 :::
@@ -16,6 +15,7 @@ The source code for this example is public on the following [GitHub repository](
 If you want to deploy your application step-by-step, follow the guidelines below.
 
 ## Prerequisites
+
 - ✅ [NodeJs](https://nodejs.org) >= 16.0.0
 - ✅ [npm](https://www.npmjs.com/)
 - ✅ [genezio](https://genezio.com/)
@@ -23,6 +23,7 @@ If you want to deploy your application step-by-step, follow the guidelines below
 
 1. Host a Mongo Database. Follow this [tutorial](https://genezio.com/docs/tutorials/connect-to-mongodb-atlas) to get a free tier database.
 2. Create a `server/.env` file and add the following environment variables:
+
 ```env
 MONGO_DB_URI=<your-mongo-uri>
 ```
@@ -53,17 +54,18 @@ Note: To remotely set the environment variables, you can deploy using `genezio d
 
 All commands are run from the root of the project, from a terminal:
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install -g genezio`  | Installs genezio globally                        |
-| `genezio login`           | Logs in to genezio                               |
-| `genezio local`           | Starts a local server                            |
-| `genezio deploy`          | Deploys a production project                     |
-| `genezio --help`          | Get help using genezio                           |
+| Command                  | Action                       |
+| :----------------------- | :--------------------------- |
+| `npm install -g genezio` | Installs genezio globally    |
+| `genezio login`          | Logs in to genezio           |
+| `genezio local`          | Starts a local server        |
+| `genezio deploy`         | Deploys a production project |
+| `genezio --help`         | Get help using genezio       |
 
 ## Want to learn more?
 
 Check out:
+
 - [Official genezio documentation](https://genezio.com/docs)
 - [Genezio tutorials](https://genezio.com/blog)
 - [Discord channel](https://discord.gg/uc9H5YKjXv)

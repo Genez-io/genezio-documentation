@@ -6,9 +6,8 @@ description: Discover how to delete projects from Genezio cloud with the genezio
 # genezio delete
 
 <head>
-  <title>genezio delete CLI Command</title>
+  <title>genezio delete CLI Command | Genezio Documentation</title>
 </head>
-
 ### Usage
 
 `genezio delete <project> [-f | --force] [--logLevel <logLevel>] [-h | --help]`

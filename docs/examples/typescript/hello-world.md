@@ -6,9 +6,8 @@ description: Learn how to create a TypeScript Hello World program with our examp
 # Hello World
 
 <head>
-  <title>TypeScript Hello World Example</title>
+  <title>TypeScript Hello World Example | Genezio Documentation</title>
 </head>
-
 <!-- :::info -->
 
 :::info

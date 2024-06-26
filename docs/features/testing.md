@@ -8,9 +8,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 # Testing
 
 <head>
-  <title>Local Testing Infrastructure</title>
+  <title>Local Testing Infrastructure | Genezio Documentation</title>
 </head>
-
 Genezio provides a local testing infrastructure that mimics the production infrastructure on the cloud.
 
 ## Genezio Testing Dashboard

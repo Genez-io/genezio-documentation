@@ -8,9 +8,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 # Neon Postgres
 
 <head>
-  <title>Neon Postgres Integration</title>
+  <title>Neon Postgres Integration | Genezio Documentation</title>
 </head>
-
 :::info
 A guide to integrate Neon resources in genezio projects
 :::

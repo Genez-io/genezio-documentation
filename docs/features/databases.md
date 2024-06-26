@@ -8,9 +8,8 @@ import LinkDatabase from '/img/features/databases/link_database.gif';
 # Databases
 
 <head>
-  <title>Databases</title>
+  <title>Databases | Genezio Documentation</title>
 </head>
-
 Databases enable you to store and manage data in a structured way. They are a fundamental part of most applications and
 are used to store information such as user data, application data, logs, and more.
 
@@ -26,12 +25,10 @@ We support the following databases:
 
 ## How to create a database
 
-
 To create a database you can navigate our dashboard, go to the [**Databases**](https://app.genez.io/databases/) page
 and click on the **Create Database** button.
 
 Alternatively, you can select a project, choose "Database" from the left-side menu and click on the **Create Database** button.
-
 
 ## Using the database
 

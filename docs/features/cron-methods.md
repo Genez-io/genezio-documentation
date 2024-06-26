@@ -8,9 +8,8 @@ import TabItem from '@theme/TabItem';
 # Cron Jobs
 
 <head>
-  <title>Cron Jobs</title>
+  <title>Cron Jobs | Genezio Documentation</title>
 </head>
-
 A scheduled method or a cron job is a method that will run periodically. By using a specific cron syntax, you can define the frequency and timing for each method.
 
 :::tip

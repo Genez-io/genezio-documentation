@@ -6,9 +6,8 @@ description: Explore the DART & Flutter To-Do List Example with Genezio. Learn t
 # Todo List with Flutter
 
 <head>
-  <title>Dart & Flutter To-Do List Example</title>
+  <title>Dart & Flutter To-Do List Example | Genezio Documentation</title>
 </head>
-
 :::warning
 Running `dart` on the backend side is still experimental work. If you encounter any issues, please let us know by creating a new [GitHub issue](https://github.com/Genez-io/genezio/issues).
 :::
@@ -28,6 +27,7 @@ This is an example of a todo application that uses:
 
 1. Host a Mongo Database. Follow this [tutorial](https://genezio.com/docs/tutorials/connect-to-mongodb-atlas) to get a free tier database.
 2. Create a `server/.env` file and add the following environment variables:
+
 ```env
 MONGODB_URI=todo
 ```

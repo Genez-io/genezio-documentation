@@ -6,9 +6,8 @@ description: In this tutorial, you will learn how to integrate a Postgres databa
 # Connect to Postgres
 
 <head>
-  <title>Connect to Postgres (Powered by Neon)</title>
+  <title>Connect to Postgres (Powered by Neon) | Genezio Documentation</title>
 </head>
-
 In this tutorial, you will learn how to integrate a Postgres database in a genezio project.
 
 ### Prerequisites

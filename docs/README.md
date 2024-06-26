@@ -6,9 +6,8 @@ description: Access Genezio documentation to optimize your development. Find tut
 # Overview
 
 <head>
-  <title>Overview</title>
+  <title>Overview | Genezio Documentation</title>
 </head>
-
 Welcome to the Genezio documentation.
 
 Genezio is a powerful cloud platform designed for full-stack developers, offering auto-scalable backends and seamlessly connected frontends through a type-safe interface. Whether you're a seasoned developer or just getting started, Genezio has you covered.

@@ -9,9 +9,8 @@ import Admonition from '@theme/Admonition';
 # Genezio Decorators
 
 <head>
-  <title>Genezio Decorators</title>
+  <title>Genezio Decorators | Genezio Documentation</title>
 </head>
-
 Genezio Decorators is a feature that lets you configure settings that were previously set in the `genezio.yaml` configuration file, directly from your code.
 
 :::info
