@@ -6,9 +6,8 @@ description: Learn how to implement Stripe integration with JavaScript. Follow o
 # Stripe Example
 
 <head>
-  <title>JavaScript Stripe Integration Example</title>
+  <title>JavaScript Stripe Integration Example | Genezio Documentation</title>
 </head>
-
 :::info
 The source code for this example is public on the following [GitHub repository](https://github.com/Genez-io/genezio-examples/tree/master/javascript/stripe-js).
 :::

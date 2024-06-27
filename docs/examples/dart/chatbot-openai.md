@@ -6,9 +6,8 @@ description: Running dart on the backend side is still experimental work. If you
 # Chat Application with OpenAi
 
 <head>
-  <title>Chat Application with OpenAi & Dart</title>
+  <title>Chat Application with OpenAi & Dart | Genezio Documentation</title>
 </head>
-
 :::warning
 Running `dart` on the backend side is still experimental work. If you encounter any issues, please let us know by creating a new [GitHub issue](https://github.com/Genez-io/genezio/issues).
 :::
@@ -34,6 +33,7 @@ Prerequisites:
 1. Get an OpenAI secret key. Create an account on the [OpenAI platform](https://platform.openai.com/) and head to this [link](https://platform.openai.com/account/api-keys) to add a secret key.
 2. Host a Mongo Database. Follow this [tutorial](https://genezio.com/docs/tutorials/connect-to-mongodb-atlas) to get a free tier database.
 3. Create a `server/.env` file and add the following environment variables:
+
 ```env
 OPENAPI_KEY=todo
 MONGODB_URI=todo
@@ -56,4 +56,3 @@ For more details on how to use genezio, check the links below:
 - [https://github.com/genez-io/genezio-examples](https://github.com/genez-io/genezio-examples)
 
 For more details on each dart package, you can check out [pub.dev](https://pub.dev/)
-

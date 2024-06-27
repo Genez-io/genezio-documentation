@@ -6,9 +6,8 @@ description: Use the “genezio link” CLI command to link the generated SDK in
 # genezio link
 
 <head>
-  <title>genezio link CLI Command</title>
+  <title>genezio link CLI Command | Genezio Documentation</title>
 </head>
-
 ### Usage
 
 `genezio link [projectName] [--logLevel <logLevel>] [-h | --help]`

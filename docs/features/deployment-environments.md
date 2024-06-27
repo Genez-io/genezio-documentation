@@ -6,9 +6,8 @@ description: Learn how to manage multiple deployment environments in Genezio. Cr
 # Environments
 
 <head>
-  <title>Environments</title>
+  <title>Environments | Genezio Documentation</title>
 </head>
-
 Genezio provides a way to organise your projects into different, isolated environments.
 
 This enables you to create development, staging environments where you can test new features before launching them into production.

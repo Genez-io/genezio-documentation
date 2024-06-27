@@ -6,9 +6,8 @@ description: Explore the TypeScript Trivia Application Example with Genezio. Lea
 # Trivia Application
 
 <head>
-  <title>TypeScript Trivia Application Example</title>
+  <title>TypeScript Trivia Application Example | Genezio Documentation</title>
 </head>
-
 <!-- :::info -->
 
 :::info

@@ -8,9 +8,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 # Upstash Redis
 
 <head>
-  <title>Upstash Redis Integration</title>
+  <title>Upstash Redis Integration | Genezio Documentation</title>
 </head>
-
 :::info
 A guide to integrate Upstash resources in genezio projects
 :::

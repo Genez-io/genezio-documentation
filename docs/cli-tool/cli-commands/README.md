@@ -5,9 +5,8 @@ description: "Genezio CLI commands documentation: Detailed guides on using comma
 # CLI Commands
 
 <head>
-  <title>CLI Commands</title>
+  <title>CLI Commands | Genezio Documentation</title>
 </head>
-
 ### Usage
 
 ```

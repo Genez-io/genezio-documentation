@@ -8,9 +8,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 # Project Collaboration
 
 <head>
-  <title>Project Collaboration</title>
+  <title>Project Collaboration | Genezio Documentation</title>
 </head>
-
 :::info
 The collaboration feature allows project owners to invite collaborators to
 work on their projects.

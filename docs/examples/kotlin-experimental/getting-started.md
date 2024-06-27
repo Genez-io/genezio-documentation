@@ -6,9 +6,8 @@ description: Discover how to get started with Kotlin through our guide. Follow t
 # Getting Started
 
 <head>
-  <title>Getting Started with Kotlin</title>
+  <title>Getting Started with Kotlin | Genezio Documentation</title>
 </head>
-
 :::info
 The source code for this example is public on the following [GitHub repository](https://github.com/Genez-io/genezio-examples/blob/master/kotlin/getting-started/README.md).
 :::

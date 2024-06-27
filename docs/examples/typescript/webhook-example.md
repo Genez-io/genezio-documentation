@@ -6,9 +6,8 @@ description: Explore the TypeScript Webhook Example in Genezio Documentation. Le
 # Webhook Example
 
 <head>
-  <title>TypeScript Webhook Example</title>
+  <title>TypeScript Webhook Example | Genezio Documentation</title>
 </head>
-
 <!-- :::info -->
 
 :::info

@@ -6,9 +6,8 @@ description: Learn how to execute the “genezio unlink” command to manage mul
 # genezio unlink
 
 <head>
-  <title>genezio unlink CLI Command</title>
+  <title>genezio unlink CLI Command | Genezio Documentation</title>
 </head>
-
 ### Usage
 
 `genezio unlink [--all] [projectName] [--logLevel <logLevel>] [-h | --help]`

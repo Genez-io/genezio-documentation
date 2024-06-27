@@ -6,9 +6,8 @@ description: Explore the DART & React To-Do List Example with Genezio. Learn to 
 # Todo List with React
 
 <head>
-  <title>Dart & React Todo List Example</title>
+  <title>Dart & React Todo List Example | Genezio Documentation</title>
 </head>
-
 :::warning
 Running `dart` on the backend side is still experimental work. If you encounter any issues, please let us know by creating a new [GitHub issue](https://github.com/Genez-io/genezio/issues).
 :::
@@ -30,6 +29,7 @@ If you want to test this example out-of-the-box by running 1 command, head to th
 If you want to deploy your application step-by-step, follow the guidelines below.
 
 ## Prerequisites
+
 - ✅ [NodeJs](https://nodejs.org) >= 16.0.0
 - ✅ [npm](https://www.npmjs.com/)
 - ✅ [genezio](https://genezio.com/)
@@ -37,6 +37,7 @@ If you want to deploy your application step-by-step, follow the guidelines below
 
 1. Host a Mongo Database. Follow this [tutorial](https://genezio.com/docs/tutorials/connect-to-mongodb-atlas) to get a free tier database.
 2. Create a `server/.env` file and add the following environment variables:
+
 ```env
 MONGO_DB_URI=<your-mongo-uri>
 ```

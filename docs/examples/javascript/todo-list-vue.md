@@ -6,9 +6,8 @@ description: Explore the Vue & Mongo To-Do List Example with Genezio. Learn to b
 # Todo List Vue, Mongo
 
 <head>
-  <title>Todo List Vue, Mongo</title>
+  <title>Todo List Vue, Mongo | Genezio Documentation</title>
 </head>
-
 <!-- :::info -->
 
 :::info

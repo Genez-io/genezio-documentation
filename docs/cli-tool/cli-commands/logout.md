@@ -6,9 +6,8 @@ description: Discover how to use the “genezio logout” command to securely lo
 # genezio logout
 
 <head>
-  <title>genezio logout CLI Command</title>
+  <title>genezio logout CLI Command | Genezio Documentation</title>
 </head>
-
 ### Usage
 
 `genezio logout [--logLevel <logLevel>] [-h | --help]`

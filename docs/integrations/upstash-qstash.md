@@ -8,9 +8,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 # Upstash Qstash
 
 <head>
-  <title>Upstash Qstash Integration</title>
+  <title>Upstash Qstash Integration | Genezio Documentation</title>
 </head>
-
 ### Introduction to Upstash
 
 [Upstash](https://upstash.com/?utm_source=genezio+&utm_medium=documentation&utm_campaign=post) is a cutting-edge platform for modern developers seeking seamless data management in serverless and cloud-native applications. QStash is an HTTP based messaging and scheduling queueu solution for the serverless environments.

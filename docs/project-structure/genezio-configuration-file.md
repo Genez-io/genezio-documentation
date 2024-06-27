@@ -5,9 +5,8 @@ description: Learn how to configure your Genezio project using the genezio.yaml 
 # Genezio Configuration File
 
 <head>
-  <title>Genezio Configuration File</title>
+  <title>Genezio Configuration File | Genezio Documentation</title>
 </head>
-
 The `genezio.yaml` file is a configuration file that contains all the settings for deploying your project. It is a YAML file that should be located at the root of your project.
 
 ## Reference
@@ -18,8 +17,8 @@ The name of the project. It is used to identify the project after deployment.
 
 Restrictions:
 
--   Unique per account
--   Must start with a letter and can only contain letters, numbers, and hyphens.
+- Unique per account
+- Must start with a letter and can only contain letters, numbers, and hyphens.
 
 ### `region`: `string` **Optional**
 
@@ -52,55 +51,55 @@ If scripts are declared in the `scripts` field, they will be executed from this 
 
 #### `language`: `Object` **Required**
 
--   `name`: `ts` | `js` | `go` | `dart` | `kotlin` **Required**
+- `name`: `ts` | `js` | `go` | `dart` | `kotlin` **Required**
 
-    The programming language used to implement the backend.
+  The programming language used to implement the backend.
 
--   `runtime`: `nodejs20.x` **Optional**
+- `runtime`: `nodejs20.x` **Optional**
 
-    The node runtime version that will be used by your NodeJS application. The default value is `nodejs20.x`.
+  The node runtime version that will be used by your NodeJS application. The default value is `nodejs20.x`.
 
-    Applicable only when `language.name` is `ts` or `js`.
+  Applicable only when `language.name` is `ts` or `js`.
 
--   `packageManager`: `npm` | `pnpm` | `yarn` **Optional**
+- `packageManager`: `npm` | `pnpm` | `yarn` **Optional**
 
-    The package manager used to install the project's dependencies. The default value is `npm`.
+  The package manager used to install the project's dependencies. The default value is `npm`.
 
-    Applicable only when `language.name` is `ts` or `js`.
+  Applicable only when `language.name` is `ts` or `js`.
 
--   `architecture`: `x86_64` **Optional**
+- `architecture`: `x86_64` **Optional**
 
-    The architecture that will be use by your application on the cloud. The default value is `x86_64`.
+  The architecture that will be use by your application on the cloud. The default value is `x86_64`.
 
 #### `classes`: `Array` **Optional**
 
--   `path`: `string` **Required**
+- `path`: `string` **Required**
 
-    The source file path at which the class can be located. Relative to the `path` field.
+  The source file path at which the class can be located. Relative to the `path` field.
 
--   `name`: `string` **Optional**
+- `name`: `string` **Optional**
 
-    Indicate the name of the class to be deployed.
+  Indicate the name of the class to be deployed.
 
-    Used only for backend classes written in Dart because there is no mechanism to export only a specific class from a Dart file.
+  Used only for backend classes written in Dart because there is no mechanism to export only a specific class from a Dart file.
 
--   `type`: `jsonrpc` | `http` | `cron` **Optional**
+- `type`: `jsonrpc` | `http` | `cron` **Optional**
 
-    If not specified, `jsonrpc` is assumed as the default value.
+  If not specified, `jsonrpc` is assumed as the default value.
 
--   `methods`: `Array` **Optional**
+- `methods`: `Array` **Optional**
 
-    -   `name`: `string` **Required**
+  - `name`: `string` **Required**
 
-        The name of the method. It should be the same name as in the code.
+    The name of the method. It should be the same name as in the code.
 
-    -   `type`: `jsonrpc` | `http` | `cron` **Optional**
+  - `type`: `jsonrpc` | `http` | `cron` **Optional**
 
-        If not specified, the value of this field will be set as the class's `type` property.
+    If not specified, the value of this field will be set as the class's `type` property.
 
-    -   `cronString`: `string` **Required** only when `type` is `cron`.
+  - `cronString`: `string` **Required** only when `type` is `cron`.
 
-        The cron string that specifies how frequently the method should be called. Check the cron string format on https://crontab.guru/.
+    The cron string that specifies how frequently the method should be called. Check the cron string format on https://crontab.guru/.
 
 #### `scripts`: `Object` **Optional**
 
@@ -108,43 +107,43 @@ The scripts that run before special backend events occur. If a list is provided 
 
 Variables can be used in the scripts. Check the [Usage](#how-to-use-variables-in-the-scripts-fields) section for more information.
 
--   `deploy`: `string` | `string[]` **Optional**
+- `deploy`: `string` | `string[]` **Optional**
 
-    A general purpose script that runs before the backend is deployed.
+  A general purpose script that runs before the backend is deployed.
 
--   `local`: `string` | `string[]` **Optional**
+- `local`: `string` | `string[]` **Optional**
 
-    A general purpose script that runs before starting the local testing environment.
+  A general purpose script that runs before starting the local testing environment.
 
 #### `functions`: `Array` **Optional**
 
 The functions that will be deployed to the cloud. This field can be omitted if the project does not have any functions.
 
--   `name`: `string` **Required**
+- `name`: `string` **Required**
 
-    This is a label to identify your function in the dashboard for monitoring and logging purposes.
+  This is a label to identify your function in the dashboard for monitoring and logging purposes.
 
--   `path`: `string` **Required**
+- `path`: `string` **Required**
 
-    The path to the function's code. It is relative to the `path` field.
+  The path to the function's code. It is relative to the `path` field.
 
--   `handler`: `string` **Required**
+- `handler`: `string` **Required**
 
-    The name of the handler function. For example, if the handler function is `myHandler`, the code should look like this:
+  The name of the handler function. For example, if the handler function is `myHandler`, the code should look like this:
 
-    ```typescript
-    export const myHandler = async (event, context) => {
-        // Your code here
-    };
-    ```
+  ```typescript
+  export const myHandler = async (event, context) => {
+    // Your code here
+  };
+  ```
 
--   `entry`: `string` **Required**
+- `entry`: `string` **Required**
 
-    The file that contains the function. The extension for this file can be `.js`, `.cjs` or `.mjs`.
+  The file that contains the function. The extension for this file can be `.js`, `.cjs` or `.mjs`.
 
--   `type`: `string` **Optional**
+- `type`: `string` **Optional**
 
-    The type of the function. The default value is `aws`.
+  The type of the function. The default value is `aws`.
 
 ### `frontend`: `Object` | `Array` **Optional**
 
@@ -162,15 +161,15 @@ If scripts are declared in the `scripts` field, they will be executed from this 
 
 The Genezio SDK configuration. If not specified, no SDK will be generated for your frontend.
 
--   `language`: `ts` | `js` | `go` | `dart` | `kotlin` | `swift` | `python` **Required**
+- `language`: `ts` | `js` | `go` | `dart` | `kotlin` | `swift` | `python` **Required**
 
-    Decides the language in which the Genezio SDK is generated.
+  Decides the language in which the Genezio SDK is generated.
 
--   `path`: `string` **Optional**
+- `path`: `string` **Optional**
 
-    The path where the Genezio SDK is generated. It is relative to the `path` field.
+  The path where the Genezio SDK is generated. It is relative to the `path` field.
 
-    If not specified, the SDK will be generated in `${path}/sdk`.
+  If not specified, the SDK will be generated in `${path}/sdk`.
 
 Decides the language in which the Genezio SDK is generated.
 
@@ -194,17 +193,17 @@ The scripts that run before special frontend events occur. If a list is provided
 
 Variables can be used in the scripts. Check the [Usage](#how-to-use-variables-in-the-scripts-fields) section for more information.
 
--   `deploy`: `string` | `string[]` **Optional**
+- `deploy`: `string` | `string[]` **Optional**
 
-    A general purpose script that runs before the frontend is deployed.
+  A general purpose script that runs before the frontend is deployed.
 
--   `build`: `string` | `string[]` **Optional**
+- `build`: `string` | `string[]` **Optional**
 
-    A script that builds the frontend and populates the `publish` directory. It runs before the frontend is deployed.
+  A script that builds the frontend and populates the `publish` directory. It runs before the frontend is deployed.
 
--   `start`: `string` | `string[]` **Optional**
+- `start`: `string` | `string[]` **Optional**
 
-    A script that starts the frontend dev server. It runs only during local development.
+  A script that starts the frontend dev server. It runs only during local development.
 
 ## Usage
 
@@ -218,11 +217,11 @@ For example, to set the node runtime version to `Node 20`, you can use the follo
 name: my-project
 yamlVersion: 2
 backend:
-    path: .
-    language:
-        name: ts
-        # Set the node runtime version to Node 20
-        runtime: nodejs20.x
+  path: .
+  language:
+    name: ts
+    # Set the node runtime version to Node 20
+    runtime: nodejs20.x
 ```
 
 ### How to set the package manager for TypeScript and JavaScript projects
@@ -235,11 +234,11 @@ For example, to set the package manager to `pnpm`, you can use the following con
 name: my-project
 yamlVersion: 2
 backend:
-    path: .
-    language:
-        name: ts
-        # Set the package manager to pnpm
-        packageManager: pnpm
+  path: .
+  language:
+    name: ts
+    # Set the package manager to pnpm
+    packageManager: pnpm
 ```
 
 ### How to set the architecture type
@@ -252,11 +251,11 @@ For example, to set the architecture to `x86_64`, you can use the following conf
 name: my-project
 yamlVersion: 2
 backend:
-    path: .
-    language:
-        name: ts
-        # Set the node runtime version to Node 20
-        architecture: x86_64
+  path: .
+  language:
+    name: ts
+    # Set the node runtime version to Node 20
+    architecture: x86_64
 ```
 
 ### How to use variables in the scripts fields
@@ -265,17 +264,17 @@ You can use variables in the scripts by using the `${{variable}}` syntax. The va
 
 Available variables are:
 
--   `projectName`: The name of the project.
--   `stage`: The stage of the deployment. It can be set using the `--stage` flag in the CLI.
+- `projectName`: The name of the project.
+- `stage`: The stage of the deployment. It can be set using the `--stage` flag in the CLI.
 
 ```yaml
 name: my-project
 yamlVersion: 2
 backend:
-    path: .
-    language:
-        name: ts
-    scripts:
-        # Will output "Deploying my-project to stage dev" when run with the --stage dev flag
-        deploy: echo "Deploying ${{projectName}} to stage ${{stage}}"
+  path: .
+  language:
+    name: ts
+  scripts:
+    # Will output "Deploying my-project to stage dev" when run with the --stage dev flag
+    deploy: echo "Deploying ${{projectName}} to stage ${{stage}}"
 ```

@@ -6,9 +6,8 @@ description: Explore the JavaScript To-Do List Example with Genezio. Learn to bu
 # Todo List
 
 <head>
-  <title>JavaScript Todo List Example</title>
+  <title>JavaScript Todo List Example | Genezio Documentation</title>
 </head>
-
 <!-- :::info -->
 
 :::info

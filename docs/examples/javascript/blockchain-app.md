@@ -6,9 +6,8 @@ description: Discover how to create a Blockchain Indexer with JavaScript. Follow
 # Smart contract indexer
 
 <head>
-  <title>Blockchain Indexer Example with JavaScript</title>
+  <title>Blockchain Indexer Example with JavaScript | Genezio Documentation</title>
 </head>
-
 :::info
 The source code for this example is public on the following [GitHub repository](https://github.com/Genez-io/genezio-examples/tree/master/javascript/blockchain).
 :::

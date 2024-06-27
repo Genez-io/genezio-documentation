@@ -6,9 +6,8 @@ description: Use the genezio CLI command to check the installed version and acce
 # genezio
 
 <head>
-  <title>genezio CLI command</title>
+  <title>genezio CLI command | Genezio Documentation</title>
 </head>
-
 ### Usage
 
 `genezio [-v | --version] [-h | --help]`

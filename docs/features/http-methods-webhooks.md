@@ -10,9 +10,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 # HTTP Calls / Webhooks
 
 <head>
-  <title>HTTP Calls / Webhooks</title>
+  <title>HTTP Calls / Webhooks | Genezio Documentation</title>
 </head>
-
 Genezio provides an easy way to interact with third-party services or APIs using webhooks/HTTP methods.
 
 With genezio decorators, you can set one or more of your methods to handle HTTP requests.

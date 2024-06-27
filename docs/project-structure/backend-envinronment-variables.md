@@ -12,9 +12,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 # Backend Environment Variables
 
 <head>
-  <title>Backend Environment Variables</title>
+  <title>Backend Environment Variables | Genezio Documentation</title>
 </head>
-
 This page describes how to set environment variables for your backend classes.
 
 These variables can be either secrets such as database keys or 3rd party API keys, or variables to use globally across your backend classes.

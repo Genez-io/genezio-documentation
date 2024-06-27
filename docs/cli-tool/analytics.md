@@ -6,9 +6,8 @@ description: Genezio Analytics is a built-in feature in the genezio CLI tool tha
 # Analytics
 
 <head>
-  <title>Analytics</title>
+  <title>Analytics | Genezio Documentation</title>
 </head>
-
 ### Introduction to Genezio Analytics
 
 Genezio Analytics is a built-in feature in the genezio CLI tool that gathers telemetry and analytics data. This data helps us understand how genezio is being utilized by our users, identifies potential issues, and allows us to make data-driven improvements to enhance the overall user experience.

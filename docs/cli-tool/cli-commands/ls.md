@@ -6,9 +6,8 @@ description: Master the “genezio ls” command to list all linked projects in 
 # genezio list
 
 <head>
-  <title>genezio list CLI Command</title>
+  <title>genezio list CLI Command | Genezio Documentation</title>
 </head>
-
 ### Usage
 
 `genezio list <identifier> [-l | --long-listed] [--logLevel <logLevel>] [-h | --help]`

@@ -8,9 +8,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 # Troubleshooting
 
 <head>
-  <title>Troubleshooting</title>
+  <title>Troubleshooting | Genezio Documentation</title>
 </head>
-
 Collection of frequently asked questions with ideas on how to troubleshoot and solve them.
 
 ### I am receiving `SyntaxError: Cannot use import statement outside a module`
@@ -23,12 +22,13 @@ SyntaxError: Cannot use import statement outside a module
 
 The solution is to add the line `"type": "module"` in `package.json`.
 
-### I am receiving ``OverwriteModelError: Cannot overwrite `Model` model once compiled``
+### I am receiving `` OverwriteModelError: Cannot overwrite `Model` model once compiled ``
 
 This is a known Mongoose error. The fix is to add this line when you are exporting your model:
 
 ```javascript
-export const Model = mongoose.models.Model || mongoose.model("Model", modelSchema);
+export const Model =
+  mongoose.models.Model || mongoose.model("Model", modelSchema);
 ```
 
 ### In Test Interface `Couldn't connect to port 8083`

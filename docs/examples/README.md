@@ -6,9 +6,8 @@ description: Explore a variety of Genezio examples for JavaScript, TypeScript, D
 # Examples
 
 <head>
-  <title>Projects Examples</title>
+  <title>Projects Examples | Genezio Documentation</title>
 </head>
-
 This section contains a list of examples on how to use `genezio`.
 
 Each example is open-source and it makes a good template to start your project from. You can find more details on how to use and deploy wach example in it's dedicated section.
@@ -68,11 +67,11 @@ Each example is open-source and it makes a good template to start your project f
 
 The support for Dart is newly launched and still in experimental mode. Don't hesitate to contact us on the [support chat](https://app.genez.io) or on our [Discord server](https://discord.com/invite/uc9H5YKjXv) to help you out if you encounter any problems.
 
-| Example                                         | Short Description                                     |
-| ----------------------------------------------- | ----------------------------------------------------- |
-| [Todo List](dart/todo-list)                     | A fullstack Dart/Flutter todo list application        |
-| [Todo List with React](dart/todo-list-react)    | A todo list application                               |
-| [Chat App](dart/chatbot-openai)                 | A chat app built with Dart, Flutter, Mongo and OpenAI |
+| Example                                      | Short Description                                     |
+| -------------------------------------------- | ----------------------------------------------------- |
+| [Todo List](dart/todo-list)                  | A fullstack Dart/Flutter todo list application        |
+| [Todo List with React](dart/todo-list-react) | A todo list application                               |
+| [Chat App](dart/chatbot-openai)              | A chat app built with Dart, Flutter, Mongo and OpenAI |
 
 ### **Kotlin**
 
