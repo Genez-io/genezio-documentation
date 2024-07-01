@@ -51,7 +51,7 @@ yamlVersion: 2
 
 -   ### How do I set environment variables for my Next.js application?
 
-    Environment variales for a Next.js project hosted on Genezio are set in the same way as any other Genezio project. Visit the `Environment Variables` tab in the project dashboard to set your environment variables.
+    Environment variables for a Next.js project hosted on Genezio are set in the same way as any other Genezio project. Visit the `Environment Variables` tab in the project dashboard to set your environment variables.
 
 -   ### How do I test locally?
 
