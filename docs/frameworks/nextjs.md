@@ -47,7 +47,7 @@ yamlVersion: 2
 
     <figure style={{textAlign:"center"}}><img style={{cursor:"pointer"}} src={useBaseUrl("/img/frameworks/nextjs/deployed_functions.png")} alt=""/><figcaption>Each Next.js project can use one or more serverless functions</figcaption></figure>
 
-    Usually the main logic of your application is deployed in the serverless function named `function-server`. Check the logs of this function to see the output of your application.
+    Usually, the main logic of your application is deployed in the serverless function named `function-server`. Check the logs of this function to see the output of your application.
 
 -   ### How do I set environment variables for my Next.js application?
 
