@@ -6,9 +6,8 @@ description: Learn to create a Shopping Cart example with TypeScript. Our compre
 # Shopping Cart
 
 <head>
-  <title>Shopping Cart Example with TypeScript</title>
+  <title>Shopping Cart Example with TypeScript | Genezio Documentation</title>
 </head>
-
 <!-- :::info -->
 
 :::info

@@ -6,9 +6,8 @@ description: Learn how to create webhooks with our JavaScript example. Genezio p
 # Webhook Example
 
 <head>
-  <title>JavaScript Webhook Example</title>
+  <title>JavaScript Webhook Example | Genezio Documentation</title>
 </head>
-
 <!-- :::info -->
 
 :::info

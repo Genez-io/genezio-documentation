@@ -6,9 +6,8 @@ description: Master the “genezio local” command to efficiently run and test 
 # genezio local
 
 <head>
-  <title>genezio local CLI Command</title>
+  <title>genezio local CLI Command | Genezio Documentation</title>
 </head>
-
 ### Usage
 
 `genezio local [-p, --port <port>] [--env <envFile>] [--install-deps] [--logLevel <logLevel>] [-h | --help]`

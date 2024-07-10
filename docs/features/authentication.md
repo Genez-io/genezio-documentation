@@ -15,9 +15,8 @@ import TabItem from '@theme/TabItem';
 # Authentication
 
 <head>
-  <title>Authentication</title>
+  <title>Authentication | Genezio Documentation</title>
 </head>
-
 You can use Genezio Authentication to allow the users to sign in into your application using multiple providers such as email and password or Google.
 Genezio provides an out-of-the-box authentication backend, support for Postgres and Mongo databases and a client SDK to easily integrate the authentication feature into your frontend.
 

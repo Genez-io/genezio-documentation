@@ -7,9 +7,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 # Create a React application with genezio authentication
 
 <head>
-  <title>Create a React application with genezio authentication</title>
+  <title>Create a React application with genezio authentication | Genezio Documentation</title>
 </head>
-
 In this tutorial, we'll walk through the process of adding authentication using email and password to an existing application. Here's a breakdown of what we'll cover:
 
 1. Preparing the setup, the project and enabling Genezio Authentication

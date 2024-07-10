@@ -5,9 +5,8 @@ description: This document provides information on how to upgrade your Genezio p
 # Upgrading to v1
 
 <head>
-  <title>Upgrading to v1</title>
+  <title>Upgrading to v1 | Genezio Documentation</title>
 </head>
-
 This document provides information on how to upgrade your Genezio project after the release of Genezio CLI v1.0.0.
 
 ## `genezio.yaml` version 2
@@ -16,10 +15,10 @@ The `genezio.yaml` configuration file format has been updated to version 2. We h
 
 The main changes are:
 
--   A new `yamlVersion` field has been added to the root of the file. It should always be set to `2`.
--   All backend fields have been grouped under one `backend` key.
--   All frontend fields have been grouped under one `frontend` key.
--   You can deploy multiple frontends by adding an array of frontends under the `frontend` key.
+- A new `yamlVersion` field has been added to the root of the file. It should always be set to `2`.
+- All backend fields have been grouped under one `backend` key.
+- All frontend fields have been grouped under one `frontend` key.
+- You can deploy multiple frontends by adding an array of frontends under the `frontend` key.
 
 We have added a migration tool in `genezio v1.0` to help you migrate your `genezio.yaml` file to version 2. To use the migration tool, you just need to run any `genezio` command:
 
@@ -36,15 +35,15 @@ region: us-east-1
 language: ts
 cloudProvider: genezio
 scripts:
-    preBackendDeploy: npm install
-    preFrontendDeploy: npm run install-prod-sdk && npm install && npm run build
-    preStartLocal: cd client && npm install && cd ../server && npm install
+  preBackendDeploy: npm install
+  preFrontendDeploy: npm run install-prod-sdk && npm install && npm run build
+  preStartLocal: cd client && npm install && cd ../server && npm install
 frontend:
-    path: ./client/dist
+  path: ./client/dist
 packageManager: npm
 workspace:
-    backend: server
-    frontend: client
+  backend: server
+  frontend: client
 ```
 
 ```yaml title="genezio.yaml v2"
@@ -52,22 +51,22 @@ name: todo-list-ts
 region: us-east-1
 yamlVersion: 2
 backend:
-    path: server
-    language:
-        name: ts
-        packageManager: npm
-    scripts:
-        deploy: npm install
-        local: npm install
-    cloudProvider: genezio
+  path: server
+  language:
+    name: ts
+    packageManager: npm
+  scripts:
+    deploy: npm install
+    local: npm install
+  cloudProvider: genezio
 frontend:
-    path: client
-    publish: dist
-    scripts:
-        deploy:
-            - npm run install-prod-sdk
-            - npm install
-        build: npm run build
+  path: client
+  publish: dist
+  scripts:
+    deploy:
+      - npm run install-prod-sdk
+      - npm install
+    build: npm run build
 ```
 
 If you still have questions about how to migrate your `genezio.yaml` file to version 2, please refer to the [Genezio Configuration File](../project-structure/genezio-configuration-file.md) documentation or check our [examples](../examples/README.md).
@@ -134,11 +133,12 @@ If you previously used the [`genezio-github-action`](/docs/integrations/github-a
 you have to modify your Github Actions to use the tag `@v1` instead of `@main`.
 
 Example: In a CI/CD environment, install genezio version `v1.x.x`:
+
 ```yaml title=".github/workflows/deploy.yml"
-        # diff-remove
-      - uses: Genez-io/genezio-github-action@main
-        # diff-add
-      - uses: Genez-io/genezio-github-action@v1
-        with:
-          token: ${{ secrets.GENEZIO_TOKEN }}
+# diff-remove
+- uses: Genez-io/genezio-github-action@main
+  # diff-add
+- uses: Genez-io/genezio-github-action@v1
+  with:
+    token: ${{ secrets.GENEZIO_TOKEN }}
 ```

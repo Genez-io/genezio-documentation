@@ -6,9 +6,8 @@ description: Explore the TypeScript & Angular To-Do List Example with Genezio. L
 # Todo List Angular
 
 <head>
-  <title>TypeScript & Angular Todo List Example</title>
+  <title>TypeScript & Angular Todo List Example | Genezio Documentation</title>
 </head>
-
 <!-- :::info -->
 
 :::info

@@ -6,9 +6,8 @@ description: This page will explain how to structure your genezio project when u
 # Getting Started
 
 <head>
-  <title>Getting Started with Go</title>
+  <title>Getting Started with Go | Genezio Documentation</title>
 </head>
-
 This page will explain how to structure your genezio project when using Go for the backend language.
 
 ### Project Structure

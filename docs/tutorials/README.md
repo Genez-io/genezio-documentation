@@ -8,9 +8,8 @@ import DocCardList from '@theme/DocCardList';
 # Tutorials
 
 <head>
-  <title>Tutorials</title>
+  <title>Tutorials | Genezio Documentation</title>
 </head>
-
 Here are the articles in this section:
 
 <DocCardList />

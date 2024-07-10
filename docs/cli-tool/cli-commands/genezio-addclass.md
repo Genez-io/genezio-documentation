@@ -6,9 +6,8 @@ description: Learn how to use the genezio addClass command to create and configu
 # genezio addClass
 
 <head>
-  <title>genezio addClass CLI Command</title>
+  <title>genezio addClass CLI Command | Genezio Documentation</title>
 </head>
-
 ### Usage
 
 `genezio addClass <classPath> <classType> [--logLevel <logLevel>] [-h | --help]`

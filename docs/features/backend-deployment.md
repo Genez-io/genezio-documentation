@@ -9,9 +9,8 @@ import Admonition from '@theme/Admonition';
 # Backend Deployment
 
 <head>
-  <title>Backend Deployment</title>
+  <title>Backend Deployment | Genezio Documentation</title>
 </head>
-
 Genezio offers a seamless and efficient solution for deploying backend logic. The platform leverages a function-as-a-service infrastructure, allowing users to deploy their backend classes easily with a simple command: `genezio deploy`.&#x20;
 
 :::tip
@@ -194,19 +193,19 @@ genezio deploy
 
 After deploying, you can make requests to the remote server by:
 
--   using the [testing functionality](/docs/features/testing) from the genezio dashboard
--   building a client application that uses the generated type safe SDK - such as a React app or a CLI
-    -   Check the [Generated Sdk](/docs/features/generated-sdk "mention") section to find out how to use the Genezio SDK in your project.
+- using the [testing functionality](/docs/features/testing) from the genezio dashboard
+- building a client application that uses the generated type safe SDK - such as a React app or a CLI
+  - Check the [Generated Sdk](/docs/features/generated-sdk "mention") section to find out how to use the Genezio SDK in your project.
 
 ## Next Steps
 
 Now let's see how to schedule the execution of a function as a cron job, or implement HTTP Webhooks:
 
--   [Cron Jobs](/docs/features/cron-methods)
--   [HTTP Webhooks](/docs/features/http-methods-webhooks)
+- [Cron Jobs](/docs/features/cron-methods)
+- [HTTP Webhooks](/docs/features/http-methods-webhooks)
 
 Now you are ready for some more advanced use cases:
 
--   [Web3 Application](https://genezio.com/blog/create-your-first-web3-app/)
--   [ChatGPT App](https://genezio.com/blog/create-your-first-app-using-chatgpt/)
--   [Shopping Cart Implementation](https://genezio.com/blog/implement-a-shopping-cart-using-typescript-redis-and-react/)
+- [Web3 Application](https://genezio.com/blog/create-your-first-web3-app/)
+- [ChatGPT App](https://genezio.com/blog/create-your-first-app-using-chatgpt/)
+- [Shopping Cart Implementation](https://genezio.com/blog/implement-a-shopping-cart-using-typescript-redis-and-react/)

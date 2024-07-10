@@ -22,6 +22,14 @@ const sidebars = {
     "getting-started",
     {
       type: "category",
+      label: "Frameworks",
+      link: { type: "doc", id: "frameworks/README" },
+      items: [
+        "frameworks/nextjs",
+      ]
+    },
+    {
+      type: "category",
       label: "Tutorials",
       link: { type: "doc", id: "tutorials/README" },
       items: [

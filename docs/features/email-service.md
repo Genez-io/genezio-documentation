@@ -8,9 +8,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 # Email Service
 
 <head>
-  <title>Email Service</title>
+  <title>Email Service | Genezio Documentation</title>
 </head>
-
 Genezio provides a way to send emails with a managed email service.
 
 ### Active the service for your project

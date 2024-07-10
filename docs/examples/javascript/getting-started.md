@@ -6,9 +6,8 @@ description: Get started with JavaScript through our detailed guide. From basics
 # Getting Started
 
 <head>
-  <title>Getting Started with JavaScript</title>
+  <title>Getting Started with JavaScript | Genezio Documentation</title>
 </head>
-
 <!-- :::info -->
 
 :::info

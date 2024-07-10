@@ -6,9 +6,8 @@ description: Explore the TypeScript To-Do List Example with Genezio. Learn to bu
 # Todo List
 
 <head>
-  <title>TypeScript Todo List Example</title>
+  <title>TypeScript Todo List Example | Genezio Documentation</title>
 </head>
-
 <!-- :::info -->
 
 :::info

@@ -6,9 +6,8 @@ description: Discover how to create fullstack or backend projects with the genez
 # genezio create
 
 <head>
-  <title>genezio create CLI Command</title>
+  <title>genezio create CLI Command | Genezio Documentation</title>
 </head>
-
 ### Usage
 
 #### Interactive

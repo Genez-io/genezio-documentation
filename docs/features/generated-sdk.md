@@ -9,9 +9,8 @@ import Admonition from '@theme/Admonition';
 # Generated SDK
 
 <head>
-  <title>Generated SDK</title>
+  <title>Generated SDK | Genezio Documentation</title>
 </head>
-
 Genezio generates a SDK to enable your clients to easily call the methods implemented in the deployed classes.
 
 ## Use the generated SDK in your client

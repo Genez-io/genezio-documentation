@@ -6,9 +6,8 @@ description: Learn how to use the genezio account command to view authenticated 
 # genezio account
 
 <head>
-  <title>genezio account CLI Command</title>
+  <title>genezio account CLI Command | Genezio Documentation</title>
 </head>
-
 ### Usage
 
 `genezio account [--logLevel <logLevel>] [-h | --help]`

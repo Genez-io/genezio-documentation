@@ -6,9 +6,8 @@ description: Explore our Projects Gallery showcasing innovative applications bui
 # Hall of Fame
 
 <head>
-  <title>Hall of Fame</title>
+  <title>Hall of Fame | Genezio Documentation</title>
 </head>
-
 Check out the projects built by the community for inspiration:
 
 - [Serverless WordPress](https://github.com/andreia-oca/serverless-wordpress) - deploy your own WordPress blog on a serverless infrastructure.

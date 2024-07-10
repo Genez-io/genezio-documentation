@@ -6,9 +6,8 @@ description: Explore the SQL & React To-Do List Example with Genezio. Learn to b
 # Todo List React, SQL
 
 <head>
-  <title>Todo List React, SQL</title>
+  <title>Todo List React, SQL | Genezio Documentation</title>
 </head>
-
 <!-- :::info -->
 
 :::info

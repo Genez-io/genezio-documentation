@@ -6,9 +6,8 @@ description: In this tutorial, you will learn how to integrate a Redis database 
 # Connect to Redis (Powered by Upstash)
 
 <head>
-  <title>Connect to Redis (Powered by Upstash)</title>
+  <title>Connect to Redis (Powered by Upstash) | Genezio Documentation</title>
 </head>
-
 In this tutorial, you will learn how to integrate a Redis database using Upstash in a genezio project.
 
 ## Common use cases of Redis

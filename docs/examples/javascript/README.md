@@ -6,9 +6,8 @@ description: Explore our collection of JavaScript projects to inspire your next 
 # JavaScript
 
 <head>
-  <title>JavaScript Projects</title>
+  <title>JavaScript Projects | Genezio Documentation</title>
 </head>
-
 The list of available JavaScript projects can be found below:
 
 | Example                                  | Short Description                                    |

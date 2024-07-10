@@ -6,9 +6,8 @@ description: Genezio supports out-of-the-box easy to use integrations with the f
 # Integrations
 
 <head>
-  <title>Integrations</title>
+  <title>Integrations | Genezio Documentation</title>
 </head>
-
 Genezio supports out-of-the-box easy to use integrations with the follwing tools. Check the dedicated integration page for each&#x20;
 
 ### Suggestions

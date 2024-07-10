@@ -6,9 +6,8 @@ description: Learn how GitHub Action integration can automate your deployments a
 # GitHub Action
 
 <head>
-  <title>GitHub Action</title>
+  <title>GitHub Action | Genezio Documentation</title>
 </head>
-
 This action sets up a `genezio` environment for using it in actions.
 
 ### Usage

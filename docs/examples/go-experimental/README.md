@@ -6,9 +6,8 @@ description: The support for Go is newly launched and still in experimental mode
 # Go (Experimental)
 
 <head>
-  <title>Go (Experimental)</title>
+  <title>Go (Experimental) | Genezio Documentation</title>
 </head>
-
 The support for Go is newly launched and still in experimental mode. Don't hesitate to contact us on the [support chat](https://app.genez.io) or on our [Discord server](https://discord.com/invite/uc9H5YKjXv) to help you out if you encounter any problems.
 
 | Example                            | Short Description                       |

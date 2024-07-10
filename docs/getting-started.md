@@ -10,9 +10,8 @@ import TabItem from '@theme/TabItem';
 # Getting Started
 
 <head>
-  <title>Getting Started with Genezio</title>
+  <title>Getting Started with Genezio | Genezio Documentation</title>
 </head>
-
 Welcome to the "Getting Started" guide! In this tutorial, you will learn how to write a backend class, export its methods, call them from the frontend code, and then deploy both the frontend and the backend locally for testing and pushing live to a staging environment.
 
 If you're not ready to start building yet, try Genezio in a ready-to-code environment:

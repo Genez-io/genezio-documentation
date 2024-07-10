@@ -6,9 +6,8 @@ description: Learn how to integrate MultiversX with TypeScript using our guide. 
 # MultiversX
 
 <head>
-  <title>MultiversX integration</title>
+  <title>MultiversX integration | Genezio Documentation</title>
 </head>
-
 <!-- :::info -->
 
 :::info

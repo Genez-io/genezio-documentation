@@ -6,9 +6,8 @@ description: Learn to build a TypeScript CRUD application with Genezio. Follow o
 # CRUD Application
 
 <head>
-  <title>CRUD Application</title>
+  <title>CRUD Application | Genezio Documentation</title>
 </head>
-
 <!-- :::info -->
 
 :::info
