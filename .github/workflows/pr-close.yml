@@ -11,6 +11,7 @@ on:
 
 jobs:
     cleanup_preview:
+        if: github.event.pull_request.head.repo.full_name == github.repository
         name: Cleanup Preview
         runs-on: ubuntu-latest
         steps:
