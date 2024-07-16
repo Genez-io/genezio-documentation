@@ -129,7 +129,7 @@ Variables can be used in the scripts. Check the [Usage](#how-to-use-variables-in
 ```yaml
 # Learn more about Genezio YAML at https://genezio.com/docs/project-structure/genezio-configuration-file/
 # The name of the project.
-name: (•◡•)project-name(•◡•)
+name: project-name
 # The region where the project is deployed.
 region: (•◡•)region(•◡•)
 # The version of the Genezio YAML configuration to parse.
