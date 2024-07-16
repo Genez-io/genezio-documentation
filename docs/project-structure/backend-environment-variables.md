@@ -62,7 +62,7 @@ For dedicated server repositories, the default path and name of the environment 
 <root-directory>/.env
 ```
 
-If the file used to store environment variables has a different name or is located to a different path, you must provide the new name/localtion using the `.env` flag:
+If the file used to store environment variables has a different name or is located to a different path, you must provide the new name/location using the `.env` flag:
 
 ```
 genezio local --env ./custom-path/.my-env
@@ -94,7 +94,7 @@ console.log("Print environment variable", myVariable);
   </TabItem>
   <TabItem  className="tab-item" value="dart" label="Dart">
     To access an environment variable use `Platform.environment['MY_VARIABLE']`
-    
+
     ```dart title="main.dart" showLineNumbers
     import 'dart:io';
 

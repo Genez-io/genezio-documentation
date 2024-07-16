@@ -110,8 +110,8 @@ This is the most conventional method of establishing a connection to a database,
 
 Other things that do not depend on connecting to a database are scheduling the execution of a function as a cron job, or implementing HTTP Webhooks:
 
-- [Cron Jobs](/docs/features/cron-methods)
-- [HTTP Webhooks](/docs/features/http-methods-webhooks)
+- [Cron Jobs](/docs/genezio-typesafe/cron-methods)
+- [HTTP Webhooks](/docs/genezio-typesafe/http-methods-webhooks)
 
 Also, you can find more details on deploying the backend and frontend here:
 

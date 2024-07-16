@@ -76,21 +76,33 @@ const sidebars = {
       label: "Features",
       link: { type: "doc", id: "features/README" },
       items: [
-        "features/type-safety",
         "features/backend-deployment",
         "features/frontend-deployment",
         "features/databases",
-        "features/authentication",
-        "features/rate-limiter",
         "features/testing",
         "features/deployment-environments",
-        "features/generated-sdk",
-        "features/http-methods-webhooks",
-        "features/cron-methods",
         "features/email-service",
         "features/custom-domain-configuration",
         "features/project-collaboration",
-        "features/check-genezio-dashboard"
+        "features/check-genezio-dashboard",
+        "features/genezio-deploy-button"
+      ]
+    },
+    {
+      type: "category",
+      label: "Genezio Typesafe",
+      link: { type: "doc", id: "genezio-typesafe/README" },
+      items: [
+        "genezio-typesafe/typesafety",
+        "genezio-typesafe/authentication",
+        "genezio-typesafe/rate-limiter",
+        "genezio-typesafe/generated-sdk",
+        "genezio-typesafe/http-methods-webhooks",
+        "genezio-typesafe/cron-methods",
+        "genezio-typesafe/genezio-decorators",
+        "genezio-typesafe/project-template",
+        "genezio-typesafe/genezio-context"
+
       ]
     },
     {
@@ -100,10 +112,7 @@ const sidebars = {
       items: [
         "project-structure/genezio-configuration-file",
         "project-structure/.genezioignore",
-        "project-structure/genezio-decorators",
-        "project-structure/backend-envinronment-variables",
-        "project-structure/project-template",
-        "project-structure/genezio-context"
+        "project-structure/backend-environment-variables",
       ]
     },
     {
@@ -143,7 +152,6 @@ const sidebars = {
       link: { type: "doc", id: "integrations/README" },
       items: [
         "integrations/github-action",
-        "integrations/sentry",
         "integrations/upstash-redis",
         "integrations/neon-postgres",
         "integrations/upstash-qstash"
@@ -188,28 +196,6 @@ const sidebars = {
             "examples/javascript/stripe-integration",
             "examples/javascript/html-example"
           ]
-        },
-        {
-          type: "category",
-          label: "Dart (Experimental)",
-          link: { type: "doc", id: "examples/dart/README" },
-          items: [
-            "examples/dart/todo-list",
-            "examples/dart/todo-list-react",
-            "examples/dart/chatbot-openai"
-          ]
-        },
-        {
-          type: "category",
-          label: "Kotlin (Experimental)",
-          link: { type: "doc", id: "examples/kotlin-experimental/README" },
-          items: ["examples/kotlin-experimental/getting-started"]
-        },
-        {
-          type: "category",
-          label: "Go (Experimental)",
-          link: { type: "doc", id: "examples/go-experimental/README" },
-          items: ["examples/go-experimental/getting-started"]
         }
       ]
     },
@@ -219,11 +205,9 @@ const sidebars = {
       link: { type: "doc", id: "learn-more/README" },
       items: [
         "learn-more/upgrading-to-v1",
-        "learn-more/deploy-to-genezio-button"
       ]
     },
     "troubleshooting",
-    "hall-of-fame",
     {
       type: "link",
       label: "Release Notes", // The link label

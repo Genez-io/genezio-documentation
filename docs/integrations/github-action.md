@@ -54,7 +54,7 @@ To find more details on how to use `genezio`, check out the official [documentat
 
 - [Getting started](/docs/getting-started)
 - [Integrations](/integrations)
-- [Environment variables](/docs/project-structure/backend-envinronment-variables)
+- [Environment variables](/docs/project-structure/backend-environment-variables)
 
 If you cannot find what you are looking for in the docs, don't hesitate to drop us a [GitHub issue](https://github.com/Genez-io/genezio/issues) or [start a discussion on Discord](https://discord.gg/uc9H5YKjXv).
 

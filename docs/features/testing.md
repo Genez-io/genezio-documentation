@@ -24,7 +24,7 @@ The testing dashboard is visually divided into 3 sections as depicted in the scr
 
 <figure style={{textAlign:"center", marginLeft:"0"}}><img style={{cursor:"pointer"}} src={useBaseUrl("/img/image (4).webp")} alt="alt" width="324"/><figcaption></figcaption></figure>
 
-The left part of the interface contains a card that will display your project in a menu-like structure. You can see your classes and their respective functions as collapsable items when you click each class. Clicking a function in the menu will open a tab for calling that specific function.
+The left part of the interface contains a card that will display your project in a menu-like structure. You can see your classes and their respective functions as collapsible items when you click each class. Clicking a function in the menu will open a tab for calling that specific function.
 
 At the top of the section, you have a refresh button next to the `My Workspace` label and a Dropdown for switching between `Local` and `Production` environments.
 
@@ -38,7 +38,7 @@ At the top of the section, you will see a green-bordered label, indicating that 
 
 The lower part of the section will be automatically filled with fields for each of your function's parameters. You can pass any value as well as select the type of each parameter, choosing from `Primitive` (any string, number, or boolean), `Object` and `Array` (those 2 have to be valid JSONs).
 
-Your most recent functions are organised in tabs that you can select, close, and drag around. The active tab will always be underlined with a purple line.&#x20;
+Your most recent functions are organized in tabs that you can select, close, and drag around. The active tab will always be underlined with a purple line.&#x20;
 
 ### Response Section
 
@@ -71,7 +71,7 @@ You can also check the logs from the backend in the logs section:
 <!-- :::info -->
 
 :::info
-Make sure to refresh the testing dashboard page after you make changes in your code to avoid unpredictable behaviour.
+Make sure to refresh the testing dashboard page after you make changes in your code to avoid unpredictable behavior.
 :::
 
 <!-- ::: -->

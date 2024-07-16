@@ -40,7 +40,7 @@ Migrating your Express app to Genezio typically requires minimal changes. Our mi
 
 ### 1. Install genezio
 
-Use your prefered package manager to install genezio:
+Use your preferred package manager to install genezio:
 
 <Tabs>
   <TabItem className="tab-item" value="npm" label="npm">
@@ -264,7 +264,7 @@ You need to add `"type": "module"` in your `package.json` file.
 
 </div>
 </TabItem>
-  
+
 </Tabs>
 
 This code wraps your Express app with the `serverless-http` package and exports it as a handler for Genezio.
@@ -343,7 +343,7 @@ genezio deploy --env <path-to-your-env-file>
 You need to deploy your environment variables single time.
 After that, you can deploy your project without the `--env` flag.
 :::
-For more information about environment variables, you can check the [official documentation](/docs/project-structure/backend-envinronment-variables.md).
+For more information about environment variables, you can check the [official documentation](/docs/project-structure/backend-environment-variables.md).
 
 ## Test your app
 

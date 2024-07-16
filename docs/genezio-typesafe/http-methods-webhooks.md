@@ -20,7 +20,7 @@ With genezio decorators, you can set one or more of your methods to handle HTTP 
 
 A webhook/HTTP method is declared in the same way as any other genezio method, but it needs to fulfill the following requirements to be considered a webhook/HTTP method:
 
-- The method must be marked as `http` either using [decorators](/docs/project-structure/genezio-decorators) or the [`genezio.yaml` configuration](/docs/project-structure/genezio-configuration-file.md) file.
+- The method must be marked as `http` either using [decorators](/docs/genezio-typesafe/genezio-decorators) or the [`genezio.yaml` configuration](/docs/project-structure/genezio-configuration-file.md) file.
 - The method must have only one parameter of type [`GenezioHttpRequest`](#geneziohttprequest).
 - The method must return a [`GenezioHttpResponse`](#geneziohttpresponse) object.
 
@@ -113,7 +113,7 @@ Decorators are only supported in TypeScript, JavaScript and Go. If you are using
             - name: HandleSimplePlainRequest
               # Specify the `http` method type
               type: http
-    ``` 
+    ```
   </TabItem>
 </Tabs>
 

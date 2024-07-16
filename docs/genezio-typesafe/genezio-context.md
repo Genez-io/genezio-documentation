@@ -142,4 +142,4 @@ Here we can see that the `GnzContext` object was successfully populated with the
 
 ## More details
 
-If you want to learn more about how to use the `GnzContext` object, you can check out the [Authentication](/docs/features/authentication) and [Rate Limiter](/docs/features/rate-limiter) features. Both of these features use the `GnzContext` object to perform their operations.
+If you want to learn more about how to use the `GnzContext` object, you can check out the [Authentication](/docs/genezio-typesafe/authentication) and [Rate Limiter](/docs/genezio-typesafe/rate-limiter) features. Both of these features use the `GnzContext` object to perform their operations.
