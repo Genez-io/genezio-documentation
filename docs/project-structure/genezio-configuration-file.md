@@ -182,8 +182,8 @@ The functions that will be deployed to the cloud. This field can be omitted if t
   The type of the function. The default value is `aws`.
 ### Backend with `functions` deployment
 ```yaml
-name: (•◡•)project-name(•◡•)
-region: (•◡•)region(•◡•)
+name: project-name
+region: us-east-1
 yamlVersion: 2
 backend:
     path: .
