@@ -131,7 +131,7 @@ Variables can be used in the scripts. Check the [Usage](#how-to-use-variables-in
 # The name of the project.
 name: project-name
 # The region where the project is deployed.
-region: (•◡•)region(•◡•)
+region: us-east-1
 # The version of the Genezio YAML configuration to parse.
 yamlVersion: 2
 backend:
