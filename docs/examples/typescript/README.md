@@ -23,4 +23,4 @@ The list of available TypeScript projects can be found below:
 | [CRUD App](./crud-application)             | A user management CRUD app built with NodeJs, React and Postgres |
 | [Trivia App](./trivia-application)         | A trivia app built with NodeJs, React and Prisma                 |
 | [Multiversx App](./multiversx-integration) | An app that checks the balance of a wallet                       |
-| [Sopping Cart App](./shopping-cart)        | A shopping cart feature built with NodeJs, React and Redis       |
+| [Shopping Cart App](./shopping-cart)        | A shopping cart feature built with NodeJs, React and Redis       |
