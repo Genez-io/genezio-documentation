@@ -9,9 +9,9 @@ description: Learn how to configure your Genezio project using the genezio.yaml 
 </head>
 The `genezio.yaml` file is a configuration file that contains all the settings for deploying your project. It is a YAML file that should be located at the root of your project.
 
-## Reference
+# Reference
 
-### `name`: `string` **Required**
+## `name`: `string` **Required**
 
 The name of the project. It is used to identify the project after deployment.
 
@@ -19,8 +19,12 @@ Restrictions:
 
 - Unique per account
 - Must start with a letter and can only contain letters, numbers, and hyphens.
+```yaml
+# The name of the project.
+name: project-name
+```
 
-### `region`: `string` **Optional**
+## `region`: `string` **Optional**
 
 The region where the project will be deployed. If not specified, the default region is `us-east-1`.
 
@@ -30,14 +34,21 @@ The supported regions are:
 | -------------- | ------------------ |
 | `us-east-1`    | US, North Virginia |
 | `eu-central-1` | Europe, Frankfurt  |
-
-### `yamlVersion`: `number` **Required**
+```yaml
+# The region where the project is deployed. Available regions: us-east-1, eu-central-1
+region: us-east-1
+```
+## `yamlVersion`: `number` **Required**
 
 The version of the genezio YAML file format. The latest version is `2`.
 
 Old format versions may not be supported by latest releases of the Genezio CLI.
+```yaml
+# The version of the Genezio YAML configuration to parse.
+yamlVersion: 2
+```
 
-### `backend`: `Object` **Optional**
+## `backend`: `Object` **Optional**
 
 The backend configuration. This field can be omitted if the project does not have a backend.
 
@@ -114,6 +125,30 @@ Variables can be used in the scripts. Check the [Usage](#how-to-use-variables-in
 - `local`: `string` | `string[]` **Optional**
 
   A general purpose script that runs before starting the local testing environment.
+### Basic `backend` deployment
+```yaml title="genezio.yaml
+# The name of the project.
+name: project-name
+# The region where the project is deployed.
+region: us-east-1
+# The version of the Genezio YAML configuration to parse.
+yamlVersion: 2
+backend:
+  # The root directory of the backend.
+  path: .
+  # Information about the backend's programming language.
+  language:
+    # The name of the programming language.
+    name: ts
+    # The package manager used by the backend.
+    packageManager: npm
+  # Scripts are running in the specified `path` directory.
+  scripts:
+    # List of scripts to run before deploying the backend.
+    deploy: npm install
+    # List of scripts to run before starting `genezio local`.
+    local: npm install
+```
 
 #### `functions`: `Array` **Optional**
 
@@ -144,8 +179,38 @@ The functions that will be deployed to the cloud. This field can be omitted if t
 - `type`: `string` **Optional**
 
   The type of the function. The default value is `aws`.
+### Backend with `functions` deployment
+```yaml title="genezio.yaml
+# The name of the project.
+name: express-app
+# The region where the project is deployed. Available regions: us-east-1, eu-central-1
+region: us-east-1
+# The version of the Genezio YAML configuration to parse.
+yamlVersion: 2
+backend:
+  # The root directory of the backend.
+  path: ./
+  # Information about the backend's programming language.
+  language:
+    # The name of the programming language.
+    name: js
+    # The package manager used by the backend.
+    packageManager: npm
+  # Information about the backend's functions.
+  functions:
+    # The name (label) of the function.
+    - name: hello-world-express-app-function
+      # The path to the function's code.
+      path: ./
+      # The name of the function handler
+      handler: handler
+      # The entry point for the function.
+      entry: app.mjs
+      # The compatibility of the function handler.
+      type: aws
+```
 
-### `frontend`: `Object` | `Array` **Optional**
+## `frontend`: `Object` | `Array` **Optional**
 
 The frontend configuration. This field can be omitted if the project does not have a frontend.
 
@@ -204,6 +269,38 @@ Variables can be used in the scripts. Check the [Usage](#how-to-use-variables-in
 - `start`: `string` | `string[]` **Optional**
 
   A script that starts the frontend dev server. It runs only during local development.
+### Example of `frontend` deployment
+```yaml title="genezio.yaml
+# The name of the project.
+name: project-name
+# The region where the project is deployed.
+region: us-east-1
+# The version of the Genezio YAML configuration to parse.
+yamlVersion: 2
+# Information about the frontend, including the path, language, and publish directory.
+# It is optional. It can also be an array if there are multiple frontends you want to deploy.
+frontend:
+  # The folder where the frontend scripts will run.
+  path: .
+  # Specifies information about the SDK generation. If not specified, the SDK will not be generated for this frontend.
+  sdk:
+    # The language the SDK will be written in. Usually the same as the frontend language.
+    language: ts
+  # The directory that will be published to the CDN. It is relative to the `path` directory.
+  publish: dist
+  # Scripts are running in the specified `path` directory.
+  scripts:
+    # List of scripts to run before deploying the frontend.
+    deploy:
+      - npm install @genezio-sdk/${{projectName}}@1.0.0-${{stage}}
+      - npm install
+    # List of scripts that build your frontend before deployment. It should populate the specified `publish` directory.
+    build: npm run build
+    # List of scripts to run when starting the local development server.
+    start:
+      - npm install
+      - npm run dev
+```
 
 ## Usage
 
