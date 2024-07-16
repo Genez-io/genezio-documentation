@@ -285,8 +285,8 @@ frontend:
     build: npm run build
     # List of scripts to run when starting the local development server.
     start:
-      - npm install --silent
-      - npm run dev --silent
+      - npm install
+      - npm run dev
 ```
 
 ## Usage
