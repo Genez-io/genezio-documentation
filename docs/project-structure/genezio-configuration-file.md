@@ -140,7 +140,7 @@ backend:
   # Information about the backend's programming language.
   language:
     # The name of the programming language.
-    name: js
+    name: ts
     # The package manager used by the backend.
     packageManager: npm
   # Scripts are running in the specified `path` directory.
