@@ -12,7 +12,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 </head>
 ### Introduction to Upstash
 
-[Upstash](https://upstash.com/?utm_source=genezio+&utm_medium=documentation&utm_campaign=post) is a cutting-edge platform for modern developers seeking seamless data management in serverless and cloud-native applications. QStash is an HTTP based messaging and scheduling queueu solution for the serverless environments.
+[Upstash](https://upstash.com/?utm_source=genezio+&utm_medium=documentation&utm_campaign=post) is a cutting-edge platform for modern developers seeking seamless data management in serverless and cloud-native applications. QStash is an HTTP based messaging and scheduling queue solution for the serverless environments.
 
 ### Set up a queue with Qstash
 
@@ -32,7 +32,7 @@ Use the environment variables in your genezio project to publish to the Qstash q
 
 In the code snippet below `sendPing()` is the producer that will post information on the Qstash queue. Once there is data in the queue, the consumer - `ping()` - will be executed.
 
-To know which consumer should be called, Qstash needs a webhook URL. This is information will be available to you once the code is deployed and publicly available. To get the webhook URL you can either check the terminal output or the project dashboard for it.
+To know which consumer should be called, Qstash needs a webhook URL. This information will be available to you once the code is deployed and publicly available. To get the webhook URL you can either check the terminal output or the project dashboard for it.
 
 <!-- {% code title="index.ts" %} -->
 
@@ -118,13 +118,13 @@ And paste it into the environments variable page to set `QUEUE_WEBHOOK_URL` envi
 
 <figure style={{textAlign:"center", marginLeft:"0"}}><img style={{cursor:"pointer"}} src={useBaseUrl("/img/image (54).webp")} alt=""/><figcaption></figcaption></figure>
 
-To check more on how to manipulate environment variable, go to [backend-envinronment-variables](/docs/project-structure/backend-envinronment-variables "mention").
+To check more on how to manipulate environment variables, go to [backend-envinronment-variables](/docs/project-structure/backend-envinronment-variables "mention").
 
 ### Test locally with a Qstash queue
 
 To test your project locally, you have to create a file named `.env` and store the Upstash Qstash credentials there. This file should be in the root directory of your backend.
 
-Use the genezio [dashboard](https://app.genez.io) under `Integrations/Upstash Qstash` card to copy the Qstash credentials in your `.env` file.
+Use the Genezio [dashboard](https://app.genez.io) under `Integrations/Upstash Qstash` card to copy the Qstash credentials in your `.env` file.
 
 <!-- {% code title=".env" %} -->
 
@@ -137,7 +137,7 @@ QSTASH_NEXT_SIGNING_KEY=<next-siging-key>
 
 <!-- {% endcode %} -->
 
-To use QStash, the consumer webhook has to exposed online in order for QStash to forward data to it. Genezio doesn't yet support this for testing local webhooks. Hence, to expose a webhook online, you can use `ngrok`. The following command will expose the local genezio server which listens to 8083:
+To use QStash, the consumer webhook has to be exposed online in order for QStash to forward data to it. Genezio doesn't yet support this for testing local webhooks. Hence, to expose a webhook online, you can use `ngrok`. The following command will expose the local Genezio server which listens to 8083:
 
 ```bash
 ngrok http http://localhost:8083
