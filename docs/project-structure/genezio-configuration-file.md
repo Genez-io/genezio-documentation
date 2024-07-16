@@ -126,8 +126,7 @@ Variables can be used in the scripts. Check the [Usage](#how-to-use-variables-in
 
   A general purpose script that runs before starting the local testing environment.
 ### Basic `backend` deployment
-```yaml
-# Learn more about Genezio YAML at https://genezio.com/docs/project-structure/genezio-configuration-file/
+```yaml title="genezio.yaml
 # The name of the project.
 name: project-name
 # The region where the project is deployed.
@@ -181,7 +180,7 @@ The functions that will be deployed to the cloud. This field can be omitted if t
 
   The type of the function. The default value is `aws`.
 ### Backend with `functions` deployment
-```yaml
+```yaml title="genezio.yaml
 # The name of the project.
 name: express-app
 # The region where the project is deployed. Available regions: us-east-1, eu-central-1
@@ -271,8 +270,7 @@ Variables can be used in the scripts. Check the [Usage](#how-to-use-variables-in
 
   A script that starts the frontend dev server. It runs only during local development.
 ### Example of `frontend` deployment
-```yaml
-# Learn more about Genezio YAML at https://genezio.com/docs/project-structure/genezio-configuration-file/
+```yaml title="genezio.yaml
 # The name of the project.
 name: project-name
 # The region where the project is deployed.
