@@ -182,18 +182,33 @@ The functions that will be deployed to the cloud. This field can be omitted if t
   The type of the function. The default value is `aws`.
 ### Backend with `functions` deployment
 ```yaml
-name: project-name
+# The name of the project.
+name: express-app
+# The region where the project is deployed. Available regions: us-east-1, eu-central-1
 region: us-east-1
+# The version of the Genezio YAML configuration to parse.
 yamlVersion: 2
 backend:
-    path: .
-    language:
-        name: js
-    functions:
-        - name: hello
-          path: .
-          entry: hello.mjs
-          handler: handler
+  # The root directory of the backend.
+  path: ./
+  # Information about the backend's programming language.
+  language:
+    # The name of the programming language.
+    name: js
+    # The package manager used by the backend.
+    packageManager: npm
+  # Information about the backend's functions.
+  functions:
+    # The name (label) of the function.
+    - name: hello-world-express-app-function
+      # The path to the function's code.
+      path: ./
+      # The name of the function handler
+      handler: handler
+      # The entry point for the function.
+      entry: app.mjs
+      # The compatibility of the function handler.
+      type: aws
 ```
 
 ## `frontend`: `Object` | `Array` **Optional**
