@@ -5,10 +5,10 @@ description: Easily set up custom domains with Genezio. Learn about DNS configur
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-# Custom domain
+# Custom Domain
 
 <head>
-  <title>Custom domain | Genezio Documentation</title>
+  <title>Custom Domain | Genezio Documentation</title>
 </head>
 <!-- :::info -->
 
@@ -31,7 +31,7 @@ genezio works with both apex domains and subdomains.
 Example of supported types:
 
 - Apex domain - `test.com`
-- Custom domain - `custom.test.com`&#x20;
+- Custom Domain - `custom.test.com`
 - `www` domain/subdomain - `www.test.com`
 
 After you add a custom domain, we automatically configure the certificate also on all subdomains, including `www`, but you have to add in the DNS configuration the CNAME to use `www`.

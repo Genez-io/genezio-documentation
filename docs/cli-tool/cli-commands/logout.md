@@ -22,7 +22,7 @@ You must be authenticated to use this command.
 
 <!-- ::: -->
 
-This command logs out from the genezio infrastracture and removes the access tokens from `~/.geneziorc`.
+This command logs out from the genezio infrastructure and removes the access tokens from `~/.geneziorc`.
 
 ### Options
 

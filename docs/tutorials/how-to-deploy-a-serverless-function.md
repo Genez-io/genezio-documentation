@@ -184,7 +184,7 @@ genezio deploy --env <path-to-your-env-file>
 You need to deploy your environment variables single time.
 After that, you can deploy your project without the `--env` flag.
 :::
-For more information about environment variables, you can check the [official documentation](/docs/project-structure/backend-envinronment-variables.md).
+For more information about environment variables, you can check the [official documentation](/docs/project-structure/backend-environment-variables.md).
 
 ## Check the Deployed App
 

@@ -10,7 +10,21 @@ description: Access Genezio documentation to optimize your development. Find tut
 </head>
 Welcome to the Genezio documentation.
 
-Genezio is a powerful cloud platform designed for full-stack developers, offering auto-scalable backends and seamlessly connected frontends through a type-safe interface. Whether you're a seasoned developer or just getting started, Genezio has you covered.
+Genezio is a powerful function-as-a-service (FaaS) platform that makes deploying AWS Lambda-like functions a breeze. On top of the FaaS, it features a typesafe backend-as-a-service (BaaS), ensuring type-safe communication between your backend and frontend, which means fewer bugs and smoother development.
+
+With Genezio Typesafe, you get out-of-the-box authentication, easy project configuration using decorators, and built-in rate limiting. These tools streamline your workflow, so you can focus on coding and building great applications without the hassle. Whether you're a seasoned developer or just getting started, Genezio has you covered.
+
+### Genezio Functions
+
+Genezio Functions are the core of the Genezio platform, allowing developers to deploy and manage serverless functions with ease. These functions operate similarly to AWS Lambda, enabling you to run code in response to events without managing servers. With Genezio Functions, you focus on writing code and the platform handles the deployment and scales automatically.
+
+### Supported Frameworks
+
+Genezio supports a wide range of popular frameworks, making it easy to integrate and deploy your existing projects or start new ones with familiar tools. Here’s a look at some of the frameworks you can use with Genezio:
+
+- **Express.js:** Build web applications and APIs with the popular Node.js framework.
+- **Fastify:** Create fast and low overhead web applications with Fastify.
+- **Next.js:** Develop server-rendered React applications with Next.js.
 
 ### Start with Your Preferred Language
 
@@ -50,73 +64,10 @@ import GenezioUserDocCard from "../src/theme/GenezioUserDocCard";
 
 <GenezioUserDocCard type="getting-started"></GenezioUserDocCard>
 
-<!-- <table data-card-size="large" data-view="cards">
-  <tbody>
-    <tr>
-      <td>
-        <a href="getting-started">Getting Started</a>
-      </td>
-      <td>Start from here with genezio</td>
-    </tr>
-    <tr>
-      <td>
-        <a href="tutorials/">Tutorials</a>
-      </td>
-      <td>Explore our Tuorials</td>
-    </tr>
-  </tbody>
-</table> -->
-
 ### Features
 
 <GenezioUserDocCard type="features"></GenezioUserDocCard>
 
-<!-- <table data-card-size="large" data-view="cards">
-  <tbody>
-    <tr>
-      <td>
-        <a href="features/backend-deployment">Backend Deployment</a>
-      </td>
-      <td>Deploy your backend in a serverless infrastructure</td>
-    </tr>
-    <tr>
-      <td>
-        <a href="features/frontend-deployment">Frontend Deployment</a>
-      </td>
-      <td>Deploy your frontend</td>
-    </tr>
-    <tr>
-      <td>
-        <a href="features/http-methods-webhooks">Webhooks</a>
-      </td>
-      <td>Complete documentation on webhooks methods.</td>
-    </tr>
-    <tr>
-      <td>
-        <a href="features/cron-methods">Scheduled Methods</a>
-      </td>
-      <td>Deploy scheduled methods</td>
-    </tr>
-    <tr>
-      <td>
-        <a href="features/custom-domain-configuration">Custom domain</a>
-      </td>
-      <td>Set your own custom domain</td>
-    </tr>
-    <tr>
-      <td>
-        <a href="features/generated-sdk">Auto-generated SDK</a>
-      </td>
-      <td>Find out how to use the genezio-generated SDK</td>
-    </tr>
-  </tbody>
-</table> -->
-
 ### Examples
 
 <GenezioUserDocCard type="examples"></GenezioUserDocCard>
-
-<!--
-- [**TypeScript**](examples/typescript/)
-- [**Dart**](examples/dart/)
-- [**JavaScript**](examples/javascript/) -->

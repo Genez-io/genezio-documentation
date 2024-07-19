@@ -30,7 +30,7 @@ If you're not ready to start building yet, try Genezio in a ready-to-code enviro
 
 ## 1. Install genezio
 
-Use your prefered package manager to install genezio:
+Use your preferred package manager to install genezio:
 
 <Tabs>
   <TabItem className="tab-item" value="npm" label="npm">
@@ -276,8 +276,8 @@ Every application needs to handle user authentication and authorization. If you 
 
 Other things that do not depend on connecting to a database are scheduling the execution of a function as a cron job, or implementing HTTP Webhooks:
 
-- [Cron Jobs](/docs/features/cron-methods)
-- [HTTP Webhooks](/docs/features/http-methods-webhooks)
+- [Cron Jobs](/docs/genezio-typesafe/cron-methods)
+- [HTTP Webhooks](/docs/genezio-typesafe/http-methods-webhooks)
 
 Also, you can find more details on deploying the backend and frontend here:
 
