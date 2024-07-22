@@ -12,21 +12,13 @@ import TabItem from '@theme/TabItem';
 <head>
   <title>Getting Started with Genezio | Genezio Documentation</title>
 </head>
+
+
 Welcome to the "Getting Started" guide! In this tutorial, you will learn how to write a backend class, export its methods, call them from the frontend code, and then deploy both the frontend and the backend locally for testing and pushing live to a staging environment.
 
-If you're not ready to start building yet, try Genezio in a ready-to-code environment:
+You can easily start with from a template project in the [Genezio Dashboard](https://app.genez.io/new-project/).
 
-<div id="try-gitpod">
-
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/genez-io/genezio-examples)
-
-</div>
-
-<div id="try-codespaces">
-
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/genez-io/genezio-examples)
-
-</div>
+If you want to start testing Genezio in your own IDE/machine, you can follow the steps below.
 
 ## 1. Install genezio
 
@@ -81,7 +73,8 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 
 :::
 
-## 3. Create a blank project
+
+## 3. Create a Genezio Typesafe project
 
 Copy this command in your terminal to start from a blank template:
 
