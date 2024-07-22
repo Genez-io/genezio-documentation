@@ -30,9 +30,9 @@ In case some of your methods are of `type: http`, calling this command will retu
 
 If you execute this command without `--backend` or `--frontend` both the backend and the frontend will be deployed.
 
-If you executed this command with the `--backend` option, the backend code specified in the `genezio.yaml` configuration file will be deployed.&#x20;
+If you executed this command with the `--backend` option, the backend code specified in the `genezio.yaml` configuration file will be deployed.
 
-If you executed this command with the `--frontend` option, the frontend code specified in the `genezio.yaml` configuration file will be deployed.&#x20;
+If you executed this command with the `--frontend` option, the frontend code specified in the `genezio.yaml` configuration file will be deployed.
 
 `--install-deps`: Automatically install missing dependencies. By default this behavior is turned off.
 

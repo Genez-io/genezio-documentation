@@ -22,7 +22,7 @@ You must be authenticated to use this command.
 
 <!-- ::: -->
 
-This command deletes the genezio project with the specified `projectId` from the cloud infrastructure. If the `projectId` is not specified, the command will let you interactively choose a project from all of your deployed projects.&#x20;
+This command deletes the genezio project with the specified `projectId` from the cloud infrastructure. If the `projectId` is not specified, the command will let you interactively choose a project from all of your deployed projects.
 
 ### Arguments
 

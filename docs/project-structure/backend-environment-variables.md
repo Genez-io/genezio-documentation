@@ -28,7 +28,7 @@ Add the environment variables like a `<key, value>` pair. After adding all the e
 
 Note: You can also import environment variables from a file using `Import from .env` button.
 
-### Set environment variables using genezio CLI&#x20;
+### Set environment variables using genezio CLI
 
 You can load your environment variables when deploying `genezio` in the CLI by appending the following flag:
 
@@ -39,7 +39,7 @@ genezio deploy --env <your-env-file-path>
 <!-- :::info -->
 
 :::info
-Depending on your project's structure - a fullstack single repository or dedicated repositories for backend and frontend - be careful to provide the correct path to the file:&#x20;
+Depending on your project's structure - a fullstack single repository or dedicated repositories for backend and frontend - be careful to provide the correct path to the file:
 
 `--env .env` or `--env ./server/.env`.
 :::

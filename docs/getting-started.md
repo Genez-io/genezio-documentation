@@ -148,7 +148,7 @@ export class HelloWorldClass {
 <!-- {% endcode %} -->
 </div>
 
-## &#x20;5. Start the genezio local environment
+## 5. Start the genezio local environment
 
 Run `genezio local` to start the genezio backend locally together with the frontend.
 

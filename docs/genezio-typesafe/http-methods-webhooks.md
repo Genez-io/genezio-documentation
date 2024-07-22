@@ -125,7 +125,7 @@ To deploy your newly created class to the genezio infrastructure, use the follow
 genezio deploy
 ```
 
-Usually after the deployment, you need to provide the webhook URLs to the third-party APIs or services you want to connect to.&#x20;
+Usually after the deployment, you need to provide the webhook URLs to the third-party APIs or services you want to connect to.
 
 There are 2 places where you can find the webhook URLs for your deployed methods:
 
@@ -162,7 +162,7 @@ App Dashboard URL: https://app.genez.io/project/<projectId>/<projectEnvId>
 - **queryStringParameters - optional:** A dictionary that contains the query parameters.
 - **timeEpoch - required:** Timestamp when the request was made.
 - **rawBody - required:** A string with the unparsed body
-- **body - required:** An object that represents the request's body. If the value is JSON, the value of this variable is a JSON object. If the value is binary, the value of this variable is a Buffer. If the value is text, the value of this variable is also text.&#x20;
+- **body - required:** An object that represents the request's body. If the value is JSON, the value of this variable is a JSON object. If the value is binary, the value of this variable is a Buffer. If the value is text, the value of this variable is also text.
 
 ### GenezioHttpResponse
 
@@ -171,7 +171,7 @@ App Dashboard URL: https://app.genez.io/project/<projectId>/<projectEnvId>
 - **body - required:** An object that represents the response's body. The type of this variable can be Object, String, or Buffer.
 - **headers - optional:** A dictionary that contains the headers.
 - **statusCode - required:** The status code of the response.
-- **isBase64Encoded - optional:** This flag can be set to `true` or `false` to indicate if the `body` is base64 encoded. This flag is optional and can be omitted.&#x20;
+- **isBase64Encoded - optional:** This flag can be set to `true` or `false` to indicate if the `body` is base64 encoded. This flag is optional and can be omitted.
 
 ## Examples using webhooks
 

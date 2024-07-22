@@ -12,7 +12,7 @@ description: Discover how to create fullstack or backend projects with the genez
 
 #### Interactive
 
-`genezio create [--path <project-path>] [--logLevel <log-level>] [-h | --help]`&#x20;
+`genezio create [--path <project-path>] [--logLevel <log-level>] [-h | --help]`
 
 #### Fullstack
 

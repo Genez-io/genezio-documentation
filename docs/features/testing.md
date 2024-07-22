@@ -38,7 +38,7 @@ At the top of the section, you will see a green-bordered label, indicating that 
 
 The lower part of the section will be automatically filled with fields for each of your function's parameters. You can pass any value as well as select the type of each parameter, choosing from `Primitive` (any string, number, or boolean), `Object` and `Array` (those 2 have to be valid JSONs).
 
-Your most recent functions are organized in tabs that you can select, close, and drag around. The active tab will always be underlined with a purple line.&#x20;
+Your most recent functions are organized in tabs that you can select, close, and drag around. The active tab will always be underlined with a purple line.
 
 ### Response Section
 
@@ -56,7 +56,7 @@ Test your backend server in a friendly and easy-to-use graphic environment befor
 
 To access the testing dashboard, go to the genezio platform, select a deployed backend and click on the `Test Interface` button on the sidebar.
 
-You will be redirected to the testing dashboard where you can craft and send requests to the deployed backend.&#x20;
+You will be redirected to the testing dashboard where you can craft and send requests to the deployed backend.
 
 <figure style={{textAlign:"center", marginLeft:"0"}}><img style={{cursor:"pointer"}} src={useBaseUrl("/img/image (1) (1).webp")} alt=""/><figcaption></figcaption></figure>
 
@@ -157,7 +157,7 @@ Local testing from the testing dashboard is **NOT** supported on Safari
 
 <!-- ::: -->
 
-You can easily test your project using the dashboard without deploying it to the cloud.&#x20;
+You can easily test your project using the dashboard without deploying it to the cloud.
 
 After you run the `genezio local` command (learn more about it from [local](/docs/cli-tool/cli-commands/local "mention")), follow the link provided to you in your prompt or manually go to[ http://localhost:8083/explore](http://localhost:8083/explore)
 
@@ -165,7 +165,7 @@ You should see a green label indicating that your connection to the local server
 
 ## Troubleshooting
 
-Sometimes, you may see a red error message at the top instead of the green success label. Most likely that means your local server is running on a different port.&#x20;
+Sometimes, you may see a red error message at the top instead of the green success label. Most likely that means your local server is running on a different port.
 
 <figure style={{textAlign:"center", marginLeft:"0"}}><img style={{cursor:"pointer"}} src={useBaseUrl("/img/image (39).webp")} alt="Connection Failed"/><figcaption><p>Genezio Test Interface connection Failed</p></figcaption></figure>
 

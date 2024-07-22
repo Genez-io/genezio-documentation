@@ -62,7 +62,7 @@ You don't need to do any extra steps. You only add the 2 given CNAMEs and we wil
 
 ## Known limitations
 
-There are some known limitations on setting custom domains depending on the domain's provider. &#x20;
+There are some known limitations on setting custom domains depending on the domain's provider.
 
 Adding an apex domain such as `test.com` hosted on GoDaddy may encounter limitations during the DNS configuration. To address this, we recommend transferring the domain’s DNS settings to another DNS provider such as Cloudflare. For assistance, please contact our technical support team by sending an email to `contact@genez.io`.
 

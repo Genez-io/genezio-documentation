@@ -39,7 +39,7 @@ genezio deploy --stage development
 
 ## Subdomain Format
 
-The subdomain format for accessing the frontend depends on the environment name. This enables you to have a different frontend subdomain for each of your environments. You can easily test your project end-to-end on the same infrastructure before merging into production.&#x20;
+The subdomain format for accessing the frontend depends on the environment name. This enables you to have a different frontend subdomain for each of your environments. You can easily test your project end-to-end on the same infrastructure before merging into production.
 
 If the `stage` flag is specified the genezio subdomain format will be:
 
