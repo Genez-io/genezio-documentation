@@ -37,10 +37,10 @@ export class BackendService {
 ```
 
 :::info
-Note: The rate limiter will work only on asynchronous functions.  
+Note: The rate limiter will work only on asynchronous functions.
 :::
 :::info
-Important: The rate limiter decorator must be applied to a method where the first parameter is a `GnzContext` object, followed by the parameters you wish to pass to the method. Even if you won't explicitly use the `GnzContext` parameter, it must be there. This is because the context needs to be populated with the IP address of the request. This will be done automatically by the rate limiter decorator. To learn more about the `GnzContext` object, see the [documentation](/docs/project-structure/genezio-context)
+Important: The rate limiter decorator must be applied to a method where the first parameter is a `GnzContext` object, followed by the parameters you wish to pass to the method. Even if you won't explicitly use the `GnzContext` parameter, it must be there. This is because the context needs to be populated with the IP address of the request. This will be done automatically by the rate limiter decorator. To learn more about the `GnzContext` object, see the [documentation](/docs/genezio-typesafe/genezio-context)
 :::
 
 The rate limiter decorator takes two parameters:

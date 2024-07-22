@@ -44,7 +44,7 @@ There are two ways to declare a scheduled method:
 
     import "fmt"
 
-    // geenzio: deploy
+    // genezio: deploy
     type CronService struct {}
 
     func New() CronService {
@@ -102,7 +102,7 @@ For more details, check out an example using [scheduled methods](https://github.
 
 ## More details
 
-For more information on genezio decorators, check out [Genezio Decorators](/docs/project-structure/genezio-decorators).
+For more information on genezio decorators, check out [Genezio Decorators](/docs/genezio-typesafe/genezio-decorators).
 
 ## Next Steps
 

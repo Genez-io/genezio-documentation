@@ -15,7 +15,7 @@ Genezio generates a SDK to enable your clients to easily call the methods implem
 
 ## Use the generated SDK in your client
 
-Genezio generates a SDK by statically analysing the backend code and creating an Abstract Syntax Tree describing the deployed classes, methods, return types and parameters types.
+Genezio generates a SDK by statically analyzing the backend code and creating an Abstract Syntax Tree describing the deployed classes, methods, return types and parameters types.
 
 The SDK can be installed in your client as a NPM package by running:
 
@@ -27,7 +27,7 @@ The SDK can be installed in your client as a NPM package by running:
   </TabItem>
   <TabItem value="go" label="Go">
     Go currently does not support installing the SDK as a package. Instead, a `sdk` directory is generated in your frontend `path` directory.
-    From there, you can import the generated SDK as a local package. 
+    From there, you can import the generated SDK as a local package.
   </TabItem>
 </Tabs>
 
@@ -78,7 +78,7 @@ To start a local backend server on your machine, run:
 genezio local
 ```
 
-After executing `genezio local`, genezio will generate a SDK by statically analysing your deployed backend code.
+After executing `genezio local`, genezio will generate a SDK by statically analyzing your deployed backend code.
 
 <Tabs groupId="languages">
   <TabItem value="ts/js" label="TypeScript / JavaScript">

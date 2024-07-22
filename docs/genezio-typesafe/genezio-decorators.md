@@ -40,7 +40,7 @@ To use genezio decorators in **TypeScript** or **JavaScript**, you have to insta
 </Tabs>
 
 :::tip
-Unfortunately, not all programming languages support decorators. To compansate for this, genezio allows users to "annotate" their classes and methods using comments.
+Unfortunately, not all programming languages support decorators. To compensate for this, genezio allows users to "annotate" their classes and methods using comments.
 Those special comments are picked up automatically by genezio and have the same effect as a native decorator. This feature is available for the **Go** programming language.
 :::
 
@@ -52,7 +52,7 @@ It replaces the need of declaring the classes source file paths in the `genezio.
 
 <Tabs groupId="languages">
   <TabItem value="ts" label="TypeScript">
-It accepts a JSON parameter with the folowing type:
+It accepts a JSON parameter with the following type:
 
 ```ts
 {
@@ -86,7 +86,7 @@ export class HttpHandle {
     // genezio: deploy <type>
     ```
     `<type>` can be `jsonrpc`, `http` or `cron`. If not specified, the default type is `jsonrpc`.
-    ```go title="httpHendle.go" showLineNumbers
+    ```go title="httpHandle.go" showLineNumbers
     package httpHandle
 
     import "github.com/Genez-io/genezio_types"
@@ -122,7 +122,7 @@ It replaces the need of declaring the methods in the `genezio.yaml` file.
 <Tabs groupId="languages">
     <TabItem value="ts" label="TypeScript">
 
-    It accepts a JSON parameter with the folowing type:
+    It accepts a JSON parameter with the following type:
 
     ```ts
     {
@@ -194,4 +194,4 @@ export class HelloWorld {
 
 ### More details
 
-With Genezio Decorators you can also deploy [HTTP Methods / Webhooks](/docs/features/http-methods-webhooks) or [Cron Methods](/docs/features/cron-methods).
+With Genezio Decorators you can also deploy [HTTP Methods / Webhooks](/docs/genezio-typesafe/http-methods-webhooks) or [Cron Methods](/docs/genezio-typesafe/cron-methods).

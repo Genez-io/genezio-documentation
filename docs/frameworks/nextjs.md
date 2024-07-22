@@ -12,6 +12,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Next.js is a React framework that allows you to build static and server-rendered web applications. It is a popular choice for developers who want to build modern web applications with React.
 
+:::tip
+Get started in no time with the [Next.js template](https://app.genez.io/nextjs-getting-started).
+:::
+
 ## Deployment
 
 To deploy a Next.js application with Genezio, all you need to do is to run the following command in the root directory of your project:

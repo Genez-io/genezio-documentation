@@ -5,10 +5,10 @@ description: To check information about all of your deployed projects, you can o
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-# Genezio dashboard
+# Genezio Dashboard
 
 <head>
-  <title>Genezio dashboard | Genezio Documentation</title>
+  <title>Genezio Dashboard | Genezio Documentation</title>
 </head>
 To check information about all of your deployed projects, you can open a browser and navigate to the [genezio dashboard](https://app.genez.io/dashboard)[.](https://app.genez.io/dashboard)
 
@@ -20,5 +20,5 @@ On the dashboard, you can interact with your projects as follows:
 - Add integrations on your project such as monitoring, databases, queues. Learn more [here](/docs/integrations/).
 - Configure a custom domain for your frontend. Learn more [here](/docs/features/custom-domain-configuration).
 - Monitor your project and check logs for each deployed class.
-- Configure environment variables. Learn more [here](/docs/project-structure/backend-envinronment-variables).
+- Configure environment variables. Learn more [here](/docs/project-structure/backend-environment-variables).
 - Delete your project when you no longer need it.

@@ -28,7 +28,7 @@ Add the environment variables like a `<key, value>` pair. After adding all the e
 
 Note: You can also import environment variables from a file using `Import from .env` button.
 
-### Set environment variables using genezio CLI&#x20;
+### Set environment variables using genezio CLI
 
 You can load your environment variables when deploying `genezio` in the CLI by appending the following flag:
 
@@ -39,7 +39,7 @@ genezio deploy --env <your-env-file-path>
 <!-- :::info -->
 
 :::info
-Depending on your project's structure - a fullstack single repository or dedicated repositories for backend and frontend - be careful to provide the correct path to the file:&#x20;
+Depending on your project's structure - a fullstack single repository or dedicated repositories for backend and frontend - be careful to provide the correct path to the file:
 
 `--env .env` or `--env ./server/.env`.
 :::
@@ -62,7 +62,7 @@ For dedicated server repositories, the default path and name of the environment 
 <root-directory>/.env
 ```
 
-If the file used to store environment variables has a different name or is located to a different path, you must provide the new name/localtion using the `.env` flag:
+If the file used to store environment variables has a different name or is located to a different path, you must provide the new name/location using the `.env` flag:
 
 ```
 genezio local --env ./custom-path/.my-env
@@ -94,7 +94,7 @@ console.log("Print environment variable", myVariable);
   </TabItem>
   <TabItem  className="tab-item" value="dart" label="Dart">
     To access an environment variable use `Platform.environment['MY_VARIABLE']`
-    
+
     ```dart title="main.dart" showLineNumbers
     import 'dart:io';
 

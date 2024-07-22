@@ -20,7 +20,7 @@ By running this command without any access token, the genezio dashboard will be 
 
 If the authentication is successful, `genezio` automatically adds a genezio token to the keychain.
 
-If this command is executed using an access token, the token will be saved in the file `~/.generiorc` and it will be used for all the future commands. New access tokens can be [generated from the dashboard](https://app.genez.io/settings/tokens), as well.&#x20;
+If this command is executed using an access token, the token will be saved in the file `~/.generiorc` and it will be used for all the future commands. New access tokens can be [generated from the dashboard](https://app.genez.io/settings/tokens), as well.
 
 Access tokens can also be used in CI/CD pipelines or in remote environments where you don't have a browser to use for the login process.
 

@@ -11,7 +11,7 @@ import Admonition from '@theme/Admonition';
 <head>
   <title>Backend Deployment | Genezio Documentation</title>
 </head>
-Genezio offers a seamless and efficient solution for deploying backend logic. The platform leverages a function-as-a-service infrastructure, allowing users to deploy their backend classes easily with a simple command: `genezio deploy`.&#x20;
+Genezio offers a seamless and efficient solution for deploying backend logic. The platform leverages a function-as-a-service infrastructure, allowing users to deploy their backend classes easily with a simple command: `genezio deploy`.
 
 :::tip
 You can deploy classes written in TypeScript, JavaScript, Go (experimental) and Dart (experimental).
@@ -113,7 +113,7 @@ The `genezio.yaml` configuration file is the file that genezio uses to understan
     ```
 
     <Admonition type="tip">
-    The `classes` field can be omitted if the classes are decorated with `@GenezioDeploy()`. Learn more about decorators in the [Decorators](/docs/project-structure/genezio-decorators "mention") section.
+    The `classes` field can be omitted if the classes are decorated with `@GenezioDeploy()`. Learn more about decorators in the [Decorators](/docs/genezio-typesafe/genezio-decorators "mention") section.
 
     If a class is neither decorated or specified in the `genezio.yaml` file, it will not be deployed.
     </Admonition>
@@ -171,7 +171,7 @@ The `genezio.yaml` configuration file is the file that genezio uses to understan
     ```
 
     <Admonition type="tip">
-    The `classes` field can be omitted if the classes are decorated with `genezio: deploy`. Learn more about decorators in the [Decorators](/docs/project-structure/genezio-decorators "mention") section.
+    The `classes` field can be omitted if the classes are decorated with `genezio: deploy`. Learn more about decorators in the [Decorators](/docs/genezio-typesafe/genezio-decorators "mention") section.
 
     If a class is neither decorated or specified in the `genezio.yaml` file, it will not be deployed.
     </Admonition>
@@ -195,14 +195,14 @@ After deploying, you can make requests to the remote server by:
 
 - using the [testing functionality](/docs/features/testing) from the genezio dashboard
 - building a client application that uses the generated type safe SDK - such as a React app or a CLI
-  - Check the [Generated Sdk](/docs/features/generated-sdk "mention") section to find out how to use the Genezio SDK in your project.
+  - Check the [Generated Sdk](/docs/genezio-typesafe/generated-sdk "mention") section to find out how to use the Genezio SDK in your project.
 
 ## Next Steps
 
 Now let's see how to schedule the execution of a function as a cron job, or implement HTTP Webhooks:
 
-- [Cron Jobs](/docs/features/cron-methods)
-- [HTTP Webhooks](/docs/features/http-methods-webhooks)
+- [Cron Jobs](/docs/genezio-typesafe/cron-methods)
+- [HTTP Webhooks](/docs/genezio-typesafe/http-methods-webhooks)
 
 Now you are ready for some more advanced use cases:
 

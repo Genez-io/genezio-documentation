@@ -1,12 +1,24 @@
 ---
-sidebar_position: 1
+description: Learn how to deploy a Express.js application with Genezio.
 ---
 
 import Tabs from '@theme/Tabs';
 
 import TabItem from '@theme/TabItem';
 
-# How to Deploy an Express.js App
+# Express.js
+
+<head>
+    <title>Express.js | Genezio Documentation</title>
+</head>
+
+Express.js is a popular Node.js web application framework that simplifies the development of server-side applications. It provides a robust set of features for building web servers and APIs.
+
+:::tip
+Get started in no time with the [Express.js template](https://app.genez.io/express-getting-started).
+:::
+
+# Deployment
 
 In this tutorial, you will learn how to deploy an existing Express.js app using Genezio, a serverless deployment platform that simplifies app management and reduces costs. We'll cover the benefits, answer common questions, and provide detailed deployment steps.
 
@@ -40,7 +52,7 @@ Migrating your Express app to Genezio typically requires minimal changes. Our mi
 
 ### 1. Install genezio
 
-Use your prefered package manager to install genezio:
+Use your preferred package manager to install genezio:
 
 <Tabs>
   <TabItem className="tab-item" value="npm" label="npm">
@@ -264,7 +276,7 @@ You need to add `"type": "module"` in your `package.json` file.
 
 </div>
 </TabItem>
-  
+
 </Tabs>
 
 This code wraps your Express app with the `serverless-http` package and exports it as a handler for Genezio.
@@ -343,7 +355,7 @@ genezio deploy --env <path-to-your-env-file>
 You need to deploy your environment variables single time.
 After that, you can deploy your project without the `--env` flag.
 :::
-For more information about environment variables, you can check the [official documentation](/docs/project-structure/backend-envinronment-variables.md).
+For more information about environment variables, you can check the [official documentation](/docs/project-structure/backend-environment-variables.md).
 
 ## Test your app
 

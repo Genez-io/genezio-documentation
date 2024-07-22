@@ -143,7 +143,7 @@ frontend:
     npm install @genezio-sdk/<project-name>@1.0.0-<environment>
     ```
 
-    This command will fetch the SDK from a private registry hosted on the genezio platform for you. For more information, check the [Generated SDK](../features/generated-sdk) section.
+    This command will fetch the SDK from a private registry hosted on the genezio platform for you. For more information, check the [Generated SDK](/docs/genezio-typesafe/generated-sdk) section.
 
   </TabItem>
   <TabItem value="Other" label="Other supported languages">
@@ -180,7 +180,7 @@ frontend:
   publish: dist
 ```
 
-For more details on the genezio generated SDK, check out the section [Generated Sdk](../features/generated-sdk).
+For more details on the genezio generated SDK, check out the section [Generated Sdk](/docs/genezio-typesafe/generated-sdk).
 
 To ignore specific files while locally testing your project, you can use [.genezioignore](.genezioignore).
 

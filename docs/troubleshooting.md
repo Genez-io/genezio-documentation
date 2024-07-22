@@ -37,7 +37,7 @@ Sometimes, you may see a red error message at the top instead of the green `Succ
 
 <figure style={{textAlign:"center", marginLeft:"0"}}><img style={{cursor:"pointer"}} src={useBaseUrl("img/image (39).webp")} alt="Connection Failed"/><figcaption><p>Genezio Test Interface connection Failed</p></figcaption></figure>
 
-To establish the connection, verify on which port your server is running and fill that port in the provided input, the click `Connect` (or press Enter). &#x20;
+To establish the connection, verify on which port your server is running and fill that port in the provided input, the click `Connect` (or press Enter).
 
 ### When executing `genezio local` reloads infinitely
 
@@ -47,7 +47,7 @@ To establish the connection, verify on which port your server is running and fil
 
 You are probably trying to use the generated SDK in a browser environment, but in `genezio.yaml` is configured to run in `node` cli environment. To change that. you will need to change the `runtime` option under `sdk.options` from `node` to `browser` in `genezio.yaml`.
 
-### TS1192: Module '@types/bcryptjs/index' has no default export&#x20;
+### TS1192: Module '@types/bcryptjs/index' has no default export
 
 You have to add the following lines into your `tsconfig.json`:
 
@@ -71,7 +71,7 @@ You have to add the following lines into your `tsconfig.json`:
 
 ### genezio local doesn't reload the code changes <a href="#dns-misconfiguration" id="dns-misconfiguration"></a>
 
-`genezio local` watches for files changes inside project directory. If your project directory path contains `(` or has `~` at the end of the path, then genezio local will stop watching for changes in the project.&#x20;
+`genezio local` watches for files changes inside project directory. If your project directory path contains `(` or has `~` at the end of the path, then genezio local will stop watching for changes in the project.
 
 This is a known issue with the `chokidar` library used for watching files.
 

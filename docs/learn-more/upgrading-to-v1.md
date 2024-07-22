@@ -75,7 +75,7 @@ If you still have questions about how to migrate your `genezio.yaml` file to ver
 
 In the Genezio CLI v1.0.0 release, we updated the generated SDK NPM package name by removing `region` for a more intuitive naming convention.
 
-For instance, if you have a project called `my-project` in the `us-east-1` region, creating the SDK before Genezio CLI v1.0 will result in an NPM package called `@genezio-sdk/my-project_us-east-1`. From Genezio CLI v1.0 onward, the package will be named `@genezio-sdk/my-project`, maintaining the same functionality while being more intuitiv
+For instance, if you have a project called `my-project` in the `us-east-1` region, creating the SDK before Genezio CLI v1.0 will result in an NPM package called `@genezio-sdk/my-project_us-east-1`. From Genezio CLI v1.0 onward, the package will be named `@genezio-sdk/my-project`, maintaining the same functionality while being more intuitive.
 
 We advise adopting the updated SDK naming convention. To migrate you have to do the following steps:
 

@@ -12,25 +12,17 @@ import TabItem from '@theme/TabItem';
 <head>
   <title>Getting Started with Genezio | Genezio Documentation</title>
 </head>
+
+
 Welcome to the "Getting Started" guide! In this tutorial, you will learn how to write a backend class, export its methods, call them from the frontend code, and then deploy both the frontend and the backend locally for testing and pushing live to a staging environment.
 
-If you're not ready to start building yet, try Genezio in a ready-to-code environment:
+You can easily start with from a template project in the [Genezio Dashboard](https://app.genez.io/new-project/).
 
-<div id="try-gitpod">
-
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/genez-io/genezio-examples)
-
-</div>
-
-<div id="try-codespaces">
-
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/genez-io/genezio-examples)
-
-</div>
+If you want to start testing Genezio in your own IDE/machine, you can follow the steps below.
 
 ## 1. Install genezio
 
-Use your prefered package manager to install genezio:
+Use your preferred package manager to install genezio:
 
 <Tabs>
   <TabItem className="tab-item" value="npm" label="npm">
@@ -81,7 +73,8 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 
 :::
 
-## 3. Create a blank project
+
+## 3. Create a Genezio Typesafe project
 
 Copy this command in your terminal to start from a blank template:
 
@@ -155,7 +148,7 @@ export class HelloWorldClass {
 <!-- {% endcode %} -->
 </div>
 
-## &#x20;5. Start the genezio local environment
+## 5. Start the genezio local environment
 
 Run `genezio local` to start the genezio backend locally together with the frontend.
 
@@ -276,8 +269,8 @@ Every application needs to handle user authentication and authorization. If you 
 
 Other things that do not depend on connecting to a database are scheduling the execution of a function as a cron job, or implementing HTTP Webhooks:
 
-- [Cron Jobs](/docs/features/cron-methods)
-- [HTTP Webhooks](/docs/features/http-methods-webhooks)
+- [Cron Jobs](/docs/genezio-typesafe/cron-methods)
+- [HTTP Webhooks](/docs/genezio-typesafe/http-methods-webhooks)
 
 Also, you can find more details on deploying the backend and frontend here:
 

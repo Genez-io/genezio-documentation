@@ -5,10 +5,10 @@ description: Easily set up custom domains with Genezio. Learn about DNS configur
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-# Custom domain
+# Custom Domain
 
 <head>
-  <title>Custom domain | Genezio Documentation</title>
+  <title>Custom Domain | Genezio Documentation</title>
 </head>
 <!-- :::info -->
 
@@ -31,7 +31,7 @@ genezio works with both apex domains and subdomains.
 Example of supported types:
 
 - Apex domain - `test.com`
-- Custom domain - `custom.test.com`&#x20;
+- Custom Domain - `custom.test.com`
 - `www` domain/subdomain - `www.test.com`
 
 After you add a custom domain, we automatically configure the certificate also on all subdomains, including `www`, but you have to add in the DNS configuration the CNAME to use `www`.
@@ -62,7 +62,7 @@ You don't need to do any extra steps. You only add the 2 given CNAMEs and we wil
 
 ## Known limitations
 
-There are some known limitations on setting custom domains depending on the domain's provider. &#x20;
+There are some known limitations on setting custom domains depending on the domain's provider.
 
 Adding an apex domain such as `test.com` hosted on GoDaddy may encounter limitations during the DNS configuration. To address this, we recommend transferring the domain’s DNS settings to another DNS provider such as Cloudflare. For assistance, please contact our technical support team by sending an email to `contact@genez.io`.
 
