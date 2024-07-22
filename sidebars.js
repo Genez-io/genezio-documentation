@@ -26,6 +26,7 @@ const sidebars = {
       link: { type: "doc", id: "frameworks/README" },
       items: [
         "frameworks/nextjs",
+        "frameworks/expressjs",
       ]
     },
     {
@@ -33,7 +34,6 @@ const sidebars = {
       label: "Tutorials",
       link: { type: "doc", id: "tutorials/README" },
       items: [
-        "tutorials/how-to-deploy-an-express-app",
         "tutorials/how-to-deploy-a-serverless-function",
         "tutorials/connect-to-postgres-powered-by-neon",
         "tutorials/connect-to-redis-powered-by-upstash",
