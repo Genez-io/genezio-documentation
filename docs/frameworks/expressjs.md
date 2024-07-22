@@ -14,6 +14,10 @@ import TabItem from '@theme/TabItem';
 
 Express.js is a popular Node.js web application framework that simplifies the development of server-side applications. It provides a robust set of features for building web servers and APIs.
 
+:::tip
+Get started in no time with the [Express.js template](https://app.genez.io/express-getting-started).
+:::
+
 # Deployment
 
 In this tutorial, you will learn how to deploy an existing Express.js app using Genezio, a serverless deployment platform that simplifies app management and reduces costs. We'll cover the benefits, answer common questions, and provide detailed deployment steps.
