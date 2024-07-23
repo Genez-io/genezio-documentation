@@ -32,7 +32,7 @@ const config = {
     defaultLocale: "en",
     locales: ["en"]
   },
-  plugins: ["docusaurus-plugin-hotjar"],
+  plugins: [""],
   presets: [
     [
       "classic",
