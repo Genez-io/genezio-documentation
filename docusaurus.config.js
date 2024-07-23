@@ -32,7 +32,7 @@ const config = {
     defaultLocale: "en",
     locales: ["en"]
   },
-  plugins: [""],
+  // plugins: [""],
   presets: [
     [
       "classic",
