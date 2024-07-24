@@ -132,6 +132,7 @@ nitro build --preset genezio
 ```
 ## 2. Personalize your generated `genezio.yaml` file
 By building your nitro app using the Genezio preset, a default `genezio.yaml` file will be Generated, which can be further adjusted for specific cases.
+
 This configuration file specifies the project name, deployment region, and details about the backend.
 - [***Read more about Genezio Configuration File***](/docs/project-structure/genezio-configuration-file/)
   
@@ -169,7 +170,7 @@ Run the following command in the terminal to start the Nitro.js app:
 </Tabs>
 Open a web browser and navigate to [http://localhost:8080](http://localhost:8080) to see the app running.
 
-## 4. Deploy your project
+## 5. Deploy your project
 
 Finally, deploy your project. A browser window will open, and you will be prompted to log in to your Genezio account and authorize the CLI to make the deployment.
 Run the following command in your terminal:
@@ -178,17 +179,28 @@ Run the following command in your terminal:
 genezio deploy
 ```
 
-If your application uses environment variables, you can deploy them using the following command:
+If your application use environment variables, you can deploy them using the following command:
 
 ```bash
 genezio deploy --env <path-to-your-env-file>
 ```
+
 :::info
-You need to deploy your environment variables a single time.
+You need to deploy your environment variables single time.
 After that, you can deploy your project without the `--env` flag.
 :::
 
 For more information about environment variables, you can check the [official documentation](/docs/project-structure/backend-environment-variables.md).
+
+## Test your app
+
+After deploying your application, you can test it to ensure it's running correctly. To verify that your Express.js app is working, open a web browser and navigate to the URL provided for your deployed function.
+
+This URL can be found in the deployment output under the `Functions Deployed` section.
+
+Additionally, you can monitor and manage your app through the [Genezio App Dashboard](https://app.genez.io/dashboard). The dashboard URL, also provided after deployment, allows you to access comprehensive views of your project's status and logs.
+
+You can find this URL in the deployment output under the `App Dashboard URL` section.
 
 ### Support <a href="#support" id="support"></a>
 
