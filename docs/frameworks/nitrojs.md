@@ -1,47 +1,15 @@
 ---
 description: Learn how to deploy a Nitro.js application with Genezio.
 ---
-
 import Tabs from '@theme/Tabs';
-
 import TabItem from '@theme/TabItem';
-
 # Nitro.js
-
 <head>
     <title>Nitro.js | Genezio Documentation</title>
 </head>
 
 Nitro.js is a modern framework for building server-side applications, designed to optimize performance and streamline development.
-It offers a comprehensive set of features for creating web servers and APIs, supporting multiple deployment targets. 
-
-# Deployment
-
-In this tutorial, you will learn how to deploy an existing Nitro.js app using Genezio, a serverless deployment platform that simplifies app management and reduces costs. We'll cover the benefits, answer common questions, and provide detailed deployment steps.
-
-## Why Use Genezio?
-
-### Benefits of Using Genezio
-
-1. **Faster Deployment**: Genezio optimizes the deployment process, significantly reducing the time it takes to get your app live.
-2. **Lower Costs**: Pay only for the resources you use, thanks to Genezio’s efficient infrastructure and scalable solutions.
-3. **Reliable and Scalable**: No longer worry about PM2 and Docker. You write the code, and Genezio seamlessly scales it across multiple cores.
-4. **Enhanced Security**: Built-in security features and automatic updates protect your app against the latest threats without additional effort.
-5. **Reduced Management Overhead**: Focus on developing your app instead of managing servers and routine maintenance tasks.
-6. **Easy Migration**: Obtain all these advantages with minimal code changes.
-
-### How Does Genezio Handle High Traffic?
-
-Genezio, being a Function as a Service (FaaS) platform, automatically scales your application based on traffic demands. It works by executing functions in response to events and can handle a large number of requests concurrently. This ensures your app remains responsive and performs well during traffic spikes.
-
-<!--
-### What Kind of Support Does Genezio Offer?
-
-Genezio provides 24/7 support for paid plans to assist with any questions or issues. Our dedicated support team ensures your app runs smoothly on our platform. -->
-
-### Do I Need to Modify My Nitro App Code?
-
-Migrating your Nitro app to Genezio typically requires minimal changes. Our migration guide provides detailed instructions for necessary compatibility adjustments.
+It offers a comprehensive set of features for creating web servers and APIs, supporting multiple deployment targets.
 
 ## Prerequisites
 
@@ -49,27 +17,27 @@ Migrating your Nitro app to Genezio typically requires minimal changes. Our migr
 
 Use your preferred package manager to install genezio:
 
-<Tabs>
+<Tabs groupId="packages">
   <TabItem className="tab-item" value="npm" label="npm">
-<div id="step1-install-npm">
-  ```
-  npm install genezio -g
-  ```
-  </div>
+      <div id="step1-install-npm">
+      ```
+      npm install genezio -g
+      ```
+      </div>
   </TabItem>
   <TabItem className="tab-item" value="pnpm" label="pnpm">
-  <div id="step1-install-pnpm">
-  ```
-  pnpm add -g genezio
-  ```
-  </div>
+      <div id="step1-install-pnpm">
+      ```
+      pnpm add -g genezio
+      ```
+      </div>
   </TabItem>
   <TabItem  className="tab-item" value="yarn" label="yarn">
-  <div id="step1-install-yarn">
-  ```
-  yarn add global genezio
-  ```
-  </div>
+      <div id="step1-install-yarn">
+      ```
+      yarn add global genezio
+      ```
+      </div>
   </TabItem>
 </Tabs>
 
@@ -79,41 +47,40 @@ If you don't have an Express.js app, you can create one using the following step
 
 <details>
   <summary>**Create a basic Nitro.js App**</summary>
-
+    
 ### 1. Initialize a New Nitro.js Project
 
 Run the following command to create a starter template:
 
-<Tabs>
+<Tabs groupId="packages">
   <TabItem className="tab-item" value="npm" label="npm">
-<div id="init-project-npm">
-  ```
-  npx giget@latest nitro nitro-app --install
-  ```
-  </div>
+      <div id="init-project-npm">
+      ```
+      npx giget@latest nitro nitro-app --install
+      ```
+      </div>
   </TabItem>
   
   <TabItem className="tab-item" value="pnpm" label="pnpm">
-  <div id="init-project-pnpm">
-  ```
-  pnpm dlx giget@latest nitro nitro-app --install
-  ```
-  </div>
+      <div id="init-project-pnpm">
+      ```
+      pnpm dlx giget@latest nitro nitro-app --install
+      ```
+      </div>
   </TabItem>
   
   <TabItem  className="tab-item" value="yarn" label="yarn">
-  <div id="init-project-yarn">
-  ```
-  yarn dlx giget@latest nitro nitro-app --install
-  ```
-  </div>
+      <div id="init-project-yarn">
+      ```
+      yarn dlx giget@latest nitro nitro-app --install
+      ```
+      </div>
   </TabItem>
 </Tabs>
 
 ```bash
 cd nitro-app
 ```
-
 ### 2. Create a new route
 
 Next, navigate to the `server` directory, and create a new `users.ts` file.
@@ -126,33 +93,31 @@ export default defineEventHandler((event) => {
   ];
 });
 ```
-
 ### 3. Test the Nitro.js App
 
 Run the following command to start the Nitro.js app:
-<Tabs>
+<Tabs groupId="packages">
   <TabItem className="tab-item" value="npm" label="npm">
-<div id="start-app-npm">
-  ```
-  npm run dev
-  ```
-  </div>
+      <div id="start-app-npm">
+      ```
+      npm run dev
+      ```
+      </div>
   </TabItem>
   
   <TabItem className="tab-item" value="pnpm" label="pnpm">
-  <div id="start-app-pnpm">
-  ```
-  pnpm dev
-  ```
-  </div>
+      <div id="start-app-pnpm">
+      ```
+      pnpm dev
+      ```
+      </div>
   </TabItem>
-  
   <TabItem  className="tab-item" value="yarn" label="yarn">
-  <div id="start-app-yarn">
-  ```
-  yarn dev
-  ```
-  </div>
+      <div id="start-app-yarn">
+      ```
+      yarn dev
+      ```
+      </div>
   </TabItem>
 </Tabs>
 Open a web browser and navigate to [http://localhost:8080](http://localhost:8080) to see the app running.
@@ -168,42 +133,38 @@ nitro build --preset genezio
 ## 2. Personalize your generated `genezio.yaml` file
 By building your nitro app using the Genezio preset, a default `genezio.yaml` file will be Generated, which can be further adjusted for specific cases.
 This configuration file specifies the project name, deployment region, and details about the backend.
-
-- [***Genezio Configuration File Documentation***](/docs/project-structure/genezio-configuration-file/)
-
+- [***Read more about Genezio Configuration File***](/docs/project-structure/genezio-configuration-file/)
+  
   :::info
 1. You might need to replace the `path` field with the path relative at **genezio.yaml** file.
 2. This example configuration works if **genezio.yaml** is in the same directory as your main application file.
    :::
-
 ## 3. Test Your App Locally
 
 Before deploying your app, you can test it locally to ensure it's working correctly.
 
 Run the following command in the terminal to start the Nitro.js app:
-<Tabs>
+<Tabs groupId="packages">
   <TabItem className="tab-item" value="npm" label="npm">
-<div id="start-app-npm">
-  ```
-  npm run dev
-  ```
-  </div>
+      <div id="start-app-npm">
+      ```
+      npm run dev
+      ```
+      </div>
   </TabItem>
-  
   <TabItem className="tab-item" value="pnpm" label="pnpm">
-  <div id="start-app-pnpm">
-  ```
-  pnpm dev
-  ```
-  </div>
+      <div id="start-app-pnpm">
+      ```
+      pnpm dev
+      ```
+      </div>
   </TabItem>
-  
   <TabItem  className="tab-item" value="yarn" label="yarn">
-  <div id="start-app-yarn">
-  ```
-  yarn dev
-  ```
-  </div>
+      <div id="start-app-yarn">
+      ```
+      yarn dev
+      ```
+      </div>
   </TabItem>
 </Tabs>
 Open a web browser and navigate to [http://localhost:8080](http://localhost:8080) to see the app running.
@@ -217,27 +178,17 @@ Run the following command in your terminal:
 genezio deploy
 ```
 
-If your application use environment variables, you can deploy them using the following command:
+If your application uses environment variables, you can deploy them using the following command:
 
 ```bash
 genezio deploy --env <path-to-your-env-file>
 ```
-
 :::info
 You need to deploy your environment variables a single time.
 After that, you can deploy your project without the `--env` flag.
 :::
+
 For more information about environment variables, you can check the [official documentation](/docs/project-structure/backend-environment-variables.md).
-
-## Test your app
-
-After deploying your application, you can test it to ensure it's running correctly. To verify that your Express.js app is working, open a web browser and navigate to the URL provided for your deployed function.
-
-This URL can be found in the deployment output under the `Functions Deployed` section.
-
-Additionally, you can monitor and manage your app through the [Genezio App Dashboard](https://app.genez.io/dashboard). The dashboard URL, also provided after deployment, allows you to access comprehensive views of your project's status and logs.
-
-You can find this URL in the deployment output under the `App Dashboard URL` section.
 
 ### Support <a href="#support" id="support"></a>
 
