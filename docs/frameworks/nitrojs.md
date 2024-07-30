@@ -43,7 +43,7 @@ Use your preferred package manager to install genezio:
 
 ### 2. Ensure you have an Nitro.js App
 
-If you don't have an Express.js app, you can create one using the following steps:
+If you don't have an Nitro.js app, you can create one using the following steps:
 
 <details>
   <summary>**Create a basic Nitro.js App**</summary>
@@ -85,7 +85,7 @@ cd nitro-app
 
 Next, navigate to the `server` directory, and create a new `users.ts` file.
 
-```typescript title="users.ts"
+```typescript title="server/routes/users.ts"
 export default defineEventHandler((event) => {
   return [
     { id: 1, name: "Alice" },
@@ -194,7 +194,7 @@ For more information about environment variables, you can check the [official do
 
 ## Test your app
 
-After deploying your application, you can test it to ensure it's running correctly. To verify that your Express.js app is working, open a web browser and navigate to the URL provided for your deployed function.
+After deploying your application, you can test it to ensure it's running correctly. To verify that your Nitro.js app is working, open a web browser and navigate to the URL provided for your deployed function.
 
 This URL can be found in the deployment output under the `Functions Deployed` section.
 
