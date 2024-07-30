@@ -121,6 +121,7 @@ Run the following command to start the Nitro.js app:
   </TabItem>
 </Tabs>
 Open a web browser and navigate to [http://localhost:8080](http://localhost:8080) to see the app running.
+
 Navigate to [http://localhost:8080/users](http://localhost:8080/users) to see the newly created route.
 </details>
 
@@ -131,13 +132,13 @@ Navigate to [http://localhost:8080/users](http://localhost:8080/users) to see th
 nitro build --preset genezio
 ```
 ## 2. Personalize your generated `genezio.yaml` file
-Building your nitro app using the Genezio preset will generate a default `genezio.yaml` file, which can be further adjusted for specific cases.
+Building your nitro app using the Genezio preset will generate a default `genezio.yaml` file if you don't already have one, which can be further adjusted for specific cases.
 
 This configuration file specifies the project name, deployment region, and details about the backend.
 - [***Read more about Genezio Configuration File***](/docs/project-structure/genezio-configuration-file/)
   
   :::info
-1. You might need to replace the `path` field with the path relative at **genezio.yaml** file.
+1. You might need to replace the `path` field with the path relative to the **genezio.yaml** file.
 2. This example configuration works if **genezio.yaml** is in the same directory as your main application file.
    :::
 ## 3. Test Your App Locally
