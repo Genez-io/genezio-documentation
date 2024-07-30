@@ -131,7 +131,7 @@ Navigate to [http://localhost:8080/users](http://localhost:8080/users) to see th
 nitro build --preset genezio
 ```
 ## 2. Personalize your generated `genezio.yaml` file
-By building your nitro app using the Genezio preset, a default `genezio.yaml` file will be Generated, which can be further adjusted for specific cases.
+Building your nitro app using the Genezio preset will generate a default `genezio.yaml` file, which can be further adjusted for specific cases.
 
 This configuration file specifies the project name, deployment region, and details about the backend.
 - [***Read more about Genezio Configuration File***](/docs/project-structure/genezio-configuration-file/)
