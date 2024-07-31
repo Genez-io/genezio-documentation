@@ -55,7 +55,7 @@ Use your preferred package manager to install Genezio:
 :::info
 If you don't already have a Next.js app, you can create one by running in your terminal:
 ```
-npx create-next-app@latest
+genezio create nextjs --name myapp --region eu-central-1 --default
 ```
 :::
 
