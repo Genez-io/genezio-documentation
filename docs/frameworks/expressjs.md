@@ -344,7 +344,7 @@ You can find this URL in the deployment output under the `App Dashboard URL` sec
 ## Frequently Asked Questions
 ### Do I Need to Modify My Express App Code? 
 
-Your express code will not require any adjustments as long as it is written in a **stateless** manner. [Read more](https://stackoverflow.com/questions/5329618/stateless-vs-stateful)
+Your express code will only require the above [adjustments](#deployment-guide), as long as it is written in a **stateless** manner. [Read more](https://stackoverflow.com/questions/5329618/stateless-vs-stateful)
 
 ## Support <a href="#support" id="support"></a>
 
