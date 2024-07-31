@@ -1,9 +1,8 @@
 ---
-description: Learn how to deploy a Express.js application with Genezio.
+description: Learn how to deploy an Express.js application with Genezio.
 ---
 
 import Tabs from '@theme/Tabs';
-
 import TabItem from '@theme/TabItem';
 
 # Express.js
@@ -20,39 +19,14 @@ Get started in no time with the [Express.js template](https://app.genez.io/expre
 
 # Deployment
 
-In this tutorial, you will learn how to deploy an existing Express.js app using Genezio, a serverless deployment platform that simplifies app management and reduces costs. We'll cover the benefits, answer common questions, and provide detailed deployment steps.
+Learn how to deploy an existing Express.js app using Genezio, a serverless deployment platform that simplifies app management and reduces costs
 
-**Do I Need to Modify My Express App Code?** Just make sure that your code is written in a stateless manner. [Read more](https://stackoverflow.com/questions/5329618/stateless-vs-stateful)
-
-## Why Use Genezio?
-
-### Benefits of Using Genezio
-
-1. **Faster Deployment**: Genezio optimizes the deployment process, significantly reducing the time it takes to get your app live.
-2. **Lower Costs**: Pay only for the resources you use, thanks to Genezio’s efficient infrastructure and scalable solutions.
-3. **Reliable and Scalable**: No longer worry about PM2 and Docker. You write the code, and Genezio seamlessly scales it across multiple cores.
-4. **Enhanced Security**: Built-in security features and automatic updates protect your app against the latest threats without additional effort.
-5. **Reduced Management Overhead**: Focus on developing your app instead of managing servers and routine maintenance tasks.
-6. **Easy Migration**: Obtain all these advantages with minimal code changes.
-
-### How Does Genezio Handle High Traffic?
-
-Genezio, being a Function as a Service (FaaS) platform, automatically scales your application based on traffic demands. It works by executing functions in response to events and can handle a large number of requests concurrently. This ensures your app remains responsive and performs well during traffic spikes.
-
-<!--
-### What Kind of Support Does Genezio Offer?
-
-Genezio provides 24/7 support for paid plans to assist with any questions or issues. Our dedicated support team ensures your app runs smoothly on our platform. -->
-
-### Do I Need to Modify My Express App Code?
-
-Migrating your Express app to Genezio typically requires minimal changes. Our migration guide provides detailed instructions for necessary compatibility adjustments.
 
 ## Prerequisites
 
 ### 1. Install genezio
 
-Use your preferred package manager to install genezio:
+Use your preferred package manager to install Genezio:
 
 <Tabs>
   <TabItem className="tab-item" value="npm" label="npm">
@@ -357,7 +331,7 @@ After that, you can deploy your project without the `--env` flag.
 :::
 For more information about environment variables, you can check the [official documentation](/docs/project-structure/backend-environment-variables.md).
 
-## Test your app
+## See your app in Genezio Dashboard
 
 After deploying your application, you can test it to ensure it's running correctly. To verify that your Express.js app is working, open a web browser and navigate to the URL provided for your deployed function.
 
@@ -367,7 +341,12 @@ Additionally, you can monitor and manage your app through the [Genezio App Dashb
 
 You can find this URL in the deployment output under the `App Dashboard URL` section.
 
-### Support <a href="#support" id="support"></a>
+## Frequently Asked Questions
+### Do I Need to Modify My Express App Code? 
+
+Your express code will only require the above [adjustments](#deployment-guide), as long as it is written in a **stateless** manner. [Read more](https://stackoverflow.com/questions/5329618/stateless-vs-stateful)
+
+## Support <a href="#support" id="support"></a>
 
 We invite you to join our community on [Discord](https://discord.gg/uc9H5YKjXv) for further information and help.
 
