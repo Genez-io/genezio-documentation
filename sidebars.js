@@ -27,7 +27,8 @@ const sidebars = {
       items: [
         "frameworks/nextjs",
         "frameworks/expressjs",
-      ]
+      ],
+      collapsed: false
     },
     {
       type: "category",
