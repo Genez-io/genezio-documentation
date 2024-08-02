@@ -22,15 +22,15 @@ description: Discover how to create fullstack or backend projects with the genez
 
 `genezio create backend [--name <project-name>] [--region <project-region>] [--backend <backend-template>] [--path <project-path>] [--logLevel <log-level>] [-h | --help]`
 
-#### Nextjs starter project
+#### Next.js starter project
 
 `genezio create nextjs [--name <project-name>] [--region <project-region>] [--default] [--path <project-path>] [--logLevel <log-level>] [-h | --help]`
 
-#### Expressjs starter project
+#### Express.js starter project
 
 `genezio create expressjs [--name <project-name>] [--region <project-region>] [--path <project-path>] [--logLevel <log-level>] [-h | --help]`
 
-#### Nitrojs starter project
+#### Nitro.js starter project
 
 `genezio create nitrojs [--name <project-name>] [--region <project-region>] [--path <project-path>] [--logLevel <log-level>] [-h | --help]`
 
@@ -113,7 +113,7 @@ These options work only when combined with `genezio create backend` subcommand.
 
 - Choices: `ts`, `js`
 
-### Nextjs Subcommand Options
+### Next.js Subcommand Options
 
 <!-- :::info -->
 
