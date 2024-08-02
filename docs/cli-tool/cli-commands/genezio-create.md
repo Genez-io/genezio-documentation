@@ -10,17 +10,33 @@ description: Discover how to create fullstack or backend projects with the genez
 </head>
 ### Usage
 
-#### Interactive
+### Interactive
 
 `genezio create [--path <project-path>] [--logLevel <log-level>] [-h | --help]`
 
-#### Fullstack
+### Fullstack
 
 `genezio create fullstack [--name <project-name>] [--region <project-region>] [--backend <backend-template>] [--frontend <frontend-template>] [--multirepo] [--path <project-path>] [--logLevel <log-level>] [-h | --help]`
 
-#### Backend
+### Backend
 
 `genezio create backend [--name <project-name>] [--region <project-region>] [--backend <backend-template>] [--path <project-path>] [--logLevel <log-level>] [-h | --help]`
+
+### Nextjs starter project
+
+`genezio create nextjs [--name <project-name>] [--region <project-region>] [--default][-h | --help]`
+
+### Expressjs starter project
+
+`genezio create expressjs [--name <project-name>] [--region <project-region>][-h | --help]`
+
+### Nitrojs starter project
+
+`genezio create nitrojs [--name <project-name>] [--region <project-region>][-h | --help]`
+
+### Serverless function
+
+`genezio create serverless [--name <project-name>] [--region <project-region>][-h | --help]`
 
 ### Description
 
@@ -39,7 +55,14 @@ These options work with any `genezio create` subcommand
 :::
 
 <!-- ::: -->
+`--name <project-name>`: Name of the project
+- Required, asked interactively if not provided
 
+`--region <project-region>`: Region of the project
+- Required, asked interactively if not provided
+  
+- Choices: `us-east-1`, `eu-central-1`
+  
 `--path <project-path>`: The path where the new project will be created
 
 - Default: `current-directory + project-name`
@@ -60,15 +83,6 @@ These options work only when combined with `genezio create frontend` subcommand.
 :::
 
 <!-- ::: -->
-
-`--name <project-name>`: Name of the project
-
-- Required, asked interactively if not provided
-
-`--region <project-region>`: Region of the project
-
-- Required, asked interactively if not provided
-- Choices: `us-east-1`, `eu-central-1`
 
 `--backend <backend-template>`: Starter template for backend
 
@@ -95,15 +109,19 @@ These options work only when combined with `genezio create backend` subcommand.
 
 <!-- ::: -->
 
-`--name <project-name>`: Name of the project
-
-- Required, asked interactively if not provided
-
-`--region <project-region>`: Region of the project
-
-- Required, asked interactively if not provided
-- Choices: `us-east-1`, `eu-central-1`
-
 `--backend <backend-template>`: Starter template for backend
 
 - Choices: `ts`, `js`
+
+### Nextjs Subcommand Options
+
+<!-- :::info -->
+
+:::info
+These options work only when combined with `genezio create nextjs` subcommand.
+:::
+
+<!-- ::: -->
+
+`--default`: Auto-selects all the default options for creating the Next.js starter project.
+
