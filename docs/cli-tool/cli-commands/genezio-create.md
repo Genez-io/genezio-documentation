@@ -10,33 +10,33 @@ description: Discover how to create fullstack or backend projects with the genez
 </head>
 ### Usage
 
-### Interactive
+#### Interactive
 
 `genezio create [--path <project-path>] [--logLevel <log-level>] [-h | --help]`
 
-### Fullstack
+#### Fullstack
 
 `genezio create fullstack [--name <project-name>] [--region <project-region>] [--backend <backend-template>] [--frontend <frontend-template>] [--multirepo] [--path <project-path>] [--logLevel <log-level>] [-h | --help]`
 
-### Backend
+#### Backend
 
 `genezio create backend [--name <project-name>] [--region <project-region>] [--backend <backend-template>] [--path <project-path>] [--logLevel <log-level>] [-h | --help]`
 
-### Nextjs starter project
+#### Nextjs starter project
 
-`genezio create nextjs [--name <project-name>] [--region <project-region>] [--default][-h | --help]`
+`genezio create nextjs [--name <project-name>] [--region <project-region>] [--default] [--path <project-path>] [--logLevel <log-level>] [-h | --help]`
 
-### Expressjs starter project
+#### Expressjs starter project
 
-`genezio create expressjs [--name <project-name>] [--region <project-region>][-h | --help]`
+`genezio create expressjs [--name <project-name>] [--region <project-region>] [--path <project-path>] [--logLevel <log-level>] [-h | --help]`
 
-### Nitrojs starter project
+#### Nitrojs starter project
 
-`genezio create nitrojs [--name <project-name>] [--region <project-region>][-h | --help]`
+`genezio create nitrojs [--name <project-name>] [--region <project-region>] [--path <project-path>] [--logLevel <log-level>] [-h | --help]`
 
-### Serverless function
+#### Serverless function
 
-`genezio create serverless [--name <project-name>] [--region <project-region>][-h | --help]`
+`genezio create serverless [--name <project-name>] [--region <project-region>] [--path <project-path>] [--logLevel <log-level>] [-h | --help]`
 
 ### Description
 
