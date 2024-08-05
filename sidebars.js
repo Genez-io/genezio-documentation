@@ -27,7 +27,8 @@ const sidebars = {
       items: [
         "frameworks/nextjs",
         "frameworks/expressjs",
-      ]
+      ],
+      collapsed: false
     },
     {
       type: "category",
@@ -205,6 +206,7 @@ const sidebars = {
       link: { type: "doc", id: "learn-more/README" },
       items: [
         "learn-more/upgrading-to-v1",
+        "learn-more/supported-languages",
       ]
     },
     "troubleshooting",
