@@ -15,7 +15,7 @@ React-Admin is a frontend Framework for building B2B applications running in the
 .
 
 :::tip
-Get started in no time with the [react-admin template](https://dev.app.genez.io/start/deploy?repository=https://github.com/Genez-io/react-admin-getting-started).
+Get started in no time with the [react-admin template](https://app.genez.io/start/deploy?repository=https://github.com/Genez-io/react-admin-getting-started).
 :::
 
 # Deployment
