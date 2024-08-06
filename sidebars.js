@@ -27,6 +27,7 @@ const sidebars = {
       items: [
         "frameworks/nextjs",
         "frameworks/expressjs",
+        "frameworks/react-admin",
       ],
       collapsed: false
     },
