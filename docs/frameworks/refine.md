@@ -1,26 +1,26 @@
 ---
-description: Learn how to deploy a react-admin application with Genezio.
+description: Learn how to deploy a refine application with Genezio.
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# React-Admin
+# Refine
 
 <head>
-    <title>React-Admin | Genezio Documentation</title>
+    <title>Refine | Genezio Documentation</title>
 </head>
 
-[React-Admin](https://marmelab.com/react-admin/) is a frontend Framework for building B2B applications running in the browser on top Genezio's APIs, using ES6, React and Material Design.
+[Refine](https://refine.dev) is an open-source Retool for Enterprise, helping developers build React-based internal tools, admin panels, dashboards & B2B apps with unmatched flexibility.
 .
 
 :::tip
-Get started in no time with the [react-admin template](https://app.genez.io/start/deploy?repository=https://github.com/Genez-io/react-admin-getting-started).
+Get started in no time with the [refine template](https://app.genez.io/start/deploy?repository=https://github.com/Genez-io/refine-genezio&base_path=example-json).
 :::
 
 # Deployment
 
-Learn how to deploy an existing react-admin app using Genezio, a serverless deployment platform that simplifies app management and reduces costs
+Learn how to deploy an existing refine app using Genezio, a serverless deployment platform that simplifies app management and reduces costs
 
 
 ## Prerequisites
@@ -53,16 +53,16 @@ Use your preferred package manager to install Genezio:
   </TabItem>
 </Tabs>
 
-### 2. Start from an existing react-admin template
+### 2. Start from an existing refine template
 
-Create a react-admin app using the following steps:
+Create a refine app using the following steps:
 
 <details>
-  <summary>**Create a Hello World react-admin App**</summary>
+  <summary>**Create a Hello World Refine App**</summary>
 
-### 1. Fork our react-admin tremplate repository on github
+### 1. Fork our refine tremplate repository on github
 
-Go to https://github.com/Genez-io/react-admin-getting-started/fork and fork the repo
+Go to https://github.com/Genez-io/refine-genezio/fork and fork the repo
 
 
 ### 2. Clone the newly created repository locally
@@ -70,12 +70,12 @@ Go to https://github.com/Genez-io/react-admin-getting-started/fork and fork the 
 
 ```bash
 git clone YOUR_REPO_URL
-cd react-admin-getting-started
+cd refine-genezio/example-json
 ```
 
-### 3. Run the react-admin App locally
+### 3. Run the refine App locally
 
-Run the following command to start the react-admin app:
+Run the following command to start the refine app:
 
 <div>
   ```bash
@@ -83,7 +83,7 @@ Run the following command to start the react-admin app:
   ```
 </div>
 
-### 4. Test the react-admin App locally
+### 4. Test the refine App locally
 
 Open a web browser and navigate to http://localhost:5173/ to see the app running.
 
@@ -140,7 +140,7 @@ genezio deploy
 
 Go to the **Frontend URL** in your browser to test the newly created app
 
-## 5. Understand how your React Admin app calls the Genezio backend.
+## 5. Understand how your Refine app calls the Genezio backend.
 
 Open the `client/src/App.tsx` file and see how the Admin component uses the authProvider and the dataProvider.
 
