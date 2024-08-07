@@ -60,7 +60,7 @@ Create a react-admin app using the following steps:
 <details>
   <summary>**Create a Hello World react-admin App**</summary>
 
-### 1. Fork our react-admin tremplate repository on github
+### 1. Fork our react-admin template repository on github
 
 Go to https://github.com/Genez-io/react-admin-getting-started/fork and fork the repo
 
@@ -91,7 +91,7 @@ Open a web browser and navigate to http://localhost:5173/ to see the app running
 
 ## Deploy the app
 
-In your terminal window first stop `genezio local` if it was alreday running, then run the following command to deploy your app to the Grenezio cloud:
+In your terminal window first stop `genezio local` if it was already running, then run the following command to deploy your app to the Grenezio cloud:
 
 <div>
   ```bash
@@ -117,7 +117,7 @@ You don't want anyone to be able to access your APIs and make updates to the con
 
 First you need to go to the **App Dashboard URL** that was listed in the output of the `genezio deploy` command.
 
-On the app dashboard page, click "Authentication" on the left-side menu to enable the auth feature on this project. You might need to create a database in the process, but this shuld be quite straight-forward.
+On the app dashboard page, click "Authentication" on the left-side menu to enable the auth feature on this project. You might need to create a database in the process, but this should be quite straight-forward.
 
 Next, enable the Email provider from the list of providers.
 
