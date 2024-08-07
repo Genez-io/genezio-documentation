@@ -27,6 +27,8 @@ const sidebars = {
       items: [
         "frameworks/nextjs",
         "frameworks/expressjs",
+        "frameworks/react-admin",
+        "frameworks/refine",
       ],
       collapsed: false
     },
