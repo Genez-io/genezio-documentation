@@ -15,12 +15,12 @@ import TabItem from '@theme/TabItem';
 .
 
 :::tip
-Get started in no time with the [react-admin template](https://app.genez.io/start/deploy?repository=https://github.com/Genez-io/react-admin-getting-started).
+Get started in no time with the [React-Admin template](https://app.genez.io/start/deploy?repository=https://github.com/Genez-io/react-admin-getting-started).
 :::
 
 # Deployment
 
-Learn how to deploy an existing react-admin app using Genezio, a serverless deployment platform that simplifies app management and reduces costs
+Learn how to deploy an existing react-admin app using Genezio, a serverless deployment platform that simplifies app management and reduces costs.
 
 
 ## Prerequisites
@@ -60,12 +60,12 @@ Create a react-admin app using the following steps:
 <details>
   <summary>**Create a Hello World react-admin App**</summary>
 
-### 1. Fork our react-admin template repository on github
+<h3> 1. Fork our react-admin template repository on github </h3>
 
-Go to https://github.com/Genez-io/react-admin-getting-started/fork and fork the repo
+Go to https://github.com/Genez-io/react-admin-getting-started/fork and fork the repo.
 
 
-### 2. Clone the newly created repository locally
+<h3> 2. Clone the newly created repository locally </h3>
 
 
 ```bash
@@ -73,7 +73,7 @@ git clone YOUR_REPO_URL
 cd react-admin-getting-started
 ```
 
-### 3. Run the react-admin App locally
+<h3> 3. Run the react-admin App locally </h3>
 
 Run the following command to start the react-admin app:
 
@@ -83,7 +83,7 @@ Run the following command to start the react-admin app:
   ```
 </div>
 
-### 4. Test the react-admin App locally
+<h3> 4. Test the react-admin App locally </h3>
 
 Open a web browser and navigate to http://localhost:5173/ to see the app running.
 
@@ -91,7 +91,7 @@ Open a web browser and navigate to http://localhost:5173/ to see the app running
 
 ## Deploy the app
 
-In your terminal window first stop `genezio local` if it was already running, then run the following command to deploy your app to the Grenezio cloud:
+In your terminal window first stop `genezio local` if it was already running, then run the following command to deploy your app to the Genezio cloud:
 
 <div>
   ```bash
@@ -99,15 +99,12 @@ In your terminal window first stop `genezio local` if it was already running, th
   ```
 </div>
 
-You should now see 2 URLs in the terminal window:
+You should now see 2 URLs in the terminal window with the following format:
 
-1. **App Dashboard URL**
-
-  Format: https://app.genez.io/project/123-456-789-123-456/123-456-789-123-456
-
-2. **Frontend URL**
-
- Format:  https://ABC-DEF-GHI.app.genez.io
+```bash
+$ App Dashboard URL: https://app.genez.io/project/<project-id>/<stage-id>
+$ Frontend URL: https://<subdomain>.app.genez.io
+```
 
 ## Set-up the app
 
@@ -126,7 +123,12 @@ On the same page you will find a **Token** and a **Region**. Open the `/client/s
 ## 2. Update the reset password URL to match your domain
 
 In the **App Dashboard URL** web page, go to Authentication / Settings and select Email Templates.
-Now open the "Reset Password" section and enter "https://ABC-DEF-GHI.app.genez.io/reset-password" (Please remember to use the **Frontend URL** as returned by the genezio deploy command)
+
+Now open the "Reset Password" section and enter `https://<subdomain>.app.genez.io/reset-password`.
+
+:::info
+Change `https://<subdomain>.app.genez.io/reset-password` to use the **Frontend URL** as returned by the genezio deploy command.
+:::
 
 ## 3. Redeploy your project
 
