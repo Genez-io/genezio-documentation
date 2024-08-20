@@ -15,12 +15,12 @@ import TabItem from '@theme/TabItem';
 .
 
 :::tip
-Get started in no time with the [refine template](https://app.genez.io/start/deploy?repository=https://github.com/Genez-io/refine-genezio&base_path=example-json).
+Get started in no time with the [Refine template](https://app.genez.io/start/deploy?repository=https://github.com/Genez-io/refine-genezio&base_path=example-json).
 :::
 
 # Deployment
 
-Learn how to deploy an existing refine app using Genezio, a serverless deployment platform that simplifies app management and reduces costs
+Learn how to deploy an existing refine app using Genezio, a serverless deployment platform that simplifies app management and reduces costs.
 
 
 ## Prerequisites
@@ -60,12 +60,12 @@ Create a refine app using the following steps:
 <details>
   <summary>**Create a Hello World Refine App**</summary>
 
-### 1. Fork our refine template repository on github
+<h3> 1. Fork our refine template repository on GitHub </h3>
 
 Go to https://github.com/Genez-io/refine-genezio/fork and fork the repo
 
 
-### 2. Clone the newly created repository locally
+<h3> 2. Clone the newly created repository locally </h3>
 
 
 ```bash
@@ -73,7 +73,7 @@ git clone YOUR_REPO_URL
 cd refine-genezio/example-json
 ```
 
-### 3. Run the refine App locally
+<h3> 3. Run the refine App locally </h3>
 
 Run the following command to start the refine app:
 
@@ -83,7 +83,7 @@ Run the following command to start the refine app:
   ```
 </div>
 
-### 4. Test the refine App locally
+<h3> 4. Test the refine App locally </h3>
 
 Open a web browser and navigate to http://localhost:5173/ to see the app running.
 
@@ -91,7 +91,7 @@ Open a web browser and navigate to http://localhost:5173/ to see the app running
 
 ## Deploy the app
 
-In your terminal window first stop `genezio local` if it was already running, then run the following command to deploy your app to the Grenezio cloud:
+In your terminal window first stop `genezio local` if it was already running, then run the following command to deploy your app to the Genezio cloud:
 
 <div>
   ```bash
@@ -99,15 +99,12 @@ In your terminal window first stop `genezio local` if it was already running, th
   ```
 </div>
 
-You should now see 2 URLs in the terminal window:
+You should now see 2 URLs in the terminal window with the following format:
 
-1. **App Dashboard URL**
-
-  Format: https://app.genez.io/project/123-456-789-123-456/123-456-789-123-456
-
-2. **Frontend URL**
-
- Format:  https://ABC-DEF-GHI.app.genez.io
+```bash
+$ App Dashboard URL: https://app.genez.io/project/<project-id>/<stage-id>
+$ Frontend URL: https://<subdomain>.app.genez.io
+```
 
 ## Set-up the app
 
@@ -126,7 +123,13 @@ On the same page you will find a **Token** and a **Region**. Open the `/client/s
 ## 2. Update the reset password URL to match your domain
 
 In the **App Dashboard URL** web page, go to Authentication / Settings and select Email Templates.
-Now open the "Reset Password" section and enter "https://ABC-DEF-GHI.app.genez.io/reset-password" (Please remember to use the **Frontend URL** as returned by the genezio deploy command)
+
+Now open the "Reset Password" section and enter `https://<subdomain>.app.genez.io/reset-password`.
+
+:::info
+Change `https://<subdomain>.app.genez.io/reset-password` to use the **Frontend URL** as returned by the genezio deploy command.
+:::
+
 
 ## 3. Redeploy your project
 
@@ -138,7 +141,7 @@ genezio deploy
 
 ## 4. Test your deployed project
 
-Go to the **Frontend URL** in your browser to test the newly created app
+Go to the **Frontend URL** in your browser to test the newly created app.
 
 ## 5. Understand how your Refine app calls the Genezio backend.
 
