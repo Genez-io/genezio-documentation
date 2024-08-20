@@ -20,7 +20,7 @@ Get started in no time with the [Next.js template](https://app.genez.io/nextjs-g
 
 # Deployment
 
-Learn how to deploy an existing Next.js app using Genezio, a serverless deployment platform that simplifies app management and reduces costs
+Learn how to deploy an existing Next.js app using Genezio, a serverless deployment platform that simplifies app management and reduces costs.
 
 ### 1. Install genezio
 
@@ -75,10 +75,12 @@ region: us-east-1
 # Specifies the version of the YAML configuration syntax being used.
 yamlVersion: 2
 ```
+
 ### 3. Monitor your project
+
 You can monitor and manage your application through the [Genezio App Dashboard](https://app.genez.io/dashboard). The dashboard URL, also provided after deployment, allows you to access comprehensive views of your project's status and logs.
 
-# Frequently Asked Questions
+## Frequently Asked Questions
 
 -   ### How do I set a custom subdomain for my Next.js application?
 
@@ -110,7 +112,7 @@ You can monitor and manage your application through the [Genezio App Dashboard](
 
     No, you don't need a Dockerfile to deploy a Next.js application with Genezio. Genezio builds your application using a serverless architecture, which means that you don't need to worry about Docker, Dockerfiles or scaling.
 
-# Known Limitations
+## Known Limitations
 
 ### Incremental Static Regeneration (ISR)
 
@@ -124,4 +126,4 @@ At the moment Genezio does not support building Next.js applications on Windows.
 
 This limitation comes from the [Open-Next](https://open-next.js.org/) library, which we use to build your application using a serverless architecture. We are working on adding support for Windows in the future.
 
-There is an opened issue in the Open-Next repository that you can follow to get updates on this limitation: https://github.com/sst/open-next/issues/385
+There is an opened issue in the Open-Next repository that you can follow to get updates on this limitation: https://github.com/sst/open-next/issues/385.

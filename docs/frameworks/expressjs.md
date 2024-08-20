@@ -19,7 +19,7 @@ Get started in no time with the [Express.js template](https://app.genez.io/expre
 
 # Deployment
 
-Learn how to deploy an existing Express.js app using Genezio, a serverless deployment platform that simplifies app management and reduces costs
+Learn how to deploy an existing Express.js app using Genezio, a serverless deployment platform that simplifies app management and reduces costs.
 
 
 ## Prerequisites
@@ -59,7 +59,7 @@ If you don't have an Express.js app, you can create one using the following step
 <details>
   <summary>**Create a Hello World Express.js App**</summary>
 
-### 1. Initialize a New Node.js Project
+<h3> 1. Initialize a New Node.js Project </h3>
 
 Run the following command to initialize a new Node.js project in an empty directory:
 
@@ -67,7 +67,7 @@ Run the following command to initialize a new Node.js project in an empty direct
 npm init -y
 ```
 
-### 2. Install Express.js
+<h3> 2. Install Express.js </h3>
 
 Next, install the Express.js package:
 
@@ -75,7 +75,7 @@ Next, install the Express.js package:
 npm install express
 ```
 
-### 3. Create an Express.js App
+<h3> 3. Create an Express.js App </h3>
 
 <Tabs>
 <TabItem className="tab-item" value="esm" label="esm">
@@ -129,7 +129,7 @@ Create a new file named `app.mjs` and add the following code:
   </TabItem>
 </Tabs>
 
-### 4. Test the Express.js App
+<h3> 4. Test the Express.js App </h3>
 
 Run the following command to start the Express.js app:
 <Tabs>
@@ -294,8 +294,6 @@ backend:
       handler: handler
       # The entry point for the function.
       entry: app.mjs
-      # The compatibility of the function handler.
-      type: aws
 ```
 
 This configuration file specifies the project name, deployment region, and details about the backend.
@@ -326,7 +324,7 @@ genezio deploy --env <path-to-your-env-file>
 ```
 
 :::info
-You need to deploy your environment variables single time.
+You need to deploy your environment variables only once.
 After that, you can deploy your project without the `--env` flag.
 :::
 For more information about environment variables, you can check the [official documentation](/docs/project-structure/backend-environment-variables.md).
@@ -342,9 +340,10 @@ Additionally, you can monitor and manage your app through the [Genezio App Dashb
 You can find this URL in the deployment output under the `App Dashboard URL` section.
 
 ## Frequently Asked Questions
-### Do I Need to Modify My Express App Code? 
 
-Your express code will only require the above [adjustments](#deployment-guide), as long as it is written in a **stateless** manner. [Read more](https://stackoverflow.com/questions/5329618/stateless-vs-stateful)
+### Do I Need to Modify My Express App Code?
+
+Your Express project will only require the above [adjustments](#deployment-guide), as long as it is written in a **stateless** manner. To find out more about [stateless vs. stateful follow this link](https://stackoverflow.com/questions/5329618/stateless-vs-stateful).
 
 ## Support <a href="#support" id="support"></a>
 
