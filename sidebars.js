@@ -29,7 +29,7 @@ const sidebars = {
         "frameworks/expressjs",
         "frameworks/react-admin",
         "frameworks/refine",
-        "frameworks/fastifyjs",
+        "frameworks/fastify",
       ],
       collapsed: false
     },
