@@ -81,4 +81,8 @@ yamlVersion: 2
 
 You can monitor and manage your application through the [Genezio App Dashboard](https://app.genez.io/dashboard). The dashboard URL, also provided after deployment, allows you to access comprehensive views of your project's status and logs.
 
+## Support <a href="#support" id="support"></a>
 
+We invite you to join our community on [Discord](https://discord.gg/uc9H5YKjXv) for further information and help.
+
+**Happy Learning!**
