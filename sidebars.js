@@ -42,8 +42,8 @@ const sidebars = {
         "frameworks/react-admin",
         "frameworks/refine",
         "frameworks/fastify",
-        "frameworks/typesafe-project"
-        "frameworks/vue",
+        "frameworks/typesafe-project",
+        "frameworks/vue"
       ],
       collapsed: false
     },
