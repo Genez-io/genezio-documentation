@@ -1,5 +1,5 @@
 ---
-description: Learn how to deploy a Next.js application with Genezio.
+description: Learn how to deploy a Nitro application with Genezio.
 ---
 
 import Tabs from '@theme/Tabs';
@@ -16,7 +16,7 @@ Nitro is a modern framework for building server-side applications, designed to o
 It offers a comprehensive set of features for creating web servers and APIs, supporting multiple deployment targets.
 
 :::tip
-Get started in no time with the [Nitro template](https://app.genez.io/nextjs-getting-started).
+Get started in no time with the [Nitro template](https://app.genez.io/start/deploy?repository=https://github.com/Genez-io/nitrojs-starter).
 :::
 
 # Deployment
@@ -64,7 +64,7 @@ genezio create nitrojs --name nitro-project --region us-east-1 --default
 genezio deploy
 ```
 
-This command will build your Next.js application and deploy it to the cloud. Genezio uses a `genezio.yaml` file to store configuration about your project such as project name and region. When running the `genezio deploy` command, Genezio will create this file for you if it doesn't exist after asking you some interactive questions.
+This command will build your Nitro application and deploy it to the cloud. Genezio uses a `genezio.yaml` file to store configuration about your project such as project name and region. When running the `genezio deploy` command, Genezio will create this file for you if it doesn't exist after asking you some interactive questions.
 
 The `genezio.yaml` configuration file will look something like this:
 
