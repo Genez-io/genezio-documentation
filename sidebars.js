@@ -25,11 +25,14 @@ const sidebars = {
       label: "Frameworks",
       link: { type: "doc", id: "frameworks/README" },
       items: [
-        "frameworks/nextjs",
+        "frameworks/angular",
         "frameworks/expressjs",
+        "frameworks/fastify",
+        "frameworks/nextjs",
+        "frameworks/react",
         "frameworks/react-admin",
         "frameworks/refine",
-        "frameworks/fastify",
+        "frameworks/vue",
       ],
       collapsed: false
     },
