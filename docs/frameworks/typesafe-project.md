@@ -7,7 +7,7 @@ import Tabs from '@theme/Tabs';
 
 import TabItem from '@theme/TabItem';
 
-# Getting Started
+# Typesafe Project
 
 <head>
   <title>Getting Started with Genezio | Genezio Documentation</title>
