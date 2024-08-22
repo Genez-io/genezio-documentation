@@ -21,7 +21,7 @@ In this article, we'll guide you through the steps to bring your GitHub projects
 
 ## Step-by-Step Guide to Importing and Deploying Your Project
 
-1. **Connect to Your GitHub Account**
+### 1. **Connect to Your GitHub Account**
    Getting started is simple. Navigate to the [New Project page](http://app.genez.io/auth/login?redirect=new-project) on Genezio, and under the "Import Git Repository" section, connect the GitHub account that you would like to import your project from. Follow the prompts to securely sign in to your GitHub account.
 
 2. **Import Your Repository**
