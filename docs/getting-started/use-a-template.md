@@ -13,15 +13,13 @@ import TabItem from '@theme/TabItem';
   <title>Getting Started with Genezio | Genezio Documentation</title>
 </head>
 
-Welcome! This guide will demonstrate how to streamline project setup with templates, utilize popular frameworks, and fully harness Genezio's capabilities.
-
-Create a new project on Genezio by using one of our template
+Welcome! This guide will help you create your first project on Genezio by using one of our templates.
 
 ## 1. Choose a template
 
 First make sure you have a Genezio account. If you don't have one, you can create one [here](https://app.genez.io/auth/signup).
 
-From [https://app.genez.io/new-project/](https://app.genez.io/new-project/) you can choose a template to start your project with.
+From [https://app.genez.io/auth/login?redirect=new-project](https://app.genez.io/auth/login?redirect=new-project) you can choose a template to start your project with.
 
 ## 2. Connect your Github account
 
@@ -35,7 +33,7 @@ Once you have connected your Github account, you can deploy your project by clic
 
 ## 3. View your project
 
-After deploying your project, you can see click on the deployment link to view your project.
+After deploying your project, you can see the deployment link to view your project. Also, after that, you can find the link on the upper right corner of the Edit Code Page.
 
 ## 4. Edit your project
 
@@ -47,8 +45,9 @@ When you are ready to deploy your changes, you can push the changes and Genezio 
 
 ## 5. Next steps
 
-Congratulations! You have successfully deployed your project. You can now explore more features of Genezio and build more projects.
-Now that you have deployed your project, you can explore more features of Genezio and build more projects.
+Congratulations! You have successfully deployed your first project.
+
+Now that you have deployed your starter project, you can explore more features of Genezio and continue building the project:
 
 - [Custom Domains](/docs/features/custom-domain-configuration/)
 - [Cron Jobs](/docs/genezio-typesafe/cron-methods/)

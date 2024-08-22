@@ -15,7 +15,7 @@ import TabItem from '@theme/TabItem';
 
 Welcome to the Genezio Typesafe "Getting Started" guide! In this tutorial, you will learn how to write a backend class, export its methods, call them from the frontend code, and then deploy both the frontend and the backend locally for testing and pushing live to a staging environment.
 
-You can easily start with from a template project in the [Genezio Dashboard](https://app.genez.io/new-project/).
+You can easily start with from a template project in the [Genezio Dashboard](https://app.genez.io/auth/login?redirect=new-project).
 
 If you want to start testing Genezio in your own IDE/machine, you can follow the steps below.
 
