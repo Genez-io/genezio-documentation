@@ -19,7 +19,7 @@ Welcome! This guide will help you create your first project on Genezio by using 
 
 First make sure you have a Genezio account. If you don't have one, you can create one [here](https://app.genez.io/auth/signup).
 
-From the [New Project page](https://app.genez.io/auth/login?redirect=new-project](https://app.genez.io/auth/login?redirect=new-project) you can choose a template to start your project with.
+From the [New Project page](https://app.genez.io/auth/login?redirect=new-project) you can choose a template to start your project with.
 
 ## 2. Connect your Github account
 
