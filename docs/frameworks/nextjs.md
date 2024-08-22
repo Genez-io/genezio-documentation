@@ -2,6 +2,8 @@
 description: Learn how to deploy a Next.js application with Genezio.
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 # Next.js
@@ -16,9 +18,46 @@ Next.js is a React framework that allows you to build static and server-rendered
 Get started in no time with the [Next.js template](https://app.genez.io/nextjs-getting-started).
 :::
 
-## Deployment
+# Deployment
 
-To deploy a Next.js application with Genezio, all you need to do is to run the following command in the root directory of your project:
+Learn how to deploy an existing Next.js app using Genezio, a serverless deployment platform that simplifies app management and reduces costs.
+
+### 1. Install genezio
+
+Use your preferred package manager to install Genezio:
+
+<Tabs>
+  <TabItem className="tab-item" value="npm" label="npm">
+<div id="step1-install-npm">
+  ```
+  npm install genezio -g
+  ```
+  </div>
+  </TabItem>
+  <TabItem className="tab-item" value="pnpm" label="pnpm">
+  <div id="step1-install-pnpm">
+  ```
+  pnpm add -g genezio
+  ```
+  </div>
+  </TabItem>
+  <TabItem  className="tab-item" value="yarn" label="yarn">
+  <div id="step1-install-yarn">
+  ```
+  yarn add global genezio
+  ```
+  </div>
+  </TabItem>
+</Tabs>
+
+### 2. Deploy your project
+
+:::info
+If you don't already have a Next.js app, you can create one by running in your terminal:
+```
+genezio create nextjs --name nextjs-project --region us-east-1 --default
+```
+:::
 
 ```bash
 genezio deploy
@@ -36,6 +75,10 @@ region: us-east-1
 # Specifies the version of the YAML configuration syntax being used.
 yamlVersion: 2
 ```
+
+### 3. Monitor your project
+
+You can monitor and manage your application through the [Genezio App Dashboard](https://app.genez.io/dashboard). The dashboard URL, also provided after deployment, allows you to access comprehensive views of your project's status and logs.
 
 ## Frequently Asked Questions
 
@@ -83,4 +126,4 @@ At the moment Genezio does not support building Next.js applications on Windows.
 
 This limitation comes from the [Open-Next](https://open-next.js.org/) library, which we use to build your application using a serverless architecture. We are working on adding support for Windows in the future.
 
-There is an opened issue in the Open-Next repository that you can follow to get updates on this limitation: https://github.com/sst/open-next/issues/385
+There is an opened issue in the Open-Next repository that you can follow to get updates on this limitation: https://github.com/sst/open-next/issues/385.

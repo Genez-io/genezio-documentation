@@ -1,26 +1,25 @@
 ---
-description: Learn how to deploy an Express.js application with Genezio.
+description: Learn how to deploy a Fastify application with Genezio.
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Express.js
+# Fastify
 
 <head>
-    <title>Express.js | Genezio Documentation</title>
+    <title>Fastify | Genezio Documentation</title>
 </head>
 
-Express.js is a popular Node.js web application framework that simplifies the development of server-side applications. It provides a robust set of features for building web servers and APIs.
+Fastify is a popular Node.js web application framework that simplifies the development of server-side applications. It provides a robust set of features for building web servers and APIs.
 
 :::tip
-Get started in no time with the [Express.js template](https://app.genez.io/express-getting-started).
+Get started in no time with the [Fastify template](https://github.com/Genez-io/fastify-getting-started).
 :::
 
 # Deployment
 
-Learn how to deploy an existing Express.js app using Genezio, a serverless deployment platform that simplifies app management and reduces costs.
-
+Learn how to deploy an existing Fastify app using Genezio, a serverless deployment platform that simplifies app management and reduces costs.
 
 ## Prerequisites
 
@@ -52,14 +51,14 @@ Use your preferred package manager to install Genezio:
   </TabItem>
 </Tabs>
 
-### 2. Ensure you have an Express.js App
+### 2. Ensure you have an Fastify App
 
-If you don't have an Express.js app, you can create one using the following steps:
+If you don't have an Fastify app, you can create one using the following steps:
 
 <details>
-  <summary>**Create a Hello World Express.js App**</summary>
+  <summary>**Create a Hello World Fastify App**</summary>
 
-<h3> 1. Initialize a New Node.js Project </h3>
+<h3>1. Initialize a New Node.js Project</h3>
 
 Run the following command to initialize a new Node.js project in an empty directory:
 
@@ -67,27 +66,27 @@ Run the following command to initialize a new Node.js project in an empty direct
 npm init -y
 ```
 
-<h3> 2. Install Express.js </h3>
+<h3>2. Install Fastify</h3>
 
-Next, install the Express.js package:
+Next, install the Fastify package:
 
 ```bash
-npm install express
+npm i fastify
 ```
 
-<h3> 3. Create an Express.js App </h3>
+<h3>3. Create an Fastify App</h3>
 
 <Tabs>
 <TabItem className="tab-item" value="esm" label="esm">
 Create a new file named `app.mjs` and add the following code:
 <div>
   ```javascript title="app.mjs"
-    import express from "express";
+    import Fastify from 'fastify';
 
-    const app = express();
+    const app = Fastify();
 
     app.get("/", (req, res) => {
-      res.send("Hello World from Express!");
+      res.send("Hello World from Fastify!");
     });
 
     app.get("/users", (req, res) => {
@@ -110,12 +109,12 @@ Create a new file named `app.mjs` and add the following code:
   Create a new file named `app.js` and add the following code:
   <div>
   ```javascript title="app.js"
-    const express = require("express");
+    const Fastify = require("fastify")
 
-    const app = express();
+    const app = Fastify();
 
     app.get("/", (req, res) => {
-      res.send("Hello World from Express!");
+      res.send("Hello World from Fastify!");
     });
 
     app.listen(8080, () => {
@@ -129,9 +128,9 @@ Create a new file named `app.mjs` and add the following code:
   </TabItem>
 </Tabs>
 
-<h3> 4. Test the Express.js App </h3>
+<h3>4. Test the Fastify App</h3>
 
-Run the following command to start the Express.js app:
+Run the following command to start the Fastify app:
 <Tabs>
 <TabItem className="tab-item" value="esm" label="esm">
 
@@ -159,17 +158,17 @@ Open a web browser and navigate to [http://localhost:8080](http://localhost:8080
 
 First, you need to install the `serverless-http` package.
 
-Run the following command in the root directory of your Express.js app:
+Run the following command in the root directory of your Fastify app:
 
 ```bash
 npm install serverless-http
 ```
 
-This package allows you to wrap your Express.js application and deploy it on serverless environments.
+This package allows you to wrap your Fastify application and deploy it on serverless environments.
 
 ## 2. Export the App as a Handler Function
 
-You need to export your Express app as a handler function that can be used by Genezio.
+You need to export your Fastify app as a handler function that can be used by Genezio.
 
 Add the following code to your main application file (`app.mjs` or `app.js`):
 
@@ -177,14 +176,14 @@ Add the following code to your main application file (`app.mjs` or `app.js`):
 <TabItem className="tab-item" value="esm" label="esm">
 <div>
   ```javascript title="app.mjs"
-    import express from "express";
+    import Fastify from 'fastify';
     // highlight-next-line
     import serverless from "serverless-http";
 
-    const app = express();
+    const app = Fastify();
 
     app.get("/", (req, res) => {
-      res.send("Hello World from Express!");
+      res.send("Hello World from Fastify!");
     });
 
     app.get("/users", (req, res) => {
@@ -218,12 +217,14 @@ You need to add `"type": "module"` in your `package.json` file.
  <TabItem className="tab-item" value="cjs" label="cjs">
   <div>
   ```javascript title="app.js"
-    const express = require("express");
+    const Fastify = require("fastify");
     // highlight-next-line
     const serverless = require("serverless-http");
 
+    const app = Fastify();
+
     app.get("/", (req, res) => {
-      res.send("Hello World from Express!");
+      res.send("Hello World from Fastify!");
     });
 
     app.get("/users", (req, res) => {
@@ -250,10 +251,9 @@ You need to add `"type": "module"` in your `package.json` file.
 
 </div>
 </TabItem>
-
 </Tabs>
 
-This code wraps your Express app with the `serverless-http` package and exports it as a handler for Genezio.
+This code wraps your Fastify app with the `serverless-http` package and exports it as a handler for Genezio.
 
 ## 3. Create the Genezio Configuration File
 
@@ -270,7 +270,7 @@ This file will contain the configuration needed to deploy your backend using Gen
 
 ```yaml title="genezio.yaml"
 # The name of the project.
-name: express-app
+name: fastify-app
 # The region where the project is deployed. Available regions: us-east-1, eu-central-1
 region: us-east-1
 # The version of the Genezio YAML configuration to parse.
@@ -287,7 +287,7 @@ backend:
   # Information about the backend's functions.
   functions:
     # The name (label) of the function.
-    - name: hello-world-express-app-function
+    - name: hello-world-fastify-app-function
       # The path to the function's code.
       path: ./
       # The name of the function handler
@@ -331,7 +331,7 @@ For more information about environment variables, you can check the [official do
 
 ## See your app in Genezio Dashboard
 
-After deploying your application, you can test it to ensure it's running correctly. To verify that your Express.js app is working, open a web browser and navigate to the URL provided for your deployed function.
+After deploying your application, you can test it to ensure it's running correctly. To verify that your Fastify app is working, open a web browser and navigate to the URL provided for your deployed function.
 
 This URL can be found in the deployment output under the `Functions Deployed` section.
 
@@ -341,9 +341,9 @@ You can find this URL in the deployment output under the `App Dashboard URL` sec
 
 ## Frequently Asked Questions
 
-### Do I Need to Modify My Express App Code?
+### Do I Need to Modify My Fastify App Code?
 
-Your Express project will only require the above [adjustments](#deployment-guide), as long as it is written in a **stateless** manner. To find out more about [stateless vs. stateful follow this link](https://stackoverflow.com/questions/5329618/stateless-vs-stateful).
+Your Fastify project will only require the above [adjustments](#deployment-guide), as long as it is written in a **stateless** manner. To find out more about [stateless vs. stateful follow this link](https://stackoverflow.com/questions/5329618/stateless-vs-stateful)
 
 ## Support <a href="#support" id="support"></a>
 
