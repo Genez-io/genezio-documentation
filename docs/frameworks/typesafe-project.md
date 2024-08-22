@@ -7,16 +7,17 @@ import Tabs from '@theme/Tabs';
 
 import TabItem from '@theme/TabItem';
 
-# Getting Started
+# Typesafe Project
 
 <head>
   <title>Getting Started with Genezio | Genezio Documentation</title>
 </head>
 
+Welcome to the Genezio Typesafe "Getting Started" guide! In this tutorial, you will learn how to write a backend class, export its methods, call them from the frontend code, and then deploy both the frontend and the backend locally for testing and pushing live to a staging environment.
 
-Welcome to the "Getting Started" guide! In this tutorial, you will learn how to write a backend class, export its methods, call them from the frontend code, and then deploy both the frontend and the backend locally for testing and pushing live to a staging environment.
-
-You can easily start with from a template project in the [Genezio Dashboard](https://app.genez.io/new-project/).
+:::tip
+Get started in no time with the [Typesafe Project template](https://app.genez.io/auth/login?redirect=new-project).
+:::
 
 If you want to start testing Genezio in your own IDE/machine, you can follow the steps below.
 
@@ -72,7 +73,6 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 </div>
 
 :::
-
 
 ## 3. Create a Genezio Typesafe project
 

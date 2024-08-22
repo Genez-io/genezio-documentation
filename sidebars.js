@@ -19,7 +19,16 @@ const sidebars = {
   // But you can create a sidebar manually
   tutorialSidebar: [
     "README",
-    "getting-started",
+    {
+      type: "category",
+      label: "Getting Started",
+      link: { type: "doc", id: "getting-started/README" },
+      items: [
+        "getting-started/use-a-template",
+        "getting-started/import-existing-project"
+      ],
+      collapsed: false
+    },
     {
       type: "category",
       label: "Frameworks",
@@ -32,6 +41,8 @@ const sidebars = {
         "frameworks/react",
         "frameworks/react-admin",
         "frameworks/refine",
+        "frameworks/fastify",
+        "frameworks/typesafe-project"
         "frameworks/vue",
       ],
       collapsed: false
@@ -109,7 +120,6 @@ const sidebars = {
         "genezio-typesafe/genezio-decorators",
         "genezio-typesafe/project-template",
         "genezio-typesafe/genezio-context"
-
       ]
     },
     {
@@ -119,7 +129,7 @@ const sidebars = {
       items: [
         "project-structure/genezio-configuration-file",
         "project-structure/.genezioignore",
-        "project-structure/backend-environment-variables",
+        "project-structure/backend-environment-variables"
       ]
     },
     {
@@ -210,10 +220,7 @@ const sidebars = {
       type: "category",
       label: "Learn more",
       link: { type: "doc", id: "learn-more/README" },
-      items: [
-        "learn-more/upgrading-to-v1",
-        "learn-more/supported-languages",
-      ]
+      items: ["learn-more/upgrading-to-v1", "learn-more/supported-languages"]
     },
     "troubleshooting",
     {
