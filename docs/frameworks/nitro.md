@@ -56,7 +56,7 @@ Use your preferred package manager to install Genezio:
 :::info
 If you don't already have a Nitro app, you can create one by running in your terminal:
 ```
-genezio create nitrojs --name nitro-project --region us-east-1 --default
+genezio create nitrojs --name nitro-project --region us-east-1
 ```
 :::
 
