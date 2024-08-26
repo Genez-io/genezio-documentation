@@ -9,7 +9,7 @@ description: Learn how to configure your Genezio project using the genezio.yaml 
 </head>
 The `genezio.yaml` file is a configuration file that contains all the settings for deploying your project. It is a YAML file that should be located at the root of your project.
 
-# Reference
+## Genezio Configuration File Reference
 
 ## `name`: `string` **Required**
 
@@ -46,6 +46,103 @@ Old format versions may not be supported by latest releases of the Genezio CLI.
 ```yaml
 # The version of the Genezio YAML configuration to parse.
 yamlVersion: 2
+```
+
+## `services`: `Array` **Optional**
+
+The services that can be added to the project. This field can be omitted if the project does not have any services.
+
+The services available are:
+- `databases`
+- `authentication`
+- `email`
+
+### `databases`: `Array` **Optional**
+
+#### `name`: `string` **Required**
+
+The name of the database. It is used to identify the database.
+
+#### `region`: `string` **Optional**
+
+The region where the database will be deployed. If not specified, the default region is `us-east-1`.
+
+The supported regions are:
+
+| Region         | Description        |
+| -------------- | ------------------ |
+| `us-east-1`    | US, North Virginia |
+| `eu-central-1` | Europe, Frankfurt  |
+
+#### `type`: `string` **Optional**
+
+The default value is `neon-postgres`.
+
+```yaml
+services:
+  databases:
+    - name: my-database
+      region: us-east-1
+```
+
+### `authentication`: `Object` **Optional**
+
+#### `database`: `Object` **Required**
+
+You can reference by name an existing database defined in the `genezio.yaml` file, as following:
+```yaml
+services:
+  databases:
+    - name: my-genezio-database
+      region: us-east-1
+  authentication:
+    database:
+      name: my-genezio-database
+```
+
+Or you can specify a database type and URI directly:
+
+Example for PostgreSQL:
+```yaml
+services:
+  databases:
+    type: "postgresql"
+    uri: ${{env.POSTGRES_DB_URI}}
+```
+
+Example for MongoDB:
+```yaml
+services:
+  databases:
+    type: "mongodb"
+    uri: ${{env.MONGO_DB_URI}}
+```
+
+#### `providers`: `Object` **Optional**
+
+Authentication providers such as `Email`, `Web3/Metamask` or `Google` that can be added to the project.
+This field can be omitted if you don't want to enable any authentication providers.
+
+```yaml
+services:
+  authentication:
+    database:
+      name: my-database
+    providers:
+      email: true
+      web3: true
+      google:
+        id: ${{env.GOOGLE_CLIENT_ID}}
+        secret: ${{env.GOOGLE_SECRET}}
+```
+
+### `email`: `boolean` **Optional**
+
+The email service configuration. This field can be omitted if the project does not require an email service.
+
+```yaml
+services:
+  email: true
 ```
 
 ## `backend`: `Object` **Optional**
@@ -111,6 +208,21 @@ If scripts are declared in the `scripts` field, they will be executed from this 
   - `cronString`: `string` **Required** only when `type` is `cron`.
 
     The cron string that specifies how frequently the method should be called. Check the cron string format on https://crontab.guru/.
+
+#### `environment`: `Object` **Optional**
+
+The environment variables that will be set for the backend. The variables can be accessed in the code using `process.env`.
+
+```yaml
+name: my-project
+yamlVersion: 2
+
+backend:
+  environment:
+    MY_ENV_VAR: my-value
+    MY_DATABASE_NAME: ${{services.databases.<database-name>.name}}
+    MY_SECRET: ${{env.SECRET}}
+```
 
 #### `scripts`: `Object` **Optional**
 
@@ -252,6 +364,25 @@ The subdomain where the frontend will be deployed.
 
 If not specified, a random subdomain will be generated.
 
+#### `environment`: `Object` **Optional**
+
+The environment variables that will be inject at build time. The variables can be accessed in the code using `process.env`.
+
+:::tip
+Each frontend framework will require a specific prefix for environment variables.
+For example, in Vite, you can access environment variables using `process.env.VITE_MY_ENV_VAR`.
+:::
+
+```yaml
+name: my-project
+yamlVersion: 2
+
+frontend:
+  environment:
+    VITE_ MY_ENV_VAR: my-value
+    VITE_MY_FUNCTION_URL: ${{backend.functions.<function-name>.url}}
+```
+
 #### `scripts`: `Object` **Optional**
 
 The scripts that run before special frontend events occur. If a list is provided to any of the fields, the scripts will be executed sequentially and in case one fails, the execution will be stopped.
@@ -357,12 +488,22 @@ backend:
 
 ### How to use variables in the scripts fields
 
-You can use variables in the scripts by using the `${{variable}}` syntax. The variables are replaced with their values before the script is executed.
+The `genezio.yaml` supports a set of expandable variables that can be used in the configuration file.
+These variables are replaced with their values when resources are created or when scripts are executed.
 
-Available variables are:
+Genezio supports the following formats:
+- `${{env.ENV_KEY}}` - this will be loaded from a `.env` file or from the global process environment variables.
+- `{{resource.path.field}}` - this format can be used to reference fields from the `genezio.yaml` itself - e.g. `{{backend.functions.<function-name>.name}}`.
+- `${{projectName}}`: The name of the project.
+- `${{stage}}`: The stage of the deployment. It can be set using the `--stage` flag in the CLI.
 
-- `projectName`: The name of the project.
-- `stage`: The stage of the deployment. It can be set using the `--stage` flag in the CLI.
+Only specific fields support these variables such as:
+- `backend.environment`
+- `frontend.environment`
+- `backend.scripts`
+- `frontend.scripts`
+- `services.authentication.database.uri`
+
 
 ```yaml
 name: my-project
@@ -374,4 +515,55 @@ backend:
   scripts:
     # Will output "Deploying my-project to stage dev" when run with the --stage dev flag
     deploy: echo "Deploying ${{projectName}} to stage ${{stage}}"
+```
+
+### How to add a PostgreSQL database to my project
+
+To add a PostgreSQL database to your project, you need to add the `databases` field to the `services` field in the `genezio.yaml` file.
+
+```yaml
+name: my-project
+yamlVersion: 2
+
+services:
+  databases:
+    - name: my-database
+      region: us-east-1
+```
+
+### How to add an authentication provider to my project
+
+To add an authentication provider to your project, you need to add the `authentication` field to the `services` field in the `genezio.yaml` file.
+
+You can either reference an existing database created in the Genezio architecture or specify the database type and URI directly.
+
+```yaml
+name: my-project
+yamlVersion: 2
+
+services:
+  databases:
+    - name: my-database
+      region: us-east-1
+  authentication:
+    database:
+      name: my-database
+    providers:
+      email: true
+      web3: true
+      google:
+        id: ${{env.GOOGLE_CLIENT_ID}}
+        secret: ${{env.GOOGLE_SECRET}}
+```
+
+### How to add an email service to my project
+
+To add an email service to your project, you need to add the `email` field to the `services` field in the `genezio.yaml` file.
+
+```yaml
+name: my-project
+yamlVersion: 2
+
+services:
+  email: true
 ```
