@@ -58,7 +58,7 @@ Create a Svelte app using the following steps:
 <details>
   <summary>**Create a Svelte App**</summary>
 
-<h3> 1. Fork our vue template repository on GitHub </h3>
+<h3> 1. Fork our svelte template repository on GitHub </h3>
 
 Go to https://github.com/Genez-io/svelte-getting-started/fork and fork the repo.
 
