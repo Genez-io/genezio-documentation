@@ -7,7 +7,11 @@ description: Learn how to configure your Genezio project using the genezio.yaml 
 <head>
   <title>Genezio Configuration File | Genezio Documentation</title>
 </head>
-The `genezio.yaml` file is a configuration file that contains all the settings for deploying your project. It is a YAML file that should be located at the root of your project.
+
+The `genezio.yaml` file is a configuration file that contains all the settings for deploying your project.
+It uses YAML syntax to define the project's name, services, backend, frontend, and other configurations.
+
+Usually it is localized in the root directory of your project.
 
 ## Genezio Configuration File Reference
 
@@ -19,6 +23,7 @@ Restrictions:
 
 - Unique per account
 - Must start with a letter and can only contain letters, numbers, and hyphens.
+
 ```yaml
 # The name of the project.
 name: project-name
@@ -34,6 +39,7 @@ The supported regions are:
 | -------------- | ------------------ |
 | `us-east-1`    | US, North Virginia |
 | `eu-central-1` | Europe, Frankfurt  |
+
 ```yaml
 # The region where the project is deployed. Available regions: us-east-1, eu-central-1
 region: us-east-1
@@ -52,12 +58,27 @@ yamlVersion: 2
 
 The services that can be added to the project. This field can be omitted if the project does not have any services.
 
-The services available are:
+The services available in Genezio are:
 - `databases`
 - `authentication`
 - `email`
 
 ### `databases`: `Array` **Optional**
+
+The databases that can be added to the project. This field can be omitted if the project does not have any databases.
+
+Multiple databases can be added to the project by adding multiple objects to the `databases` array.
+
+```yaml
+services:
+  databases:
+    - name: my-database
+      region: us-east-1
+```
+
+Enabling a database service will automatically set an environment variable `<DATABASE_NAME>_DATABASE_URL` that can be used to connect to the database.
+
+This resource exposes `uri` as an output expression: `${{services.databases.<database-name>.uri}}`.
 
 #### `name`: `string` **Required**
 
@@ -67,40 +88,63 @@ The name of the database. It is used to identify the database.
 
 The region where the database will be deployed. If not specified, the default region is `us-east-1`.
 
+You should choose the region that is closest to your server to reduce latency.
+
 The supported regions are:
 
-| Region         | Description        |
-| -------------- | ------------------ |
-| `us-east-1`    | US, North Virginia |
-| `eu-central-1` | Europe, Frankfurt  |
+| Region           | Description             |
+| ---------------- | ----------------------- |
+| `us-east-1`      | US, North Virginia      |
+| `eu-central-1`   | Europe, Frankfurt       |
+| `eu-east-2`      | US, Ohio                |
+| `us-west-2`      | US, Oregon              |
+| `ap-southeast-1` | Asia Pacific, Singapore |
+| `ap-southeast-2` | Asia Pacific, Sidney    |
 
 #### `type`: `string` **Optional**
 
 The default value is `neon-postgres`.
 
+### `authentication`: `Object` **Optional**
+
+The authentication service can be enabled for the project.
+This field can be omitted if the project does not require authentication.
+
+```yaml
+services:
+  authentication:
+    database:
+      name: my-database
+    providers:
+      email: true
+      web3: true
+      google:
+        id: ${{env.GOOGLE_CLIENT_ID}}
+        secret: ${{env.GOOGLE_SECRET}}
+    settings:
+      resetPassword:
+        redirectUrl: https://${{frontend.<frontend-name>.subdomain}}.app.genez.io/reset-password
+```
+
+This resource exposes `token` and `region` as an output expression:
+
+- `${{services.authentication.token}}`.
+- `${{services.authentication.region}}`.
+
+#### `database`: `Object` **Required**
+
+You can reference a database by name. The database should be defined in the `services.databases` field.
 ```yaml
 services:
   databases:
     - name: my-database
       region: us-east-1
-```
-
-### `authentication`: `Object` **Optional**
-
-#### `database`: `Object` **Required**
-
-You can reference by name an existing database defined in the `genezio.yaml` file, as following:
-```yaml
-services:
-  databases:
-    - name: my-genezio-database
-      region: us-east-1
   authentication:
     database:
-      name: my-genezio-database
+      name: my-database
 ```
 
-Or you can specify a database type and URI directly:
+Or you can specify an external (bring-your-own) database by `type` and `uri` directly:
 
 Example for PostgreSQL:
 ```yaml
@@ -118,16 +162,17 @@ services:
     uri: ${{env.MONGO_DB_URI}}
 ```
 
+Note: You should have a `.env` file where you define the `POSTGRES_DB_URI` or `MONGO_DB_URI` environment variables.
+
+You can use expression to define the environment variables. Check the [Usage](#how-to-use-variables-in-the-environment-fields) section for more information.
+
 #### `providers`: `Object` **Optional**
 
-Authentication providers such as `Email`, `Web3/Metamask` or `Google` that can be added to the project.
+Authentication providers such as `Email`, `Web3/Metamask` or `Google` can be added to the project.
+
 This field can be omitted if you don't want to enable any authentication providers.
 
 ```yaml
-services:
-  authentication:
-    database:
-      name: my-database
     providers:
       email: true
       web3: true
@@ -136,9 +181,25 @@ services:
         secret: ${{env.GOOGLE_SECRET}}
 ```
 
+#### `settings`: `Object` **Optional**
+
+Using this field, the `redirectUrl` for password reset and email verification can be set.
+
+```yaml
+    settings:
+      resetPassword:
+        redirectUrl: https://${{frontend.<frontend-name>.subdomain}}.app.genez.io/reset-password
+      emailVerification:
+        redirectUrl: https://${{frontend.<frontend-name>.subdomain}}.app.genez.io/verify
+```
+
+More details on how to use these settings can be found in the [Authentication section](/docs/genezio-typesafe/authentication.md).
+
+
 ### `email`: `boolean` **Optional**
 
-The email service configuration. This field can be omitted if the project does not require an email service.
+The email service can be enabled for the project.
+This field can be omitted if the project does not require an email service.
 
 ```yaml
 services:
@@ -211,7 +272,10 @@ If scripts are declared in the `scripts` field, they will be executed from this 
 
 #### `environment`: `Object` **Optional**
 
-The environment variables that will be set for the backend. The variables can be accessed in the code using `process.env`.
+The environment variables that will be set for the backend.
+The variables can be accessed in the code using `process.env`.
+
+You can use expression to define the environment variables. Check the [Usage](#how-to-use-variables-in-the-environment-fields) section for more information.
 
 ```yaml
 name: my-project
@@ -265,6 +329,8 @@ backend:
 #### `functions`: `Array` **Optional**
 
 The functions that will be deployed to the cloud. This field can be omitted if the project does not have any functions.
+
+This resource exposes `url` as an output expression: `${{backend.functions.<function-name>.url}}`.
 
 - `name`: `string` **Required**
 
@@ -328,6 +394,10 @@ The frontend configuration. This field can be omitted if the project does not ha
 
 Can be an object or an array of objects if the project has multiple frontends.
 
+#### `name`: `string` **Optional**
+
+The name of the frontend. It is used to identify the frontend inside the configuration file.
+
 #### `path`: `string` **Required**
 
 The path where the frontend code is located. It is relative to the `genezio.yaml` file.
@@ -379,9 +449,13 @@ yamlVersion: 2
 
 frontend:
   environment:
-    VITE_ MY_ENV_VAR: my-value
+    VITE_MY_ENV_VAR: my-value
+    VITE_MY_AUTH_TOKEN: ${{services.authentication.token}}
+    VITE_MY_AUTH_REGION: ${{services.authentication.region}}
     VITE_MY_FUNCTION_URL: ${{backend.functions.<function-name>.url}}
 ```
+
+These environment variables are injected at build time when `scripts.build` are run.
 
 #### `scripts`: `Object` **Optional**
 
@@ -432,6 +506,72 @@ frontend:
       - npm install
       - npm run dev
 ```
+
+## Expressions
+
+The `genezio.yaml` supports a set of expandable expressions that can be used in the configuration file.
+These variables are replaced with their values when resources are created or when scripts are executed.
+
+Genezio supports the following formats:
+- `${{env.ENV_KEY}}` - this will be loaded from a `.env` file or from the global process environment variables.
+- `{{resource.path.field}}` - this format can be used to reference fields from the `genezio.yaml` itself - e.g. `{{backend.functions.<function-name>.name}}`.
+
+Expressions can be used in the following YAML fields:
+- `backend.environment`
+- `frontend.environment`
+- `services.authentication.database.uri`
+- `services.authentication.providers.google.id`
+- `services.authentication.providers.google.secret`
+- `services.authentication.settings.resetPassword.redirectUrl`
+- `services.authentication.settings.emailVerification.redirectUrl`
+
+You can concatenate expressions with strings - e.g. `prefix-${{env.ENV_KEY}}-suffix`.
+
+```yaml
+name: my-project
+region: us-east-1
+yamlVersion: 2
+# ...
+frontend:
+  # ...
+  environment:
+    VITE_MY_ENV_VAR: my-value
+    VITE_MY_AUTH_TOKEN: ${{services.authentication.token}}
+    VITE_MY_AUTH_REGION: ${{services.authentication.region}}
+    VITE_MY_FUNCTION_URL: ${{backend.functions.<function-name>.url}}
+  #...
+```
+
+## Variables
+
+Genezio supports the following variables:
+- `${{projectName}}`: The name of the project.
+- `${{stage}}`: The stage of the deployment. It can be set using the `--stage` flag in the CLI:
+
+Variables can be used in the following fields:
+- `backend.scripts`
+- `frontend.scripts`
+
+```yaml
+name: my-project
+region: us-east-1
+yamlVersion: 2
+backend:
+  # ...
+  scripts:
+    deploy: echo "Deploying ${{projectName}} to stage ${{stage}}"
+```
+
+## Output Variables
+
+Genezio supports the output variables for specific resources:
+
+- `${{services.databases.<database-name>.uri}}`: The URI of the database.
+- `${{services.authentication.token}}`: The token of the authentication service.
+- `${{services.authentication.region}}`: The region of the authentication service.
+- `${{backend.functions.<function-name>.url}}`: The URL of the function.
+
+These can be used to inject the values into the environment variables of the backend or as environment variables at build time for the frontend.
 
 ## Usage
 
@@ -486,38 +626,7 @@ backend:
     architecture: x86_64
 ```
 
-### How to use variables in the scripts fields
-
-The `genezio.yaml` supports a set of expandable variables that can be used in the configuration file.
-These variables are replaced with their values when resources are created or when scripts are executed.
-
-Genezio supports the following formats:
-- `${{env.ENV_KEY}}` - this will be loaded from a `.env` file or from the global process environment variables.
-- `{{resource.path.field}}` - this format can be used to reference fields from the `genezio.yaml` itself - e.g. `{{backend.functions.<function-name>.name}}`.
-- `${{projectName}}`: The name of the project.
-- `${{stage}}`: The stage of the deployment. It can be set using the `--stage` flag in the CLI.
-
-Only specific fields support these variables such as:
-- `backend.environment`
-- `frontend.environment`
-- `backend.scripts`
-- `frontend.scripts`
-- `services.authentication.database.uri`
-
-
-```yaml
-name: my-project
-yamlVersion: 2
-backend:
-  path: .
-  language:
-    name: ts
-  scripts:
-    # Will output "Deploying my-project to stage dev" when run with the --stage dev flag
-    deploy: echo "Deploying ${{projectName}} to stage ${{stage}}"
-```
-
-### How to add a PostgreSQL database to my project
+### Add a Postgres
 
 To add a PostgreSQL database to your project, you need to add the `databases` field to the `services` field in the `genezio.yaml` file.
 
@@ -531,7 +640,7 @@ services:
       region: us-east-1
 ```
 
-### How to add an authentication provider to my project
+### Enable authentication
 
 To add an authentication provider to your project, you need to add the `authentication` field to the `services` field in the `genezio.yaml` file.
 
@@ -556,7 +665,35 @@ services:
         secret: ${{env.GOOGLE_SECRET}}
 ```
 
-### How to add an email service to my project
+### Configure the reset password and email verification redirect URLs
+
+To configure the reset password and email verification redirect URLs, you need to add the `settings` field to the `authentication` field in the `genezio.yaml` file.
+
+```yaml
+name: my-project
+yamlVersion: 2
+
+services:
+  databases:
+    - name: my-database
+      region: us-east-1
+  authentication:
+    database:
+      name: my-database
+    providers:
+      email: true
+      web3: true
+      google:
+        id: ${{env.GOOGLE_CLIENT_ID}}
+        secret: ${{env.GOOGLE_SECRET}}
+    settings:
+      resetPassword:
+        redirectUrl: https://${{frontend.<frontend-name>.subdomain}}.app.genez.io/reset-password
+      emailVerification:
+        redirectUrl: https://${{frontend.<frontend-name>.subdomain}}.app.genez.io/verify
+```
+
+### Enable email service
 
 To add an email service to your project, you need to add the `email` field to the `services` field in the `genezio.yaml` file.
 

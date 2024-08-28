@@ -23,12 +23,33 @@ We support the following databases:
 - PostgreSQL (provided through [**Neon**](https://neon.tech/))
 - MongoDB (coming soon)
 
-## How to create a database
+## Create a database
+
+### Using the dashboard
 
 To create a database you can navigate our dashboard, go to the [**Databases**](https://app.genez.io/databases/) page
 and click on the **Create Database** button.
 
 Alternatively, you can select a project, choose "Database" from the left-side menu and click on the **Create Database** button.
+
+### Using the configuration file
+
+To create a database, you can add the following snippet in the configuration file:
+
+```yaml title="genezio.yaml"
+services:
+  databases:
+    - name: my-database
+      region: us-east-1
+```
+
+This will automatically create and link a database named `my-database` in the `us-east-1` region.
+
+You can connect to it in the code using the environment variable `${<DATABASE_NAME>_DATABASE_URL}`.
+
+:::tip
+Use `${{services.databases.<database-name>.uri}}` in the `genezio.yaml` to access the connection URI.
+:::
 
 ## Using the database
 
