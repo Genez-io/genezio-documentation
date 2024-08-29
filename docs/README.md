@@ -3,11 +3,20 @@ sidebar_position: 1
 description: Access Genezio documentation to optimize your development. Find tutorials, guides, and examples to effectively use Genezio’s capabilities
 ---
 
+import GenezioUserDocCard from "../src/theme/GenezioUserDocCard";
+
 # Overview
 
 <head>
   <title>Overview | Genezio Documentation</title>
 </head>
+
+## Getting Started
+
+<GenezioUserDocCard type="getting-started"></GenezioUserDocCard>
+
+## Genezio Overview
+
 Welcome to the Genezio documentation.
 
 Genezio is a powerful function-as-a-service (FaaS) platform that makes deploying AWS Lambda-like functions a breeze. On top of the FaaS, it features a typesafe backend-as-a-service (BaaS), ensuring type-safe communication between your backend and frontend, which means fewer bugs and smoother development.
@@ -17,6 +26,8 @@ With Genezio Typesafe, you get out-of-the-box authentication, easy project confi
 ### Genezio Functions
 
 Genezio Functions are the core of the Genezio platform, allowing developers to deploy and manage serverless functions with ease. These functions operate similarly to AWS Lambda, enabling you to run code in response to events without managing servers. With Genezio Functions, you focus on writing code and the platform handles the deployment and scales automatically.
+
+Learn more about [Genezio Functions](/docs/functions/introduction).
 
 ### Supported Frameworks
 
@@ -58,16 +69,10 @@ Explore the sections below for detailed instructions, tutorials, and API referen
 Join our [Discord](https://discord.gg/uc9H5YKjXv) community.
 :::
 
-### Getting Started
-
-import GenezioUserDocCard from "../src/theme/GenezioUserDocCard";
-
-<GenezioUserDocCard type="getting-started"></GenezioUserDocCard>
-
-### Features
+## Features
 
 <GenezioUserDocCard type="features"></GenezioUserDocCard>
 
-### Examples
+## Examples
 
 <GenezioUserDocCard type="examples"></GenezioUserDocCard>

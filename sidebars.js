@@ -97,6 +97,7 @@ const sidebars = {
         "features/backend-deployment",
         "features/frontend-deployment",
         "features/databases",
+        "features/authentication",
         "features/testing",
         "features/deployment-environments",
         "features/email-service",
@@ -112,7 +113,6 @@ const sidebars = {
       link: { type: "doc", id: "genezio-typesafe/README" },
       items: [
         "genezio-typesafe/typesafety",
-        "genezio-typesafe/authentication",
         "genezio-typesafe/rate-limiter",
         "genezio-typesafe/generated-sdk",
         "genezio-typesafe/http-methods-webhooks",
@@ -159,7 +159,6 @@ const sidebars = {
             "cli-tool/cli-commands/logout"
           ]
         },
-        "cli-tool/analytics",
         "cli-tool/update"
       ]
     },
