@@ -115,8 +115,8 @@ Other things that do not depend on connecting to a database are scheduling the e
 
 Also, you can find more details on deploying the backend and frontend here:
 
-- [Backend Deployment](/docs/features/backend-deployment)
-- [Frontend Deployment](/docs/features/frontend-deployment)
+- [Backend Deployment](/docs/features/deployments)
+- [Frontend Deployment](/docs/features/deployments)
 
 Now you are ready for some more advanced use cases:
 

@@ -94,8 +94,7 @@ const sidebars = {
       label: "Features",
       link: { type: "doc", id: "features/README" },
       items: [
-        "features/backend-deployment",
-        "features/frontend-deployment",
+        "features/deployments",
         "features/databases",
         "features/authentication",
         "features/testing",

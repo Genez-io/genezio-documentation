@@ -1,0 +1,156 @@
+---
+description: Genezio offers seamless backend  and frontend deployment using a function-as-a-service infrastructure. Deploy your project with a single-command `genezio deploy`.
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import Admonition from '@theme/Admonition';
+
+# Deployments
+
+<head>
+  <title> Deployments | Genezio Documentation</title>
+</head>
+
+Genezio is a Function-as-a-Service platform that allows you to deploy fullstack application in a single-click manner.
+
+:::info
+You can deploy projects written in JavaScript or TypeScript.
+:::
+
+We recommend you to:
+1. [Choose one of our templates](/docs/getting-started/use-a-template.md) to get started.
+2. [Migrate your existing project](/docs/getting-started/import-existing-project.md) to Genezio.
+3. Create a new project using the `genezio create` command and follow the interactive wizard.
+
+## Supported Frameworks
+
+Genezio supports a wide range of popular frameworks, making it easy to integrate and deploy your existing projects or start new ones with familiar tools.
+Here’s a look at some of the frameworks you can use with Genezio:
+
+- **Genezio Functions**: AWS Lambda-compatible functions that run code and handle requests without managing servers.
+- [**Genezio Typesafe Classes**](/docs/genezio-typesafe/typesafety.md): Classes that can be deployed as functions with guaranteed client typesafe communication.
+- [**Serverless Express.js:**](/docs/frameworks/expressjs.md) Build web applications and APIs with the popular Node.js framework.
+- [**Next.js:**](/docs/frameworks/nextjs.md) Develop server-rendered React applications with Next.js.
+- **and more...** - to learn more about the supported frameworks, [check the Frameworks section](/docs/frameworks/).
+
+## Deploy your project
+
+With Genezio, backend, frontend or even fullstack projects can be deployed a single command.
+
+### Using the dashboard
+
+In the Genezio dashboard, you can create a new project or import an existing project from a repository and automatically deploy it in CI manner.
+Go to the [Genezio Dashboard](https://app.genez.io/new-project) and follow the on-screen instructions.
+
+### Using the CLI
+
+You can deploy your project using the genezio CLI.
+Install it by running the following command:
+
+```
+npm install -g genezio
+```
+
+You can deploy your project by running the following command:
+
+```
+genezio deploy
+```
+
+Note: You can deploy a frontend-only or backend-only project by adding the `--frontend` or `--backend` flags respectively.
+
+## Backend deployments
+
+To deploy your backend functions/classes project, add the `backend` section in your `genezio.yaml`:
+
+:::info
+The `genezio.yaml` file is specific to the framework you are using.
+Check the [Frameworks](/docs/frameworks/) for more details.
+:::
+
+```yaml title="genezio.yaml" showLineNumbers
+name: my-project
+region: us-east-1
+yamlVersion: 2
+backend:
+  path: .
+  language:
+    name: js
+  functions:
+    - name: hello
+      path: ./server
+      entry: hello.mjs
+      handler: handler
+```
+
+Learn more about the `genezio.yaml` file in the [Configuration File section](/docs/project-structure/genezio-configuration-file).
+
+This command will deploy your application according to the configuration specified in your `genezio.yaml` file:
+```
+genezio deploy
+```
+
+## Frontend deployments
+
+Genezio's frontend deployment offers a simple and cost-effective way to host and serve static websites.
+It leverages Amazon S3 in combination with CloudFront CDN (Content Delivery Network) to ensure fast and reliable content delivery to users across the globe.
+
+:::tip
+You can deploy all kinds of frontend apps, including React, Angular, Vue.js, Flutter Web, Pure HTML, Jekyll, Hugo, Svelte, Foundation, etc..
+:::
+
+## Deploy the frontend project
+
+To deploy your frontend project, add the `frontend` section in your `genezio.yaml`:
+
+```yaml title="genezio.yaml" showLineNumbers
+name: my-project
+region: us-east-1
+yamlVersion: 2
+frontend:
+  # Specifies the path of your client code.
+  path: .
+  # Specifies the path to the build directory.
+  # This is the folder that will be deployed.
+  publish: build
+  # The frontend will be deployed as `https://cool-capybara.app.genez.io`,
+  subdomain: cool-capybara
+  # Scripts will run in the specified `path` folder.
+  scripts:
+    # The command to build your frontend project. This is custom to your project.
+    # It must to populate the specified `publish` folder with a `index.html` file.
+    build: npm run build
+```
+
+Learn more about the `genezio.yaml` file in the [Configuration File section](/docs/project-structure/genezio-configuration-file).
+
+This command will deploy your application according to the configuration specified in your `genezio.yaml` file:
+```
+genezio deploy
+```
+
+## Genezio Configuration file
+
+The `genezio.yaml` file is essential for deploying your project to the Genezio Cloud.
+It tells Genezio how to create your infrastructure (created resources such as databases, enable authentication, deploy functions, host frontend) and deploy your project.
+
+The `genezio.yaml` file is located in the root of your project directory.
+It can be automatically generated by the genezio CLI tool using the following commands:
+- `genezio create` - will create a project from scratch and generate a corresponding `genezio.yaml` file.
+- `genezio deploy` - for Next.js and Nitro projects, the `genezio.yaml` file will be generated automatically.
+
+For more details on the `genezio.yaml` syntax, check the [Genezio Configuration File](/docs/project-structure/genezio-configuration-file "mention") section.
+
+## Testing your project
+
+The Test Interface in the Genezio Dashboard is a Postman-like tool that allows developers to easily craft and send test requests to the deployed backend.
+This interface mimics the functionality of Postman, enabling you to create, modify, and execute requests directly within the dashboard, making it simple to test and debug your backend services. Learn more about [Testing](/docs/features/testing).
+
+## Next Steps
+
+Explore more features and capabilities of Genezio by checking out the following tutorials:
+
+- [Web3 Application](https://genezio.com/blog/create-your-first-web3-app/)
+- [ChatGPT App](https://genezio.com/blog/create-your-first-app-using-chatgpt/)
+- [Shopping Cart Implementation](https://genezio.com/blog/implement-a-shopping-cart-using-typescript-redis-and-react/)
