@@ -3,7 +3,7 @@ sidebar_position: 5
 description: In this tutorial, you will learn how to integrate a MongoDB Atlas database in a genezio project.
 ---
 
-# Connect to MongoDB (Atlas)
+# Connect to Mongo (Atlas)
 
 <head>
   <title>Connect to MongoDB (Atlas) | Genezio Documentation</title>

@@ -52,9 +52,9 @@ const sidebars = {
       link: { type: "doc", id: "tutorials/README" },
       items: [
         "tutorials/how-to-deploy-a-serverless-function",
-        "tutorials/connect-to-postgres-powered-by-neon",
-        "tutorials/connect-to-redis-powered-by-upstash",
-        "tutorials/connect-to-mongodb-atlas",
+        "tutorials/connect-to-postgres",
+        "tutorials/connect-to-redis-upstash",
+        "tutorials/connect-to-mongo-atlas",
         "tutorials/create-react-app-genezio-auth",
         "tutorials/create-react-app-genezio-google-oauth",
         {

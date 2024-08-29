@@ -6,7 +6,7 @@ import Tabs from '@theme/Tabs';
 
 import TabItem from '@theme/TabItem';
 
-# How to Deploy a Serverless Function
+# Deploy a Serverless Function
 
 In this tutorial, you will learn how to deploy functions or serverless workloads on Genezio. We'll cover the benefits, answer common questions, and provide detailed deployment steps.
 
