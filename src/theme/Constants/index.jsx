@@ -16,15 +16,9 @@ const ItemsGettingStarted = [
 const ItemsFeatures = [
   {
     type: "link",
-    label: "Backend Deployment",
-    href: "./features/backend-deployment",
-    description: "Deploy your backend in a serverless infrastructure",
-  },
-  {
-    type: "link",
-    label: "Frontend Deployment",
-    href: "./features/frontend-deployment",
-    description: "Deploy your frontend",
+    label: "Deployments",
+    href: "./features/deployments",
+    description: "Deploy your projects in a serverless infrastructure",
   },
   {
     type: "link",

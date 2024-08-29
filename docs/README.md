@@ -27,8 +27,6 @@ With Genezio Typesafe, you get out-of-the-box authentication, easy project confi
 
 Genezio Functions are the core of the Genezio platform, allowing developers to deploy and manage serverless functions with ease. These functions operate similarly to AWS Lambda, enabling you to run code in response to events without managing servers. With Genezio Functions, you focus on writing code and the platform handles the deployment and scales automatically.
 
-Learn more about [Genezio Functions](/docs/functions/introduction).
-
 ### Supported Frameworks
 
 Genezio supports a wide range of popular frameworks, making it easy to integrate and deploy your existing projects or start new ones with familiar tools. Here’s a look at some of the frameworks you can use with Genezio:
