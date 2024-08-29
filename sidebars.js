@@ -45,7 +45,6 @@ const sidebars = {
         "frameworks/typesafe-project",
         "frameworks/vue"
       ],
-      collapsed: false
     },
     {
       type: "category",
