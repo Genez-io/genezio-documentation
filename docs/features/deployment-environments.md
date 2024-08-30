@@ -8,7 +8,8 @@ description: Learn how to manage multiple deployment environments in Genezio. Cr
 <head>
   <title>Environments | Genezio Documentation</title>
 </head>
-Genezio provides a way to organise your projects into different, isolated environments.
+
+Genezio provides a way to organize your projects into isolated environments.
 
 This enables you to create development, staging environments where you can test new features before launching them into production.
 
@@ -18,15 +19,14 @@ You can deploy your application on different environments by setting the flag `-
 genezio deploy --stage <stage-name>
 ```
 
-If the stage name passed doesn't exists, it will automatically be created during the first deployment. Otherwise, the environment will be updated with the new source code.
+If the stage name passed doesn't exists, it will automatically be created during the first deployment.
+Otherwise, the environment will be updated with the new source code.
 
-<!-- :::info -->
+If you have services such as Email, Databases, Authentication set in the configuration file, they will be created for each environment.
 
 :::info
 If the argument `--stage <stage-name>` is not specified, the default value used will be `prod`.
 :::
-
-<!-- ::: -->
 
 ## Create a new environment
 

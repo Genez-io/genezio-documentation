@@ -12,11 +12,22 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 </head>
 Genezio provides a way to send emails with a managed email service.
 
-### Active the service for your project
+## Enable the Email Service
+
+### Using the dashboard
 
 On your project page, click on the `Email Service` button on the sidebar and install the integration.
 
-### Use it in your project
+### Using the configuration file
+
+To enable the email service, add the following snippet in the configuration file:
+
+```yaml title="genezio.yaml"
+services
+  email: true
+```
+
+## Use it in your project
 
 To test your project locally, you have to create a file named `.env` and store the token there. This file should be in the root directory of your backend.
 

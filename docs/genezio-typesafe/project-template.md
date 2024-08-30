@@ -8,7 +8,7 @@ The whole project can be found in this [GitHub repository](https://github.com/Ge
 
 - [NodeJS](https://nodejs.org/en/download/) >= 18.2
 - [MongoDB URL](https://www.mongodb.com/resources/products/fundamentals/mongodb-cluster-setup)
-- [PostgreSQL URL](/docs/features/databases/#how-to-create-a-database)
+- [PostgreSQL URL](/docs/features/databases/#create-a-database)
 
 ## Project Structure
 
