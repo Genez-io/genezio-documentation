@@ -1,14 +1,14 @@
 ---
 sidebar_position: 3
-description: In this tutorial, you will learn how to integrate a Postgres database using Neon in a genezio project.
+description: In this tutorial, you will learn how to integrate a Postgres database using in a Genezio project.
 ---
 
 # Connect to Postgres
 
 <head>
-  <title>Connect to Postgres (Powered by Neon) | Genezio Documentation</title>
+  <title>Connect to Postgres | Genezio Documentation</title>
 </head>
-In this tutorial, you will learn how to integrate a Postgres database in a genezio project.
+In this tutorial, you will learn how to integrate a Postgres database in a Genezio project.
 
 ### Prerequisites
 
@@ -112,8 +112,8 @@ Learn about other features like scheduling the execution of a function as a cron
 
 Also, you can find more details on deploying the backend and frontend here:
 
-- [Backend Deployment](/docs/features/backend-deployment)
-- [Frontend Deployment](/docs/features/frontend-deployment)
+- [Backend Deployment](/docs/features/deployments)
+- [Frontend Deployment](/docs/features/deployments)
 
 Now you are ready for some more advanced use cases:
 

@@ -149,8 +149,8 @@ $ Frontend URL: https://<subdomain>.app.genez.io
 After setting up the template, here are some recommended next steps:
 
  <ul>
-    <li><a href="../../features/custom-domain-configuration/">Add Custom Domain</a></li>
-    <li><a href="../../features/backend-deployment/">Learn more about Backend Deployment</a></li>
+    <li><a href="/docs/features/custom-domain-configuration/">Add Custom Domain</a></li>
+    <li><a href="./docs/features/deployments/">Learn more about Backend Deployment</a></li>
 </ul>
 
 ## Support <a href="#support" id="support"></a>

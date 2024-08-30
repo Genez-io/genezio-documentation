@@ -45,7 +45,6 @@ const sidebars = {
         "frameworks/typesafe-project",
         "frameworks/vue"
       ],
-      collapsed: false
     },
     {
       type: "category",
@@ -53,9 +52,9 @@ const sidebars = {
       link: { type: "doc", id: "tutorials/README" },
       items: [
         "tutorials/how-to-deploy-a-serverless-function",
-        "tutorials/connect-to-postgres-powered-by-neon",
-        "tutorials/connect-to-redis-powered-by-upstash",
-        "tutorials/connect-to-mongodb-atlas",
+        "tutorials/connect-to-postgres",
+        "tutorials/connect-to-redis-upstash",
+        "tutorials/connect-to-mongo-atlas",
         "tutorials/create-react-app-genezio-auth",
         "tutorials/create-react-app-genezio-google-oauth",
         {
@@ -94,9 +93,9 @@ const sidebars = {
       label: "Features",
       link: { type: "doc", id: "features/README" },
       items: [
-        "features/backend-deployment",
-        "features/frontend-deployment",
+        "features/deployments",
         "features/databases",
+        "features/authentication",
         "features/testing",
         "features/deployment-environments",
         "features/email-service",
@@ -112,7 +111,6 @@ const sidebars = {
       link: { type: "doc", id: "genezio-typesafe/README" },
       items: [
         "genezio-typesafe/typesafety",
-        "genezio-typesafe/authentication",
         "genezio-typesafe/rate-limiter",
         "genezio-typesafe/generated-sdk",
         "genezio-typesafe/http-methods-webhooks",
@@ -159,7 +157,6 @@ const sidebars = {
             "cli-tool/cli-commands/logout"
           ]
         },
-        "cli-tool/analytics",
         "cli-tool/update"
       ]
     },

@@ -8,7 +8,7 @@ Genezio provides the `@GenezioRateLimiter` that can be used on any method of a d
 ## Prerequisites
 
 To use the rate limiter, you need to have a Redis database. You can integrate your project with an Upstash Redis database from the Genezio dashboard or use your own Redis database.
-For more information on how to integrate your Genezio project with an Upstash Redis database, see the [Upstash Redis integration guide](/docs/tutorials/connect-to-redis-powered-by-upstash/).
+For more information on how to integrate your Genezio project with an Upstash Redis database, see the [Upstash Redis integration guide](/docs/tutorials/connect-to-redis-upstash/).
 
 ## How to use the rate limiter
 

@@ -258,8 +258,8 @@ Now that you have figured out how to write a backend class, export its methods, 
 
 Let’s talk about connecting to a database. We support `PostgreSQL`, `MongoDB`, and `Redis`. If you do not have a database, you will learn how to provision one using a dedicated database hosting provider, with whom we partnered up:
 
-- [**Connect to `Postgres SQL`**](/docs/tutorials/connect-to-postgres-powered-by-neon)
-- [**Connect to `MongoDB`**](/docs/tutorials/connect-to-mongodb-atlas)
+- [**Connect to `Postgres SQL`**](/docs/tutorials/connect-to-postgres)
+- [**Connect to `MongoDB`**](/docs/tutorials/connect-to-mongo-atlas)
 - [**Connect to `Redis`**](/docs/integrations/upstash-redis)
 
 Every application needs to handle user authentication and authorization. If you do not have an authentication provider, you can learn how to use the genezio authentication service:
@@ -274,8 +274,8 @@ Other things that do not depend on connecting to a database are scheduling the e
 
 Also, you can find more details on deploying the backend and frontend here:
 
-- [Backend Deployment](/docs/features/backend-deployment)
-- [Frontend Deployment](/docs/features/frontend-deployment)
+- [Backend Deployment](/docs/features/deployments)
+- [Frontend Deployment](/docs/features/deployments)
 
 Now you are ready for some more advanced use cases:
 
