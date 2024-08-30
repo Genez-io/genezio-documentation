@@ -164,7 +164,7 @@ services:
 
 Note: You should have a `.env` file where you define the `POSTGRES_DB_URI` or `MONGO_DB_URI` environment variables.
 
-You can use expression to define the environment variables. Check the [Usage](#how-to-use-variables-in-the-environment-fields) section for more information.
+You can use expression to define the environment variables. Check the [Usage](#expressions) section for more information.
 
 #### `providers`: `Object` **Optional**
 
@@ -193,7 +193,7 @@ Using this field, the `redirectUrl` for password reset and email verification ca
         redirectUrl: https://${{frontend.<frontend-name>.subdomain}}.app.genez.io/verify
 ```
 
-More details on how to use these settings can be found in the [Authentication section](/docs/genezio-typesafe/authentication.md).
+More details on how to use these settings can be found in the [Authentication section](/docs/features/authentication.md).
 
 
 ### `email`: `boolean` **Optional**
@@ -275,7 +275,7 @@ If scripts are declared in the `scripts` field, they will be executed from this 
 The environment variables that will be set for the backend.
 The variables can be accessed in the code using `process.env`.
 
-You can use expression to define the environment variables. Check the [Usage](#how-to-use-variables-in-the-environment-fields) section for more information.
+You can use expression to define the environment variables. Check the [Usage](#expressions) section for more information.
 
 ```yaml
 name: my-project
@@ -292,7 +292,7 @@ backend:
 
 The scripts that run before special backend events occur. If a list is provided to any of the fields, the scripts will be executed sequentially and in case one fails, the execution will be stopped.
 
-Variables can be used in the scripts. Check the [Usage](#how-to-use-variables-in-the-scripts-fields) section for more information.
+Variables can be used in the scripts. Check the [Usage](#variables) section for more information.
 
 - `deploy`: `string` | `string[]` **Optional**
 
@@ -461,7 +461,7 @@ These environment variables are injected at build time when `scripts.build` are 
 
 The scripts that run before special frontend events occur. If a list is provided to any of the fields, the scripts will be executed sequentially and in case one fails, the execution will be stopped.
 
-Variables can be used in the scripts. Check the [Usage](#how-to-use-variables-in-the-scripts-fields) section for more information.
+Variables can be used in the scripts. Check the [Usage](#variables) section for more information.
 
 - `deploy`: `string` | `string[]` **Optional**
 
