@@ -153,6 +153,37 @@ Deploy the backend by running `genezio deploy --backend` and enable the authenti
 You can now test your protected method using the testing interface available in the dashboard on `Test your project`.
 From here you can create a new user, login, retrieve the user's token and call the protected method with the corresponding token.
 
+## Enable authentication
+
+### Using the dashboard
+
+To enable authentication for a project, go to the project's page in the [dashboard](https://app.genez.io/) and click on the `Authentication` button in the sidebar.
+
+You will be prompted to choose a database type. Follow the wizard to create a new database or add the connection URI of your own database.
+
+### Using the configuration file
+
+To enable the authentication feature, add the following snippet in the configuration file:
+
+```yaml title="genezio.yaml"
+services:
+  authentication:
+    database:
+      name: my-database
+    providers:
+      email: true
+      web3: true
+      google:
+        id: ${{env.GOOGLE_CLIENT_ID}}
+        secret: ${{env.GOOGLE_SECRET}}
+```
+
+You can enable multiple authentication providers at the same time. The `providers` field is optional and you can enable only the providers you want.
+
+:::info
+Use `${{services.authentication.token}}` and `${{services.authentication.region}}` in the `genezio.yaml` to inject these variables at frontend build time.
+:::
+
 ## Enable email and password authentication
 
 To enable email and password authentication for a project, go to the project's page in the [dashboard](https://app.genez.io/) and click on the `Authentication` button in the sidebar.

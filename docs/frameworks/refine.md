@@ -149,7 +149,7 @@ Open the `client/src/App.tsx` file and see how the Admin component uses the auth
 
 You will also see two resources, BlogPosts and Categories. These frontend resources have backend equivalents in the `server/` folder. For example, open the `server/Categories.ts` file to see how it's implemented.
 
-The server-side implementation uses a simple JSON to store the data. Next, I encourage you to go and replace this with an actual SQL table in your PostgreSQL database already created. See [this tutorial](/docs/tutorials/connect-to-postgres-powered-by-neon/) to understand how to do this.
+The server-side implementation uses a simple JSON to store the data. Next, I encourage you to go and replace this with an actual SQL table in your PostgreSQL database already created. See [this tutorial](/docs/tutorials/connect-to-postgres.md) to understand how to do this.
 
 ## Support <a href="#support" id="support"></a>
 

@@ -4,7 +4,7 @@ description: Learn to create a React app with Genezio and Google OAuth 2.0. Foll
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-# Create a React application with genezio and Google OAuth 2.0
+# Enable Google Authentication
 
 <head>
   <title>Create a React application with genezio and Google OAuth 2.0 | Genezio Documentation</title>

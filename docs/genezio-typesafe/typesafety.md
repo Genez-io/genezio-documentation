@@ -30,6 +30,44 @@ And can export a typesafe SDK in any of the following languages:
 - Python
 - Swift
 
+## Genezio Classes
+
+To be able to generate and ensure a server-client communication, Genezio requires the use of classes.
+These classes are decorated with the `@GenezioDeploy` decorator, which tells genezio to generate an SDK for the class.
+
+The following snippet of code shows a simple `HelloWorldService` class:
+
+<Tabs groupId="languages">
+  <TabItem value="ts" label="TypeScript">
+    ```ts title="service.ts" showLineNumbers
+    import { GenezioDeploy } from "@genezio/types";
+
+    @GenezioDeploy()
+    export class HelloWorldService {
+      hello(name: string, sender: string): string {
+        console.log(`Hello world request received with name ${name} from ${sender}!`);
+
+        return `Hello, ${name}, from ${sender}!`;
+      }
+    }
+    ```
+  </TabItem>
+  <TabItem value="js" label="JavaScript">
+    ```js title="service.js" showLineNumbers
+    import { GenezioDeploy } from "@genezio/types";
+
+    @GenezioDeploy()
+    export class HelloWorldService {
+      hello(name, sender) {
+        console.log(`Hello world request received with name ${name} from ${sender}!`);
+
+        return `Hello, ${name}, from ${sender}!`;
+      }
+    }
+    ```
+  </TabItem>
+</Tabs>
+
 ## Genezio methods
 
 There are 2 very simple rules for defining type-safe RPC calls in genezio.

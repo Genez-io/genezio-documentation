@@ -21,7 +21,7 @@ If you want to deploy your application step-by-step, follow the guidelines below
 - ✅ [genezio](https://genezio.com/)
 - ✅ [Flutter](https://docs.flutter.dev/get-started/install)
 
-1. Host a Mongo Database. Follow this [tutorial](https://genezio.com/docs/tutorials/connect-to-mongodb-atlas) to get a free tier database.
+1. Host a Mongo Database. Follow this [tutorial](https://genezio.com/docs/tutorials/connect-to-mongo-atlas) to get a free tier database.
 2. Create a `server/.env` file and add the following environment variables:
 
 ```env

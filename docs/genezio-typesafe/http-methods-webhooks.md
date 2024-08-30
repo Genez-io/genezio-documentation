@@ -181,8 +181,8 @@ For more details, check out the webhooks examples for [JavaScript](https://githu
 
 Also, you can find more details on deploying the backend and frontend here:
 
-- [Backend Deployment](/docs/features/backend-deployment)
-- [Frontend Deployment](/docs/features/frontend-deployment)
+- [Backend Deployment](/docs/features/deployments)
+- [Frontend Deployment](/docs/features/deployments)
 
 Now you are ready for some more advanced use cases:
 

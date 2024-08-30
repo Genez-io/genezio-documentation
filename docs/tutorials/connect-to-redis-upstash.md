@@ -3,11 +3,12 @@ sidebar_position: 4
 description: In this tutorial, you will learn how to integrate a Redis database using Upstash in a genezio project.
 ---
 
-# Connect to Redis (Powered by Upstash)
+# Connect to Redis (Upstash)
 
 <head>
-  <title>Connect to Redis (Powered by Upstash) | Genezio Documentation</title>
+  <title>Connect to Redis (Upstash) | Genezio Documentation</title>
 </head>
+
 In this tutorial, you will learn how to integrate a Redis database using Upstash in a genezio project.
 
 ## Common use cases of Redis
@@ -154,8 +155,8 @@ Other things that do not depend on connecting to a database are scheduling the e
 
 Also, you can find more details on deploying the backend and frontend here:
 
-- [Backend Deployment](/docs/features/backend-deployment)
-- [Frontend Deployment](/docs/features/frontend-deployment)
+- [Backend Deployment](/docs/features/deployments)
+- [Frontend Deployment](/docs/features/deployments)
 
 Now you are ready for some more advanced use cases:
 
