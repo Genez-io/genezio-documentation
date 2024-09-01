@@ -15,7 +15,7 @@ import TabItem from '@theme/TabItem';
 .
 
 :::tip
-Get started in no time with the [Refine template](https://app.genez.io/start/deploy?repository=https://github.com/Genez-io/refine-genezio&base_path=example-json).
+Get started in no time with the [Refine template](https://app.genez.io/start/deploy?repository=https://github.com/Genez-io/refine-genezio&base_path=example-postgres).
 :::
 
 # Deployment
@@ -70,7 +70,7 @@ Go to https://github.com/Genez-io/refine-genezio/fork and fork the repo
 
 ```bash
 git clone YOUR_REPO_URL
-cd refine-genezio/example-json
+cd refine-genezio/example-postgres
 ```
 
 <h3> 3. Run the refine App locally </h3>
@@ -106,52 +106,18 @@ $ App Dashboard URL: https://app.genez.io/project/<project-id>/<stage-id>
 $ Frontend URL: https://<subdomain>.app.genez.io
 ```
 
-## Set-up the app
 
-## 1. Setup Genezio's Authentication on this project
-
-You don't want anyone to be able to access your APIs and make updates to the contents, so we will set-up Genezio's authentication feature on this project.
-
-First you need to go to the **App Dashboard URL** that was listed in the output of the `genezio deploy` command.
-
-On the app dashboard page, click "Authentication" on the left-side menu to enable the auth feature on this project. You might need to create a database in the process, but this should be quite straight-forward.
-
-Next, enable the Email provider from the list of providers.
-
-On the same page you will find a **Token** and a **Region**. Open the `/client/src/authProvider.ts` file and update the **authToken** variable with the **Token** on this page.
-
-## 2. Update the reset password URL to match your domain
-
-In the **App Dashboard URL** web page, go to Authentication / Settings and select Email Templates.
-
-Now open the "Reset Password" section and enter `https://<subdomain>.app.genez.io/reset-password`.
-
-:::info
-Change `https://<subdomain>.app.genez.io/reset-password` to use the **Frontend URL** as returned by the genezio deploy command.
-:::
-
-
-## 3. Redeploy your project
-
-Finally, let's redeploy your project:
-
-```bash
-genezio deploy
-```
-
-## 4. Test your deployed project
+## Test your deployed app
 
 Go to the **Frontend URL** in your browser to test the newly created app.
 
-## 5. Understand how your Refine app calls the Genezio backend.
+## Understand how your Refine app calls the Genezio backend.
 
 Open the `client/src/App.tsx` file and see how the Admin component uses the authProvider and the dataProvider.
 
-You will also see two resources, BlogPosts and Categories. These frontend resources have backend equivalents in the `server/` folder. For example, open the `server/Categories.ts` file to see how it's implemented.
+You will also see three resources - BlogPosts, Authors and Categories. These frontend resources have backend equivalents in the `server/` folder. For example, open the `server/Categories.ts` file to see how it's implemented.
 
-The server-side implementation uses a simple JSON to store the data. Next, I encourage you to go and replace this with an actual SQL table in your PostgreSQL database already created. See [this tutorial](/docs/tutorials/connect-to-postgres.md) to understand how to do this.
-
-## Support <a href="#support" id="support"></a>
+## Support
 
 We invite you to join our community on [Discord](https://discord.gg/uc9H5YKjXv) for further information and help.
 
