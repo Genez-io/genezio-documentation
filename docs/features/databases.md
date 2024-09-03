@@ -46,6 +46,7 @@ services:
 This will automatically create and link a database named `my-database` in the `us-east-1` region.
 
 You can connect to it in the code using the environment variable `${<DATABASE_NAME>_DATABASE_URL}`.
+For example, if the database name is `my-postgres`, the environment variable will be `MY_POSTGRES_DATABASE_URL`.
 
 :::tip
 Use `${{services.databases.<database-name>.uri}}` in the `genezio.yaml` to access the connection URI.
