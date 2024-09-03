@@ -76,7 +76,7 @@ services:
       region: us-east-1
 ```
 
-Enabling a database service will automatically set an environment variable `<DATABASE_NAME>_DATABASE_URL` that can be used to connect to the database.
+Enabling a database service will automatically set an environment variable `<DATABASE_NAME>_DATABASE_URL` that can be used to connect to the database. For example, if the database name is `my-postgres`, the environment variable will be `MY_POSTGRES_DATABASE_URL`.
 
 This resource exposes `uri` as an output expression: `${{services.databases.<database-name>.uri}}`.
 
@@ -103,7 +103,7 @@ The supported regions are:
 
 #### `type`: `string` **Optional**
 
-The default value is `neon-postgres`.
+The default value is `postgres-neon`.
 
 ### `authentication`: `Object` **Optional**
 
