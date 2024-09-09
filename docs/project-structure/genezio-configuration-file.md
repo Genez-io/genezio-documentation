@@ -86,7 +86,7 @@ The name of the database. It is used to identify the database.
 
 #### `region`: `string` **Optional**
 
-The region where the database will be deployed. If not specified, the default region is `us-east-1`.
+The region where the database will be deployed. If not specified, the default region the same as the project's region.
 
 You should choose the region that is closest to your server to reduce latency.
 
