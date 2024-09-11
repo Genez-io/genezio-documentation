@@ -39,6 +39,7 @@ const sidebars = {
         "frameworks/fastify",
         "frameworks/nextjs",
         "frameworks/nitro",
+        "frameworks/nuxt",
         "frameworks/react",
         "frameworks/react-admin",
         "frameworks/refine",
