@@ -34,6 +34,10 @@ description: Discover how to create fullstack or backend projects with the genez
 
 `genezio create nitrojs [--name <project-name>] [--region <project-region>] [--path <project-path>] [--logLevel <log-level>] [-h | --help]`
 
+#### Nuxt.js starter project
+
+`genezio create nuxt [--name <project-name>] [--region <project-region>] [--path <project-path>] [--logLevel <log-level>] [-h | --help]`
+
 #### Serverless function
 
 `genezio create serverless [--name <project-name>] [--region <project-region>] [--path <project-path>] [--logLevel <log-level>] [-h | --help]`
