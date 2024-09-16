@@ -86,7 +86,7 @@ The name of the database. It is used to identify the database.
 
 #### `region`: `string` **Optional**
 
-The region where the database will be deployed. If not specified, the default region is `us-east-1`.
+The region where the database will be deployed. If not specified, the default region the same as the project's region.
 
 You should choose the region that is closest to your server to reduce latency.
 
@@ -119,8 +119,8 @@ services:
       email: true
       web3: true
       google:
-        id: ${{env.GOOGLE_CLIENT_ID}}
-        secret: ${{env.GOOGLE_SECRET}}
+        clientId: ${{env.GOOGLE_CLIENT_ID}}
+        clientSecret: ${{env.GOOGLE_SECRET}}
     settings:
       resetPassword:
         redirectUrl: https://${{frontend.<frontend-name>.subdomain}}.app.genez.io/reset-password
@@ -177,8 +177,8 @@ This field can be omitted if you don't want to enable any authentication provide
       email: true
       web3: true
       google:
-        id: ${{env.GOOGLE_CLIENT_ID}}
-        secret: ${{env.GOOGLE_SECRET}}
+        clientId: ${{env.GOOGLE_CLIENT_ID}}
+        clientSecret: ${{env.GOOGLE_SECRET}}
 ```
 
 #### `settings`: `Object` **Optional**
@@ -661,8 +661,8 @@ services:
       email: true
       web3: true
       google:
-        id: ${{env.GOOGLE_CLIENT_ID}}
-        secret: ${{env.GOOGLE_SECRET}}
+        clientId: ${{env.GOOGLE_CLIENT_ID}}
+        clientSecret: ${{env.GOOGLE_SECRET}}
 ```
 
 ### Configure the reset password and email verification redirect URLs
@@ -684,8 +684,8 @@ services:
       email: true
       web3: true
       google:
-        id: ${{env.GOOGLE_CLIENT_ID}}
-        secret: ${{env.GOOGLE_SECRET}}
+        clientId: ${{env.GOOGLE_CLIENT_ID}}
+        clientSecret: ${{env.GOOGLE_SECRET}}
     settings:
       resetPassword:
         redirectUrl: https://${{frontend.<frontend-name>.subdomain}}.app.genez.io/reset-password

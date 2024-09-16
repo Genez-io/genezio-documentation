@@ -174,8 +174,8 @@ services:
       email: true
       web3: true
       google:
-        id: ${{env.GOOGLE_CLIENT_ID}}
-        secret: ${{env.GOOGLE_SECRET}}
+        clientId: ${{env.GOOGLE_CLIENT_ID}}
+        clientSecret: ${{env.GOOGLE_SECRET}}
 ```
 
 You can enable multiple authentication providers at the same time. The `providers` field is optional and you can enable only the providers you want.
