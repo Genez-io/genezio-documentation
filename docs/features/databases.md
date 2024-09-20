@@ -4,6 +4,8 @@ description: Learn about Genezio’s on-demand databases, including PostgreSQL a
 
 import CreateDatabase from '/img/features/databases/create_database.webp';
 import LinkDatabase from '/img/features/databases/link_database.gif';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 # Databases
 
@@ -21,7 +23,7 @@ database in a few seconds without having to worry about the infrastructure, scal
 We support the following databases:
 
 - PostgreSQL (provided through [**Neon**](https://neon.tech/))
-- MongoDB (coming soon)
+- MongoDB (provided through [**MongoDB Atlas**](https://www.mongodb.com/cloud/atlas))
 
 ## Create a database
 
@@ -36,12 +38,26 @@ Alternatively, you can select a project, choose "Database" from the left-side me
 
 To create a database, you can add the following snippet in the configuration file:
 
-```yaml title="genezio.yaml"
-services:
-  databases:
-    - name: my-database
-      region: us-east-1
-```
+<Tabs>
+    <TabItem value="postgres" label="PostgreSQL">
+        ```yaml title="genezio.yaml"
+        services:
+          databases:
+            - name: my-database
+              region: us-east-1
+              type: postgres-neon
+        ```
+    </TabItem>
+    <TabItem value="mongodb" label="MongoDB">
+        ```yaml title="genezio.yaml"
+        services:
+          databases:
+            - name: my-database
+              region: us-east-1
+              type: mongodb-atlas
+        ```
+    </TabItem>
+</Tabs>
 
 This will automatically create and link a database named `my-database` in the `us-east-1` region.
 
