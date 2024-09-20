@@ -44,11 +44,13 @@ The supported regions are:
 # The region where the project is deployed. Available regions: us-east-1, eu-central-1
 region: us-east-1
 ```
+
 ## `yamlVersion`: `number` **Required**
 
 The version of the genezio YAML file format. The latest version is `2`.
 
 Old format versions may not be supported by latest releases of the Genezio CLI.
+
 ```yaml
 # The version of the Genezio YAML configuration to parse.
 yamlVersion: 2
@@ -59,6 +61,7 @@ yamlVersion: 2
 The services that can be added to the project. This field can be omitted if the project does not have any services.
 
 The services available in Genezio are:
+
 - `databases`
 - `authentication`
 - `email`
@@ -72,8 +75,12 @@ Multiple databases can be added to the project by adding multiple objects to the
 ```yaml
 services:
   databases:
-    - name: my-database
+    - name: my-postgres
       region: us-east-1
+      type: postgres-neon
+    - name: my-mongodb
+      region: eu-central-1
+      type: mongodb-atlas
 ```
 
 Enabling a database service will automatically set an environment variable `<DATABASE_NAME>_DATABASE_URL` that can be used to connect to the database. For example, if the database name is `my-postgres`, the environment variable will be `MY_POSTGRES_DATABASE_URL`.
@@ -84,6 +91,15 @@ This resource exposes `uri` as an output expression: `${{services.databases.<dat
 
 The name of the database. It is used to identify the database.
 
+#### `type`: `string` **Required**
+
+The type of the database.
+
+There currently are two types of databases supported:
+
+- `postgres-neon` for PostgreSQL databases provided through [**Neon**](https://neon.tech/).
+- `mongodb-atlas` for MongoDB databases provided through [**MongoDB Atlas**](https://www.mongodb.com/cloud/atlas).
+
 #### `region`: `string` **Optional**
 
 The region where the database will be deployed. If not specified, the default region the same as the project's region.
@@ -92,18 +108,14 @@ You should choose the region that is closest to your server to reduce latency.
 
 The supported regions are:
 
-| Region           | Description             |
-| ---------------- | ----------------------- |
-| `us-east-1`      | US, North Virginia      |
-| `eu-central-1`   | Europe, Frankfurt       |
-| `eu-east-2`      | US, Ohio                |
-| `us-west-2`      | US, Oregon              |
-| `ap-southeast-1` | Asia Pacific, Singapore |
-| `ap-southeast-2` | Asia Pacific, Sidney    |
-
-#### `type`: `string` **Optional**
-
-The default value is `postgres-neon`.
+| Region           | Description             | PostgreSQL | MongoDB |
+| ---------------- | ----------------------- | ---------- | ------- |
+| `us-east-1`      | US, North Virginia      | ✅         | ✅      |
+| `eu-central-1`   | Europe, Frankfurt       | ✅         | ✅      |
+| `eu-east-2`      | US, Ohio                | ✅         | ❌      |
+| `us-west-2`      | US, Oregon              | ✅         | ❌      |
+| `ap-southeast-1` | Asia Pacific, Singapore | ✅         | ❌      |
+| `ap-southeast-2` | Asia Pacific, Sidney    | ✅         | ❌      |
 
 ### `authentication`: `Object` **Optional**
 
@@ -134,6 +146,7 @@ This resource exposes `token` and `region` as an output expression:
 #### `database`: `Object` **Required**
 
 You can reference a database by name. The database should be defined in the `services.databases` field.
+
 ```yaml
 services:
   databases:
@@ -147,6 +160,7 @@ services:
 Or you can specify an external (bring-your-own) database by `type` and `uri` directly:
 
 Example for PostgreSQL:
+
 ```yaml
 services:
   databases:
@@ -155,6 +169,7 @@ services:
 ```
 
 Example for MongoDB:
+
 ```yaml
 services:
   databases:
@@ -173,12 +188,12 @@ Authentication providers such as `Email`, `Web3/Metamask` or `Google` can be add
 This field can be omitted if you don't want to enable any authentication providers.
 
 ```yaml
-    providers:
-      email: true
-      web3: true
-      google:
-        clientId: ${{env.GOOGLE_CLIENT_ID}}
-        clientSecret: ${{env.GOOGLE_SECRET}}
+providers:
+  email: true
+  web3: true
+  google:
+    clientId: ${{env.GOOGLE_CLIENT_ID}}
+    clientSecret: ${{env.GOOGLE_SECRET}}
 ```
 
 #### `settings`: `Object` **Optional**
@@ -186,15 +201,14 @@ This field can be omitted if you don't want to enable any authentication provide
 Using this field, the `redirectUrl` for password reset and email verification can be set.
 
 ```yaml
-    settings:
-      resetPassword:
-        redirectUrl: https://${{frontend.<frontend-name>.subdomain}}.app.genez.io/reset-password
-      emailVerification:
-        redirectUrl: https://${{frontend.<frontend-name>.subdomain}}.app.genez.io/verify
+settings:
+  resetPassword:
+    redirectUrl: https://${{frontend.<frontend-name>.subdomain}}.app.genez.io/reset-password
+  emailVerification:
+    redirectUrl: https://${{frontend.<frontend-name>.subdomain}}.app.genez.io/verify
 ```
 
 More details on how to use these settings can be found in the [Authentication section](/docs/features/authentication.md).
-
 
 ### `email`: `boolean` **Optional**
 
@@ -301,7 +315,9 @@ Variables can be used in the scripts. Check the [Usage](#variables) section for 
 - `local`: `string` | `string[]` **Optional**
 
   A general purpose script that runs before starting the local testing environment.
+
 ### Basic `backend` deployment
+
 ```yaml title="genezio.yaml
 # The name of the project.
 name: project-name
@@ -357,7 +373,9 @@ This resource exposes `url` as an output expression: `${{backend.functions.<func
 - `type`: `string` **Optional**
 
   The type of the function. The default value is `aws`.
+
 ### Backend with `functions` deployment
+
 ```yaml title="genezio.yaml
 # The name of the project.
 name: express-app
@@ -474,7 +492,9 @@ Variables can be used in the scripts. Check the [Usage](#variables) section for 
 - `start`: `string` | `string[]` **Optional**
 
   A script that starts the frontend dev server. It runs only during local development.
+
 ### Example of `frontend` deployment
+
 ```yaml title="genezio.yaml
 # The name of the project.
 name: project-name
@@ -513,10 +533,12 @@ The `genezio.yaml` supports a set of expandable expressions that can be used in 
 These variables are replaced with their values when resources are created or when scripts are executed.
 
 Genezio supports the following formats:
+
 - `${{env.ENV_KEY}}` - this will be loaded from a `.env` file or from the global process environment variables.
 - `{{resource.path.field}}` - this format can be used to reference fields from the `genezio.yaml` itself - e.g. `{{backend.functions.<function-name>.name}}`.
 
 Expressions can be used in the following YAML fields:
+
 - `backend.environment`
 - `frontend.environment`
 - `services.authentication.database.uri`
@@ -545,10 +567,12 @@ frontend:
 ## Variables
 
 Genezio supports the following variables:
+
 - `${{projectName}}`: The name of the project.
 - `${{stage}}`: The stage of the deployment. It can be set using the `--stage` flag in the CLI:
 
 Variables can be used in the following fields:
+
 - `backend.scripts`
 - `frontend.scripts`
 
