@@ -56,7 +56,7 @@ genezio deploy
 
 Note: You can deploy a frontend-only or backend-only project by adding the `--frontend` or `--backend` flags respectively.
 
-### Backend deployments
+## Backend deployments
 
 To deploy your backend functions project, add the `backend` section in your `genezio.yaml`:
 
