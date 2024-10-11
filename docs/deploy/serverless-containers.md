@@ -21,3 +21,5 @@ genezio deploy --image <path_to_dockerfile>
 The container runs in a Function-as-a-Service (FaaS) environment, using a request-response model. It will handle requests and automatically sleep when idle to optimize resources.
 
 Keep your Docker image as small as possible for faster deployment. The max image size is currently 250MB. We recommend using slim base images, like node:slim, for better performance.
+
+If you're looking for an example, take a look at [this repository](https://github.com/Genez-io/rust-serverless-container-getting-started). It features a Rust server that utilizes containers for deployment on Genezio.
