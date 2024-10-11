@@ -96,7 +96,7 @@ const sidebars = {
       label: "Deploy",
       link: { type: "doc", id: "deploy/README" },
       items: [
-        "deploy/function",
+        "deploy/backend",
         "deploy/frontend",
         "deploy/serverless-containers",
       ]

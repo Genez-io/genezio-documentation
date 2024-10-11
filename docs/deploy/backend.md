@@ -6,7 +6,7 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import Admonition from '@theme/Admonition';
 
-# Frontend 
+# Backend 
 
 Genezio is a Function-as-a-Service platform that allows you to deploy fullstack application in a single-click manner.
 
@@ -56,37 +56,28 @@ genezio deploy
 
 Note: You can deploy a frontend-only or backend-only project by adding the `--frontend` or `--backend` flags respectively.
 
+### Backend deployments
 
-# Frontend deployments
+To deploy your backend functions project, add the `backend` section in your `genezio.yaml`:
 
-Genezio's frontend deployment offers a simple and cost-effective way to host and serve static websites.
-It leverages Amazon S3 in combination with CloudFront CDN (Content Delivery Network) to ensure fast and reliable content delivery to users across the globe.
-
-:::tip
-You can deploy all kinds of frontend apps, including React, Angular, Vue.js, Flutter Web, Pure HTML, Jekyll, Hugo, Svelte, Foundation, etc..
+:::info
+The `genezio.yaml` file is specific to the framework you are using.
+Check the [Frameworks](/docs/frameworks/) for more details.
 :::
-
-## Deploy the frontend project
-
-To deploy your frontend project, add the `frontend` section in your `genezio.yaml`:
 
 ```yaml title="genezio.yaml" showLineNumbers
 name: my-project
 region: us-east-1
 yamlVersion: 2
-frontend:
-  # Specifies the path of your client code.
+backend:
   path: .
-  # Specifies the path to the build directory.
-  # This is the folder that will be deployed.
-  publish: build
-  # The frontend will be deployed as `https://cool-capybara.app.genez.io`,
-  subdomain: cool-capybara
-  # Scripts will run in the specified `path` folder.
-  scripts:
-    # The command to build your frontend project. This is custom to your project.
-    # It must to populate the specified `publish` folder with a `index.html` file.
-    build: npm run build
+  language:
+    name: js
+  functions:
+    - name: hello
+      path: ./server
+      entry: hello.mjs
+      handler: handler
 ```
 
 Learn more about the `genezio.yaml` file in the [Configuration File section](/docs/project-structure/genezio-configuration-file).
@@ -120,4 +111,3 @@ Explore more features and capabilities of Genezio by checking out the following 
 - [Web3 Application](https://genezio.com/blog/create-your-first-web3-app/)
 - [ChatGPT App](https://genezio.com/blog/create-your-first-app-using-chatgpt/)
 - [Shopping Cart Implementation](https://genezio.com/blog/implement-a-shopping-cart-using-typescript-redis-and-react/)
-
