@@ -93,10 +93,19 @@ const sidebars = {
     },
     {
       type: "category",
+      label: "Deploy",
+      link: { type: "doc", id: "deploy/README" },
+      items: [
+        "deploy/function",
+        "deploy/cdn",
+        "deploy/serverless-containers",
+      ]
+    },
+    {
+      type: "category",
       label: "Features",
       link: { type: "doc", id: "features/README" },
       items: [
-        "features/deployments",
         "features/databases",
         "features/authentication",
         "features/testing",
