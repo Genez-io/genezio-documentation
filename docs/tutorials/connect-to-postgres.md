@@ -112,8 +112,8 @@ Learn about other features like scheduling the execution of a function as a cron
 
 Also, you can find more details on deploying the backend and frontend here:
 
-- [Backend Deployment](/docs/features/deployments)
-- [Frontend Deployment](/docs/features/deployments)
+- [Backend Deployment](/docs/deploy/function)
+- [Frontend Deployment](/docs/deploy/frontend)
 
 Now you are ready for some more advanced use cases:
 

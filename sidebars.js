@@ -97,7 +97,7 @@ const sidebars = {
       link: { type: "doc", id: "deploy/README" },
       items: [
         "deploy/function",
-        "deploy/cdn",
+        "deploy/frontend",
         "deploy/serverless-containers",
       ]
     },

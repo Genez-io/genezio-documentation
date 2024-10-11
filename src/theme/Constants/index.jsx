@@ -17,7 +17,7 @@ const ItemsFeatures = [
   {
     type: "link",
     label: "Deployments",
-    href: "./features/deployments",
+    href: "./deploy",
     description: "Deploy your projects in a serverless infrastructure",
   },
   {
