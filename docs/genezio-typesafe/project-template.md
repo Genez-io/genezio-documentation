@@ -47,7 +47,7 @@ you can check out the official [documentation](https://www.typescriptlang.org/do
 
 #### Services
 
-This component contains the main services of your application. The two files, `mongoService.ts` and `postgresService.ts` respectively, showcase how you can implement CRUD operations on a MongoDB or a PostgreSQL database. This is one of the entry points of our backend applications. Notice how the `@GenezioDeploy` decorator is used to signal that this class will be deployed to our infrastructure. To learn more about deployed classes you can check out the [documentation](/docs/features/deployments).
+This component contains the main services of your application. The two files, `mongoService.ts` and `postgresService.ts` respectively, showcase how you can implement CRUD operations on a MongoDB or a PostgreSQL database. This is one of the entry points of our backend applications. Notice how the `@GenezioDeploy` decorator is used to signal that this class will be deployed to our infrastructure. To learn more about deployed classes you can check out the [documentation](/docs/deploy).
 
 #### Crons
 

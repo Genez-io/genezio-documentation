@@ -49,5 +49,5 @@ If the stage flag is not specified the genezio subdomain format will be:
 
 `https://<subdomain>.app.genez.io`
 
-For more information on subdomains, check out the [frontend-deployment](/docs/features/deployments
+For more information on subdomains, check out the [frontend-deployment](/docs/deploy/frontend
  "mention") section.
