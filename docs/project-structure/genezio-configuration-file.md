@@ -458,7 +458,7 @@ The environment variables that will be inject at build time. The variables can b
 
 :::tip
 Each frontend framework will require a specific prefix for environment variables.
-For example, in Vite, you can access environment variables using `process.env.VITE_MY_ENV_VAR`.
+For example, in Vite, you can access environment variables using `import.meta.env.VITE_MY_ENV_VAR`.
 :::
 
 ```yaml
