@@ -165,7 +165,7 @@ This configuration file specifies the project name, deployment region, and detai
 Run the following command to initialize a new Python project in an empty directory:
 
 ```bash
-python -m venv venv
+python3 -m venv venv
 touch main.py
 touch requirements.txt
 ```
