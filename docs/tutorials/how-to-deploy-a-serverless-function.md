@@ -61,7 +61,9 @@ Use your preferred package manager to install genezio:
 
 ### 2. Export a function handler
 
-You can implement and export a function handler following the next steps:
+<Tabs>
+  <TabItem className="tab-item" value="javascript" label="JavaScript">
+    You can implement and export a function handler following the next steps:
 
 ### 1. Initialize a New Node.js Project
 
@@ -152,6 +154,85 @@ backend:
 ```
 
 This configuration file specifies the project name, deployment region, and details about the backend.
+
+  </TabItem>
+
+  <TabItem className="tab-item" value="python" label="Python">
+    You can implement and export a function handler following the next steps:
+
+### 1. Initialize a New Python Project
+
+Run the following command to initialize a new Python project in an empty directory:
+
+```bash
+python3 -m venv venv
+touch main.py
+touch requirements.txt
+```
+
+### 2. Create a Function handler
+
+Create a new file named `main.py` and add the following code:
+<div>
+```python title="main.py"
+def handler(event):
+    print("Function was called")
+    name = event.get("queryStringParameters", {}).get("name", "George")
+    return {
+        "statusCode": 200,
+        "body": f"Hello, {name}! Welcome to Genezio Functions!",
+    }
+```
+</div>
+
+## Deployment Guide
+
+## 1. Create the Genezio Configuration File
+
+Now, create a `genezio.yaml` file in the root directory of your project.
+
+This file will contain the configuration needed to deploy your backend using Genezio. Here is an example configuration.
+
+:::info
+
+1. If you have installed any dependencies, you can add them to the `requirements.txt` file.
+2. You might need to replace the `entry` field with the name of your main application file.
+3. You might need to replace the `path` field with the path relative at **genezio.yaml** file.
+4. This example configuration works if **genezio.yaml** is in the same directory as your main application file.
+   :::
+
+```yaml title="genezio.yaml"
+# The name of the project.
+name: functions-app
+# The region where the project is deployed. Available regions: us-east-1, eu-central-1
+region: us-east-1
+# The version of the Genezio YAML configuration to parse.
+yamlVersion: 2
+backend:
+  # The root directory of the backend.
+  path: ./
+  # Information about the backend's programming language.
+  language:
+    # The name of the programming language.
+    name: python
+    # The package manager used by the backend.
+    packageManager: pip
+  # Information about the backend's functions.
+  functions:
+    # The name (label) of the function.
+    - name: hello-world-function
+      # The path to the function's code.
+      path: ./
+      # The name of the function handler
+      handler: handler
+      # The entry point for the function.
+      entry: main.py
+```
+
+This configuration file specifies the project name, deployment region, and details about the backend.
+
+  </TabItem>
+</Tabs>
 
 ## 4. Test Your App Locally
 
