@@ -6,11 +6,7 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import Admonition from '@theme/Admonition';
 
-# Deployments
-
-<head>
-  <title> Deployments | Genezio Documentation</title>
-</head>
+# Frontend 
 
 Genezio is a Function-as-a-Service platform that allows you to deploy fullstack application in a single-click manner.
 
@@ -60,38 +56,8 @@ genezio deploy
 
 Note: You can deploy a frontend-only or backend-only project by adding the `--frontend` or `--backend` flags respectively.
 
-## Backend deployments
 
-To deploy your backend functions/classes project, add the `backend` section in your `genezio.yaml`:
-
-:::info
-The `genezio.yaml` file is specific to the framework you are using.
-Check the [Frameworks](/docs/frameworks/) for more details.
-:::
-
-```yaml title="genezio.yaml" showLineNumbers
-name: my-project
-region: us-east-1
-yamlVersion: 2
-backend:
-  path: .
-  language:
-    name: js
-  functions:
-    - name: hello
-      path: ./server
-      entry: hello.mjs
-      handler: handler
-```
-
-Learn more about the `genezio.yaml` file in the [Configuration File section](/docs/project-structure/genezio-configuration-file).
-
-This command will deploy your application according to the configuration specified in your `genezio.yaml` file:
-```
-genezio deploy
-```
-
-## Frontend deployments
+# Frontend deployments
 
 Genezio's frontend deployment offers a simple and cost-effective way to host and serve static websites.
 It leverages Amazon S3 in combination with CloudFront CDN (Content Delivery Network) to ensure fast and reliable content delivery to users across the globe.
@@ -154,3 +120,4 @@ Explore more features and capabilities of Genezio by checking out the following 
 - [Web3 Application](https://genezio.com/blog/create-your-first-web3-app/)
 - [ChatGPT App](https://genezio.com/blog/create-your-first-app-using-chatgpt/)
 - [Shopping Cart Implementation](https://genezio.com/blog/implement-a-shopping-cart-using-typescript-redis-and-react/)
+
