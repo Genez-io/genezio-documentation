@@ -35,8 +35,10 @@ const sidebars = {
       link: { type: "doc", id: "frameworks/README" },
       items: [
         "frameworks/angular",
+        "frameworks/django",
         "frameworks/expressjs",
         "frameworks/fastify",
+        "frameworks/flask",
         "frameworks/nextjs",
         "frameworks/nitro",
         "frameworks/nuxt",

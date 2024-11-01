@@ -452,9 +452,58 @@ The subdomain where the frontend will be deployed.
 
 If not specified, a random subdomain will be generated.
 
+#### `redirects`: `Array` **Optional**
+
+A list of redirects that will enable you to redirect traffic from one path to another.
+
+- `from`: `string` **Required**
+
+  The path from which the traffic will be redirected.
+
+- `to`: `string` **Required**
+
+  The path to which the traffic will be redirected.
+
+- `status`: `301` | `302` | `303` | `307` | `308` **Optional**
+
+  The status code for the redirect. The default value is `301`.
+
+```yaml
+name: my-project
+yamlVersion: 2
+
+frontend:
+  redirects:
+    - from: /old-path
+      to: /new-path
+      status: 302
+```
+
+#### `rewrites`: `Array` **Optional**
+
+A list of rewrites that will enable you to rewrite traffic from one path to another.
+
+- `from`: `string` **Required**
+
+  The path from which the traffic will be rewritten.
+
+- `to`: `string` **Required**
+
+  The path to which the traffic will be rewritten.
+
+```yaml
+name: my-project
+yamlVersion: 2
+
+frontend:
+  rewrites:
+    - from: /old-path
+      to: /new-path
+```
+
 #### `environment`: `Object` **Optional**
 
-The environment variables that will be inject at build time. The variables can be accessed in the code using `process.env`.
+The environment variables that will be injected at build time. The variables can be accessed in the code using `process.env`.
 
 :::tip
 Each frontend framework will require a specific prefix for environment variables.
