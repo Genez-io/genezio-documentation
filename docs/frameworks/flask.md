@@ -105,21 +105,21 @@ Next, you need to activate the virtual environment:
     <TabItem className="tab-item" value="windows" label="Windows">
     <div id="windows">
     ```
-    .\env\Scripts\activate
+    .\venv\Scripts\activate
     ```
     </div>
     </TabItem>
     <TabItem className="tab-item" value="linux" label="Linux">
     <div id="linux">
     ```
-    source env/bin/activate
+    source venv/bin/activate
     ```
     </div>
     </TabItem>
   <TabItem className="tab-item" value="macos" label="Mac">
     <div id="macos">
     ```
-    source env/bin/activate
+    source venv/bin/activate
     ```
     </div>
     </TabItem>
@@ -155,7 +155,6 @@ if __name__ == '__main__':
 
 Run the following command to start the Flask app:
 
-
 <Tabs>
     <TabItem className="tab-item" value="windows" label="Windows">
     <div id="windows">
@@ -179,7 +178,6 @@ Run the following command to start the Flask app:
     </div>
     </TabItem>
 </Tabs>
-
 
 Open a web browser and navigate to [http://localhost:5000](http://localhost:5000) to see the app running.
 
@@ -264,9 +262,7 @@ Run the following command in your terminal:
     </TabItem>
 </Tabs>
 
-
 Open a web browser and navigate to [http://localhost:5000](http://localhost:5000) to see the app running.
-
 
 ## 3. Deploy your project
 

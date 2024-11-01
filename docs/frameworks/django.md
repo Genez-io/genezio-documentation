@@ -106,21 +106,21 @@ Next, you need to activate the virtual environment:
     <TabItem className="tab-item" value="windows" label="Windows">
     <div id="windows">
     ```
-    .\env\Scripts\activate
+    .\venv\Scripts\activate
     ```
     </div>
     </TabItem>
     <TabItem className="tab-item" value="linux" label="Linux">
     <div id="linux">
     ```
-    source env/bin/activate
+    source venv/bin/activate
     ```
     </div>
     </TabItem>
   <TabItem className="tab-item" value="macos" label="Mac">
     <div id="macos">
     ```
-    source env/bin/activate
+    source venv/bin/activate
     ```
     </div>
     </TabItem>
@@ -170,7 +170,7 @@ python3 manage.py startapp app_name
 </TabItem>
 </Tabs>
 
-<h3>6. Update your settings.py</h3>
+<h3>7. Update your settings.py</h3>
 
 In your settings.py file (located in the project_name directory), add your app to the INSTALLED_APPS list:
 
@@ -181,7 +181,7 @@ INSTALLED_APPS = [
 ]
 ```
 
-<h3>7. Update your urls.py</h3>
+<h3>8. Update your urls.py</h3>
 
 In your urls.py file (located in the project_name directory), add a path to your app:
 
@@ -195,7 +195,7 @@ urlpatterns = [
 ]
 ```
 
-<h3>8. Create a View</h3>
+<h3>9. Create a View</h3>
 
 Create a new file named `views.py` in the app_name directory and add the following code:
 
@@ -204,10 +204,10 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 def index(request):
-    return HttpResponse("Hello, World!")    
+    return HttpResponse("Hello, World!")
 ```
 
-<h3>9. Create a URL Configuration</h3>
+<h3>10. Create a URL Configuration</h3>
 
 In the urls.py file of your app (located in the app_name directory), create a simple view for demonstration purposes:
 
@@ -220,7 +220,7 @@ urlpatterns = [
 ]
 ```
 
-<h3>10. Run the Server</h3>
+<h3>11. Run the Server</h3>
 
 Run the following command to start the Django server:
 
@@ -342,7 +342,6 @@ Run the following command in your terminal:
     </div>
     </TabItem>
 </Tabs>
-
 
 Open a web browser and navigate to [http://localhost:5000](http://localhost:5000) to see the app running.
 
