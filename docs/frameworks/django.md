@@ -15,7 +15,7 @@ Django is a popular Python web application framework that simplifies the develop
 provides a robust set of features for building web servers and APIs.
 
 :::tip
-Get started in no time with the [Django template](https://github.com/Genez-io/django-getting-started).
+Get started in no time with the [Django template](https://app.genez.io/start/deploy?repository=https://github.com/Genez-io/django-getting-started))
 :::
 
 # Deployment
@@ -140,8 +140,7 @@ pip3 freeze > requirements.txt
 Run the following command to create a new Django project:
 
 ```bash
-django-admin startproject project_name
-cd project_name
+django-admin startproject project_name .
 ```
 
 <h3>6. Create a New Django App</h3>
@@ -170,20 +169,9 @@ python3 manage.py startapp app_name
 </TabItem>
 </Tabs>
 
-<h3>7. Update your settings.py</h3>
+<h3>7. Update your urls.py</h3>
 
-In your settings.py file (located in the project_name directory), add your app to the INSTALLED_APPS list:
-
-```python title="settings.py"
-INSTALLED_APPS = [
-    # ... other apps ...
-    'app_name',
-]
-```
-
-<h3>8. Update your urls.py</h3>
-
-In your urls.py file (located in the project_name directory), add a path to your app:
+Update the `urls.py` file in the project_name directory to include the app_name:
 
 ```python title="urls.py"
 from django.contrib import admin
@@ -195,7 +183,7 @@ urlpatterns = [
 ]
 ```
 
-<h3>9. Create a View</h3>
+<h3>8. Create a View</h3>
 
 Create a new file named `views.py` in the app_name directory and add the following code:
 
@@ -207,9 +195,9 @@ def index(request):
     return HttpResponse("Hello, World!")
 ```
 
-<h3>10. Create a URL Configuration</h3>
+<h3>9. Create a URL Configuration</h3>
 
-In the urls.py file of your app (located in the app_name directory), create a simple view for demonstration purposes:
+Create a new file named `urls.py` in the app_name directory and add the following code:
 
 ```python title="urls.py"
 from django.urls import path
@@ -220,7 +208,7 @@ urlpatterns = [
 ]
 ```
 
-<h3>11. Run the Server</h3>
+<h3>10. Run the Server</h3>
 
 Run the following command to start the Django server:
 
@@ -254,7 +242,18 @@ Open a web browser and navigate to [http://localhost:8000](http://localhost:8000
 
 ## Deployment Guide
 
-## 1. Create the Genezio Configuration File
+## 1. Allow Genezio to manage your Django app
+
+In your Django project, you need to allow Genezio to manage your app by adding the Genezio domain to the `ALLOWED_HOSTS` list in the `settings.py` file.
+
+```python title="settings.py"
+ALLOWED_HOSTS = [
+    '.genez.io',
+    'localhost',
+]
+```
+
+## 2. Create the Genezio Configuration File
 
 Now, create a `genezio.yaml` file in the root directory of your project.
 
@@ -262,11 +261,11 @@ This file will contain the configuration needed to deploy your backend using Gen
 
 :::info
 
-1. You need to have a `requirements.txt` file in the root directory of your project for dependencies.
+1. You need to have a `requirements.txt` file in the backend directory with all the dependencies of your Django app.
 2. You might need to replace the `handler` field with the name of your variable that holds the Django app.
 3. You might need to replace the `entry` field with the name of your wsgi application file.
 4. You might need to replace the `path` field with the path relative at **genezio.yaml** file.
-5. This example configuration works if **genezio.yaml** is in the same directory as your `manage.py` file and the Django app is named `app_name`.
+5. This example configuration works if **genezio.yaml** is in the same directory as your `manage.py` file and the Django app is named `project_name`.
    :::
 
 ```yaml title="genezio.yaml"
@@ -288,9 +287,9 @@ backend:
   # Information about the backend's functions.
   functions:
     # The name (label) of the function.
-    - name: hello-world-django-app-function
+    - name: hello-world-django
       # The path to the function's code.
-      path: app_name
+      path: project_name
       # The name of the wsgi application.
       handler: application
       # The entry point for the function.
@@ -300,18 +299,6 @@ backend:
 ```
 
 This configuration file specifies the project name, deployment region, and details about the backend.
-
-## 2. Allow Genezio to manage your Django app
-
-In your Django app, you need to add `.genez.io` to your `ALLOWED_HOSTS` list in the `settings.py` file:
-
-```python title="settings.py"
-
-ALLOWED_HOSTS = ['
-    '.genez.io',
-    'localhost',
-]
-```
 
 ## 3. Test Your App Locally
 
@@ -323,27 +310,27 @@ Run the following command in your terminal:
     <TabItem className="tab-item" value="windows" label="Windows">
     <div id="windows">
     ```
-    python index.py
+    python manage.py runserver  
     ```
     </div>
     </TabItem>
     <TabItem className="tab-item" value="linux" label="Linux">
     <div id="linux">
     ```
-    python3 index.py
+    python3 manage.py runserver
     ```
     </div>
     </TabItem>
   <TabItem className="tab-item" value="macos" label="Mac">
     <div id="macos">
     ```
-    python3 index.py
+    python3 manage.py runserver
     ```
     </div>
     </TabItem>
 </Tabs>
 
-Open a web browser and navigate to [http://localhost:5000](http://localhost:5000) to see the app running.
+Open a web browser and navigate to [http://localhost:8000](http://localhost:8000) to see the app running.
 
 ## 4. Deploy your project
 
