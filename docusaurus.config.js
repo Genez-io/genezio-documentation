@@ -100,13 +100,6 @@ const config = {
           activeBaseRegex: "docs/(next|v8)",
           id: "docs-item"
         },
-        {
-          to: "https://app.genez.io",
-          target: "_blank",
-          label: "Sign Up",
-          position: "right",
-          className: "button"
-        }
       ]
     },
 
