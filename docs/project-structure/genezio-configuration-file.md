@@ -479,6 +479,8 @@ frontend:
       status: 302
 ```
 
+Learn more about redirects in the [Redirects and Rewrites](/docs/deploy/frontend/#redirects-and-rewrites) section.
+
 #### `rewrites`: `Array` **Optional**
 
 A list of rewrites that will enable you to rewrite traffic from one path to another.
@@ -500,6 +502,8 @@ frontend:
     - from: /old-path
       to: /new-path
 ```
+
+Learn more about rewrites in the [Redirects and Rewrites](/docs/deploy/frontend/#redirects-and-rewrites) section.
 
 #### `environment`: `Object` **Optional**
 
