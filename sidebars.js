@@ -172,7 +172,8 @@ const sidebars = {
             "cli-tool/cli-commands/logout"
           ]
         },
-        "cli-tool/update"
+        "cli-tool/install",
+        "cli-tool/update",
       ]
     },
     {
