@@ -1,13 +1,13 @@
 ---
-sidebar_position: 3
-description: "Use the command below to install the latest version of genezio using your preferred package manager: npm, pnpm, or yarn"
+sidebar_position: 2
+description: "Use the command below to install genezio using your preferred package manager: npm, pnpm, or yarn"
 ---
 
 import Tabs from '@theme/Tabs';
 
 import TabItem from '@theme/TabItem';
 
-# Update genezio
+# Install genezio
 
 <head>
   <title>Update genezio CLI command | Genezio Documentation</title>
@@ -17,17 +17,17 @@ Use the command below to install the latest version of genezio using you preferr
 <Tabs>
   <TabItem className="tab-item" value="npm" label="npm">
 ```
-npm update genezio -g
+npm install genezio -g
 ```
   </TabItem>
   <TabItem className="tab-item" value="pnpm" label="pnpm">
 ```
-pnpm update genezio -g
+pnpm install genezio -g
 ```
   </TabItem>
   <TabItem  className="tab-item" value="yarn" label="yarn">
 ```
-yarn global upgrade genezio
+yarn global add genezio
 ```
   </TabItem>
 </Tabs>

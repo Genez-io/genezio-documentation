@@ -14,6 +14,40 @@ import TabItem from '@theme/TabItem';
 The `genezio` cli companion can be used to deploy your projects.
 You can run `genezio` on your machine or in your [CI/CD pipeline.](../integrations/github-action)
 
+## What is the Genezio CLI?
+
+The Genezio CLI is a powerful command-line tool designed to simplify the development lifecycle of serverless applications on the Genezio platform.
+It provides seamless integration with local development environments, offering features like:
+
+- **Project Creation**: Create a new fullstack project from templates.
+- **Local Development**: Run a local environment with your project for testing purposes.
+- **Deployment**: Deploy your project to the Genezio infrastructure.
+- **Project Management**: List, delete, and view details of your projects.
+- **Infrastructure as Code (IaC)**: Manage configuration, databases, and environment variables through the `genezio.yaml` file.
+
+## Installation
+
+You can install the genezio CLI using your preferred package manager: npm, pnpm, or yarn.
+
+<Tabs>
+  <TabItem className="tab-item" value="npm" label="npm">
+```
+npm install genezio -g
+```
+  </TabItem>
+  <TabItem className="tab-item" value="pnpm" label="pnpm">
+```
+pnpm install genezio -g
+```
+  </TabItem>
+  <TabItem  className="tab-item" value="yarn" label="yarn">
+```
+yarn global add genezio
+```
+  </TabItem>
+</Tabs>
+
+
 ## Commands Summary
 
 The genezio CLI tool supports the commands shown in the following table:
