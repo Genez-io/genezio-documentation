@@ -62,8 +62,6 @@ To test your crons locally you can simply run `genezio local` and check the term
 
 ### Remote
 
-Deploying your project will sync all the cron jobs present in the `genezio.yaml` file.
-
 :::warning
 Deploying your project will **sync** the state of the crons with what is in the `genezio.yaml` file. This means that if you delete a cron job from the file and deploy the project, it will be deleted from the cloud as well. Before deploying, make sure that the state provided in the `genezio.yaml` file is your desired output state after deployment.
 :::
