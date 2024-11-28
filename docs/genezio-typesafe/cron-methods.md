@@ -18,7 +18,7 @@ The time specified in the cron strings is in UTC. You can use this [converter](h
 
 ## Use scheduled methods in your project
 
-There are two ways to declare a scheduled method:
+There are two ways to declare a scheduled method in a Genezio typsafe project:
 
 - Using decorators (only available for TypeScript, JavaScript and Go projects)
 - Using the `genezio.yaml` configuration file (available for all supported languages, including TypeScript, JavaScript, Go)
