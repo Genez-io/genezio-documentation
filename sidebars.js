@@ -25,9 +25,9 @@ const sidebars = {
       link: { type: "doc", id: "getting-started/README" },
       items: [
         "getting-started/use-a-template",
-        "getting-started/import-existing-project"
+        "getting-started/import-existing-project",
       ],
-      collapsed: false
+      collapsed: false,
     },
     {
       type: "category",
@@ -48,7 +48,7 @@ const sidebars = {
         "frameworks/refine",
         "frameworks/svelte",
         "frameworks/typesafe-project",
-        "frameworks/vue"
+        "frameworks/vue",
       ],
     },
     {
@@ -68,31 +68,30 @@ const sidebars = {
           label: "Create your first Web3 App", // The link label
           href: "https://genezio.com/blog/create-your-first-web3-app/", // The external URL
           description:
-            "In this tutorial, you will learn how to create your first Web3 application on Ethereum using genezio and Blast API. You don’t have to know anything beforehand to follow along. I will introduce you to the most basic blockchain concepts and tools to get you from zero to hero in Web3 development. Excited? Let’s get started 🤩"
+            "In this tutorial, you will learn how to create your first Web3 application on Ethereum using genezio and Blast API. You don’t have to know anything beforehand to follow along. I will introduce you to the most basic blockchain concepts and tools to get you from zero to hero in Web3 development. Excited? Let’s get started 🤩",
         },
         {
           type: "link",
           label: "Create your first Chat GPT App", // The link label
           href: "https://genezio.com/blog/create-your-first-app-using-chatgpt/", // The external URL
           description:
-            "In this tutorial, you will learn how to create an app called the Rephrasing App. The app that you are going to build has a simple UI written in React, uses the ChatGPT API and is deployed on genezio."
+            "In this tutorial, you will learn how to create an app called the Rephrasing App. The app that you are going to build has a simple UI written in React, uses the ChatGPT API and is deployed on genezio.",
         },
         {
           type: "link",
           label: "Implement a Shopping Cart", // The link label
-          href:
-            "https://genezio.com/blog/implement-a-shopping-cart-using-typescript-redis-and-react/", // The external URL
+          href: "https://genezio.com/blog/implement-a-shopping-cart-using-typescript-redis-and-react/", // The external URL
           description:
-            "In this tutorial, you will learn how to use Redis, NodeJs, and React to easily implement a shopping cart for your online store."
+            "In this tutorial, you will learn how to use Redis, NodeJs, and React to easily implement a shopping cart for your online store.",
         },
         {
           type: "link",
           label: "Integrate Stripe Payments", // The link label
           href: "https://genezio.com/blog/integrate-stripe-payments/", // The external URL
           description:
-            "This guide will walk you through integrating Stripe payments using a genezio backend and a React frontend."
-        }
-      ]
+            "This guide will walk you through integrating Stripe payments using a genezio backend and a React frontend.",
+        },
+      ],
     },
     {
       type: "category",
@@ -102,7 +101,7 @@ const sidebars = {
         "deploy/backend",
         "deploy/frontend",
         "deploy/serverless-containers",
-      ]
+      ],
     },
     {
       type: "category",
@@ -111,14 +110,15 @@ const sidebars = {
       items: [
         "features/databases",
         "features/authentication",
+        "features/cron-jobs",
         "features/testing",
         "features/deployment-environments",
         "features/email-service",
         "features/custom-domain-configuration",
         "features/project-collaboration",
         "features/check-genezio-dashboard",
-        "features/genezio-deploy-button"
-      ]
+        "features/genezio-deploy-button",
+      ],
     },
     {
       type: "category",
@@ -132,8 +132,8 @@ const sidebars = {
         "genezio-typesafe/cron-methods",
         "genezio-typesafe/genezio-decorators",
         "genezio-typesafe/project-template",
-        "genezio-typesafe/genezio-context"
-      ]
+        "genezio-typesafe/genezio-context",
+      ],
     },
     {
       type: "category",
@@ -142,8 +142,8 @@ const sidebars = {
       items: [
         "project-structure/genezio-configuration-file",
         "project-structure/.genezioignore",
-        "project-structure/backend-environment-variables"
-      ]
+        "project-structure/backend-environment-variables",
+      ],
     },
     {
       type: "category",
@@ -169,12 +169,12 @@ const sidebars = {
             "cli-tool/cli-commands/delete",
             "cli-tool/cli-commands/login",
             "cli-tool/cli-commands/account",
-            "cli-tool/cli-commands/logout"
-          ]
+            "cli-tool/cli-commands/logout",
+          ],
         },
         "cli-tool/install",
         "cli-tool/update",
-      ]
+      ],
     },
     {
       type: "category",
@@ -184,8 +184,8 @@ const sidebars = {
         "integrations/github-action",
         "integrations/upstash-redis",
         "integrations/neon-postgres",
-        "integrations/upstash-qstash"
-      ]
+        "integrations/upstash-qstash",
+      ],
     },
     {
       type: "category",
@@ -206,8 +206,8 @@ const sidebars = {
             "examples/typescript/trivia-application",
             "examples/typescript/crud-application",
             "examples/typescript/shopping-cart",
-            "examples/typescript/webhook-example"
-          ]
+            "examples/typescript/webhook-example",
+          ],
         },
         {
           type: "category",
@@ -224,24 +224,24 @@ const sidebars = {
             "examples/javascript/blockchain-app",
             "examples/javascript/chatgpt-project",
             "examples/javascript/stripe-integration",
-            "examples/javascript/html-example"
-          ]
-        }
-      ]
+            "examples/javascript/html-example",
+          ],
+        },
+      ],
     },
     {
       type: "category",
       label: "Learn more",
       link: { type: "doc", id: "learn-more/README" },
-      items: ["learn-more/upgrading-to-v1", "learn-more/supported-languages"]
+      items: ["learn-more/upgrading-to-v1", "learn-more/supported-languages"],
     },
     "troubleshooting",
     {
       type: "link",
       label: "Release Notes", // The link label
-      href: "https://github.com/Genez-io/genezio/releases" // The external URL
-    }
-  ]
+      href: "https://github.com/Genez-io/genezio/releases", // The external URL
+    },
+  ],
 };
 
 export default sidebars;
