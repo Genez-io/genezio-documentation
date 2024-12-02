@@ -31,7 +31,7 @@ backend:
 services:
   crons:
     - name: my-cron
-      function: ${{backend.functions.test-fn.name}}
+      function: ${{backend.functions.my-function.name}}
       schedule: "* * * * *"
       endpoint: "/my-cron"
 ```
