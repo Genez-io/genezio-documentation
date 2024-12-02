@@ -14,7 +14,7 @@ import TabItem from '@theme/TabItem';
 FastAPI is a modern Python web application framework that simplifies the development of server-side applications. It provides a robust set of features for building web servers and APIs.
 
 :::tip
-Get started in no time with the [FastAPI template](https://app.genez.io/start/deploy?repository=https://github.com/Genez-io/fastapi-getting-started)).
+Get started in no time with the [FastAPI template](https://app.genez.io/start/deploy?repository=https://github.com/Genez-io/fastapi-getting-started).
 :::
 
 # Deployment
