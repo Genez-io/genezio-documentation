@@ -161,6 +161,7 @@ const sidebars = {
             "cli-tool/cli-commands/genezio-clone",
             "cli-tool/cli-commands/genezio-pull",
             "cli-tool/cli-commands/genezio-create",
+            "cli-tool/cli-commands/analyze",
             "cli-tool/cli-commands/genezio-addclass",
             "cli-tool/cli-commands/genezio-link",
             "cli-tool/cli-commands/genezio-unlink",
