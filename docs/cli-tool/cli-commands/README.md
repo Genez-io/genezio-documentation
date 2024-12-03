@@ -34,6 +34,7 @@ Below you can see a list of the most useful commands:
 | genezio deploy                            | Deploy a project to the cloud. [Learn more](./deploy)                                        |
 | genezio deploy --frontend                 | Deploy the frontend to the genezio cloud. [Learn more](./deploy)                             |
 | genezio deploy --backend                  | Deploy the backend to the genezio cloud. [Learn more](./deploy)                              |
+| genezio analyze                           | Analyze the current directory's infrastructure setup. [Learn more](./analyze)                |
 | genezio create                            | Create a new starter project, in an interactive way. [Learn more](./genezio-create)          |
 | genezio sdk                               | Generate an SDK for a deployed or local project. [Learn more](./generatesdk)                 |
 | genezio ls                                | List details on deployed projects [Learn more](./ls)                                         |
