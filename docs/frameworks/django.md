@@ -15,7 +15,7 @@ Django is a popular Python web application framework that simplifies the develop
 provides a robust set of features for building web servers and APIs.
 
 :::tip
-Get started in no time with the [Django template](https://app.genez.io/start/deploy?repository=https://github.com/Genez-io/django-getting-started))
+Get started in no time with the [Django template](https://app.genez.io/start/deploy?repository=https://github.com/Genez-io/django-getting-started)
 :::
 
 # Deployment

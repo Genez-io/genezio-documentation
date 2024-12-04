@@ -15,7 +15,7 @@ Flask is a popular Python web application framework that simplifies the developm
 provides a robust set of features for building web servers and APIs.
 
 :::tip
-Get started in no time with the [Flask template](https://app.genez.io/start/deploy?repository=https://github.com/Genez-io/flask-getting-started)).
+Get started in no time with the [Flask template](https://app.genez.io/start/deploy?repository=https://github.com/Genez-io/flask-getting-started).
 :::
 
 # Deployment
