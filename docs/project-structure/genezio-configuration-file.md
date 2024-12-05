@@ -296,11 +296,13 @@ If scripts are declared in the `scripts` field, they will be executed from this 
 
   Determines the amount of RAM allocated to the execution environment. Default `tiny`. [Pro Subscription](https://app.genez.io/billing) is required to change this configuration.
 
-  tiny = 256MB RAM
+  tiny = 256MB RAM, 1 VCPU
 
-  medium = 512MB RAM
+  medium = 384MB RAM, 1 VCPU
 
-  large = 768MB RAM
+  large = 512MB RAM, 1 VCPU
+
+  For larger instance sizes, [contact us](mailto:contact@genez.io).
 
 - maxConcurrentRequestsPerInstance: `number` **Optional**
 
@@ -409,11 +411,13 @@ This resource exposes `url` as an output expression: `${{backend.functions.<func
 
   Determines the amount of RAM allocated to the execution environment. Default `tiny`. [Pro Subscription](https://app.genez.io/billing) is required to change this configuration.
 
-  tiny = 256MB RAM
+  tiny = 256MB RAM, 1 VCPU
 
-  medium = 512MB RAM
+  medium = 384MB RAM, 1 VCPU
 
-  large = 768MB RAM
+  large = 512MB RAM, 1 VCPU
+
+  For larger instance sizes, [contact us](mailto:contact@genez.io).
 
 - maxConcurrentRequestsPerInstance: `number` **Optional**
 
