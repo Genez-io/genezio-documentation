@@ -284,6 +284,29 @@ If scripts are declared in the `scripts` field, they will be executed from this 
 
     The cron string that specifies how frequently the method should be called. Check the cron string format on https://crontab.guru/.
 
+- timeout: `number` **Optional**
+
+  Specifies how long a request should wait for a response in seconds. Default 30. [Pro Subscription](https://app.genez.io/billing) is required to change this configuration.
+
+- storageSize: `number` **Optional**
+
+  If this parameter is set, the execution environment will mount a storage disk with the specified size. The storage is not persistent across requests. Pro Subscription is required to change this configuration.
+
+- instanceSize: `tiny` | `medium` | `large` **Optional**
+
+  Determines the amount of RAM allocated to the execution environment. Default `tiny`. [Pro Subscription](https://app.genez.io/billing) is required to change this configuration.
+
+  tiny = 256MB RAM
+
+  medium = 512MB RAM
+
+  large = 768MB RAM
+
+- maxConcurrentRequestsPerInstance: `number` **Optional**
+
+  Specifies the number of concurrent requests that can be served simultaneously by an execution environment. Default 10. [Pro Subscription](https://app.genez.io/billing) is required to change this configuration.
+
+
 #### `environment`: `Object` **Optional**
 
 The environment variables that will be set for the backend.
@@ -373,6 +396,28 @@ This resource exposes `url` as an output expression: `${{backend.functions.<func
 - `type`: `string` **Optional**
 
   The type of the function. The default value is `aws`.
+
+- timeout: `number` **Optional**
+
+  Specifies how long a request should wait for a response in seconds. Default 30. [Pro Subscription](https://app.genez.io/billing) is required to change this configuration.
+
+- storageSize: `number` **Optional**
+
+  If this parameter is set, the execution environment will mount a storage disk with the specified size. The storage is not persistent across requests. [Pro Subscription](https://app.genez.io/billing) is required to change this configuration.
+
+- instanceSize: `tiny` | `medium` | `large` **Optional**
+
+  Determines the amount of RAM allocated to the execution environment. Default `tiny`. [Pro Subscription](https://app.genez.io/billing) is required to change this configuration.
+
+  tiny = 256MB RAM
+
+  medium = 512MB RAM
+
+  large = 768MB RAM
+
+- maxConcurrentRequestsPerInstance: `number` **Optional**
+
+  Specifies the number of concurrent requests that can be served simultaneously by an execution environment. Default 10. [Pro Subscription](https://app.genez.io/billing) is required to change this configuration.
 
 ### Backend with `functions` deployment
 
