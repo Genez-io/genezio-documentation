@@ -286,7 +286,7 @@ If scripts are declared in the `scripts` field, they will be executed from this 
 
 - timeout: `number` **Optional**
 
-  Specifies how long a request should wait for a response in seconds. Default 30. [Pro Subscription](https://app.genez.io/billing) is required to change this configuration.
+  Specifies how long a request should wait for a response, in seconds. Default 30. [Pro Subscription](https://app.genez.io/billing) is required to change this configuration.
 
 - storageSize: `number` **Optional**
 
@@ -399,7 +399,7 @@ This resource exposes `url` as an output expression: `${{backend.functions.<func
 
 - timeout: `number` **Optional**
 
-  Specifies how long a request should wait for a response in seconds. Default 30. [Pro Subscription](https://app.genez.io/billing) is required to change this configuration.
+  Specifies how long a request should wait for a response, in seconds. Default 30. [Pro Subscription](https://app.genez.io/billing) is required to change this configuration.
 
 - storageSize: `number` **Optional**
 
