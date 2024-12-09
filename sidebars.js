@@ -40,6 +40,7 @@ const sidebars = {
         "frameworks/fastapi",
         "frameworks/fastify",
         "frameworks/flask",
+        "frameworks/nestjs",
         "frameworks/nextjs",
         "frameworks/nitro",
         "frameworks/nuxt",
