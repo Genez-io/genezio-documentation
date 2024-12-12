@@ -629,6 +629,56 @@ frontend:
       - npm run dev
 ```
 
+## container
+
+The Docker container configuration. This field can be omitted if the project is not containerized.
+
+- path: `string` **Required**
+
+  The path to the Dockerfile. It is relative to the `genezio.yaml` file.
+
+- environment: `Object` **Optional**
+
+  The environment variables that will be set for the server inside the Docker container.
+
+  You can use expression to define the environment variables. Check the [Usage](#expressions) section for more information.
+
+- timeout: `number` **Optional**
+
+  Specifies how long a request should wait for a response, in seconds. Default 30. [Pro Subscription](https://app.genez.io/billing) is required to change this configuration.
+
+- storageSize: `number` **Optional**
+
+  If this parameter is set, the execution environment will mount a storage disk with the specified size. The storage is not persistent across requests. Pro Subscription is required to change this configuration.
+
+- instanceSize: `tiny` | `medium` | `large` **Optional**
+
+  Determines the amount of RAM allocated to the execution environment. Default `tiny`. [Pro Subscription](https://app.genez.io/billing) is required to change this configuration.
+
+  tiny = 256MB RAM, 1 VCPU
+
+  medium = 384MB RAM, 1 VCPU
+
+  large = 512MB RAM, 1 VCPU
+
+  For larger instance sizes, [contact us](mailto:contact@genez.io).
+
+- maxConcurrentRequestsPerInstance: `number` **Optional**
+
+  Specifies the number of concurrent requests that can be served simultaneously by an execution environment. Default 10. [Pro Subscription](https://app.genez.io/billing) is required to change this configuration.
+
+### Example of `container` deployment configuration
+
+```yaml
+name: genezio-build-machine-backend
+region: eu-central-1
+yamlVersion: 2
+container:
+  path: ./Dockerfile
+  environment:
+    MY_ENV_VAR: my-value
+```
+
 ## Expressions
 
 The `genezio.yaml` supports a set of expandable expressions that can be used in the configuration file.
