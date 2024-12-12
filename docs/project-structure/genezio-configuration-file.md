@@ -679,6 +679,45 @@ container:
     MY_ENV_VAR: my-value
 ```
 
+## nextjs | nuxt | nitro | nestjs
+
+You can use the `nextjs`, `nuxt`, `nitro`, or `nestjs` field to deploy a Next.js, Nuxt.js, Nitro, or Nestjs project.
+
+- path: `string` **Required**
+
+  The path to the Dockerfile. It is relative to the `genezio.yaml` file.
+
+- environment: `Object` **Optional**
+
+  The environment variables that will be set for the server inside the Docker container.
+
+  You can use expression to define the environment variables. Check the [Usage](#expressions) section for more information.
+
+- `packageManager`: `npm` | `pnpm` | `yarn` **Optional**
+
+  The package manager used to install the project's dependencies. The default value is `npm`.
+
+- `scripts`: `Object` **Optional**
+
+The scripts that run before the deployment of the project. You can provide a list of commands that will be executed sequentially.
+
+Variables can be used in the scripts. Check the [Usage](#variables) section for more information.
+
+- `deploy`: `string` | `string[]` **Optional**
+
+  A general purpose script that runs before the project is deployed. Used to define how to install dependencies.
+
+### Example of `nextjs` deployment configuration
+
+```yaml
+nextjs:
+    path: .
+    packageManager: npm
+    scripts:
+        deploy:
+            - npm install
+```
+
 ## Expressions
 
 The `genezio.yaml` supports a set of expandable expressions that can be used in the configuration file.
