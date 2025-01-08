@@ -14,13 +14,9 @@ description: Learn how to deploy apps effortlessly with Genezio’s CLI tool. Ac
 
 ### Description
 
-<!-- :::info -->
-
 :::info
 You must be authenticated to use this command.
 :::
-
-<!-- ::: -->
 
 This command deploys your project to the genezio infrastructure and generates the SDK. You can then use it to access the functions from the cloud.
 
@@ -34,7 +30,25 @@ If you executed this command with the `--backend` option, the backend code speci
 
 If you executed this command with the `--frontend` option, the frontend code specified in the `genezio.yaml` configuration file will be deployed.
 
-`--install-deps`: Automatically install missing dependencies. By default this behavior is turned off.
+`--backend`: Deploy only the backend application.
+
+`--frontend`: Deploy only the frontend application.
+
+`--install-deps`: Automatically install missing dependencies. By default, this behavior is turned off.
+
+`--disable-optimization`: Disable dependency optimization. By default, optimization is enabled.
+
+`--image <image>`: Path to a Dockerfile. Used for projects deployed containerized. [Learn more](../../deploy/serverless-containers.md).
+
+`--env <envFile>`: Load environment variables from a given file. [Learn more](../../project-structure/backend-environment-variables.md).
+
+`--zip <zipPath>`: Deploy a zip file directly. The zip file must contain a valid `genezio.yaml` and an `index.mjs` as an entrypoint file. The source code files should be directly in the root of the zip archive.
+
+`--stage <stage>`: Set the environment name to deploy to. By default, the stage is set to "prod". [Learn more](../../features/deployment-environments.md).
+
+`--subdomain <subdomain>`: Set a subdomain for your frontend. If not set, the subdomain will be randomly generated.
+
+`--config <config>`: Use a specific `genezio.yaml` file as the deployment configuration. By default, it uses `./genezio.yaml`. [Learn more](../../project-structure/genezio-configuration-file.md).
 
 `--logLevel <logLevel>`: Set the verbosity of the output. The supported values are: `trace/debug/info/warn/error`. If you don't specify this argument, the default value used is `info`.
 
