@@ -75,6 +75,16 @@ name: genezio-project
 region: us-east-1
 # Specifies the version of the YAML configuration syntax being used.
 yamlVersion: 2
+# Configuration specific to the Nitro project setup.
+nitro:
+    # The path where the Nitro.js project is located.
+    path: .
+    # The package manager to be used for this project (npm, yarn, etc.)
+    packageManager: npm
+    # Custom scripts to be run during deployment, e.g., installing dependencies.
+    scripts:
+        deploy:
+            - npm install
 ```
 
 ### 3. Monitor your project

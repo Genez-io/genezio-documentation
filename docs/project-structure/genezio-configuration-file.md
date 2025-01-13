@@ -707,15 +707,29 @@ Variables can be used in the scripts. Check the [Usage](#variables) section for 
 
   A general purpose script that runs before the project is deployed. Used to define how to install dependencies.
 
+- `subdomain`: `string` **Optional**
+
+  The subdomain where the project will be deployed. If not specified, a random subdomain will be generated.
+  The full format of the domain will be `https://<subdomain>.app.genezio.com`.
+
 ### Example of `nextjs` deployment configuration
 
 ```yaml
+name: genezio-project
+region: us-east-1
+yamlVersion: 2
+# Configuration specific to the Next.js project setup.
 nextjs:
+    # The path where the Next.js project is located.
     path: .
+    # The package manager to be used for this project (npm, yarn, etc.)
     packageManager: npm
+    # Custom scripts to be run during deployment, e.g., installing dependencies.
     scripts:
         deploy:
             - npm install
+    # The subdomain that will be associated with this Next.js application.
+    subdomain: my-nextjs-app
 ```
 
 ## Expressions

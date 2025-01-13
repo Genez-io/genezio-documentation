@@ -74,6 +74,18 @@ name: genezio-project
 region: us-east-1
 # Specifies the version of the YAML configuration syntax being used.
 yamlVersion: 2
+# Configuration specific to the Next.js project setup.
+nextjs:
+    # The path where the Next.js project is located.
+    path: .
+    # The package manager to be used for this project (npm, yarn, etc.)
+    packageManager: npm
+    # Custom scripts to be run during deployment, e.g., installing dependencies.
+    scripts:
+        deploy:
+            - npm install
+    # The subdomain that will be associated with this Next.js application.
+    subdomain: my-nextjs-app
 ```
 
 ### 3. Monitor your project
@@ -86,15 +98,22 @@ You can monitor and manage your application through the [Genezio App Dashboard](
 
     The subdomain assigned for your deployed Next.js application is generated automatically by concatenating the name of your project with a random short string. For example, if your project is named `my-nextjs-app`, the subdomain will look like `my-nextjs-app-iyjFxz.app.genez.io`.
 
-    The subdomain can't be customized at the moment. However, you can set a custom domain for your Next.js application by following the instructions in the [Custom Domains](/features/custom-domain-configuration.md) section.
+    You can customize the subdomain in the `genezio.yaml` file by setting the `subdomain` field to the desired subdomain. For example:
+
+    ```yaml
+    name: my-project
+    nextjs:
+      path: .
+      subdomain: my-custom-subdomain
+    ```
+
+    To learn more about the `genezio.yaml` configuration file, visit the [Configuration page](/project-structure/genezio-configuration-file.md).
+
+    If you want you can set a fully custom domain for your Next.js application by following the instructions in the [Custom Domains](/features/custom-domain-configuration.md) section.
 
 -   ### How do I check the logs of a Next.js application?
 
-    Your Next.js application is deployed on our Function as a Service platform as multiple serverless functions. When opening the project dashboard, you can see the logs of each function separately.
-
-    <figure style={{textAlign:"center"}}><img style={{cursor:"pointer"}} src={useBaseUrl("/img/frameworks/nextjs/deployed_functions.png")} alt=""/><figcaption>Each Next.js project can use one or more serverless functions</figcaption></figure>
-
-    Usually, the main logic of your application is deployed in the serverless function named `function-server`. Check the logs of this function to see the output of your application.
+    Your Next.js application is deployed on our Function as a Service platform as function usually called `function-next`. Navigate to the `Logs` tab in the Genezio dashboard to see the logs of your application.
 
 -   ### How do I set environment variables for my Next.js application?
 
@@ -119,11 +138,3 @@ You can monitor and manage your application through the [Genezio App Dashboard](
 [Incremental Static Regeneration (ISR)](https://nextjs.org/docs/pages/building-your-application/data-fetching/incremental-static-regeneration) in Next.js allows per-page static generation and dynamic content updates. It revalidates pages on-demand, striking a balance between static and dynamic content.
 
 At the moment, Genezio does not support incremental static regeneration (ISR) for Next.js applications. However, we are working on adding this feature in the future.
-
-### Building on Windows
-
-At the moment Genezio does not support building Next.js applications on Windows. In case you are using Windows, we recommend using [WSL (Windows Subsystem for Linux)](https://learn.microsoft.com/en-us/windows/wsl/install) to build your Next.js application with Genezio.
-
-This limitation comes from the [Open-Next](https://open-next.js.org/) library, which we use to build your application using a serverless architecture. We are working on adding support for Windows in the future.
-
-There is an opened issue in the Open-Next repository that you can follow to get updates on this limitation: https://github.com/sst/open-next/issues/385.
