@@ -284,17 +284,31 @@ If scripts are declared in the `scripts` field, they will be executed from this 
 
     The cron string that specifies how frequently the method should be called. Check the cron string format on https://crontab.guru/.
 
-- timeout: `number` **Optional**
+- `timeout`: `number` **Optional**
 
-  Specifies how long a request should wait for a response, in seconds. Default 30. [Pro Subscription](https://app.genez.io/billing) is required to change this configuration.
+  Specifies how long a request should wait for a response, in seconds. Timeout is the maximum amount of time in seconds that a request can take to complete.
+  The default value for this setting is 60 seconds. You can adjust this in increments of 1 second up to a maximum value of 900 seconds (15 minutes).
 
-- storageSize: `number` **Optional**
+  To increase the maximum threshold up to 3600 seconds (1 hour), you [can upgrade to a Pro Subscription](https://app.genez.io/billing).
 
-  If this parameter is set, the execution environment will mount a storage disk with the specified size. The storage is not persistent across requests. Pro Subscription is required to change this configuration.
+  For larger values, [contact us](mailto:contact@genez.io).
 
-- instanceSize: `tiny` | `medium` | `large` **Optional**
+- `storageSize`: `number` **Optional**
 
-  Determines the amount of RAM allocated to the execution environment. Default `tiny`. [Pro Subscription](https://app.genez.io/billing) is required to change this configuration.
+  By default a partition of 128MB is mounted to the execution environment. This can be used to store temporary files or cache data.
+
+  To increase the maximum value up to 512MB, you [can upgrade to a Pro Subscription](https://app.genez.io/billing).
+  Afterwards, you can adjust this in increments of 1MB up to a maximum value of 512MB.
+
+  For larger values, [contact us](mailto:contact@genez.io).
+
+  Note 1: This storage is not persistent across requests. It is not recommend to use it for stateful operations.
+  Note 2: Changing the storage size will affect cold start times.
+
+- `instanceSize`: `tiny` | `medium` | `large` **Optional**
+
+  Determines the amount of RAM allocated to the execution environment. The default value for this setting is `tiny`.
+  To increase the amount of RAM allocated, you can set the value to `medium` or `large`. A [Pro Subscription](https://app.genez.io/billing) is required to change this configuration.
 
   tiny = 256MB RAM, 1 VCPU
 
@@ -304,9 +318,17 @@ If scripts are declared in the `scripts` field, they will be executed from this 
 
   For larger instance sizes, [contact us](mailto:contact@genez.io).
 
-- maxConcurrentRequestsPerInstance: `number` **Optional**
+- `maxConcurrentRequestsPerInstance`: `number` **Optional**
 
-  Specifies the number of concurrent requests that can be served simultaneously by an execution environment. Default 10. [Pro Subscription](https://app.genez.io/billing) is required to change this configuration.
+  Specifies the number of concurrent requests that can be served simultaneously by an execution environment.
+  The default value for this setting is 5 concurrent requests per execution environment.
+
+  To increase the maximum value up to 10 concurrent requests, you [can upgrade to a Pro Subscription](https://app.genez.io/billing).
+  Afterwards, you can adjust this in increments of 1 up to a maximum value of 10 concurrent requests.
+
+  For larger values, [contact us](mailto:contact@genez.io).
+
+  Note: Setting this value to 1 disables concurrent requests served within the same execution environment. In this case, 2 or more incoming concurrent requests will be automatically distributed across separate execution environments, which are scaled up dynamically by Genezio.
 
 
 #### `environment`: `Object` **Optional**
@@ -399,17 +421,31 @@ This resource exposes `url` as an output expression: `${{backend.functions.<func
 
   The type of the function. The default value is `aws`.
 
-- timeout: `number` **Optional**
+- `timeout`: `number` **Optional**
 
-  Specifies how long a request should wait for a response, in seconds. Default 30. [Pro Subscription](https://app.genez.io/billing) is required to change this configuration.
+  Specifies how long a request should wait for a response, in seconds. Timeout is the maximum amount of time in seconds that a request can take to complete.
+  The default value for this setting is 60 seconds. You can adjust this in increments of 1 second up to a maximum value of 900 seconds (15 minutes).
 
-- storageSize: `number` **Optional**
+  To increase the maximum threshold up to 3600 seconds (1 hour), you [can upgrade to a Pro Subscription](https://app.genez.io/billing).
 
-  If this parameter is set, the execution environment will mount a storage disk with the specified size. The storage is not persistent across requests. [Pro Subscription](https://app.genez.io/billing) is required to change this configuration.
+  For larger values, [contact us](mailto:contact@genez.io).
 
-- instanceSize: `tiny` | `medium` | `large` **Optional**
+- `storageSize`: `number` **Optional**
 
-  Determines the amount of RAM allocated to the execution environment. Default `tiny`. [Pro Subscription](https://app.genez.io/billing) is required to change this configuration.
+  By default a partition of 128MB is mounted to the execution environment. This can be used to store temporary files or cache data.
+
+  To increase the maximum value up to 512MB, you [can upgrade to a Pro Subscription](https://app.genez.io/billing).
+  Afterwards, you can adjust this in increments of 1MB up to a maximum value of 512MB.
+
+  For larger values, [contact us](mailto:contact@genez.io).
+
+  Note 1: This storage is not persistent across requests. It is not recommend to use it for stateful operations.
+  Note 2: Changing the storage size will affect cold start times.
+
+- `instanceSize`: `tiny` | `medium` | `large` **Optional**
+
+  Determines the amount of RAM allocated to the execution environment. The default value for this setting is `tiny`.
+  To increase the amount of RAM allocated, you can set the value to `medium` or `large`. A [Pro Subscription](https://app.genez.io/billing) is required to change this configuration.
 
   tiny = 256MB RAM, 1 VCPU
 
@@ -419,9 +455,18 @@ This resource exposes `url` as an output expression: `${{backend.functions.<func
 
   For larger instance sizes, [contact us](mailto:contact@genez.io).
 
-- maxConcurrentRequestsPerInstance: `number` **Optional**
+- `maxConcurrentRequestsPerInstance`: `number` **Optional**
 
-  Specifies the number of concurrent requests that can be served simultaneously by an execution environment. Default 10. [Pro Subscription](https://app.genez.io/billing) is required to change this configuration.
+  Specifies the number of concurrent requests that can be served simultaneously by an execution environment.
+  The default value for this setting is 5 concurrent requests per execution environment.
+
+  To increase the maximum value up to 10 concurrent requests, you [can upgrade to a Pro Subscription](https://app.genez.io/billing).
+  Afterwards, you can adjust this in increments of 1 up to a maximum value of 10 concurrent requests.
+
+  For larger values, [contact us](mailto:contact@genez.io).
+
+  Note: Setting this value to 1 disables concurrent requests served within the same execution environment. In this case, 2 or more incoming concurrent requests will be automatically distributed across separate execution environments, which are scaled up dynamically by Genezio.
+
 
 ### Backend with `functions` deployment
 
@@ -643,17 +688,31 @@ The Docker container configuration. This field can be omitted if the project is 
 
   You can use expression to define the environment variables. Check the [Usage](#expressions) section for more information.
 
-- timeout: `number` **Optional**
+- `timeout`: `number` **Optional**
 
-  Specifies how long a request should wait for a response, in seconds. Default 30. [Pro Subscription](https://app.genez.io/billing) is required to change this configuration.
+  Specifies how long a request should wait for a response, in seconds. Timeout is the maximum amount of time in seconds that a request can take to complete.
+  The default value for this setting is 60 seconds. You can adjust this in increments of 1 second up to a maximum value of 900 seconds (15 minutes).
 
-- storageSize: `number` **Optional**
+  To increase the maximum threshold up to 3600 seconds (1 hour), you [can upgrade to a Pro Subscription](https://app.genez.io/billing).
 
-  If this parameter is set, the execution environment will mount a storage disk with the specified size. The storage is not persistent across requests. Pro Subscription is required to change this configuration.
+  For larger values, [contact us](mailto:contact@genez.io).
 
-- instanceSize: `tiny` | `medium` | `large` **Optional**
+- `storageSize`: `number` **Optional**
 
-  Determines the amount of RAM allocated to the execution environment. Default `tiny`. [Pro Subscription](https://app.genez.io/billing) is required to change this configuration.
+  By default a partition of 128MB is mounted to the execution environment. This can be used to store temporary files or cache data.
+
+  To increase the maximum value up to 512MB, you [can upgrade to a Pro Subscription](https://app.genez.io/billing).
+  Afterwards, you can adjust this in increments of 1MB up to a maximum value of 512MB.
+
+  For larger values, [contact us](mailto:contact@genez.io).
+
+  Note 1: This storage is not persistent across requests. It is not recommend to use it for stateful operations.
+  Note 2: Changing the storage size will affect cold start times.
+
+- `instanceSize`: `tiny` | `medium` | `large` **Optional**
+
+  Determines the amount of RAM allocated to the execution environment. The default value for this setting is `tiny`.
+  To increase the amount of RAM allocated, you can set the value to `medium` or `large`. A [Pro Subscription](https://app.genez.io/billing) is required to change this configuration.
 
   tiny = 256MB RAM, 1 VCPU
 
@@ -663,9 +722,18 @@ The Docker container configuration. This field can be omitted if the project is 
 
   For larger instance sizes, [contact us](mailto:contact@genez.io).
 
-- maxConcurrentRequestsPerInstance: `number` **Optional**
+- `maxConcurrentRequestsPerInstance`: `number` **Optional**
 
-  Specifies the number of concurrent requests that can be served simultaneously by an execution environment. Default 10. [Pro Subscription](https://app.genez.io/billing) is required to change this configuration.
+  Specifies the number of concurrent requests that can be served simultaneously by an execution environment.
+  The default value for this setting is 5 concurrent requests per execution environment.
+
+  To increase the maximum value up to 10 concurrent requests, you [can upgrade to a Pro Subscription](https://app.genez.io/billing).
+  Afterwards, you can adjust this in increments of 1 up to a maximum value of 10 concurrent requests.
+
+  For larger values, [contact us](mailto:contact@genez.io).
+
+  Note: Setting this value to 1 disables concurrent requests served within the same execution environment. In this case, 2 or more incoming concurrent requests will be automatically distributed across separate execution environments, which are scaled up dynamically by Genezio.
+
 
 ### Example of `container` deployment configuration
 
