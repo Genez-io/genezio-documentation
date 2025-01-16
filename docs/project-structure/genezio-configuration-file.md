@@ -330,6 +330,14 @@ If scripts are declared in the `scripts` field, they will be executed from this 
 
   Note: Setting this value to 1 disables concurrent requests served within the same execution environment. In this case, 2 or more incoming concurrent requests will be automatically distributed across separate execution environments, which are scaled up dynamically by Genezio.
 
+- `cooldownTime`: `number` **Optional**
+
+  Specifies the time in milliseconds that the execution environment will be kept alive after the response is sent.
+  The default value for this setting is 0 milliseconds. You can adjust this up to a maximum value of 3000 milliseconds (3 seconds).
+
+  To increase the maximum threshold up to 5 minutes, you [can upgrade to a Pro Subscription](https://app.genez.io/billing).
+
+  For larger values, [contact us](mailto:contact@genez.io).
 
 #### `environment`: `Object` **Optional**
 
@@ -467,6 +475,14 @@ This resource exposes `url` as an output expression: `${{backend.functions.<func
 
   Note: Setting this value to 1 disables concurrent requests served within the same execution environment. In this case, 2 or more incoming concurrent requests will be automatically distributed across separate execution environments, which are scaled up dynamically by Genezio.
 
+- `cooldownTime`: `number` **Optional**
+
+  Specifies the time in milliseconds that the execution environment will be kept alive after the response is sent.
+  The default value for this setting is 0 milliseconds. You can adjust this up to a maximum value of 3000 milliseconds (3 seconds).
+
+  To increase the maximum threshold up to 5 minutes, you [can upgrade to a Pro Subscription](https://app.genez.io/billing).
+
+  For larger values, [contact us](mailto:contact@genez.io).
 
 ### Backend with `functions` deployment
 
@@ -734,6 +750,14 @@ The Docker container configuration. This field can be omitted if the project is 
 
   Note: Setting this value to 1 disables concurrent requests served within the same execution environment. In this case, 2 or more incoming concurrent requests will be automatically distributed across separate execution environments, which are scaled up dynamically by Genezio.
 
+- `cooldownTime`: `number` **Optional**
+
+  Specifies the time in milliseconds that the execution environment will be kept alive after the response is sent.
+  The default value for this setting is 0 milliseconds. You can adjust this up to a maximum value of 3000 milliseconds (3 seconds).
+
+  To increase the maximum threshold up to 5 minutes, you [can upgrade to a Pro Subscription](https://app.genez.io/billing).
+
+  For larger values, [contact us](mailto:contact@genez.io).
 
 ### Example of `container` deployment configuration
 
