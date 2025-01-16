@@ -92,6 +92,20 @@ nextjs:
 
 You can monitor and manage your application through the [Genezio App Dashboard](https://app.genez.io/dashboard). The dashboard URL, also provided after deployment, allows you to access comprehensive views of your project's status and logs.
 
+## Local Development
+
+To develop and test your app locally, run:
+
+```bash
+genezio local
+```
+
+You can specify a custom port by setting the `GENEZIO_PORT_NEXTJS` environment variable using one of these methods:
+
+- Add `GENEZIO_PORT_NEXTJS=<port>` to your `.env` file
+- Windows: Run `set GENEZIO_PORT_NEXTJS=<port> && genezio local`
+- macOS/Linux: Run `GENEZIO_PORT_NEXTJS=<port> genezio local`
+
 ## Frequently Asked Questions
 
 -   ### How do I set a custom subdomain for my Next.js application?
