@@ -234,25 +234,14 @@ If scripts are declared in the `scripts` field, they will be executed from this 
 
 #### `language`: `Object` **Required**
 
-- `name`: `ts` | `js` | `go` | `dart` | `kotlin` **Required**
+- `name`: `ts` | `js` | `python` **Required**
 
-  The programming language used to implement the backend.
+  The name of the programming language used in the backend.
 
-- `runtime`: `nodejs20.x` **Optional**
+- `packageManager`: `npm` | `pnpm` | `yarn` | `pip` | `poetry` **Optional**
 
-  The node runtime version that will be used by your NodeJS application. The default value is `nodejs20.x`.
-
-  Applicable only when `language.name` is `ts` or `js`.
-
-- `packageManager`: `npm` | `pnpm` | `yarn` **Optional**
-
-  The package manager used to install the project's dependencies. The default value is `npm`.
-
-  Applicable only when `language.name` is `ts` or `js`.
-
-- `architecture`: `x86_64` **Optional**
-
-  The architecture that will be use by your application on the cloud. The default value is `x86_64`.
+  The package manager used to install the project's dependencies. This is used to automatically install dependencies before deploying the backend.
+  The default value for TypeScript and JavaScript projects is `npm`. The default value for Python projects is `pip`.
 
 #### `classes`: `Array` **Optional**
 
@@ -307,7 +296,6 @@ If scripts are declared in the `scripts` field, they will be executed from this 
 - maxConcurrentRequestsPerInstance: `number` **Optional**
 
   Specifies the number of concurrent requests that can be served simultaneously by an execution environment. Default 10. [Pro Subscription](https://app.genez.io/billing) is required to change this configuration.
-
 
 #### `environment`: `Object` **Optional**
 
@@ -381,9 +369,24 @@ This resource exposes `url` as an output expression: `${{backend.functions.<func
 
   The path to the function's code. It is relative to the `path` field.
 
-- `handler`: `string` **Required**
+- `entry`: `string` **Required**
 
-  The name of the handler function. For example, if the handler function is `myHandler`, the code should look like this:
+  The file that contains the function. The extension for this file can be `.js`, `.cjs`, `.mjs` or `.py`.
+
+- `type`: `string` **Optional**
+
+  The type of the function. This can be `aws` or `httpServer`. If this field is not specified, the default value is `aws`.
+
+  - `aws` indicates that the function will be deployed as an AWS Lambda handler. This means that the function is either a Lambda event handler or it uses [`serverless-http`](https://www.npmjs.com/package/serverless-http) to convert an Express app to a Lambda event handler.
+  - `httpServer` indicates that the function will be deployed as a standalone HTTP server, such as those built with frameworks like `express`, `fastify`, `flask`, `django`, etc.
+
+  Note 1: The recommended way to deploy your app is to use the `httpServer` type unless you are explicitly migrating from an existing AWS Lambda function or using `serverless-http`.
+  Note 2: Websocket are supported only for `httpServer` functions.
+
+- `handler`: `string` **Optional**
+
+  If type is `aws`, this field is required. It specifies the name of the handler function in the code.
+  For example, if the handler function is `myHandler`, the code should look like this:
 
   ```typescript
   export const myHandler = async (event, context) => {
@@ -391,13 +394,17 @@ This resource exposes `url` as an output expression: `${{backend.functions.<func
   };
   ```
 
-- `entry`: `string` **Required**
+  ```yaml
+  backend:
+    functions:
+      - name: my-function
+        path: ./
+        handler: myHandler
+        entry: app.mjs
+        type: aws
+  ```
 
-  The file that contains the function. The extension for this file can be `.js`, `.cjs` or `.mjs`.
-
-- `type`: `string` **Optional**
-
-  The type of the function. The default value is `aws`.
+  Note: For `httpServer` functions this field is not required.
 
 - timeout: `number` **Optional**
 
@@ -452,7 +459,7 @@ backend:
       # The entry point for the function.
       entry: app.mjs
       # The compatibility of the function handler.
-      type: aws
+      type: httpServer
 ```
 
 ## `frontend`: `Object` | `Array` **Optional**
@@ -633,11 +640,11 @@ frontend:
 
 The Docker container configuration. This field can be omitted if the project is not containerized.
 
-- path: `string` **Required**
+- `path`: `string` **Required**
 
   The path to the Dockerfile. It is relative to the `genezio.yaml` file.
 
-- environment: `Object` **Optional**
+- `environment`: `Object` **Optional**
 
   The environment variables that will be set for the server inside the Docker container.
 
@@ -670,7 +677,7 @@ The Docker container configuration. This field can be omitted if the project is 
 ### Example of `container` deployment configuration
 
 ```yaml
-name: genezio-build-machine-backend
+name: my-container-project
 region: eu-central-1
 yamlVersion: 2
 container:
@@ -679,9 +686,9 @@ container:
     MY_ENV_VAR: my-value
 ```
 
-## nextjs | nuxt | nitro | nestjs
+## nextjs | nuxt | nitro | nestjs | remix
 
-You can use the `nextjs`, `nuxt`, `nitro`, or `nestjs` field to deploy a Next.js, Nuxt.js, Nitro, or Nestjs project.
+You can use the `nextjs`, `nuxt`, `nitro`, `nestjs`, `remix` field to deploy a Next.js, Nuxt.js, Nitro, Nestjs, or Remix project.
 
 - path: `string` **Required**
 
@@ -713,6 +720,8 @@ Variables can be used in the scripts. Check the [Usage](#variables) section for 
   The full format of the domain will be `https://<subdomain>.app.genezio.com`.
 
 ### Example of `nextjs` deployment configuration
+
+This example can be easily used for Nuxt.js, Nitro, Nestjs, or Remix projects by changing the `nextjs` field to `nuxt`, `nitro`, `nestjs`, or `remix`.
 
 ```yaml
 name: genezio-project
