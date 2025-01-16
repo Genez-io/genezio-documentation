@@ -100,23 +100,44 @@ Run the following command in your terminal:
 genezio deploy
 ```
 
-If your application use environment variables, you can deploy them using the following command:
+This command will analyze your project and create the `genezio.yaml` file in the root directory of your Nest.js app, with the following content:
 
-```bash
-genezio deploy --env <path-to-your-env-file>
+```yaml
+# The name of your project, which also influences the subdomain of the project.
+name: genezio-project
+# Select a region closest to your user base for optimal performance.
+region: us-east-1
+# Specifies the version of the YAML configuration syntax being used.
+yamlVersion: 2
+# Configuration specific to the Nest.js project setup.
+nestjs:
+    # The path where the Nest.js project is located.
+    path: .
+    # The package manager to be used for this project (npm, yarn, etc.)
+    packageManager: npm
+    # Custom scripts to be run during deployment, e.g., installing dependencies.
+    scripts:
+        deploy:
+            - npm install
 ```
 
-:::info
-You need to deploy your environment variables only once.
-After that, you can deploy your project without the `--env` flag.
-:::
-For more information about environment variables, you can check the [official documentation](/docs/project-structure/backend-environment-variables.md).
+## Local Development
+
+To develop and test your app locally, run:
+
+```bash
+genezio local
+```
+
+You can specify a custom port by setting the `GENEZIO_PORT_NESTJS` environment variable using one of these methods:
+
+- Add `GENEZIO_PORT_NESTJS=<port>` to your `.env` file
+- Windows: Run `set GENEZIO_PORT_NESTJS=<port> && genezio local`
+- macOS/Linux: Run `GENEZIO_PORT_NESTJS=<port> genezio local`
 
 ## See your app in Genezio Dashboard
 
-After deploying your application, you can test it to ensure it's running correctly. To verify that your Nest.js app is working, open a web browser and navigate to the URL provided for your deployed function.
-
-This URL can be found in the deployment output under the `Functions Deployed` section.
+After deploying your application, you can test it to ensure it's running correctly. To verify that your Nest.js app is working, open a web browser and navigate to the URL provided for your deployed app.
 
 Additionally, you can monitor and manage your app through the [Genezio App Dashboard](https://app.genez.io/dashboard). The dashboard URL, also provided after deployment, allows you to access comprehensive views of your project's status and logs.
 

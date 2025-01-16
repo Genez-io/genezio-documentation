@@ -47,6 +47,7 @@ const sidebars = {
         "frameworks/react",
         "frameworks/react-admin",
         "frameworks/refine",
+        "frameworks/remix",
         "frameworks/svelte",
         "frameworks/typesafe-project",
         "frameworks/vue",
