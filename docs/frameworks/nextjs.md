@@ -100,11 +100,11 @@ To develop and test your app locally, run:
 genezio local
 ```
 
-You can specify a custom port by setting the `GENEZIO_PORT_NEXT_JS` environment variable using one of these methods:
+You can specify a custom port by setting the `GENEZIO_PORT_NEXTJS` environment variable using one of these methods:
 
-- Add `GENEZIO_PORT_NEXT_JS=<port>` to your `.env` file
-- Windows: Run `set GENEZIO_PORT_NEXT_JS=<port> && genezio local`
-- macOS/Linux: Run `GENEZIO_PORT_NEXT_JS=<port> genezio local`
+- Add `GENEZIO_PORT_NEXTJS=<port>` to your `.env` file
+- Windows: Run `set GENEZIO_PORT_NEXTJS=<port> && genezio local`
+- macOS/Linux: Run `GENEZIO_PORT_NEXTJS=<port> genezio local`
 
 ## Frequently Asked Questions
 

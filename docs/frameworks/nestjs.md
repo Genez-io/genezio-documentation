@@ -101,7 +101,7 @@ genezio deploy
 ```
 
 This command will analyze your project and create the `genezio.yaml` file in the root directory of your Nest.js app, with the following content:
-  
+
 ```yaml
 # The name of your project, which also influences the subdomain of the project.
 name: genezio-project
@@ -129,11 +129,11 @@ To develop and test your app locally, run:
 genezio local
 ```
 
-You can specify a custom port by setting the `GENEZIO_PORT_NEST_JS` environment variable using one of these methods:
+You can specify a custom port by setting the `GENEZIO_PORT_NESTJS` environment variable using one of these methods:
 
-- Add `GENEZIO_PORT_NEST_JS=<port>` to your `.env` file
-- Windows: Run `set GENEZIO_PORT_NEST_JS=<port> && genezio local`
-- macOS/Linux: Run `GENEZIO_PORT_NEST_JS=<port> genezio local`
+- Add `GENEZIO_PORT_NESTJS=<port>` to your `.env` file
+- Windows: Run `set GENEZIO_PORT_NESTJS=<port> && genezio local`
+- macOS/Linux: Run `GENEZIO_PORT_NESTJS=<port> genezio local`
 
 ## See your app in Genezio Dashboard
 
