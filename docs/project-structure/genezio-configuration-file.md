@@ -234,25 +234,14 @@ If scripts are declared in the `scripts` field, they will be executed from this 
 
 #### `language`: `Object` **Required**
 
-- `name`: `ts` | `js` | `go` | `dart` | `kotlin` **Required**
+- `name`: `ts` | `js` | `python` **Required**
 
-  The programming language used to implement the backend.
+  The name of the programming language used in the backend.
 
-- `runtime`: `nodejs20.x` **Optional**
+- `packageManager`: `npm` | `pnpm` | `yarn` | `pip` | `poetry` **Optional**
 
-  The node runtime version that will be used by your NodeJS application. The default value is `nodejs20.x`.
-
-  Applicable only when `language.name` is `ts` or `js`.
-
-- `packageManager`: `npm` | `pnpm` | `yarn` **Optional**
-
-  The package manager used to install the project's dependencies. The default value is `npm`.
-
-  Applicable only when `language.name` is `ts` or `js`.
-
-- `architecture`: `x86_64` **Optional**
-
-  The architecture that will be use by your application on the cloud. The default value is `x86_64`.
+  The package manager used to install the project's dependencies. This is used to automatically install dependencies before deploying the backend.
+  The default value for TypeScript and JavaScript projects is `npm`. The default value for Python projects is `pip`.
 
 #### `classes`: `Array` **Optional**
 
@@ -284,17 +273,31 @@ If scripts are declared in the `scripts` field, they will be executed from this 
 
     The cron string that specifies how frequently the method should be called. Check the cron string format on https://crontab.guru/.
 
-- timeout: `number` **Optional**
+- `timeout`: `number` **Optional**
 
-  Specifies how long a request should wait for a response, in seconds. Default 30. [Pro Subscription](https://app.genez.io/billing) is required to change this configuration.
+  Specifies how long a request should wait for a response, in seconds. Timeout is the maximum amount of time in seconds that a request can take to complete.
+  The default value for this setting is 60 seconds. You can adjust this in increments of 1 second up to a maximum value of 900 seconds (15 minutes).
 
-- storageSize: `number` **Optional**
+  To increase the maximum threshold up to 3600 seconds (1 hour), you [can upgrade to a Pro Subscription](https://app.genez.io/billing).
 
-  If this parameter is set, the execution environment will mount a storage disk with the specified size. The storage is not persistent across requests. Pro Subscription is required to change this configuration.
+  For larger values, [contact us](mailto:contact@genez.io).
 
-- instanceSize: `tiny` | `medium` | `large` **Optional**
+- `storageSize`: `number` **Optional**
 
-  Determines the amount of RAM allocated to the execution environment. Default `tiny`. [Pro Subscription](https://app.genez.io/billing) is required to change this configuration.
+  By default a partition of 128MB is mounted to the execution environment. This can be used to store temporary files or cache data.
+
+  To increase the maximum value up to 512MB, you [can upgrade to a Pro Subscription](https://app.genez.io/billing).
+  Afterwards, you can adjust this in increments of 1MB up to a maximum value of 512MB.
+
+  For larger values, [contact us](mailto:contact@genez.io).
+
+  Note 1: This storage is not persistent across requests. It is not recommend to use it for stateful operations.
+  Note 2: Changing the storage size will affect cold start times.
+
+- `instanceSize`: `tiny` | `medium` | `large` **Optional**
+
+  Determines the amount of RAM allocated to the execution environment. The default value for this setting is `tiny`.
+  To increase the amount of RAM allocated, you can set the value to `medium` or `large`. A [Pro Subscription](https://app.genez.io/billing) is required to change this configuration.
 
   tiny = 256MB RAM, 1 VCPU
 
@@ -304,10 +307,26 @@ If scripts are declared in the `scripts` field, they will be executed from this 
 
   For larger instance sizes, [contact us](mailto:contact@genez.io).
 
-- maxConcurrentRequestsPerInstance: `number` **Optional**
+- `maxConcurrentRequestsPerInstance`: `number` **Optional**
 
-  Specifies the number of concurrent requests that can be served simultaneously by an execution environment. Default 10. [Pro Subscription](https://app.genez.io/billing) is required to change this configuration.
+  Specifies the number of concurrent requests that can be served simultaneously by an execution environment.
+  The default value for this setting is 5 concurrent requests per execution environment.
 
+  To increase the maximum value up to 10 concurrent requests, you [can upgrade to a Pro Subscription](https://app.genez.io/billing).
+  Afterwards, you can adjust this in increments of 1 up to a maximum value of 10 concurrent requests.
+
+  For larger values, [contact us](mailto:contact@genez.io).
+
+  Note: Setting this value to 1 disables concurrent requests served within the same execution environment. In this case, 2 or more incoming concurrent requests will be automatically distributed across separate execution environments, which are scaled up dynamically by Genezio.
+
+- `cooldownTime`: `number` **Optional**
+
+  Specifies the time in milliseconds that the execution environment will be kept alive after the response is sent.
+  The default value for this setting is 0 milliseconds. You can adjust this up to a maximum value of 3000 milliseconds (3 seconds).
+
+  To increase the maximum threshold up to 5 minutes, you [can upgrade to a Pro Subscription](https://app.genez.io/billing).
+
+  For larger values, [contact us](mailto:contact@genez.io).
 
 #### `environment`: `Object` **Optional**
 
@@ -381,9 +400,24 @@ This resource exposes `url` as an output expression: `${{backend.functions.<func
 
   The path to the function's code. It is relative to the `path` field.
 
-- `handler`: `string` **Required**
+- `entry`: `string` **Required**
 
-  The name of the handler function. For example, if the handler function is `myHandler`, the code should look like this:
+  The file that contains the function. The extension for this file can be `.js`, `.cjs`, `.mjs` or `.py`.
+
+- `type`: `string` **Optional**
+
+  The type of the function. This can be `aws` or `httpServer`. If this field is not specified, the default value is `aws`.
+
+  - `aws` indicates that the function will be deployed as an AWS Lambda handler. This means that the function is either a Lambda event handler or it uses [`serverless-http`](https://www.npmjs.com/package/serverless-http) to convert an Express app to a Lambda event handler.
+  - `httpServer` indicates that the function will be deployed as a standalone HTTP server, such as those built with frameworks like `express`, `fastify`, `flask`, `django`, etc.
+
+  Note 1: The recommended way to deploy your app is to use the `httpServer` type unless you are explicitly migrating from an existing AWS Lambda function or using `serverless-http`.
+  Note 2: Websocket are supported only for `httpServer` functions.
+
+- `handler`: `string` **Optional**
+
+  If type is `aws`, this field is required. It specifies the name of the handler function in the code.
+  For example, if the handler function is `myHandler`, the code should look like this:
 
   ```typescript
   export const myHandler = async (event, context) => {
@@ -391,25 +425,43 @@ This resource exposes `url` as an output expression: `${{backend.functions.<func
   };
   ```
 
-- `entry`: `string` **Required**
+  ```yaml
+  backend:
+    functions:
+      - name: my-function
+        path: ./
+        handler: myHandler
+        entry: app.mjs
+        type: aws
+  ```
 
-  The file that contains the function. The extension for this file can be `.js`, `.cjs` or `.mjs`.
+  Note: For `httpServer` functions this field is not required.
 
-- `type`: `string` **Optional**
+- `timeout`: `number` **Optional**
 
-  The type of the function. The default value is `aws`.
+  Specifies how long a request should wait for a response, in seconds. Timeout is the maximum amount of time in seconds that a request can take to complete.
+  The default value for this setting is 60 seconds. You can adjust this in increments of 1 second up to a maximum value of 900 seconds (15 minutes).
 
-- timeout: `number` **Optional**
+  To increase the maximum threshold up to 3600 seconds (1 hour), you [can upgrade to a Pro Subscription](https://app.genez.io/billing).
 
-  Specifies how long a request should wait for a response, in seconds. Default 30. [Pro Subscription](https://app.genez.io/billing) is required to change this configuration.
+  For larger values, [contact us](mailto:contact@genez.io).
 
-- storageSize: `number` **Optional**
+- `storageSize`: `number` **Optional**
 
-  If this parameter is set, the execution environment will mount a storage disk with the specified size. The storage is not persistent across requests. [Pro Subscription](https://app.genez.io/billing) is required to change this configuration.
+  By default a partition of 128MB is mounted to the execution environment. This can be used to store temporary files or cache data.
 
-- instanceSize: `tiny` | `medium` | `large` **Optional**
+  To increase the maximum value up to 512MB, you [can upgrade to a Pro Subscription](https://app.genez.io/billing).
+  Afterwards, you can adjust this in increments of 1MB up to a maximum value of 512MB.
 
-  Determines the amount of RAM allocated to the execution environment. Default `tiny`. [Pro Subscription](https://app.genez.io/billing) is required to change this configuration.
+  For larger values, [contact us](mailto:contact@genez.io).
+
+  Note 1: This storage is not persistent across requests. It is not recommend to use it for stateful operations.
+  Note 2: Changing the storage size will affect cold start times.
+
+- `instanceSize`: `tiny` | `medium` | `large` **Optional**
+
+  Determines the amount of RAM allocated to the execution environment. The default value for this setting is `tiny`.
+  To increase the amount of RAM allocated, you can set the value to `medium` or `large`. A [Pro Subscription](https://app.genez.io/billing) is required to change this configuration.
 
   tiny = 256MB RAM, 1 VCPU
 
@@ -419,9 +471,26 @@ This resource exposes `url` as an output expression: `${{backend.functions.<func
 
   For larger instance sizes, [contact us](mailto:contact@genez.io).
 
-- maxConcurrentRequestsPerInstance: `number` **Optional**
+- `maxConcurrentRequestsPerInstance`: `number` **Optional**
 
-  Specifies the number of concurrent requests that can be served simultaneously by an execution environment. Default 10. [Pro Subscription](https://app.genez.io/billing) is required to change this configuration.
+  Specifies the number of concurrent requests that can be served simultaneously by an execution environment.
+  The default value for this setting is 5 concurrent requests per execution environment.
+
+  To increase the maximum value up to 10 concurrent requests, you [can upgrade to a Pro Subscription](https://app.genez.io/billing).
+  Afterwards, you can adjust this in increments of 1 up to a maximum value of 10 concurrent requests.
+
+  For larger values, [contact us](mailto:contact@genez.io).
+
+  Note: Setting this value to 1 disables concurrent requests served within the same execution environment. In this case, 2 or more incoming concurrent requests will be automatically distributed across separate execution environments, which are scaled up dynamically by Genezio.
+
+- `cooldownTime`: `number` **Optional**
+
+  Specifies the time in milliseconds that the execution environment will be kept alive after the response is sent.
+  The default value for this setting is 0 milliseconds. You can adjust this up to a maximum value of 3000 milliseconds (3 seconds).
+
+  To increase the maximum threshold up to 5 minutes, you [can upgrade to a Pro Subscription](https://app.genez.io/billing).
+
+  For larger values, [contact us](mailto:contact@genez.io).
 
 ### Backend with `functions` deployment
 
@@ -452,7 +521,7 @@ backend:
       # The entry point for the function.
       entry: app.mjs
       # The compatibility of the function handler.
-      type: aws
+      type: httpServer
 ```
 
 ## `frontend`: `Object` | `Array` **Optional**
@@ -633,27 +702,41 @@ frontend:
 
 The Docker container configuration. This field can be omitted if the project is not containerized.
 
-- path: `string` **Required**
+- `path`: `string` **Required**
 
   The path to the Dockerfile. It is relative to the `genezio.yaml` file.
 
-- environment: `Object` **Optional**
+- `environment`: `Object` **Optional**
 
   The environment variables that will be set for the server inside the Docker container.
 
   You can use expression to define the environment variables. Check the [Usage](#expressions) section for more information.
 
-- timeout: `number` **Optional**
+- `timeout`: `number` **Optional**
 
-  Specifies how long a request should wait for a response, in seconds. Default 30. [Pro Subscription](https://app.genez.io/billing) is required to change this configuration.
+  Specifies how long a request should wait for a response, in seconds. Timeout is the maximum amount of time in seconds that a request can take to complete.
+  The default value for this setting is 60 seconds. You can adjust this in increments of 1 second up to a maximum value of 900 seconds (15 minutes).
 
-- storageSize: `number` **Optional**
+  To increase the maximum threshold up to 3600 seconds (1 hour), you [can upgrade to a Pro Subscription](https://app.genez.io/billing).
 
-  If this parameter is set, the execution environment will mount a storage disk with the specified size. The storage is not persistent across requests. Pro Subscription is required to change this configuration.
+  For larger values, [contact us](mailto:contact@genez.io).
 
-- instanceSize: `tiny` | `medium` | `large` **Optional**
+- `storageSize`: `number` **Optional**
 
-  Determines the amount of RAM allocated to the execution environment. Default `tiny`. [Pro Subscription](https://app.genez.io/billing) is required to change this configuration.
+  By default a partition of 128MB is mounted to the execution environment. This can be used to store temporary files or cache data.
+
+  To increase the maximum value up to 512MB, you [can upgrade to a Pro Subscription](https://app.genez.io/billing).
+  Afterwards, you can adjust this in increments of 1MB up to a maximum value of 512MB.
+
+  For larger values, [contact us](mailto:contact@genez.io).
+
+  Note 1: This storage is not persistent across requests. It is not recommend to use it for stateful operations.
+  Note 2: Changing the storage size will affect cold start times.
+
+- `instanceSize`: `tiny` | `medium` | `large` **Optional**
+
+  Determines the amount of RAM allocated to the execution environment. The default value for this setting is `tiny`.
+  To increase the amount of RAM allocated, you can set the value to `medium` or `large`. A [Pro Subscription](https://app.genez.io/billing) is required to change this configuration.
 
   tiny = 256MB RAM, 1 VCPU
 
@@ -663,14 +746,31 @@ The Docker container configuration. This field can be omitted if the project is 
 
   For larger instance sizes, [contact us](mailto:contact@genez.io).
 
-- maxConcurrentRequestsPerInstance: `number` **Optional**
+- `maxConcurrentRequestsPerInstance`: `number` **Optional**
 
-  Specifies the number of concurrent requests that can be served simultaneously by an execution environment. Default 10. [Pro Subscription](https://app.genez.io/billing) is required to change this configuration.
+  Specifies the number of concurrent requests that can be served simultaneously by an execution environment.
+  The default value for this setting is 5 concurrent requests per execution environment.
+
+  To increase the maximum value up to 10 concurrent requests, you [can upgrade to a Pro Subscription](https://app.genez.io/billing).
+  Afterwards, you can adjust this in increments of 1 up to a maximum value of 10 concurrent requests.
+
+  For larger values, [contact us](mailto:contact@genez.io).
+
+  Note: Setting this value to 1 disables concurrent requests served within the same execution environment. In this case, 2 or more incoming concurrent requests will be automatically distributed across separate execution environments, which are scaled up dynamically by Genezio.
+
+- `cooldownTime`: `number` **Optional**
+
+  Specifies the time in milliseconds that the execution environment will be kept alive after the response is sent.
+  The default value for this setting is 0 milliseconds. You can adjust this up to a maximum value of 3000 milliseconds (3 seconds).
+
+  To increase the maximum threshold up to 5 minutes, you [can upgrade to a Pro Subscription](https://app.genez.io/billing).
+
+  For larger values, [contact us](mailto:contact@genez.io).
 
 ### Example of `container` deployment configuration
 
 ```yaml
-name: genezio-build-machine-backend
+name: my-container-project
 region: eu-central-1
 yamlVersion: 2
 container:
@@ -679,9 +779,9 @@ container:
     MY_ENV_VAR: my-value
 ```
 
-## nextjs | nuxt | nitro | nestjs
+## nextjs | nuxt | nitro | nestjs | remix
 
-You can use the `nextjs`, `nuxt`, `nitro`, or `nestjs` field to deploy a Next.js, Nuxt.js, Nitro, or Nestjs project.
+You can use the `nextjs`, `nuxt`, `nitro`, `nestjs`, `remix` field to deploy a Next.js, Nuxt.js, Nitro, Nestjs, or Remix project.
 
 - path: `string` **Required**
 
@@ -707,15 +807,31 @@ Variables can be used in the scripts. Check the [Usage](#variables) section for 
 
   A general purpose script that runs before the project is deployed. Used to define how to install dependencies.
 
+- `subdomain`: `string` **Optional**
+
+  The subdomain where the project will be deployed. If not specified, a random subdomain will be generated.
+  The full format of the domain will be `https://<subdomain>.app.genezio.com`.
+
 ### Example of `nextjs` deployment configuration
 
+This example can be easily used for Nuxt.js, Nitro, Nestjs, or Remix projects by changing the `nextjs` field to `nuxt`, `nitro`, `nestjs`, or `remix`.
+
 ```yaml
+name: genezio-project
+region: us-east-1
+yamlVersion: 2
+# Configuration specific to the Next.js project setup.
 nextjs:
+    # The path where the Next.js project is located.
     path: .
+    # The package manager to be used for this project (npm, yarn, etc.)
     packageManager: npm
+    # Custom scripts to be run during deployment, e.g., installing dependencies.
     scripts:
         deploy:
             - npm install
+    # The subdomain that will be associated with this Next.js application.
+    subdomain: my-nextjs-app
 ```
 
 ## Expressions

@@ -75,11 +75,35 @@ name: genezio-project
 region: us-east-1
 # Specifies the version of the YAML configuration syntax being used.
 yamlVersion: 2
+# Configuration specific to the Nitro project setup.
+nitro:
+    # The path where the Nitro.js project is located.
+    path: .
+    # The package manager to be used for this project (npm, yarn, etc.)
+    packageManager: npm
+    # Custom scripts to be run during deployment, e.g., installing dependencies.
+    scripts:
+        deploy:
+            - npm install
 ```
 
 ### 3. Monitor your project
 
 You can monitor and manage your application through the [Genezio App Dashboard](https://app.genez.io/dashboard). The dashboard URL, also provided after deployment, allows you to access comprehensive views of your project's status and logs.
+
+## Local Development
+
+To develop and test your app locally, run:
+
+```bash
+genezio local
+```
+
+You can specify a custom port by setting the `GENEZIO_PORT_NITRO` environment variable using one of these methods:
+
+- Add `GENEZIO_PORT_NITRO=<port>` to your `.env` file
+- Windows: Run `set GENEZIO_PORT_NITRO=<port> && genezio local`
+- macOS/Linux: Run `GENEZIO_PORT_NITRO=<port> genezio local`
 
 ## Support <a href="#support" id="support"></a>
 

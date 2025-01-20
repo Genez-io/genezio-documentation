@@ -20,7 +20,7 @@ This feature is available only for users holding a subscription. Update your pla
 
 ## Introduction
 
-With genezio, you can use custom domains, allowing you to customize the root of your website's URL. Instead of being limited to the default domain like "capybara.app.genez.io," you can easily configure genezio to use your domain, giving your website a unique and personalized web address.
+With genezio, you can use custom domains, allowing you to customize the root of your website's URL, as well as your backend functions. Instead of being limited to the default domain like "capybara.app.genez.io," you can easily configure genezio to use your domain, giving your website a unique and personalized web address.
 
 This feature empowers you to create a professional online presence by associating your website with a domain that reflects your brand or project identity.
 
@@ -34,11 +34,11 @@ Example of supported types:
 - Custom Domain - `custom.test.com`
 - `www` domain/subdomain - `www.test.com`
 
-After you add a custom domain, we automatically configure the certificate also on all subdomains, including `www`, but you have to add in the DNS configuration the CNAME to use `www`.
+After you add a custom domain, we automatically configure the certificate also on all subdomains, including `www`, but you have to add in the DNS configuration the CNAME to use `www` (valid only for frontend custom domains).
 
 ## Configure your custom domains <a href="#supported-custom-domains" id="supported-custom-domains"></a>
 
-In the genezio dashboard, you can go to a project that has frontend deployed, and on the `Domains` tab in the sidebar, you can set up your custom domain.
+In the genezio dashboard, you can go to a project that has a frontend and/or a function deployed, and on the `Domains` tab in the sidebar, you can set up your custom domain.
 
 On this page, you add your custom domain and click on the "Save" button.
 
@@ -58,13 +58,19 @@ This is just a short list of some providers that we used.
 
 ## Securing the custom domain <a href="#securing-the-custom-domain-for-your-github-pages-site" id="securing-the-custom-domain-for-your-github-pages-site"></a>
 
-You don't need to do any extra steps. You only add the 2 given CNAMEs and we will take care of the rest. Genezio will automatically create an SSL certificate and automatically renew it so you can use it seamlessly.
+You don't need to do any extra steps. You only add the given CNAMEs (most likely 2 for frontend custom domains and only one for backend functions) and we will take care of the rest. Genezio will automatically create an SSL certificate and automatically renew it so you can use it seamlessly.
 
 ## Known limitations
 
 There are some known limitations on setting custom domains depending on the domain's provider.
 
+### Apex Domains
+
 Adding an apex domain such as `test.com` hosted on GoDaddy may encounter limitations during the DNS configuration. To address this, we recommend transferring the domain’s DNS settings to another DNS provider such as Cloudflare. For assistance, please contact our technical support team by sending an email to `contact@genez.io`.
+
+### Function custom domains on Cloudflare
+
+If your domain DNS is hosted on Cloudflare, when you add the CNAME provided in your genezio dashboard to your DNS configuration, please make sure you disable the proxy setting for that CNAME record (it should be in "DNS only" mode). This limitation comes from the fact that we need to verify that your domain is pointing to our server before we can move forward with the SSL certificate generation. If proxy is enabled, your domain will point to a Cloudflare IP, and we won't be able to verify it.
 
 ## Troubleshooting custom domains <a href="#title-h1" id="title-h1"></a>
 
