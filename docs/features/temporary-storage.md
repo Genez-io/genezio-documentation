@@ -97,28 +97,138 @@ fastify.get('/read/:filename', async (request, reply) => {
   }
 });
 
-fastify.listen({ port: PORT }, (err) => {
+fastify.listen({ port: PORT, host: '0.0.0.0' }, (err) => {
   if (err) {
     fastify.log.error(err);
     process.exit(1);
   }
   console.log(`Server running on http://localhost:${PORT}`);
 });
-```
-  </TabItem>
+``` 
+</TabItem>
   <TabItem  className="tab-item" value="FastAPI" label="fastapi">
 ```python
-Coming soon
+import fastapi 
+from fastapi import FastAPI, HTTPException
+from pydantic import BaseModel
+from pathlib import Path
+
+app = FastAPI()
+BASE_DIR = Path("/tmp")
+
+class FileData(BaseModel):
+    filename: str
+    content: str
+
+# Write data to a file
+@app.post("/write")
+async def write_file(file_data: FileData):
+    file_path = BASE_DIR / file_data.filename
+    try:
+        file_path.write_text(file_data.content, encoding="utf-8")
+        return {"message": f"File {file_data.filename} written successfully!"}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Error writing file: {str(e)}")
+
+# Read data from a file
+@app.get("/read/{filename}")
+async def read_file(filename: str):
+    file_path = BASE_DIR / filename
+    try:
+        if not file_path.exists():
+            raise HTTPException(status_code=404, detail="File not found")
+        content = file_path.read_text(encoding="utf-8")
+        return {"filename": filename, "content": content}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Error reading file: {str(e)}")
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=3000)
 ```
   </TabItem>
   <TabItem  className="tab-item" value="Flask" label="flask">
 ```python
-Coming soon
+from flask import Flask, request, jsonify, abort
+from pathlib import Path
+
+app = Flask(__name__)
+BASE_DIR = Path("/tmp")
+
+# Write data to a file
+@app.route("/write", methods=["POST"])
+def write_file():
+    data = request.get_json()
+    if not data or "filename" not in data or "content" not in data:
+        abort(400, description="Invalid request payload")
+
+    filename = data["filename"]
+    content = data["content"]
+    file_path = BASE_DIR / filename
+
+    try:
+        file_path.write_text(content, encoding="utf-8")
+        return jsonify({"message": f"File {filename} written successfully!"})
+    except Exception as e:
+        abort(500, description=f"Error writing file: {str(e)}")
+
+# Read data from a file
+@app.route("/read/<filename>", methods=["GET"])
+def read_file(filename):
+    file_path = BASE_DIR / filename
+
+    try:
+        if not file_path.exists():
+            abort(404, description="File not found")
+        content = file_path.read_text(encoding="utf-8")
+        return jsonify({"filename": filename, "content": content})
+    except Exception as e:
+        abort(500, description=f"Error reading file: {str(e)}")
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=3000, debug=True)
 ```
   </TabItem>
   <TabItem  className="tab-item" value="Django" label="django">
 ```python
-Coming soon
+from django.http import JsonResponse, HttpResponse
+from django.views.decorators.csrf import csrf_exempt
+import json
+from pathlib import Path
+
+BASE_DIR = Path("/tmp")
+
+@csrf_exempt
+def write_file(request):
+    if request.method == "POST":
+        try:
+            data = json.loads(request.body)
+            filename = data.get("filename")
+            content = data.get("content")
+
+            if not filename or not content:
+                return JsonResponse({"error": "Invalid request payload"}, status=400)
+
+            file_path = BASE_DIR / filename
+            file_path.write_text(content, encoding="utf-8")
+
+            return JsonResponse({"message": f"File {filename} written successfully!"})
+        except Exception as e:
+            return JsonResponse({"error": f"Error writing file: {str(e)}"}, status=500)
+    return JsonResponse({"error": "Method not allowed"}, status=405)
+
+def read_file(request, filename):
+    if request.method == "GET":
+        try:
+            file_path = BASE_DIR / filename
+            if not file_path.exists():
+                return JsonResponse({"error": "File not found"}, status=404)
+
+            content = file_path.read_text(encoding="utf-8")
+            return JsonResponse({"filename": filename, "content": content})
+        except Exception as e:
+            return JsonResponse({"error": f"Error reading file: {str(e)}"}, status=500)
+    return JsonResponse({"error": "Method not allowed"}, status=405)
 ```
   </TabItem>
 </Tabs>
@@ -192,3 +302,4 @@ This error occurs when attempting to write to a directory outside of `/tmp`. Ens
 ## Support
 
 If you have any questions or need help, please reach out to us on [Discord](https://discord.com/invite/uc9H5YKjXv).
+
