@@ -104,11 +104,11 @@ fastify.listen({ port: PORT, host: '0.0.0.0' }, (err) => {
   }
   console.log(`Server running on http://localhost:${PORT}`);
 });
-``` 
+```
 </TabItem>
   <TabItem  className="tab-item" value="FastAPI" label="fastapi">
 ```python
-import fastapi 
+import fastapi
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 from pathlib import Path
@@ -260,17 +260,18 @@ To test your storage configurations locally, use `genezio local` to start the se
 
 ## Accessing Bundled Local Files
 
-If your source code includes local files, `genezio` will bundle these files during deployment unless they are explicitly [ignored using a `.genezioignore` file](/docs/project-structure/.genezioignore).
+If your source code includes local files, `genezio` will bundle these files during deployment unless they are explicitly [ignored using a `.genezioignore` file](/docs/project-structure/.genezioignore). The source code and any additional files can be found at `/tmp/package` or `process.cwd()` within the execution environment.
 
 These bundled files are accessible within the execution environment at the following path:
 ```
 /tmp/package/<filepath>
 ```
 
-For example, if you have a file named config.json in the same directory as your source code, it can be accessed in your function like this:
+For example, if you have a file named `config.json` in the same directory as your source code, it can be accessed in your function like this:
 
 ```ts
 const configPath = '/tmp/package/config.json';
+// or const configPath = path.join(process.cwd(), 'config.json');
 fs.readFile(configPath, 'utf8', (err, data) => {
   if (err) {
     console.error('Error reading config file:', err);

@@ -64,7 +64,6 @@ const sidebars = {
         "tutorials/connect-to-mongo-atlas",
         "tutorials/create-react-app-genezio-auth",
         "tutorials/create-react-app-genezio-google-oauth",
-        "tutorials/temporary-files",
         {
           type: "link",
           label: "Create your first Web3 App", // The link label
