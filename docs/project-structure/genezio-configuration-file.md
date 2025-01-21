@@ -284,7 +284,7 @@ If scripts are declared in the `scripts` field, they will be executed from this 
 
 - `storageSize`: `number` **Optional**
 
-  By default a partition of 128MB is mounted to the execution environment. This can be used to store temporary files or cache data.
+  By default a partition of 128MB is mounted to the execution environment. This can be used to store temporary files or cache data. Check the [Temporary Storage](/docs/features/temporary-storage.md) page for more information and usage examples.
 
   To increase the maximum value up to 512MB, you [can upgrade to a Pro Subscription](https://app.genez.io/billing).
   Afterwards, you can adjust this in increments of 1MB up to a maximum value of 512MB.
@@ -448,7 +448,7 @@ This resource exposes `url` as an output expression: `${{backend.functions.<func
 
 - `storageSize`: `number` **Optional**
 
-  By default a partition of 128MB is mounted to the execution environment. This can be used to store temporary files or cache data.
+  By default a partition of 128MB is mounted to the execution environment. This can be used to store temporary files or cache data. Check the [Temporary Storage](/docs/features/temporary-storage.md) page for more information and usage examples.
 
   To increase the maximum value up to 512MB, you [can upgrade to a Pro Subscription](https://app.genez.io/billing).
   Afterwards, you can adjust this in increments of 1MB up to a maximum value of 512MB.
@@ -723,7 +723,7 @@ The Docker container configuration. This field can be omitted if the project is 
 
 - `storageSize`: `number` **Optional**
 
-  By default a partition of 128MB is mounted to the execution environment. This can be used to store temporary files or cache data.
+  By default a partition of 128MB is mounted to the execution environment. This can be used to store temporary files or cache data. Check the [Temporary Storage](/docs/features/temporary-storage.md) page for more information and usage examples.
 
   To increase the maximum value up to 512MB, you [can upgrade to a Pro Subscription](https://app.genez.io/billing).
   Afterwards, you can adjust this in increments of 1MB up to a maximum value of 512MB.
