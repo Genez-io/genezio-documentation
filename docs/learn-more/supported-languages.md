@@ -10,6 +10,29 @@ description: Learn about the supported languages and frameworks that you can dep
 
 Ready to deploy your project on Genezio? We've got you covered! Whether it's a simple frontend or a complex backend system, Genezio makes the process smooth and straightforward. Here’s a rundown of the types of projects you can easily deploy with us.
 
+## Supported Frameworks
+
+Genezio supports a wide range of languages and frameworks, including:
+ - Angular: Build powerful single-page applications.
+ - Django: Deploy robust backend applications using Python.
+ - Express.js: Integrate with serverless HTTP while maintaining your familiar setup.
+ - FastAPI: Deploy modern, high-performance Python APIs.
+ - Fastify: Benefit from a fast and lightweight backend framework.
+ - Flask: Deploy lightweight Python web applications.
+ - NestJS: Scale your backend applications with a modular architecture.
+ - Next.js: Seamlessly deploy static and server-rendered content.
+ - Nitro: Take advantage of the powerful Nuxt 3 server engine.
+ - Nuxt: Deploy performant Vue.js applications.
+ - React: Build and deploy interactive user interfaces.
+ - React-Admin: Create powerful admin panels and dashboards.
+ - Refine: Develop advanced React-based admin panels with ease.
+ - Remix: Build modern, server-rendered React applications.
+ - Svelte: Deploy lightweight and fast applications.
+ - TypeSafe Projects: Ensure maintainable and error-free applications.
+ - Vue: Deploy flexible and easy-to-integrate applications.
+
+You can check tutorials and examples for each framework in the [`Frameworks` section of our documentation](/docs/frameworks/).
+
 ## Genezio Typesafe Projects
 
 We offer full support for typesafe projects, ensuring that your code is robust and maintainable. You can develop your application written in TypeScript or Go.
@@ -47,9 +70,6 @@ Genezio supports a wide range of frontend frameworks, making it easy to deploy y
 
 Explore our [examples here](https://genezio.com/docs/examples/).
 
-## Conclusion
-
-Genezio Cloud supports a wide range of technology stacks, providing a flexible and comprehensive deployment solution. Focus on building your application while we take care of deployment and scaling.
+## Support
 
 If you need to deploy another type of project, please contact us at contact@genezio.com.
-
