@@ -119,6 +119,7 @@ const sidebars = {
         "features/custom-domain-configuration",
         "features/project-collaboration",
         "features/check-genezio-dashboard",
+        "features/temporary-storage",
         "features/genezio-deploy-button",
       ],
     },
