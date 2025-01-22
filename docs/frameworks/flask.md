@@ -287,6 +287,10 @@ After that, you can deploy your project without the `--env` flag.
 For more information about environment variables, you can check
 the [official documentation](/docs/project-structure/backend-environment-variables.md).
 
+:::note
+During deployment, Genezio will automatically install all dependencies specified in your `requirements.txt` file using the correct architecture (Linux x86) and Python 3.11 runtime environment. This ensures compatibility with our serverless infrastructure.
+:::
+
 ## See your app in Genezio Dashboard
 
 After deploying your application, you can test it to ensure it's running correctly. To verify that your Flask app is
