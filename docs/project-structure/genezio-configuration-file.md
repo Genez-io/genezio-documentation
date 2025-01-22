@@ -319,6 +319,18 @@ If scripts are declared in the `scripts` field, they will be executed from this 
 
   Note: Setting this value to 1 disables concurrent requests served within the same execution environment. In this case, 2 or more incoming concurrent requests will be automatically distributed across separate execution environments, which are scaled up dynamically by Genezio.
 
+- `maxConcurrentInstances`: `number` **Optional**
+
+  Specifies the number of concurrent instances that can be served simultaneously for a class.
+  The default value for this setting is 3 concurrent instances per class.
+
+  To increase the maximum value up to 10 concurrent instances, you [can upgrade to a Pro Subscription](https://app.genez.io/billing).
+  Afterwards, you can adjust this in increments of 1 up to a maximum value of 10 concurrent instances per class.
+
+  For larger values, [contact us](mailto:contact@genez.io).
+
+  Note: Setting this value to 1 disables concurrent instances served. In this case, your class will open only one instance. Any traffic trying to access the instance when it has reached the maximum number of concurrent requests will be dropped. THIS IS NOT RECOMMENDED.
+
 - `cooldownTime`: `number` **Optional**
 
   Specifies the time in milliseconds that the execution environment will be kept alive after the response is sent.
@@ -482,6 +494,18 @@ This resource exposes `url` as an output expression: `${{backend.functions.<func
   For larger values, [contact us](mailto:contact@genez.io).
 
   Note: Setting this value to 1 disables concurrent requests served within the same execution environment. In this case, 2 or more incoming concurrent requests will be automatically distributed across separate execution environments, which are scaled up dynamically by Genezio.
+
+- `maxConcurrentInstances`: `number` **Optional**
+
+  Specifies the number of concurrent instances that can be served simultaneously for a function.
+  The default value for this setting is 3 concurrent instances per function.
+
+  To increase the maximum value up to 10 concurrent instances, you [can upgrade to a Pro Subscription](https://app.genez.io/billing).
+  Afterwards, you can adjust this in increments of 1 up to a maximum value of 10 concurrent instances per function.
+
+  For larger values, [contact us](mailto:contact@genez.io).
+
+  Note: Setting this value to 1 disables concurrent instances served. In this case, your function will open only one instance. Any traffic trying to access the instance when it has reached the maximum number of concurrent requests will be dropped. THIS IS NOT RECOMMENDED.
 
 - `cooldownTime`: `number` **Optional**
 
@@ -758,6 +782,18 @@ The Docker container configuration. This field can be omitted if the project is 
 
   Note: Setting this value to 1 disables concurrent requests served within the same execution environment. In this case, 2 or more incoming concurrent requests will be automatically distributed across separate execution environments, which are scaled up dynamically by Genezio.
 
+- `maxConcurrentInstances`: `number` **Optional**
+
+  Specifies the number of concurrent instances that can be served simultaneously for a container.
+  The default value for this setting is 3 concurrent instances per container.
+
+  To increase the maximum value up to 10 concurrent instances, you [can upgrade to a Pro Subscription](https://app.genez.io/billing).
+  Afterwards, you can adjust this in increments of 1 up to a maximum value of 10 concurrent instances per container.
+
+  For larger values, [contact us](mailto:contact@genez.io).
+
+  Note: Setting this value to 1 disables concurrent instances served. In this case, your container will open only one instance. Any traffic trying to access the instance when it has reached the maximum number of concurrent requests will be dropped. THIS IS NOT RECOMMENDED.
+
 - `cooldownTime`: `number` **Optional**
 
   Specifies the time in milliseconds that the execution environment will be kept alive after the response is sent.
@@ -822,16 +858,16 @@ region: us-east-1
 yamlVersion: 2
 # Configuration specific to the Next.js project setup.
 nextjs:
-    # The path where the Next.js project is located.
-    path: .
-    # The package manager to be used for this project (npm, yarn, etc.)
-    packageManager: npm
-    # Custom scripts to be run during deployment, e.g., installing dependencies.
-    scripts:
-        deploy:
-            - npm install
-    # The subdomain that will be associated with this Next.js application.
-    subdomain: my-nextjs-app
+  # The path where the Next.js project is located.
+  path: .
+  # The package manager to be used for this project (npm, yarn, etc.)
+  packageManager: npm
+  # Custom scripts to be run during deployment, e.g., installing dependencies.
+  scripts:
+    deploy:
+      - npm install
+  # The subdomain that will be associated with this Next.js application.
+  subdomain: my-nextjs-app
 ```
 
 ## Expressions
