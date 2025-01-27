@@ -336,6 +336,7 @@ Open a web browser and navigate to [http://localhost:8000](http://localhost:8000
 
 Finally, deploy your project. A browser window will open, and you will be prompted to log in to your Genezio account and
 authorize the CLI to make the deployment.
+
 Run the following command in your terminal:
 
 ```bash
@@ -354,6 +355,10 @@ After that, you can deploy your project without the `--env` flag.
 :::
 For more information about environment variables, you can check
 the [official documentation](/docs/project-structure/backend-environment-variables.md).
+
+:::note
+During deployment, Genezio will automatically install all dependencies specified in your `requirements.txt` file using the correct architecture (Linux x86) and Python 3.11 runtime environment. This ensures compatibility with our serverless infrastructure.
+:::
 
 ## See your app in Genezio Dashboard
 

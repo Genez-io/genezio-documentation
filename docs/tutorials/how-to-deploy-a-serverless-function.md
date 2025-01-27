@@ -231,6 +231,9 @@ backend:
 
 This configuration file specifies the project name, deployment region, and details about the backend.
 
+:::note
+During deployment, Genezio will automatically install all dependencies specified in your `requirements.txt` file using the correct architecture (Linux x86) and Python 3.11 runtime environment. This ensures compatibility with our serverless infrastructure.
+:::
   </TabItem>
 </Tabs>
 
