@@ -23,7 +23,7 @@ We recommend you to:
 ## Supported Frameworks
 
 Genezio supports a wide range of popular frameworks, making it easy to integrate and deploy your existing projects or start new ones with familiar tools.
-Here’s a look at some of the frameworks you can use with Genezio:
+Here's a look at some of the frameworks you can use with Genezio:
 
 - **Genezio Functions**: AWS Lambda-compatible functions that run code and handle requests without managing servers.
 - [**Genezio Typesafe Classes**](/docs/genezio-typesafe/typesafety.md): Classes that can be deployed as functions with guaranteed client typesafe communication.
@@ -55,7 +55,32 @@ You can deploy your project by running the following command:
 genezio deploy
 ```
 
-Note: You can deploy a frontend-only or backend-only project by adding the `--frontend` or `--backend` flags respectively.
+:::tip
+You can deploy a frontend-only or backend-only project by adding the `--frontend` or `--backend` flags respectively.
+:::
+
+When working with multiple frontends in your project, you can use the `--name` flag to specify which frontend to deploy:
+
+```bash
+genezio deploy --frontend --name frontend1
+```
+
+This is particularly useful when your `genezio.yaml` contains multiple frontend configurations. For example:
+
+```yaml
+name: my-project
+region: us-east-1
+yamlVersion: 2
+frontend:
+    - name: frontend1
+      path: ./frontend1
+      publish: dist
+    - name: frontend2
+      path: ./frontend2
+      publish: dist
+```
+
+In this case, you can choose to deploy `frontend1` or `frontend2` individually using the `--name` flag.
 
 # Frontend deployments
 

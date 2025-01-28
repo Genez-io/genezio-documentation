@@ -34,6 +34,8 @@ If you executed this command with the `--frontend` option, the frontend code spe
 
 `--frontend`: Deploy only the frontend application.
 
+`--name <name>`: Deploy a specific frontend application. This is useful when you have multiple frontends in your project. [Learn more](../../deploy/frontend.md).
+
 `--install-deps`: Automatically install missing dependencies. By default, this behavior is turned off.
 
 `--disable-optimization`: Disable dependency optimization. By default, optimization is enabled.
