@@ -651,6 +651,8 @@ Learn more about rewrites in the [Redirects and Rewrites](/docs/deploy/frontend/
 
 The environment variables that will be injected at build time. The variables can be accessed in the code using `process.env`.
 
+You can use expression to define the environment variables. Check the [Usage](#expressions) section for more information.
+
 :::tip
 Each frontend framework will require a specific prefix for environment variables.
 For example, in Vite, you can access environment variables using `import.meta.env.VITE_MY_ENV_VAR`.
@@ -669,6 +671,10 @@ frontend:
 ```
 
 These environment variables are injected at build time when `scripts.build` are run.
+
+Note: Frontend environment variables cannot use constructs like `VITE_TEST_ENV_VAR: ${{ env.TEST }}`.
+This syntax is meant for the backend, where sensitive values (like API keys) are read from a local-only .env file and kept hidden.
+In `frontend.environment`, you can directly use the value of the environment variable as a string - `VITE_TEST_ENV_VAR: "test"` or manage them in a `.env` file.
 
 #### `scripts`: `Object` **Optional**
 
@@ -735,6 +741,17 @@ The Docker container configuration. This field can be omitted if the project is 
   The environment variables that will be set for the server inside the Docker container.
 
   You can use expression to define the environment variables. Check the [Usage](#expressions) section for more information.
+
+  ```yaml
+  name: my-project
+  yamlVersion: 2
+
+  backend:
+    environment:
+      MY_ENV_VAR: my-value
+      MY_DATABASE_NAME: ${{services.databases.<database-name>.name}}
+      MY_SECRET: ${{env.SECRET}}
+  ```
 
 - `timeout`: `number` **Optional**
 
@@ -829,6 +846,17 @@ You can use the `nextjs`, `nuxt`, `nitro`, `nestjs`, `remix` field to deploy a N
 
   You can use expression to define the environment variables. Check the [Usage](#expressions) section for more information.
 
+  ```yaml
+  name: my-project
+  yamlVersion: 2
+
+  backend:
+    environment:
+      MY_ENV_VAR: my-value
+      MY_DATABASE_NAME: ${{services.databases.<database-name>.name}}
+      MY_SECRET: ${{env.SECRET}}
+  ```
+
 - `packageManager`: `npm` | `pnpm` | `yarn` **Optional**
 
   The package manager used to install the project's dependencies. The default value is `npm`.
@@ -892,6 +920,7 @@ Expressions can be used in the following YAML fields:
 
 You can concatenate expressions with strings - e.g. `prefix-${{env.ENV_KEY}}-suffix`.
 
+For frontend environment variables, you can use expressions like (not limited to):
 ```yaml
 name: my-project
 region: us-east-1
@@ -904,6 +933,24 @@ frontend:
     VITE_MY_AUTH_TOKEN: ${{services.authentication.token}}
     VITE_MY_AUTH_REGION: ${{services.authentication.region}}
     VITE_MY_FUNCTION_URL: ${{backend.functions.<function-name>.url}}
+  #...
+```
+Note: Frontend environment variables cannot use constructs like `VITE_TEST_ENV_VAR: ${{ env.TEST }}`.
+This syntax is meant for the backend, where sensitive values (like API keys) are read from a local-only .env file and kept hidden.
+In `frontend.environment`, you can directly use the value of the environment variable as a string - `VITE_TEST_ENV_VAR: "test"` or manage them in a `.env` file.
+
+For backend environment variables, you can use expressions like (not limited to):
+```yaml
+name: my-project
+region: us-east-1
+yamlVersion: 2
+# ...
+backend:
+  # ...
+  environment:
+    NODE_ENV: production
+    MY_DATABASE_URI: ${{services.databases.<database-name>.uri}}
+    MY_SECRET: ${{env.SECRET}}
   #...
 ```
 
