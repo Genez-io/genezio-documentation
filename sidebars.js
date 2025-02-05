@@ -36,6 +36,7 @@ const sidebars = {
       items: [
         "frameworks/angular",
         "frameworks/django",
+        "frameworks/ember",
         "frameworks/expressjs",
         "frameworks/fastapi",
         "frameworks/fastify",
