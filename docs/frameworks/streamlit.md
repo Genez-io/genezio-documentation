@@ -131,7 +131,7 @@ streamlit:
     # The entry file of your Streamlit app.
     entryFile: app.py
     # The runtime to use for your Streamlit app.
-    runtime: python3.11.x
+    runtime: python3.13.x
 ```
 
 :::info Supported Python Runtimes
