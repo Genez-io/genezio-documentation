@@ -832,17 +832,17 @@ container:
     MY_ENV_VAR: my-value
 ```
 
-## nextjs | nuxt | nitro | nestjs | remix
+## nextjs | nuxt | nitro | nestjs | remix | streamlit
 
-You can use the `nextjs`, `nuxt`, `nitro`, `nestjs`, `remix` field to deploy a Next.js, Nuxt.js, Nitro, Nestjs, or Remix project.
+You can use the `nextjs`, `nuxt`, `nitro`, `nestjs`, `remix`, or `streamlit` field to deploy a Next.js, Nuxt.js, Nitro, Nestjs, Remix, or Streamlit project.
 
 - path: `string` **Required**
 
-  The path to the Dockerfile. It is relative to the `genezio.yaml` file.
+  The path to the project. It is relative to the `genezio.yaml` file.
 
 - environment: `Object` **Optional**
 
-  The environment variables that will be set for the server inside the Docker container.
+  The environment variables that will be set for the server inside the project execution environment.
 
   You can use expression to define the environment variables. Check the [Usage](#expressions) section for more information.
 
@@ -857,7 +857,7 @@ You can use the `nextjs`, `nuxt`, `nitro`, `nestjs`, `remix` field to deploy a N
       MY_SECRET: ${{env.SECRET}}
   ```
 
-- `packageManager`: `npm` | `pnpm` | `yarn` **Optional**
+- `packageManager`: `npm` | `pnpm` | `yarn` | `pip` **Optional**
 
   The package manager used to install the project's dependencies. The default value is `npm`.
 
@@ -876,9 +876,82 @@ Variables can be used in the scripts. Check the [Usage](#variables) section for 
   The subdomain where the project will be deployed. If not specified, a random subdomain will be generated.
   The full format of the domain will be `https://<subdomain>.app.genezio.com`.
 
+- `timeout`: `number` **Optional**
+
+  Specifies how long a request should wait for a response, in seconds. Timeout is the maximum amount of time in seconds that a request can take to complete.
+  The default value for this setting is 60 seconds. You can adjust this in increments of 1 second up to a maximum value of 900 seconds (15 minutes).
+
+  To increase the maximum threshold up to 3600 seconds (1 hour), you [can upgrade to a Pro Subscription](https://app.genez.io/billing).
+
+  For larger values, [contact us](mailto:contact@genez.io).
+
+- `storageSize`: `number` **Optional**
+
+  By default a partition of 128MB is mounted to the execution environment. This can be used to store temporary files or cache data. Check the [Temporary Storage](/docs/features/temporary-storage.md) page for more information and usage examples.
+
+  To increase the maximum value up to 512MB, you [can upgrade to a Pro Subscription](https://app.genez.io/billing).
+  Afterwards, you can adjust this in increments of 1MB up to a maximum value of 512MB.
+
+  For larger values, [contact us](mailto:contact@genez.io).
+
+  Note 1: This storage is not persistent across requests. It is not recommend to use it for stateful operations.
+  Note 2: Changing the storage size will affect cold start times.
+
+- `instanceSize`: `tiny` | `medium` | `large` **Optional**
+
+  Determines the amount of RAM allocated to the execution environment. The default value for this setting is `tiny`.
+  To increase the amount of RAM allocated, you can set the value to `medium` or `large`. A [Pro Subscription](https://app.genez.io/billing) is required to change this configuration.
+
+  tiny = 256MB RAM, 1 VCPU
+
+  medium = 384MB RAM, 1 VCPU
+
+  large = 512MB RAM, 1 VCPU
+
+  For larger instance sizes, [contact us](mailto:contact@genez.io).
+
+- `maxConcurrentRequestsPerInstance`: `number` **Optional**
+
+  Specifies the number of concurrent requests that can be served simultaneously by an execution environment.
+  The default value for this setting is 5 concurrent requests per execution environment.
+
+  To increase the maximum value up to 10 concurrent requests, you [can upgrade to a Pro Subscription](https://app.genez.io/billing).
+  Afterwards, you can adjust this in increments of 1 up to a maximum value of 10 concurrent requests.
+
+  For larger values, [contact us](mailto:contact@genez.io).
+
+  Note: Setting this value to 1 disables concurrent requests served within the same execution environment. In this case, 2 or more incoming concurrent requests will be automatically distributed across separate execution environments, which are scaled up dynamically by Genezio.
+
+- `maxConcurrentInstances`: `number` **Optional**
+
+  Specifies the number of concurrent instances that can be served simultaneously for a function.
+  The default value for this setting is 3 concurrent instances per function.
+
+  To increase the maximum value up to 10 concurrent instances, you [can upgrade to a Pro Subscription](https://app.genez.io/billing).
+  Afterwards, you can adjust this in increments of 1 up to a maximum value of 10 concurrent instances per function.
+
+  For larger values, [contact us](mailto:contact@genez.io).
+
+  Note: Setting this value to 1 disables concurrent instances served. In this case, your function will open only one instance. Any traffic trying to access the instance when it has reached the maximum number of concurrent requests will be dropped. THIS IS NOT RECOMMENDED.
+
+- `cooldownTime`: `number` **Optional**
+
+  Specifies the time in milliseconds that the execution environment will be kept alive after the response is sent.
+  The default value for this setting is 0 milliseconds. You can adjust this up to a maximum value of 3000 milliseconds (3 seconds).
+
+  To increase the maximum threshold up to 5 minutes, you [can upgrade to a Pro Subscription](https://app.genez.io/billing).
+
+  For larger values, [contact us](mailto:contact@genez.io).
+
+- `runtime`: `nodejs20.x` | `python9.x` | `python10.x` | `python3.11.x` | `python3.12.x` | `python3.13.x` **Optional**
+
+  The runtime to be used for the project. The default value is `nodejs20.x` for Node.js projects and `python3.13.x` for Python projects.
+
+  For custom runtimes, please [contact us](mailto:contact@genez.io).
+
 ### Example of `nextjs` deployment configuration
 
-This example can be easily used for Nuxt.js, Nitro, Nestjs, or Remix projects by changing the `nextjs` field to `nuxt`, `nitro`, `nestjs`, or `remix`.
+This example can be easily used for Nuxt.js, Nitro, Nestjs, Remix, or Streamlit projects by changing the `nextjs` field to `nuxt`, `nitro`, `nestjs`, `remix`, or `streamlit`.
 
 ```yaml
 name: genezio-project
@@ -921,6 +994,7 @@ Expressions can be used in the following YAML fields:
 You can concatenate expressions with strings - e.g. `prefix-${{env.ENV_KEY}}-suffix`.
 
 For frontend environment variables, you can use expressions like (not limited to):
+
 ```yaml
 name: my-project
 region: us-east-1
@@ -935,11 +1009,13 @@ frontend:
     VITE_MY_FUNCTION_URL: ${{backend.functions.<function-name>.url}}
   #...
 ```
+
 Note: Frontend environment variables cannot use constructs like `VITE_TEST_ENV_VAR: ${{ env.TEST }}`.
 This syntax is meant for the backend, where sensitive values (like API keys) are read from a local-only .env file and kept hidden.
 In `frontend.environment`, you can directly use the value of the environment variable as a string - `VITE_TEST_ENV_VAR: "test"` or manage them in a `.env` file.
 
 For backend environment variables, you can use expressions like (not limited to):
+
 ```yaml
 name: my-project
 region: us-east-1
