@@ -197,6 +197,7 @@ This file will contain the configuration needed to deploy your backend using Gen
 3. You might need to replace the `entry` field with the name of your main application file.
 4. You might need to replace the `path` field with the path relative at **genezio.yaml** file.
 5. This example configuration works if **genezio.yaml** is in the same directory as your main application file.
+6. The `runtime` field is the Python runtime to use for your FastAPI app, currently, the supported runtimes are: [python3.9.x, python3.10.x, python3.11.x, python3.12.x, python3.13.x]
    :::
 
 ```yaml title="genezio.yaml"
@@ -215,6 +216,8 @@ backend:
     name: python
     # The package manager used by the backend.
     packageManager: pip
+    # The runtime to use for your FastAPI app.
+    runtime: python3.13.x
   # Information about the backend's functions.
   functions:
     # The name (label) of the function.
@@ -287,7 +290,11 @@ For more information about environment variables, you can check
 the [official documentation](/docs/project-structure/backend-environment-variables.md).
 
 :::note
-During deployment, Genezio will automatically install all dependencies specified in your `requirements.txt` file using the correct architecture (Linux x86) and Python 3.11 runtime environment. This ensures compatibility with our serverless infrastructure.
+During the deployment process, Genezio automatically installs all dependencies specified in your `requirements.txt` file using:
+- The correct architecture (Linux x86)
+- The Python runtime specified in `genezio.yaml`
+
+This process ensures compatibility with our serverless infrastructure, defaulting to the latest Python 3.13.x version.
 :::
 
 ## See your app in Genezio Dashboard
