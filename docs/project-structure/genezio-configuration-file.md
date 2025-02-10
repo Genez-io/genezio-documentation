@@ -322,7 +322,7 @@ If scripts are declared in the `scripts` field, they will be executed from this 
 - `maxConcurrentInstances`: `number` **Optional**
 
   Specifies the number of concurrent instances that can be served simultaneously for a class.
-  The default value for this setting is 3 concurrent instances per class.
+  The default value for this setting is 5 concurrent instances per class.
 
   To increase the maximum value up to 10 concurrent instances, you [can upgrade to a Pro Subscription](https://app.genez.io/billing).
   Afterwards, you can adjust this in increments of 1 up to a maximum value of 10 concurrent instances per class.
@@ -486,10 +486,10 @@ This resource exposes `url` as an output expression: `${{backend.functions.<func
 - `maxConcurrentRequestsPerInstance`: `number` **Optional**
 
   Specifies the number of concurrent requests that can be served simultaneously by an execution environment.
-  The default value for this setting is 5 concurrent requests per execution environment.
+  The default value for this setting is 10 concurrent requests per execution environment.
 
-  To increase the maximum value up to 10 concurrent requests, you [can upgrade to a Pro Subscription](https://app.genez.io/billing).
-  Afterwards, you can adjust this in increments of 1 up to a maximum value of 10 concurrent requests.
+  To increase the maximum value up to 20 concurrent requests, you [can upgrade to a Pro Subscription](https://app.genez.io/billing).
+  Afterwards, you can adjust this in increments of 1 up to a maximum value of 20 concurrent requests.
 
   For larger values, [contact us](mailto:contact@genez.io).
 
@@ -498,7 +498,7 @@ This resource exposes `url` as an output expression: `${{backend.functions.<func
 - `maxConcurrentInstances`: `number` **Optional**
 
   Specifies the number of concurrent instances that can be served simultaneously for a function.
-  The default value for this setting is 3 concurrent instances per function.
+  The default value for this setting is 5 concurrent instances per function.
 
   To increase the maximum value up to 10 concurrent instances, you [can upgrade to a Pro Subscription](https://app.genez.io/billing).
   Afterwards, you can adjust this in increments of 1 up to a maximum value of 10 concurrent instances per function.
@@ -790,10 +790,10 @@ The Docker container configuration. This field can be omitted if the project is 
 - `maxConcurrentRequestsPerInstance`: `number` **Optional**
 
   Specifies the number of concurrent requests that can be served simultaneously by an execution environment.
-  The default value for this setting is 5 concurrent requests per execution environment.
+  The default value for this setting is 10 concurrent requests per execution environment.
 
-  To increase the maximum value up to 10 concurrent requests, you [can upgrade to a Pro Subscription](https://app.genez.io/billing).
-  Afterwards, you can adjust this in increments of 1 up to a maximum value of 10 concurrent requests.
+  To increase the maximum value up to 20 concurrent requests, you [can upgrade to a Pro Subscription](https://app.genez.io/billing).
+  Afterwards, you can adjust this in increments of 1 up to a maximum value of 20 concurrent requests.
 
   For larger values, [contact us](mailto:contact@genez.io).
 
@@ -802,7 +802,7 @@ The Docker container configuration. This field can be omitted if the project is 
 - `maxConcurrentInstances`: `number` **Optional**
 
   Specifies the number of concurrent instances that can be served simultaneously for a container.
-  The default value for this setting is 3 concurrent instances per container.
+  The default value for this setting is 5 concurrent instances per container.
 
   To increase the maximum value up to 10 concurrent instances, you [can upgrade to a Pro Subscription](https://app.genez.io/billing).
   Afterwards, you can adjust this in increments of 1 up to a maximum value of 10 concurrent instances per container.
@@ -913,10 +913,10 @@ Variables can be used in the scripts. Check the [Usage](#variables) section for 
 - `maxConcurrentRequestsPerInstance`: `number` **Optional**
 
   Specifies the number of concurrent requests that can be served simultaneously by an execution environment.
-  The default value for this setting is 5 concurrent requests per execution environment.
+  The default value for this setting is 10 concurrent requests per execution environment.
 
-  To increase the maximum value up to 10 concurrent requests, you [can upgrade to a Pro Subscription](https://app.genez.io/billing).
-  Afterwards, you can adjust this in increments of 1 up to a maximum value of 10 concurrent requests.
+  To increase the maximum value up to 20 concurrent requests, you [can upgrade to a Pro Subscription](https://app.genez.io/billing).
+  Afterwards, you can adjust this in increments of 1 up to a maximum value of 20 concurrent requests.
 
   For larger values, [contact us](mailto:contact@genez.io).
 
@@ -925,7 +925,7 @@ Variables can be used in the scripts. Check the [Usage](#variables) section for 
 - `maxConcurrentInstances`: `number` **Optional**
 
   Specifies the number of concurrent instances that can be served simultaneously for a function.
-  The default value for this setting is 3 concurrent instances per function.
+  The default value for this setting is 5 concurrent instances per function.
 
   To increase the maximum value up to 10 concurrent instances, you [can upgrade to a Pro Subscription](https://app.genez.io/billing).
   Afterwards, you can adjust this in increments of 1 up to a maximum value of 10 concurrent instances per function.
