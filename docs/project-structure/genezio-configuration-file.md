@@ -310,10 +310,10 @@ If scripts are declared in the `scripts` field, they will be executed from this 
 - `maxConcurrentRequestsPerInstance`: `number` **Optional**
 
   Specifies the number of concurrent requests that can be served simultaneously by an execution environment.
-  The default value for this setting is 5 concurrent requests per execution environment.
+  The default value for this setting is 10 concurrent requests per execution environment.
 
-  To increase the maximum value up to 10 concurrent requests, you [can upgrade to a Pro Subscription](https://app.genez.io/billing).
-  Afterwards, you can adjust this in increments of 1 up to a maximum value of 10 concurrent requests.
+  To increase the maximum value up to 20 concurrent requests, you [can upgrade to a Pro Subscription](https://app.genez.io/billing).
+  Afterwards, you can adjust this in increments of 1 up to a maximum value of 20 concurrent requests.
 
   For larger values, [contact us](mailto:contact@genez.io).
 
