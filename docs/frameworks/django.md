@@ -266,6 +266,7 @@ This file will contain the configuration needed to deploy your backend using Gen
 3. You might need to replace the `entry` field with the name of your wsgi application file.
 4. You might need to replace the `path` field with the path relative at **genezio.yaml** file.
 5. This example configuration works if **genezio.yaml** is in the same directory as your `manage.py` file and the Django app is named `project_name`.
+6. The `runtime` field is the Python runtime to use for your Django app, currently, the supported runtimes are: [python3.9.x, python3.10.x, python3.11.x, python3.12.x, python3.13.x]
    :::
 
 ```yaml title="genezio.yaml"
@@ -284,6 +285,8 @@ backend:
     name: python
     # The package manager used by the backend.
     packageManager: pip
+    # The runtime to use for your Django app.
+    runtime: python3.13.x
   # Information about the backend's functions.
   functions:
     # The name (label) of the function.
@@ -336,6 +339,7 @@ Open a web browser and navigate to [http://localhost:8000](http://localhost:8000
 
 Finally, deploy your project. A browser window will open, and you will be prompted to log in to your Genezio account and
 authorize the CLI to make the deployment.
+
 Run the following command in your terminal:
 
 ```bash
@@ -354,6 +358,14 @@ After that, you can deploy your project without the `--env` flag.
 :::
 For more information about environment variables, you can check
 the [official documentation](/docs/project-structure/backend-environment-variables.md).
+
+:::note
+During the deployment process, Genezio automatically installs all dependencies specified in your `requirements.txt` file using:
+- The correct architecture (Linux x86)
+- The Python runtime specified in `genezio.yaml`
+
+This process ensures compatibility with our serverless infrastructure, defaulting to the latest Python 3.13.x version.
+:::
 
 ## See your app in Genezio Dashboard
 
