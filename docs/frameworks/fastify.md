@@ -194,7 +194,7 @@ backend:
   # Information about the backend's functions.
   functions:
     # The name (label) of the function.
-    - name: hello-world-fastify-app
+    - name: fastify
       # The path to the function's code.
       path: ./
       # The entry point for the function.
