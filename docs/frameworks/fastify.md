@@ -96,10 +96,14 @@ Create a new file named `app.mjs` and add the following code:
       ]);
     });
 
-    app.listen(8080, () => {
-      console.log(
-        "Server is running on port 8080. Check the app on http://localhost:8080"
-      );
+    app.listen({
+      host: "0.0.0.0",
+      port: 8080,
+    }, (err, address) => {
+      if (err) {
+        console.error(err);
+      }
+      console.log(`Server is running on ${address}`);
     });
     ```
 
@@ -117,10 +121,14 @@ Create a new file named `app.mjs` and add the following code:
       res.send("Hello World from Fastify!");
     });
 
-    app.listen(8080, () => {
-      console.log(
-        "Server is running on port 8080. Check the app on http://localhost:8080"
-      );
+    app.listen({
+      host: "0.0.0.0",
+      port: 8080,
+    }, (err, address) => {
+      if (err) {
+        console.error(err);
+      }
+      console.log(`Server is running on ${address}`);
     });
     ```
 
@@ -154,119 +162,15 @@ Open a web browser and navigate to [http://localhost:8080](http://localhost:8080
 
 ## Deployment Guide
 
-## 1. Install `serverless-http`
+## 1. Create the Genezio Configuration File
 
-First, you need to install the `serverless-http` package.
-
-Run the following command in the root directory of your Fastify app:
+First, you need to create the configuration file in the root directory of your Fastify app, run the following command:
 
 ```bash
-npm install serverless-http
+genezio analyze
 ```
 
-This package allows you to wrap your Fastify application and deploy it on serverless environments.
-
-## 2. Export the App as a Handler Function
-
-You need to export your Fastify app as a handler function that can be used by Genezio.
-
-Add the following code to your main application file (`app.mjs` or `app.js`):
-
-<Tabs>
-<TabItem className="tab-item" value="esm" label="esm">
-<div>
-  ```javascript title="app.mjs"
-    import Fastify from 'fastify';
-    // highlight-next-line
-    import serverless from "serverless-http";
-
-    const app = Fastify();
-
-    app.get("/", (req, res) => {
-      res.send("Hello World from Fastify!");
-    });
-
-    app.get("/users", (req, res) => {
-      res.json([
-        { id: 1, name: "Alice" },
-        { id: 2, name: "Bob" },
-      ]);
-    });
-
-    // You don't need to listen to the port when using serverless functions in production
-    // highlight-next-line
-    if (process.env.NODE_ENV === "dev") {
-      app.listen(8080, () => {
-        console.log(
-          "Server is running on port 8080. Check the app on http://localhost:8080"
-        );
-      });
-    // highlight-next-line
-    }
-
-    // highlight-next-line
-    export const handler = serverless(app);
-    ```
-
-:::info
-You need to add `"type": "module"` in your `package.json` file.
-:::
-
-  </div>
-  </TabItem>
- <TabItem className="tab-item" value="cjs" label="cjs">
-  <div>
-  ```javascript title="app.js"
-    const Fastify = require("fastify");
-    // highlight-next-line
-    const serverless = require("serverless-http");
-
-    const app = Fastify();
-
-    app.get("/", (req, res) => {
-      res.send("Hello World from Fastify!");
-    });
-
-    app.get("/users", (req, res) => {
-      res.json([
-        { id: 1, name: "Alice" },
-        { id: 2, name: "Bob" },
-      ]);
-    });
-
-    // You don't need to listen to the port when using serverless functions in production
-    // highlight-next-line
-    if (process.env.NODE_ENV === "dev") {
-      app.listen(8080, () => {
-        console.log(
-          "Server is running on port 8080. Check the app on http://localhost:8080"
-        );
-      });
-    // highlight-next-line
-    }
-
-    // highlight-next-line
-    module.exports.handler = serverless(app);
-    ```
-
-</div>
-</TabItem>
-</Tabs>
-
-This code wraps your Fastify app with the `serverless-http` package and exports it as a handler for Genezio.
-
-## 3. Create the Genezio Configuration File
-
-Now, create a `genezio.yaml` file in the root directory of your project.
-
-This file will contain the configuration needed to deploy your backend using Genezio. Here is an example configuration.
-
-:::info
-
-1. You might need to replace the `entry` field with the name of your main application file.
-2. You might need to replace the `path` field with the path relative at **genezio.yaml** file.
-3. This example configuration works if **genezio.yaml** is in the same directory as your main application file.
-   :::
+This command will analyze your project and create the genezio.yaml file in the root directory of your Fastify app, with the following content:
 
 ```yaml title="genezio.yaml"
 # The name of the project.
@@ -284,31 +188,32 @@ backend:
     name: js
     # The package manager used by the backend.
     packageManager: npm
+  scripts:
+    deploy:
+      - npm install
   # Information about the backend's functions.
   functions:
     # The name (label) of the function.
-    - name: hello-world-fastify-app-function
+    - name: fastify
       # The path to the function's code.
       path: ./
-      # The name of the function handler
-      handler: handler
       # The entry point for the function.
       entry: app.mjs
+      # The compatibility of the function handler.
+      type: httpServer
 ```
 
-This configuration file specifies the project name, deployment region, and details about the backend.
-
-## 4. Test Your App Locally
+## 2. Test your app locally
 
 Before deploying your app, you can test it locally to ensure it's working correctly.
 
 Run the following command in your terminal:
 
 ```bash
-NODE_ENV=dev node app.mjs
+genezio local
 ```
 
-## 5. Deploy your project
+## 3. Deploy your project
 
 Finally, deploy your project. A browser window will open, and you will be prompted to log in to your Genezio account and authorize the CLI to make the deployment.
 Run the following command in your terminal:
@@ -344,6 +249,32 @@ You can find this URL in the deployment output under the `App Dashboard URL` sec
 ### Do I Need to Modify My Fastify App Code?
 
 Your Fastify project will only require the above [adjustments](#deployment-guide), as long as it is written in a **stateless** manner. To find out more about [stateless vs. stateful follow this link](https://stackoverflow.com/questions/5329618/stateless-vs-stateful)
+
+### Troubleshoot
+
+If you cannot access your application after deployment, you might see the following error in your logs:
+
+```
+Error: listen EADDRNOTAVAIL: address not available
+```
+
+This typically occurs when your Fastify app is not configured to listen on all interfaces. To fix this:
+
+1. Ensure your `listen()` configuration includes `host: "0.0.0.0"`:
+
+```javascript
+app.listen({
+  host: "0.0.0.0",  // Required for proper deployment
+  port: 8080,
+}, (err, address) => {
+  if (err) {
+    console.error(err);
+  }
+  console.log(`Server is running on ${address}`);
+});
+```
+
+2. Avoid using `localhost` or `127.0.0.1` as the host, as these will only listen for local connections.
 
 ## Support <a href="#support" id="support"></a>
 
