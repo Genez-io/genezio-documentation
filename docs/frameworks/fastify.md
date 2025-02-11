@@ -250,16 +250,31 @@ You can find this URL in the deployment output under the `App Dashboard URL` sec
 
 Your Fastify project will only require the above [adjustments](#deployment-guide), as long as it is written in a **stateless** manner. To find out more about [stateless vs. stateful follow this link](https://stackoverflow.com/questions/5329618/stateless-vs-stateful)
 
-### How to listen on all interfaces?
+### Troubleshoot
 
-To listen on all interfaces, you need to set the `host` to `0.0.0.0` and the `port` to the port you want to listen on.
+If you cannot access your application after deployment, you might see the following error in your logs:
+
+```
+Error: listen EADDRNOTAVAIL: address not available
+```
+
+This typically occurs when your Fastify app is not configured to listen on all interfaces. To fix this:
+
+1. Ensure your `listen()` configuration includes `host: "0.0.0.0"`:
 
 ```javascript
 app.listen({
-  host: "0.0.0.0",
+  host: "0.0.0.0",  // Required for proper deployment
   port: 8080,
+}, (err, address) => {
+  if (err) {
+    console.error(err);
+  }
+  console.log(`Server is running on ${address}`);
 });
 ```
+
+2. Avoid using `localhost` or `127.0.0.1` as the host, as these will only listen for local connections.
 
 ## Support <a href="#support" id="support"></a>
 
