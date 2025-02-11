@@ -102,7 +102,6 @@ Create a new file named `app.mjs` and add the following code:
     }, (err, address) => {
       if (err) {
         console.error(err);
-        process.exit(1);
       }
       console.log(`Server is running on ${address}`);
     });
@@ -128,7 +127,6 @@ Create a new file named `app.mjs` and add the following code:
     }, (err, address) => {
       if (err) {
         console.error(err);
-        process.exit(1);
       }
       console.log(`Server is running on ${address}`);
     });
