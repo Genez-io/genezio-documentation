@@ -8,19 +8,18 @@ import TabItem from '@theme/TabItem';
 # Express.js
 
 <head>
-    <title>Express.js | Genezio Documentation</title>
+    <title>Express | Genezio Documentation</title>
 </head>
 
-Express.js is a popular Node.js web application framework that simplifies the development of server-side applications. It provides a robust set of features for building web servers and APIs.
+Express is a popular Node.js web application framework that simplifies the development of server-side applications. It provides a robust set of features for building web servers and APIs.
 
 :::tip
-Get started in no time with the [Express.js template](https://app.genez.io/express-getting-started).
+Get started in no time with the [Express template](https://github.com/Genez-io/express-getting-started).
 :::
 
 # Deployment
 
 Learn how to deploy an existing Express.js app using Genezio, a serverless deployment platform that simplifies app management and reduces costs.
-
 
 ## Prerequisites
 
@@ -59,7 +58,7 @@ If you don't have an Express.js app, you can create one using the following step
 <details>
   <summary>**Create a Hello World Express.js App**</summary>
 
-<h3> 1. Initialize a New Node.js Project </h3>
+<h3>1. Initialize a New Node.js Project</h3>
 
 Run the following command to initialize a new Node.js project in an empty directory:
 
@@ -67,22 +66,22 @@ Run the following command to initialize a new Node.js project in an empty direct
 npm init -y
 ```
 
-<h3> 2. Install Express.js </h3>
+<h3>2. Install Express</h3>
 
-Next, install the Express.js package:
+Next, install the Express package:
 
 ```bash
-npm install express
+npm i express
 ```
 
-<h3> 3. Create an Express.js App </h3>
+<h3>3. Create an Express App</h3>
 
 <Tabs>
 <TabItem className="tab-item" value="esm" label="esm">
 Create a new file named `app.mjs` and add the following code:
 <div>
   ```javascript title="app.mjs"
-    import express from "express";
+    import express from 'express';
 
     const app = express();
 
@@ -98,17 +97,14 @@ Create a new file named `app.mjs` and add the following code:
     });
 
     app.listen(8080, () => {
-      console.log(
-        "Server is running on port 8080. Check the app on http://localhost:8080"
-      );
+      console.log("Server is running on http://0.0.0.0:8080");
     });
     ```
-
-  </div>
-  </TabItem>
-  <TabItem className="tab-item" value="cjs" label="cjs">
-  Create a new file named `app.js` and add the following code:
-  <div>
+</div>
+</TabItem>
+<TabItem className="tab-item" value="cjs" label="cjs">
+Create a new file named `app.js` and add the following code:
+<div>
   ```javascript title="app.js"
     const express = require("express");
 
@@ -119,19 +115,16 @@ Create a new file named `app.mjs` and add the following code:
     });
 
     app.listen(8080, () => {
-      console.log(
-        "Server is running on port 8080. Check the app on http://localhost:8080"
-      );
+      console.log("Server is running on http://0.0.0.0:8080");
     });
     ```
-
-  </div>
-  </TabItem>
+</div>
+</TabItem>
 </Tabs>
 
-<h3> 4. Test the Express.js App </h3>
+<h3>4. Test the Express App</h3>
 
-Run the following command to start the Express.js app:
+Run the following command to start the Express app:
 <Tabs>
 <TabItem className="tab-item" value="esm" label="esm">
 
@@ -155,118 +148,15 @@ Open a web browser and navigate to [http://localhost:8080](http://localhost:8080
 
 ## Deployment Guide
 
-## 1. Install `serverless-http`
+## 1. Create the Genezio Configuration File
 
-First, you need to install the `serverless-http` package.
-
-Run the following command in the root directory of your Express.js app:
+First, you need to create the configuration file in the root directory of your Express app, run the following command:
 
 ```bash
-npm install serverless-http
+genezio analyze
 ```
 
-This package allows you to wrap your Express.js application and deploy it on serverless environments.
-
-## 2. Export the App as a Handler Function
-
-You need to export your Express app as a handler function that can be used by Genezio.
-
-Add the following code to your main application file (`app.mjs` or `app.js`):
-
-<Tabs>
-<TabItem className="tab-item" value="esm" label="esm">
-<div>
-  ```javascript title="app.mjs"
-    import express from "express";
-    // highlight-next-line
-    import serverless from "serverless-http";
-
-    const app = express();
-
-    app.get("/", (req, res) => {
-      res.send("Hello World from Express!");
-    });
-
-    app.get("/users", (req, res) => {
-      res.json([
-        { id: 1, name: "Alice" },
-        { id: 2, name: "Bob" },
-      ]);
-    });
-
-    // You don't need to listen to the port when using serverless functions in production
-    // highlight-next-line
-    if (process.env.NODE_ENV === "dev") {
-      app.listen(8080, () => {
-        console.log(
-          "Server is running on port 8080. Check the app on http://localhost:8080"
-        );
-      });
-    // highlight-next-line
-    }
-
-    // highlight-next-line
-    export const handler = serverless(app);
-    ```
-
-:::info
-You need to add `"type": "module"` in your `package.json` file.
-:::
-
-  </div>
-  </TabItem>
- <TabItem className="tab-item" value="cjs" label="cjs">
-  <div>
-  ```javascript title="app.js"
-    const express = require("express");
-    // highlight-next-line
-    const serverless = require("serverless-http");
-
-    app.get("/", (req, res) => {
-      res.send("Hello World from Express!");
-    });
-
-    app.get("/users", (req, res) => {
-      res.json([
-        { id: 1, name: "Alice" },
-        { id: 2, name: "Bob" },
-      ]);
-    });
-
-    // You don't need to listen to the port when using serverless functions in production
-    // highlight-next-line
-    if (process.env.NODE_ENV === "dev") {
-      app.listen(8080, () => {
-        console.log(
-          "Server is running on port 8080. Check the app on http://localhost:8080"
-        );
-      });
-    // highlight-next-line
-    }
-
-    // highlight-next-line
-    module.exports.handler = serverless(app);
-    ```
-
-</div>
-</TabItem>
-
-</Tabs>
-
-This code wraps your Express app with the `serverless-http` package and exports it as a handler for Genezio.
-
-## 3. Create the Genezio Configuration File
-
-Now, create a `genezio.yaml` file in the root directory of your project.
-
-This file will contain the configuration needed to deploy your backend using Genezio. Here is an example configuration.
-
-:::info
-
-1. You might need to replace the `entry` field with the name of your main application file.
-2. You might need to replace the `path` field with the path relative at **genezio.yaml** file.
-3. This example configuration works if **genezio.yaml** is in the same directory as your main application file.
-   :::
+This command will analyze your project and create the genezio.yaml file in the root directory of your Express app, with the following content:
 
 ```yaml title="genezio.yaml"
 # The name of the project.
@@ -284,31 +174,32 @@ backend:
     name: js
     # The package manager used by the backend.
     packageManager: npm
+  scripts:
+    deploy:
+      - npm install
   # Information about the backend's functions.
   functions:
     # The name (label) of the function.
-    - name: hello-world-express-app-function
+    - name: express
       # The path to the function's code.
       path: ./
-      # The name of the function handler
-      handler: handler
       # The entry point for the function.
       entry: app.mjs
+      # The compatibility of the function handler.
+      type: httpServer
 ```
 
-This configuration file specifies the project name, deployment region, and details about the backend.
-
-## 4. Test Your App Locally
+## 2. Test your app locally
 
 Before deploying your app, you can test it locally to ensure it's working correctly.
 
 Run the following command in your terminal:
 
 ```bash
-NODE_ENV=dev node app.mjs
+genezio local
 ```
 
-## 5. Deploy your project
+## 3. Deploy your project
 
 Finally, deploy your project. A browser window will open, and you will be prompted to log in to your Genezio account and authorize the CLI to make the deployment.
 Run the following command in your terminal:
@@ -331,7 +222,7 @@ For more information about environment variables, you can check the [official do
 
 ## See your app in Genezio Dashboard
 
-After deploying your application, you can test it to ensure it's running correctly. To verify that your Express.js app is working, open a web browser and navigate to the URL provided for your deployed function.
+After deploying your application, you can test it to ensure it's running correctly. To verify that your Express app is working, open a web browser and navigate to the URL provided for your deployed function.
 
 This URL can be found in the deployment output under the `Functions Deployed` section.
 
