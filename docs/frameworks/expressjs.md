@@ -8,13 +8,13 @@ import TabItem from '@theme/TabItem';
 # Express.js
 
 <head>
-    <title>Express | Genezio Documentation</title>
+    <title>Express.js | Genezio Documentation</title>
 </head>
 
 Express is a popular Node.js web application framework that simplifies the development of server-side applications. It provides a robust set of features for building web servers and APIs.
 
 :::tip
-Get started in no time with the [Express template](https://github.com/Genez-io/express-getting-started).
+Get started in no time with the [Express.js template](https://app.genez.io/express-getting-started).
 :::
 
 # Deployment
@@ -66,15 +66,15 @@ Run the following command to initialize a new Node.js project in an empty direct
 npm init -y
 ```
 
-<h3>2. Install Express</h3>
+<h3>2. Install Express.js</h3>
 
-Next, install the Express package:
+Next, install the Express.js package:
 
 ```bash
-npm i express
+npm install express
 ```
 
-<h3>3. Create an Express App</h3>
+<h3>3. Create an Express.js App</h3>
 
 <Tabs>
 <TabItem className="tab-item" value="esm" label="esm">
@@ -122,9 +122,9 @@ Create a new file named `app.js` and add the following code:
 </TabItem>
 </Tabs>
 
-<h3>4. Test the Express App</h3>
+<h3>4. Test the Express.js App</h3>
 
-Run the following command to start the Express app:
+Run the following command to start the Express.js app:
 <Tabs>
 <TabItem className="tab-item" value="esm" label="esm">
 
@@ -150,13 +150,13 @@ Open a web browser and navigate to [http://localhost:8080](http://localhost:8080
 
 ## 1. Create the Genezio Configuration File
 
-First, you need to create the configuration file in the root directory of your Express app, run the following command:
+First, you need to create the configuration file in the root directory of your Express.js app, run the following command:
 
 ```bash
 genezio analyze
 ```
 
-This command will analyze your project and create the genezio.yaml file in the root directory of your Express app, with the following content:
+This command will analyze your project and create the genezio.yaml file in the root directory of your Express.js app, with the following content:
 
 ```yaml title="genezio.yaml"
 # The name of the project.
@@ -222,7 +222,7 @@ For more information about environment variables, you can check the [official do
 
 ## See your app in Genezio Dashboard
 
-After deploying your application, you can test it to ensure it's running correctly. To verify that your Express app is working, open a web browser and navigate to the URL provided for your deployed function.
+After deploying your application, you can test it to ensure it's running correctly. To verify that your Express.js app is working, open a web browser and navigate to the URL provided for your deployed function.
 
 This URL can be found in the deployment output under the `Functions Deployed` section.
 
@@ -234,7 +234,7 @@ You can find this URL in the deployment output under the `App Dashboard URL` sec
 
 ### Do I Need to Modify My Express App Code?
 
-Your Express project will only require the above [adjustments](#deployment-guide), as long as it is written in a **stateless** manner. To find out more about [stateless vs. stateful follow this link](https://stackoverflow.com/questions/5329618/stateless-vs-stateful).
+Your Express.js project will only require the above [adjustments](#deployment-guide), as long as it is written in a **stateless** manner. To find out more about [stateless vs. stateful follow this link](https://stackoverflow.com/questions/5329618/stateless-vs-stateful).
 
 ## Support <a href="#support" id="support"></a>
 
