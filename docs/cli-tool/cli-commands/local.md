@@ -29,7 +29,11 @@ This command opens a local server for testing and debugging. The local server si
 `-h | --help`: Display a help message for more information on each argument and how to use it.
 
 `-s | --stage <stage>`: Set the stage on which you can test your services on the local server. This option will work as intended only if you are logged in. If you have services active on your deployed project, this option will allow you to test those services locally on the test interface. The default value is `prod`.
+## Set custom ports for testing locally
 
+When developing applications, you may need to specify custom ports for local execution. Genezio provides a way to define these ports using environment variables.
+
+The guide below outlines how to configure environment variables ensuring seamless local development.
 ### Environment Variables for SSR Ports
 
 The environment variable name is constructed as `GENEZIO_PORT_` followed by your framework name in uppercase (with special characters replaced by underscores.For example:
