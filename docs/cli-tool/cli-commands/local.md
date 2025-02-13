@@ -1,6 +1,6 @@
 ---
 sidebar_position: 2
-description: Master the "genezio local" command to efficiently run and test your Genezio projects on your local machine. Optimize your development workflow with this guide
+description: Master the `genezio local` command to efficiently run and test your Genezio projects on your local machine. Optimize your development workflow with this guide
 ---
 
 # genezio local
