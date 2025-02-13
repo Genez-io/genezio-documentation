@@ -34,6 +34,7 @@ This command opens a local server for testing and debugging. The local server si
 When developing applications, you may need to specify custom ports for local execution. Genezio provides a way to define these ports using environment variables.
 
 The guide below outlines how to configure environment variables ensuring seamless local development.
+
 ### Environment Variables for SSR Ports
 
 The environment variable name is constructed as `GENEZIO_PORT_` followed by your framework name in uppercase (with special characters replaced by underscores.For example:
