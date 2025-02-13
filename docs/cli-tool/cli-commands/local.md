@@ -52,7 +52,7 @@ You can set this environment variable using one of these methods:
 
 ### Environment Variables for Functions
 
-For functions, the environment variable name is constructed by taking the function name, replacing any hyphens (-) with underscores (_), converting it to uppercase, and prefixing it with `GENEZIO_PORT_`. For example:
+For functions, the environment variable name is constructed by taking the function name set in the `genezio.yaml`, replacing any hyphens (-) with underscores (_), converting it to uppercase, and prefixing it with `GENEZIO_PORT_`. For example:
 
 - If your function is named `user-service`, the environment variable would be `GENEZIO_PORT_USER_SERVICE`
 - If your function is named `authHandler`, the environment variable would be `GENEZIO_PORT_AUTHHANDLER`
