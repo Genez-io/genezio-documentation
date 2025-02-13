@@ -230,12 +230,6 @@ Additionally, you can monitor and manage your app through the [Genezio App Dashb
 
 You can find this URL in the deployment output under the `App Dashboard URL` section.
 
-## Frequently Asked Questions
-
-### Do I Need to Modify My Express App Code?
-
-Your Express.js project will only require the above [adjustments](#deployment-guide), as long as it is written in a **stateless** manner. To find out more about [stateless vs. stateful follow this link](https://stackoverflow.com/questions/5329618/stateless-vs-stateful).
-
 ## Support <a href="#support" id="support"></a>
 
 We invite you to join our community on [Discord](https://discord.gg/uc9H5YKjXv) for further information and help.
