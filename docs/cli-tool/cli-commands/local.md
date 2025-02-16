@@ -55,10 +55,10 @@ You can set this environment variable using one of these methods:
 
 For functions, the environment variable name is constructed by taking the function name set in the `genezio.yaml`, replacing any hyphens (-) with underscores (_), converting it to uppercase, and prefixing it with `GENEZIO_PORT_`. For example:
 
-- If your function is named `user-service`, the environment variable would be `GENEZIO_PORT_USER_SERVICE`
-- If your function is named `authHandler`, the environment variable would be `GENEZIO_PORT_AUTHHANDLER`
+- If your function is named `user-service`, the environment variable would be `GENEZIO_PORT_FUNCTION_USER_SERVICE`
+- If your function is named `authHandler`, the environment variable would be `GENEZIO_PORT_FUNCTION_AUTHHANDLER`
 
 You can set this environment variable using one of these methods:
-1. Add it to your `.env` file: `GENEZIO_PORT_<FUNCTION>=<port>`
-2. Windows: Run `set GENEZIO_PORT_<FUNCTION>=<port> && genezio local`
-3. macOS/Linux: Run `GENEZIO_PORT_<FUNCTION>=<port> genezio local`
+1. Add it to your `.env` file: `GENEZIO_PORT_FUNCTION_<FUNCTION>=<port>`
+2. Windows: Run `set GENEZIO_PORT_FUNCTION_<FUNCTION>=<port> && genezio local`
+3. macOS/Linux: Run `GENEZIO_PORT_FUNCTION_<FUNCTION>=<port> genezio local`
