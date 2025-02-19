@@ -418,10 +418,11 @@ This resource exposes `url` as an output expression: `${{backend.functions.<func
 
 - `type`: `string` **Optional**
 
-  The type of the function. This can be `aws` or `httpServer`. If this field is not specified, the default value is `aws`.
+  The type of the function. This can be: `aws`, `httpServer`, or `persistent`. If this field is not specified, the default value is `aws`.
 
   - `aws` indicates that the function will be deployed as an AWS Lambda handler. This means that the function is either a Lambda event handler or it uses [`serverless-http`](https://www.npmjs.com/package/serverless-http) to convert an Express app to a Lambda event handler.
   - `httpServer` indicates that the function will be deployed as a standalone HTTP server, such as those built with frameworks like `express`, `fastify`, `flask`, `django`, etc.
+  - `persistent` indicates that the function will be deployed as a long-running server that will not be scaled down to 0. This is an Enterprise-only feature, please [contact us](mailto:contact@genez.io) for more information.
 
   Note 1: The recommended way to deploy your app is to use the `httpServer` type unless you are explicitly migrating from an existing AWS Lambda function or using `serverless-http`.
   Note 2: Websocket are supported only for `httpServer` functions.
