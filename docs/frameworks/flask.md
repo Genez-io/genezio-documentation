@@ -204,7 +204,7 @@ This file will contain the configuration needed to deploy your backend using Gen
 ```yaml title="genezio.yaml"
 # The name of the project.
 name: flask-app
-# The region where the project is deployed. Available regions: us-east-1, eu-central-1
+# The region where the project is deployed. Available regions: us-east-1, eu-central-1, eu-west-1
 region: us-east-1
 # The version of the Genezio YAML configuration to parse.
 yamlVersion: 2

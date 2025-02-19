@@ -103,6 +103,7 @@ const sidebars = {
       items: [
         "deploy/backend",
         "deploy/frontend",
+        "deploy/persistent",
         "deploy/serverless-containers",
       ],
     },
