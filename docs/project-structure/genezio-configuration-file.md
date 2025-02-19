@@ -821,6 +821,12 @@ The Docker container configuration. This field can be omitted if the project is 
 
   For larger values, [contact us](mailto:contact@genez.io).
 
+- `type`: `string` **Optional**
+
+  The type of the container can be set to `persistent`. If this field is not specified, the container will be deployed in a serverless manner.
+
+  - `persistent` indicates that the container will be deployed as a long-running server that will not be scaled down to 0. This is an Enterprise-only feature, please [contact us](mailto:contact@genez.io) for more information.
+
 ### Example of `container` deployment configuration
 
 ```yaml
@@ -949,6 +955,12 @@ Variables can be used in the scripts. Check the [Usage](#variables) section for 
   The runtime to be used for the project. The default value is `nodejs20.x` for Node.js projects and `python3.13.x` for Python projects.
 
   For custom runtimes, please [contact us](mailto:contact@genez.io).
+
+- `type`: `string` **Optional**
+
+  The type of the server can be set to `persistent`. If this field is not specified, the server will be deployed in a serverless manner.
+
+  - `persistent` indicates that the server will be deployed as long-running and it will not be scaled down to 0. This is an Enterprise-only feature, please [contact us](mailto:contact@genez.io) for more information.
 
 ### Example of `nextjs` deployment configuration
 
