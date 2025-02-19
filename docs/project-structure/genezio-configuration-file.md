@@ -299,6 +299,8 @@ If scripts are declared in the `scripts` field, they will be executed from this 
   Determines the amount of RAM allocated to the execution environment. The default value for this setting is `tiny`.
   To increase the amount of RAM allocated, you can set the value to `medium` or `large`. A [Pro Subscription](https://app.genez.io/billing) is required to change this configuration.
 
+  Note: For custom resource control for persistent servers, you can use the `vcpuCount` and `memoryMb` fields instead.
+
   tiny = 256MB RAM, 1 VCPU
 
   medium = 384MB RAM, 1 VCPU
@@ -306,6 +308,20 @@ If scripts are declared in the `scripts` field, they will be executed from this 
   large = 512MB RAM, 1 VCPU
 
   For larger instance sizes, [contact us](mailto:contact@genez.io).
+
+-  `vcpuCount`: `number` **Optional**
+
+  Specifies the number of virtual CPUs allocated to the execution environment. If this value is set, the `instanceSize` field will be ignored.
+  An [Enterprise Subscription](https://app.genez.io/billing) is required to change this configuration.
+
+  Note: Currently, custom control of the number of virtual CPUs is only available for `persistent` servers.
+
+- `memoryMb`: `number` **Optional**
+
+  Specifies the amount of RAM (in MB) allocated to the execution environment. If this value is set, the `instanceSize` field will be ignored.
+  An [Enterprise Subscription](https://app.genez.io/billing) is required to change this configuration.
+
+  Note: Currently, custom control of the amount of RAM is only available for `persistent` servers.
 
 - `maxConcurrentRequestsPerInstance`: `number` **Optional**
 
@@ -482,6 +498,20 @@ This resource exposes `url` as an output expression: `${{backend.functions.<func
   large = 512MB RAM, 1 VCPU
 
   For larger instance sizes, [contact us](mailto:contact@genez.io).
+
+-  `vcpuCount`: `number` **Optional**
+
+  Specifies the number of virtual CPUs allocated to the execution environment. If this value is set, the `instanceSize` field will be ignored.
+  An [Enterprise Subscription](https://app.genez.io/billing) is required to change this configuration.
+
+  Note: Currently, custom control of the number of virtual CPUs is only available for `persistent` servers.
+
+- `memoryMb`: `number` **Optional**
+
+  Specifies the amount of RAM (in MB) allocated to the execution environment. If this value is set, the `instanceSize` field will be ignored.
+  An [Enterprise Subscription](https://app.genez.io/billing) is required to change this configuration.
+
+  Note: Currently, custom control of the amount of RAM is only available for `persistent` servers.
 
 - `maxConcurrentRequestsPerInstance`: `number` **Optional**
 
@@ -787,6 +817,20 @@ The Docker container configuration. This field can be omitted if the project is 
 
   For larger instance sizes, [contact us](mailto:contact@genez.io).
 
+-  `vcpuCount`: `number` **Optional**
+
+  Specifies the number of virtual CPUs allocated to the execution environment. If this value is set, the `instanceSize` field will be ignored.
+  An [Enterprise Subscription](https://app.genez.io/billing) is required to change this configuration.
+
+  Note: Currently, custom control of the number of virtual CPUs is only available for `persistent` servers.
+
+- `memoryMb`: `number` **Optional**
+
+  Specifies the amount of RAM (in MB) allocated to the execution environment. If this value is set, the `instanceSize` field will be ignored.
+  An [Enterprise Subscription](https://app.genez.io/billing) is required to change this configuration.
+
+  Note: Currently, custom control of the amount of RAM is only available for `persistent` servers.
+
 - `maxConcurrentRequestsPerInstance`: `number` **Optional**
 
   Specifies the number of concurrent requests that can be served simultaneously by an execution environment.
@@ -909,6 +953,20 @@ Variables can be used in the scripts. Check the [Usage](#variables) section for 
   large = 512MB RAM, 1 VCPU
 
   For larger instance sizes, [contact us](mailto:contact@genez.io).
+
+-  `vcpuCount`: `number` **Optional**
+
+  Specifies the number of virtual CPUs allocated to the execution environment. If this value is set, the `instanceSize` field will be ignored.
+  An [Enterprise Subscription](https://app.genez.io/billing) is required to change this configuration.
+
+  Note: Currently, custom control of the number of virtual CPUs is only available for `persistent` servers.
+
+- `memoryMb`: `number` **Optional**
+
+  Specifies the amount of RAM (in MB) allocated to the execution environment. If this value is set, the `instanceSize` field will be ignored.
+  An [Enterprise Subscription](https://app.genez.io/billing) is required to change this configuration.
+
+  Note: Currently, custom control of the amount of RAM is only available for `persistent` servers.
 
 - `maxConcurrentRequestsPerInstance`: `number` **Optional**
 
