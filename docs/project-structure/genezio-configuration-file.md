@@ -39,9 +39,10 @@ The supported regions are:
 | -------------- | ------------------ |
 | `us-east-1`    | US, North Virginia |
 | `eu-central-1` | Europe, Frankfurt  |
+| `eu-west-1`    | Europe, London     |
 
 ```yaml
-# The region where the project is deployed. Available regions: us-east-1, eu-central-1
+# The region where the project is deployed. Available regions: us-east-1, eu-central-1, eu-west-1, eu-west-1
 region: us-east-1
 ```
 
@@ -112,7 +113,7 @@ The supported regions are:
 | ---------------- | ----------------------- | ---------- | ------- |
 | `us-east-1`      | US, North Virginia      | ✅         | ✅      |
 | `eu-central-1`   | Europe, Frankfurt       | ✅         | ✅      |
-| `eu-east-2`      | US, Ohio                | ✅         | ❌      |
+| `us-east-2`      | US, Ohio                | ✅         | ❌      |
 | `us-west-2`      | US, Oregon              | ✅         | ❌      |
 | `ap-southeast-1` | Asia Pacific, Singapore | ✅         | ❌      |
 | `ap-southeast-2` | Asia Pacific, Sidney    | ✅         | ❌      |
@@ -521,7 +522,7 @@ This resource exposes `url` as an output expression: `${{backend.functions.<func
 ```yaml title="genezio.yaml
 # The name of the project.
 name: express-app
-# The region where the project is deployed. Available regions: us-east-1, eu-central-1
+# The region where the project is deployed. Available regions: us-east-1, eu-central-1, eu-west-1
 region: us-east-1
 # The version of the Genezio YAML configuration to parse.
 yamlVersion: 2

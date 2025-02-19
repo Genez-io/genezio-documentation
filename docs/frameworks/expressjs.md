@@ -161,7 +161,7 @@ This command will analyze your project and create the genezio.yaml file in the r
 ```yaml title="genezio.yaml"
 # The name of the project.
 name: express-app
-# The region where the project is deployed. Available regions: us-east-1, eu-central-1
+# The region where the project is deployed. Available regions: us-east-1, eu-central-1, eu-west-1
 region: us-east-1
 # The version of the Genezio YAML configuration to parse.
 yamlVersion: 2
