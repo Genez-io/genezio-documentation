@@ -64,9 +64,9 @@ These options work with any `genezio create` subcommand
 
 `--region <project-region>`: Region of the project
 - Required, asked interactively if not provided
-  
-- Choices: `us-east-1`, `eu-central-1`
-  
+
+- Choices: `us-east-1`, `eu-central-1`, `eu-west-1`
+
 `--path <project-path>`: The path where the new project will be created
 
 - Default: `current-directory + project-name`
