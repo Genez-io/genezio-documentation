@@ -243,7 +243,7 @@ Deploying your frontend to genezio infrastructure...
 No subdomain is specified in the genezio.yaml configuration file. We will provide a random one for you.
 
 App Dashboard URL: https://app.genez.io/project/<projectId>/<projectEnvId>
-Frontend URL: https://<subdomain>.dev.app.genez.io
+Frontend URL: https://<subdomain>.app.genez.io
 ```
 
 After the deployment succeeds, you can access the [Dashboard](https://app.genez.io), check the logs of the project, and use the [Test Interface](/docs/features/testing) to call your backend functions manually.

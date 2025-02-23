@@ -355,7 +355,7 @@ backend:
   environment:
     MY_ENV_VAR: my-value
     MY_DATABASE_NAME: ${{services.databases.<database-name>.name}}
-    MY_SECRET: ${{env.SECRET}}
+    MY_FUNCTION_URL: ${{backend.functions.<function-name>.url}}
 ```
 
 #### `scripts`: `Object` **Optional**
@@ -750,7 +750,7 @@ The Docker container configuration. This field can be omitted if the project is 
     environment:
       MY_ENV_VAR: my-value
       MY_DATABASE_NAME: ${{services.databases.<database-name>.name}}
-      MY_SECRET: ${{env.SECRET}}
+      MY_FUNCTION_URL: ${{backend.functions.<function-name>.url}}
   ```
 
 - `timeout`: `number` **Optional**
@@ -854,7 +854,7 @@ You can use the `nextjs`, `nuxt`, `nitro`, `nestjs`, `remix`, or `streamlit` fie
     environment:
       MY_ENV_VAR: my-value
       MY_DATABASE_NAME: ${{services.databases.<database-name>.name}}
-      MY_SECRET: ${{env.SECRET}}
+      MY_FUNCTION_URL: ${{backend.functions.<function-name>.url}}
   ```
 
 - `packageManager`: `npm` | `pnpm` | `yarn` | `pip` **Optional**
@@ -978,7 +978,6 @@ These variables are replaced with their values when resources are created or whe
 
 Genezio supports the following formats:
 
-- `${{env.ENV_KEY}}` - this will be loaded from a `.env` file or from the global process environment variables.
 - `{{resource.path.field}}` - this format can be used to reference fields from the `genezio.yaml` itself - e.g. `{{backend.functions.<function-name>.name}}`.
 
 Expressions can be used in the following YAML fields:
@@ -991,7 +990,7 @@ Expressions can be used in the following YAML fields:
 - `services.authentication.settings.resetPassword.redirectUrl`
 - `services.authentication.settings.emailVerification.redirectUrl`
 
-You can concatenate expressions with strings - e.g. `prefix-${{env.ENV_KEY}}-suffix`.
+You can concatenate expressions with strings - e.g. `prefix-${{backend.functions.<function-name>.name}}-suffix`.
 
 For frontend environment variables, you can use expressions like (not limited to):
 
@@ -1026,7 +1025,7 @@ backend:
   environment:
     NODE_ENV: production
     MY_DATABASE_URI: ${{services.databases.<database-name>.uri}}
-    MY_SECRET: ${{env.SECRET}}
+    FUNCTION_URL: ${{backend.functions.<function-name>.url}}
   #...
 ```
 
