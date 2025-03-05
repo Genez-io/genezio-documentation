@@ -68,7 +68,7 @@ jobs:
           npm ci
           hugo \
             --minify \
-            --baseURL "https://genezio.com/deployment-platform/"
+            --baseURL "https://genezio-landing-page-dev.app.genez.io/deployment-platform/"
       - name: Build new landing page
         working-directory: ./genezio-landing-page/new-landing
         run: npm i && npm run build

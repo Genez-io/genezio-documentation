@@ -63,12 +63,21 @@ jobs:
           HUGO_ENV: production
         run: |
           cd genezio-landing-page
+          git checkout dev
+          cd ./deployment-platform
           npm ci
           hugo \
             --minify \
-            --baseURL "https://genezio.com/"
-      - name: Copy public folder
+            --baseURL "https://genezio.com/deployment-platform/"
+      - name: Build new landing page
+        working-directory: ./genezio-landing-page/new-landing
+        run: npm i && npm run build
+      - name: Copy public folder new landing page
         run: cp -r genezio-landing-page/public/ public/
+      - name: Copy public folder new landing page
+        run: |
+          mkdir -p public/deployment-platform/
+          cp -r genezio-landing-page/deployment-platform/public/* public/deployment-platform/
       - name: Copy build files to /public/docs
         run: |
           mkdir -p public/docs/
