@@ -36,4 +36,4 @@ jobs:
         GH_TOKEN: ${{ secrets.NOTIFY_CICD_PAT }}
       run: |
         #!/bin/bash
-        gh workflow run landing-page-prod -R Genez-io/deployapps-landing-page
+        gh workflow run landing-page-prod.yml -R Genez-io/deployapps-landing-page
