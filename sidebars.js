@@ -19,16 +19,7 @@ const sidebars = {
   // But you can create a sidebar manually
   tutorialSidebar: [
     "README",
-    {
-      type: "category",
-      label: "Getting Started",
-      link: { type: "doc", id: "getting-started/README" },
-      items: [
-        "getting-started/use-a-template",
-        "getting-started/import-existing-project",
-      ],
-      collapsed: false,
-    },
+    "migrate-from-genezio",
     {
       type: "category",
       label: "Frameworks",
