@@ -145,6 +145,16 @@ You can replace Genezio’s email service with any popular transactional email p
 - [SendGrid](https://sendgrid.com)
 - [NodeMailer](https://www.npmjs.com/package/nodemailer)
 
+## Migrate Environment Variables
+
+Once you migrated the code, you will also need to export your environment variables. You can do this using genezio CLI. First make sure you are logged in the right account.
+
+```
+genezio login
+genezio account
+genezio getenv --projectName <your_project_name> --stage <stage_name> --output <file_where_your_envs_will_be_exported>
+```
+
 ## Migrate Genezio Cron Jobs
 
 Cron jobs will need to be replaced with scheduled execution services offered by major cloud platforms.
