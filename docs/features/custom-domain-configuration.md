@@ -1,6 +1,6 @@
 ---
 sidebar_position: 9
-description: Easily set up custom domains with Genezio. Learn about DNS configurations, SSL certificates, and supported domain types
+description: Easily set up custom domains with DeployApps. Learn about DNS configurations, SSL certificates, and supported domain types
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 # Custom Domain
 
 <head>
-  <title>Custom Domain | Genezio Documentation</title>
+  <title>Custom Domain | DeployApps Documentation</title>
 </head>
 <!-- :::info -->
 
@@ -20,13 +20,13 @@ This feature is available only for users holding a subscription. Update your pla
 
 ## Introduction
 
-With genezio, you can use custom domains, allowing you to customize the root of your website's URL, as well as your backend functions. Instead of being limited to the default domain like "capybara.app.genez.io," you can easily configure genezio to use your domain, giving your website a unique and personalized web address.
+With DeployApps, you can use custom domains, allowing you to customize the root of your website's URL, as well as your backend functions. Instead of being limited to the default domain like "capybara.app.genez.io," you can easily configure DeployApps to use your domain, giving your website a unique and personalized web address.
 
 This feature empowers you to create a professional online presence by associating your website with a domain that reflects your brand or project identity.
 
 ## Supported custom domains <a href="#supported-custom-domains" id="supported-custom-domains"></a>
 
-genezio works with both apex domains and subdomains.
+DeployApps works with both apex domains and subdomains.
 
 Example of supported types:
 
@@ -38,7 +38,7 @@ After you add a custom domain, we automatically configure the certificate also o
 
 ## Configure your custom domains <a href="#supported-custom-domains" id="supported-custom-domains"></a>
 
-In the genezio dashboard, you can go to a project that has a frontend and/or a function deployed, and on the `Domains` tab in the sidebar, you can set up your custom domain.
+In the DeployApps dashboard, you can go to a project that has a frontend and/or a function deployed, and on the `Domains` tab in the sidebar, you can set up your custom domain.
 
 On this page, you add your custom domain and click on the "Save" button.
 
@@ -58,7 +58,7 @@ This is just a short list of some providers that we used.
 
 ## Securing the custom domain <a href="#securing-the-custom-domain-for-your-github-pages-site" id="securing-the-custom-domain-for-your-github-pages-site"></a>
 
-You don't need to do any extra steps. You only add the given CNAMEs (most likely 2 for frontend custom domains and only one for backend functions) and we will take care of the rest. Genezio will automatically create an SSL certificate and automatically renew it so you can use it seamlessly.
+You don't need to do any extra steps. You only add the given CNAMEs (most likely 2 for frontend custom domains and only one for backend functions) and we will take care of the rest. DeployApps will automatically create an SSL certificate and automatically renew it so you can use it seamlessly.
 
 ## Known limitations
 
@@ -70,7 +70,7 @@ Adding an apex domain such as `test.com` hosted on GoDaddy may encounter limitat
 
 ### Function custom domains on Cloudflare
 
-If your domain DNS is hosted on Cloudflare, when you add the CNAME provided in your genezio dashboard to your DNS configuration, please make sure you disable the proxy setting for that CNAME record (it should be in "DNS only" mode). This limitation comes from the fact that we need to verify that your domain is pointing to our server before we can move forward with the SSL certificate generation. If proxy is enabled, your domain will point to a Cloudflare IP, and we won't be able to verify it.
+If your domain DNS is hosted on Cloudflare, when you add the CNAME provided in your DeployApps dashboard to your DNS configuration, please make sure you disable the proxy setting for that CNAME record (it should be in "DNS only" mode). This limitation comes from the fact that we need to verify that your domain is pointing to our server before we can move forward with the SSL certificate generation. If proxy is enabled, your domain will point to a Cloudflare IP, and we won't be able to verify it.
 
 ## Troubleshooting custom domains <a href="#title-h1" id="title-h1"></a>
 
