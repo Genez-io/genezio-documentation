@@ -1,5 +1,5 @@
 ---
-description: Learn how to deploy a Django application with Genezio.
+description: Learn how to deploy a Django application with DeployApps.
 ---
 
 import Tabs from '@theme/Tabs';
@@ -8,7 +8,7 @@ import TabItem from '@theme/TabItem';
 # Django
 
 <head>
-    <title>Django | Genezio Documentation</title>
+    <title>Django | DeployApps Documentation</title>
 </head>
 
 Django is a popular Python web application framework that simplifies the development of server-side applications. It
@@ -20,15 +20,15 @@ Get started in no time with the [Django template](https://app.genez.io/start/dep
 
 # Deployment
 
-Learn how to deploy an existing Django app using Genezio, a serverless deployment platform that simplifies app
+Learn how to deploy an existing Django app using DeployApps, a serverless deployment platform that simplifies app
 management
 and reduces costs.
 
 ## Prerequisites
 
-### 1. Install genezio
+### 1. Install DeployApps
 
-Use your preferred package manager to install Genezio:
+Use your preferred package manager to install DeployApps:
 
 <Tabs>
   <TabItem className="tab-item" value="npm" label="npm">
@@ -242,9 +242,9 @@ Open a web browser and navigate to [http://localhost:8000](http://localhost:8000
 
 ## Deployment Guide
 
-## 1. Allow Genezio to manage your Django app
+## 1. Allow DeployApps to manage your Django app
 
-In your Django project, you need to allow Genezio to manage your app by adding the Genezio domain to the `ALLOWED_HOSTS` list in the `settings.py` file.
+In your Django project, you need to allow DeployApps to manage your app by adding the DeployApps domain to the `ALLOWED_HOSTS` list in the `settings.py` file.
 
 ```python title="settings.py"
 ALLOWED_HOSTS = [
@@ -253,11 +253,11 @@ ALLOWED_HOSTS = [
 ]
 ```
 
-## 2. Create the Genezio Configuration File
+## 2. Create the DeployApps Configuration File
 
 Now, create a `genezio.yaml` file in the root directory of your project.
 
-This file will contain the configuration needed to deploy your backend using Genezio. Here is an example configuration.
+This file will contain the configuration needed to deploy your backend using DeployApps. Here is an example configuration.
 
 :::info
 
@@ -337,7 +337,7 @@ Open a web browser and navigate to [http://localhost:8000](http://localhost:8000
 
 ## 4. Deploy your project
 
-Finally, deploy your project. A browser window will open, and you will be prompted to log in to your Genezio account and
+Finally, deploy your project. A browser window will open, and you will be prompted to log in to your DeployApps account and
 authorize the CLI to make the deployment.
 
 Run the following command in your terminal:
@@ -367,14 +367,14 @@ During the deployment process, Genezio automatically installs all dependencies s
 This process ensures compatibility with our serverless infrastructure, defaulting to the latest Python 3.13.x version.
 :::
 
-## See your app in Genezio Dashboard
+## See your app in DeployApps Dashboard
 
 After deploying your application, you can test it to ensure it's running correctly. To verify that your Django app is
 working, open a web browser and navigate to the URL provided for your deployed function.
 
 This URL can be found in the deployment output under the `Functions Deployed` section.
 
-Additionally, you can monitor and manage your app through the [Genezio App Dashboard](https://app.genez.io/dashboard).
+Additionally, you can monitor and manage your app through the [DeployApps App Dashboard](https://app.genez.io/dashboard).
 The dashboard URL, also provided after deployment, allows you to access comprehensive views of your project's status and
 logs.
 
@@ -382,10 +382,6 @@ You can find this URL in the deployment output under the `App Dashboard URL` sec
 
 ## Known limitations
 
-Genezio do not support SQLite database, because SQLite is not suitable for serverless applications. You need to use a different database like PostgreSQL or MySQL.
-
-## Support <a href="#support" id="support"></a>
-
-We invite you to join our community on [Discord](https://discord.gg/uc9H5YKjXv) for further information and help.
+DeployApps do not support SQLite database, because SQLite is not suitable for serverless applications. You need to use a different database like PostgreSQL or MySQL.
 
 **Happy Learning!**
