@@ -1,25 +1,25 @@
 ---
-description: Genezio Decorators is a feature that lets you configure settings that were previously set in the genezio.yaml configuration file, directly from your code.
+description: DeployApps Decorators is a feature that lets you configure settings that were previously set in the genezio.yaml configuration file, directly from your code.
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import Admonition from '@theme/Admonition';
 
-# Genezio Decorators
+# DeployApps Decorators
 
 <head>
-  <title>Genezio Decorators | Genezio Documentation</title>
+  <title>DeployApps Decorators | DeployApps Documentation</title>
 </head>
-Genezio Decorators is a feature that lets you configure settings that were previously set in the `genezio.yaml` configuration file, directly from your code.
+DeployApps Decorators is a feature that lets you configure settings that were previously set in the `genezio.yaml` configuration file, directly from your code.
 
 :::info
 Decorators are only supported in TypeScript, JavaScript and Go. If you are using any other supported language, you need to use the `genezio.yaml` file to declare the settings.
 
-More details about the `genezio.yaml` file can be found in the [Genezio Configuration File](/docs/project-structure/genezio-configuration-file) section.
+More details about the `genezio.yaml` file can be found in the [DeployApps Configuration File](/docs/project-structure/genezio-configuration-file) section.
 :::
 
-To use genezio decorators in **TypeScript** or **JavaScript**, you have to install and import `@genezio/types` in your project. This library provides the decorators using the native TypeScript decorators feature.
+To use DeployApps decorators in **TypeScript** or **JavaScript**, you have to install and import `@genezio/types` in your project. This library provides the decorators using the native TypeScript decorators feature.
 
 <Tabs>
   <TabItem className="tab-item" value="npm" label="npm">
@@ -40,8 +40,8 @@ To use genezio decorators in **TypeScript** or **JavaScript**, you have to insta
 </Tabs>
 
 :::tip
-Unfortunately, not all programming languages support decorators. To compensate for this, genezio allows users to "annotate" their classes and methods using comments.
-Those special comments are picked up automatically by genezio and have the same effect as a native decorator. This feature is available for the **Go** programming language.
+Unfortunately, not all programming languages support decorators. To compensate for this, DeployApps allows users to "annotate" their classes and methods using comments.
+Those special comments are picked up automatically by DeployApps and have the same effect as a native decorator. This feature is available for the **Go** programming language.
 :::
 
 ### GenezioDeploy
@@ -194,4 +194,4 @@ export class HelloWorld {
 
 ### More details
 
-With Genezio Decorators you can also deploy [HTTP Methods / Webhooks](/docs/genezio-typesafe/http-methods-webhooks) or [Cron Methods](/docs/genezio-typesafe/cron-methods).
+With DeployApps Decorators you can also deploy [HTTP Methods / Webhooks](/docs/genezio-typesafe/http-methods-webhooks) or [Cron Methods](/docs/genezio-typesafe/cron-methods).
