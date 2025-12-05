@@ -1,5 +1,5 @@
 ---
-description: Genezio generates an SDK to enable clients to easily call methods in deployed classes. Learn how to set up and use the generated SDK
+description: DeployApps generates an SDK to enable clients to easily call methods in deployed classes. Learn how to set up and use the generated SDK
 ---
 
 import Tabs from '@theme/Tabs';
@@ -9,13 +9,13 @@ import Admonition from '@theme/Admonition';
 # Generated SDK
 
 <head>
-  <title>Generated SDK | Genezio Documentation</title>
+  <title>Generated SDK | DeployApps Documentation</title>
 </head>
-Genezio generates a SDK to enable your clients to easily call the methods implemented in the deployed classes.
+DeployApps generates a SDK to enable your clients to easily call the methods implemented in the deployed classes.
 
 ## Use the generated SDK in your client
 
-Genezio generates a SDK by statically analyzing the backend code and creating an Abstract Syntax Tree describing the deployed classes, methods, return types and parameters types.
+DeployApps generates a SDK by statically analyzing the backend code and creating an Abstract Syntax Tree describing the deployed classes, methods, return types and parameters types.
 
 The SDK can be installed in your client as a NPM package by running:
 
@@ -61,16 +61,16 @@ After installing the SDK, you can import it as any other dependency:
 This step is only necessary when your frontend is not specified in the `genezio.yaml` file.
 :::
 
-While testing locally, if genezio does not know about your client repository, it will not be able to install the generated SDK automatically.
-That's why for external clients, you need to link your client repository to a genezio project.
+While testing locally, if DeployApps does not know about your client repository, it will not be able to install the generated SDK automatically.
+That's why for external clients, you need to link your client repository to a DeployApps project.
 
-You can link your client repository to a genezio project navigating to the root of your client repository and running:
+You can link your client repository to a DeployApps project navigating to the root of your client repository and running:
 
 ```sh title="Terminal"
 genezio link <project-name>
 ```
 
-This command will save a map between your genezio project and the path to your client directory. This map is saved in your home directory, at `~/.genezio/geneziolinks`.
+This command will save a map between your DeployApps project and the path to your client directory. This map is saved in your home directory, at `~/.genezio/geneziolinks`.
 
 To start a local backend server on your machine, run:
 
@@ -98,13 +98,13 @@ After executing `genezio local`, genezio will generate a SDK by statically analy
   </TabItem>
 </Tabs>
 
-## Genezio private registry
+## DeployApps private registry
 
 :::info
-The Genezio private registry is only available for the JavaScript/TypeScript SDK.
+The DeployApps private registry is only available for the JavaScript/TypeScript SDK.
 :::
 
-To store generated SDKs for your projects, genezio pushes them to a private registry dedicated for your projects.
+To store generated SDKs for your projects, DeployApps pushes them to a private registry dedicated for your projects.
 
 <Tabs groupId="languages">
   <TabItem value="ts/js" label="TypeScript / JavaScript">
