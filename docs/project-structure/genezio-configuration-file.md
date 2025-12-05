@@ -1,11 +1,11 @@
 ---
-description: Learn how to configure your Genezio project using the genezio.yaml file. Follow our guide for setup and deployment options
+description: Learn how to configure your DeployApps project using the genezio.yaml file. Follow our guide for setup and deployment options
 ---
 
-# Genezio Configuration File
+# DeployApps Configuration File
 
 <head>
-  <title>Genezio Configuration File | Genezio Documentation</title>
+  <title>DeployApps Configuration File | DeployApps Documentation</title>
 </head>
 
 The `genezio.yaml` file is a configuration file that contains all the settings for deploying your project.
@@ -13,7 +13,7 @@ It uses YAML syntax to define the project's name, services, backend, frontend, a
 
 Usually it is localized in the root directory of your project.
 
-## Genezio Configuration File Reference
+## DeployApps Configuration File Reference
 
 ## `name`: `string` **Required**
 
@@ -48,9 +48,9 @@ region: us-east-1
 
 ## `yamlVersion`: `number` **Required**
 
-The version of the genezio YAML file format. The latest version is `2`.
+The version of the DeployApps YAML file format. The latest version is `2`.
 
-Old format versions may not be supported by latest releases of the Genezio CLI.
+Old format versions may not be supported by latest releases of the DeployApps CLI.
 
 ```yaml
 # The version of the Genezio YAML configuration to parse.
@@ -61,7 +61,7 @@ yamlVersion: 2
 
 The services that can be added to the project. This field can be omitted if the project does not have any services.
 
-The services available in Genezio are:
+The services available in DeployApps are:
 
 - `databases`
 - `authentication`
@@ -525,7 +525,7 @@ This resource exposes `url` as an output expression: `${{backend.functions.<func
 
   For larger values, [contact us](mailto:contact@genez.io).
 
-  Note: Setting this value to 1 disables concurrent requests served within the same execution environment. In this case, 2 or more incoming concurrent requests will be automatically distributed across separate execution environments, which are scaled up dynamically by Genezio.
+  Note: Setting this value to 1 disables concurrent requests served within the same execution environment. In this case, 2 or more incoming concurrent requests will be automatically distributed across separate execution environments, which are scaled up dynamically by DeployApps.
 
 - `maxConcurrentInstances`: `number` **Optional**
 
@@ -555,7 +555,7 @@ This resource exposes `url` as an output expression: `${{backend.functions.<func
 name: express-app
 # The region where the project is deployed. Available regions: us-east-1, eu-central-1, eu-west-1
 region: us-east-1
-# The version of the Genezio YAML configuration to parse.
+# The version of the DeployApps YAML configuration to parse.
 yamlVersion: 2
 backend:
   # The root directory of the backend.
@@ -598,19 +598,19 @@ If scripts are declared in the `scripts` field, they will be executed from this 
 
 #### `sdk`: `Object` **Optional**
 
-The Genezio SDK configuration. If not specified, no SDK will be generated for your frontend.
+The DeployApps SDK configuration. If not specified, no SDK will be generated for your frontend.
 
 - `language`: `ts` | `js` | `go` | `dart` | `kotlin` | `swift` | `python` **Required**
 
-  Decides the language in which the Genezio SDK is generated.
+  Decides the language in which the DeployApps SDK is generated.
 
 - `path`: `string` **Optional**
 
-  The path where the Genezio SDK is generated. It is relative to the `path` field.
+  The path where the DeployApps SDK is generated. It is relative to the `path` field.
 
   If not specified, the SDK will be generated in `${path}/sdk`.
 
-Decides the language in which the Genezio SDK is generated.
+Decides the language in which the DeployApps SDK is generated.
 
 If not specified, no SDK will be generated for your frontend.
 
@@ -733,7 +733,7 @@ Variables can be used in the scripts. Check the [Usage](#variables) section for 
 name: project-name
 # The region where the project is deployed.
 region: us-east-1
-# The version of the Genezio YAML configuration to parse.
+# The version of the DeployApps YAML configuration to parse.
 yamlVersion: 2
 # Information about the frontend, including the path, language, and publish directory.
 # It is optional. It can also be an array if there are multiple frontends you want to deploy.
@@ -843,7 +843,7 @@ The Docker container configuration. This field can be omitted if the project is 
 
   For larger values, [contact us](mailto:contact@genez.io).
 
-  Note: Setting this value to 1 disables concurrent requests served within the same execution environment. In this case, 2 or more incoming concurrent requests will be automatically distributed across separate execution environments, which are scaled up dynamically by Genezio.
+  Note: Setting this value to 1 disables concurrent requests served within the same execution environment. In this case, 2 or more incoming concurrent requests will be automatically distributed across separate execution environments, which are scaled up dynamically by DeployApps.
 
 - `maxConcurrentInstances`: `number` **Optional**
 
@@ -986,7 +986,7 @@ Variables can be used in the scripts. Check the [Usage](#variables) section for 
 
   For larger values, [contact us](mailto:contact@genez.io).
 
-  Note: Setting this value to 1 disables concurrent requests served within the same execution environment. In this case, 2 or more incoming concurrent requests will be automatically distributed across separate execution environments, which are scaled up dynamically by Genezio.
+  Note: Setting this value to 1 disables concurrent requests served within the same execution environment. In this case, 2 or more incoming concurrent requests will be automatically distributed across separate execution environments, which are scaled up dynamically by DeployApps.
 
 - `maxConcurrentInstances`: `number` **Optional**
 
@@ -1048,7 +1048,7 @@ nextjs:
 The `genezio.yaml` supports a set of expandable expressions that can be used in the configuration file.
 These variables are replaced with their values when resources are created or when scripts are executed.
 
-Genezio supports the following formats:
+DeployApps supports the following formats:
 
 - `{{resource.path.field}}` - this format can be used to reference fields from the `genezio.yaml` itself - e.g. `{{backend.functions.<function-name>.name}}`.
 
@@ -1103,7 +1103,7 @@ backend:
 
 ## Variables
 
-Genezio supports the following variables:
+DeployApps supports the following variables:
 
 - `${{projectName}}`: The name of the project.
 - `${{stage}}`: The stage of the deployment. It can be set using the `--stage` flag in the CLI:
@@ -1125,7 +1125,7 @@ backend:
 
 ## Output Variables
 
-Genezio supports the output variables for specific resources:
+DeployApps supports the output variables for specific resources:
 
 - `${{services.databases.<database-name>.uri}}`: The URI of the database.
 - `${{services.authentication.token}}`: The token of the authentication service.
@@ -1205,7 +1205,7 @@ services:
 
 To add an authentication provider to your project, you need to add the `authentication` field to the `services` field in the `genezio.yaml` file.
 
-You can either reference an existing database created in the Genezio architecture or specify the database type and URI directly.
+You can either reference an existing database created in the DeployApps architecture or specify the database type and URI directly.
 
 ```yaml
 name: my-project
