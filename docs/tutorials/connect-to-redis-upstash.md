@@ -1,15 +1,15 @@
 ---
 sidebar_position: 4
-description: In this tutorial, you will learn how to integrate a Redis database using Upstash in a genezio project.
+description: In this tutorial, you will learn how to integrate a Redis database using Upstash in a DeployApps project.
 ---
 
 # Connect to Redis (Upstash)
 
 <head>
-  <title>Connect to Redis (Upstash) | Genezio Documentation</title>
+  <title>Connect to Redis (Upstash) | DeployApps Documentation</title>
 </head>
 
-In this tutorial, you will learn how to integrate a Redis database using Upstash in a genezio project.
+In this tutorial, you will learn how to integrate a Redis database using Upstash in a DeployApps project.
 
 ## Common use cases of Redis
 
@@ -33,7 +33,7 @@ If you don't already have them, you'll need to install the following tools:
 - [Npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
 - [Genezio](/docs/getting-started)
 
-You need to have a genezio project. Use an existing one, or [create a new one.](/docs/getting-started)
+You need to have a DeployApps project. Use an existing one, or [create a new one.](/docs/getting-started)
 
 ## 1. Initialize an Upstash Redis database
 
@@ -50,7 +50,7 @@ Create a Redis database or select an already existing database:
 
 ![Alt text](https://genezio.com/posts/image-1.png)
 
-Hit the `Save` button to set the database credentials as environment variables in your genezio project:
+Hit the `Save` button to set the database credentials as environment variables in your DeployApps project:
 
 ![Alt text](https://genezio.com/posts/image-2.png)
 
@@ -158,12 +158,6 @@ Also, you can find more details on deploying the backend and frontend here:
 - [Backend Deployment](/docs/deploy/backend)
 - [Frontend Deployment](/docs/deploy/frontend)
 
-Now you are ready for some more advanced use cases:
-
-- [Web3 Application](https://genezio.com/blog/create-your-first-web3-app/)
-- [ChatGPT App](https://genezio.com/blog/create-your-first-app-using-chatgpt/)
-- [Shopping Cart Implementation](https://genezio.com/blog/implement-a-shopping-cart-using-typescript-redis-and-react/)
-- [Integrate Stripe Payments](https://genezio.com/blog/integrate-stripe-payments/)
 
 ### Support <a href="#support" id="support"></a>
 
