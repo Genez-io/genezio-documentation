@@ -1,5 +1,5 @@
 ---
-description: Learn how to deploy an Ember application with Genezio.
+description: Learn how to deploy an Ember application with DeployApps.
 ---
 
 import Tabs from '@theme/Tabs';
@@ -8,7 +8,7 @@ import TabItem from '@theme/TabItem';
 # Ember
 
 <head>
-    <title>Ember | Genezio Documentation</title>
+    <title>Ember | DeployApps Documentation</title>
 </head>
 
 [Ember.js](https://emberjs.com/) is a productive, battle-tested JavaScript framework for building modern web applications. It includes everything you need to build rich user interfaces that work on any device.
@@ -87,11 +87,11 @@ Open a web browser and navigate to http://localhost:4200/ to see the app running
 
 </details>
 
-## Create the Genezio Configuration File
+## Create the DeployApps Configuration File
 
 Now, create a `genezio.yaml` file in the root directory of your project.
 
-This file will contain the configuration needed to deploy your backend using Genezio. Here is an example configuration.
+This file will contain the configuration needed to deploy your backend using DeployApps. Here is an example configuration.
 
 :::info
 1. This example configuration works if **genezio.yaml** is in the same directory as your main application file.
@@ -120,7 +120,7 @@ This configuration file specifies the project name, deployment region, and detai
 
 ## Deploy the app
 
-In your terminal run the following command to deploy your app to the Genezio cloud:
+In your terminal run the following command to deploy your app to the DeployApps cloud:
 
 <div>
   ```bash
