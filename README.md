@@ -1,3 +1,3 @@
-## Genezio Documentation Repository
+## DeployApps Documentation Repository
 
-This is the repository for the official Genezio documentation.
+This is the repository for the official DeployApps documentation.
