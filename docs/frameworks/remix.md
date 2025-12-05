@@ -1,5 +1,5 @@
 ---
-description: Learn how to deploy a Remix application with Genezio.
+description: Learn how to deploy a Remix application with DeployApps.
 ---
 
 import Tabs from '@theme/Tabs';
@@ -8,7 +8,7 @@ import TabItem from '@theme/TabItem';
 # Remix
 
 <head>
-    <title>Remix | Genezio Documentation</title>
+    <title>Remix | DeployApps Documentation</title>
 </head>
 
 Remix is a React framework for building server-rendered applications, and it's a great choice for building modern web applications.
@@ -19,14 +19,14 @@ Get started in no time with the [Remix template](https://app.genez.io/auth/signu
 
 # Deployment
 
-Learn how to deploy an existing Remix app using Genezio, a serverless deployment platform that simplifies app management and reduces costs.
+Learn how to deploy an existing Remix app using DeployApps, a serverless deployment platform that simplifies app management and reduces costs.
 
 
 ## Prerequisites
 
-### 1. Install genezio
+### 1. Install DeployApps
 
-Use your preferred package manager to install Genezio:
+Use your preferred package manager to install DeployApps:
 
 <Tabs>
   <TabItem className="tab-item" value="npm" label="npm">
@@ -113,7 +113,7 @@ remix:
 
 ## 2. Deploy your project
 
-Finally, deploy your project. A browser window will open, and you will be prompted to log in to your Genezio account and authorize the CLI to make the deployment.
+Finally, deploy your project. A browser window will open, and you will be prompted to log in to your DeployApps account and authorize the CLI to make the deployment.
 Run the following command in your terminal:
 
 ```bash
@@ -134,11 +134,11 @@ This command starts a local development server on a random port. You can specify
 - Windows: Run `set GENEZIO_PORT_REMIX=<port> && genezio local`
 - macOS/Linux: Run `GENEZIO_PORT_REMIX=<port> genezio local`
 
-## See your app in Genezio Dashboard
+## See your app in DeployApps Dashboard
 
 After deploying your application, you can test it to ensure it's running correctly. To verify that your Remix app is working, open a web browser and navigate to the URL provided for your deployed app.
 
-Additionally, you can monitor and manage your app through the [Genezio App Dashboard](https://app.genez.io/dashboard). The dashboard URL, also provided after deployment, allows you to access comprehensive views of your project's status and logs.
+Additionally, you can monitor and manage your app through the [DeployApps App Dashboard](https://app.genez.io/dashboard). The dashboard URL, also provided after deployment, allows you to access comprehensive views of your project's status and logs.
 
 You can find this URL in the deployment output under the `App Dashboard URL` section.
 
