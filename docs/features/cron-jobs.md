@@ -5,14 +5,14 @@ description: A scheduled method or a cron job is a function that will run period
 # Crons
 
 <head>
-  <title>Crons | Genezio Documentation</title>
+  <title>Crons | DeployApps Documentation</title>
 </head>
 
-A scheduled method or a cron job is a function that will run periodically. By using a specific cron syntax, you can define the frequency and timing for each method. You can use Genezio functions to define cron jobs in your project.
+A scheduled method or a cron job is a function that will run periodically. By using a specific cron syntax, you can define the frequency and timing for each method. You can use DeployApps functions to define cron jobs in your project.
 
 ## Create a cron job
 
-To create a cron job, you will need a function that will run periodically. You can define the function in your code and then add the cron job in the configuration file. To learn more about Genezio functions, check the [functions documentation](../tutorials/how-to-deploy-a-serverless-function.md).
+To create a cron job, you will need a function that will run periodically. You can define the function in your code and then add the cron job in the configuration file. To learn more about DeployApps functions, check the [functions documentation](../tutorials/how-to-deploy-a-serverless-function.md).
 
 ```yaml title="genezio.yaml"
 name: cron-getting-started
