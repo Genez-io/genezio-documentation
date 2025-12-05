@@ -1,15 +1,15 @@
 ---
 sidebar_position: 4
-description: Learn how to manage multiple deployment environments in Genezio. Create, deploy, and update isolated development, staging, and production environments
+description: Learn how to manage multiple deployment environments in DeployApps. Create, deploy, and update isolated development, staging, and production environments
 ---
 
 # Environments
 
 <head>
-  <title>Environments | Genezio Documentation</title>
+  <title>Environments | DeployApps Documentation</title>
 </head>
 
-Genezio provides a way to organize your projects into isolated environments.
+DeployApps provides a way to organize your projects into isolated environments.
 
 This enables you to create development, staging environments where you can test new features before launching them into production.
 
@@ -41,11 +41,11 @@ genezio deploy --stage development
 
 The subdomain format for accessing the frontend depends on the environment name. This enables you to have a different frontend subdomain for each of your environments. You can easily test your project end-to-end on the same infrastructure before merging into production.
 
-If the `stage` flag is specified the genezio subdomain format will be:
+If the `stage` flag is specified the DeployApps subdomain format will be:
 
 `https://<subdomain + stage_name>.app.genez.io`
 
-If the stage flag is not specified the genezio subdomain format will be:
+If the stage flag is not specified the DeployApps subdomain format will be:
 
 `https://<subdomain>.app.genez.io`
 
