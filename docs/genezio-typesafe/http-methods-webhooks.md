@@ -10,15 +10,15 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 # HTTP Calls / Webhooks
 
 <head>
-  <title>HTTP Calls / Webhooks | Genezio Documentation</title>
+  <title>HTTP Calls / Webhooks | DeployApps Documentation</title>
 </head>
-Genezio provides an easy way to interact with third-party services or APIs using webhooks/HTTP methods.
+DeployApps provides an easy way to interact with third-party services or APIs using webhooks/HTTP methods.
 
-With genezio decorators, you can set one or more of your methods to handle HTTP requests.
+With DeployApps decorators, you can set one or more of your methods to handle HTTP requests.
 
 ## Use webhooks in your project
 
-A webhook/HTTP method is declared in the same way as any other genezio method, but it needs to fulfill the following requirements to be considered a webhook/HTTP method:
+A webhook/HTTP method is declared in the same way as any other DeployApps method, but it needs to fulfill the following requirements to be considered a webhook/HTTP method:
 
 - The method must be marked as `http` either using [decorators](/docs/genezio-typesafe/genezio-decorators) or the [`genezio.yaml` configuration](/docs/project-structure/genezio-configuration-file.md) file.
 - The method must have only one parameter of type [`GenezioHttpRequest`](#geneziohttprequest).
@@ -119,7 +119,7 @@ Decorators are only supported in TypeScript, JavaScript and Go. If you are using
 
 ## Deploy your service
 
-To deploy your newly created class to the genezio infrastructure, use the following command:
+To deploy your newly created class to the DeployApps infrastructure, use the following command:
 
 ```
 genezio deploy
@@ -173,20 +173,3 @@ App Dashboard URL: https://app.genez.io/project/<projectId>/<projectEnvId>
 - **statusCode - required:** The status code of the response.
 - **isBase64Encoded - optional:** This flag can be set to `true` or `false` to indicate if the `body` is base64 encoded. This flag is optional and can be omitted.
 
-## Examples using webhooks
-
-For more details, check out the webhooks examples for [JavaScript](https://github.com/Genez-io/genezio-examples/tree/master/javascript/webhook) and [TypeScript](https://github.com/Genez-io/genezio-examples/tree/master/typescript/webhook).
-
-## Next Steps
-
-Also, you can find more details on deploying the backend and frontend here:
-
-- [Backend Deployment](/docs/deploy/backend)
-- [Frontend Deployment](/docs/deploy/frontend)
-
-Now you are ready for some more advanced use cases:
-
-- [Web3 Application](https://genezio.com/blog/create-your-first-web3-app/)
-- [ChatGPT App](https://genezio.com/blog/create-your-first-app-using-chatgpt/)
-- [Shopping Cart Implementation](https://genezio.com/blog/implement-a-shopping-cart-using-typescript-redis-and-react/)
-- [Integrate Stripe Payments](https://genezio.com/blog/integrate-stripe-payments/)
