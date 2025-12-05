@@ -1,5 +1,5 @@
 ---
-description: Learn how to deploy a react-admin application with Genezio.
+description: Learn how to deploy a react-admin application with DeployApps.
 ---
 
 import Tabs from '@theme/Tabs';
@@ -8,10 +8,10 @@ import TabItem from '@theme/TabItem';
 # React-Admin
 
 <head>
-    <title>React-Admin | Genezio Documentation</title>
+    <title>React-Admin | DeployApps Documentation</title>
 </head>
 
-[React-Admin](https://marmelab.com/react-admin/) is a frontend Framework for building B2B applications running in the browser on top Genezio's APIs, using ES6, React and Material Design.
+[React-Admin](https://marmelab.com/react-admin/) is a frontend Framework for building B2B applications running in the browser on top DeployApps's APIs, using ES6, React and Material Design.
 .
 
 :::tip
@@ -20,14 +20,14 @@ Get started in no time with the [React-Admin template](https://app.genez.io/star
 
 # Deployment
 
-Learn how to deploy an existing react-admin app using Genezio, a serverless deployment platform that simplifies app management and reduces costs.
+Learn how to deploy an existing react-admin app using DeployApps, a serverless deployment platform that simplifies app management and reduces costs.
 
 
 ## Prerequisites
 
-### 1. Install genezio
+### 1. Install DeployApps
 
-Use your preferred package manager to install Genezio:
+Use your preferred package manager to install DeployApps:
 
 <Tabs>
   <TabItem className="tab-item" value="npm" label="npm">
@@ -91,7 +91,7 @@ Open a web browser and navigate to http://localhost:5173/ to see the app running
 
 ## Deploy the app
 
-In your terminal window first stop `genezio local` if it was already running, then run the following command to deploy your app to the Genezio cloud:
+In your terminal window first stop `genezio local` if it was already running, then run the following command to deploy your app to the DeployApps cloud:
 
 <div>
   ```bash
@@ -108,9 +108,9 @@ $ Frontend URL: https://<subdomain>.app.genez.io
 
 ## Set-up the app
 
-## 1. Setup Genezio's Authentication on this project
+## 1. Setup DeployApps's Authentication on this project
 
-You don't want anyone to be able to access your APIs and make updates to the contents, so we will set-up Genezio's authentication feature on this project.
+You don't want anyone to be able to access your APIs and make updates to the contents, so we will set-up DeployApps's authentication feature on this project.
 
 First you need to go to the **App Dashboard URL** that was listed in the output of the `genezio deploy` command.
 
@@ -127,7 +127,7 @@ In the **App Dashboard URL** web page, go to Authentication / Settings and selec
 Now open the "Reset Password" section and enter `https://<subdomain>.app.genez.io/reset-password`.
 
 :::info
-Change `https://<subdomain>.app.genez.io/reset-password` to use the **Frontend URL** as returned by the genezio deploy command.
+Change `https://<subdomain>.app.genez.io/reset-password` to use the **Frontend URL** as returned by the DeployApps deploy command.
 :::
 
 ## 3. Redeploy your project
@@ -142,7 +142,7 @@ genezio deploy
 
 Go to the **Frontend URL** in your browser to test the newly created app
 
-## 5. Understand how your React Admin app calls the Genezio backend.
+## 5. Understand how your React Admin app calls the DeployApps backend.
 
 Open the `client/src/App.tsx` file and see how the Admin component uses the authProvider and the dataProvider.
 
