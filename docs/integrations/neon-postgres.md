@@ -8,10 +8,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 # Neon Postgres
 
 <head>
-  <title>Neon Postgres Integration | Genezio Documentation</title>
+  <title>Neon Postgres Integration | DeployApps Documentation</title>
 </head>
 :::info
-A guide to integrate Neon resources in genezio projects
+A guide to integrate Neon resources in DeployApps projects
 :::
 
 ### Introduction to Neon
@@ -40,7 +40,7 @@ Hit `Save` to save the database credentials as backend environment variables
 
 <figure style={{textAlign:"center", marginLeft:"0"}}><img style={{cursor:"pointer"}} src={useBaseUrl("/img/image (50).webp")} alt="" width="375"/><figcaption></figcaption></figure>
 
-Use the environment variables in your genezio project to connect to the Postgres database.
+Use the environment variables in your DeployApps project to connect to the Postgres database.
 
 <!-- {% code title="index.ts" %} -->
 
@@ -69,7 +69,7 @@ npm install pg
 
 To test your project locally, you have to create a file named `.env` and store the Neon Postgres credentials there. This file should be in the root directory of your backend.
 
-Use the genezio [dashboard](https://app.genez.io) under `Integrations/Neon Postgres` card to copy the Postgres credentials in your `.env` file.
+Use the DeployApps [dashboard](https://app.genez.io) under `Integrations/Neon Postgres` card to copy the Postgres credentials in your `.env` file.
 
 <!-- {% code title=".env" %} -->
 
