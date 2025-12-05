@@ -8,7 +8,7 @@ import TabItem from '@theme/TabItem';
 # Cron Jobs
 
 <head>
-  <title>Cron Jobs | Genezio Documentation</title>
+  <title>Cron Jobs | DeployApps Documentation</title>
 </head>
 A scheduled method or a cron job is a method that will run periodically. By using a specific cron syntax, you can define the frequency and timing for each method.
 
@@ -18,7 +18,7 @@ The time specified in the cron strings is in UTC. You can use this [converter](h
 
 ## Use scheduled methods in your project
 
-There are two ways to declare a scheduled method in a Genezio typsafe project:
+There are two ways to declare a scheduled method in a DeployApps typsafe project:
 
 - Using decorators (only available for TypeScript, JavaScript and Go projects)
 - Using the `genezio.yaml` configuration file (available for all supported languages, including TypeScript, JavaScript, Go)
@@ -102,7 +102,7 @@ For more details, check out an example using [scheduled methods](https://github.
 
 ## More details
 
-For more information on genezio decorators, check out [Genezio Decorators](/docs/genezio-typesafe/genezio-decorators).
+For more information on DeployApps decorators, check out [DeployApps Decorators](/docs/genezio-typesafe/genezio-decorators).
 
 ## Next Steps
 
@@ -110,10 +110,3 @@ Also, you can find more details on deploying the backend and frontend here:
 
 - [Backend Deployment](/docs/deploy/backend)
 - [Frontend Deployment](/docs/deploy/frontend)
-
-Now you are ready for some more advanced use cases:
-
-- [Web3 Application](https://genezio.com/blog/create-your-first-web3-app/)
-- [ChatGPT App](https://genezio.com/blog/create-your-first-app-using-chatgpt/)
-- [Shopping Cart Implementation](https://genezio.com/blog/implement-a-shopping-cart-using-typescript-redis-and-react/)
-- [Integrate Stripe Payments](https://genezio.com/blog/integrate-stripe-payments/)
