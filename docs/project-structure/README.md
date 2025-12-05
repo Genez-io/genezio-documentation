@@ -1,5 +1,5 @@
 ---
-description: Learn how to organize your development with Genezio’s project structure guide. Discover best practices for efficient and scalable project management
+description: Learn how to organize your development with DeployApps’s project structure guide. Discover best practices for efficient and scalable project management
 ---
 
 import Tabs from '@theme/Tabs';
@@ -9,7 +9,7 @@ import Admonition from '@theme/Admonition';
 # Project Structure
 
 <head>
-  <title>Project Structure | Genezio Documentation</title>
+  <title>Project Structure | DeployApps Documentation</title>
 </head>
 There are 2 recommend ways of structuring your project:
 
@@ -103,7 +103,7 @@ backend:
     deploy: npm install
 ```
 
-For more info on `genezio.yaml` check [Genezio Configuration File](genezio-configuration-file).
+For more info on `genezio.yaml` check [DeployApps Configuration File](genezio-configuration-file).
 
 ### The client repository
 
@@ -137,7 +137,7 @@ frontend:
 
 <Tabs groupId="languages">
   <TabItem value="ts/js" label="TypeScript / JavaScript">
-    To install the genezio generated SDK in your frontend to call your deployed methods, run:
+    To install the DeployApps generated SDK in your frontend to call your deployed methods, run:
 
     ```sh title="Terminal"
     npm install @genezio-sdk/<project-name>@1.0.0-<environment>
@@ -160,7 +160,7 @@ frontend:
   </TabItem>
 </Tabs>
 
-While developing locally, `genezio local` can hot-reload your Genezio SDK to reflect the changes in your backend code. This is useful for avoiding the need to manually generate the SDK every time you make changes to your backend code. For this to work, you need to tell genezio where your client repository is located, to be able to install the SDK automatically in that path.
+While developing locally, `genezio local` can hot-reload your DeployApps SDK to reflect the changes in your backend code. This is useful for avoiding the need to manually generate the SDK every time you make changes to your backend code. For this to work, you need to tell genezio where your client repository is located, to be able to install the SDK automatically in that path.
 
 To link your client repository to a deployed backend server, run:
 
@@ -180,7 +180,7 @@ frontend:
   publish: dist
 ```
 
-For more details on the genezio generated SDK, check out the section [Generated Sdk](/docs/genezio-typesafe/generated-sdk).
+For more details on the DeployApps generated SDK, check out the section [Generated Sdk](/docs/genezio-typesafe/generated-sdk).
 
 To ignore specific files while locally testing your project, you can use [.genezioignore](.genezioignore).
 
@@ -200,6 +200,6 @@ Depending on the project's structure (single repository or multi-repositories), 
 - the frontend `publish` directory
 - the environment variables file
 
-For more details and examples on how to correctly set the paths, check out the section [Genezio Configuration File](genezio-configuration-file).
+For more details and examples on how to correctly set the paths, check out the section [DeployApps Configuration File](genezio-configuration-file).
 
-Most of these settings are already taken care for you when starting from genezio's official templates or examples. Check out the [Getting Started](../getting-started) tutorial to see how.
+Most of these settings are already taken care for you when starting from DeployApps's official templates or examples. Check out the [Getting Started](../getting-started) tutorial to see how.
