@@ -41,7 +41,7 @@ A possible structure for a fullstack single repository can be:
     └── package.json
 ```
 
-Generally, genezio commands should be executed at the same location of the `genezio.yaml` configuration file.
+Generally, DeployApps commands should be executed at the same location of the `genezio.yaml` configuration file.
 
 Hence, for project structured in a single repository, commands such as `genezio deploy` and `genezio local` will be executed in the project's root directory.
 
