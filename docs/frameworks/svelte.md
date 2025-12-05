@@ -1,5 +1,5 @@
 ---
-description: Learn how to deploy a Svelte application with Genezio.
+description: Learn how to deploy a Svelte application with DeployApps.
 ---
 
 import Tabs from '@theme/Tabs';
@@ -8,7 +8,7 @@ import TabItem from '@theme/TabItem';
 # Svelte
 
 <head>
-    <title>Svelte | Genezio Documentation</title>
+    <title>Svelte | DeployApps Documentation</title>
 </head>
 
 [Svelte](https://svelte.dev) is a modern web framework that allows you to write less code and build faster applications.
@@ -19,13 +19,13 @@ Get started in no time with the [Svelte template](https://app.genez.io/start/dep
 
 # Deployment
 
-Learn how to deploy an existing Svelte app using Genezio, a serverless deployment platform that simplifies app management and reduces costs.
+Learn how to deploy an existing Svelte app using DeployApps, a serverless deployment platform that simplifies app management and reduces costs.
 
 ## Prerequisites
 
-### 1. Install genezio
+### 1. Install DeployApps
 
-Use your preferred package manager to install Genezio:
+Use your preferred package manager to install DeployApps:
 
 <Tabs>
   <TabItem className="tab-item" value="npm" label="npm">
@@ -87,11 +87,11 @@ Open a web browser and navigate to http://localhost:5173/ to see the app running
 
 </details>
 
-## Create the Genezio Configuration File
+## Create the DeployApps Configuration File
 
 Now, create a `genezio.yaml` file in the root directory of your project.
 
-This file will contain the configuration needed to deploy your backend using Genezio. Here is an example configuration.
+This file will contain the configuration needed to deploy your backend using DeployApps. Here is an example configuration.
 
 :::info
 1. This example configuration works if **genezio.yaml** is in the same directory as your main application file.
@@ -130,7 +130,7 @@ This configuration file specifies the project name, deployment region, and detai
 
 ## Deploy the app
 
-In your terminal run the following command to deploy your app to the Genezio cloud:
+In your terminal run the following command to deploy your app to the DeployApps cloud:
 
 <div>
   ```bash
