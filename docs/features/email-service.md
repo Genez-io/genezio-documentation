@@ -1,6 +1,6 @@
 ---
 sidebar_position: 8
-description: Learn how to use Genezio’s managed email service for sending emails. Follow our guide for setup, configuration, and sending HTML emails
+description: Learn how to use DeployApps’s managed email service for sending emails. Follow our guide for setup, configuration, and sending HTML emails
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -8,9 +8,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 # Email Service
 
 <head>
-  <title>Email Service | Genezio Documentation</title>
+  <title>Email Service | DeployApps Documentation</title>
 </head>
-Genezio provides a way to send emails with a managed email service.
+DeployApps provides a way to send emails with a managed email service.
 
 ## Enable the Email Service
 
@@ -31,7 +31,7 @@ services
 
 To test your project locally, you have to create a file named `.env` and store the token there. This file should be in the root directory of your backend.
 
-Use the genezio [dashboard](https://app.genez.io) under `Integrations/Email Service` card to copy the token in your `.env` file.
+Use the DeployApps [dashboard](https://app.genez.io) under `Integrations/Email Service` card to copy the token in your `.env` file.
 
 <!-- {% code title=".env" %} -->
 
