@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 # Troubleshooting
 
 <head>
-  <title>Troubleshooting | Genezio Documentation</title>
+  <title>Troubleshooting | DeployApps Documentation</title>
 </head>
 Collection of frequently asked questions with ideas on how to troubleshoot and solve them.
 
@@ -35,7 +35,7 @@ export const Model =
 
 Sometimes, you may see a red error message at the top instead of the green `Success` label. Most likely that means your local server has encountered an error or is running on a different port.
 
-<figure style={{textAlign:"center", marginLeft:"0"}}><img style={{cursor:"pointer"}} src={useBaseUrl("img/image (39).webp")} alt="Connection Failed"/><figcaption><p>Genezio Test Interface connection Failed</p></figcaption></figure>
+<figure style={{textAlign:"center", marginLeft:"0"}}><img style={{cursor:"pointer"}} src={useBaseUrl("img/image (39).webp")} alt="Connection Failed"/><figcaption><p>DeployApps Test Interface connection Failed</p></figcaption></figure>
 
 To establish the connection, verify on which port your server is running and fill that port in the provided input, the click `Connect` (or press Enter).
 
@@ -69,7 +69,7 @@ You have to add the following lines into your `tsconfig.json`:
   },
 ```
 
-### genezio local doesn't reload the code changes <a href="#dns-misconfiguration" id="dns-misconfiguration"></a>
+### DeployApps local doesn't reload the code changes <a href="#dns-misconfiguration" id="dns-misconfiguration"></a>
 
 `genezio local` watches for files changes inside project directory. If your project directory path contains `(` or has `~` at the end of the path, then genezio local will stop watching for changes in the project.
 
@@ -90,7 +90,7 @@ If you can't save the custom domain for your project, then there are 2 possible 
 
 ### DNS misconfiguration <a href="#dns-misconfiguration" id="dns-misconfiguration"></a>
 
-If you encounter any difficulties while configuring the default domain of your site to your desired custom domain, we recommend reaching out to your DNS provider for assistance. They will be able to provide guidance and support in properly configuring your DNS settings to ensure a smooth and successful mapping of your custom domain to your genezio hosted site.
+If you encounter any difficulties while configuring the default domain of your site to your desired custom domain, we recommend reaching out to your DNS provider for assistance. They will be able to provide guidance and support in properly configuring your DNS settings to ensure a smooth and successful mapping of your custom domain to your DeployApps hosted site.
 
 Don't hesitate to contact us if the problems persist.
 
@@ -112,11 +112,11 @@ It can take up to 12 hours to validate your certificate
 
 ### Browser cache <a href="#browser-cache" id="browser-cache"></a>
 
-In case you have recently made changes to your custom domain or removed it, and you are experiencing difficulties accessing the new URL in your browser, it is recommended to clear your browser's cache. Clearing the cache will ensure that your browser fetches the latest DNS information and redirects you to the correct URL associated with your genezio deployment.
+In case you have recently made changes to your custom domain or removed it, and you are experiencing difficulties accessing the new URL in your browser, it is recommended to clear your browser's cache. Clearing the cache will ensure that your browser fetches the latest DNS information and redirects you to the correct URL associated with your DeployApps deployment.
 
 To clear your browser's cache, please refer to the documentation specific to your browser. The process may vary slightly depending on the browser you are using. By following the instructions provided by your browser's documentation, you can easily clear the cache and access your updated custom domain without any issues.
 
-If you encounter any further problems or require additional assistance, feel free to reach out to the genezio support team for further guidance.
+If you encounter any further problems or require additional assistance, feel free to reach out to the DeployApps support team for further guidance.
 
 ### Still in need for help? <a href="#need-more" id="need-more"></a>
 
