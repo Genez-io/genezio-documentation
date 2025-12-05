@@ -8,32 +8,32 @@ import TabItem from '@theme/TabItem';
 
 # Deploy a Serverless Function
 
-In this tutorial, you will learn how to deploy functions or serverless workloads on Genezio. We'll cover the benefits, answer common questions, and provide detailed deployment steps.
+In this tutorial, you will learn how to deploy functions or serverless workloads on DeployApps. We'll cover the benefits, answer common questions, and provide detailed deployment steps.
 
-Genezio is a Function-as-a-Service (FaaS) platform that simplifies cloud deployments and significantly reduces infrastructure costs.
+DeployApps is a Function-as-a-Service (FaaS) platform that simplifies cloud deployments and significantly reduces infrastructure costs.
 
 **Do I need to modify my source code?** Make sure you export your function as a `handler` that will process events. Check out [this section](#2-create-a-function-handler) to see a code snippet.
 
-## Why Use Genezio?
+## Why Use DeployApps?
 
-### Benefits of Using Genezio
+### Benefits of Using DeployApps
 
-1. **Faster Deployment**: Genezio optimizes the deployment process, significantly reducing the time it takes to get your app live.
-2. **Reduced costs**: Thanks to Genezio’s efficient infrastructure the costs are significantly lower. Additionally, Genezio offers a more predictable pricing plan, avoiding the pitfalls of the typical “pay-as-you-go” model that can lead to unexpectedly high bills due to unwanted mistakes.
-3. **Reliable and Scalable**: No longer worry about PM2 and Docker. You write the code, and Genezio seamlessly scales it across multiple cores.
+1. **Faster Deployment**: DeployApps optimizes the deployment process, significantly reducing the time it takes to get your app live.
+2. **Reduced costs**: Thanks to DeployApps’s efficient infrastructure the costs are significantly lower. Additionally, DeployApps offers a more predictable pricing plan, avoiding the pitfalls of the typical “pay-as-you-go” model that can lead to unexpectedly high bills due to unwanted mistakes.
+3. **Reliable and Scalable**: No longer worry about PM2 and Docker. You write the code, and DeployApps seamlessly scales it across multiple cores.
 4. **Enhanced Security**: Built-in security features and automatic updates protect your app against the latest threats without additional effort.
 5. **Reduced Management Overhead**: Focus on developing your app instead of managing servers and routine maintenance tasks.
 6. **Easy Migration**: Obtain all these advantages with minimal code changes.
 
-### How Does Genezio Handle High Traffic?
+### How Does DeployApps Handle High Traffic?
 
-Genezio, being a Function as a Service (FaaS) platform, automatically scales your application based on traffic demands. It works by executing functions in response to events and can handle a large number of requests concurrently. This ensures your app remains responsive and performs well during traffic spikes.
+DeployApps, being a Function as a Service (FaaS) platform, automatically scales your application based on traffic demands. It works by executing functions in response to events and can handle a large number of requests concurrently. This ensures your app remains responsive and performs well during traffic spikes.
 
 ## Prerequisites
 
-### 1. Install genezio
+### 1. Install DeployApps
 
-Use your preferred package manager to install genezio:
+Use your preferred package manager to install DeployApps:
 
 <Tabs>
   <TabItem className="tab-item" value="npm" label="npm">
@@ -85,7 +85,7 @@ export const handler = async (event) => {
   const name = event.queryStringParameters?.name || 'George';
   return {
     statusCode: 200,
-    body: `Hello, ${name}! Welcome to Genezio Functions!`,
+    body: `Hello, ${name}! Welcome to DeployApps Functions!`,
   };
 };
 ```
@@ -101,7 +101,7 @@ export const handler = async (event) => {
     const name = event.queryStringParameters?.name || "George";
     return {
       statusCode: 200,
-      body: `Hello, ${name}! Welcome to Genezio Functions!`,
+      body: `Hello, ${name}! Welcome to DeployApps Functions!`,
     };
   };
     ```
@@ -112,11 +112,11 @@ export const handler = async (event) => {
 
 ## Deployment Guide
 
-## 1. Create the Genezio Configuration File
+## 1. Create the DeployApps Configuration File
 
 Now, create a `genezio.yaml` file in the root directory of your project.
 
-This file will contain the configuration needed to deploy your backend using Genezio. Here is an example configuration.
+This file will contain the configuration needed to deploy your backend using DeployApps. Here is an example configuration.
 
 :::info
 
@@ -180,18 +180,18 @@ def handler(event):
     name = event.get("queryStringParameters", {}).get("name", "George")
     return {
         "statusCode": 200,
-        "body": f"Hello, {name}! Welcome to Genezio Functions!",
+        "body": f"Hello, {name}! Welcome to DeployApps Functions!",
     }
 ```
 </div>
 
 ## Deployment Guide
 
-## 1. Create the Genezio Configuration File
+## 1. Create the DeployApps Configuration File
 
 Now, create a `genezio.yaml` file in the root directory of your project.
 
-This file will contain the configuration needed to deploy your backend using Genezio. Here is an example configuration.
+This file will contain the configuration needed to deploy your backend using DeployApps. Here is an example configuration.
 
 :::info
 
@@ -232,7 +232,7 @@ backend:
 This configuration file specifies the project name, deployment region, and details about the backend.
 
 :::note
-During deployment, Genezio will automatically install all dependencies specified in your `requirements.txt` file using the correct architecture (Linux x86) and Python 3.11 runtime environment. This ensures compatibility with our serverless infrastructure.
+During deployment, DeployApps will automatically install all dependencies specified in your `requirements.txt` file using the correct architecture (Linux x86) and Python 3.11 runtime environment. This ensures compatibility with our serverless infrastructure.
 :::
   </TabItem>
 </Tabs>
@@ -272,14 +272,10 @@ For more information about environment variables, you can check the [official do
 
 ## Check the Deployed App
 
-After deploying your application, you can visit it by navigating to the the URL provided either in the terminal or in the Genezio dashboard. The URL can be copied from the corresponding project's overview page.
+After deploying your application, you can visit it by navigating to the the URL provided either in the terminal or in the DeployApps dashboard. The URL can be copied from the corresponding project's overview page.
 
-Additionally, you can monitor and manage your app through the [Genezio App Dashboard](https://app.genez.io/dashboard). The dashboard URL, also provided after deployment, allows you to access comprehensive views of your project's status and logs.
+Additionally, you can monitor and manage your app through the [DeployApps App Dashboard](https://app.genez.io/dashboard). The dashboard URL, also provided after deployment, allows you to access comprehensive views of your project's status and logs.
 
 You can find this URL in the deployment output under the `App Dashboard URL` section.
-
-### Support <a href="#support" id="support"></a>
-
-We invite you to join our community on [Discord](https://discord.gg/uc9H5YKjXv) for further information and help.
 
 **Happy Learning!**
