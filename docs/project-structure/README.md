@@ -160,7 +160,7 @@ frontend:
   </TabItem>
 </Tabs>
 
-While developing locally, `genezio local` can hot-reload your DeployApps SDK to reflect the changes in your backend code. This is useful for avoiding the need to manually generate the SDK every time you make changes to your backend code. For this to work, you need to tell genezio where your client repository is located, to be able to install the SDK automatically in that path.
+While developing locally, `genezio local` can hot-reload your DeployApps SDK to reflect the changes in your backend code. This is useful for avoiding the need to manually generate the SDK every time you make changes to your backend code. For this to work, you need to tell DeployApps where your client repository is located, to be able to install the SDK automatically in that path.
 
 To link your client repository to a deployed backend server, run:
 
@@ -192,7 +192,7 @@ If you encounter any errors or difficulties to test locally or deploy, check tha
 
 `genezio deploy` and `genezio local` should always be executed at the same location where the `genezio.yaml` configuration file is saved.
 
-`genezio link` or `genezio unlink` are specifically useful in a multi-repository structure. These commands are used to link/unlink the genezio Generated SDK in the client directory.
+`genezio link` or `genezio unlink` are specifically useful in a multi-repository structure. These commands are used to link/unlink the DeployApps Generated SDK in the client directory.
 
 Depending on the project's structure (single repository or multi-repositories), you may need to update the paths for the:
 
