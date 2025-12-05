@@ -1,5 +1,5 @@
 ---
-description: Learn how to deploy a Next.js application with Genezio.
+description: Learn how to deploy a Next.js application with DeployApps.
 ---
 
 import Tabs from '@theme/Tabs';
@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 # Next.js
 
 <head>
-    <title>Next.js | Genezio Documentation</title>
+    <title>Next.js | DeployApps Documentation</title>
 </head>
 
 Next.js is a React framework that allows you to build static and server-rendered web applications. It is a popular choice for developers who want to build modern web applications with React.
@@ -20,11 +20,11 @@ Get started in no time with the [Next.js template](https://app.genez.io/nextjs-g
 
 # Deployment
 
-Learn how to deploy an existing Next.js app using Genezio, a serverless deployment platform that simplifies app management and reduces costs.
+Learn how to deploy an existing Next.js app using DeployApps, a serverless deployment platform that simplifies app management and reduces costs.
 
-### 1. Install genezio
+### 1. Install DeployApps
 
-Use your preferred package manager to install Genezio:
+Use your preferred package manager to install DeployApps:
 
 <Tabs>
   <TabItem className="tab-item" value="npm" label="npm">
@@ -63,7 +63,7 @@ genezio create nextjs --name nextjs-project --region us-east-1 --default
 genezio deploy
 ```
 
-This command will build your Next.js application and deploy it to the cloud. Genezio uses a `genezio.yaml` file to store configuration about your project such as project name and region. When running the `genezio deploy` command, Genezio will create this file for you if it doesn't exist after asking you some interactive questions.
+This command will build your Next.js application and deploy it to the cloud. DeployApps uses a `genezio.yaml` file to store configuration about your project such as project name and region. When running the `genezio deploy` command, DeployApps will create this file for you if it doesn't exist after asking you some interactive questions.
 
 The `genezio.yaml` configuration file will look something like this:
 
@@ -90,7 +90,7 @@ nextjs:
 
 ### 3. Monitor your project
 
-You can monitor and manage your application through the [Genezio App Dashboard](https://app.genez.io/dashboard). The dashboard URL, also provided after deployment, allows you to access comprehensive views of your project's status and logs.
+You can monitor and manage your application through the [DeployApps App Dashboard](https://app.genez.io/dashboard). The dashboard URL, also provided after deployment, allows you to access comprehensive views of your project's status and logs.
 
 ## Local Development
 
@@ -127,11 +127,11 @@ You can specify a custom port by setting the `GENEZIO_PORT_NEXTJS` environment v
 
 -   ### How do I check the logs of a Next.js application?
 
-    Your Next.js application is deployed on our Function as a Service platform as function usually called `function-next`. Navigate to the `Logs` tab in the Genezio dashboard to see the logs of your application.
+    Your Next.js application is deployed on our Function as a Service platform as function usually called `function-next`. Navigate to the `Logs` tab in the DeployApps dashboard to see the logs of your application.
 
 -   ### How do I set environment variables for my Next.js application?
 
-    Environment variables for a Next.js project hosted on Genezio are set in the same way as any other Genezio project. Visit the `Environment Variables` tab in the project dashboard to set your environment variables.
+    Environment variables for a Next.js project hosted on DeployApps are set in the same way as any other DeployApps project. Visit the `Environment Variables` tab in the project dashboard to set your environment variables.
 
 -   ### How do I test locally?
 
@@ -143,7 +143,7 @@ You can specify a custom port by setting the `GENEZIO_PORT_NEXTJS` environment v
 
 -   ### Do I need a Docker/Dockerfile?
 
-    No, you don't need a Dockerfile to deploy a Next.js application with Genezio. Genezio builds your application using a serverless architecture, which means that you don't need to worry about Docker, Dockerfiles or scaling.
+    No, you don't need a Dockerfile to deploy a Next.js application with DeployApps. DeployApps builds your application using a serverless architecture, which means that you don't need to worry about Docker, Dockerfiles or scaling.
 
 ## Known Limitations
 
@@ -151,4 +151,4 @@ You can specify a custom port by setting the `GENEZIO_PORT_NEXTJS` environment v
 
 [Incremental Static Regeneration (ISR)](https://nextjs.org/docs/pages/building-your-application/data-fetching/incremental-static-regeneration) in Next.js allows per-page static generation and dynamic content updates. It revalidates pages on-demand, striking a balance between static and dynamic content.
 
-At the moment, Genezio does not support incremental static regeneration (ISR) for Next.js applications. However, we are working on adding this feature in the future.
+At the moment, DeployApps does not support incremental static regeneration (ISR) for Next.js applications. However, we are working on adding this feature in the future.
