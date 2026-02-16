@@ -3,7 +3,7 @@ sidebar_position: 1
 description: Access DeployApps documentation to optimize your development. Find tutorials, guides, and examples to effectively use DeployApps’s capabilities
 ---
 
-import DeployAppsUserDocCard from "../src/theme/DeployAppsUserDocCard";
+import GenezioUserDocCard from "../src/theme/GenezioUserDocCard";
 
 # Overview
 
@@ -13,7 +13,7 @@ import DeployAppsUserDocCard from "../src/theme/DeployAppsUserDocCard";
 
 ## Getting Started
 
-<DeployAppsUserDocCard type="getting-started"></DeployAppsUserDocCard>
+<GenezioUserDocCard type="getting-started"></GenezioUserDocCard>
 
 ## DeployApps Overview
 
@@ -65,8 +65,8 @@ Explore the sections below for detailed instructions, tutorials, and API referen
 
 ## Features
 
-<DeployAppsUserDocCard type="features"></DeployAppsUserDocCard>
+<GenezioUserDocCard type="features"></GenezioUserDocCard>
 
 ## Examples
 
-<DeployAppsUserDocCard type="examples"></DeployAppsUserDocCard>
+<GenezioUserDocCard type="examples"></GenezioUserDocCard>
