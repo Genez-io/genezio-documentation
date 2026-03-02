@@ -1,6 +1,7 @@
 ---
-sidebar_position: 1
-description: Access DeployApps documentation to optimize your development. Find tutorials, guides, and examples to effectively use DeployApps’s capabilities
+
+sidebar_position: 10
+description: This guide offers a practical blueprint for moving each part of your stack to well-supported alternatives.
 ---
 
 # Migrating From Genezio
