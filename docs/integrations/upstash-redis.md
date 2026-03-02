@@ -1,6 +1,6 @@
 ---
 sidebar_position: 3
-description: Learn how to integrate Upstash Redis with your projects using Genezio. Clear and detailed instructions for all developers
+description: Learn how to integrate Upstash Redis with your projects using DeployApps. Clear and detailed instructions for all developers
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -8,10 +8,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 # Upstash Redis
 
 <head>
-  <title>Upstash Redis Integration | Genezio Documentation</title>
+  <title>Upstash Redis Integration | DeployApps Documentation</title>
 </head>
 :::info
-A guide to integrate Upstash resources in genezio projects
+A guide to integrate Upstash resources in DeployApps projects
 :::
 
 ### Introduction to Upstash
@@ -36,7 +36,7 @@ Hit `Save` to save the database credentials as backend environment variables:
 
 <figure style={{textAlign:"center", marginLeft:"0"}}><img style={{cursor:"pointer"}} src={useBaseUrl("/img/image (44) (1).webp")} alt=""/><figcaption></figcaption></figure>
 
-Use the environment variables in your genezio project to connect to the Redis database.
+Use the environment variables in your DeployApps project to connect to the Redis database.
 
 ```typescript title="index.ts"
 import { Redis } from '@upstash/redis'
@@ -69,7 +69,7 @@ npm install @upstash/redis
 
 To test your project locally, you have to create a file named `.env` and store the Upstash Redis credentials there. This file should be in the root directory of your backend.
 
-Use the genezio [dashboard](https://app.genez.io) under `Integrations/Upstash Redis` card to copy the Redis credentials in your `.env` file.
+Use the DeployApps [dashboard](https://app.genez.io) under `Integrations/Upstash Redis` card to copy the Redis credentials in your `.env` file.
 
 <!-- {% code title=".env" %} -->
 

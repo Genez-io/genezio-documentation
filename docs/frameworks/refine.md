@@ -1,5 +1,5 @@
 ---
-description: Learn how to deploy a refine application with Genezio.
+description: Learn how to deploy a refine application with DeployApps.
 ---
 
 import Tabs from '@theme/Tabs';
@@ -8,7 +8,7 @@ import TabItem from '@theme/TabItem';
 # Refine
 
 <head>
-    <title>Refine | Genezio Documentation</title>
+    <title>Refine | DeployApps Documentation</title>
 </head>
 
 [Refine](https://refine.dev) is an open-source Retool for Enterprise, helping developers build React-based internal tools, admin panels, dashboards & B2B apps with unmatched flexibility.
@@ -20,14 +20,14 @@ Get started in no time with the [Refine template](https://app.genez.io/start/dep
 
 # Deployment
 
-Learn how to deploy an existing refine app using Genezio, a serverless deployment platform that simplifies app management and reduces costs.
+Learn how to deploy an existing refine app using DeployApps, a serverless deployment platform that simplifies app management and reduces costs.
 
 
 ## Prerequisites
 
-### 1. Install genezio
+### 1. Install DeployApps
 
-Use your preferred package manager to install Genezio:
+Use your preferred package manager to install DeployApps:
 
 <Tabs>
   <TabItem className="tab-item" value="npm" label="npm">
@@ -91,7 +91,7 @@ Open a web browser and navigate to http://localhost:5173/ to see the app running
 
 ## Deploy the app
 
-In your terminal window first stop `genezio local` if it was already running, then run the following command to deploy your app to the Genezio cloud:
+In your terminal window first stop `genezio local` if it was already running, then run the following command to deploy your app to the DeployApps cloud:
 
 <div>
   ```bash
@@ -111,7 +111,7 @@ $ Frontend URL: https://<subdomain>.app.genez.io
 
 Go to the **Frontend URL** in your browser to test the newly created app.
 
-## Understand how your Refine app calls the Genezio backend.
+## Understand how your Refine app calls the DeployApps backend.
 
 Open the `client/src/App.tsx` file and see how the Admin component uses the authProvider and the dataProvider.
 

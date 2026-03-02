@@ -2,13 +2,13 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 # Rate Limiter
 
-You can use Genezio Rate Limiter Decorator to limit the amount of requests per minute that are being called from the same IP address.
-Genezio provides the `@GenezioRateLimiter` that can be used on any method of a deployed class. This feature is useful to prevent abuse of your backend services.
+You can use DeployApps Rate Limiter Decorator to limit the amount of requests per minute that are being called from the same IP address.
+DeployApps provides the `@GenezioRateLimiter` that can be used on any method of a deployed class. This feature is useful to prevent abuse of your backend services.
 
 ## Prerequisites
 
-To use the rate limiter, you need to have a Redis database. You can integrate your project with an Upstash Redis database from the Genezio dashboard or use your own Redis database.
-For more information on how to integrate your Genezio project with an Upstash Redis database, see the [Upstash Redis integration guide](/docs/tutorials/connect-to-redis-upstash/).
+To use the rate limiter, you need to have a Redis database. You can integrate your project with an Upstash Redis database from the DeployApps dashboard or use your own Redis database.
+For more information on how to integrate your DeployApps project with an Upstash Redis database, see the [Upstash Redis integration guide](/docs/tutorials/connect-to-redis-upstash/).
 
 ## How to use the rate limiter
 

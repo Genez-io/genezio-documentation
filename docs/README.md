@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-description: Access Genezio documentation to optimize your development. Find tutorials, guides, and examples to effectively use Genezio’s capabilities
+description: Access DeployApps documentation to optimize your development. Find tutorials, guides, and examples to effectively use DeployApps’s capabilities
 ---
 
 # Migrating From Genezio

@@ -1,6 +1,6 @@
 ---
 sidebar_position: 5
-description: Explore how to integrate Upstash Qstash with your applications using Genezio. Perfect for developers seeking advanced messaging solutions
+description: Explore how to integrate Upstash Qstash with your applications using DeployApps. Perfect for developers seeking advanced messaging solutions
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 # Upstash Qstash
 
 <head>
-  <title>Upstash Qstash Integration | Genezio Documentation</title>
+  <title>Upstash Qstash Integration | DeployApps Documentation</title>
 </head>
 ### Introduction to Upstash
 
@@ -28,7 +28,7 @@ Hit `Save` to save the queue credentials as backend environment variables:
 
 <figure style={{textAlign:"center", marginLeft:"0"}}><img style={{cursor:"pointer"}} src={useBaseUrl("/img/image (53).webp")} alt=""/><figcaption></figcaption></figure>
 
-Use the environment variables in your genezio project to publish to the Qstash queue.
+Use the environment variables in your DeployApps project to publish to the Qstash queue.
 
 In the code snippet below `sendPing()` is the producer that will post information on the Qstash queue. Once there is data in the queue, the consumer - `ping()` - will be executed.
 
@@ -124,7 +124,7 @@ To check more on how to manipulate environment variables, go to [backend-environ
 
 To test your project locally, you have to create a file named `.env` and store the Upstash Qstash credentials there. This file should be in the root directory of your backend.
 
-Use the Genezio [dashboard](https://app.genez.io) under `Integrations/Upstash Qstash` card to copy the Qstash credentials in your `.env` file.
+Use the DeployApps [dashboard](https://app.genez.io) under `Integrations/Upstash Qstash` card to copy the Qstash credentials in your `.env` file.
 
 <!-- {% code title=".env" %} -->
 
@@ -137,7 +137,7 @@ QSTASH_NEXT_SIGNING_KEY=<next-siging-key>
 
 <!-- {% endcode %} -->
 
-To use QStash, the consumer webhook has to be exposed online in order for QStash to forward data to it. Genezio doesn't yet support this for testing local webhooks. Hence, to expose a webhook online, you can use `ngrok`. The following command will expose the local Genezio server which listens to 8083:
+To use QStash, the consumer webhook has to be exposed online in order for QStash to forward data to it. DeployApps doesn't yet support this for testing local webhooks. Hence, to expose a webhook online, you can use `ngrok`. The following command will expose the local DeployApps server which listens to 8083:
 
 ```bash
 ngrok http http://localhost:8083
@@ -152,5 +152,3 @@ QUEUE_WEBHOOK_URL = https://e43d-2a02-2f0c-5801-ce00-edfd-f543-22cc-9395.ngrok.i
 ```
 
 <!-- {% endcode %} -->
-
-For more details on ngrok, check out [their getting started](https://ngrok.com/docs/getting-started/).

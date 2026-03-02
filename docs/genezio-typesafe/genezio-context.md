@@ -1,6 +1,6 @@
-# Genezio Context
+# DeployApps Context
 
-The `GnzContext` object provided by the `@genezio/types` packages is the primary way in which you can interact with middlewares in Genezio projects.
+The `GnzContext` object provided by the `@genezio/types` packages is the primary way in which you can interact with middlewares in DeployApps projects.
 Our out of the box middleware already uses this type to ensure cross-integration between our platform and your code.
 
 The `GnzContext` object has the following structure:
@@ -30,7 +30,7 @@ export type GnzContext = {
 ```
 
 The `token` and the `user` properties are used for the `@GenezioAuth` decorator. The `requestContext` and the `headers` properties are used to store information
-about the incoming request. These two properties can be used to monitor cookies, source IPs, browser information, etc. The last property is used to tell the genezio platform that this is a `GnzContext` object. This is used to populate the object with the intended information.
+about the incoming request. These two properties can be used to monitor cookies, source IPs, browser information, etc. The last property is used to tell the DeployApps platform that this is a `GnzContext` object. This is used to populate the object with the intended information.
 
 :::info
 It is important to note that the `GnzContext` object needs to be placed as the first parameter of your function for it to work as intended.
@@ -38,12 +38,12 @@ It is important to note that the `GnzContext` object needs to be placed as the f
 
 ## How to use the GnzContext object
 
-Let's see an example of how to use the `GnzContext` object in a Genezio project:
+Let's see an example of how to use the `GnzContext` object in a DeployApps project:
 
-You will need a Genezio project to continue. If you don't have one, you can check out the [Getting Started](https://genezio.com/docs/getting-started/) guide.
+You will need a DeployApps project to continue. 
 
 The best way to use the GnzContext for your middleware is by creating decorators that will perform the necessary operations on the context object. Let's create a simple middleware that logs the context object using decorators.
-In your Genezio project, create a new file called `middleware.ts` and add the following code:
+In your DeployApps project, create a new file called `middleware.ts` and add the following code:
 
 ```typescript title="middleware.ts" showLineNumbers
 export function LogGnzContext() {

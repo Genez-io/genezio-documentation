@@ -1,6 +1,6 @@
 ---
 sidebar_position: 4
-description: Learn how to set, manage, and use backend environment variables in Genezio. Explore the Genezio CLI, genezio.yaml file, and dashboard methods for configuring secure API keys, database URLs, and app settings
+description: Learn how to set, manage, and use backend environment variables in DeployApps. Explore the DeployApps CLI, genezio.yaml file, and dashboard methods for configuring secure API keys, database URLs, and app settings
 ---
 
 import Tabs from '@theme/Tabs';
@@ -9,17 +9,17 @@ import TabItem from '@theme/TabItem';
 # Backend Environment Variables
 
 <head>
-  <title>How to Set Backend Environment Variables in Genezio | Genezio Documentation</title>
+  <title>How to Set Backend Environment Variables in DeployApps | DeployApps Documentation</title>
 </head>
 
-This page describes how to set environment variables for your functions/servers on the Genezio platform.
+This page describes how to set environment variables for your functions/servers on the DeployApps platform.
 Environment variables are used to store information or configuration data that you do not want to hardcode in your code such as API keys, database URLs,etc.
 
 ## How to set environment variables
 
 You can pass environment variables to your functions in the following ways:
-* Individually set environment variables using the [Genezio dashboard](https://app.genez.io/dashboard)
-* In bulk using the [Genezio CLI](https://genezio.com/docs/cli/) by providing a `.env` file
+* Individually set environment variables using the [DeployApps dashboard](https://app.genez.io/dashboard)
+* In bulk using the [DeployApps CLI](https://genezio.com/docs/cli/) by providing a `.env` file
 * Making use of the `genezio.yaml` file to set environment variables
 
 ### Set environment variables using the Genezio dashboard
@@ -32,7 +32,7 @@ Note: The environment variables are immediately injecting into the execution env
 
 ### Set environment variables using the `genezio` CLI
 
-You can set environment variables using the genezio CLI by providing a `.env` file and running the following command:
+You can set environment variables using the DeployApps CLI by providing a `.env` file and running the following command:
 
 ```bash
 # E.G. genezio deploy --env backend/.env
@@ -124,7 +124,7 @@ The environment variables used on the deployed environment are exported.
 
 Integrations will automatically add environment variables to your project.
 
-You can always check the environment variables added to your project in the `Environment Variables` tab  or in the `Integrations` tab in the [Genezio dashboard](https://app.genez.io/dashboard).
+You can always check the environment variables added to your project in the `Environment Variables` tab  or in the `Integrations` tab in the [DeployApps dashboard](https://app.genez.io/dashboard).
 
 ## Linking databases
 
@@ -132,7 +132,7 @@ Linking databases will automatically add the database URL to your environment va
 
 For example, linking a MongoDB database named `my-mongo` will automatically add the `MY_MONGO_DATABASE_URL` environment variable to your project.
 
-You can always check the environment variables added to your project in the `Environment Variables` tab  or in the `Databases/Connect` tab in the [Genezio dashboard](https://app.genez.io/dashboard).
+You can always check the environment variables added to your project in the `Environment Variables` tab  or in the `Databases/Connect` tab in the [DeployApps dashboard](https://app.genez.io/dashboard).
 
 ## Support
 

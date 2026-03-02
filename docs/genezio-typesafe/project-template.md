@@ -1,6 +1,6 @@
 # Project Template
 
-The Genezio project template showcases how you can structure large projects with Genezio. This template can be used as a starting point for your project or as a way to learn how to organize your project according to the best practices. For this project, we created a dummy todo application to showcase all the functionalities of Genezio.
+The DeployApps project template showcases how you can structure large projects with DeployApps. This template can be used as a starting point for your project or as a way to learn how to organize your project according to the best practices. For this project, we created a dummy todo application to showcase all the functionalities of DeployApps.
 
 The whole project can be found in this [GitHub repository](https://github.com/Genez-io/ultimate-project-template.git).
 
@@ -42,7 +42,7 @@ These DTOs are used to ensure that the data is in the correct format when it is 
 This directory showcases custom made middleware using typescript decorators. The `dateChecker.ts` file contains a decorator that takes two dates as parameters
 and checks if the invoked method was called between those two dates. If the request doesn't pass the check then it is dropped. The `parameterChecker.ts` file
 contains a decorator that uses the `Zod` library to check if the method parameters have the right structure. Both of these decorators are used on methods inside
-Genezio classes. You can also implement your own middleware that invokes classes or parameters directly. If you want to learn more about typescript decorators
+DeployApps classes. You can also implement your own middleware that invokes classes or parameters directly. If you want to learn more about typescript decorators
 you can check out the official [documentation](https://www.typescriptlang.org/docs/handbook/decorators.html).
 
 #### Services
@@ -77,11 +77,11 @@ Layouts are used to wrap our pages and ensure consistency between our views. The
 
 #### Views
 
-In the views folder, we define the pages that will be served on the routes defined in the `App.tsx` file. For our simple TODO application, we need two pages to handle authentication, `Register.tsx` and `Login.tsx`, and one page to handle the user's tasks, `AllTasks.tsx`. The register and login pages are unauthenticated routes so they will be rendered using the `Auth.tsx` layout. The `AllTasks.tsx` route is authenticated so it will be rendered using the `Admin.tsx` route. All authentication logic is handled by the `AuthService` provided by the `@genezio/auth` library. If you want to learn more about the Genezio authentication, you can check out the [documentation](/docs/features/authentication).
+In the views folder, we define the pages that will be served on the routes defined in the `App.tsx` file. For our simple TODO application, we need two pages to handle authentication, `Register.tsx` and `Login.tsx`, and one page to handle the user's tasks, `AllTasks.tsx`. The register and login pages are unauthenticated routes so they will be rendered using the `Auth.tsx` layout. The `AllTasks.tsx` route is authenticated so it will be rendered using the `Admin.tsx` route. All authentication logic is handled by the `AuthService` provided by the `@genezio/auth` library. If you want to learn more about the DeployApps authentication, you can check out the [documentation](/docs/features/authentication).
 
 ## How to run the project
 
-> 👉 **Step 1** - Install Genezio
+> 👉 **Step 1** - Install DeployApps
 
 ```bash
 $ npm install -g genezio
@@ -97,10 +97,7 @@ $ cd ultimate-project-template
 > 👉 **Step 3** - Populate the `.env` file.
 > In the `server` directory create a `.env` file and populate it using the `.env.template` file
 
-- If you need help with the environment variables, please follow these two tutorials:
 
-* MongoDB URL: https://genezio.com/docs/tutorials/connect-to-mongo-atlas/
-* PostgreSQL URL: https://genezio.com/docs/features/databases/
 
 > 👉 **Step 4** - Deploy the backend with the environment variables. In the `root` of the project run:
 
@@ -109,10 +106,10 @@ $ genezio deploy --backend --env ./server/.env
 ```
 
 > 👉 **Step 5** - Enable Authentication
-> Go to the [Genezio Dashboard](https://app.genez.io/dashboard) and choose your project. Click on the `Authentication` tab and choose which database you want to use. Then click on `Enable`. You can choose either MongoDB or PostgreSQL. After that, enable the `Email` provider. Copy the `Token` and the `Region` and save them for later. For more information about Authentication, check out the [documentation](/docs/features/authentication/).
+> Go to the [DeployApps Dashboard](https://app.genez.io/dashboard) and choose your project. Click on the `Authentication` tab and choose which database you want to use. Then click on `Enable`. You can choose either MongoDB or PostgreSQL. After that, enable the `Email` provider. Copy the `Token` and the `Region` and save them for later. For more information about Authentication, check out the [documentation](/docs/features/authentication/).
 
 > 👉 **Step 6** - Set up Authentication on the frontend
-> In the `client` directory go to `src/main.tsx` file and replace the placeholders in the AuthService initialization with the values saved from the Genezio Dashboard.
+> In the `client` directory go to `src/main.tsx` file and replace the placeholders in the AuthService initialization with the values saved from the DeployApps Dashboard.
 
 ```typescript title="main.tsx" showLineNumbers
 // TODO: Add your token and region from the Genezio dashboard https://app.genez.io/dashboard
@@ -142,8 +139,8 @@ If you want to learn more about our test interface, you can check out the [docum
 $ genezio deploy
 ```
 
-- Open your browser and go to the frontend link provided by Genezio to see the application.
+- Open your browser and go to the frontend link provided by DeployApps to see the application.
 
 ## Conclusion
 
-This template is a basis for how to structure large Genezio projects. You can use this project and customize it as you see fit to cater to your personal use cases. If you need any help or have any feedback feel free to reach out to us on [Discord](https://discord.com/invite/uc9H5YKjXv) or open a [Github issue](https://github.com/Genez-io/genezio/issues/new/choose) and we will assist you moving forward.
+This template is a basis for how to structure large DeployApps projects. You can use this project and customize it as you see fit to cater to your personal use cases. If you need any help or have any feedback feel free to reach out to us on [Discord](https://discord.com/invite/uc9H5YKjXv) or open a [Github issue](https://github.com/Genez-io/genezio/issues/new/choose) and we will assist you moving forward.

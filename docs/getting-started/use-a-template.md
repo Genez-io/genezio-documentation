@@ -1,6 +1,6 @@
 ---
 sidebar_position: 2
-description: Start your first project with Genezio by using a template.
+description: Start your first project with DeployApps by using a template.
 ---
 
 import Tabs from '@theme/Tabs';
@@ -10,14 +10,14 @@ import TabItem from '@theme/TabItem';
 # Use a Template
 
 <head>
-  <title>Getting Started with Genezio | Genezio Documentation</title>
+  <title>Getting Started with DeployApps | DeployApps Documentation</title>
 </head>
 
-Welcome! This guide will help you create your first project on Genezio by using one of our templates.
+Welcome! This guide will help you create your first project on DeployApps by using one of our templates.
 
 ## 1. Choose a template
 
-First make sure you have a Genezio account. If you don't have one, you can create one [here](https://app.genez.io/auth/signup).
+First make sure you have a DeployApps account. If you don't have one, you can create one [here](https://app.genez.io/auth/signup).
 
 From the [New Project page](https://app.genez.io/auth/login?redirect=new-project) you can choose a template to start your project with.
 
@@ -41,14 +41,8 @@ Now that your project is deployed, you can edit it. You can make changes to your
 
 Alternatively, if you want to make changes to your project locally, you can clone the repository from Github and make changes to the project.
 
-When you are ready to deploy your changes, you can push the changes and Genezio will automatically deploy them.
+When you are ready to deploy your changes, you can push the changes and DeployApps will automatically deploy them.
 
 ## 5. Next steps
 
 Congratulations! You have successfully deployed your first project.
-
-Now that you have deployed your starter project, you can explore more features of Genezio and continue building the project:
-
-- [Custom Domains](/docs/features/custom-domain-configuration/)
-- [Cron Jobs](/docs/genezio-typesafe/cron-methods/)
-- [HTTP Webhooks](/docs/genezio-typesafe/http-methods-webhooks/)

@@ -1,5 +1,5 @@
 ---
-description: Learn about Genezio’s on-demand databases, including PostgreSQL and MongoDB. Create, manage, and link databases effortlessly with Genezio
+description: Learn about DeployApps’s on-demand databases, including PostgreSQL and MongoDB. Create, manage, and link databases effortlessly with Genezio
 ---
 
 import CreateDatabase from '/img/features/databases/create_database.webp';
@@ -10,12 +10,12 @@ import TabItem from '@theme/TabItem';
 # Databases
 
 <head>
-  <title>Databases | Genezio Documentation</title>
+  <title>Databases | DeployApps Documentation</title>
 </head>
 Databases enable you to store and manage data in a structured way. They are a fundamental part of most applications and
 are used to store information such as user data, application data, logs, and more.
 
-Genezio offers on demand databases that are provisioned through our partners. This means that you can create a
+DeployApps offers on demand databases that are provisioned through our partners. This means that you can create a
 database in a few seconds without having to worry about the infrastructure, scalability or maintenance of it.
 
 ## Supported Databases
@@ -79,7 +79,7 @@ Once the database is created, you have two options to use it:
   This is useful when you want to inspect/modify the database using a database client such as psql, DBeaver or TablePlus.
   :::
 
-- **Through a Genezio project**: You can create a project and link the database to it. Click on the project you want to add the database to and
+- **Through a DeployApps project**: You can create a project and link the database to it. Click on the project you want to add the database to and
   click on the `Database` button on the sidebar. Here you can link a previously created database to the project or create a new database. This way you can use the
   database in your project without having to worry about the credentials. The connection URL can be accessed by
   your application through an environment variable that has the following format: `${DATABASE_NAME}_DATABASE_URL`.

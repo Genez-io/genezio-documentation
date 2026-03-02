@@ -1,6 +1,6 @@
 ---
 sidebar_position: 2
-description: Begin your Genezio journey with our “Getting Started” guide. Master backend class creation, method exporting, frontend calls, and local deployment for testing
+description: Begin your DeployApps journey with our “Getting Started” guide. Master backend class creation, method exporting, frontend calls, and local deployment for testing
 ---
 
 import Tabs from '@theme/Tabs';
@@ -10,20 +10,20 @@ import TabItem from '@theme/TabItem';
 # Typesafe Project
 
 <head>
-  <title>Getting Started with Genezio | Genezio Documentation</title>
+  <title>Getting Started with DeployApps | DeployApps Documentation</title>
 </head>
 
-Welcome to the Genezio Typesafe "Getting Started" guide! In this tutorial, you will learn how to write a backend class, export its methods, call them from the frontend code, and then deploy both the frontend and the backend locally for testing and pushing live to a staging environment.
+Welcome to the DeployApps Typesafe "Getting Started" guide! In this tutorial, you will learn how to write a backend class, export its methods, call them from the frontend code, and then deploy both the frontend and the backend locally for testing and pushing live to a staging environment.
 
 :::tip
 Get started in no time with the [Typesafe Project template](https://app.genez.io/auth/login?redirect=new-project).
 :::
 
-If you want to start testing Genezio in your own IDE/machine, you can follow the steps below.
+If you want to start testing v in your own IDE/machine, you can follow the steps below.
 
-## 1. Install genezio
+## 1. Install DeployApps
 
-Use your preferred package manager to install genezio:
+Use your preferred package manager to install DeployApps:
 
 <Tabs>
   <TabItem className="tab-item" value="npm" label="npm">
@@ -49,7 +49,7 @@ Use your preferred package manager to install genezio:
   </TabItem>
 </Tabs>
 
-## 2. Login to the genezio cloud
+## 2. Login to the DeployApps cloud
 
 If you want to test it locally, you can skip this step.
 
@@ -60,7 +60,7 @@ genezio login
 </div>
 
 :::info
-To install the genezio CLI you must have Node.JS >= 18.2
+To install the DeployApps CLI you must have Node.JS >= 18.2
 :::
 
 :::info
@@ -74,7 +74,7 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 
 :::
 
-## 3. Create a Genezio Typesafe project
+## 3. Create a DeployApps Typesafe project
 
 Copy this command in your terminal to start from a blank template:
 
@@ -148,13 +148,13 @@ export class HelloWorldClass {
 <!-- {% endcode %} -->
 </div>
 
-## 5. Start the genezio local environment
+## 5. Start the DeployApps local environment
 
-Run `genezio local` to start the genezio backend locally together with the frontend.
+Run `genezio local` to start the DeployApps backend locally together with the frontend.
 
 This command will start the backend server on port 8083 and the frontend server on port 5173.
 
-To call the backend services from the frontend, genezio generates a Node module in the `client` folder. This Node module will need to be imported in your frontend code, and for now, will expose the `hello` method from the `HelloWorldClass`.
+To call the backend services from the frontend, DeployApps generates a Node module in the `client` folder. This Node module will need to be imported in your frontend code, and for now, will expose the `hello` method from the `HelloWorldClass`.
 
 Run this command in your **root project folder**:
 
@@ -172,7 +172,7 @@ For those who are curious, the generated code can be found in `client/node_modul
 
 You are now done setting up the backend in the local environment.
 
-**Note:** You can test your API using the [Testing Interface](http://localhost:8083/explore) provided in the genezio dashboard.
+**Note:** You can test your API using the [Testing Interface](http://localhost:8083/explore) provided in the DeployApps dashboard.
 
 ## 6. Call the backend method from the frontend code
 
@@ -207,9 +207,9 @@ Point the browser to [http://localhost:5173](http://localhost:5173) to test your
 
 Now let's take it live for everybody to use it.
 
-## 8. Deploy your full-stack app to the genezio cloud
+## 8. Deploy your full-stack app to the DeployApps cloud
 
-Harness the full power of genezio by deploying both the **backend** and the **frontend** with `genezio deploy`. Also when you run this command, a production SDK will be generated before deploying your frontend.
+Harness the full power of DeployApps by deploying both the **backend** and the **frontend** with `genezio deploy`. Also when you run this command, a production SDK will be generated before deploying your frontend.
 
 Run this command in your **root project folder**:
 
@@ -250,7 +250,7 @@ After the deployment succeeds, you can access the [Dashboard](https://app.genez.
 
 ## 9. All set
 
-Now you have a fully functional app deployed on the genezio infrastructure to be used publicly. A unique URL is created for your app. Point your browser to the link provided by the genezio deploy command: `https://<subdomain>.app.genez.io` . Enjoy!
+Now you have a fully functional app deployed on the DeployApps infrastructure to be used publicly. A unique URL is created for your app. Point your browser to the link provided by the DeployApps deploy command: `https://<subdomain>.app.genez.io` . Enjoy!
 
 ## Next Steps <a href="#next-steps" id="next-steps"></a>
 
@@ -261,31 +261,5 @@ Let’s talk about connecting to a database. We support `PostgreSQL`, `MongoDB`,
 - [**Connect to `Postgres SQL`**](/docs/tutorials/connect-to-postgres)
 - [**Connect to `MongoDB`**](/docs/tutorials/connect-to-mongo-atlas)
 - [**Connect to `Redis`**](/docs/integrations/upstash-redis)
-
-Every application needs to handle user authentication and authorization. If you do not have an authentication provider, you can learn how to use the genezio authentication service:
-
-- [Create a React application with `genezio authentication`](/docs/tutorials/create-react-app-genezio-auth)
-- [Create a React application with `genezio` and `Google OAuth 2.0`](/docs/tutorials/create-react-app-genezio-google-oauth)
-
-Other things that do not depend on connecting to a database are scheduling the execution of a function as a cron job, or implementing HTTP Webhooks:
-
-- [Cron Jobs](/docs/genezio-typesafe/cron-methods)
-- [HTTP Webhooks](/docs/genezio-typesafe/http-methods-webhooks)
-
-Also, you can find more details on deploying the backend and frontend here:
-
-- [Backend Deployment](/docs/deploy/backend)
-- [Frontend Deployment](/docs/deploy/frontend)
-
-Now you are ready for some more advanced use cases:
-
-- [Web3 Application](https://genezio.com/blog/create-your-first-web3-app/)
-- [ChatGPT App](https://genezio.com/blog/create-your-first-app-using-chatgpt/)
-- [Shopping Cart Implementation](https://genezio.com/blog/implement-a-shopping-cart-using-typescript-redis-and-react/)
-- [Integrate Stripe Payments](https://genezio.com/blog/integrate-stripe-payments/)
-
-### Support <a href="#support" id="support"></a>
-
-We invite you to join our community on [Discord](https://discord.gg/uc9H5YKjXv) for further information and help.
 
 **Happy Learning!**

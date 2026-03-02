@@ -1,13 +1,13 @@
 ---
 sidebar_position: 11
-description:  Learn about configuring temporary storage size for your Genezio execution environment, including limitations and best practices.
+description:  Learn about configuring temporary storage size for your DeployApps execution environment, including limitations and best practices.
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 # Temporary Storage
 
-In Genezio, a temporary storage partition is mounted to the execution environment by default. This storage can be used for caching data or storing temporary files during function execution. Below, you'll find details on configuring the storage size, its limitations, and considerations for usage.
+In DeployApps, a temporary storage partition is mounted to the execution environment by default. This storage can be used for caching data or storing temporary files during function execution. Below, you'll find details on configuring the storage size, its limitations, and considerations for usage.
 
 ## Default Storage Size
 

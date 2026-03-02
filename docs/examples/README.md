@@ -1,15 +1,15 @@
 ---
 sidebar_position: 8
-description: Explore a variety of Genezio examples for JavaScript, TypeScript, and more. Find templates and detailed guides for building fullstack applications.
+description: Explore a variety of DeployApps examples for JavaScript, TypeScript, and more. Find templates and detailed guides for building fullstack applications.
 ---
 
 # Examples
 
 <head>
-  <title>Projects Examples | Genezio Documentation</title>
+  <title>Projects Examples | DeployApps Documentation</title>
 </head>
 
-This section contains a list of examples on how to use `genezio`.
+This section contains a list of examples on how to use `DeployApps`.
 
 Each example is open-source and it makes a good template to start your project from. You can find more details on how to use and deploy each example in it's dedicated section.
 

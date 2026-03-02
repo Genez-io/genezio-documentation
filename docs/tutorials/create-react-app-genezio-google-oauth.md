@@ -1,5 +1,5 @@
 ---
-description: Learn to create a React app with Genezio and Google OAuth 2.0. Follow our tutorial for setting up authentication and securing your app
+description: Learn to create a React app with DeployApps and Google OAuth 2.0. Follow our tutorial for setting up authentication and securing your app
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -7,13 +7,13 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 # Enable Google Authentication
 
 <head>
-  <title>Create a React application with genezio and Google OAuth 2.0 | Genezio Documentation</title>
+  <title>Create a React application with DeployApps and Google OAuth 2.0 | DeployApps Documentation</title>
 </head>
 In this tutorial, we'll walk through the process of adding authentication using Google OAuth 2.0 to an existing application. Firstly, we will learn how to configure the project to use Google OAuth 2.0 and then we will modify the client and the backend to use it.
 
 ## Preparing the setup
 
-First of all, you have to install genezio if you haven't installed it already.
+First of all, you have to install DeployApps if you haven't installed it already.
 
 ```
 npm install genezio -g
@@ -55,7 +55,7 @@ Once the project is created, you need to configure an OAuth Consent screen. Sele
   <figcaption></figcaption>
 </figure>
 
-Next, we can move on to the part where we generate a pair of Google Client ID and Google Client Secret that you will need further on to enable the Google auth provider in Genezio. Click on "Credentials" and the "OAuth client ID" to create a new pair of Client ID and Client Secret. Select "Web Application" since we are building a React web app. Also, add the URL of the web app both the local version and the deployed one in the "Authorized Javascript Origin" field. This is a very important step, otherwise the Google Login button won't be displayed because you didn't configure your domain as a trusted one.
+Next, we can move on to the part where we generate a pair of Google Client ID and Google Client Secret that you will need further on to enable the Google auth provider in DeployApps. Click on "Credentials" and the "OAuth client ID" to create a new pair of Client ID and Client Secret. Select "Web Application" since we are building a React web app. Also, add the URL of the web app both the local version and the deployed one in the "Authorized Javascript Origin" field. This is a very important step, otherwise the Google Login button won't be displayed because you didn't configure your domain as a trusted one.
 
 <figure style={{textAlign:"center", marginLeft:"0"}}>
   <video autoPlay muted loop preload="auto" style={{cursor:"pointer", maxWidth: "100%"}}>
@@ -67,11 +67,11 @@ Next, we can move on to the part where we generate a pair of Google Client ID an
 
 You are now ready! Save the Google ID and Google Secret that we will use in the next step.
 
-## Enable Genezio Authentication
+## Enable DeployApps Authentication
 
-Let's start by enabling Genezio Authentication. Go to the dashboard of your project on https://app.genez.io. Click on `Authentication` sidebar.
+Let's start by enabling DeployApps Authentication. Go to the dashboard of your project on https://app.genez.io. Click on `Authentication` sidebar.
 
-Select PostgreSQL as the database type and select or create a new database. Click "Enable". This will take a couple of seconds, Genezio is deploying the `AuthService` class in your project. Once this is finished, click on the "Google" provider and set the values from the previous step.
+Select PostgreSQL as the database type and select or create a new database. Click "Enable". This will take a couple of seconds, DeployApps is deploying the `AuthService` class in your project. Once this is finished, click on the "Google" provider and set the values from the previous step.
 
 That's all the setup that we need for today! We can now get straight to coding.
 
@@ -179,7 +179,7 @@ Let's now see how we can protect the `getSecret` method so that it is only calla
 
 ## Protect methods
 
-By default, all methods in genezio classes are publicly available. If you want to make a route protected and only accessible by authenticated users, you have to use a middleware called `@GenezioAuth` and a `GnzContext` object as a first parameter.
+By default, all methods in DeployApps classes are publicly available. If you want to make a route protected and only accessible by authenticated users, you have to use a middleware called `@GenezioAuth` and a `GnzContext` object as a first parameter.
 
 ```typescript title="server/backend.ts" showLineNumbers
 import {

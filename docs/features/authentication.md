@@ -1,5 +1,5 @@
 ---
-description: You can use Genezio Authentication to allow the users to sign in into your application using multiple providers such as email and password, Google or Metamask.
+description: You can use DeployApps Authentication to allow the users to sign in into your application using multiple providers such as email and password, Google or Metamask.
 ---
 
 import SetYourOwnDb from '/img/features/authentication/set_your_own_db.webp';
@@ -15,10 +15,10 @@ import TabItem from '@theme/TabItem';
 # Authentication
 
 <head>
-  <title>Authentication | Genezio Documentation</title>
+  <title>Authentication | DeployApps Documentation</title>
 </head>
-You can use Genezio Authentication to allow the users to sign in into your application using multiple providers such as email and password or Google.
-Genezio provides an out-of-the-box authentication backend, support for Postgres and Mongo databases and a client SDK to easily integrate the authentication feature into your frontend.
+You can use DeployApps Authentication to allow the users to sign in into your application using multiple providers such as email and password or Google.
+DeployApps provides an out-of-the-box authentication backend, support for Postgres and Mongo databases and a client SDK to easily integrate the authentication feature into your frontend.
 
 Enabling authentication for your project will create a new backend class `AuthService` that is deployed next to your other backend classes.
 You can use the `AuthService` to register new users, login existing users, reset their password and fetch the user's data.
@@ -484,7 +484,7 @@ In your `client` directory, install the following packages by running:
 npm install @genezio/auth @react-oauth/google
 ```
 
-Configure globally the genezio authentication `token` and `region` and set up the Google OAuth Provider:
+Configure globally the DeployApps authentication `token` and `region` and set up the Google OAuth Provider:
 
 ```typescript title=client/src/main.tsx showLineNumbers
 import { GoogleOAuthProvider } from "@react-oauth/google";
@@ -515,7 +515,7 @@ In your `client` directory, install the following packages by running:
 npm install @genezio/auth
 ```
 
-Configure globally the genezio authentication `token` and `region` and set up the Google OAuth Provider:
+Configure globally the DeployApps authentication `token` and `region` and set up the Google OAuth Provider:
 
 ```typescript title=client/src/main.tsx showLineNumbers
 import { AuthService } from "@genezio/auth";
@@ -638,8 +638,8 @@ On the client side you don't need to pass the context for `BackendService.getSen
 
 The authentication solution offers the flexibility to choose between Postgres and Mongo databases for storing user data and access tokens.
 
-For seamless integration, Genezio provides provisioned Postgres databases that can be easily configured.
-When enabling authentication through the Genezio dashboard, simply opt for Postgres as the database type and follow the user-friendly wizard to quickly generate a new database that will be used for the authentication feature.
+For seamless integration, DeployApps provides provisioned Postgres databases that can be easily configured.
+When enabling authentication through the DeployApps dashboard, simply opt for Postgres as the database type and follow the user-friendly wizard to quickly generate a new database that will be used for the authentication feature.
 
 You can also bring your own database. You just have to provide the connection URL of the database in the `General Settings` tab:
 
@@ -654,7 +654,7 @@ You can also bring your own database. You just have to provide the connection UR
 Users can register using an email and a password.
 Once the user has registered, a confirmation email will be sent.
 The email subject and message is already set for you with some default values. The redirect URL that the user has to click to verify the account is set to your function's URL.
-You can change the subject, message and redirect URL by going to the Authentication configuration panel from the Genezio Dashboard.
+You can change the subject, message and redirect URL by going to the Authentication configuration panel from the DeployApps Dashboard.
 
 Another email that is sent automatically is during the reset password flow. No default value is set for the reset password flow. If you want to use this flow, you have to add a redirect URL to your frontend which will make a request to the `AuthService` once the user confirmed the new password.
 
@@ -826,6 +826,6 @@ The AuthService class was not initialized. Call AuthService.getInstance().setTok
 
 Check the following things:
 
-1. The authentication feature is enabled in the genezio dashboard.
+1. The authentication feature is enabled in the DeployApps dashboard.
 2. At least one authentication provider is enabled (either email and password or Google OAuth 2.0).
 3. The `AuthService.getInstance().setTokenAndRegion(token, region)` method is called in the client's code with the correct token and region available in the dashboard.

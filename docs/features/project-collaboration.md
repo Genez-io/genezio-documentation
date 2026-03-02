@@ -1,6 +1,6 @@
 ---
 sidebar_position: 10
-description: Enhance your workflow with Genezio’s project collaboration feature. Learn how to collaborate, manage, and streamline your development projects
+description: Enhance your workflow with DeployApps’s project collaboration feature. Learn how to collaborate, manage, and streamline your development projects
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 # Project Collaboration
 
 <head>
-  <title>Project Collaboration | Genezio Documentation</title>
+  <title>Project Collaboration | DeployApps Documentation</title>
 </head>
 :::info
 The collaboration feature allows project owners to invite collaborators to

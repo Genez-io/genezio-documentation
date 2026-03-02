@@ -1,5 +1,5 @@
 ---
-description: Learn how to deploy a Nuxt application with Genezio.
+description: Learn how to deploy a Nuxt application with DeployApps.
 ---
 
 import Tabs from '@theme/Tabs';
@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 # Nuxt
 
 <head>
-    <title>Nuxt | Genezio Documentation</title>
+    <title>Nuxt | DeployApps Documentation</title>
 </head>
 
 Nuxt is a powerful framework for building Vue.js applications. It provides a lot of features out of the box, such as server-side rendering, static site generation, and more. Nuxt is a great choice for developers who want to build modern web applications with Vue.js.
@@ -20,11 +20,11 @@ Get started in no time with the [Nuxt template](https://app.genez.io/start/deplo
 
 # Deployment
 
-Learn how to deploy an existing Nuxt app using Genezio, a serverless deployment platform that simplifies app management and reduces costs.
+Learn how to deploy an existing Nuxt app using DeployApps, a serverless deployment platform that simplifies app management and reduces costs.
 
-### 1. Install genezio
+### 1. Install DeployApps
 
-Use your preferred package manager to install Genezio:
+Use your preferred package manager to install DeployApps:
 
 <Tabs>
   <TabItem className="tab-item" value="npm" label="npm">
@@ -63,7 +63,7 @@ genezio create nuxt --name nuxt-project --region us-east-1
 genezio deploy
 ```
 
-This command will build your Nuxt application and deploy it to the cloud. Genezio uses a `genezio.yaml` file to store configuration about your project such as project name and region. When running the `genezio deploy` command, Genezio will create this file for you if it doesn't exist after asking you some interactive questions.
+This command will build your Nuxt application and deploy it to the cloud. DeployApps uses a `genezio.yaml` file to store configuration about your project such as project name and region. When running the `genezio deploy` command, DeployApps will create this file for you if it doesn't exist after asking you some interactive questions.
 
 The `genezio.yaml` configuration file will look something like this:
 
@@ -105,9 +105,5 @@ You can specify a custom port by setting the `GENEZIO_PORT_NUXT` environment var
 - Add `GENEZIO_PORT_NUXT=<port>` to your `.env` file
 - Windows: Run `set GENEZIO_PORT_NUXT=<port> && genezio local`
 - macOS/Linux: Run `GENEZIO_PORT_NUXT=<port> genezio local`
-
-## Support <a href="#support" id="support"></a>
-
-We invite you to join our community on [Discord](https://discord.gg/uc9H5YKjXv) for further information and help.
 
 **Happy Learning!**

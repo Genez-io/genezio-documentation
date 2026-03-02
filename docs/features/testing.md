@@ -1,6 +1,6 @@
 ---
 sidebar_position: 3
-description: Genezio provides a postman-like testing tool to send requests to a deployed backend or to a local server started on your machine.
+description: DeployApps provides a postman-like testing tool to send requests to a deployed backend or to a local server started on your machine.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -8,13 +8,13 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 # Testing
 
 <head>
-  <title>Local Testing Infrastructure | Genezio Documentation</title>
+  <title>Local Testing Infrastructure | DeployApps Documentation</title>
 </head>
-Genezio provides a local testing infrastructure that mimics the production infrastructure on the cloud.
+DeployApps provides a local testing infrastructure that mimics the production infrastructure on the cloud.
 
-## Genezio Testing Dashboard
+## DeployApps Testing Dashboard
 
-Genezio provides a postman-like testing tool to send requests to a deployed backend or to a local server started on your machine.
+DeployApps provides a postman-like testing tool to send requests to a deployed backend or to a local server started on your machine.
 
 The testing dashboard is visually divided into 3 sections as depicted in the screenshot below:
 
@@ -54,7 +54,7 @@ The upper-right part of the section will display the time it took for the reques
 
 Test your backend server in a friendly and easy-to-use graphic environment before actually integrating the functions in your frontend application.
 
-To access the testing dashboard, go to the genezio platform, select a deployed backend and click on the `Test Interface` button on the sidebar.
+To access the testing dashboard, go to the DeployApps platform, select a deployed backend and click on the `Test Interface` button on the sidebar.
 
 You will be redirected to the testing dashboard where you can craft and send requests to the deployed backend.
 
@@ -112,11 +112,11 @@ The SDK is built as a local npm library. To use it, while the local server is ru
 npm install @genezio-sdk/{your-project-name}_{your-project-region}
 ```
 
-If you just want to test your genezio code without having to write any code in your client, head over to the output link [`http://localhost:8083/explore`](http://localhost:8083/explore) to test your project in the Genezio Test Interface:
+If you just want to test your DeployApps code without having to write any code in your client, head over to the output link [`http://localhost:8083/explore`](http://localhost:8083/explore) to test your project in the DeployApps Test Interface:
 
 <figure style={{textAlign:"center", marginLeft:"0"}}><img style={{cursor:"pointer"}} src={useBaseUrl("/img/Screenshot 2023-08-11 at 19.28.34.webp")} alt=""/><figcaption></figcaption></figure>
 
-You can use the _Genezio Test Interface_ to test your projects locally, as well as remotely. Find more details about it at [testing](/docs/features/testing).
+You can use the DeployApps Test Interface_ to test your projects locally, as well as remotely. Find more details about it at [testing](/docs/features/testing).
 
 ### Test the client
 
@@ -167,7 +167,7 @@ You should see a green label indicating that your connection to the local server
 
 Sometimes, you may see a red error message at the top instead of the green success label. Most likely that means your local server is running on a different port.
 
-<figure style={{textAlign:"center", marginLeft:"0"}}><img style={{cursor:"pointer"}} src={useBaseUrl("/img/image (39).webp")} alt="Connection Failed"/><figcaption><p>Genezio Test Interface connection Failed</p></figcaption></figure>
+<figure style={{textAlign:"center", marginLeft:"0"}}><img style={{cursor:"pointer"}} src={useBaseUrl("/img/image (39).webp")} alt="Connection Failed"/><figcaption><p>DeployApps Test Interface connection Failed</p></figcaption></figure>
 
 To establish the connection, verify on which port your server is running and fill that port in the provided input, the click `Connect` (or press Enter).
 

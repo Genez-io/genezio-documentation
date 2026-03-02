@@ -1,5 +1,5 @@
 ---
-description: Learn how to deploy a FastAPI application with Genezio.
+description: Learn how to deploy a FastAPI application with DeployApps.
 ---
 
 import Tabs from '@theme/Tabs';
@@ -8,7 +8,7 @@ import TabItem from '@theme/TabItem';
 # FastAPI
 
 <head>
-    <title>FastAPI | Genezio Documentation</title>
+    <title>FastAPI | DeployApps Documentation</title>
 </head>
 
 FastAPI is a modern Python web application framework that simplifies the development of server-side applications. It provides a robust set of features for building web servers and APIs.
@@ -19,13 +19,13 @@ Get started in no time with the [FastAPI template](https://app.genez.io/start/de
 
 # Deployment
 
-Learn how to deploy an existing FastAPI app using Genezio, a serverless deployment platform that simplifies app management and reduces costs.
+Learn how to deploy an existing FastAPI app using DeployApps, a serverless deployment platform that simplifies app management and reduces costs.
 
 ## Prerequisites
 
-### 1. Install genezio
+### 1. Install DeployApps
 
-Use your preferred package manager to install Genezio:
+Use your preferred package manager to install DeployApps:
 
 <Tabs>
   <TabItem className="tab-item" value="npm" label="npm">
@@ -184,11 +184,11 @@ Open a web browser and navigate to [http://localhost:8000](http://localhost:8000
 
 ## Deployment Guide
 
-## 1. Create the Genezio Configuration File
+## 1. Create the DeployApps Configuration File
 
 Now, create a `genezio.yaml` file in the root directory of your project.
 
-This file will contain the configuration needed to deploy your backend using Genezio. Here is an example configuration.
+This file will contain the configuration needed to deploy your backend using DeployApps. Here is an example configuration.
 
 :::info
 
@@ -268,7 +268,7 @@ Open a web browser and navigate to [http://localhost:8000](http://localhost:8000
 
 ## 3. Deploy your project
 
-Finally, deploy your project. A browser window will open, and you will be prompted to log in to your Genezio account and
+Finally, deploy your project. A browser window will open, and you will be prompted to log in to your DeployApps account and
 authorize the CLI to make the deployment.
 Run the following command in your terminal:
 
@@ -290,28 +290,24 @@ For more information about environment variables, you can check
 the [official documentation](/docs/project-structure/backend-environment-variables.md).
 
 :::note
-During the deployment process, Genezio automatically installs all dependencies specified in your `requirements.txt` file using:
+During the deployment process, DeployApps automatically installs all dependencies specified in your `requirements.txt` file using:
 - The correct architecture (Linux x86)
 - The Python runtime specified in `genezio.yaml`
 
 This process ensures compatibility with our serverless infrastructure, defaulting to the latest Python 3.13.x version.
 :::
 
-## See your app in Genezio Dashboard
+## See your app in DeployApps Dashboard
 
 After deploying your application, you can test it to ensure it's running correctly. To verify that your FastAPI app is
 working, open a web browser and navigate to the URL provided for your deployed function.
 
 This URL can be found in the deployment output under the `Functions Deployed` section.
 
-Additionally, you can monitor and manage your app through the [Genezio App Dashboard](https://app.genez.io/dashboard).
+Additionally, you can monitor and manage your app through the [DeployApps App Dashboard](https://app.genez.io/dashboard).
 The dashboard URL, also provided after deployment, allows you to access comprehensive views of your project's status and
 logs.
 
 You can find this URL in the deployment output under the `App Dashboard URL` section.
-
-## Support <a href="#support" id="support"></a>
-
-We invite you to join our community on [Discord](https://discord.gg/uc9H5YKjXv) for further information and help.
 
 **Happy Learning!**

@@ -1,14 +1,14 @@
 ---
 sidebar_position: 5
-description: In this tutorial, you will learn how to integrate a MongoDB Atlas database in a genezio project.
+description: In this tutorial, you will learn how to integrate a MongoDB Atlas database in a DeployApps project.
 ---
 
 # Connect to Mongo (Atlas)
 
 <head>
-  <title>Connect to MongoDB (Atlas) | Genezio Documentation</title>
+  <title>Connect to MongoDB (Atlas) | DeployApps Documentation</title>
 </head>
-In this tutorial, you will learn how to integrate a MongoDB Atlas database in a genezio project.
+In this tutorial, you will learn how to integrate a MongoDB Atlas database in a DeployApps project.
 
 ### Prerequisites
 
@@ -18,7 +18,7 @@ If you don't already have them, you'll need to install the following tools:
 - [Npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
 - [Genezio](/docs/getting-started)
 
-You need to have a genezio project. Use an existing one, or [create a new one.](/docs/getting-started)
+You need to have a DeployApps project. Use an existing one, or [create a new one.](/docs/getting-started)
 
 ## 1. Initialize a MongoDB Atlas database
 
@@ -118,14 +118,6 @@ Also, you can find more details on deploying the backend and frontend here:
 - [Backend Deployment](/docs/deploy/backend)
 - [Frontend Deployment](/docs/deploy/frontend)
 
-Now you are ready for some more advanced use cases:
-
-- [Web3 Application](https://genezio.com/blog/create-your-first-web3-app/)
-- [ChatGPT App](https://genezio.com/blog/create-your-first-app-using-chatgpt/)
-- [Shopping Cart Implementation](https://genezio.com/blog/implement-a-shopping-cart-using-typescript-redis-and-react/)
-- [Integrate Stripe Payments](https://genezio.com/blog/integrate-stripe-payments/)
-
-### Support <a href="#support" id="support"></a>
 
 We invite you to join our community on [Discord](https://discord.gg/uc9H5YKjXv) for further information and help.
 

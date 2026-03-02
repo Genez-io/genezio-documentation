@@ -1,5 +1,5 @@
 ---
-description: In this tutorial, we'll walk through the process of adding authentication using email and password to an existing application. Learn more about Genezio!
+description: In this tutorial, we'll walk through the process of adding authentication using email and password to an existing application. Learn more about DeployApps!
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -7,17 +7,17 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 # Enable Email Authentication
 
 <head>
-  <title>Create a React application with genezio authentication | Genezio Documentation</title>
+  <title>Create a React application with DeployApps authentication | DeployApps Documentation</title>
 </head>
 In this tutorial, we'll walk through the process of adding authentication using email and password to an existing application. Here's a breakdown of what we'll cover:
 
-1. Preparing the setup, the project and enabling Genezio Authentication
+1. Preparing the setup, the project and enabling DeployApps Authentication
 2. Implementing user registration using email and password
 3. Implementing user login using email and password
 
-## Preparing the setup, the project and enabling Genezio Authentication
+## Preparing the setup, the project and enabling DeployApps Authentication
 
-First of all, you have to install genezio if you haven't installed it already.
+First of all, you have to install DeployApps if you haven't installed it already.
 
 ```
 npm install genezio -g
@@ -43,19 +43,19 @@ The Login and Signup screens can be easily bypassed by accessing directly the `/
 
 <figure style={{textAlign:"center"}}><img style={{cursor:"pointer"}} src={useBaseUrl("/img/demo-email-and-password-initial.gif")} alt=""/><figcaption></figcaption></figure>
 
-Let's start by enabling Genezio Authentication. Go to the dashboard of your project on https://app.genez.io. Click on `Authentication` sidebar. Select or create a new PostgreSQL database and press "Enable".
+Let's start by enabling DeployApps Authentication. Go to the dashboard of your project on https://app.genez.io. Click on `Authentication` sidebar. Select or create a new PostgreSQL database and press "Enable".
 
 Users will be able to register and login using email and password. To allow this, in the `Authentication` page, activate the email provider.
 
 ## Implementing user registration using email and password
 
-Navigate to the `client/` folder and install the Genezio authentication library.
+Navigate to the `client/` folder and install the DeployApps authentication library.
 
 ```
 npm install @genezio/auth
 ```
 
-We then need to configure the authentication token and region of your Genezio application. These can be found in the Authentication Configuration screen on the Genezio Dashboard. Go to `src/main.tsx` and write the following code right after the last import and before the router creation.
+We then need to configure the authentication token and region of your DeployApps application. These can be found in the Authentication Configuration screen on the DeployApps Dashboard. Go to `src/main.tsx` and write the following code right after the last import and before the router creation.
 
 <figure style={{textAlign:"center"}}><img style={{cursor:"pointer",width:"100%"}} src={useBaseUrl("/img/react-application-auth3.webp")} alt=""/><figcaption></figcaption></figure>
 

@@ -1,14 +1,14 @@
 ---
 sidebar_position: 3
-description: In this tutorial, you will learn how to integrate a Postgres database using in a Genezio project.
+description: In this tutorial, you will learn how to integrate a Postgres database using in a DeployApps project.
 ---
 
 # Connect to Postgres
 
 <head>
-  <title>Connect to Postgres | Genezio Documentation</title>
+  <title>Connect to Postgres | DeployApps Documentation</title>
 </head>
-In this tutorial, you will learn how to integrate a Postgres database in a Genezio project.
+In this tutorial, you will learn how to integrate a Postgres database in a DeployApps project.
 
 ### Prerequisites
 
@@ -18,11 +18,11 @@ If you don't already have them, you'll need to install the following tools:
 - [Npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
 - [Genezio](/docs/getting-started)
 
-You need to have a genezio project. Use an existing one, or [create a new one.](/docs/getting-started)
+You need to have a DeployApps project. Use an existing one, or [create a new one.](/docs/getting-started)
 
 ## 1. Create a Postgres database
 
-Open the [genezio dashboard](https://app.genez.io/dashboard), pick the project you created earlier and choose "Database" from the left-side menu.
+Open the [DeployApps dashboard](https://app.genez.io/dashboard), pick the project you created earlier and choose "Database" from the left-side menu.
 
 On the Databases page choose to create a Database. Give it a name - say "demo", and choose a region that is closest to your project's deployed region.
 
@@ -114,16 +114,5 @@ Also, you can find more details on deploying the backend and frontend here:
 
 - [Backend Deployment](/docs/deploy/backend)
 - [Frontend Deployment](/docs/deploy/frontend)
-
-Now you are ready for some more advanced use cases:
-
-- [Web3 Application](https://genezio.com/blog/create-your-first-web3-app/)
-- [ChatGPT App](https://genezio.com/blog/create-your-first-app-using-chatgpt/)
-- [Shopping Cart Implementation](https://genezio.com/blog/implement-a-shopping-cart-using-typescript-redis-and-react/)
-- [Integrate Stripe Payments](https://genezio.com/blog/integrate-stripe-payments/)
-
-### Support <a href="#support" id="support"></a>
-
-We invite you to join our community on [Discord](https://discord.gg/uc9H5YKjXv) for further information and help.
 
 **Happy Learning!**

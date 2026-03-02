@@ -1,13 +1,13 @@
 ---
-description: This document provides information on how to upgrade your Genezio project after the release of Genezio CLI v1.0.0.
+description: This document provides information on how to upgrade your DeployApps project after the release of DeployApps CLI v1.0.0.
 ---
 
 # Upgrading to v1
 
 <head>
-  <title>Upgrading to v1 | Genezio Documentation</title>
+  <title>Upgrading to v1 | DeployApps Documentation</title>
 </head>
-This document provides information on how to upgrade your Genezio project after the release of Genezio CLI v1.0.0.
+This document provides information on how to upgrade your DeployApps project after the release of DeployApps CLI v1.0.0.
 
 ## `genezio.yaml` version 2
 
@@ -69,13 +69,13 @@ frontend:
     build: npm run build
 ```
 
-If you still have questions about how to migrate your `genezio.yaml` file to version 2, please refer to the [Genezio Configuration File](../project-structure/genezio-configuration-file.md) documentation or check our [examples](../examples/README.md).
+If you still have questions about how to migrate your `genezio.yaml` file to version 2, please refer to the [DeployApps Configuration File](../project-structure/genezio-configuration-file.md) documentation or check our [examples](../examples/README.md).
 
 ## Remove region from SDK
 
-In the Genezio CLI v1.0.0 release, we updated the generated SDK NPM package name by removing `region` for a more intuitive naming convention.
+In the DeployApps CLI v1.0.0 release, we updated the generated SDK NPM package name by removing `region` for a more intuitive naming convention.
 
-For instance, if you have a project called `my-project` in the `us-east-1` region, creating the SDK before Genezio CLI v1.0 will result in an NPM package called `@genezio-sdk/my-project_us-east-1`. From Genezio CLI v1.0 onward, the package will be named `@genezio-sdk/my-project`, maintaining the same functionality while being more intuitive.
+For instance, if you have a project called `my-project` in the `us-east-1` region, creating the SDK before DeployApps CLI v1.0 will result in an NPM package called `@genezio-sdk/my-project_us-east-1`. From DeployApps CLI v1.0 onward, the package will be named `@genezio-sdk/my-project`, maintaining the same functionality while being more intuitive.
 
 We advise adopting the updated SDK naming convention. To migrate you have to do the following steps:
 
@@ -98,8 +98,8 @@ We advise adopting the updated SDK naming convention. To migrate you have to do 
 }
 ```
 
-2. After updating the Genezio CLI and deploying for the first time, run `npm install @genezio-sdk/<project_name>`.
-3. Replace all Genezio SDK imports in your frontend project.
+2. After updating the DeployApps CLI and deploying for the first time, run `npm install @genezio-sdk/<project_name>`.
+3. Replace all DeployApps SDK imports in your frontend project.
 
 ```tsx title="App.tsx"
 import { useState, useEffect } from "react";
@@ -129,10 +129,10 @@ However, you might still have problems if you are using `genezio local`. It's be
 
 ## Update Github Actions
 
-If you previously used the [`genezio-github-action`](/docs/integrations/github-action.md) to install genezio in a CI/CD environment,
+If you previously used the [`genezio-github-action`](/docs/integrations/github-action.md) to install DeployApps in a CI/CD environment,
 you have to modify your Github Actions to use the tag `@v1` instead of `@main`.
 
-Example: In a CI/CD environment, install genezio version `v1.x.x`:
+Example: In a CI/CD environment, install DeployApps version `v1.x.x`:
 
 ```yaml title=".github/workflows/deploy.yml"
 # diff-remove
